@@ -12,8 +12,8 @@ git push
 
 # 📖 Basic Skills Needed 📚
 ```
-Linux: ssh, cli tools (sed, grep, awk), basic scripting, nano/vi
-Programming: Python, Bash
+Linux: cat, cd, mv, rm, ssh, vi, CLI tools (awk, grep, sed), basic scripting
+Programming: Bash, Python
 Networking: Ports, IP, HTTP, DNS, TLS/SSL,
 Crypto Basics: XOR, base64, hashing, AES, RSA
 Web Tech: HTTP methods, RESTful, Cookies, JavaScript basics, XSS, SQL Injection
@@ -23,13 +23,14 @@ https://github.com/paragonie/awesome-appsec<br><br>
 
 # 🦔 CTF Categories 🦔
 ```
-Web exploitation
-Steganography
 Cryptography
 Binary exploitation
+Cryptography
+Forensic
 OSINT (Open-Source Intelligence)
-Forensics
 Reverse Engineering
+Steganography
+Web exploitation
 ```
 
 # 🏎️ Start with overTheWire 🚓
