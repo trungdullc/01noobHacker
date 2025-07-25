@@ -112,13 +112,21 @@ https://try2hack.me/
 - Web (JavaScript Obfustcators)
     - [Uglify](https://github.com/mishoo/UglifyJS)
 - Forensics
-    - [dnscat2](https://github.com/iagox86/dnscat2)
     - [Magnet AXIOM](https://www.magnetforensics.com/dlaxiom/)
-    - [Registry Dumper](https://www.kahusecurity.com/posts/registry_dumper_find_and_dump_hidden_registry_keys.html)
 
 # 🔨 Tools to use during CTF🔧
+- Converting
+    - [awk](https://www.gnu.org/software/gawk/manual/gawk.html): Kali Linux | ParrotOS, Search pattern inside files <b>w/ column field awareness</b>
+    - [base64](https://www.man7.org/linux/man-pages/man1/base64.1.html): Encoding/Decoding base64
+    - [hexdump](https://www.man7.org/linux/man-pages/man1/hexdump.1.html): Display file contents in hexadecimal, decimal, octal, or ascii
+    - [xxd](https://www.commandlinux.com/man-page/man1/xxd.1.html): Kali Linux | ParrotOS, Convert binary data to hexadecimal format
 - General
+    - [bgrep](https://github.com/nneonneo/bgrep): Kali Linux | ParrotOS Search binary strings in binary file
+    - [file](https://www.geeksforgeeks.org/linux-unix/how-to-find-out-file-types-in-linux/): Kali Linux | ParrotOS, Identify file types base on content
+    - [grep](https://www.man7.org/linux/man-pages/man1/grep.1.html): Kali Linux | ParrotOS, Search pattern inside files
     - [HackTricks](https://book.hacktricks.wiki/en/index.html) ⭐⭐
+    - [sed](): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
+    - [tmux](https://github.com/tmux/tmux/wiki): Run & manage multiple terminal sessions inside 1 terminal window
 - Attack (<b>Beware: Man in Middle</b>)
     - [bettercap](https://github.com/bettercap/bettercap)
     - [yersinia](https://github.com/tomac/yersinia)
@@ -151,11 +159,29 @@ https://try2hack.me/
     - [ShiftCipher](https://github.com/CyberJarvis/ShiftCipher): Caesar Cipher encryption/decryption
     - [XORTool](https://github.com/hellman/xortool): Analyze multi-byte XOR cipher
 - Forensics (File Format/Memory Dump/Network Packet Capture Analysis)
+    - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
+    - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images
+    - [dnscat2](https://github.com/iagox86/dnscat2): Tunneling data over DNS
     - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers
+    - [JPG Repair](https://jpg.repair/): Repair corrupted images online
     - [pdfinfo](https://linux.die.net/man/1/pdfinfo): Kali Linux | ParrotOS, Analyzing PDF
+    - [pefile](https://github.com/erocarrera/pefile): Analyzing Windows PE (Portable Executable) files
+    - [photorec](https://www.geeksforgeeks.org/linux-unix/photorec-recover-deleted-or-lost-files-in-linux/): Kali Linux | ParrotOS, Recovering lost files from HD & memory cards
+    - [pngcheck](https://github.com/pnggroup/pngcheck): Kali Linux | ParrotOS, Checks PNG for errors
+    - [pingcsum](https://www.libpng.org/pub/png/apps/pngcheck.html): Check integrity of PNG for errors
+    - [qpdf](https://github.com/qpdf/qpdf): CLI manipulation PDF
+    - [Registry Dumper](https://www.kahusecurity.com/posts/registry_dumper_find_and_dump_hidden_registry_keys.html): Dumping Windows registry
+    - [scalpel](https://awjunaid.com/kali-linux/scalpel-a-file-carving-tool-for-recovering-files-from-disk-images/): Kali Linux | ParrotOS, recovering deleted files from disk images
+    - [Sonic Visualiser](https://sonicvisualiser.org/): Analyzing audio files
     - [split](https://www.man7.org/linux/man-pages/man1/split.1.html) Kali Linux | ParrotOS, split files
+    - [Xplico](https://www.xplico.org/): Network Forensic Analysis Framework
 - Network
     - [GTFOBins](https://gtfobins.github.io/): Unix binaries
+    - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
+    - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
+    - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
+    - [tcpflow](https://linux.die.net/man/1/tcpflow): Kali Linux | ParrotOS, CLI Network Protocol Analyzer
+    - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer
 - Reverse Engineering
     - [androguard](https://github.com/androguard/androguard): Analyzing Android Apps
     - [apktool](https://github.com/iBotPeaches/Apktool): Kali Linux | ParrotOS, reverse engineering Android APK
@@ -167,6 +193,7 @@ https://try2hack.me/
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
     - [radare2](https://github.com/radareorg/radare2): Kali Linux | ParrotOS, Disassembler/Debugger
 - Steganography
+    - [ffmpeg](https://ffmpeg.org/ffmpeg-utils.html): Kali Linux | ParrotOS, Extract strings from media files
     - [OpenStego](https://www.openstego.com/)
     - [pdfdetach](https://www.xpdfreader.com/pdfdetach-man.html): Kali Linux | ParrotOS, Extract Embedded files from PDF
     - [pdfimages](https://man.archlinux.org/man/pdfimages.1.en): Kali Linux | ParrotOS, extract hidden images from PDF
@@ -175,6 +202,7 @@ https://try2hack.me/
     - [Steganography Online](https://stylesuxx.github.io/steganography/): Web App
     - [Steg Online](https://www.georgeom.net/StegOnline/upload): Web App
     - [StegSolve](https://github.com/Giotino/stegsolve/releases)
+    - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
 - Web exploitation (also look Network)
     - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform ⭐⭐
     - [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping): Bypass CloudFlare protection (testing)
