@@ -179,6 +179,7 @@ https://try2hack.me/
     - [GTFOBins](https://gtfobins.github.io/): Unix binaries
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
     - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
+    - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
     - [tcpflow](https://linux.die.net/man/1/tcpflow): Kali Linux | ParrotOS, CLI Network Protocol Analyzer
     - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer
@@ -204,7 +205,7 @@ https://try2hack.me/
     - [StegSolve](https://github.com/Giotino/stegsolve/releases)
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
 - Web exploitation (also look Network)
-    - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform ⭐⭐
+    - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐
     - [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping): Bypass CloudFlare protection (testing)
     - [commix](https://www.kali.org/tools/commix/): Kali Linux | ParrotOS, Command Injection vulnerabilities
     - [dirbuster](https://github.com/KajanM/DirBuster): Kali Linux | ParrotOS, find hidden directories in Web App
@@ -232,7 +233,7 @@ https://www.bugcrowd.com/
 
 # Continue Education
 ```
-CompTIA Security+               	                            Security fundamentals (1st)
+CompTIA Security+                                               Security fundamentals (1st)
 CompTIA CySA+                                                   Security analyst, threat detection
 Cisco CCNA (Cyber Ops)                                          Networking + security
 CEH (Certified Ethical Hacker)                                  Penetration testing basics
