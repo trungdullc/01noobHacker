@@ -229,7 +229,7 @@ https://try2hack.me/
 # 🏆 Current CTF Competitions 🏆
 https://ctftime.org/
 
-# 🥷🏻 Bug Bounty 💰
+# 💰 Bug Bounty 💰
 https://www.bugcrowd.com/
 
 # Continue Education
