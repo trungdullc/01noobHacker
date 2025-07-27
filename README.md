@@ -116,6 +116,9 @@ https://try2hack.me/
     - [Magnet AXIOM](https://www.magnetforensics.com/dlaxiom/)
 
 # 🔨 Tools to use during CTF🔧
+- Operating System Command Line Codes
+    - [Linux (BASH)](/tools/bash.md)
+    - Windows (PowerShell)
 - Converting
     - [awk](https://www.gnu.org/software/gawk/manual/gawk.html): Kali Linux | ParrotOS, Search pattern inside files <b>w/ column field awareness</b>
     - [base64](https://www.man7.org/linux/man-pages/man1/base64.1.html): Encoding/Decoding base64
