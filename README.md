@@ -22,8 +22,30 @@ VMware or Virtual Box running: ParrotOS, Kali Linux, Black Arch, Back Box
 ```
 https://github.com/paragonie/awesome-appsec<br><br>
 
+# Red Team/Penetration Attack
+```
+Aircrack-ng: https://www.aircrack-ng.org/ Wi-Fi Testing, monitoring .pcap
+BloodHound: https://github.com/SpecterOps/BloodHound-Legacy Identify file/directory attack paths
+Burp Suite: https://portswigger.net/burp Web Application Testing
+dnschef: https://github.com/iphelps/dnschef DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)
+Ghidra: https://ghidra-sre.org/ Reverse Engineering (Disassembling, Decompiling)
+Hydra: https://github.com/vanhauser-thc/thc-hydra Attack FTP HTTP SSH SAP
+Impacket: https://github.com/fortra/impacket Python collection for creating exploits
+Metasploit: https://www.metasploit.com/ Penetration Testing Framework for testing exploits
+Nmap: https://nmap.org/ Network Mapper, Network Discovery, Port Scanner
+Osmedeus: https://github.com/j3ssie/osmedeus Automate Reconnaissance Process
+Recon-ng: https://github.com/lanmaster53/recon-ng Reconniance Framework
+Responder: https://github.com/lgandx/Responder LLMNR Poisioner for Credential Harvesting
+
+# Post Exploitation
+Empire: https://github.com/BC-SECURITY/Empire Post-exploitation & Adversary Emulation Framework
+Mimikatz: https://github.com/ParrotSec/mimikatz Extracting plaintext passwords, hashes, pin codes, kerberos tickets from memory
+```
+
 # 🦔 CTF Categories & Learning Sources🦔
 ```
+Noob
+    Hackify.io: https://www.hackify.io/
 Binary exploitation
     pwn.college: https://pwn.college/
     LiveOverflow: https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN
@@ -223,23 +245,33 @@ Souce: https://try2hack.me/<br>
     - [pdfcrack](https://github.com/alitrack/PDFCrack): Kali Linux | ParrotOS, recovering PDF passwords
     - [Zip Password Cracker](https://passwordrecovery.io/zip-file-password-removal/): Online John The Riper
 - Cryptography
+    - [Big Integer Calculator](http://www.javascripter.net/math/calculators/100digitbigintcalculator.htm): Online Calculator
+    - [CrackStation](https://crackstation.net/): Online Password Hash Cracker
     - [Cryptii](https://cryptii.com/): Web App for encypt/decrypt & encoding
     - [<b>CyberChef</b>](https://gchq.github.io/CyberChef): Analysing/Decoding data ⭐⭐⭐
+    - [Crunch](https://www.guballa.de/substitution-solver): Create custom dictionary for atk
+    - [dCode](https://www.dcode.fr/)
+    - [FactorDB](https://factordb.com/): Online Integer Factorization
     - [FeatherDuster](https://github.com/nccgroup/featherduster): Cryptanalysis: Identify/Exploit weakness
     - [hash_extender](https://github.com/iagox86/hash_extender): Hash length extension attack
+    - [Hash Identifier](https://www.kali.org/tools/hash-identifier/): Hash Identifier ⭐
     - [padding-oracle-attacker](https://github.com/KishanBagaria/padding-oracle-attacker): Padding oracle attacks
     - [Keyboard Shift Cipher](https://www.dcode.fr/keyboard-shift-cipher): Web App decryption
+    - [Morse Code Translator](https://morsecode.world/international/translator.html): Online Morse Code Translator
     - [PkCrack](https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html): Breaking PkZip-encryption
     - [QuipQuip](https://quipqiup.com/): Substitution/vigenere Cryptogram solver
     - [RSACTFTool](https://github.com/RsaCtfTool/RsaCtfTool): Recovering RSA private key
     - [RSATool](https://github.com/ius/rsatool): Generate private key w/o p | q
     - [ShiftCipher](https://github.com/CyberJarvis/ShiftCipher): Caesar Cipher encryption/decryption
+    - [Substitution Solver](https://www.guballa.de/substitution-solver): Online Substitution Solver
+    - [Vigenere Solver](https://www.guballa.de/vigenere-solver): Online Vigenere Cipher Solver
     - [XORTool](https://github.com/hellman/xortool): Analyze multi-byte XOR cipher
 - Forensics (File Format/Memory Dump/Network Packet Capture Analysis)
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
+    - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool⭐⭐
     - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images
     - [dnscat2](https://github.com/iagox86/dnscat2): Tunneling data over DNS
-    - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers
+    - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers ⭐
     - [JPG Repair](https://jpg.repair/): Repair corrupted images online
     - [pdfinfo](https://linux.die.net/man/1/pdfinfo): Kali Linux | ParrotOS, Analyzing PDF
     - [pefile](https://github.com/erocarrera/pefile): Analyzing Windows PE (Portable Executable) files
@@ -252,6 +284,10 @@ Souce: https://try2hack.me/<br>
     - [Sonic Visualiser](https://sonicvisualiser.org/): Analyzing audio files
     - [split](https://www.man7.org/linux/man-pages/man1/split.1.html) Kali Linux | ParrotOS, split files
     - [Xplico](https://www.xplico.org/): Network Forensic Analysis Framework
+- OSINT (Open-Source Intelligence)
+    - [Linkin eMail Finder](https://skrapp.io/tutorials/linkedin-email-finder): Chrome Extension
+    - [Sherlock](https://github.com/sherlock-project/sherlock): Hunts cheaters by username across multiple social media
+    - [Web Archive](https://web.archive.org/)
 - Network
     - [GTFOBins](https://gtfobins.github.io/): Unix binaries
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
@@ -263,28 +299,41 @@ Souce: https://try2hack.me/<br>
 - Reverse Engineering
     - [androguard](https://github.com/androguard/androguard): Analyzing Android Apps
     - [apktool](https://github.com/iBotPeaches/Apktool): Kali Linux | ParrotOS, reverse engineering Android APK
-    - [Binary Ninja](https://binary.ninja/): Demo, Disassembler/Decompiler
+    - [Binary Ninja](https://binary.ninja/): Online Demo, Disassembler/Decompiler ⭐
+    - [DogBolt](https://dogbolt.org/): Online binary file decompiler (like Ghidra & BinaryNinja)
     - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐
     - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐
     - [Hopper](https://www.hopperapp.com/): Not Free, Disassembler/Decompiler Mac OSX and Linux
     - [IDA Free](https://hex-rays.com/ida-free): Disassembler/Decompiler Cross Platform
+    - [JADX](https://github.com/skylot/jadx): producing Java source code from Android Dex and APK files
+    - [Java Decompiler](http://www.javadecompilers.com/) Online tool to decompile Java classes, APKs
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
+    - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF): decompile and reverse APK files
     - [radare2](https://github.com/radareorg/radare2): Kali Linux | ParrotOS, Disassembler/Debugger
+- Pwn
+    - [Syscall Reference](https://syscalls.w3challs.com/): x86 / x64 syscalls manual w/ registers value
+    - [Asm/Disasm](https://defuse.ca/online-x86-assembler.htm#disassembly): Online x86 / x64 assembler and disassembler
+    - [LibC Check](https://defuse.ca/online-x86-assembler.htm#disassembly): Find all possible libc versions w/ symbol name and entry address
 - Steganography
+    - [Aperi'Solve](https://github.com/Zeecka/AperiSolve): runs zsteg, steghide, exiftool, binwalk, foremost ⭐⭐
+    - [Color Picker](https://imagecolorpicker.com/): Not really used for CTF
+    - [Dual Tone Decoder](http://dialabc.com/sound/detect/): find DTMF tones in audio clips
     - [ffmpeg](https://ffmpeg.org/ffmpeg-utils.html): Kali Linux | ParrotOS, Extract strings from media files
     - [OpenStego](https://www.openstego.com/)
     - [pdfdetach](https://www.xpdfreader.com/pdfdetach-man.html): Kali Linux | ParrotOS, Extract Embedded files from PDF
     - [pdfimages](https://man.archlinux.org/man/pdfimages.1.en): Kali Linux | ParrotOS, extract hidden images from PDF
     - [stegcracker](https://www.kali.org/tools/stegcracker/): Kali Linux | ParrotOS
-    - [steghide](https://steghide.sourceforge.net/): Kali Linux | ParrotOS
+    - [steghide](https://steghide.sourceforge.net/): Kali Linux | ParrotOS ⭐
     - [Steganography Online](https://stylesuxx.github.io/steganography/): Web App
     - [Steg Online](https://www.georgeom.net/StegOnline/upload): Web App
+    - [stegseek](https://github.com/RickdeJager/stegseek)
     - [StegSolve](https://github.com/Giotino/stegsolve/releases)
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
 - Web exploitation (also look Network)
     - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐
     - [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping): Bypass CloudFlare protection (testing)
     - [commix](https://www.kali.org/tools/commix/): Kali Linux | ParrotOS, Command Injection vulnerabilities
+    - [CSP Evaluator](https://csp-evaluator.withgoogle.com/): Online Content Security Policy (CSP) checker
     - [dirbuster](https://github.com/KajanM/DirBuster): Kali Linux | ParrotOS, find hidden directories in Web App
     - [Edit-This-Cookie](https://github.com/ETCExtensions/Edit-This-Cookie): Editing cookies
     - [gobuster](https://github.com/OJ/gobuster): Kali Linux | ParrotOS, find hidden directories in Web App
@@ -294,6 +343,7 @@ Souce: https://try2hack.me/<br>
     - [Racoon](https://github.com/evyatarmeged/Raccoon): Scrapping/Enumerating endpoints in Web App
     - [sqlmap](https://www.kali.org/tools/sqlmap/): Kali Linux | ParrotOS, automating SQL injection atk
     - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan for WordPress
+    - [Subdomain Finder](https://subdomainfinder.c99.nl/index.php): Online Subdomain Finder
 - Help
     - [HackTricksAI](https://www.hacktricks.ai/): Unfiltered
     - [Phind](https://www.phind.com/): Unfiltered
