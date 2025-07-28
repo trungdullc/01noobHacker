@@ -7,6 +7,23 @@ IP=8.8.8.8                              set temporarly variable in shell environ
 env                                     printenv
 ```
 
+## Help
+```
+whatis <COMMAND>                        short description if available, Note: Don't use commas
+⭐man <COMMAND>
+<COMMAND> --help                        <COMMAND> -h
+apropos <COMMAND>
+```
+
+## TEMP Power
+```
+⭐sudo <COMMAND>                        Run a command as root
+sudo -u <USERNAME> <COMMAND>            Run command as another user	sudo
+⭐sudo su                               Open a root shell (becomes root)
+⭐sudo su <USERNAME>                    Switch to a user as root
+⭐⭐sudo!!                              Noob move, lazy retype command w/ sudo in front
+```
+
 ## FILES & NAVIGATING
 ```
 ⭐file FILE1                            see file type
@@ -36,6 +53,25 @@ cat >> FILE                             append stdinput to file
 tail -f FILE                            output content of file
 tail -n 10 FILE                         output last 10 lines of file
 head -n 10 FILE                         output first 10 lines of file
+```
+
+## Search
+```
+whereis <APP>                                       show all possible locations for program
+⭐locate <FILE>                                     shows all possible locations for file
+find . -name "*.txt"                                Find all .txt files from current dir
+find /var -type f -size +1M                         Find files over 1MB
+find . -mtime -4                                    Find all files modified in last 4 days
+# Note: Below search inside files, awk is grep w/ column awareness, sed is Stream EDitor
+⭐ grep -E "PATTERN1 | PATTERN2" FILE1 FILE2        search in files for PATTERN
+⭐ grep -ir "PATTERN" DIR                           search for pattern recursively & case insensitive in directory
+awk '{print $1, $3}' file.txt                       Print 1st and 3rd columns
+awk -F: '{print $1}' /etc/passwd                    Use ':' as delimiter
+awk '$3 > 1000' /etc/passwd                         Print lines where 3rd field > 1000
+sed 's/old/new/' file.txt                           /s: Substitute/Replace first 'old' with 'new' per line
+sed 's/old/new/g' file.txt                          /g: Replace all 'old' with 'new'
+sed '/pattern/d' file.txt                           /d: Delete lines matching pattern
+sed -n '2,4p' file.txt                              p: Print only lines 2 to 4
 ```
 
 ## Networking
@@ -83,6 +119,33 @@ uname -a                            show kernel config
 
 ## Compressing
 ```
-tar cf FILE.tar FILE1 FILE2         compress
+gzip FILE1                              single file compression
+gunzip FILE1.gz                         gzip -d FILE1.gz
+bzip2 FILE1                             single file compression
+bunzip2 FILE1.bz2                       bzip2 -d FILE1.bz2
+tar cf ARCHIVE.tar FILE1 FILE2          archive, not compress
+tar xf ARCHIVE.tar                      extract
+zip FILES.zip FILE1 FILE2
+unzip FILES.zip
+7z a ARCHIVE.7z FILE1 FILE2
+7z x ARCHIVE.7z
+rar a ARCHIVE.rar FILE1 FILE2
+unrar x ARCHIVE.rar
+⭐apack ARCHIVE.zip FILE1 FILE2         Auto-detects compression by extension
+⭐aunpack ARCHIVE.zip                   Auto-detect and extract
+```
 
+## Permissions
+```
+Note: Used w/ ls -la & creating scripts running with shebang #!/bin/bash
+4   (R)ead          2   (W)rite         1   e(X)ecute
+-rwxrwxrwx          chmod 777 FILE      chmod ugo+rwx FILE
+-rwxr-xr-x          chmod 755 FILE      chmod u=rwx,g=rx,o=rx FILE
+rw-r--r--           chmod 644 FILE      chmod u=rw,g=r,o=r FILE
+rm write from group & others            chmod go-w FILE
+
+chown Hacker FILE                       change owner of FILE
+chown HACKER:DEV FILE                   change owner & group of FILE
+
+chgrp DEV FILE                          change group of FILE
 ```
