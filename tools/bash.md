@@ -110,6 +110,7 @@ curl -X POST -d "username=admin&password=1234" http://target.com/login
 # API testing, Recon, or scripting authenticated requests
 curl -H "Authorization: Bearer eyJ...abc" https://api.example.com/user/profile
 ```
+[Resource Saver](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb?hl=en-US&pli=1): DL <b>all resources</b> from website
 
 ## Processes
 ```

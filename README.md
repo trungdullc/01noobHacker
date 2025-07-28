@@ -18,19 +18,75 @@ Networking: Ports, IP, HTTP, DNS, TLS/SSL,
 Crypto Basics: XOR, base64, hashing, AES, RSA
 Web Tech: HTTP methods, RESTful, Cookies, JavaScript basics, XSS, SQL Injection
 Tools: strings, file, netcat, nmap, wireshark, Burpsuite, Ghidra, pwntools
+VMware or Virtual Box running: ParrotOS, Kali Linux, Black Arch, Back Box
 ```
 https://github.com/paragonie/awesome-appsec<br><br>
 
-# 🦔 CTF Categories 🦔
+# 🦔 CTF Categories & Learning Sources🦔
 ```
-Cryptography
 Binary exploitation
+    pwn.college: https://pwn.college/
+    LiveOverflow: https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN
+    SploitFun (Writeup): https://sploitfun.wordpress.com/
 Cryptography
+    Crypto 101: https://www.crypto101.io/
+    Overview of Cryptography: https://www.garykessler.net/library/crypto.html
+    CryptoBook: https://toc.cryptobook.us/
+    Applied Cryptography: Protocols, Algorithms, and Source Code in C by Schneier, Bruce
+    Serious Cryptography by Jean-Philippe Aumasson
 Forensic
 OSINT (Open-Source Intelligence)
+Networking
+    Computer Networking: A Top-Down Approach by James F. Kurose
+    TCP/IP Illustrated: The Protocols by Kevin R. Fall
 Reverse Engineering
+    Reverse Engineering for Beginners: https://beginners.re/
+    Tuts4You: https://tuts4you.com/
+    x86 Assembly: https://en.wikibooks.org/wiki/X86_Assembly
 Steganography
 Web exploitation
+    Port Swigger: https://portswigger.net/web-security/
+    Web Application Pen-Testing: https://www.irongeek.com/i.php?page=videos/web-application-pen-testing-tutorials-with-mutillidae
+
+# --------------------------- Not CTF Categories ---------------------------
+Operating Systems/Architecture
+    General
+        Modern operating systems by Tanenbaum, Andrew S.
+        Structured computer organization by Tanenbaum, Andrew S.
+    Windows
+        Windows Internal: System architecture, processes, threads, memory management, and more by Pavel Yosifovich
+        Accelerated Windows Malware Analysis with Memory Dumps by Dmitry Vostokov
+    Linux (GNU's Not Unix)
+        Understanding the Linux Kernel by Daniel P. Bovet
+        Linux with operating system concepts by Richard Fox
+    macOS
+        MAC OS X Internals: A Systems Approach by Amit Singh
+Programming
+    C
+        Introduction to Algorithms by Thomas H. Cormen
+        The C Programming Language by Ritchie & Kernighan
+        LearnCPP: https://www.learncpp.com/
+    Assembly
+        Practical Reverse Engineering: x86, x64, ARM, Windows Kernel, Reversing Tools, and Obfuscation by Bruce Dang
+        Modern Assembly Language Programming With the ARM Processor by Larry D. Pyeatt
+    Python
+        https://learnpythonthehardway.org/
+    Go
+        https://go.dev/doc/effective_go
+    Rust
+        https://doc.rust-lang.org/book/
+    Bash
+        Learning the bash shell by Cameron Newham
+        BashGuide: https://mywiki.wooledge.org/BashGuide
+        GNU Bash Manual: https://www.gnu.org/software/bash/manual/
+        Linux Command Line And Shell Scripting Bible by Wiley
+        Serious Shell Programming: https://freebsdfrau.gitbook.io/serious-shell-programming/
+    PowerShell
+        PowerShell in a month of lunches: https://www.youtube.com/playlist?list=PL6D474E721138865A
+        PowerShell Master Class: https://www.youtube.com/playlist?list=PLlVtbbG169nFq_hR7FcMYg32xsSAObuq8
+        PowerShell Documentation: https://learn.microsoft.com/en-us/powershell/
+News
+    https://news.ycombinator.com/
 ```
 
 # 🏎️ Start with overTheWire 🚓
@@ -89,8 +145,15 @@ Purpose: VM-based hacking playground, harder than TryHackMe<br>
 Source: https://www.hackthebox.com/<br>
 <b>TODO Later</b>
 
+# Continue to pwnable.kr
+Purpose: Pwn<br>
+Source: https://pwnable.kr/index.php<br>
+<b>TODO Later</b>
+
 # End with Interactive CTF
-https://try2hack.me/
+Purpose: Dynamic Learning<br>
+Souce: https://try2hack.me/<br>
+<b>TODO Later</b>
 
 # 💻 Tools to create/host CTF 🛜
 - Creating CTF Enviornment
@@ -119,18 +182,27 @@ https://try2hack.me/
 - Operating System Command Line Codes
     - [Linux (BASH)](/tools/bash.md)
     - Windows (PowerShell)
+- ASCII Table
+    - [ASCII Table](https://www.asciitable.com/)
 - Converting
-    - [awk](https://www.gnu.org/software/gawk/manual/gawk.html): Kali Linux | ParrotOS, Search pattern inside files <b>w/ column field awareness</b>
     - [base64](https://www.man7.org/linux/man-pages/man1/base64.1.html): Encoding/Decoding base64
     - [hexdump](https://www.man7.org/linux/man-pages/man1/hexdump.1.html): Display file contents in hexadecimal, decimal, octal, or ascii
+    - [HexEd.it](https://hexed.it/): Online hex editor for files
+    - [RapidTables](https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html): Online ASCII, Hex, Binary, Decimal, Base64 converter
+    - [XOR](https://xor.pw/): Online XOR Calculator
     - [xxd](https://www.commandlinux.com/man-page/man1/xxd.1.html): Kali Linux | ParrotOS, Convert binary data to hexadecimal format
 - General
+    - [awk](https://www.gnu.org/software/gawk/manual/gawk.html): Kali Linux | ParrotOS, Search pattern inside files <b>w/ column field awareness</b>
     - [bgrep](https://github.com/nneonneo/bgrep): Kali Linux | ParrotOS Search binary strings in binary file
     - [file](https://www.geeksforgeeks.org/linux-unix/how-to-find-out-file-types-in-linux/): Kali Linux | ParrotOS, Identify file types base on content
     - [grep](https://www.man7.org/linux/man-pages/man1/grep.1.html): Kali Linux | ParrotOS, Search pattern inside files
     - [HackTricks](https://book.hacktricks.wiki/en/index.html) ⭐⭐
     - [sed](): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
     - [tmux](https://github.com/tmux/tmux/wiki): Run & manage multiple terminal sessions inside 1 terminal window
+- Regular Expression Checker
+    - [Debuggex](https://www.debuggex.com/): Online check regular expressions
+    - [RegEX101](https://regex101.com/): Online RE checker
+    - [RegEXr](https://regexr.com/): Online RE checker
 - Attack (<b>Beware: Man in Middle</b>)
     - [bettercap](https://github.com/bettercap/bettercap)
     - [yersinia](https://github.com/tomac/yersinia)
@@ -149,6 +221,7 @@ https://try2hack.me/
     - [Ophcrack](https://ophcrack.sourceforge.io/): Windows LM and NTLM hashes
     - [Patator](https://github.com/lanjelot/patator)
     - [pdfcrack](https://github.com/alitrack/PDFCrack): Kali Linux | ParrotOS, recovering PDF passwords
+    - [Zip Password Cracker](https://passwordrecovery.io/zip-file-password-removal/): Online John The Riper
 - Cryptography
     - [Cryptii](https://cryptii.com/): Web App for encypt/decrypt & encoding
     - [<b>CyberChef</b>](https://gchq.github.io/CyberChef): Analysing/Decoding data ⭐⭐⭐
@@ -230,10 +303,10 @@ https://try2hack.me/
     - [DeepSeek](https://www.deepseek.com/en): IP Blocked
 
 # 🏆 Current CTF Competitions 🏆
-https://ctftime.org/
+[CTFTime](https://ctftime.org/)
 
 # 💰 Bug Bounty 💰
-https://www.bugcrowd.com/
+[BugCrowd](https://www.bugcrowd.com/)
 
 # Continue Education
 ```
