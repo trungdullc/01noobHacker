@@ -53,6 +53,25 @@ cat >> FILE                             append stdinput to file
 tail -f FILE                            output content of file
 tail -n 10 FILE                         output last 10 lines of file
 head -n 10 FILE                         output first 10 lines of file
+wc FILE                                 (l)ines (w)ords bytes
+wc -c FILE                              Bytes (characters)
+```
+
+## Comparing Files
+```
+diff FILE1 FILE2                                    shows line by line differences
+sdiff FILE1 FILE2                                   shows side by side file comparison
+```
+
+## Sorting and Extracting
+```
+cat WORDS.txt | sort -r                             reverse sort
+sort WORDS.txt | uniq -c                            count each uniq line, Note: must use sort before unique
+sort WORDS.txt | uniq -u                            show unique words only no duplicates
+cut -c1-4 FILE.txt                                  First 4 characters of each line
+cut -d',' -f1,2 FILE.csv                            Extract 1st & 2nd field in comma-separated file, Delimiter is ,
+cut -d':' -f1 /etc/passwd	                        Get usernames from passwd file, Delimiter is :
+cut -f2                                             Get 2nd field (tab-delimited by default)
 ```
 
 ## Search
@@ -98,13 +117,21 @@ curl -H "Authorization: Bearer eyJ...abc" https://api.example.com/user/profile
 top                                 real time monitoring (dynamic)
 htop                                advanced real time monitoring (dynamic)
 kill PID                            kill process w/ Process ID (PID)
+⭐kill -9 PID                       SIGKILL (forced kill)
 killall PROC                        kill all processes named PROC
+
+sleep 100                           pause: ctrl + z
+sleep 200 &
+bg                                  resumes sleep in background
+fg                                  brings sleep to foreground
+fg %2                               brings 2nd job to foreground
+⭐jobs                              view background jobs
 ```
 
 # System Info (once got reverse shell on victim)
 ```
 ⭐whoami                            $USER
-hostname
+hostname                            $HOSTNAME
 date
 uptime                              shows uptime
 w                                   shows who online
@@ -112,7 +139,7 @@ cat /proc/cpuinfo
 cat /proc/meminfo
 free                                show memory and swap usage
 du                                  show directory space usage
-du -sh                              display readable size in GB
+du -sh                              display readable size in human-readable format (KB/MB/GB/TB)
 df                                  show disk usage
 uname -a                            show kernel config
 ```
