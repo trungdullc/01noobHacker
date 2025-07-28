@@ -22,26 +22,6 @@ VMware or Virtual Box running: ParrotOS, Kali Linux, Black Arch, Back Box
 ```
 https://github.com/paragonie/awesome-appsec<br><br>
 
-# Red Team/Penetration Attack
-```
-Aircrack-ng: https://www.aircrack-ng.org/ Wi-Fi Testing, monitoring .pcap
-BloodHound: https://github.com/SpecterOps/BloodHound-Legacy Identify file/directory attack paths
-Burp Suite: https://portswigger.net/burp Web Application Testing
-dnschef: https://github.com/iphelps/dnschef DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)
-Ghidra: https://ghidra-sre.org/ Reverse Engineering (Disassembling, Decompiling)
-Hydra: https://github.com/vanhauser-thc/thc-hydra Attack FTP HTTP SSH SAP
-Impacket: https://github.com/fortra/impacket Python collection for creating exploits
-Metasploit: https://www.metasploit.com/ Penetration Testing Framework for testing exploits
-Nmap: https://nmap.org/ Network Mapper, Network Discovery, Port Scanner
-Osmedeus: https://github.com/j3ssie/osmedeus Automate Reconnaissance Process
-Recon-ng: https://github.com/lanmaster53/recon-ng Reconniance Framework
-Responder: https://github.com/lgandx/Responder LLMNR Poisioner for Credential Harvesting
-
-# Post Exploitation
-Empire: https://github.com/BC-SECURITY/Empire Post-exploitation & Adversary Emulation Framework
-Mimikatz: https://github.com/ParrotSec/mimikatz Extracting plaintext passwords, hashes, pin codes, kerberos tickets from memory
-```
-
 # 🦔 CTF Categories & Learning Sources🦔
 ```
 Noob
@@ -290,8 +270,10 @@ Souce: https://try2hack.me/<br>
     - [Web Archive](https://web.archive.org/)
 - Network
     - [GTFOBins](https://gtfobins.github.io/): Unix binaries
+    - [mssqlclient.py]()
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
     - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
+    - [smbmap](tools/smbmap.md)
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
     - [tcpflow](https://linux.die.net/man/1/tcpflow): Kali Linux | ParrotOS, CLI Network Protocol Analyzer
@@ -319,6 +301,7 @@ Souce: https://try2hack.me/<br>
     - [Color Picker](https://imagecolorpicker.com/): Not really used for CTF
     - [Dual Tone Decoder](http://dialabc.com/sound/detect/): find DTMF tones in audio clips
     - [ffmpeg](https://ffmpeg.org/ffmpeg-utils.html): Kali Linux | ParrotOS, Extract strings from media files
+    - [olevba](tools/olevba.md)
     - [OpenStego](https://www.openstego.com/)
     - [pdfdetach](https://www.xpdfreader.com/pdfdetach-man.html): Kali Linux | ParrotOS, Extract Embedded files from PDF
     - [pdfimages](https://man.archlinux.org/man/pdfimages.1.en): Kali Linux | ParrotOS, extract hidden images from PDF
@@ -369,3 +352,27 @@ OSCP (Offensive Security Certified Professional)                Hands-on ethical
 CISSP (Certified Information Systems Security Professional)     Security domains
 OSCE/OSWE/OSEP                                                  Advanced offensive security
 ```
+
+# Red Team/Penetration Attack
+[Aircrack-ng](https://www.aircrack-ng.org/): Wi-Fi Testing, monitoring .pcap
+[BloodHound](https://github.com/SpecterOps/BloodHound-Legacy): Identify file/directory attack paths
+[Burp Suite](https://portswigger.net/burp): Web Application Testing
+[dnschef](https://github.com/iphelps/dnschef): DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)
+[Ghidra](https://ghidra-sre.org/): Reverse Engineering (Disassembling, Decompiling)
+[Hydra](https://github.com/vanhauser-thc/thc-hydra): Attack FTP HTTP SSH SAP
+[Impacket](https://github.com/fortra/impacket): Python collection for creating exploits
+[Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits
+[Nmap](https://nmap.org/): Network Mapper, Network Discovery, Port Scanner
+[Osmedeus](https://github.com/j3ssie/osmedeus): Automate Reconnaissance Process
+[Recon-ng](https://github.com/lanmaster53/recon-ng): Reconniance Framework
+[Responder](https://github.com/lgandx/Responder): LLMNR Poisioner for Credential Harvesting
+
+# Post Exploitation
+Empire](https://github.com/BC-SECURITY/Empire): Post-exploitation & Adversary Emulation Framework
+Mimikatz](https://github.com/ParrotSec/mimikatz): Extracting plaintext passwords, hashes, pin codes, kerberos tickets from memory
+
+# Reverse Shell
+[LiveShell](https://github.com/livepwn/liveshell)
+[Online Reverse Shell](https://www.revshells.com/): Online ⭐
+[Nishang](tools/nishang.md)
+[PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online

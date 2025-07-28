@@ -142,8 +142,11 @@ free                                show memory and swap usage
 du                                  show directory space usage
 du -sh                              display readable size in human-readable format (KB/MB/GB/TB)
 df                                  show disk usage
+⭐lscpu                             CPU info
+lsblk                               Disk info
 uname -a                            show kernel config
 ```
+[snmp](tools/snmp.md)
 
 ## Compressing
 ```
@@ -177,3 +180,6 @@ chown HACKER:DEV FILE                   change owner & group of FILE
 
 chgrp DEV FILE                          change group of FILE
 ```
+
+## Back to README.md
+[BACK](/README.md)
