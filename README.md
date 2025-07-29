@@ -277,6 +277,7 @@ Souce: https://try2hack.me/<br>
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
     - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool⭐⭐
     - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file
+    - [certutil](tools/certutil.md)
     - [dnscat2](https://github.com/iagox86/dnscat2): Tunneling data over DNS
     - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers ⭐
     - [hachoir-subfile](https://github.com/foreni-packages/hachoir-subfile): CLI carve files of another file. Similar to binwalk & foremost
@@ -306,6 +307,7 @@ Souce: https://try2hack.me/<br>
     - [GTFOBins](https://gtfobins.github.io/): Unix binaries
     - [impacket](tools/impacket.md): Start a Samba share
     - [mssqlclient.py](tools/mssqlclient.md)
+    - [nc](tools/nc.md)
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
     - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
     - [smbmap](tools/smbmap.md)
@@ -359,6 +361,7 @@ Souce: https://try2hack.me/<br>
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
         Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
+    - [Active Server Pages Extended Misuse](tools/aspxmisuse.md)
     - [AWS: S3 Buckets](tools/awsbucket.md)
     - Backup pages ( ~ and .bak and .swp): Dig up old php source code
     - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐
@@ -395,6 +398,14 @@ Souce: https://try2hack.me/<br>
         - [Magic Hashes](/tools/magichash.md)
     - PowerShell
         - [Bypass](tools/powershellbypass.md)
+    - PureFTP
+        - [Misuse](tools/pureftp.md)
+    - SMB
+        - [Misuse](tools/smbmisuse.md)
+    - TFTP
+        - [Misuse](tools/tftpmisuse.md)
+    - VBScript
+        - [Misuse](tools/vbscriptmisuse.md)
 - Other Helpers
     - [dockerExample](sudo apt install -y caca-utils)
     - img2txt: sudo apt install -y caca-utils: convert an image into ASCII
@@ -438,6 +449,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [Hydra](tools/hydra.md): Attack FTP HTTP SSH SAP<br>
 [Impacket](https://github.com/fortra/impacket): Python collection for creating exploits<br>
 [Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits<br>
+[msfvenom](tools/msfvenom.md)
 [nmap](tools/nmap.md): Network Mapper, Network Discovery, Port Scanner ⭐<br>
 [Osmedeus](https://github.com/j3ssie/osmedeus): Automate Reconnaissance Process<br>
 [Recon-ng](https://github.com/lanmaster53/recon-ng): Reconniance Framework<br>
