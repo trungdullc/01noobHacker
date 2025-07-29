@@ -368,7 +368,7 @@ Souce: https://try2hack.me/<br>
     - [CSP Evaluator](https://csp-evaluator.withgoogle.com/): Online Content Security Policy (CSP) checker
     - [dirbuster](https://github.com/KajanM/DirBuster): Kali Linux | ParrotOS, find hidden directories in Web App
     - [Edit-This-Cookie](https://github.com/ETCExtensions/Edit-This-Cookie): Editing cookies
-    - [gobuster](https://github.com/OJ/gobuster): Kali Linux | ParrotOS, find hidden directories in Web App
+    - [gobuster](tools/gobuster.md): Kali Linux | ParrotOS, find hidden directories in Web App ⭐
     - [HackBar](https://github.com/PhHitachi/HackBar): Manual SQL injection atk
     - [MongoDB](tools/mongodb.md)
     - [nikito](https://github.com/sullo/nikto): Kali Linux | ParrotOS, Web Server vunerability scanner
@@ -377,9 +377,9 @@ Souce: https://try2hack.me/<br>
     - [Racoon](https://github.com/evyatarmeged/Raccoon): Scrapping/Enumerating endpoints in Web App
     - [requestb.in](https://pipedream.com/requestbin): Online catch HTTP requests to find XSS vulnerabilty
     - [robots.txt](https://www.robotstxt.org/)
-    - [sqlmap](https://www.kali.org/tools/sqlmap/): Kali Linux | ParrotOS, automating SQL injection atk
-        - SELECT ( IF ( 1=1, "Condition successful!", "Condition errored!" ) )
+    - [sqlmap](tools/sqlmap.md): Kali Linux | ParrotOS, automating SQL injection atk
     - [Subdomain Finder](https://subdomainfinder.c99.nl/index.php): Online Subdomain Finder
+    - [Web App Default DB](https://github.com/pwnwiki/webappdefaultsdb/blob/master/README.md)⭐⭐⭐
     - [XSS PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)⭐
     - [XSStrike](https://github.com/s0md3v/XSStrike): CLI for automated XSS attacks
     - [XSS Filter Evasion](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)⭐⭐
@@ -393,6 +393,8 @@ Souce: https://try2hack.me/<br>
         - [Mac AutoLogin Password Cracking](tools/macautologin.md)
     - PHP
         - [Magic Hashes](/tools/magichash.md)
+    - PowerShell
+        - [Bypass](tools/powershellbypass.md)
 - Other Helpers
     - [dockerExample](sudo apt install -y caca-utils)
     - img2txt: sudo apt install -y caca-utils: convert an image into ASCII
@@ -426,26 +428,27 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 ```
 
 # Red Team/Penetration Attack
-[Aircrack-ng](https://www.aircrack-ng.org/): Wi-Fi Testing, monitoring .pcap
-[AMSI Bypass](https://0x00-0x00.github.io/research/2018/10/28/How-to-bypass-AMSI-and-Execute-ANY-malicious-powershell-code.html?mkt_tok=eyJpIjoiWTJGaU5qbGlaVFZsTXpVdyIsInQiOiJBSXdzQm5FMGY0S1BrTWlBcVBlZ3ErN2NcL1RNeGkwcnNSK3FZcGVvaUhFRVJiQUhVcmVIWko0aWdNNCtXcVRrcWtDRTMxRGlpM1wvQlIxVHZlU1RUNk5sRVJnQ1dUZEFVQ0JTRHk4ejNVQTBWK1Y3Um1EWHZYdGY5YWQ5V2hTZFVXIn0%3D): Anti-virus evasion with PowerShell
-[BloodHound](https://github.com/SpecterOps/BloodHound-Legacy): Identify file/directory attack paths
-[Burp Suite](https://portswigger.net/burp): Web Application Testing
-[dnschef](https://github.com/iphelps/dnschef): DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)
-[Ghidra](https://ghidra-sre.org/): Reverse Engineering (Disassembling, Decompiling)
-[Hydra](https://github.com/vanhauser-thc/thc-hydra): Attack FTP HTTP SSH SAP
-[Impacket](https://github.com/fortra/impacket): Python collection for creating exploits
-[Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits
-[Nmap](https://nmap.org/): Network Mapper, Network Discovery, Port Scanner
-[Osmedeus](https://github.com/j3ssie/osmedeus): Automate Reconnaissance Process
-[Recon-ng](https://github.com/lanmaster53/recon-ng): Reconniance Framework
+[Aircrack-ng](https://www.aircrack-ng.org/): Wi-Fi Testing, monitoring .pcap<br>
+[AMSI Bypass](https://0x00-0x00.github.io/research/2018/10/28/How-to-bypass-AMSI-and-Execute-ANY-malicious-powershell-code.html?mkt_tok=eyJpIjoiWTJGaU5qbGlaVFZsTXpVdyIsInQiOiJBSXdzQm5FMGY0S1BrTWlBcVBlZ3ErN2NcL1RNeGkwcnNSK3FZcGVvaUhFRVJiQUhVcmVIWko0aWdNNCtXcVRrcWtDRTMxRGlpM1wvQlIxVHZlU1RUNk5sRVJnQ1dUZEFVQ0JTRHk4ejNVQTBWK1Y3Um1EWHZYdGY5YWQ5V2hTZFVXIn0%3D): Anti-virus evasion with PowerShell<br>
+[autorecon](tools/autorecon.md): automatic recon playbook ⭐⭐<br>
+[BloodHound](https://github.com/SpecterOps/BloodHound-Legacy): Identify file/directory attack paths<br>
+[Burp Suite](https://portswigger.net/burp): Web Application Testing<br>
+[dnschef](https://github.com/iphelps/dnschef): DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)<br>
+[Ghidra](https://ghidra-sre.org/): Reverse Engineering (Disassembling, Decompiling)<br>
+[Hydra](tools/hydra.md): Attack FTP HTTP SSH SAP<br>
+[Impacket](https://github.com/fortra/impacket): Python collection for creating exploits<br>
+[Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits<br>
+[nmap](tools/nmap.md): Network Mapper, Network Discovery, Port Scanner ⭐<br>
+[Osmedeus](https://github.com/j3ssie/osmedeus): Automate Reconnaissance Process<br>
+[Recon-ng](https://github.com/lanmaster53/recon-ng): Reconniance Framework<br>
 [Responder](https://github.com/lgandx/Responder): LLMNR Poisioner for Credential Harvesting
 
 # Post Exploitation
-[Empire](https://github.com/BC-SECURITY/Empire): Post-exploitation & Adversary Emulation Framework ⭐
+[Empire](https://github.com/BC-SECURITY/Empire): Post-exploitation & Adversary Emulation Framework ⭐<br>
 [Mimikatz](https://github.com/ParrotSec/mimikatz): Extracting plaintext passwords, hashes, pin codes, kerberos tickets from memory
 
 # Reverse Shell
-[LiveShell](https://github.com/livepwn/liveshell)
-[Online Reverse Shell](https://www.revshells.com/): Online ⭐
-[Nishang](tools/nishang.md)⭐
+[LiveShell](https://github.com/livepwn/liveshell)<br>
+[Online Reverse Shell](https://www.revshells.com/): Online ⭐<br>
+[Nishang](tools/nishang.md)⭐<br>
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online

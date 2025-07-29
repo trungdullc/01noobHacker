@@ -16,6 +16,9 @@ Option	                    Description
 
 # Runs all default scans (users, shares, passwords, policies)
 enum4linux 8.8.8.8
+
+# Scan Host, Suppress Errors
+enum4linux 192.168.0.1 | grep -Ev '^(Use of)' > enum4linux.out
 ```
 
 ## Back to README.md

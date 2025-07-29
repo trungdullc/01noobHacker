@@ -147,7 +147,9 @@ df                                  show disk usage
 lsblk                               Disk info
 uname -a                            show kernel config
 ```
+[showmount](tools/showmount.md)<br>
 [snmp](tools/snmp.md)
+
 
 ## Compressing
 ```
