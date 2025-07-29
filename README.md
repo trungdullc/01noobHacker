@@ -223,29 +223,50 @@ Souce: https://try2hack.me/<br>
     - [Ophcrack](https://ophcrack.sourceforge.io/): Windows LM and NTLM hashes
     - [Patator](https://github.com/lanjelot/patator)
     - [pdfcrack](https://github.com/alitrack/PDFCrack): Kali Linux | ParrotOS, recovering PDF passwords
+    - [wifite](tools/wifite.md): Automates multiple Wi-Fi attacks
     - [Zip Password Cracker](https://passwordrecovery.io/zip-file-password-removal/): Online John The Riper
 - Cryptography
+    - [Atbash Cipher](http://rumkin.com/tools/cipher/atbash.php)
+    - [Bacon Cipher](http://rumkin.com/tools/cipher/baconian.php)
+    - [Beaufourt Cipher](https://www.dcode.fr/beaufort-cipher)
     - [Big Integer Calculator](http://www.javascripter.net/math/calculators/100digitbigintcalculator.htm): Online Calculator
+    - [Caesar Cipher](https://www.dcode.fr/caesar-cipher)
     - [CrackStation](https://crackstation.net/): Online Password Hash Cracker
     - [Cryptii](https://cryptii.com/): Web App for encypt/decrypt & encoding
     - [<b>CyberChef</b>](https://gchq.github.io/CyberChef): Analysing/Decoding data ⭐⭐⭐
     - [Crunch](https://www.guballa.de/substitution-solver): Create custom dictionary for atk
-    - [dCode](https://www.dcode.fr/)
+    - [Daggers Cipher](https://www.dcode.fr/daggers-alphabet)
+    - [dCode](https://www.dcode.fr/)⭐⭐
     - [FactorDB](https://factordb.com/): Online Integer Factorization
     - [FeatherDuster](https://github.com/nccgroup/featherduster): Cryptanalysis: Identify/Exploit weakness
+    - [Gronsfeld Cipher](http://rumkin.com/tools/cipher/gronsfeld.php)
     - [hash_extender](https://github.com/iagox86/hash_extender): Hash length extension attack
     - [Hash Identifier](https://www.kali.org/tools/hash-identifier/): Hash Identifier ⭐
+    - [Hexahue Alphabet](https://www.boxentriq.com/code-breaking/hexahue)
+    - [Hylian Language (Twilight Princess)](https://www.dcode.fr/hylian-language-twilight-princess)
+    - [Hylian Language (Breath of the Wild)](https://www.dcode.fr/hylian-language-breath-of-the-wild)
     - [padding-oracle-attacker](https://github.com/KishanBagaria/padding-oracle-attacker): Padding oracle attacks
     - [Keyboard Shift Cipher](https://www.dcode.fr/keyboard-shift-cipher): Web App decryption
     - [Morse Code Translator](https://morsecode.world/international/translator.html): Online Morse Code Translator
     - [PkCrack](https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html): Breaking PkZip-encryption
+    - [Playfair Cipher](http://bionsgadgets.appspot.com/ww_forms/playfair_ph_web_worker3.html)
     - [QuipQuip](https://quipqiup.com/): Substitution/vigenere Cryptogram solver
+    - [Railfence Cipher](http://rumkin.com/tools/cipher/railfence.php)
     - [RSACTFTool](https://github.com/RsaCtfTool/RsaCtfTool): Recovering RSA private key
     - [RSATool](https://github.com/ius/rsatool): Generate private key w/o p | q
+    - [Sheikah Language (Breathe of the Wild)](https://www.dcode.fr/sheikah-language)
     - [ShiftCipher](https://github.com/CyberJarvis/ShiftCipher): Caesar Cipher encryption/decryption
     - [Substitution Solver](https://www.guballa.de/substitution-solver): Online Substitution Solver
+    - [Substitution Cipher](https://quipqiup.com/)
     - [Vigenere Solver](https://www.guballa.de/vigenere-solver): Online Vigenere Cipher Solver
     - [XORTool](https://github.com/hellman/xortool): Analyze multi-byte XOR cipher
+- Esoteric Programming Languages (Puzzle Cryptography for fun only)
+    - [Brain Fuck](https://copy.sh/brainfuck/)
+    - [Malboge](http://www.malbolge.doleczek.pl/)
+    - [Ook!](https://www.dcode.fr/ook-language)
+    - [Piet](https://www.bertnase.de/npiet/)
+    - [Rockstar](https://codewithrockstar.com/online)
+    - [Try It Online](https://tio.run/#): Online Esoteric language interpreters ⭐
 - Forensics (File Format/Memory Dump/Network Packet Capture Analysis)
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
     - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool⭐⭐
@@ -269,14 +290,18 @@ Souce: https://try2hack.me/<br>
     - [Sherlock](https://github.com/sherlock-project/sherlock): Hunts cheaters by username across multiple social media
     - [Web Archive](https://web.archive.org/)
 - Network
+    - [drupalgeddon2](https://github.com/dreadlocked/Drupalgeddon2): Attack script for old/outdated Drupal servers
+    - [editcap](): from Wireshark
+    - [enum4linux](tools/enum4linux.md): Scan Windows Samba shares
     - [GTFOBins](https://gtfobins.github.io/): Unix binaries
-    - [mssqlclient.py]()
+    - [impacket](tools/impacket.md): Start a Samba share
+    - [mssqlclient.py](tools/mssqlclient.md)
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
     - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
     - [smbmap](tools/smbmap.md)
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
-    - [tcpflow](https://linux.die.net/man/1/tcpflow): Kali Linux | ParrotOS, CLI Network Protocol Analyzer
+    - [tcpflow](tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer
     - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer
 - Reverse Engineering
     - [androguard](https://github.com/androguard/androguard): Analyzing Android Apps
@@ -301,17 +326,20 @@ Souce: https://try2hack.me/<br>
     - [Color Picker](https://imagecolorpicker.com/): Not really used for CTF
     - [Dual Tone Decoder](http://dialabc.com/sound/detect/): find DTMF tones in audio clips
     - [ffmpeg](https://ffmpeg.org/ffmpeg-utils.html): Kali Linux | ParrotOS, Extract strings from media files
+    - [jsteg](https://github.com/lukechampine/jsteg): CLI use against JPEG
+    - [ImageHide](https://www.softpedia.com/get/Security/Encrypting/ImageHide.shtml)
     - [olevba](tools/olevba.md)
     - [OpenStego](https://www.openstego.com/)
     - [pdfdetach](https://www.xpdfreader.com/pdfdetach-man.html): Kali Linux | ParrotOS, Extract Embedded files from PDF
     - [pdfimages](https://man.archlinux.org/man/pdfimages.1.en): Kali Linux | ParrotOS, extract hidden images from PDF
     - [stegcracker](https://www.kali.org/tools/stegcracker/): Kali Linux | ParrotOS
-    - [steghide](https://steghide.sourceforge.net/): Kali Linux | ParrotOS ⭐
+    - [steghide](https://steghide.sourceforge.net/): Kali Linux | ParrotOS ⭐⭐
     - [Steganography Online](https://stylesuxx.github.io/steganography/): Web App
     - [Steg Online](https://www.georgeom.net/StegOnline/upload): Web App
     - [stegseek](https://github.com/RickdeJager/stegseek)
     - [StegSolve](https://github.com/Giotino/stegsolve/releases)
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
+        Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
     - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐
     - [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping): Bypass CloudFlare protection (testing)
