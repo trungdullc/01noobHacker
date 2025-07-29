@@ -1,6 +1,6 @@
 # Nishang
 ```
-Description: PowerShell Reverse Shell
+Description: Pentesting, has support for an ICMP reverse shell
 
 # Clone Nishang repo
 git clone https://github.com/samratashok/nishang

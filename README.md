@@ -87,9 +87,11 @@ Programming
         PowerShell in a month of lunches: https://www.youtube.com/playlist?list=PL6D474E721138865A
         PowerShell Master Class: https://www.youtube.com/playlist?list=PLlVtbbG169nFq_hR7FcMYg32xsSAObuq8
         PowerShell Documentation: https://learn.microsoft.com/en-us/powershell/
-News
-    https://news.ycombinator.com/
 ```
+
+# Research
+[HackerNews](https://news.ycombinator.com/)
+[Search CSV Exploits](tools/searchexploits.md)
 
 # 🏎️ Start with overTheWire 🚓
 Purpose: Learn Linux commands<br>
@@ -215,6 +217,8 @@ Souce: https://try2hack.me/<br>
     - [LNjector](https://github.com/DataSearchers/LNjector---Windows-DLL-injector): DLL Injector
     - [readelf](https://thelinuxcode.com/readelf-linux-command/): Kali Linux | ParrotOS, analyzing ELF
 - Brute Force/Dictonary Attack
+    - [EFF Dice-Generated Passphrases](tools/eff.md)
+    - [fcrackzip](https://github.com/hyc/fcrackzip)
     - [Hashcat](https://hashcat.net/hashcat/): Kali Linux | ParrotOS ⭐
     - [Hydra](https://www.kali.org/tools/hydra/): Kali Linux | ParrotOS ⭐
     - [John The Riper: Jumbo](https://github.com/openwall/john): enhanced John the Ripper
@@ -314,7 +318,11 @@ Souce: https://try2hack.me/<br>
     - [apktool](https://github.com/iBotPeaches/Apktool): Kali Linux | ParrotOS, reverse engineering Android APK
     - [Binary Ninja](https://binary.ninja/): Online Demo, Disassembler/Decompiler ⭐
     - [DogBolt](https://dogbolt.org/): Online binary file decompiler (like Ghidra & BinaryNinja)
+    - [dnSpy](https://github.com/dnSpy/dnSpy): Window GUI decompile and reverse engineer .NET binaries
     - [dumpzilla](tools/dumpzilla.md): Python script to examine a .mozilla configuration file
+    - [Easy Python Decompiler](https://sourceforge.net/projects/easypythondecompiler/): Decompile Python bytecode (.pyc)
+    - [GAMEBOY ROMS]()
+    - [gcc](tools/gcc.md)
     - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐
     - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐
     - [Hopper](https://www.hopperapp.com/): Not Free, Disassembler/Decompiler Mac OSX and Linux
@@ -327,6 +335,7 @@ Souce: https://try2hack.me/<br>
     - [radare2](https://github.com/radareorg/radare2): Kali Linux | ParrotOS, Disassembler/Debugger
 - Pwn
     - [Syscall Reference](https://syscalls.w3challs.com/): x86 / x64 syscalls manual w/ registers value
+    - [strace](https://github.com/strace/strace): Kali Linux | ParrotOS, tracing library calls
     - [Asm/Disasm](https://defuse.ca/online-x86-assembler.htm#disassembly): Online x86 / x64 assembler and disassembler
     - [LibC Check](https://defuse.ca/online-x86-assembler.htm#disassembly): Find all possible libc versions w/ symbol name and entry address
 - Steganography
@@ -350,6 +359,7 @@ Souce: https://try2hack.me/<br>
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
         Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
+    - [AWS: S3 Buckets](tools/awsbucket.md)
     - Backup pages ( ~ and .bak and .swp): Dig up old php source code
     - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐
     - [CloudflareBypass](tools/cloudflarebypass.md)
@@ -360,23 +370,35 @@ Souce: https://try2hack.me/<br>
     - [Edit-This-Cookie](https://github.com/ETCExtensions/Edit-This-Cookie): Editing cookies
     - [gobuster](https://github.com/OJ/gobuster): Kali Linux | ParrotOS, find hidden directories in Web App
     - [HackBar](https://github.com/PhHitachi/HackBar): Manual SQL injection atk
+    - [MongoDB](tools/mongodb.md)
     - [nikito](https://github.com/sullo/nikto): Kali Linux | ParrotOS, Web Server vunerability scanner
     - Noob: /admin/ /.git/
-    - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings): Payload Library ⭐⭐⭐
+    - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings): Payload Library ⭐⭐⭐⭐
     - [Racoon](https://github.com/evyatarmeged/Raccoon): Scrapping/Enumerating endpoints in Web App
+    - [requestb.in](https://pipedream.com/requestbin): Online catch HTTP requests to find XSS vulnerabilty
     - [robots.txt](https://www.robotstxt.org/)
     - [sqlmap](https://www.kali.org/tools/sqlmap/): Kali Linux | ParrotOS, automating SQL injection atk
-    - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan and do reconnaissance for WordPress
+        - SELECT ( IF ( 1=1, "Condition successful!", "Condition errored!" ) )
     - [Subdomain Finder](https://subdomainfinder.c99.nl/index.php): Online Subdomain Finder
     - [XSS PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)⭐
     - [XSStrike](https://github.com/s0md3v/XSStrike): CLI for automated XSS attacks
     - [XSS Filter Evasion](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)⭐⭐
     - [XXE (XML eXternal Entity)](tools/xxe.md)
+    - WordPress
+        - [Wordpress Password Hash Generator](tools/wordpresshash.md) 
+        - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan and do reconnaissance for WordPress
 - Vulnerabilities
     - macOS
+        - [Apple Hidden Files](tools/dsstore.md)
         - [Mac AutoLogin Password Cracking](tools/macautologin.md)
     - PHP
         - [Magic Hashes](/tools/magichash.md)
+- Other Helpers
+    - [dockerExample](sudo apt install -y caca-utils)
+    - img2txt: sudo apt install -y caca-utils: convert an image into ASCII
+    - [Restricted Environments](tools/restricted.md)⭐⭐⭐
+    - [Unflattening Base64](tools/unflattenbase64.md)
+    - [Word Search Solver](https://github.com/robbiebarrat/word-search)
 - Help
     - [HackTricksAI](https://www.hacktricks.ai/): Unfiltered
     - [Phind](https://www.phind.com/): Unfiltered
@@ -405,6 +427,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 
 # Red Team/Penetration Attack
 [Aircrack-ng](https://www.aircrack-ng.org/): Wi-Fi Testing, monitoring .pcap
+[AMSI Bypass](https://0x00-0x00.github.io/research/2018/10/28/How-to-bypass-AMSI-and-Execute-ANY-malicious-powershell-code.html?mkt_tok=eyJpIjoiWTJGaU5qbGlaVFZsTXpVdyIsInQiOiJBSXdzQm5FMGY0S1BrTWlBcVBlZ3ErN2NcL1RNeGkwcnNSK3FZcGVvaUhFRVJiQUhVcmVIWko0aWdNNCtXcVRrcWtDRTMxRGlpM1wvQlIxVHZlU1RUNk5sRVJnQ1dUZEFVQ0JTRHk4ejNVQTBWK1Y3Um1EWHZYdGY5YWQ5V2hTZFVXIn0%3D): Anti-virus evasion with PowerShell
 [BloodHound](https://github.com/SpecterOps/BloodHound-Legacy): Identify file/directory attack paths
 [Burp Suite](https://portswigger.net/burp): Web Application Testing
 [dnschef](https://github.com/iphelps/dnschef): DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)
@@ -418,11 +441,11 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [Responder](https://github.com/lgandx/Responder): LLMNR Poisioner for Credential Harvesting
 
 # Post Exploitation
-Empire](https://github.com/BC-SECURITY/Empire): Post-exploitation & Adversary Emulation Framework
-Mimikatz](https://github.com/ParrotSec/mimikatz): Extracting plaintext passwords, hashes, pin codes, kerberos tickets from memory
+[Empire](https://github.com/BC-SECURITY/Empire): Post-exploitation & Adversary Emulation Framework ⭐
+[Mimikatz](https://github.com/ParrotSec/mimikatz): Extracting plaintext passwords, hashes, pin codes, kerberos tickets from memory
 
 # Reverse Shell
 [LiveShell](https://github.com/livepwn/liveshell)
 [Online Reverse Shell](https://www.revshells.com/): Online ⭐
-[Nishang](tools/nishang.md)
+[Nishang](tools/nishang.md)⭐
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
