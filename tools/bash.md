@@ -56,6 +56,7 @@ head -n 10 FILE                         output first 10 lines of file
 wc FILE                                 (l)ines (w)ords bytes
 wc -c FILE                              Bytes (characters)
 ```
+[Magic Numbers](https://en.wikipedia.org/wiki/List_of_file_signatures): Starting values that identify a file format
 
 ## Comparing Files
 ```

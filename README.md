@@ -189,7 +189,7 @@ Souce: https://try2hack.me/<br>
 - Converting
     - [base64](https://www.man7.org/linux/man-pages/man1/base64.1.html): Encoding/Decoding base64
     - [hexdump](https://www.man7.org/linux/man-pages/man1/hexdump.1.html): Display file contents in hexadecimal, decimal, octal, or ascii
-    - [HexEd.it](https://hexed.it/): Online hex editor for files
+    - [HexEd.it](https://hexed.it/): Online hex editor for files, correcting files with a corrupt Magic Number ⭐
     - [RapidTables](https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html): Online ASCII, Hex, Binary, Decimal, Base64 converter
     - [XOR](https://xor.pw/): Online XOR Calculator
     - [xxd](https://www.commandlinux.com/man-page/man1/xxd.1.html): Kali Linux | ParrotOS, Convert binary data to hexadecimal format
@@ -219,6 +219,8 @@ Souce: https://try2hack.me/<br>
     - [Hydra](https://www.kali.org/tools/hydra/): Kali Linux | ParrotOS ⭐
     - [John The Riper: Jumbo](https://github.com/openwall/john): enhanced John the Ripper
     - [John The Riper](https://www.openwall.com/john/): Kali Linux | ParrotOS ⭐
+    - [keepassx](https://github.com/keepassx/keepassx): Explore Keepass databases
+    - [keepass2john](https://github.com/ivanmrsulja/keepass2john): Keepass databases master passwords can be cracked with keepass2john
     - [Nozzlr](https://github.com/intrd/nozzlr): deprecated
     - [Ophcrack](https://ophcrack.sourceforge.io/): Windows LM and NTLM hashes
     - [Patator](https://github.com/lanjelot/patator)
@@ -270,20 +272,24 @@ Souce: https://try2hack.me/<br>
 - Forensics (File Format/Memory Dump/Network Packet Capture Analysis)
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
     - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool⭐⭐
-    - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images
+    - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file
     - [dnscat2](https://github.com/iagox86/dnscat2): Tunneling data over DNS
     - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers ⭐
+    - [hachoir-subfile](https://github.com/foreni-packages/hachoir-subfile): CLI carve files of another file. Similar to binwalk & foremost
     - [JPG Repair](https://jpg.repair/): Repair corrupted images online
+    - [pdfcrack](https://github.com/alitrack/PDFCrack): CLI recover a password from a PDF file
     - [pdfinfo](https://linux.die.net/man/1/pdfinfo): Kali Linux | ParrotOS, Analyzing PDF
     - [pefile](https://github.com/erocarrera/pefile): Analyzing Windows PE (Portable Executable) files
-    - [photorec](https://www.geeksforgeeks.org/linux-unix/photorec-recover-deleted-or-lost-files-in-linux/): Kali Linux | ParrotOS, Recovering lost files from HD & memory cards
-    - [pngcheck](https://github.com/pnggroup/pngcheck): Kali Linux | ParrotOS, Checks PNG for errors
+    - [photorec](https://www.cgsecurity.org/wiki/PhotoRec): Kali Linux | ParrotOS, Recovering lost files from HD & memory cards part of TestDisk
+    - [pngcheck](https://github.com/pnggroup/pngcheck): Kali Linux | ParrotOS, Checks PNG for errors, checksum
     - [pingcsum](https://www.libpng.org/pub/png/apps/pngcheck.html): Check integrity of PNG for errors
     - [qpdf](https://github.com/qpdf/qpdf): CLI manipulation PDF
     - [Registry Dumper](https://www.kahusecurity.com/posts/registry_dumper_find_and_dump_hidden_registry_keys.html): Dumping Windows registry
     - [scalpel](https://awjunaid.com/kali-linux/scalpel-a-file-carving-tool-for-recovering-files-from-disk-images/): Kali Linux | ParrotOS, recovering deleted files from disk images
     - [Sonic Visualiser](https://sonicvisualiser.org/): Analyzing audio files
     - [split](https://www.man7.org/linux/man-pages/man1/split.1.html) Kali Linux | ParrotOS, split files
+    - [TestDisk](https://www.cgsecurity.org/wiki/TestDisk): CLI recover deleted files from a file system image
+    - [uncompyle6](https://github.com/rocky/python-uncompyle6): Python decompile bytecode
     - [Xplico](https://www.xplico.org/): Network Forensic Analysis Framework
 - OSINT (Open-Source Intelligence)
     - [Linkin eMail Finder](https://skrapp.io/tutorials/linkedin-email-finder): Chrome Extension
@@ -308,12 +314,14 @@ Souce: https://try2hack.me/<br>
     - [apktool](https://github.com/iBotPeaches/Apktool): Kali Linux | ParrotOS, reverse engineering Android APK
     - [Binary Ninja](https://binary.ninja/): Online Demo, Disassembler/Decompiler ⭐
     - [DogBolt](https://dogbolt.org/): Online binary file decompiler (like Ghidra & BinaryNinja)
+    - [dumpzilla](tools/dumpzilla.md): Python script to examine a .mozilla configuration file
     - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐
     - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐
     - [Hopper](https://www.hopperapp.com/): Not Free, Disassembler/Decompiler Mac OSX and Linux
     - [IDA Free](https://hex-rays.com/ida-free): Disassembler/Decompiler Cross Platform
     - [JADX](https://github.com/skylot/jadx): producing Java source code from Android Dex and APK files
     - [Java Decompiler](http://www.javadecompilers.com/) Online tool to decompile Java classes, APKs
+    - [jd-gui](https://github.com/java-decompiler/jd-gui): GUI to decompile Java code and JAR files
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
     - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF): decompile and reverse APK files
     - [radare2](https://github.com/radareorg/radare2): Kali Linux | ParrotOS, Disassembler/Debugger
@@ -326,6 +334,7 @@ Souce: https://try2hack.me/<br>
     - [Color Picker](https://imagecolorpicker.com/): Not really used for CTF
     - [Dual Tone Decoder](http://dialabc.com/sound/detect/): find DTMF tones in audio clips
     - [ffmpeg](https://ffmpeg.org/ffmpeg-utils.html): Kali Linux | ParrotOS, Extract strings from media files
+    - [Forensically](https://29a.ch/photo-forensics/#forensic-magnifier): Online Analysis Image
     - [jsteg](https://github.com/lukechampine/jsteg): CLI use against JPEG
     - [ImageHide](https://www.softpedia.com/get/Security/Encrypting/ImageHide.shtml)
     - [olevba](tools/olevba.md)
@@ -341,7 +350,9 @@ Souce: https://try2hack.me/<br>
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
         Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
+    - Backup pages ( ~ and .bak and .swp): Dig up old php source code
     - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐
+    - [CloudflareBypass](tools/cloudflarebypass.md)
     - [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping): Bypass CloudFlare protection (testing)
     - [commix](https://www.kali.org/tools/commix/): Kali Linux | ParrotOS, Command Injection vulnerabilities
     - [CSP Evaluator](https://csp-evaluator.withgoogle.com/): Online Content Security Policy (CSP) checker
@@ -350,11 +361,22 @@ Souce: https://try2hack.me/<br>
     - [gobuster](https://github.com/OJ/gobuster): Kali Linux | ParrotOS, find hidden directories in Web App
     - [HackBar](https://github.com/PhHitachi/HackBar): Manual SQL injection atk
     - [nikito](https://github.com/sullo/nikto): Kali Linux | ParrotOS, Web Server vunerability scanner
+    - Noob: /admin/ /.git/
     - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings): Payload Library ⭐⭐⭐
     - [Racoon](https://github.com/evyatarmeged/Raccoon): Scrapping/Enumerating endpoints in Web App
+    - [robots.txt](https://www.robotstxt.org/)
     - [sqlmap](https://www.kali.org/tools/sqlmap/): Kali Linux | ParrotOS, automating SQL injection atk
-    - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan for WordPress
+    - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan and do reconnaissance for WordPress
     - [Subdomain Finder](https://subdomainfinder.c99.nl/index.php): Online Subdomain Finder
+    - [XSS PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)⭐
+    - [XSStrike](https://github.com/s0md3v/XSStrike): CLI for automated XSS attacks
+    - [XSS Filter Evasion](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)⭐⭐
+    - [XXE (XML eXternal Entity)](tools/xxe.md)
+- Vulnerabilities
+    - macOS
+        - [Mac AutoLogin Password Cracking](tools/macautologin.md)
+    - PHP
+        - [Magic Hashes](/tools/magichash.md)
 - Help
     - [HackTricksAI](https://www.hacktricks.ai/): Unfiltered
     - [Phind](https://www.phind.com/): Unfiltered
