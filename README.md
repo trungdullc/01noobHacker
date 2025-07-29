@@ -391,11 +391,17 @@ Souce: https://try2hack.me/<br>
         - [Wordpress Password Hash Generator](tools/wordpresshash.md) 
         - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan and do reconnaissance for WordPress
 - Vulnerabilities
+    - Java
+        - [Jenkins/Groovy Misuse](tools/jenkinmisuse.md)
     - macOS
         - [Apple Hidden Files](tools/dsstore.md)
         - [Mac AutoLogin Password Cracking](tools/macautologin.md)
+    - PERL
+        - [Misuse](tools/perlmisuse.md)
     - PHP
         - [Magic Hashes](/tools/magichash.md)
+    - phpMyAdmin
+        - [Misuse](tools/perlmisuse.md)
     - PowerShell
         - [Bypass](tools/powershellbypass.md)
     - PureFTP
