@@ -212,6 +212,7 @@ Souce: https://try2hack.me/<br>
     - [yersinia](https://github.com/tomac/yersinia)
 - Binary Exploitation/Pwn
     - [Asm/Disasm](https://defuse.ca/online-x86-assembler.htm#disassembly): Online x86 / x64 assembler and disassembler
+    - [boofuzz](https://github.com/jtpereyda/boofuzz): Network Protocol Fuzzing for Humans
     - [DLLInjector](https://github.com/OpenSecurityResearch/dllinjector): Inject DLL into running processes
     - [formatStringExploiter](https://formatstringexploiter.readthedocs.io/en/latest/): Exploiting format string vulnerabilities
     - [honggfuzz](tools/honggfuzz.md): Security oriented software fuzzer
@@ -227,18 +228,21 @@ Souce: https://try2hack.me/<br>
     - [strace](https://github.com/strace/strace): Kali Linux | ParrotOS, tracing library calls
     - [Syscall Reference](https://syscalls.w3challs.com/): x86 / x64 syscalls manual w/ registers value
 - Brute Force/Dictonary Attack
+    - [changeme](https://github.com/ztgrace/changeme): Default credential scanner
     - [EFF Dice-Generated Passphrases](tools/eff.md)
     - [fcrackzip](https://github.com/hyc/fcrackzip)
-    - [Hashcat](https://hashcat.net/hashcat/): Kali Linux | ParrotOS ⭐
-    - [Hydra](https://www.kali.org/tools/hydra/): Kali Linux | ParrotOS ⭐
+    - [Hashcat](https://hashcat.net/hashcat/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
+    - [Hydra](https://www.kali.org/tools/hydra/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
     - [John The Riper: Jumbo](https://github.com/openwall/john): enhanced John the Ripper
-    - [John The Riper](https://www.openwall.com/john/): Kali Linux | ParrotOS ⭐
+    - [John The Riper](https://www.openwall.com/john/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
+    - [jwt_tool](https://github.com/ticarpi/jwt_tool): Toolkit for testing, tweaking and cracking JSON Web Tokens
     - [keepassx](https://github.com/keepassx/keepassx): Explore Keepass databases
     - [keepass2john](https://github.com/ivanmrsulja/keepass2john): Keepass databases master passwords can be cracked with keepass2john
     - [Nozzlr](https://github.com/intrd/nozzlr): deprecated
     - [Ophcrack](https://ophcrack.sourceforge.io/): Windows LM and NTLM hashes
     - [Patator](https://github.com/lanjelot/patator)
     - [pdfcrack](https://github.com/alitrack/PDFCrack): Kali Linux | ParrotOS, recovering PDF passwords
+    - [Turbo Intruder](https://portswigger.net/bappstore/9abaa233088242e8be252cd4ff534988): Burp Suite extension for sending large numbers of HTTP requests and analyzing results
     - [wifite](tools/wifite.md): Automates multiple Wi-Fi attacks
     - [Zip Password Cracker](https://passwordrecovery.io/zip-file-password-removal/): Online John The Riper
 - Cryptography
@@ -296,11 +300,17 @@ Souce: https://try2hack.me/<br>
     - [dnscat2](https://github.com/iagox86/dnscat2): Tunneling data over DNS
     - [exiftool](https://exiftool.org/): Read, write and edit file metadata
     - [extundelete]https://extundelete.sourceforge.net/):  Recover deleted files from an ext3 or ext4 partition
+    - [exiv2](https://www.exiv2.org/manpage.html): Image metadata manipulation tool
     - [firmware-mod-kit](https://code.google.com/archive/p/firmware-mod-kit/): Modify firmware images without recompiling
     - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers ⭐
     - [Forensically](https://neerajlovecyber.com/ctf-cheatsheet): Online tool to analysis image
+    - [FotoForensics](https://fotoforensics.com/): Tools for digital photo forensics
     - [hachoir-subfile](https://github.com/foreni-packages/hachoir-subfile): CLI carve files of another file. Similar to binwalk & foremost
-    - [JPG Repair](https://jpg.repair/): Repair corrupted images online
+    - [hipshot](https://bitbucket.org/eliteraspberries/hipshot/src/master/): Converts a video file or series of photographs into a single image simulating a long-exposure photograph
+    - [Image Error Level Analyzer](https://29a.ch/sandbox/2012/imageerrorlevelanalysis/): Online digital images analyzer
+    - [ImageMagick](http://www.imagemagick.org/script/index.php): Manipulating images
+    - [Image Steganography](https://incoherency.co.uk/image-steganography/): Online Client-side Javascript tool hide/unhide images inside lower “bits” of other images
+    - [JPG Repair](https://jpg.repair/): Online Repair corrupted images
     - [MZCacheView](https://www.nirsoft.net/utils/mozilla_cache_viewer.html): Reads cache folder of Firefox/Mozilla/Netscape Web browsers & displays file list
     - [OfflineRegistryView](https://www.nirsoft.net/utils/offline_registry_view.html): (Windows) Read offline Registry files from external drive
     - [pdfcrack](https://github.com/alitrack/PDFCrack): CLI recover a password from a PDF file
@@ -322,8 +332,15 @@ Souce: https://try2hack.me/<br>
     - [volatility](tools/volatility.md): Advanced memory forensics framework ⭐⭐⭐
     - [Xplico](https://www.xplico.org/): Network Forensic Analysis Framework
 - OSINT (Open-Source Intelligence)
+    - [BinaryEdge](https://www.binaryedge.io/): Platform to scan, acquire, and classify public Internet data
+    - [dehashed](https://www.dehashed.com/): Search engine for hacked databases
+    - [haveibeenpwned](https://haveibeenpwned.com/): Check if email or username has been in a data breach
+    - [leakcheck](https://leakcheck.io/): Check for leaked credentials
     - [Linkin eMail Finder](https://skrapp.io/tutorials/linkedin-email-finder): Chrome Extension
     - [Sherlock](https://github.com/sherlock-project/sherlock): Hunts cheaters by username across multiple social media
+    - [Shodan](https://www.shodan.io/): Search engine for Internet-connected devices (Not Free)
+    - [snusbase](https://snusbase.com/): Search leaked databases for emails, usernames, and passwords
+    - [whopostedwhat](https://whopostedwhat.com/): Search keywords and find accounts posting about a topic or event
     - [Web Archive](https://web.archive.org/)
 - Network
     - [drupalgeddon2](https://github.com/dreadlocked/Drupalgeddon2): Attack script for old/outdated Drupal servers
@@ -342,74 +359,130 @@ Souce: https://try2hack.me/<br>
     - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer
 - Reverse Engineering
     - [androguard](https://github.com/androguard/androguard): Analyzing Android Apps
+    - [angr](https://github.com/angr/angr): Binary analysis platform
+    - [apk2gold](https://github.com/lxdvs/apk2gold): CLI tool for decompiling Android apps to Java
     - [apktool](https://github.com/iBotPeaches/Apktool): Kali Linux | ParrotOS, reverse engineering Android APK
-    - [Binary Ninja](https://binary.ninja/): Online Demo, Disassembler/Decompiler ⭐
+    - [Binary Ninja](https://binary.ninja/): Online Demo, Disassembler/Decompiler ⭐⭐⭐⭐⭐
+    - [BinUtils](https://www.gnu.org/software/binutils/binutils.html): Collection of binary tools ⭐
+    - [Compiler Explorer](https://godbolt.org/): Online compiler tool
+    - [CTF_import](https://github.com/sciencemanx/ctf_import): Stripped binaries cross platform
+    - [CWE_checker](https://github.com/fkie-cad/cwe_checker): Finds vulnerable patterns in binary executables
+    - [Demovfuscator](https://github.com/kirschju/demovfuscator): Work-in-progress deobfuscator for movfuscated binaries
     - [DogBolt](https://dogbolt.org/): Online binary file decompiler (like Ghidra & BinaryNinja)
     - [dnSpy](https://github.com/dnSpy/dnSpy): Window GUI decompile and reverse engineer .NET binaries
     - [dumpzilla](tools/dumpzilla.md): Python script to examine a .mozilla configuration file
     - [Easy Python Decompiler](https://sourceforge.net/projects/easypythondecompiler/): Decompile Python bytecode (.pyc)
-    - [GAMEBOY ROMS]()
+    - [Frida](https://github.com/frida/): Dynamic instrumentation toolkit
+    - [GAMEBOY ROMS](tools/gameboyrom.md)
     - [gcc](tools/gcc.md)
-    - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐
-    - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐
+    - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐⭐
+    - [gef](https://github.com/hugsy/gef): Modern experience for GDB with advanced debugging features
+    - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐⭐⭐⭐
     - [Hopper](https://www.hopperapp.com/): Not Free, Disassembler/Decompiler Mac OSX and Linux
-    - [IDA Free](https://hex-rays.com/ida-free): Disassembler/Decompiler Cross Platform
+    - [IDA Free](https://hex-rays.com/ida-free): Disassembler/Decompiler Cross Platform ⭐⭐⭐⭐⭐
     - [JADX](https://github.com/skylot/jadx): producing Java source code from Android Dex and APK files
     - [Java Decompiler](http://www.javadecompilers.com/) Online tool to decompile Java classes, APKs
     - [jd-gui](https://github.com/java-decompiler/jd-gui): GUI to decompile Java code and JAR files
+    - [JSDetox](https://github.com/svent/jsdetox): JavaScript malware analysis tool
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
+    - [miasm](https://github.com/cea-sec/miasm): Reverse engineering framework in Python
     - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF): decompile and reverse APK files
+    - [Objection](https://github.com/sensepost/objection): Runtime mobile exploration
+    - [Online Assembler/Disassembler](http://shell-storm.org/online/Online-Assembler-and-Disassembler/): Online wrappers around Keystone and Capstone projects
+    - [peda](https://github.com/longld/peda): Python Exploit Development Assistance for gdb
+    - [PEfile](https://github.com/erocarrera/pefile): Python module to read and work with PE (Portable Executable) files
+    - [Pwndbg](https://github.com/pwndbg/pwndbg): Exploit Development and Reverse Engineering with GDB Made Easy
     - [radare2](https://github.com/radareorg/radare2): Kali Linux | ParrotOS, Disassembler/Debugger
+    - [Rizin](https://github.com/rizinorg/rizin): Fork of radare2 with a focus on usability, working features and code cleanliness
+    - [Uncompyle](https://github.com/gstarnberger/uncompyle): Python 2.7 byte-code decompiler (.pyc)
+    - [WinDBG](http://www.windbg.org/): Windows debugger distributed by Microsoft
+    - [veles](https://codisec.com/veles/): Binary data analysis and visualization tool
 - Steganography
-    - [Aperi'Solve](https://github.com/Zeecka/AperiSolve): runs zsteg, steghide, exiftool, binwalk, foremost ⭐⭐
+    - [Aperi'Solve](https://github.com/Zeecka/AperiSolve): runs zsteg, steghide, exiftool, binwalk, foremost ⭐⭐⭐⭐
+    - [BPStegano](https://github.com/TapanSoni/BPStegano): Python3 based LSB steganography
     - [Color Picker](https://imagecolorpicker.com/): Not really used for CTF
+    - [DeepSound](https://github.com/Jpinsoft/DeepSound): Steganography tool and audio converter hides secret data into audio files
+    - [DTMF Detection](https://unframework.github.io/dtmf-detect/): Audio frequencies common to a phone button
+    - [DTMF Tones](http://dialabc.com/sound/detect/index.html): Audio frequencies common to a phone button
     - [Dual Tone Decoder](http://dialabc.com/sound/detect/): find DTMF tones in audio clips
     - [ffmpeg](https://ffmpeg.org/ffmpeg-utils.html): Kali Linux | ParrotOS, Extract strings from media files
     - [Forensically](https://29a.ch/photo-forensics/#forensic-magnifier): Online Analysis Image
-    - [jsteg](https://github.com/lukechampine/jsteg): CLI use against JPEG
     - [ImageHide](https://www.softpedia.com/get/Security/Encrypting/ImageHide.shtml)
+    - [jsteg](https://github.com/lukechampine/jsteg): CLI use against JPEG
+    - [Magic Eye Solver](http://magiceye.ecksdee.co.uk/): Online Get hidden information from images
     - [olevba](tools/olevba.md)
     - [OpenStego](https://www.openstego.com/)
+    - [Outguess](https://www.freebsd.org/cgi/man.cgi?query=outguess+&apropos=0&sektion=0&manpath=FreeBSD+Ports+5.1-RELEASE&format=html): Online Universal steganographic tool
     - [pdfdetach](https://www.xpdfreader.com/pdfdetach-man.html): Kali Linux | ParrotOS, Extract Embedded files from PDF
     - [pdfimages](https://man.archlinux.org/man/pdfimages.1.en): Kali Linux | ParrotOS, extract hidden images from PDF
+    - [pngcheck](http://www.libpng.org/pub/png/apps/pngcheck.html): Verifies integrity of PNG and dump all chunk-level info in human-readable form
+    - [Pngtools](https://packages.debian.org/sid/pngtools): Various analysis related to PNGs
+    - [sigBits](https://github.com/Pulho/sigBits): Steganography significant bits image decoder
+    - [SmartDeblur](https://github.com/Y-Vladimir/SmartDeblur): Restoration of defocused and blurred photos/images
+    - [Snow](https://darkside.com.au/snow/): Whitespace Steganography Tool
+    - [Sonic Visualizer](https://www.sonicvisualiser.org/): Audio file visualization
+    - [stegbreak](https://linux.die.net/man/1/stegbreak): Brute-force dictionary attacks on JPG image
     - [stegcracker](https://www.kali.org/tools/stegcracker/): Kali Linux | ParrotOS
-    - [steghide](https://steghide.sourceforge.net/): Kali Linux | ParrotOS ⭐⭐
+    - [steghide](https://steghide.sourceforge.net/): Kali Linux | ParrotOS ⭐⭐⭐⭐
+    - [stegextract](https://github.com/evyatarmeged/stegextract): Detect hidden files and text in images
     - [Steganography Online](https://stylesuxx.github.io/steganography/): Web App
     - [Steg Online](https://www.georgeom.net/StegOnline/upload): Web App
+    - [Stegosaurus](https://github.com/AngelKitty/stegosaurus): Embedding payloads within Python bytecode
     - [stegseek](https://github.com/RickdeJager/stegseek)
+    - [stegsnow](https://manpages.ubuntu.com/manpages/trusty/man1/stegsnow.1.html): Whitespace steganography program
     - [StegSolve](https://github.com/Giotino/stegsolve/releases)
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
         Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
     - [Active Server Pages Extended Misuse](tools/aspxmisuse.md)
+    - [Arachni](https://www.arachni-scanner.com/): Web Application Security Scanner Framework
     - [AWS: S3 Buckets](tools/awsbucket.md)
     - Backup pages ( ~ and .bak and .swp): Dig up old php source code
-    - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐
+    - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐⭐⭐⭐
     - [CloudflareBypass](tools/cloudflarebypass.md)
     - [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping): Bypass CloudFlare protection (testing)
     - [commix](https://www.kali.org/tools/commix/): Kali Linux | ParrotOS, Command Injection vulnerabilities
     - [CSP Evaluator](https://csp-evaluator.withgoogle.com/): Online Content Security Policy (CSP) checker
-    - [dirbuster](https://github.com/KajanM/DirBuster): Kali Linux | ParrotOS, find hidden directories in Web App
+    - [debugHunter](https://github.com/devploit/debugHunter): Discover hidden debugging parameters & uncover web application secrets
+    - [dirbuster](https://github.com/KajanM/DirBuster): Kali Linux | ParrotOS, Find hidden directories in Web App
+    - [dirhunt](https://github.com/Nekmo/dirhunt): Find web directories without bruteforce
+    - [dirsearch](https://github.com/maurosoria/dirsearch): Web path scanner
     - [Edit-This-Cookie](https://github.com/ETCExtensions/Edit-This-Cookie): Editing cookies
+    - [ffuf](https://github.com/ffuf/ffuf): Fast web fuzzer written in Go
+    - [git-dumper](https://github.com/arthaud/git-dumper): Dump a git reptory from a website
     - [gobuster](tools/gobuster.md): Kali Linux | ParrotOS, find hidden directories in Web App ⭐
+    - [Gopherus](https://github.com/tarunkant/Gopherus): Generates gopher link for exploiting SSRF and gaining RCE in various servers
     - [HackBar](https://github.com/PhHitachi/HackBar): Manual SQL injection atk
+    - [Hookbin](https://hookbin.com/): Collect, parse, and view HTTP requests
+    - [JSFiddle](https://jsfiddle.net/): Online test your JavaScript, CSS, HTML or CoffeeScript
     - [MongoDB](tools/mongodb.md)
+    - [ngrok](https://ngrok.com/): Secure introspectable tunnels to localhost
     - [nikito](https://github.com/sullo/nikto): Kali Linux | ParrotOS, Web Server vunerability scanner
+    - [nomore403](https://github.com/devploit/nomore403): Bypass 40x errors
     - Noob: /admin/ /.git/
+    - [OWASP Zap](https://owasp.org/www-project-zap/): Intercepting proxy to replay, debug, and fuzz HTTP requests and responses
     - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings): Payload Library ⭐⭐⭐⭐
+    - [PHPGGC](https://github.com/ambionics/phpggc): Library of PHP unserialize() payloads
+    - [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en): Addon for chrome for debugging network requests
     - [Racoon](https://github.com/evyatarmeged/Raccoon): Scrapping/Enumerating endpoints in Web App
-    - [requestb.in](https://pipedream.com/requestbin): Online catch HTTP requests to find XSS vulnerabilty
+    - [REQBIN](https://reqbin.com/): Online REST & SOAP API Testing Tool
+    - [requestbin](https://pipedream.com/requestbin): Online catch HTTP requests to find XSS vulnerabilty
+    - [revelo](http://www.kahusecurity.com/posts/revelo_javascript_deobfuscator.html): Analyze obfuscated Javascript code
     - [robots.txt](https://www.robotstxt.org/)
-    - [sqlmap](tools/sqlmap.md): Kali Linux | ParrotOS, automating SQL injection atk
+    - [smuggler](https://github.com/defparam/smuggler): HTTP Request Smuggling / Desync testing tool 
+    - [sqlmap](tools/sqlmap.md): Kali Linux | ParrotOS, automating SQL injection atk ⭐⭐⭐
     - [Subdomain Finder](https://subdomainfinder.c99.nl/index.php): Online Subdomain Finder
     - [Web App Default DB](https://github.com/pwnwiki/webappdefaultsdb/blob/master/README.md)⭐⭐⭐
     - [XSS PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)⭐
+    - [XSSer](https://xsser.03c8.net/): Automated XSS testor
     - [XSStrike](https://github.com/s0md3v/XSStrike): CLI for automated XSS attacks
     - [XSS Filter Evasion](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)⭐⭐
     - [XXE (XML eXternal Entity)](tools/xxe.md)
+    - [W3af](https://github.com/andresriancho/w3af): Web application attack and audit framework
     - WordPress
         - [Wordpress Password Hash Generator](tools/wordpresshash.md) 
         - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan and do reconnaissance for WordPress
+    - [ysoserial](https://github.com/frohoff/ysoserial): Generating payloads that exploit unsafe Java object deserialization
 - Vulnerabilities
     - Java
         - [Jenkins/Groovy Misuse](tools/jenkinmisuse.md)
