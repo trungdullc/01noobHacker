@@ -139,12 +139,27 @@ Purpose: Web Exploitations<br>
 Source: https://www.hackthissite.org/<br>
 <b>TODO Later</b>
 
+# Continue to WebHacking
+Purpose: Web Exploitations<br>
+Source: https://webhacking.kr/<br>
+<b>TODO Later</b>
+
+# Continue to Websec.fr
+Purpose: Web Exploitations<br>
+Source: http://websec.fr/<br>
+<b>TODO Later</b>
+
+# Continue to WeChall
+Purpose: Challenge sites directory & forum<br>
+Source: https://www.wechall.net/active_sites<br>
+<b>TODO Later</b>
+
 # Continue to 0x0539
 Purpose: Basic CTF<br>
 Source: https://0x0539.net/<br>
 <b>TODO Later</b>
 
-# Continue to VulnHub
+# Continue to VulnHub ⭐⭐⭐
 Purpose: Downloadable boot2root VMs<br>
 Source: https://www.vulnhub.com/<br>
 <b>TODO Later</b>
@@ -169,12 +184,12 @@ Purpose: ROP (Return-Oriented Programming) is exploitation technique used in bin
 Source:https://ropemporium.com/<br>
 <b>TODO Later</b>
 
-# Continue to TryHackMe
+# Continue to TryHackMe ⭐⭐⭐⭐⭐
 Purpose: Guided labs for real-world skills<br>
 Source: https://tryhackme.com/<br>
 <b>TODO Later</b>
 
-# Continue to HackTheBox
+# Continue to HackTheBox ⭐⭐⭐⭐⭐
 Purpose: VM-based hacking playground, harder than TryHackMe<br>
 Source: https://www.hackthebox.com/<br>
 <b>TODO Later</b>
@@ -182,6 +197,11 @@ Source: https://www.hackthebox.com/<br>
 # Continue to Hackropole
 Purpose: Archives France Cybersecurity Challenge<br>
 Source: https://hackropole.fr/en/<br>
+<b>TODO Later</b>
+
+# Continue to YEHD 2015
+Purpose: Archived YEHD CTF 2015 online challenges<br>
+Source: https://2015-yehd-ctf.meiji-ncc.tech/<br>
 <b>TODO Later</b>
 
 # Continue to echoCTF.RED
@@ -229,6 +249,11 @@ Purpose: Reverse Engineering Challenges<br>
 Source: https://crackmes.one/<br>
 <b>TODO Later</b>
 
+# Continue to W3Challs 
+Purpose: Hacking/CTF platform<br>
+Source: https://w3challs.com/<br>
+<b>TODO Later</b>
+
 # Continue to MicroCorruption 
 Purpose: Embedded Security CTF<br>
 Source: https://microcorruption.com/<br>
@@ -253,6 +278,13 @@ Source: https://archive.ooo/<br>
 Purpose: Dynamic Learning<br>
 Souce: https://try2hack.me/<br>
 <b>TODO Later</b>
+
+# Self Hosted CTFs
+[AWSGoat](https://github.com/ine-labs/AWSGoat): A Damn Vulnerable AWS Infrastructure<br>
+[CICD-goat](https://github.com/cider-security-research/cicd-goat): A deliberately vulnerable CI/CD environment<br>
+[Damn Vulnerable Web Application](https://dvwa.co.uk/): PHP/MySQL web application that is damn vulnerable
+[GCPGoat](https://github.com/ine-labs/GCPGoat): A Damn Vulnerable GCP Infrastructure
+[Juice Shop](https://github.com/juice-shop/juice-shop-ctf): Environment setup tools for OWASP Juice Shop
 
 # 💻 Tools to create/host CTF 🛜
 - Creating CTF Enviornment
@@ -639,9 +671,13 @@ Souce: https://try2hack.me/<br>
     - [ChatGPT](https://chatgpt.com/): Filtered, Popular
     - [ClaudeAI](https://claude.ai/): Filtered, Game Approved
     - [DeepSeek](https://www.deepseek.com/en): IP Blocked
+- Writeups Repositories
+    - [Courgettes.Club](https://ctf.courgettes.club/): CTF Writeup Finder
+    - [CTFtime](https://ctftime.org/writeups): CTFtime Writeups Collection
+    - [Github.com/CTFs](https://github.com/ctfs): Collection of CTF Writeups
 
 # 🏆 Current CTF Competitions 🏆
-[CTFTime](https://ctftime.org/)
+[CTFTime](https://ctftime.org/) ⭐⭐⭐⭐⭐
 
 # 💰 Bug Bounty 💰
 [BugCrowd](https://www.bugcrowd.com/)
@@ -663,13 +699,13 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [AMSI Bypass](https://0x00-0x00.github.io/research/2018/10/28/How-to-bypass-AMSI-and-Execute-ANY-malicious-powershell-code.html?mkt_tok=eyJpIjoiWTJGaU5qbGlaVFZsTXpVdyIsInQiOiJBSXdzQm5FMGY0S1BrTWlBcVBlZ3ErN2NcL1RNeGkwcnNSK3FZcGVvaUhFRVJiQUhVcmVIWko0aWdNNCtXcVRrcWtDRTMxRGlpM1wvQlIxVHZlU1RUNk5sRVJnQ1dUZEFVQ0JTRHk4ejNVQTBWK1Y3Um1EWHZYdGY5YWQ5V2hTZFVXIn0%3D): Anti-virus evasion with PowerShell<br>
 [autorecon](tools/autorecon.md): automatic recon playbook ⭐⭐<br>
 [BloodHound](https://github.com/SpecterOps/BloodHound-Legacy): Identify file/directory attack paths<br>
-[Burp Suite](https://portswigger.net/burp): Web Application Testing<br>
+[Burp Suite](https://portswigger.net/burp): Web Application Testing ⭐⭐⭐⭐⭐<br>
 [dnschef](https://github.com/iphelps/dnschef): DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)<br>
-[Ghidra](https://ghidra-sre.org/): Reverse Engineering (Disassembling, Decompiling)<br>
+[Ghidra](https://ghidra-sre.org/): Reverse Engineering (Disassembling, Decompiling) ⭐⭐⭐⭐⭐<br>
 [Hydra](tools/hydra.md): Attack FTP HTTP SSH SAP<br>
 [Impacket](https://github.com/fortra/impacket): Python collection for creating exploits<br>
-[Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits<br>
-[msfvenom](tools/msfvenom.md)
+[Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits ⭐⭐⭐⭐⭐<br>
+[msfvenom](tools/msfvenom.md)<br>
 [Osmedeus](https://github.com/j3ssie/osmedeus): Automate Reconnaissance Process<br>
 [Recon-ng](https://github.com/lanmaster53/recon-ng): Reconniance Framework<br>
 [Responder](https://github.com/lgandx/Responder): LLMNR Poisioner for Credential Harvesting
