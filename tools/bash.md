@@ -41,6 +41,7 @@ rm FILE*                                remove all files that start with FILE
 rm FILE.                                remove file named FILE.
 rm -rf <DIRECTORY>                      remove non empty folder recursively
 cp FILE1 FILE2                          copy FILE1 to FILE2
+cp -r DIR1 DIR2
 mv FILE1 FILE2                          rename FILE1 to FILE2
 mv FILE1 DIR/FILE2                      move FILE1 to FILE2 into directory DIR
 touch FILE                              create empty file or update file
@@ -80,6 +81,7 @@ cut -f2                                             Get 2nd field (tab-delimited
 whereis <APP>                                       show all possible locations for program
 ⭐locate <FILE>                                     shows all possible locations for file
 find . -name "*.txt"                                Find all .txt files from current dir
+find / -perm -4000 -type f 2>/dev/null              # Find SUID binaries
 find /var -type f -size +1M                         Find files over 1MB
 find . -mtime -4                                    Find all files modified in last 4 days
 # Note: Below search inside files, awk is grep w/ column awareness, sed is Stream EDitor
@@ -93,6 +95,7 @@ sed 's/old/new/g' file.txt                          /g: Replace all 'old' with '
 sed '/pattern/d' file.txt                           /d: Delete lines matching pattern
 sed -n '2,4p' file.txt                              p: Print only lines 2 to 4
 ```
+[find](tools/find.md)
 
 ## Networking
 ```
@@ -110,6 +113,11 @@ curl -o about.html URL                  -o save file to custom name about.html
 curl -X POST -d "username=admin&password=1234" http://target.com/login
 # API testing, Recon, or scripting authenticated requests
 curl -H "Authorization: Bearer eyJ...abc" https://api.example.com/user/profile
+
+ip a                                    Show IP addresses
+ifconfig                                ipconfig
+netstat -tuln                           Show all network connections
+ss -tuln                                Check Open Ports
 ```
 [Resource Saver](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb?hl=en-US&pli=1): DL <b>all resources</b> from website
 
@@ -134,6 +142,7 @@ fg %2                               brings 2nd job to foreground
 ```
 ⭐whoami                            $USER
 hostname                            $HOSTNAME
+id                                  show current User and Groups
 date
 uptime                              shows uptime
 w                                   shows who online
@@ -182,6 +191,23 @@ chown Hacker FILE                       change owner of FILE
 chown HACKER:DEV FILE                   change owner & group of FILE
 
 chgrp DEV FILE                          change group of FILE
+```
+
+## Privilege
+```
+sudo useradd hacker                         sudo userdel -r hacker
+sudo passwd hacker
+sudo usermod -aG sudo hacker                sudo gpasswd -d hacker sudo
+sudo usermod -G group1,group2 hacker        # Modifying User's groups
+```
+
+## Package Managment
+```
+apt update                                  Update package index (Debian/Ubuntu)
+apt install <PACKAGE>                       Install a package
+apt remove <PACKAGE>                        Remove a package
+dnf install <PACKAGE>                       Install on Fedora/RHEL
+dnf remove <PACKAGE>                        Remove from Fedora/RHEL
 ```
 
 ## Back to README.md
