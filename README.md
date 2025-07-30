@@ -211,11 +211,21 @@ Souce: https://try2hack.me/<br>
     - [bettercap](https://github.com/bettercap/bettercap)
     - [yersinia](https://github.com/tomac/yersinia)
 - Binary Exploitation/Pwn
+    - [Asm/Disasm](https://defuse.ca/online-x86-assembler.htm#disassembly): Online x86 / x64 assembler and disassembler
     - [DLLInjector](https://github.com/OpenSecurityResearch/dllinjector): Inject DLL into running processes
     - [formatStringExploiter](https://formatstringexploiter.readthedocs.io/en/latest/): Exploiting format string vulnerabilities
+    - [honggfuzz](tools/honggfuzz.md): Security oriented software fuzzer
+    - [LibC Check](https://defuse.ca/online-x86-assembler.htm#disassembly): Find all possible libc versions w/ symbol name and entry address
     - [libformatstr](https://github.com/hellman/libformatstr): Exploiting format string vulnerabilities
     - [LNjector](https://github.com/DataSearchers/LNjector---Windows-DLL-injector): DLL Injector
+    - [One_gadget](https://github.com/david942j/one_gadget): Tool for finding one gadget RCE(Remote Code Execution)
+    - [Pwntools](https://github.com/Gallopsled/pwntools): CTF framework for writing exploits ⭐⭐⭐⭐⭐
     - [readelf](https://thelinuxcode.com/readelf-linux-command/): Kali Linux | ParrotOS, analyzing ELF
+    - [ROPgadget](https://github.com/JonathanSalwan/ROPgadget): Framework for ROP(Return-Oriented Programming) exploitation
+    - [Ropper](https://github.com/sashs/Ropper): Display file inof in different file formats & find gadgets to build ROP chains
+    - [Shellcodes Database](https://shell-storm.org/shellcode/index.html): Massive shellcodes database
+    - [strace](https://github.com/strace/strace): Kali Linux | ParrotOS, tracing library calls
+    - [Syscall Reference](https://syscalls.w3challs.com/): x86 / x64 syscalls manual w/ registers value
 - Brute Force/Dictonary Attack
     - [EFF Dice-Generated Passphrases](tools/eff.md)
     - [fcrackzip](https://github.com/hyc/fcrackzip)
@@ -239,10 +249,10 @@ Souce: https://try2hack.me/<br>
     - [Caesar Cipher](https://www.dcode.fr/caesar-cipher)
     - [CrackStation](https://crackstation.net/): Online Password Hash Cracker
     - [Cryptii](https://cryptii.com/): Web App for encypt/decrypt & encoding
-    - [<b>CyberChef</b>](https://gchq.github.io/CyberChef): Analysing/Decoding data ⭐⭐⭐
+    - [<b>CyberChef</b>](https://gchq.github.io/CyberChef): Analysing/Decoding data ⭐⭐⭐⭐⭐
     - [Crunch](https://www.guballa.de/substitution-solver): Create custom dictionary for atk
     - [Daggers Cipher](https://www.dcode.fr/daggers-alphabet)
-    - [dCode](https://www.dcode.fr/)⭐⭐
+    - [dCode](https://www.dcode.fr/)⭐⭐⭐⭐⭐
     - [FactorDB](https://factordb.com/): Online Integer Factorization
     - [FeatherDuster](https://github.com/nccgroup/featherduster): Cryptanalysis: Identify/Exploit weakness
     - [Gronsfeld Cipher](http://rumkin.com/tools/cipher/gronsfeld.php)
@@ -258,7 +268,7 @@ Souce: https://try2hack.me/<br>
     - [Playfair Cipher](http://bionsgadgets.appspot.com/ww_forms/playfair_ph_web_worker3.html)
     - [QuipQuip](https://quipqiup.com/): Substitution/vigenere Cryptogram solver
     - [Railfence Cipher](http://rumkin.com/tools/cipher/railfence.php)
-    - [RSACTFTool](https://github.com/RsaCtfTool/RsaCtfTool): Recovering RSA private key
+    - [RSACTFTool](https://github.com/RsaCtfTool/RsaCtfTool): Recovering RSA private key ⭐⭐⭐⭐⭐
     - [RSATool](https://github.com/ius/rsatool): Generate private key w/o p | q
     - [Sheikah Language (Breathe of the Wild)](https://www.dcode.fr/sheikah-language)
     - [ShiftCipher](https://github.com/CyberJarvis/ShiftCipher): Caesar Cipher encryption/decryption
@@ -274,14 +284,25 @@ Souce: https://try2hack.me/<br>
     - [Rockstar](https://codewithrockstar.com/online)
     - [Try It Online](https://tio.run/#): Online Esoteric language interpreters ⭐
 - Forensics (File Format/Memory Dump/Network Packet Capture Analysis)
+    - [A-Packets](https://apackets.com/): Online PCAP File Analysis
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
-    - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool⭐⭐
-    - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file
+    - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool⭐⭐⭐⭐⭐
+    - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file⭐
+    - [Bkhive & samdump2](https://www.kali.org/tools/samdump2/): Dump SYSTEM and SAM files
+    - [Bulk-extractor](https://github.com/simsong/bulk_extractor): Digital forensics exploitation tool
+    - [ChromeCacheView](https://www.nirsoft.net/utils/chrome_cache_view.html#google_vignette):  Reads cache folder of Google Chrome Web browser and displays file list
     - [certutil](tools/certutil.md)
+    - [Creddump](https://github.com/moyix/creddump): Dump Windows credentials
     - [dnscat2](https://github.com/iagox86/dnscat2): Tunneling data over DNS
+    - [exiftool](https://exiftool.org/): Read, write and edit file metadata
+    - [extundelete]https://extundelete.sourceforge.net/):  Recover deleted files from an ext3 or ext4 partition
+    - [firmware-mod-kit](https://code.google.com/archive/p/firmware-mod-kit/): Modify firmware images without recompiling
     - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers ⭐
+    - [Forensically](https://neerajlovecyber.com/ctf-cheatsheet): Online tool to analysis image
     - [hachoir-subfile](https://github.com/foreni-packages/hachoir-subfile): CLI carve files of another file. Similar to binwalk & foremost
     - [JPG Repair](https://jpg.repair/): Repair corrupted images online
+    - [MZCacheView](https://www.nirsoft.net/utils/mozilla_cache_viewer.html): Reads cache folder of Firefox/Mozilla/Netscape Web browsers & displays file list
+    - [OfflineRegistryView](https://www.nirsoft.net/utils/offline_registry_view.html): (Windows) Read offline Registry files from external drive
     - [pdfcrack](https://github.com/alitrack/PDFCrack): CLI recover a password from a PDF file
     - [pdfinfo](https://linux.die.net/man/1/pdfinfo): Kali Linux | ParrotOS, Analyzing PDF
     - [pefile](https://github.com/erocarrera/pefile): Analyzing Windows PE (Portable Executable) files
@@ -290,11 +311,15 @@ Souce: https://try2hack.me/<br>
     - [pingcsum](https://www.libpng.org/pub/png/apps/pngcheck.html): Check integrity of PNG for errors
     - [qpdf](https://github.com/qpdf/qpdf): CLI manipulation PDF
     - [Registry Dumper](https://www.kahusecurity.com/posts/registry_dumper_find_and_dump_hidden_registry_keys.html): Dumping Windows registry
+    - [Registry Viewer](https://accessdata.com/product-download/registry-viewer-2-0-0): View Windows registers
     - [scalpel](https://awjunaid.com/kali-linux/scalpel-a-file-carving-tool-for-recovering-files-from-disk-images/): Kali Linux | ParrotOS, recovering deleted files from disk images
     - [Sonic Visualiser](https://sonicvisualiser.org/): Analyzing audio files
     - [split](https://www.man7.org/linux/man-pages/man1/split.1.html) Kali Linux | ParrotOS, split files
+    - [The Sleuth Kit](https://www.sleuthkit.org/): Collection of CLI tools to analyze disk images and recover files
     - [TestDisk](https://www.cgsecurity.org/wiki/TestDisk): CLI recover deleted files from a file system image
     - [uncompyle6](https://github.com/rocky/python-uncompyle6): Python decompile bytecode
+    - [USBRip](https://github.com/snovvcrash/usbrip): Tracking USB device artifacts (history of USB events) on GNU/Linux
+    - [volatility](tools/volatility.md): Advanced memory forensics framework ⭐⭐⭐
     - [Xplico](https://www.xplico.org/): Network Forensic Analysis Framework
 - OSINT (Open-Source Intelligence)
     - [Linkin eMail Finder](https://skrapp.io/tutorials/linkedin-email-finder): Chrome Extension
@@ -335,11 +360,6 @@ Souce: https://try2hack.me/<br>
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
     - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF): decompile and reverse APK files
     - [radare2](https://github.com/radareorg/radare2): Kali Linux | ParrotOS, Disassembler/Debugger
-- Pwn
-    - [Syscall Reference](https://syscalls.w3challs.com/): x86 / x64 syscalls manual w/ registers value
-    - [strace](https://github.com/strace/strace): Kali Linux | ParrotOS, tracing library calls
-    - [Asm/Disasm](https://defuse.ca/online-x86-assembler.htm#disassembly): Online x86 / x64 assembler and disassembler
-    - [LibC Check](https://defuse.ca/online-x86-assembler.htm#disassembly): Find all possible libc versions w/ symbol name and entry address
 - Steganography
     - [Aperi'Solve](https://github.com/Zeecka/AperiSolve): runs zsteg, steghide, exiftool, binwalk, foremost ⭐⭐
     - [Color Picker](https://imagecolorpicker.com/): Not really used for CTF
@@ -401,7 +421,7 @@ Souce: https://try2hack.me/<br>
     - PHP
         - [Magic Hashes](/tools/magichash.md)
     - phpMyAdmin
-        - [Misuse](tools/perlmisuse.md)
+        - [Misuse](tools/phpmyadminmisuse.md)
     - PowerShell
         - [Bypass](tools/powershellbypass.md)
     - PureFTP
