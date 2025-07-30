@@ -285,7 +285,7 @@ Souce: https://try2hack.me/<br>
 [Damn Vulnerable Web Application](https://dvwa.co.uk/): PHP/MySQL web application that is damn vulnerable<br>
 [GCPGoat](https://github.com/ine-labs/GCPGoat): A Damn Vulnerable GCP Infrastructure<br>
 [Juice Shop](https://github.com/juice-shop/juice-shop-ctf): Environment setup tools for OWASP Juice Shop<br>
-[MemLabs](https://github.com/stuxnet999/MemLabs): Practice Memory Labs in Virtual Environment
+[MemLabs](https://github.com/stuxnet999/MemLabs): Practice Memory Labs in Virtual Environment ⭐⭐⭐⭐
 
 # 💻 Tools to create/host CTF 🛜
 - Creating CTF Enviornment
