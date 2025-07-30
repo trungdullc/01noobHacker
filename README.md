@@ -109,6 +109,11 @@ Source: https://www.picoctf.org/<br>
 Guide: https://primer.picoctf.org/<br>
 <b>TODO Later</b>
 
+# Continue to Dreamhack.io
+Purpose: Online wargame<br>
+Source: https://dreamhack.io/wargame<br>
+<b>TODO Later</b>
+
 # Continue to RootMe
 Purpose: Learn more CTF basic scenarios<br>
 Source: https://www.root-me.org/en/Challenges/<br>
@@ -119,9 +124,24 @@ Purpose: Competitive Jeopardy-style CTFs<br>
 Source: https://247ctf.com/<br>
 <b>TODO Later</b>
 
+# Continue to Flagyard
+Purpose: Cybersecurity Challenges<br>
+Source: https://flagyard.com/<br>
+<b>TODO Later</b>
+
+# Continue to HackBBS
+Purpose: Online wargame<br>
+Source: https://hackbbs.org/index.php<br>
+<b>TODO Later</b>
+
 # Continue to HackThisSite
 Purpose: Web Exploitations<br>
 Source: https://www.hackthissite.org/<br>
+<b>TODO Later</b>
+
+# Continue to 0x0539
+Purpose: Basic CTF<br>
+Source: https://0x0539.net/<br>
 <b>TODO Later</b>
 
 # Continue to VulnHub
@@ -130,8 +150,18 @@ Source: https://www.vulnhub.com/<br>
 <b>TODO Later</b>
 
 # Continue to CryptoHack
-Purpose: Modern cryptography<br>
+Purpose: Modern cryptography, Cryptography Challenges<br>
 Source: https://cryptohack.org/<br>
+<b>TODO Later</b>
+
+# Continue to Cryptopals
+Purpose: Cryptography Challenges<br>
+Source: https://cryptopals.com/<br>
+<b>TODO Later</b>
+
+# Continue to Hacker101 
+Purpose: CTF Platform by HackerOne<br>
+Source: https://www.hacker101.com/<br>
 <b>TODO Later</b>
 
 # Continue to ROP Emporium
@@ -149,9 +179,74 @@ Purpose: VM-based hacking playground, harder than TryHackMe<br>
 Source: https://www.hackthebox.com/<br>
 <b>TODO Later</b>
 
+# Continue to Hackropole
+Purpose: Archives France Cybersecurity Challenge<br>
+Source: https://hackropole.fr/en/<br>
+<b>TODO Later</b>
+
+# Continue to echoCTF.RED
+Purpose: Online Hacking Laboratories<br>
+Source: https://echoctf.red/<br>
+<b>TODO Later</b>
+
 # Continue to pwnable.kr
 Purpose: Pwn<br>
 Source: https://pwnable.kr/index.php<br>
+<b>TODO Later</b>
+
+# Continue to pwnable.tw
+Purpose: Pwn<br>
+Source: https://pwnable.tw/<br>
+<b>TODO Later</b>
+
+# Continue to pwnable.xyz
+Purpose: Pwn<br>
+Source: https://pwnable.xyz/<br>
+<b>TODO Later</b>
+
+# Continue to PWNChallenge 
+Purpose: Pwn<br>
+Source: http://pwn.eonew.cn/<br>
+<b>TODO Later</b>
+
+# Continue to Reversing.kr
+Purpose: Reverse Engineering platform<br>
+Source: http://reversing.kr/<br>
+<b>TODO Later</b>
+
+# Continue to HBH 
+Purpose: Teach methods and tactics used by malicious hackers<br>
+Source: https://hbh.sh/home<br>
+<b>TODO Later</b>
+
+# Continue to MNCTF
+Purpose: Cybersecurity challenges<br>
+Source: https://mnctf.info/<br>
+<b>TODO Later</b>
+
+# Continue to crackmes.one 
+Purpose: Reverse Engineering Challenges<br>
+Source: https://crackmes.one/<br>
+<b>TODO Later</b>
+
+# Continue to MicroCorruption 
+Purpose: Embedded Security CTF<br>
+Source: https://microcorruption.com/<br>
+<b>TODO Later</b>
+
+# Continue to Komodo 
+Purpose: Game designed to challenge your application hacking skills<br>
+Source: http://ctf.komodosec.com/<br>
+<b>TODO Later</b>
+
+# Continue to VibloCTF
+Purpose: CTF training platform<br>
+Source: https://ctf.viblo.asia/landing<br>
+<b>TODO Later</b>
+
+# Continue to Archive.ooo
+Purpose: Live, playable archive of DEF CON CTF<br>
+Source: https://archive.ooo/<br>
 <b>TODO Later</b>
 
 # End with Interactive CTF
@@ -163,18 +258,21 @@ Souce: https://try2hack.me/<br>
 - Creating CTF Enviornment
     - <a href="https://repo.tzku.at/book/security/pentest/Kali%20Linux%20CTF%20Blueprints%20-%20Buchanan,%20Cam.pdf" target="_blank">Kali Linux CTF Blueprints</a>
 - Platforms
-    - [CTFd](https://github.com/CTFd/CTFd)
+    - [CTFd](https://github.com/CTFd/CTFd): Platform to host jeopardy style CTFs
     - [echoCTF.RED](https://github.com/echoCTF/echoCTF.RED)
-    - [FBCTF](https://github.com/facebookarchive/fbctf)
+    - [FBCTF](https://github.com/facebookarchive/fbctf): Facebook CTF platform to host Jeopardy and “King of the Hill”
     - [Haaukins](https://github.com/aau-network-security/haaukins)
-    - [HackTheArch](https://github.com/mcpa-stlouis/hack-the-arch)
-    - [Mellivora](https://github.com/Nakiami/mellivora)
-    - [MotherFuckingCTF](https://github.com/andreafioraldi/motherfucking-ctf)
-    - [NightShade](https://github.com/akama/NightShade)
-    - [LibreCTF](https://github.com/easyctf/librectf)
-    - [picoCTF](https://github.com/picoCTF/picoCTF)
+    - [HackTheArch](https://github.com/mcpa-stlouis/hack-the-arch): Scoring server for CTF competitions
+    - [ImaginaryCTF](https://github.com/Et3rnos/ImaginaryCTF): Platform to host CTFs
+    - [kCTF](https://github.com/google/kctf): Kubernetes-based infrastructure for CTF competitions
+    - [LibreCTF](https://github.com/easyctf/librectf): CTF platform from EasyCTF
+    - [Mellivora](https://github.com/Nakiami/mellivora): CTF engine written in PHP
     - [mkCTF](https://github.com/koromodako/mkctf)
-    - [RootTheBox](https://github.com/moloch--/RootTheBox)
+    - [MotherFuckingCTF](https://github.com/andreafioraldi/motherfucking-ctf)
+    - [NightShade](https://github.com/akama/NightShade): Simple CTF framework
+    - [picoCTF](https://github.com/picoCTF/picoCTF): Infrastructure used to run picoCTF
+    - [rCTF](https://github.com/redpwn/rctf): depleted
+    - [RootTheBox](https://github.com/moloch--/RootTheBox): CTF scoring engine for wargames
     - [ScoreBot](https://github.com/legitbs/scorebot)
     - [SecGen](https://github.com/cliffe/SecGen)
 - Web (JavaScript Obfustcators)
@@ -227,7 +325,7 @@ Souce: https://try2hack.me/<br>
     - [Shellcodes Database](https://shell-storm.org/shellcode/index.html): Massive shellcodes database
     - [strace](https://github.com/strace/strace): Kali Linux | ParrotOS, tracing library calls
     - [Syscall Reference](https://syscalls.w3challs.com/): x86 / x64 syscalls manual w/ registers value
-- Brute Force/Dictonary Attack
+- Brute Force/Dictonary Attack/Hash Cracking
     - [changeme](https://github.com/ztgrace/changeme): Default credential scanner
     - [EFF Dice-Generated Passphrases](tools/eff.md)
     - [fcrackzip](https://github.com/hyc/fcrackzip)
@@ -238,6 +336,7 @@ Souce: https://try2hack.me/<br>
     - [jwt_tool](https://github.com/ticarpi/jwt_tool): Toolkit for testing, tweaking and cracking JSON Web Tokens
     - [keepassx](https://github.com/keepassx/keepassx): Explore Keepass databases
     - [keepass2john](https://github.com/ivanmrsulja/keepass2john): Keepass databases master passwords can be cracked with keepass2john
+    - [MD5Hashing.net](https://md5hashing.net/): Online hash cracker and tools
     - [Nozzlr](https://github.com/intrd/nozzlr): deprecated
     - [Ophcrack](https://ophcrack.sourceforge.io/): Windows LM and NTLM hashes
     - [Patator](https://github.com/lanjelot/patator)
@@ -262,6 +361,9 @@ Souce: https://try2hack.me/<br>
     - [Gronsfeld Cipher](http://rumkin.com/tools/cipher/gronsfeld.php)
     - [hash_extender](https://github.com/iagox86/hash_extender): Hash length extension attack
     - [Hash Identifier](https://www.kali.org/tools/hash-identifier/): Hash Identifier ⭐
+    - [hashID](https://github.com/blackploit/hashid): Identify hash types
+    - [HashPump](https://github.com/bwall/HashPump): Exploit hash length extension attacks
+    - [HashTag](https://github.com/SmeegeSec/HashTag): Parse and identify password hashes
     - [Hexahue Alphabet](https://www.boxentriq.com/code-breaking/hexahue)
     - [Hylian Language (Twilight Princess)](https://www.dcode.fr/hylian-language-twilight-princess)
     - [Hylian Language (Breath of the Wild)](https://www.dcode.fr/hylian-language-breath-of-the-wild)
@@ -291,6 +393,7 @@ Souce: https://try2hack.me/<br>
     - [A-Packets](https://apackets.com/): Online PCAP File Analysis
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
     - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool⭐⭐⭐⭐⭐
+    - [Belkasoft RAM Capturer](https://belkasoft.com/ram-capturer): Volatile Memory Acquisition Tool
     - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file⭐
     - [Bkhive & samdump2](https://www.kali.org/tools/samdump2/): Dump SYSTEM and SAM files
     - [Bulk-extractor](https://github.com/simsong/bulk_extractor): Digital forensics exploitation tool
@@ -333,30 +436,48 @@ Souce: https://try2hack.me/<br>
     - [Xplico](https://www.xplico.org/): Network Forensic Analysis Framework
 - OSINT (Open-Source Intelligence)
     - [BinaryEdge](https://www.binaryedge.io/): Platform to scan, acquire, and classify public Internet data
+    - [Creepy](https://github.com/ilektrojohn/creepy): Geolocation OSINT tool for gathering info from social networks
     - [dehashed](https://www.dehashed.com/): Search engine for hacked databases
+    - [graph.tips](https://graph.tips/): Search public Facebook data
     - [haveibeenpwned](https://haveibeenpwned.com/): Check if email or username has been in a data breach
+    - [instant-username-search](https://instantusername.com/): Check username availability on 100+ social media sites
     - [leakcheck](https://leakcheck.io/): Check for leaked credentials
     - [Linkin eMail Finder](https://skrapp.io/tutorials/linkedin-email-finder): Chrome Extension
     - [Sherlock](https://github.com/sherlock-project/sherlock): Hunts cheaters by username across multiple social media
     - [Shodan](https://www.shodan.io/): Search engine for Internet-connected devices (Not Free)
+    - [Social Mapper](https://github.com/Greenwolf/social_mapper): Uses facial recognition to correlate social media profiles
     - [snusbase](https://snusbase.com/): Search leaked databases for emails, usernames, and passwords
+    - [theHarvester](https://github.com/laramies/theHarvester): Gathers emails, names, subdomains, IPs, and URLs from public sources
+    - [TinEye](https://tineye.com/): Reverse image search engine
     - [whopostedwhat](https://whopostedwhat.com/): Search keywords and find accounts posting about a topic or event
+    - [WiGLE](https://wigle.net/): Collects info about wireless hotspots worldwide
     - [Web Archive](https://web.archive.org/)
+    - [YandexImages](https://yandex.com/images/): Reverse image search engine
 - Network
     - [drupalgeddon2](https://github.com/dreadlocked/Drupalgeddon2): Attack script for old/outdated Drupal servers
     - [editcap](): from Wireshark
     - [enum4linux](tools/enum4linux.md): Scan Windows Samba shares
-    - [GTFOBins](https://gtfobins.github.io/): Unix binaries
     - [impacket](tools/impacket.md): Start a Samba share
     - [mssqlclient.py](tools/mssqlclient.md)
-    - [nc](tools/nc.md)
+    - [nc](tools/nc.md): Reading/Writing to network connections using TCP or UDP ⭐⭐⭐⭐⭐
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
+    - [nmap](tools/nmap.md): Network Mapper, Network Discovery, Port Scanner ⭐⭐⭐⭐⭐
     - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
     - [smbmap](tools/smbmap.md)
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
-    - [tcpflow](tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer
-    - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer
+    - [tcpflow](tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer ⭐⭐
+    - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer ⭐⭐⭐⭐⭐
+- Privilege Escalation
+    - [Basic Linux Privilege Escalation](https://github.com/sleventyeleven/linuxprivchecker): Foundational guide and script
+    - [GTFOBins](https://gtfobins.github.io/): Unix binaries can exploit to bypass local security restrictions ⭐⭐⭐⭐
+    - [JAWS](https://github.com/411Hall/JAWS): Script to identify potential privilege escalation vectors on Windows
+    - [LinEnum](https://github.com/rebootuser/LinEnum): Scripted local Linux enumeration & privilege escalation checks
+    - [linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester): Detects security deficiencies for Linux kernel/machines
+    - [linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration): Script to show relevant security info on Linux
+    - [PEASS](https://github.com/carlospolop/PEASS-ng): Privilege Escalation Awesome Scripts SUITE
+    - [PowerUp](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc): Common Windows privilege escalation vectors
+    - [Windows Privilege Escalation Fundamentals](https://github.com/AonCyberLabs/Windows-Exploit-Suggester): Guide and tool for Windows
 - Reverse Engineering
     - [androguard](https://github.com/androguard/androguard): Analyzing Android Apps
     - [angr](https://github.com/angr/angr): Binary analysis platform
@@ -549,7 +670,6 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [Impacket](https://github.com/fortra/impacket): Python collection for creating exploits<br>
 [Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits<br>
 [msfvenom](tools/msfvenom.md)
-[nmap](tools/nmap.md): Network Mapper, Network Discovery, Port Scanner ⭐<br>
 [Osmedeus](https://github.com/j3ssie/osmedeus): Automate Reconnaissance Process<br>
 [Recon-ng](https://github.com/lanmaster53/recon-ng): Reconniance Framework<br>
 [Responder](https://github.com/lgandx/Responder): LLMNR Poisioner for Credential Harvesting
