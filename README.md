@@ -90,10 +90,10 @@ Programming
 ```
 
 # Research
-[HackerNews](https://news.ycombinator.com/)<br>
-[Search CSV Exploits](tools/searchexploits.md)
+[HackerNews](https://news.ycombinator.com/) ⭐⭐⭐⭐⭐<br>
+[Search CSV Exploits](tools/searchexploits.md) ⭐⭐⭐⭐⭐
 
-# 🏎️ Start with overTheWire 🚓
+# 🏎️ Start with overTheWire ⭐⭐⭐ 🚓
 Purpose: Learn Linux commands<br>
 Source: https://overthewire.org/wargames/<br>
 [Start](/overthewire/0000.md)
@@ -103,7 +103,7 @@ Purpose: Learn Powershell<br>
 Source: https://underthewire.tech/wargames<br>
 <b>TODO Later</b>
 
-# Continue to picoCTF
+# Continue to picoCTF ⭐⭐⭐⭐
 Purpose: Learn CTF basic scenarios<br>
 Source: https://www.picoctf.org/<br>
 Guide: https://primer.picoctf.org/<br>
@@ -119,7 +119,7 @@ Purpose: Learn more CTF basic scenarios<br>
 Source: https://www.root-me.org/en/Challenges/<br>
 <b>TODO Later</b>
 
-# Continue to 247CTF
+# Continue to 247CTF ⭐⭐⭐⭐
 Purpose: Competitive Jeopardy-style CTFs<br>
 Source: https://247ctf.com/<br>
 <b>TODO Later</b>
@@ -134,7 +134,7 @@ Purpose: Online wargame<br>
 Source: https://hackbbs.org/index.php<br>
 <b>TODO Later</b>
 
-# Continue to HackThisSite
+# Continue to HackThisSite ⭐⭐⭐⭐
 Purpose: Web Exploitations<br>
 Source: https://www.hackthissite.org/<br>
 <b>TODO Later</b>
@@ -159,7 +159,7 @@ Purpose: Basic CTF<br>
 Source: https://0x0539.net/<br>
 <b>TODO Later</b>
 
-# Continue to VulnHub ⭐⭐⭐
+# Continue to VulnHub ⭐⭐⭐⭐
 Purpose: Downloadable boot2root VMs<br>
 Source: https://www.vulnhub.com/<br>
 <b>TODO Later</b>
@@ -282,9 +282,10 @@ Souce: https://try2hack.me/<br>
 # Self Hosted CTFs
 [AWSGoat](https://github.com/ine-labs/AWSGoat): A Damn Vulnerable AWS Infrastructure<br>
 [CICD-goat](https://github.com/cider-security-research/cicd-goat): A deliberately vulnerable CI/CD environment<br>
-[Damn Vulnerable Web Application](https://dvwa.co.uk/): PHP/MySQL web application that is damn vulnerable
-[GCPGoat](https://github.com/ine-labs/GCPGoat): A Damn Vulnerable GCP Infrastructure
-[Juice Shop](https://github.com/juice-shop/juice-shop-ctf): Environment setup tools for OWASP Juice Shop
+[Damn Vulnerable Web Application](https://dvwa.co.uk/): PHP/MySQL web application that is damn vulnerable<br>
+[GCPGoat](https://github.com/ine-labs/GCPGoat): A Damn Vulnerable GCP Infrastructure<br>
+[Juice Shop](https://github.com/juice-shop/juice-shop-ctf): Environment setup tools for OWASP Juice Shop<br>
+[MemLabs](https://github.com/stuxnet999/MemLabs): Practice Memory Labs in Virtual Environment
 
 # 💻 Tools to create/host CTF 🛜
 - Creating CTF Enviornment
@@ -424,9 +425,9 @@ Souce: https://try2hack.me/<br>
 - Forensics (File Format/Memory Dump/Network Packet Capture Analysis)
     - [A-Packets](https://apackets.com/): Online PCAP File Analysis
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
-    - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool⭐⭐⭐⭐⭐
+    - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool ⭐⭐⭐⭐⭐
     - [Belkasoft RAM Capturer](https://belkasoft.com/ram-capturer): Volatile Memory Acquisition Tool
-    - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file⭐
+    - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file ⭐⭐
     - [Bkhive & samdump2](https://www.kali.org/tools/samdump2/): Dump SYSTEM and SAM files
     - [Bulk-extractor](https://github.com/simsong/bulk_extractor): Digital forensics exploitation tool
     - [ChromeCacheView](https://www.nirsoft.net/utils/chrome_cache_view.html#google_vignette):  Reads cache folder of Google Chrome Web browser and displays file list
@@ -498,7 +499,7 @@ Souce: https://try2hack.me/<br>
     - [smbmap](tools/smbmap.md)
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
-    - [tcpflow](tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer ⭐⭐
+    - [tcpflow](tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer ⭐⭐⭐
     - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer ⭐⭐⭐⭐⭐
 - Privilege Escalation
     - [Basic Linux Privilege Escalation](https://github.com/sleventyeleven/linuxprivchecker): Foundational guide and script
@@ -528,7 +529,7 @@ Souce: https://try2hack.me/<br>
     - [Frida](https://github.com/frida/): Dynamic instrumentation toolkit
     - [GAMEBOY ROMS](tools/gameboyrom.md)
     - [gcc](tools/gcc.md)
-    - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐⭐
+    - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐⭐⭐
     - [gef](https://github.com/hugsy/gef): Modern experience for GDB with advanced debugging features
     - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐⭐⭐⭐
     - [Hopper](https://www.hopperapp.com/): Not Free, Disassembler/Decompiler Mac OSX and Linux
