@@ -708,7 +708,9 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [OSINT Checklist](tools/osintchecklist.md)
 
 # Useful
+[git Commands](tools/usefulgit.md)
 [Shell Commands](tools/usefulshellcommands.md)
+[BASH Scripts](tools/usefulscripts.md)
 
 # Red Team/Penetration Attack
 [Aircrack-ng](https://www.aircrack-ng.org/): Wi-Fi Testing, monitoring .pcap<br>
