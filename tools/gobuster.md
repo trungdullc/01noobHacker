@@ -10,6 +10,9 @@ Flag	                        Purpose
 -t	                            Number of threads (20 is default for speed)
 
 HTTP
+    # Basic
+    gobuster dir -u http://192.168.0.X -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+
     # Fast Scan (Small List)
     gobuster dir -e -u http://192.168.0.1 -w /usr/share/wordlists/dirb/big.txt -t 20
 

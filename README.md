@@ -325,7 +325,7 @@ Souce: https://try2hack.me/<br>
     - [HexEd.it](https://hexed.it/): Online hex editor for files, correcting files with a corrupt Magic Number ⭐
     - [RapidTables](https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html): Online ASCII, Hex, Binary, Decimal, Base64 converter
     - [XOR](https://xor.pw/): Online XOR Calculator
-    - [xxd](https://www.commandlinux.com/man-page/man1/xxd.1.html): Kali Linux | ParrotOS, Convert binary data to hexadecimal format
+    - [xxd](tools/xxd.md): Kali Linux | ParrotOS, Convert binary data to hexadecimal format
 - General
     - [awk](https://www.gnu.org/software/gawk/manual/gawk.html): Kali Linux | ParrotOS, Search pattern inside files <b>w/ column field awareness</b>
     - [bgrep](https://github.com/nneonneo/bgrep): Kali Linux | ParrotOS Search binary strings in binary file
@@ -431,11 +431,10 @@ Souce: https://try2hack.me/<br>
     - [Bkhive & samdump2](https://www.kali.org/tools/samdump2/): Dump SYSTEM and SAM files
     - [Bulk-extractor](https://github.com/simsong/bulk_extractor): Digital forensics exploitation tool
     - [ChromeCacheView](https://www.nirsoft.net/utils/chrome_cache_view.html#google_vignette):  Reads cache folder of Google Chrome Web browser and displays file list
-    - [certutil](tools/certutil.md)
     - [Creddump](https://github.com/moyix/creddump): Dump Windows credentials
     - [dnscat2](https://github.com/iagox86/dnscat2): Tunneling data over DNS
-    - [exiftool](https://exiftool.org/): Read, write and edit file metadata
-    - [extundelete]https://extundelete.sourceforge.net/):  Recover deleted files from an ext3 or ext4 partition
+    - [exiftool](tools/exiftool.md): Read, write and edit file metadata
+    - [extundelete]https://extundelete.sourceforge.net/): Recover deleted files from an ext3 or ext4 partition
     - [exiv2](https://www.exiv2.org/manpage.html): Image metadata manipulation tool
     - [firmware-mod-kit](https://code.google.com/archive/p/firmware-mod-kit/): Modify firmware images without recompiling
     - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers ⭐
@@ -471,11 +470,13 @@ Souce: https://try2hack.me/<br>
     - [BinaryEdge](https://www.binaryedge.io/): Platform to scan, acquire, and classify public Internet data
     - [Creepy](https://github.com/ilektrojohn/creepy): Geolocation OSINT tool for gathering info from social networks
     - [dehashed](https://www.dehashed.com/): Search engine for hacked databases
+    - [dnsrecon](tools/dnsrecon.md): DNS enumeration tool ⭐⭐
     - [graph.tips](https://graph.tips/): Search public Facebook data
     - [haveibeenpwned](https://haveibeenpwned.com/): Check if email or username has been in a data breach
     - [instant-username-search](https://instantusername.com/): Check username availability on 100+ social media sites
     - [leakcheck](https://leakcheck.io/): Check for leaked credentials
     - [Linkin eMail Finder](https://skrapp.io/tutorials/linkedin-email-finder): Chrome Extension
+    - [nslookup](tools/nslookup.md) ⭐
     - [Sherlock](https://github.com/sherlock-project/sherlock): Hunts cheaters by username across multiple social media
     - [Shodan](https://www.shodan.io/): Search engine for Internet-connected devices (Not Free)
     - [Social Mapper](https://github.com/Greenwolf/social_mapper): Uses facial recognition to correlate social media profiles
@@ -496,6 +497,7 @@ Souce: https://try2hack.me/<br>
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
     - [nmap](tools/nmap.md): Network Mapper, Network Discovery, Port Scanner ⭐⭐⭐⭐⭐
     - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
+    - [smbclient](tools/smbclient.md)
     - [smbmap](tools/smbmap.md)
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
@@ -599,6 +601,7 @@ Souce: https://try2hack.me/<br>
     - [commix](https://www.kali.org/tools/commix/): Kali Linux | ParrotOS, Command Injection vulnerabilities
     - [CSP Evaluator](https://csp-evaluator.withgoogle.com/): Online Content Security Policy (CSP) checker
     - [debugHunter](https://github.com/devploit/debugHunter): Discover hidden debugging parameters & uncover web application secrets
+    - [dirb](tools/dirb.md): Directory enumeration
     - [dirbuster](https://github.com/KajanM/DirBuster): Kali Linux | ParrotOS, Find hidden directories in Web App
     - [dirhunt](https://github.com/Nekmo/dirhunt): Find web directories without bruteforce
     - [dirsearch](https://github.com/maurosoria/dirsearch): Web path scanner
@@ -612,7 +615,7 @@ Souce: https://try2hack.me/<br>
     - [JSFiddle](https://jsfiddle.net/): Online test your JavaScript, CSS, HTML or CoffeeScript
     - [MongoDB](tools/mongodb.md)
     - [ngrok](https://ngrok.com/): Secure introspectable tunnels to localhost
-    - [nikito](https://github.com/sullo/nikto): Kali Linux | ParrotOS, Web Server vunerability scanner
+    - [nikito](tools/nikito.md): Kali Linux | ParrotOS, Web Server vunerability scanner ⭐⭐⭐
     - [nomore403](https://github.com/devploit/nomore403): Bypass 40x errors
     - Noob: /admin/ /.git/
     - [OWASP Zap](https://owasp.org/www-project-zap/): Intercepting proxy to replay, debug, and fuzz HTTP requests and responses
@@ -627,16 +630,17 @@ Souce: https://try2hack.me/<br>
     - [smuggler](https://github.com/defparam/smuggler): HTTP Request Smuggling / Desync testing tool 
     - [sqlmap](tools/sqlmap.md): Kali Linux | ParrotOS, automating SQL injection atk ⭐⭐⭐
     - [Subdomain Finder](https://subdomainfinder.c99.nl/index.php): Online Subdomain Finder
+    - [W3af](https://github.com/andresriancho/w3af): Web application attack and audit framework
     - [Web App Default DB](https://github.com/pwnwiki/webappdefaultsdb/blob/master/README.md)⭐⭐⭐
+    - WordPress
+        - [Wordpress Password Hash Generator](tools/wordpresshash.md)
+        - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan and do reconnaissance for WordPress
+    - [wfuzz](tools/wfuzz.md): Web App Enumeration
     - [XSS PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)⭐
     - [XSSer](https://xsser.03c8.net/): Automated XSS testor
     - [XSStrike](https://github.com/s0md3v/XSStrike): CLI for automated XSS attacks
     - [XSS Filter Evasion](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)⭐⭐
     - [XXE (XML eXternal Entity)](tools/xxe.md)
-    - [W3af](https://github.com/andresriancho/w3af): Web application attack and audit framework
-    - WordPress
-        - [Wordpress Password Hash Generator](tools/wordpresshash.md) 
-        - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan and do reconnaissance for WordPress
     - [ysoserial](https://github.com/frohoff/ysoserial): Generating payloads that exploit unsafe Java object deserialization
 - Vulnerabilities
     - Java
@@ -700,16 +704,24 @@ CISSP (Certified Information Systems Security Professional)     Security domains
 OSCE/OSWE/OSEP                                                  Advanced offensive security
 ```
 
+# Checklist (CTF Quick Edition)
+[OSINT Checklist](tools/osintchecklist.md)
+
+# Useful
+[Shell Commands](tools/usefulshellcommands.md)
+
 # Red Team/Penetration Attack
 [Aircrack-ng](https://www.aircrack-ng.org/): Wi-Fi Testing, monitoring .pcap<br>
 [AMSI Bypass](https://0x00-0x00.github.io/research/2018/10/28/How-to-bypass-AMSI-and-Execute-ANY-malicious-powershell-code.html?mkt_tok=eyJpIjoiWTJGaU5qbGlaVFZsTXpVdyIsInQiOiJBSXdzQm5FMGY0S1BrTWlBcVBlZ3ErN2NcL1RNeGkwcnNSK3FZcGVvaUhFRVJiQUhVcmVIWko0aWdNNCtXcVRrcWtDRTMxRGlpM1wvQlIxVHZlU1RUNk5sRVJnQ1dUZEFVQ0JTRHk4ejNVQTBWK1Y3Um1EWHZYdGY5YWQ5V2hTZFVXIn0%3D): Anti-virus evasion with PowerShell<br>
 [autorecon](tools/autorecon.md): automatic recon playbook ⭐⭐<br>
 [BloodHound](https://github.com/SpecterOps/BloodHound-Legacy): Identify file/directory attack paths<br>
 [Burp Suite](https://portswigger.net/burp): Web Application Testing ⭐⭐⭐⭐⭐<br>
+[CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec): Depreciated
 [dnschef](https://github.com/iphelps/dnschef): DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)<br>
 [Ghidra](https://ghidra-sre.org/): Reverse Engineering (Disassembling, Decompiling) ⭐⭐⭐⭐⭐<br>
 [Hydra](tools/hydra.md): Attack FTP HTTP SSH SAP<br>
 [Impacket](https://github.com/fortra/impacket): Python collection for creating exploits<br>
+[kerberoast](https://github.com/nidem/kerberoast): Attacking MS Kerberos implementations
 [Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits ⭐⭐⭐⭐⭐<br>
 [msfvenom](tools/msfvenom.md)<br>
 [Osmedeus](https://github.com/j3ssie/osmedeus): Automate Reconnaissance Process<br>

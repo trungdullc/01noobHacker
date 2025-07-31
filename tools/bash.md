@@ -57,7 +57,9 @@ head -n 10 FILE                         output first 10 lines of file
 wc FILE                                 (l)ines (w)ords bytes
 wc -c FILE                              Bytes (characters)
 ```
-[Magic Numbers](https://en.wikipedia.org/wiki/List_of_file_signatures): Starting values that identify a file format
+[Magic Numbers](https://en.wikipedia.org/wiki/List_of_file_signatures): Starting values that identify a file format<br>
+[stat](tools/stat.md): Output file info<br>
+[strings](tools/strings.md): Output sequence of human readable characters from a file
 
 ## Comparing Files
 ```
@@ -99,10 +101,11 @@ sed -n '2,4p' file.txt                              p: Print only lines 2 to 4
 
 ## Networking
 ```
+⭐arp -a                                ARP (Address Resolution Protocol) table
 ⭐ping <HOST>                           ping host 8.8.8.8 or google.com
-whois <DOMAIN>                          reconnaissance & threat intelligence
-dig <DOMAIN>                            returns DNS for domain
-dig -x <DOMAIN>                         return reserve lookup host
+⭐whois <DOMAIN>                        reconnaissance & threat intelligence
+⭐dig <DOMAIN>                          returns DNS for domain
+⭐dig -x <DOMAIN>                       return reserve lookup host
 ⭐wget FILE                             download file (exploit/script) for CTF
 wget -c FILE                            continue topped download
 wget -r URL                             recursively download files from url
@@ -119,7 +122,8 @@ ifconfig                                ipconfig
 netstat -tuln                           Show all network connections
 ss -tuln                                Check Open Ports
 ```
-[Resource Saver](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb?hl=en-US&pli=1): DL <b>all resources</b> from website
+[Resource Saver](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb?hl=en-US&pli=1): DL <b>all resources</b> from website<br>
+[certutil](certutil.md): Transfering Files
 
 ## Processes
 ```

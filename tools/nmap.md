@@ -4,6 +4,18 @@
 Source: https://nmap.org/
 Description: Port and service scanning
 
+# Basic nmap scan of host
+nmap -sV -sC -oA initial 192.168.0.X
+
+# Scanning all ports
+nmap -T4 -A -p- -oA fullscan 192.168.0.X
+
+# Check ciphers on webservers
+nmap -p 443 --script=ssl-enum-ciphers 192.168.0.X
+```
+
+# Advanced
+```
 # Initial Fast TCP Scan
 nmap -v -sS -sV -Pn --top-ports 1000 -oA initial_scan_192.168.0.1 192.168.0.1
 

