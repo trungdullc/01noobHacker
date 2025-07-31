@@ -37,6 +37,7 @@ Cryptography
     Applied Cryptography: Protocols, Algorithms, and Source Code in C by Schneier, Bruce
     Serious Cryptography by Jean-Philippe Aumasson
 Forensic
+    CTF Field Guide: https://trailofbits.github.io/ctf/index.html
 OSINT (Open-Source Intelligence)
 Networking
     Computer Networking: A Top-Down Approach by James F. Kurose
@@ -87,6 +88,19 @@ Programming
         PowerShell in a month of lunches: https://www.youtube.com/playlist?list=PL6D474E721138865A
         PowerShell Master Class: https://www.youtube.com/playlist?list=PLlVtbbG169nFq_hR7FcMYg32xsSAObuq8
         PowerShell Documentation: https://learn.microsoft.com/en-us/powershell/
+Blue Team
+    Blue Team Tools: https://github.com/A-poc/BlueTeam-Tools ⭐⭐⭐⭐⭐
+    Blue Team Tools (Chinese Edition): https://www.lodashrc.cn/en/BlueTeam-Tools.html
+    Blue Teaming Toolkit: https://blueteam.ryanheavican.com/
+    Blue Team Notes: https://gist.github.com/alexiasa/30f8af9c0b4107eb5e8b280bb883b19e
+Red Team (CRTE)
+    Hacking Notes: https://www.hacking-notes.com/
+    CRTE Notes: https://github.com/0xStarlight/CRTE-Notes
+    Red Team Notes 1.0: https://www.ired.team/ ⭐⭐⭐⭐
+    Red Team Notes 2.0: https://dmcxblue.gitbook.io/red-team-notes-2-0/ ⭐⭐⭐⭐⭐
+    Red Teaming Handbook: https://home.army.mil/wood/application/files/6115/8222/0759/RedTeamHB.pdf
+    Red Team Tools: https://github.com/A-poc/RedTeam-Tools ⭐⭐⭐⭐⭐
+    Red Teaming Toolkit: https://github.com/infosecn1nja/Red-Teaming-Toolkit ⭐⭐⭐⭐⭐
 ```
 
 # Research
@@ -403,6 +417,7 @@ Souce: https://try2hack.me/<br>
     - [padding-oracle-attacker](https://github.com/KishanBagaria/padding-oracle-attacker): Padding oracle attacks
     - [Keyboard Shift Cipher](https://www.dcode.fr/keyboard-shift-cipher): Web App decryption
     - [Morse Code Translator](https://morsecode.world/international/translator.html): Online Morse Code Translator
+    - [openssl](tools/openssl.md)
     - [PkCrack](https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html): Breaking PkZip-encryption
     - [Playfair Cipher](http://bionsgadgets.appspot.com/ww_forms/playfair_ph_web_worker3.html)
     - [QuipQuip](https://quipqiup.com/): Substitution/vigenere Cryptogram solver
@@ -496,13 +511,16 @@ Souce: https://try2hack.me/<br>
     - [nc](tools/nc.md): Reading/Writing to network connections using TCP or UDP ⭐⭐⭐⭐⭐
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
     - [nmap](tools/nmap.md): Network Mapper, Network Discovery, Port Scanner ⭐⭐⭐⭐⭐
+    - [OpenVAS](tools/openvas.md)
     - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
     - [smbclient](tools/smbclient.md)
     - [smbmap](tools/smbmap.md)
+    - [Snort](tools/snort.md)
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
     - [tcpflow](tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer ⭐⭐⭐
     - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer ⭐⭐⭐⭐⭐
+    - [Yara](https://virustotal.github.io/yara/): Malware research and detection through pattern matching and rules-based analysis
 - Privilege Escalation
     - [Basic Linux Privilege Escalation](https://github.com/sleventyeleven/linuxprivchecker): Foundational guide and script
     - [GTFOBins](https://gtfobins.github.io/): Unix binaries can exploit to bypass local security restrictions ⭐⭐⭐⭐
@@ -715,6 +733,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 # Red Team/Penetration Attack
 [Aircrack-ng](https://www.aircrack-ng.org/): Wi-Fi Testing, monitoring .pcap<br>
 [AMSI Bypass](https://0x00-0x00.github.io/research/2018/10/28/How-to-bypass-AMSI-and-Execute-ANY-malicious-powershell-code.html?mkt_tok=eyJpIjoiWTJGaU5qbGlaVFZsTXpVdyIsInQiOiJBSXdzQm5FMGY0S1BrTWlBcVBlZ3ErN2NcL1RNeGkwcnNSK3FZcGVvaUhFRVJiQUhVcmVIWko0aWdNNCtXcVRrcWtDRTMxRGlpM1wvQlIxVHZlU1RUNk5sRVJnQ1dUZEFVQ0JTRHk4ejNVQTBWK1Y3Um1EWHZYdGY5YWQ5V2hTZFVXIn0%3D): Anti-virus evasion with PowerShell<br>
+[atomic-red-team](https://github.com/redcanaryco/atomic-red-team): MITRE ATT&CK® Framework⭐⭐⭐⭐⭐
 [autorecon](tools/autorecon.md): automatic recon playbook ⭐⭐<br>
 [BloodHound](https://github.com/SpecterOps/BloodHound-Legacy): Identify file/directory attack paths<br>
 [Burp Suite](https://portswigger.net/burp): Web Application Testing ⭐⭐⭐⭐⭐<br>
