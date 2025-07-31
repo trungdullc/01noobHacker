@@ -427,7 +427,7 @@ Souce: https://try2hack.me/<br>
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
     - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool ⭐⭐⭐⭐⭐
     - [Belkasoft RAM Capturer](https://belkasoft.com/ram-capturer): Volatile Memory Acquisition Tool
-    - [binwalk](https://github.com/ReFirmLabs/binwalk): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file ⭐⭐
+    - [binwalk](tools/binwalk.md): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file ⭐⭐
     - [Bkhive & samdump2](https://www.kali.org/tools/samdump2/): Dump SYSTEM and SAM files
     - [Bulk-extractor](https://github.com/simsong/bulk_extractor): Digital forensics exploitation tool
     - [ChromeCacheView](https://www.nirsoft.net/utils/chrome_cache_view.html#google_vignette):  Reads cache folder of Google Chrome Web browser and displays file list
@@ -541,6 +541,7 @@ Souce: https://try2hack.me/<br>
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
     - [miasm](https://github.com/cea-sec/miasm): Reverse engineering framework in Python
     - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF): decompile and reverse APK files
+    - [objdump](tools/objdump.md)
     - [Objection](https://github.com/sensepost/objection): Runtime mobile exploration
     - [Online Assembler/Disassembler](http://shell-storm.org/online/Online-Assembler-and-Disassembler/): Online wrappers around Keystone and Capstone projects
     - [peda](https://github.com/longld/peda): Python Exploit Development Assistance for gdb
