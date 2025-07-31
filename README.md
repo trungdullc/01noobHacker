@@ -643,6 +643,8 @@ Souce: https://try2hack.me/<br>
     - macOS
         - [Apple Hidden Files](tools/dsstore.md)
         - [Mac AutoLogin Password Cracking](tools/macautologin.md)
+    - NetBIOS
+        - [Enumeration](tools/netbiosenumeration.md)
     - PERL
         - [Misuse](tools/perlmisuse.md)
     - PHP
@@ -655,6 +657,8 @@ Souce: https://try2hack.me/<br>
         - [Misuse](tools/pureftp.md)
     - SMB
         - [Misuse](tools/smbmisuse.md)
+    - SMTP
+        - [Enumeration](tools/smtpenumeration.md)
     - TFTP
         - [Misuse](tools/tftpmisuse.md)
     - VBScript
