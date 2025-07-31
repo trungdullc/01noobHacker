@@ -97,7 +97,8 @@ sed 's/old/new/g' file.txt                          /g: Replace all 'old' with '
 sed '/pattern/d' file.txt                           /d: Delete lines matching pattern
 sed -n '2,4p' file.txt                              p: Print only lines 2 to 4
 ```
-[find](tools/find.md)
+[find](tools/find.md)<br>
+[grep]()
 
 ## Networking
 ```
@@ -123,7 +124,8 @@ netstat -tuln                           Show all network connections
 ss -tuln                                Check Open Ports
 ```
 [Resource Saver](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb?hl=en-US&pli=1): DL <b>all resources</b> from website<br>
-[certutil](certutil.md): Transfering Files
+[certutil](certutil.md): Transfering Files<br>
+[wget](tools/wget.md)
 
 ## Processes
 ```
@@ -160,6 +162,7 @@ df                                  show disk usage
 lsblk                               Disk info
 uname -a                            show kernel config
 ```
+[guestmount](tools/guestmount.md)<br>
 [showmount](tools/showmount.md)<br>
 [snmp](tools/snmp.md)
 

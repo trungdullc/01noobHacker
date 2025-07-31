@@ -1,4 +1,14 @@
-# Prepare GitHub
+# Terminal Variable Setup ⭐⭐⭐⭐⭐
+```
+# Set target IP variable
+IP=10.10.10.123
+
+# Use in BASH scripts
+echo $IP
+```
+[Setup Usages](tools/setup.md)
+
+# Prepare GitHub (read git before)
 ```bash
 Create README.md and .gitignore
 git clone git@github.com:trungdullc/01noobHacker.git
@@ -30,6 +40,8 @@ Binary exploitation
     pwn.college: https://pwn.college/
     LiveOverflow: https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN
     SploitFun (Writeup): https://sploitfun.wordpress.com/
+CheatSheet
+    https://www.reddit.com/r/cybersecurity/comments/iu17uu/cybersec_cheat_sheets_in_all_flavors_huge_list/ (One Day will update into mine)
 Cryptography
     Crypto 101: https://www.crypto101.io/
     Overview of Cryptography: https://www.garykessler.net/library/crypto.html
@@ -37,7 +49,7 @@ Cryptography
     Applied Cryptography: Protocols, Algorithms, and Source Code in C by Schneier, Bruce
     Serious Cryptography by Jean-Philippe Aumasson
 Forensic
-    CTF Field Guide: https://trailofbits.github.io/ctf/index.html
+    CTF Field Guide: https://trailofbits.github.io/ctf/index.html ⭐⭐⭐⭐
 OSINT (Open-Source Intelligence)
 Networking
     Computer Networking: A Top-Down Approach by James F. Kurose
@@ -99,6 +111,7 @@ Red Team (CRTE)
     Red Team Notes 1.0: https://www.ired.team/ ⭐⭐⭐⭐
     Red Team Notes 2.0: https://dmcxblue.gitbook.io/red-team-notes-2-0/ ⭐⭐⭐⭐⭐
     Red Teaming Handbook: https://home.army.mil/wood/application/files/6115/8222/0759/RedTeamHB.pdf
+    Red Team Field Manual (RTFM): https://github.com/tanc7/hacking-books/blob/master/RTFM%20-%20Red%20Team%20Field%20Manual%20v3.pdf
     Red Team Tools: https://github.com/A-poc/RedTeam-Tools ⭐⭐⭐⭐⭐
     Red Teaming Toolkit: https://github.com/infosecn1nja/Red-Teaming-Toolkit ⭐⭐⭐⭐⭐
 ```
@@ -115,6 +128,11 @@ Source: https://overthewire.org/wargames/<br>
 # Continue to underTheWire
 Purpose: Learn Powershell<br>
 Source: https://underthewire.tech/wargames<br>
+<b>TODO Later</b>
+
+# Continue to SmashTheStack Wargaming Network
+Purpose: Basic CTF<br>
+Source: https://www.smashthestack.org/<br>
 <b>TODO Later</b>
 
 # Continue to picoCTF ⭐⭐⭐⭐
@@ -345,8 +363,8 @@ Souce: https://try2hack.me/<br>
     - [bgrep](https://github.com/nneonneo/bgrep): Kali Linux | ParrotOS Search binary strings in binary file
     - [file](https://www.geeksforgeeks.org/linux-unix/how-to-find-out-file-types-in-linux/): Kali Linux | ParrotOS, Identify file types base on content
     - [grep](https://www.man7.org/linux/man-pages/man1/grep.1.html): Kali Linux | ParrotOS, Search pattern inside files
-    - [HackTricks](https://book.hacktricks.wiki/en/index.html) ⭐⭐
-    - [sed](): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
+    - [HackTricks](https://book.hacktricks.wiki/en/index.html) ⭐⭐⭐⭐⭐
+    - [sed](tools/sed.md): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
     - [tmux](https://github.com/tmux/tmux/wiki): Run & manage multiple terminal sessions inside 1 terminal window
 - Regular Expression Checker
     - [Debuggex](https://www.debuggex.com/): Online check regular expressions

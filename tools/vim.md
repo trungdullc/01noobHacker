@@ -5,6 +5,8 @@ Description: CLI text editor
 
 vim FILE.txt
 
+Tips: [ESC] /flag [enter] jump to next result with [N] ⭐
+
 # Edit SQL query
 vim sqlFile.txt
 :%! sqlformat --reindent --keywords upper --identifiers lower
