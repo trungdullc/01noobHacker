@@ -776,3 +776,6 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [Online Reverse Shell](https://www.revshells.com/): Online ⭐<br>
 [Nishang](tools/nishang.md)⭐<br>
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
+
+# Favorite Emojis
+⭐❤️🧠🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻
