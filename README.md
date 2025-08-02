@@ -778,4 +778,4 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
 
 # Favorite Emojis
-⭐❤️🧠🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻
+⭐❤️🧠👀🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻⌨️🔐
