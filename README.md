@@ -319,7 +319,7 @@ Souce: https://try2hack.me/<br>
 [Juice Shop](https://github.com/juice-shop/juice-shop-ctf): Environment setup tools for OWASP Juice Shop<br>
 [MemLabs](https://github.com/stuxnet999/MemLabs): Practice Memory Labs in Virtual Environment ⭐⭐⭐⭐
 
-# 💻 Tools to create/host CTF 🛜
+# 💻 Tools to create/host CTF 🌐
 - Creating CTF Enviornment
     - <a href="https://repo.tzku.at/book/security/pentest/Kali%20Linux%20CTF%20Blueprints%20-%20Buchanan,%20Cam.pdf" target="_blank">Kali Linux CTF Blueprints</a>
 - Platforms
@@ -744,8 +744,8 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [OSINT Checklist](tools/osintchecklist.md)
 
 # Useful
-[git Commands](tools/usefulgit.md)
-[Shell Commands](tools/usefulshellcommands.md)
+[git Commands](tools/usefulgit.md)<br>
+[Shell Commands](tools/usefulshellcommands.md)<br>
 [BASH Scripts](tools/usefulscripts.md)
 
 # Red Team/Penetration Attack
