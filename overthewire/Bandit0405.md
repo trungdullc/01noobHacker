@@ -1,0 +1,46 @@
+# Bandit Level 4 → Level 5 File types, specifically human-readable files
+
+## Previous Flag
+<b>4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw</b>
+
+## Goal
+Use previous password to log in SSH with user <b>bandit5</b> on port <b>2220</b>.  Password stored in a file somewhere <b>under inhere directory</b> and has all of the following properties:
+```
+human-readable
+1033 bytes in size
+not executable
+```
+
+## What I learned
+```
+bandit5@bandit:~/inhere$ apropos find
+find (1)    - search for files in a directory hierarchy
+
+find ./ -type f     Search for regular files
+-size 1033c         Find files 1033 bytes (c for bytes)
+! -executable       files executable files
+-exec file {} \;    Print file type using file cmd
+```
+
+## Solution
+```
+@trungdullc ➜ /workspaces/01noobHacker (main) $ ssh bandit5@bandit.labs.overthewire.org -p 2220 ⌨️
+bandit5@bandit:~$ whatis find ⌨️
+find (1)    - search for files in a directory hierarchy
+bandit5@bandit:~$ ls ⌨️
+inhere
+bandit5@bandit:~$ cd inhere/ ⌨️
+bandit5@bandit:~/inhere$ ls ⌨️
+maybehere00  maybehere02  maybehere04  maybehere06  maybehere08  maybehere10  maybehere12  maybehere14  maybehere16  maybehere18
+maybehere01  maybehere03  maybehere05  maybehere07  maybehere09  maybehere11  maybehere13  maybehere15  maybehere17  maybehere19
+bandit5@bandit:~/inhere$ find ./ -type f -size 1033c -exec file {} \; | grep "ASCII" ⌨️
+./maybehere07/.file2: ASCII text, with very long lines (1000)
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2 ⌨️
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG 🔐
+```
+
+## Flag
+<b>HWasnPhtq9AVKe0dmk45nxy20cvUa6EG</b>
+
+## Continue
+[Continue](/overthewire/Bandit0506.md)

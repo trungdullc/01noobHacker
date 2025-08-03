@@ -1,0 +1,163 @@
+# Bandit Level 30 → Level 31 Git Tagging
+
+## Previous Flag
+<b>fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy</b>
+
+## Goal
+Use previous password to log in SSH with user <b>bandit31</b> on port <b>2220</b>. There is a git repository at <b>ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220</b>. The password for the user <b>bandit31-git is the same</b> as for the user bandit31. Clone the repository and find the password.
+
+## What I learned
+```
+Remote server can run Git hooks — scripts located in repo’s .git/hooks/ directory
+
+Git Push updates local changes in remote repositories and 1st time define branch with -u
+Git Ignore is .gitignore
+Git Add updates files that will be part of the next commit. The -f flag forces files to be committed, even when they are normally ignored.
+Git Commit add comment before saving/pushing to remote repo
+Git Status checks staging status
+```
+
+## Side Quest
+```
+Trick to validate your actions and guide you to the next level without modifying the repo: git hook (scripts)
+
+# Simulate a pre-receive hook locally
+# Create a bare Git repository (simulating remote)
+mkdir /tmp/remote-repo.git
+cd /tmp/remote-repo.git
+git init --bare                 # Bare repos meant to receive pushes. They have no working directory
+
+# Create a pre-receive hook
+cd /tmp/remote-repo.git/hooks
+
+# Create the hook file
+vi pre-receive
+  #!/bin/bash
+  echo "remote: Hello! This is a simulated hook." >&2
+  echo "remote: Push denied." >&2
+  exit 1
+chmod +x pre-receive
+
+# Create a local repo to push from
+mkdir /tmp/local-repo
+cd /tmp/local-repo
+git init
+echo "Hello" > file.txt
+git add file.txt
+git commit -m "Initial commit"
+
+# Add bare repo as a remote
+git remote add origin /tmp/remote-repo.git
+
+# Try to push but get the git hook
+git push origin master
+
+remote: Hello! This is a simulated hook.
+remote: Push denied.
+To /tmp/remote-repo.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to '/tmp/remote-repo.git'
+```
+
+## Solution
+```
+@trungdullc ➜ /workspaces/01noobHacker (main) $ ssh bandit31@bandit.labs.overthewire.org -p 2220 ⌨️
+bandit31@bandit:~$ mktemp -d ⌨️
+/tmp/tmp.JiZcndFDMj
+bandit31@bandit:~$ cd /tmp/tmp.JiZcndFDMj ⌨️
+bandit31@bandit:/tmp/tmp.JiZcndFDMj$ git clone ssh://bandit31-git@localhost:2220/home/bandit31-git/repo ⌨️
+Cloning into 'repo'...
+The authenticity of host '[localhost]:2220 ([127.0.0.1]:2220)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes ⌨️
+Could not create directory '/home/bandit31/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hosts).
+
+bandit31-git@localhost's password: ⌨️
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (4/4), done.
+bandit31@bandit:/tmp/tmp.JiZcndFDMj$ ls ⌨️
+repo
+bandit31@bandit:/tmp/tmp.JiZcndFDMj$ cd repo/ ⌨️
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ ls ⌨️
+README.md
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ cat README.md ⌨️ 
+This time your task is to push a file to the remote repository.
+
+Details:
+    File name: key.txt 👀
+    Content: 'May I come in?'
+    Branch: master
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ git log --oneline ⌨️
+6d7b245 (HEAD -> master, origin/master, origin/HEAD) initial commit ⌨️
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ git branch -a ⌨️
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ ls -la ⌨️
+total 20
+drwxrwxr-x 3 bandit31 bandit31 4096 Aug  3 14:27 .
+drwx------ 3 bandit31 bandit31 4096 Aug  3 14:27 ..
+drwxrwxr-x 8 bandit31 bandit31 4096 Aug  3 14:27 .git
+-rw-rw-r-- 1 bandit31 bandit31    6 Aug  3 14:27 .gitignore 👀
+-rw-rw-r-- 1 bandit31 bandit31  147 Aug  3 14:27 README.md
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ file .gitignore ⌨️
+.gitignore: ASCII text
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ cat .gitignore ⌨️       # Note: Can skip step, any file != .txt
+*.txt
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ rm .gitignore ⌨️
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ echo "May I come in?" > key.txt ⌨️
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ git add key.txt ⌨️
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ git commit -m "Upload file" ⌨️
+[master 3613f15] Upload file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 key.txt
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ git status ⌨️
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bandit31@bandit:/tmp/tmp.JiZcndFDMj/repo$ git push -u origin master ⌨️
+The authenticity of host '[localhost]:2220 ([127.0.0.1]:2220)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes ⌨️
+Could not create directory '/home/bandit31/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hosts).
+
+bandit31-git@localhost's password: ⌨️
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 326 bytes | 326.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: ### Attempting to validate files... ####
+remote: 
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote: 
+remote: Well done! Here is the password for the next level:
+remote: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K 🔐
+remote: 
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote: 
+To ssh://localhost:2220/home/bandit31-git/repo
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'ssh://localhost:2220/home/bandit31-git/repo'
+```
+
+## Flag
+<b>3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K</b>
+
+## Continue
+[Continue](/overthewire/Bandit3132.md)

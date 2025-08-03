@@ -1,0 +1,300 @@
+# Bandit Level 15 → Level 16 OpenSSL, secure communication
+
+## Previous Flag
+<b>kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx</b>
+
+## Goal
+Use previous password to log in SSH with user <b>bandit16</b> on port <b>2220</b>.  Credentials can be retrieved by submitting password of current level to a port on <b>localhost in the range 31000 to 32000</b>. First <b>find which of these ports have a server listening</b> on them. Then <b>find out which of those speak SSL/TLS</b> and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
+
+Helpful note: Getting “DONE”, “RENEGOTIATING” or “KEYUPDATE”? Read the “CONNECTED COMMANDS” section in the manpage.
+
+## What I learned
+```
+OpenSSL is a library for secure communication over networks. It implements Transport Layer Security (TLS) and Secure Sockets Layer (SSL)
+openssl s_client is implementation of a simple client that connects to a server using SSL/TLS
+ncat does not support connecting to multiple ports at once
+User can't go into tmp folder but can create subfolder, Linux weakness
+```
+
+## Solution
+```
+@trungdullc ➜ /workspaces/01noobHacker (main) $ ssh bandit16@bandit.labs.overthewire.org -p 2220 ⌨️
+bandit16@bandit:~$ whatis ssh telnet nc ncat socat openssl s_client nmap netstat ss ⌨️
+ssh (1)              - OpenSSH remote login client
+telnet (1)           - user interface to the TELNET protocol
+nc (1)               - arbitrary TCP and UDP connections and listens
+ncat (1)             - Concatenate and redirect sockets
+socat (1)            - Multipurpose relay (SOcket CAT)
+openssl (1ssl)       - OpenSSL command line program
+s_client (1ssl)      - OpenSSL application commands
+nmap (1)             - Network exploration tool and security / port scanner
+netstat (8)          - Print network connections, routing tables, interface statistics, masquerade connections, and multicast...
+ss (8)               - another utility to investigate sockets
+bandit16@bandit:~$ nmap localhost -p 31000-32000 ⌨️
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-08-01 00:07 UTC
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00041s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+31046/tcp open  unknown
+31518/tcp open  unknown
+31691/tcp open  unknown
+31790/tcp open  unknown
+31960/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds
+bandit16@bandit:~$ nmap -sV localhost -p 31000-32000 ⌨️
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2021-06-12 16:17 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00026s latency).
+Not shown: 996 closed ports
+PORT      STATE SERVICE     VERSION
+31046/tcp open  echo
+31518/tcp open  ssl/echo
+31691/tcp open  echo
+31790/tcp open  ssl/unknown
+31960/tcp open  echo
+bandit16@bandit:~$ nmap -p 31046, 31518, 31691, 31790, 31960 -A localhost ⌨️
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-08-01 00:38 UTC
+Failed to resolve "31518,".
+Failed to resolve "31691,".
+Failed to resolve "31790,".
+Nmap scan report for 31960 (0.0.124.216)
+Host is up (0.00012s latency).
+
+PORT      STATE  SERVICE VERSION
+31046/tcp closed unknown
+
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000063s latency).
+
+PORT      STATE SERVICE VERSION
+31046/tcp open  echo
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 2 IP addresses (2 hosts up) scanned in 40.37 seconds
+bandit16@bandit:~$ ncat --ssl localhost 31046 ⌨️
+Ncat: Input/output error.
+bandit16@bandit:~$ ncat --ssl localhost 31518 ⌨️
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx ⌨️
+^C
+bandit16@bandit:~$ ncat --ssl localhost 31691 ⌨️
+Ncat: Input/output error.
+bandit16@bandit:~$ ncat --ssl localhost 31790 ⌨️
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx ⌨️
+Correct!
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+bandit16@bandit:~$ cat /etc/bandit_pass/bandit16                      # Cheating
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+bandit16@bandit:~$ openssl s_client -connect localhost:31790 -ign_eof
+CONNECTED(00000003)
+Can't use SSL_get_servername
+depth=0 CN = SnakeOil
+verify error:num=18:self-signed certificate
+verify return:1
+depth=0 CN = SnakeOil
+verify return:1
+---
+Certificate chain
+ 0 s:CN = SnakeOil
+   i:CN = SnakeOil
+   a:PKEY: rsaEncryption, 4096 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Jun 10 03:59:50 2024 GMT; NotAfter: Jun  8 03:59:50 2034 GMT
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIFBzCCAu+gAwIBAgIUBLz7DBxA0IfojaL/WaJzE6Sbz7cwDQYJKoZIhvcNAQEL
+BQAwEzERMA8GA1UEAwwIU25ha2VPaWwwHhcNMjQwNjEwMDM1OTUwWhcNMzQwNjA4
+MDM1OTUwWjATMREwDwYDVQQDDAhTbmFrZU9pbDCCAiIwDQYJKoZIhvcNAQEBBQAD
+ggIPADCCAgoCggIBANI+P5QXm9Bj21FIPsQqbqZRb5XmSZZJYaam7EIJ16Fxedf+
+jXAv4d/FVqiEM4BuSNsNMeBMx2Gq0lAfN33h+RMTjRoMb8yBsZsC063MLfXCk4p+
+09gtGP7BS6Iy5XdmfY/fPHvA3JDEScdlDDmd6Lsbdwhv93Q8M6POVO9sv4HuS4t/
+jEjr+NhE+Bjr/wDbyg7GL71BP1WPZpQnRE4OzoSrt5+bZVLvODWUFwinB0fLaGRk
+GmI0r5EUOUd7HpYyoIQbiNlePGfPpHRKnmdXTTEZEoxeWWAaM1VhPGqfrB/Pnca+
+vAJX7iBOb3kHinmfVOScsG/YAUR94wSELeY+UlEWJaELVUntrJ5HeRDiTChiVQ++
+wnnjNbepaW6shopybUF3XXfhIb4NvwLWpvoKFXVtcVjlOujF0snVvpE+MRT0wacy
+tHtjZs7Ao7GYxDz6H8AdBLKJW67uQon37a4MI260ADFMS+2vEAbNSFP+f6ii5mrB
+18cY64ZaF6oU8bjGK7BArDx56bRc3WFyuBIGWAFHEuB948BcshXY7baf5jjzPmgz
+mq1zdRthQB31MOM2ii6vuTkheAvKfFf+llH4M9SnES4NSF2hj9NnHga9V08wfhYc
+x0W6qu+S8HUdVF+V23yTvUNgz4Q+UoGs4sHSDEsIBFqNvInnpUmtNgcR2L5PAgMB
+AAGjUzBRMB0GA1UdDgQWBBTPo8kfze4P9EgxNuyk7+xDGFtAYzAfBgNVHSMEGDAW
+gBTPo8kfze4P9EgxNuyk7+xDGFtAYzAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3
+DQEBCwUAA4ICAQAKHomtmcGqyiLnhziLe97Mq2+Sul5QgYVwfx/KYOXxv2T8ZmcR
+Ae9XFhZT4jsAOUDK1OXx9aZgDGJHJLNEVTe9zWv1ONFfNxEBxQgP7hhmDBWdtj6d
+taqEW/Jp06X+08BtnYK9NZsvDg2YRcvOHConeMjwvEL7tQK0m+GVyQfLYg6jnrhx
+egH+abucTKxabFcWSE+Vk0uJYMqcbXvB4WNKz9vj4V5Hn7/DN4xIjFko+nREw6Oa
+/AUFjNnO/FPjap+d68H1LdzMH3PSs+yjGid+6Zx9FCnt9qZydW13Miqg3nDnODXw
++Z682mQFjVlGPCA5ZOQbyMKY4tNazG2n8qy2famQT3+jF8Lb6a4NGbnpeWnLMkIu
+jWLWIkA9MlbdNXuajiPNVyYIK9gdoBzbfaKwoOfSsLxEqlf8rio1GGcEV5Hlz5S2
+txwI0xdW9MWeGWoiLbZSbRJH4TIBFFtoBG0LoEJi0C+UPwS8CDngJB4TyrZqEld3
+rH87W+Et1t/Nepoc/Eoaux9PFp5VPXP+qwQGmhir/hv7OsgBhrkYuhkjxZ8+1uk7
+tUWC/XM0mpLoxsq6vVl3AJaJe1ivdA9xLytsuG4iv02Juc593HXYR8yOpow0Eq2T
+U5EyeuFg5RXYwAPi7ykw1PW7zAPL4MlonEVz+QXOSx6eyhimp1VZC11SCg==
+-----END CERTIFICATE-----
+subject=CN = SnakeOil
+issuer=CN = SnakeOil
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 2103 bytes and written 373 bytes
+Verification error: self-signed certificate
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 4096 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 18 (self-signed certificate)
+---
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 20EE5E945E852C199463F5AAAB215311DFA41C90CDDD6D35487736DC706AE328
+    Session-ID-ctx: 
+    Resumption PSK: D9267D7891CD25130892DB9A9ED7A1A12B85755BB8C825448531278A929F9585E8A7F5D460EA805E8C7E69C9CB5284A0
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 3b fe 16 9d e3 87 32 73-5c 74 00 e8 af 36 52 06   ;.....2s\t...6R.
+    0010 - ea c5 6d 6a a4 d2 32 c2-18 f2 1b 21 60 3c 45 bc   ..mj..2....!`<E.
+    0020 - 8b cb fc 3f 83 4a ce 1d-06 89 f6 3b 25 d9 1b a7   ...?.J.....;%...
+    0030 - bf bc f6 45 c1 9b 23 98-38 b1 c4 2f 71 2f 49 d7   ...E..#.8../q/I.
+    0040 - 23 45 03 17 95 5d 1a f6-48 5c d5 9b 3d 86 b5 f3   #E...]..H\..=...
+    0050 - 7b 35 1e 98 02 a7 1d 61-4e 8e 9a 92 07 a5 7d af   {5.....aN.....}.
+    0060 - 8d e6 f5 e4 6d f0 30 26-ec 39 1d dc 36 da b3 d6   ....m.0&.9..6...
+    0070 - 18 1a 1f 0e 72 40 da 24-2c 3c ee 12 a1 28 f5 e2   ....r@.$,<...(..
+    0080 - 0c e2 6c 9b a1 d9 08 20-97 b0 10 65 68 bd e0 a3   ..l.... ...eh...
+    0090 - 20 b4 90 dd 0d 2f d8 03-69 c8 36 3d 18 c7 6d 7a    ..../..i.6=..mz
+    00a0 - b7 28 ef c9 92 bf 44 49-20 99 a6 aa ad 3e 25 18   .(....DI ....>%.
+    00b0 - eb ac f1 dd 7e a1 93 f8-e1 27 a3 98 80 3f 58 c1   ....~....'...?X.
+    00c0 - 82 86 f1 89 39 36 60 96-02 36 dc 33 11 ef 2c 5a   ....96`..6.3..,Z
+    00d0 - 61 67 d4 c7 2b 70 fc e3-6d 6b 31 e0 00 c3 35 9c   ag..+p..mk1...5.
+
+    Start Time: 1754010180
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self-signed certificate)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 5BDD311E266BF8D635860272E6D187A90F445D86CC0B0744674EA3A3578A6942
+    Session-ID-ctx: 
+    Resumption PSK: 0C9C2E921DC2BCD55FBD806E571B81D168776287248E1C6F79A9189C75E1BE385428E9AB5847FF12029D304D806FB685
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 3b fe 16 9d e3 87 32 73-5c 74 00 e8 af 36 52 06   ;.....2s\t...6R.
+    0010 - 9f 81 ba 61 e5 4b c1 9b-b3 e2 7e 4d 44 88 f8 36   ...a.K....~MD..6
+    0020 - 72 7b 2a b1 52 55 b7 ca-4f 90 e7 4f f9 af 3d e6   r{*.RU..O..O..=.
+    0030 - d3 0d db d8 86 1f a8 39-e0 ab 09 ad c5 bd eb fa   .......9........
+    0040 - 4b 62 d2 83 be ba b5 07-87 3e f6 53 e0 82 10 51   Kb.......>.S...Q
+    0050 - 43 a4 d7 a7 f7 69 49 b2-c5 e2 7d 36 22 79 27 0d   C....iI...}6"y'.
+    0060 - f8 7d 10 fd 13 38 f0 25-31 90 c4 12 2d 74 6c e5   .}...8.%1...-tl.
+    0070 - ca 13 35 ad 5c 94 a7 4b-fb 09 1c 36 6c 5b 36 47   ..5.\..K...6l[6G
+    0080 - 42 da b0 2f 1c 7a 01 8b-18 79 b7 f6 70 a9 b1 d4   B../.z...y..p...
+    0090 - ce 73 7b 24 ea 92 1a 1f-96 e0 4e 8f d0 06 d2 30   .s{$......N....0
+    00a0 - 01 58 7c ed 54 8c 88 c8-c2 a1 03 08 71 4f de b2   .X|.T.......qO..
+    00b0 - 3a c3 46 b1 f9 a6 07 c1-83 68 5e 88 b2 ad 80 32   :.F......h^....2
+    00c0 - 68 7d 1c 91 9e 89 0e 48-de fa f5 fb ba 42 07 3a   h}.....H.....B.:
+    00d0 - 40 c2 70 8d 4e 32 04 b9-31 ed c3 69 7c 2e 6d 55   @.p.N2..1..i|.mU
+
+    Start Time: 1754010180
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self-signed certificate)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx ⌨️
+Correct!
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+🔐
+closed
+bandit16@bandit:~$ mkdir /tmp/bandit16-temp ⌨️                    # Note: made you create key in temp
+bandit16@bandit:~$ cd /tmp/bandit16-temp ⌨️
+bandit16@bandit:/tmp/bandit16-temp$ vi key ⌨️
+bandit16@bandit:/tmp/bandit16-temp$ chmod 600 key ⌨️
+bandit16@bandit:/tmp/bandit16-temp$ ssh -i key bandit17@bandit.labs.overthewire.org -p 2220 ⌨️
+The authenticity of host '[bandit.labs.overthewire.org]:2220 ([127.0.0.1]:2220)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes ⌨️
+Could not create directory '/home/bandit16/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit16/.ssh/known_hosts).
+bandit17@bandit:~$ 
+```
+
+## Flag
+N/A logged in with private RSA
+
+## Continue
+[Continue](/overthewire/Bandit1617.md)

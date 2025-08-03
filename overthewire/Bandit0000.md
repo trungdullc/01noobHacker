@@ -1,0 +1,51 @@
+# Bandit Level 0 SSH Login
+
+## Goal
+Be able to log onto OverTheWire SSH server. Given password <b>bandit0</b> and port <b>2220</b>.  Password stored in <b>readme</b> located in the home directory. 
+
+```bash
+whoami
+bandit0
+hostname
+bandit.labs.overthewire.org
+```
+
+## What I learned
+```
+which man
+apropos whoami
+man hostname
+ssh --help
+ls -lah
+cat readme
+```
+
+## Solution (Putty or Virtual Box or Codespace)
+![alt text](/static/00putty.png "Putty")
+![alt text](/static/00kalilinux.png "Virtual Machine")
+![alt text](/static/00github.png "GitHub Codespace")
+```
+@trungdullc ➜ /workspaces/01noobHacker (main) $ ssh bandit0@bandit.labs.overthewire.org -p 2220 ⌨️
+The authenticity of host '[bandit.labs.overthewire.org]:2220 ([16.171.91.169]:2220)' can't be established.
+ED25519 key fingerprint is SHA256:C2hBhVw4rEf5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes ⌨️
+Warning: Permanently added '[bandit.labs.overthewire.org]:2220' (ED25519) to the list of known hosts.
+
+bandit0@bandit:~$ ls ⌨️
+readme
+bandit0@bandit:~$ cat readme ⌨️
+Congratulations on your first steps into the bandit game!!
+Please make sure you have read the rules at https://overthewire.org/rules/
+If you are following a course, workshop, walkthrough or other educational activity,
+please inform the instructor about the rules as well and encourage them to
+contribute to the OverTheWire community so we can keep these games free!
+
+The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If 🔐
+```
+
+## Flag
+<b>ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If</b>
+
+## Continue
+[Continue](/overthewire/Bandit0001.md)

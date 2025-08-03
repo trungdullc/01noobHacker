@@ -1,0 +1,53 @@
+# Bandit Level 16 → Level 17 Port and Service Scanning with Nmap and SSL repetition
+
+## Previous Flag
+N/A logged in with private RSA
+
+## Goal
+Use private RSA to log in with user <b>bandit17</b> on port <b>2220</b>.  There are 2 files in the homedirectory: passwords.old and passwords.new. The <b>password for the next level is in passwords.new</b> and is the <b>only line that has been changed</b> between passwords.old and passwords.new
+
+NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
+
+## What I learned
+```
+diff compares what different on both files
+```
+
+## Solution
+```
+bandit17@bandit:~$ ls ⌨️
+passwords.new  passwords.old
+bandit17@bandit:~$ whatis cat grep ls diff ⌨️
+cat (1)              - concatenate files and print on the standard output
+grep (1)             - print lines that match patterns
+ls (1)               - list directory contents
+diff (1)             - compare files line by line
+bandit17@bandit:~$ diff passwords.new passwords.old ⌨️
+42c42
+< x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+---
+> QqPdv6c2Ncstw7dg4MbSh4vxwY7pHJmE
+bandit17@bandit:~$ diff passwords.old passwords.new ⌨️
+42c42
+< QqPdv6c2Ncstw7dg4MbSh4vxwY7pHJmE
+---
+> x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+bandit17@bandit:~$ sort passwords.old passwords.new | uniq -u ⌨️
+QqPdv6c2Ncstw7dg4MbSh4vxwY7pHJmE
+x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+bandit17@bandit:~$ cat passwords.new | grep QqPdv6c2Ncstw7dg4MbSh4vxwY7pHJmE ⌨️
+bandit17@bandit:~$ cat passwords.new | grep x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO ⌨️
+x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO 🔐
+bandit17@bandit:~$ man grep | grep "invert-match" ⌨️
+       -v, --invert-match
+              --invert-match option (see above), count non-matching lines.
+              NUM.  When the -v or --invert-match option is also used, grep stops after outputting NUM non-matching lines.
+bandit17@bandit:~$ grep -f passwords.old --invert-match passwords.new ⌨️
+x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO 🔐
+```
+
+## Flag
+<b>x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO</b>
+
+## Continue
+[Continue](/overthewire/Bandit1718.md)
