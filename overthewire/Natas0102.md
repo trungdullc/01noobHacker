@@ -16,7 +16,7 @@ Find files path for weak spots
 
 ## Solution
 ```
-F12
+F12 → Elements
 
 <div id="content">
 There is nothing on this page

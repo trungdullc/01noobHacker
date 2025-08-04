@@ -275,7 +275,7 @@ Build and Run (Self-signed certificate on port 8443)
 
 ## Solution
 ```
-Inspect or F12
+Inspect or F12 → Elements
 
 <div id="content">
 You can find the password for the next level on this page.

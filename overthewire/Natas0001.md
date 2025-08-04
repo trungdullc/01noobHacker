@@ -17,7 +17,7 @@ curl and wget also could work
 
 ## Solution
 ```
-F12
+F12 → Elements
 
 <body oncontextmenu="javascript:alert('right clicking has been blocked!');return false;">
 <h1>natas1</h1>
