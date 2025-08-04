@@ -7,6 +7,8 @@
 Username: natas6<br>
 URL: http://natas6.natas.labs.overthewire.org<br>
 
+Input secret: <br>
+View sourcecode
 
 ## What I learned
 ```

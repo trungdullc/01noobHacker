@@ -7,6 +7,8 @@
 Username: natas7<br>
 URL: http://natas7.natas.labs.overthewire.org<br>
 
+Home About
+
 ## What I learned
 ```
 Nothing

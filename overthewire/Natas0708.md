@@ -1,4 +1,4 @@
-# Natas Level 7 → Level 8 bin2hex(strrev(base64_encode($secret)))
+# Natas Level 7 → Level 8 Reverse an encryption bin2hex(strrev(base64_encode($secret)))
 
 ## Previous Flag
 <b>xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q</b>
@@ -7,14 +7,19 @@
 Username: natas8<br>
 URL: http://natas8.natas.labs.overthewire.org<br>
 
+Input secret: <br>
+View sourcecode
+
 ## What I learned
 ```
 base64_encode($secret)          Converts string into Base64 format
 strrev(...)                     Reverses Base64-encoded string
 bin2hex(...)                    Converts it into hexadecimal
 
+Learn how to use CyberChef (Drag)
+https://gchq.github.io/CyberChef/
+
 PHP Sandbox:
-    https://onlinephp.io/
     https://3v4l.org/#vnull
 ```
 
@@ -84,7 +89,7 @@ Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:900
 oubWYf2kBq 👀
 
 # PHP Sandbox (php that makes most sense to me)
-https://onlinephp.io/
+https://3v4l.org/#vnull
 <?php
 function decodeSecret($secret){
   return base64_decode(strrev(hex2bin($secret)));
