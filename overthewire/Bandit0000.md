@@ -1,4 +1,9 @@
-# Bandit Level 0 SSH Login
+# Bandit Level 0 SSH Login w/ ssh
+
+## Previous Flag
+```
+bandit0
+```
 
 ## Goal
 Be able to log onto OverTheWire SSH server. Given password <b>bandit0</b> and port <b>2220</b>.  Password stored in <b>readme</b> located in the home directory. 
@@ -33,7 +38,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes ⌨️
 Warning: Permanently added '[bandit.labs.overthewire.org]:2220' (ED25519) to the list of known hosts.
 
 bandit0@bandit:~$ ls ⌨️
-readme
+readme 👀
 bandit0@bandit:~$ cat readme ⌨️
 Congratulations on your first steps into the bandit game!!
 Please make sure you have read the rules at https://overthewire.org/rules/

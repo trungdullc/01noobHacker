@@ -1,4 +1,4 @@
-# Bandit Level 16 → Level 17 Port and Service Scanning with Nmap and SSL repetition
+# Bandit Level 16 → Level 17 Find differences in a file w/ diff
 
 ## Previous Flag
 N/A logged in with private RSA

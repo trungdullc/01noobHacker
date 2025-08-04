@@ -1,4 +1,4 @@
-# Bandit Level 25 → Level 26 Breaking out of a restricted environment with more and vim
+# Bandit Level 25 → Level 26 Breaking out of a restricted environment with more and vim and SUID Binary
 
 ## Previous Flag
 <b>s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ</b>, not really used could be used to log in bandit26 but kicked out

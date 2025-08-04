@@ -1,4 +1,4 @@
-# Bandit Level 3 → Level 4 Hidden Files
+# Bandit Level 3 → Level 4 Human-readable files
 
 ## Previous Flag
 <b>2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ</b>
@@ -42,6 +42,15 @@ t)�r�R�C#�ӧ��4��_�\����^�)Cbandit4@bandit:~/inhere$
 ./-file09: data
 bandit4@bandit:~/inhere$ cat ./-file07 ⌨️
 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw 🔐
+bandit4@bandit:~/inhere$ strings ./-file0* ⌨️                    # Note: need ./ before - name
+(o%u
+tRA5v
+_E2>t
+?']z
+k,hI
+'o%W8q
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw 🔐
+.qP~
 ```
 
 ## Flag

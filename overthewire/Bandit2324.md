@@ -1,4 +1,4 @@
-# Bandit Level 23 → Level 24 Cronjobs and bash scripting
+# Bandit Level 23 → Level 24 Brute-forcing with bash scripting and netcat
 
 ## Previous Flag
 <b>gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8</b>

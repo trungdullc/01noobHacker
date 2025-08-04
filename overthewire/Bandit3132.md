@@ -1,4 +1,4 @@
-# Bandit Level 31 → Level 32 Git Push, Commit, Ignore, Add
+# Bandit Level 31 → Level 32 Linux Variables and shell escape
 
 ## Previous Flag
 <b>3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K</b>

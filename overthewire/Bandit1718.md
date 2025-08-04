@@ -1,4 +1,4 @@
-# Bandit Level 17 → Level 18 Find differences in a file
+# Bandit Level 17 → Level 18 Advanced SSH, remote command execution
 
 ## Previous Flag
 <b>x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO</b>

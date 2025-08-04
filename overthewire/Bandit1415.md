@@ -1,4 +1,4 @@
-# Bandit Level 14 → Level 15 Netcat and first network communication
+# Bandit Level 14 → Level 15 OpenSSL, secure communication (SSL/TLS)
 
 ## Previous Flag
 <b>8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo</b>

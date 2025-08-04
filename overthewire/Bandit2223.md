@@ -1,4 +1,4 @@
-# Bandit Level 22 → Level 23 Cronjobs
+# Bandit Level 22 → Level 23 Cronjobs and bash scripting
 
 ## Previous Flag
 <b>0Zf11ioIjMVN551jX3CmStKLYqjk54Ga</b>

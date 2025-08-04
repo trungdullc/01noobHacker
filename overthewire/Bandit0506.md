@@ -1,4 +1,4 @@
-# Bandit Level 5 → Level 6 Human-readable files, file sizes and non-executable files
+# Bandit Level 5 → Level 6 Find a file with specific user and group ownership
 
 ## Previous Flag
 <b>HWasnPhtq9AVKe0dmk45nxy20cvUa6EG</b>
@@ -24,7 +24,7 @@ owned by group bandit6
 bandit6@bandit:~$ ls -a ⌨️
 .  ..  .bash_logout  .bashrc  .profile
 bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null ⌨️
-/var/lib/dpkg/info/bandit7.password
+/var/lib/dpkg/info/bandit7.password 👀
 bandit6@bandit:~$ cd /var/lib/dpkg/info/ ⌨️
 bandit6@bandit:/var/lib/dpkg/info$ file bandit7.password ⌨️
 bandit7.password: ASCII text

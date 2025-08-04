@@ -1,4 +1,4 @@
-# Bandit Level 27 → Level 28 Git introduction and basics
+# Bandit Level 27 → Level 28 git history w/ git log --oneline
 
 ## Previous Flag
 <b>Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN</b>

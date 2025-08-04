@@ -1,4 +1,4 @@
-# Bandit Level 7 → Level 8 Learning grep and piping
+# Bandit Level 7 → Level 8 sort then uniq -u rule
 
 ## Previous Flag
 <b>dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc</b>

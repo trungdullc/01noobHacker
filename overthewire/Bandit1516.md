@@ -1,4 +1,4 @@
-# Bandit Level 15 → Level 16 OpenSSL, secure communication
+# Bandit Level 15 → Level 16 Port and Service Scanning with Nmap and SSL repetition
 
 ## Previous Flag
 <b>kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx</b>

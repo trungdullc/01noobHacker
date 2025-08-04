@@ -1,4 +1,4 @@
-# Bandit Level 0 → Level 1 Read a File
+# Bandit Level 0 → Level 1 Read a Unusually named File w/ file & cat
 
 ## Previous Flag
 <b>ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If</b>
@@ -27,7 +27,7 @@ bandit1@bandit:~$ ls ⌨️
 -
 bandit1@bandit:~$ ls -la ⌨️
 total 24
--rw-r-----  1 bandit2 bandit1   33 Apr 10 14:23 -
+-rw-r-----  1 bandit2 bandit1   33 Apr 10 14:23 - 👀
 drwxr-xr-x  2 root    root    4096 Apr 10 14:23 .
 drwxr-xr-x 70 root    root    4096 Apr 10 14:24 ..
 -rw-r--r--  1 root    root     807 Mar 31  2024 .profile

@@ -46,4 +46,4 @@ bandit22@bandit:/etc/cron.d$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349 ⌨️
 <b>0Zf11ioIjMVN551jX3CmStKLYqjk54Ga</b>
 
 ## Continue
-[Continue](/overthewire/Bandit2223.md)
+[Continue](/overthewire/Natas0000.md)

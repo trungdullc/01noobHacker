@@ -1,4 +1,4 @@
-# Bandit Level 8 → Level 9 Linux command uniq and sort, to find lines only appearing once
+# Bandit Level 8 → Level 9 Find human-readable strings in a file w/ strings
 
 ## Previous Flag
 <b>4CKMh1JI91bUIZZPXDqGanal4xvAg0JM</b>

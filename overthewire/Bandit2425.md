@@ -1,4 +1,4 @@
-# Bandit Level 24 → Level 25 Brute-forcing with bash scripting and netcat
+# Bandit Level 24 → Level 25 Breaking out of a restricted environment with more and vim
 
 ## Previous Flag
 <b>iCi86ttT4KSNe1armKiwbQNmB3YJP3q4</b>

@@ -1,4 +1,4 @@
-# Bandit Level 13 → Level 14 SSH Login with key and transferring files from a remote host
+# Bandit Level 13 → Level 14 Netcat and first network communication
 
 ## Previous Flag
 <b>MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS</b>

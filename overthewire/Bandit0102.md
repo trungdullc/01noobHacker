@@ -1,4 +1,4 @@
-# Bandit Level 1 → Level 2 Unusually named Files
+# Bandit Level 1 → Level 2 Spaces in a filename
 
 ## Previous Flag
 <b>263JGJPfgU6LtdEvgfWU1XP5yac29mFx</b>
@@ -19,7 +19,7 @@ total 24K
 drwxr-xr-x  2 root    root    4.0K Apr 10 14:23 .
 -rw-r--r--  1 root    root    3.7K Mar 31  2024 .bashrc
 -rw-r--r--  1 root    root     807 Mar 31  2024 .profile
--rw-r-----  1 bandit3 bandit2   33 Apr 10 14:23 spaces in this filename
+-rw-r-----  1 bandit3 bandit2   33 Apr 10 14:23 spaces in this filename 👀
 bandit2@bandit:~$ ls ⌨️
 spaces in this filename
 bandit2@bandit:~$ file spaces\ in\ this\ filename ⌨️

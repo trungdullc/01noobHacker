@@ -1,4 +1,4 @@
-# Bandit Level 18 → Level 19 Advanced SSH, remote command execution
+# Bandit Level 18 → Level 19 Suid and linux permissions
 
 ## Previous Flag
 <b>cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8</b>

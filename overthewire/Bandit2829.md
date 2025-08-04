@@ -1,4 +1,4 @@
-# Bandit Level 28 → Level 29 Git history
+# Bandit Level 28 → Level 29 git branching Basics
 
 ## Previous Flag
 <b>4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7</b>

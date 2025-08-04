@@ -1,4 +1,4 @@
-# Bandit Level 6 → Level 7 Find a file with specific user and group ownership
+# Bandit Level 6 → Level 7 Learning grep and piping
 
 ## Previous Flag
 <b>morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj</b>

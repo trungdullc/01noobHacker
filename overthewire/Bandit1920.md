@@ -1,4 +1,4 @@
-# Bandit Level 19 → Level 20 Suid and linux permissions
+# Bandit Level 19 → Level 20 Setuid binary, netcat and background processes/jobs
 
 ## Previous Flag
 <b>0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO</b>
@@ -22,6 +22,14 @@ nc -lnvp 8080
   -v: verbose
   -p 8080: listen on port 8080
 ```
+
+| Command     | Description                                                    |
+|-------------|----------------------------------------------------------------|
+| `&`         | Run a command in the **background** immediately                |
+| `jobs`      | List current jobs (background, stopped, etc.)                  |
+| `fg [%n]`   | Bring job `%n` to the **foreground**                           |
+| `bg [%n]`   | Resume a **stopped** job `%n` in the **background**            |
+| `Ctrl+Z`    | Pause (stop) a foreground job and send it to background queue  |
 
 ## Side Quest
 ```

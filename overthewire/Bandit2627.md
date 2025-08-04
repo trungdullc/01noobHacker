@@ -1,4 +1,4 @@
-# Bandit Level 26 → Level 27 Breaking out of a restricted environment with more and vim and SUID Binary
+# Bandit Level 26 → Level 27 git introduction and basics
 
 ## Previous Flag
 <b>upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB</b>

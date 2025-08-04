@@ -1,4 +1,4 @@
-# Bandit Level 11 → Level 12 Rot13 substitution cipher as Linux command with ’tr’
+# Bandit Level 11 → Level 12 Hexdumps and compression and file signatures
 
 ## Previous Flag
 <b>7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4</b>

@@ -1,4 +1,4 @@
-# Bandit Level 32 → Level 33 Linux Variables and shell escape
+# Bandit Level 32 → Level 33 Congrats Finish Bandit
 
 ## Previous Flag
 <b>tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0</b>

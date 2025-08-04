@@ -1,4 +1,4 @@
-# Bandit Level 2 → Level 3 Spaces in a filename
+# Bandit Level 2 → Level 3 Hidden Files
 
 ## Previous Flag
 <b>MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx</b>
@@ -21,7 +21,7 @@ bandit3@bandit:~/inhere$ ls -la ⌨️
 total 12
 drwxr-xr-x 2 root    root    4096 Apr 10 14:23 .
 drwxr-xr-x 3 root    root    4096 Apr 10 14:23 ..
--rw-r----- 1 bandit4 bandit3   33 Apr 10 14:23 ...Hiding-From-You
+-rw-r----- 1 bandit4 bandit3   33 Apr 10 14:23 ...Hiding-From-You 👀
 bandit3@bandit:~/inhere$ cat ...Hiding-From-You ⌨️
 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ 🔐
 ```

@@ -1,4 +1,4 @@
-# Bandit Level 10 → Level 11 Base64
+# Bandit Level 10 → Level 11 Rot13 substitution cipher as Linux command w/ tr
 
 ## Previous Flag
 <b>dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr</b>
@@ -23,7 +23,7 @@ tr (1)               - translate or delete characters
 bandit11@bandit:~$ ls ⌨️
 data.txt
 bandit11@bandit:~$ cat data.txt ⌨️ 
-Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4 🔐
+Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4 👀
 bandit11@bandit:~$ tr '[:upper:][:lower:]' 'N-ZA-Mn-za-m' < data.txt ⌨️
 The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4 🔐
 bandit11@bandit:~$ tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt ⌨️

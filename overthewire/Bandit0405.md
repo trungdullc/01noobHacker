@@ -1,4 +1,4 @@
-# Bandit Level 4 → Level 5 File types, specifically human-readable files
+# Bandit Level 4 → Level 5 Human-readable files, file sizes and non-executable files w/ find
 
 ## Previous Flag
 <b>4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw</b>
@@ -34,7 +34,7 @@ bandit5@bandit:~/inhere$ ls ⌨️
 maybehere00  maybehere02  maybehere04  maybehere06  maybehere08  maybehere10  maybehere12  maybehere14  maybehere16  maybehere18
 maybehere01  maybehere03  maybehere05  maybehere07  maybehere09  maybehere11  maybehere13  maybehere15  maybehere17  maybehere19
 bandit5@bandit:~/inhere$ find ./ -type f -size 1033c -exec file {} \; | grep "ASCII" ⌨️
-./maybehere07/.file2: ASCII text, with very long lines (1000)
+./maybehere07/.file2: ASCII text, with very long lines (1000) 👀
 bandit5@bandit:~/inhere$ cat ./maybehere07/.file2 ⌨️
 HWasnPhtq9AVKe0dmk45nxy20cvUa6EG 🔐
 ```

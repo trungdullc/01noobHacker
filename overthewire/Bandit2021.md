@@ -1,4 +1,4 @@
-# Bandit Level 20 → Level 21 Setuid binary, netcat and background processes/jobs
+# Bandit Level 20 → Level 21 Cronjobs
 
 ## Previous Flag
 <b>EeoULMCra2q0dSkYj561DX7s1CpBuOBt</b>

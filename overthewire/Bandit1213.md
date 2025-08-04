@@ -1,4 +1,4 @@
-# Bandit Level 12 → Level 13 Hexdumps and compression and file signatures
+# Bandit Level 12 → Level 13 SSH Login with key and transferring files from a remote host
 
 ## Previous Flag
 <b>FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn</b>
@@ -50,7 +50,7 @@ Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hos
 bandit14@bandit:~$ exit ⌨️
 logout
 Connection to 127.0.0.1 closed.
-bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -p 2220 ⌨️
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -p 2220 ⌨️ ⭐⭐⭐⭐⭐
 The authenticity of host '[localhost]:2220 ([127.0.0.1]:2220)' can't be established.
 ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
 This key is not known by any other names.
