@@ -17,6 +17,9 @@ bandit.labs.overthewire.org
 
 ## What I learned
 ```
+Bandit teaches basic of git, nmap, linux commands, shell vulnerabilities, ssh, cron, and permissions
+All passwords are also stored in /etc/bandit_pass/
+
 which man
 apropos whoami
 man hostname
