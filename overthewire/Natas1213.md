@@ -41,7 +41,7 @@ Bypasses:
 | 3C 3F 70 68 70    | PHP                              | PHP script starting with `<?php`                |
 | EF BB BF          | UTF-8 BOM                        | Byte Order Mark for UTF-8 encoded files         |
 | D0 CF 11 E0 A1 B1 1A E1 | DOC / XLS / PPT            | Older MS Office binary formats                  |
-| 00 61 73 6D       | WASM                             | WebAssembly binary  
+| 00 61 73 6D       | WASM                             | WebAssembly binary                              |
 
 ## Solution
 ```
