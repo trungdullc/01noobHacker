@@ -67,7 +67,7 @@ if(array_key_exists("username", $_REQUEST)) {
     $link = mysqli_connect('localhost', 'natas14', '<censored>');
     mysqli_select_db($link, 'natas14');
 
-    $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\"";
+    $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\""; 👀
     if(array_key_exists("debug", $_GET)) { 👀
         echo "Executing query: $query<br>";
     }
