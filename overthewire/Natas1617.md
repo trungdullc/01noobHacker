@@ -76,7 +76,7 @@ Username: <input name="username"><br>
 </body>
 </html>
 
-# Time based attack: server pauses 3 sec
+# Manual Time based attack: server pauses 3 sec
 Username: natas18" AND SLEEP(3) --" ⌨️
 
 # Pure brute force
