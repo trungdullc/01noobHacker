@@ -4,7 +4,15 @@
 ## Previous Flag
 <b>BPhv63cKE1lkQl04cE5CuFTzXe15NfiH</b><br>
 
-| **Variable**   | **Purpose**                                | **Scope**                        | **Used On**      |
+## Goal
+Username: natas21<br>
+URL: http://natas21.natas.labs.overthewire.org<br>
+
+Note: this website is colocated with http://natas21-experimenter.natas.labs.overthewire.org
+
+You are logged in as a regular user. Login as an admin to retrieve credentials for natas22.
+
+| **Server Variables**   | **Purpose**                                | **Scope**                        | **Used On**      |
 |----------------|---------------------------------------------|----------------------------------|------------------|
 | `$_GET`        | URL query parameters (e.g., `?id=5`)        | Server reads from client         | Server           |
 | `$_POST`       | Form POST data                              | Server reads from client         | Server           |
@@ -23,14 +31,6 @@ PHP session info is stored in files on server and able to inject admin=1 data in
 
 $_SESSION is a server-side variable, because PHP runs on the server
 ```
-
-## Goal
-Username: natas21<br>
-URL: http://natas21.natas.labs.overthewire.org<br>
-
-Note: this website is colocated with http://natas21-experimenter.natas.labs.overthewire.org
-
-You are logged in as a regular user. Login as an admin to retrieve credentials for natas22.
 
 ![alt text](/static/colocated.png "Colocated")
 
