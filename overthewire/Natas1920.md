@@ -9,7 +9,18 @@ URL: http://natas20.natas.labs.overthewire.org<br>
 
 You are logged in as a regular user. Login as an admin to retrieve credentials for natas21.<br>
 Your name:<br>
-Change Name
+Change Name<br>
+
+| **Feature/Tool** | **Burp Suite** | **Wireshark** | **tcpflow** |
+|------------------|----------------|----------------|-------------|
+| **Main Purpose** | Web app security testing | General network traffic analysis | TCP stream capture and reconstruction |
+| **Layer Focus** | Application Layer (HTTP/S) | Network/Data Link Layer (Packets, Protocols) | **Transport Layer (TCP streams)** |
+| **Visibility** | Intercepts and modifies HTTP/S | Views all packets (Ethernet, TCP, DNS, etc.) | Reconstructs TCP flows into readable data |
+| **Interception?** | **Yes (can modify live requests/responses)** | No (passive capture only) | No (passive capture only) |
+| **Interface** | GUI (Professional-grade) | GUI (Packet-by-packet view) | Command-line tool |
+| **Use Case** | Testing for XSS, SQLi, Auth Bypass, etc. | Troubleshooting networks, protocol analysis | Viewing raw TCP conversation logs |
+| **TLS/HTTPS** | Decrypts HTTPS (via trusted proxy cert) | Can see TLS handshake but not decrypted data | Captures encrypted blobs (can’t decrypt HTTPS) |
+
 
 ## What I learned
 ```
