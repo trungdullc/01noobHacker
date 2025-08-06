@@ -22,6 +22,17 @@ myread()    reads lines in using new line character as end of the line
 
 Goal:       $_SESSION["admin"] = 1
 Note: You can't inject raw payloads (like \n) directly in many browsers need use Burp Suite
+
+Burp Suite:
+    Proxy (Proxy → Intercept)
+        Burp Suite acts as a man-in-the-middle proxy between your browser and internet
+            View
+            Modify
+            Drop
+            Forward
+            ... that request before it reaches the server
+    Repeater
+        Manually modifying and re-sending individual HTTP requests
 ```
 
 ## Solution
@@ -178,14 +189,26 @@ DEBUG: Saving in /var/lib/php/sessions/mysess_o6h7gj6t9hcsd5g2oljn8nsj5k
 
 # Goal: $_SESSION["admin"] = 1
 # Can't inject to browser directly need Burp Suite: test\nadmin 1
-# Capture submitting “test” to form input and Right click request and select Send to Repeater
+# Burp Suite:   Temporary project in memory
+                Use Burp defaults
 
-# Now can modify request
+# Burp Suite: Click Proxy and open Burp Browser and Turn Intercept: On
+# Browser: input test and submit form so Burp Browser can capture
+# Burp Suite: Right click request and select Send to Repeater
 
+# Burp Suite: Click on Repeater and edit name to be URL Encoded then press SEND
+    name=test%0aadmin%201
+
+You are an admin. The credetials for the next level are
+Username: natas21
+Password: BPhv63cKE1lkQl04cE5CuFTzXe15NfiH 🔐
 ```
+![alt text](/static/natas20SendToRepeater.png "BS Send To Repeater")
+![alt text](/static/natas20Request.png "BS Request")
+![alt text](/static/natas20Response.png "BS Response")
 
 ## Flag
-IFekPyrQXftziDEsUr3x21sYuahypdgJ
+<b>BPhv63cKE1lkQl04cE5CuFTzXe15NfiH</b>
 
 ## Continue
 [Continue](/overthewire/Natas2021.md)
