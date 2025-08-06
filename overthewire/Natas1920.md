@@ -1,4 +1,4 @@
-# Natas Level 19 → Level 20 Logic Errors
+# Natas Level 19 → Level 20 Logic Errors = Bug
 
 ## Previous Flag
 <b>p5mCvP7GS2K6Bmt3gqhM2Fc1A5T8MVyw</b>
