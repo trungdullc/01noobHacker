@@ -1,5 +1,4 @@
 <?php
-
 // Define a class named Logger
 class Logger {
     // Declare two private properties: $logFile and $exitMsg
