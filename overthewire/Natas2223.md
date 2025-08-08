@@ -71,7 +71,7 @@ Password:
 </html>
 
 # Need value above 10 and contain iloveyou
-Password: 911iloveyouhoney
+Password: 911iloveyouhoney ⌨️
 Login
 
 The credentials for the next level are:

@@ -64,7 +64,7 @@ if($key != "") {
 </body>
 </html>
 
-@trungdullc ➜ /workspaces/01noobHacker (main) $ python scripts/blindsqlinjectionfilter.py
+@trungdullc ➜ /workspaces/01noobHacker (main) $ python scripts/blindsqlinjectionfilter.py ⌨️
 E
 Eq
 Eqj

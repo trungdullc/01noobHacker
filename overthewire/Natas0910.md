@@ -20,7 +20,7 @@ Since relied on passthru w/ grep can still search
 ## Solution
 ```
 Click View source code
-http://natas10.natas.labs.overthewire.org/index-source.html
+http://natas10.natas.labs.overthewire.org/index-source.html 
 
 <div id="content">
 For security reasons, we now filter on certain characters<br/><br/>
@@ -50,7 +50,7 @@ if($key != "") {
 <div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
 </div>
 
-Find words containing: .* /etc/natas_webpass/natas11 #
+Find words containing: .* /etc/natas_webpass/natas11 # ⌨️
 .htaccess:AuthType Basic
 .htaccess: AuthName "Authentication required"
 .htaccess: AuthUserFile /var/www/natas/natas10/.htpasswd

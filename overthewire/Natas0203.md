@@ -24,15 +24,15 @@ There is nothing on this page
 <!-- No more information leaks!! Not even Google will find it this time... -->
 </div>
 
-http://natas3.natas.labs.overthewire.org/robots.txt
+http://natas3.natas.labs.overthewire.org/robots.txt ⌨️
 
 User-agent: *
 Disallow: /s3cr3t/
 
 Allow: /
 
-http://natas3.natas.labs.overthewire.org/s3cr3t/
-http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt
+http://natas3.natas.labs.overthewire.org/s3cr3t/ ⌨️
+http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt ⌨️
 natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ 🔐
 ```
 

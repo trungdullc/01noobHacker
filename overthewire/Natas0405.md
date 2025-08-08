@@ -55,7 +55,7 @@ loggedin        0
 
 # Change value to 1 by Right Click → Edit "Value"
 Name            Value
-loggedin        1
+loggedin        1 ⌨️
 
 F5
 

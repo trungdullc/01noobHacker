@@ -17,7 +17,7 @@ strcmp PHP Documentation: https://www.php.net/manual/en/function.strcmp.php
     Returns a value greater than 0 if string1 is greater than string2
     Returns 0 if they are equal
 
-@trungdullc ➜ /workspaces/01noobHacker (main) $ php -d xdebug.mode=off -a
+@trungdullc ➜ /workspaces/01noobHacker (main) $ php -d xdebug.mode=off -a ⌨️
 Interactive shell
 
 php > echo strcmp("a", "bear");                     # 1st arg - 2nd arg (assembly)
@@ -35,7 +35,7 @@ php > echo strcmp("ca", "cb");
 
 Note: Most PHP function bypasses are well-known and covered on various blogs
 Google: bypassing PHP strcmp()
-https://blog.0daylabs.com/2015/09/21/csaw-web-200-write-up/?ref=learnhacking.io
+https://blog.0daylabs.com/2015/09/21/csaw-web-200-write-up/?ref=learnhacking.io 
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -91,8 +91,8 @@ Password:
 </html>
 
 Password: test
-Browser: http://natas24.natas.labs.overthewire.org/?passwd=test
-Browser: http://natas24.natas.labs.overthewire.org/?passwd[]=test       # Vulnerability
+Browser: http://natas24.natas.labs.overthewire.org/?passwd=test ⌨️
+Browser: http://natas24.natas.labs.overthewire.org/?passwd[]=test ⌨️         # Vulnerability
 
 Warning: strcmp() expects parameter 1 to be string, array given in /var/www/natas/natas24/index.php on line 23
 

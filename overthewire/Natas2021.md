@@ -36,7 +36,8 @@ $_SESSION is a server-side variable, because PHP runs on the server
 
 ## Solution
 ```
-View Source Code from http://natas21.natas.labs.overthewire.org/index-source.html
+View Source Code
+http://natas21.natas.labs.overthewire.org/index-source.html
 
 <html>
 <head>
@@ -78,7 +79,8 @@ print_credentials();
 </body>
 </html>
 
-View Source Code from http://natas21-experimenter.natas.labs.overthewire.org/index-source.html
+View Source Code
+http://natas21-experimenter.natas.labs.overthewire.org/index-source.html
 
 <html>
 <head><link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css"></head>

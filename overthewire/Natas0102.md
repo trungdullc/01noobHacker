@@ -23,8 +23,8 @@ There is nothing on this page
 <img src="files/pixel.png"> 👀
 </div>
 
-http://natas2.natas.labs.overthewire.org/files/
-http://natas2.natas.labs.overthewire.org/files/users.txt
+http://natas2.natas.labs.overthewire.org/files/ ⌨️
+http://natas2.natas.labs.overthewire.org/files/users.txt ⌨️
 # username:password
 alice:BYNdCesZqW
 bob:jw2ueICLvT

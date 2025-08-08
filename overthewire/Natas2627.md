@@ -201,25 +201,25 @@ Password: <input name="password" type="password"><br>
 </body>
 </html>
 
-Username: admin
-Password: admin
+Username: admin ⌨️
+Password: admin ⌨️
 
 User admin was created!
 
-Username: admin
-Password: admin
+Username: admin ⌨️
+Password: admin ⌨️
 
 Welcome admin!
 Here is your data:
 Array ( [username] => admin [password] => admin )
 
-Username: natas28
-Password: iloveyouvirus
+Username: natas28 ⌨️
+Password: iloveyouvirus ⌨️
 
 Wrong password for user: natas28
 
-Username: natas28   (Note: added 1 space after)
-Password: ilovepizza
+Username: natas28 ⌨️  (Note: added 1 space after)
+Password: ilovepizza ⌨️
 
 Go away hacker
 

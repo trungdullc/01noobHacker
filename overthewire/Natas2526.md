@@ -185,7 +185,7 @@ drawing       <replace_with_base64_below>
 F5 (Refresh)
 Fatal error: Uncaught Error: Cannot use object of type Logger as array in /var/www/natas/natas26/index.php:105 Stack trace: #0 /var/www/natas/natas26/index.php(131): storeData() #1 {main} thrown in /var/www/natas/natas26/index.php on line 105
 
-Browser: http://natas26.natas.labs.overthewire.org/img/natas26_bjpjicte61qdhvvmpfr3tadc0o.php
+Browser: http://natas26.natas.labs.overthewire.org/img/natas26_bjpjicte61qdhvvmpfr3tadc0o.php ⌨️
 u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne 🔐
 ```
 

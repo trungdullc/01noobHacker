@@ -159,11 +159,11 @@ Name        Value
 data        HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GdGdfVXRnTRg%3D (URL Encoding)
 
 CyberChef (URL Decode) or click Show URL-decode on developer tools
-https://gchq.github.io/CyberChef/
+https://gchq.github.io/CyberChef/ ⌨️
 HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GdGdfVXRnTRg=
 
 PHP Sandbox:
-    https://3v4l.org/#vnull
+    https://3v4l.org/#vnull ⌨️
 <?php
 echo json_encode(array("showpassword"=>"no", "bgcolor"=>"#ffffff"))
 ?>
@@ -177,7 +177,7 @@ CyberChef Output: HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5
 
 curl -u natas11:UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk \
      -b "data=HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5=" \
-     http://natas11.natas.labs.overthewire.org/
+     http://natas11.natas.labs.overthewire.org/ ⌨️
 
 <html>
 <head>

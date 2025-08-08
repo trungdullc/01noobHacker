@@ -12,6 +12,8 @@ Refresh page
 
 ## What I learned
 ```
+Note: Burp Suite easier than curl commands to modify request
+
 Host                        Specifies the domain name of the server (used for virtual hosting)
 User-Agent                  Identifies the client (browser, tool, bot)
 Accept	                    Lists MIME types the client can process (text/html, application/json)
@@ -45,7 +47,7 @@ curl 'http://natas4.natas.labs.overthewire.org/index.php' \
   -H 'Referer: http://natas4.natas.labs.overthewire.org/' \ 👀
   -H 'Upgrade-Insecure-Requests: 1' \
   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0' \
-  --insecure
+  --insecure ⌨️
 
 # Need change Referer to natas4 → natas5
 # Note: In Firefox right-click on main request (‘index.php’ or ‘/’) & select ‘Edit and Resend’

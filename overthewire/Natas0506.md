@@ -72,7 +72,7 @@ Input secret: <input name=secret><br> 👀
 <input type=submit name=submit>
 </form>
 
-http://natas6.natas.labs.overthewire.org/includes/secret.inc
+http://natas6.natas.labs.overthewire.org/includes/secret.inc ⌨️
 <?
 $secret = "FOEIUWGHFEEUHOFUOIU"; 👀
 ?>

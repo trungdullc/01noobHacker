@@ -32,7 +32,7 @@ Storage → Cookies
 Name        Value
 PHPSESSID   3533372d61646d696e
 
-https://gchq.github.io/CyberChef/
+https://gchq.github.io/CyberChef/ ⌨️
 From Hex    Input: 3533372d61646d696e
             Output: 537-admin
 

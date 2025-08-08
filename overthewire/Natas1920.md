@@ -188,7 +188,7 @@ Storage → Cookies
 Name        Value
 PHPSESSID   <random> → o6h7gj6t9hcsd5g2oljn8nsj5k
 
-http://natas20.natas.labs.overthewire.org/?debug
+http://natas20.natas.labs.overthewire.org/?debug ⌨️
 DEBUG: MYREAD o6h7gj6t9hcsd5g2oljn8nsj5k
 DEBUG: Session file doesn't exist
 You are logged in as a regular user. Login as an admin to retrieve credentials for natas21.

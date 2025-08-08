@@ -64,7 +64,7 @@ if(array_key_exists("revelio", $_GET)) { 👀
 </body>
 </html>
 
-curl -H 'Authorization: Basic bmF0YXMyMjpkOHJ3R0JsMFhzbGczYjc2dWgzZkViU2xuT1VCbG96eg==' http://natas22.natas.labs.overthewire.org/index.php?revelio
+curl -H 'Authorization: Basic bmF0YXMyMjpkOHJ3R0JsMFhzbGczYjc2dWgzZkViU2xuT1VCbG96eg==' http://natas22.natas.labs.overthewire.org/index.php?revelio ⌨️
 
 <html>
 <head>
