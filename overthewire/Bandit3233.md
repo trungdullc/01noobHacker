@@ -48,4 +48,4 @@ sudo usermod -aG sudo challengeuser
 N/A
 
 ## Continue
-[Continue](/overthewire/Bandit3334.md)
+[Continue](/overthewire/Natas0000.md)

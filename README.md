@@ -474,6 +474,7 @@ Souce: https://try2hack.me/<br>
     - [Forensically](https://neerajlovecyber.com/ctf-cheatsheet): Online tool to analysis image
     - [FotoForensics](https://fotoforensics.com/): Tools for digital photo forensics
     - [hachoir-subfile](https://github.com/foreni-packages/hachoir-subfile): CLI carve files of another file. Similar to binwalk & foremost
+    - [hashclash](https://github.com/cr-marcstevens/hashclash?ref=learnhacking.io): Create files w/ same hash collisions
     - [hipshot](https://bitbucket.org/eliteraspberries/hipshot/src/master/): Converts a video file or series of photographs into a single image simulating a long-exposure photograph
     - [Image Error Level Analyzer](https://29a.ch/sandbox/2012/imageerrorlevelanalysis/): Online digital images analyzer
     - [ImageMagick](http://www.imagemagick.org/script/index.php): Manipulating images
