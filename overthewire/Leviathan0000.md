@@ -5,7 +5,7 @@
 
 ## Goal
 Use previous password to log in SSH with user <b>leviathan0</b> and port <b>2223</b> accessed on leviathan.labs.overthewire.org
-Du Hint:
+Du Hint: Password in a hidden file
 
 ## What I learned
 ```
