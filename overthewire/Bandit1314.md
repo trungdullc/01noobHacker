@@ -41,4 +41,4 @@ Correct!
 <b>8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1415.md)
+[Continue](./Bandit1415.md)

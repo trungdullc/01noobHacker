@@ -111,4 +111,4 @@ Access granted. The password for natas9 is ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t 🔐
 <b>ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t</b>
 
 ## Continue
-[Continue](/overthewire/Natas0809.md)
+[Continue](./Natas0809.md)

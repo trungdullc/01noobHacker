@@ -34,4 +34,4 @@ MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx 🔐
 <b>MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0203.md)
+[Continue](./Bandit0203.md)

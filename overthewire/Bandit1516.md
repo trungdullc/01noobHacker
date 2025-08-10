@@ -297,4 +297,4 @@ bandit17@bandit:~$
 N/A logged in with private RSA
 
 ## Continue
-[Continue](/overthewire/Bandit1617.md)
+[Continue](./Bandit1617.md)

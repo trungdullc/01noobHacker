@@ -41,4 +41,4 @@ xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q 🔐
 <b>xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q</b>
 
 ## Continue
-[Continue](/overthewire/Natas0708.md)
+[Continue](./Natas0708.md)

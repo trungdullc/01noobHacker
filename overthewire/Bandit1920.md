@@ -204,4 +204,4 @@ EeoULMCra2q0dSkYj561DX7s1CpBuOBt 🔐
 <b>EeoULMCra2q0dSkYj561DX7s1CpBuOBt</b>
 
 ## Continue
-[Continue](/overthewire/Bandit2021.md)
+[Continue](./Bandit2021.md)

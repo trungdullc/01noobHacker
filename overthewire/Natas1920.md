@@ -222,4 +222,4 @@ Password: BPhv63cKE1lkQl04cE5CuFTzXe15NfiH 🔐
 <b>BPhv63cKE1lkQl04cE5CuFTzXe15NfiH</b>
 
 ## Continue
-[Continue](/overthewire/Natas2021.md)
+[Continue](./Natas2021.md)

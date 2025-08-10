@@ -91,4 +91,4 @@ Password: p5mCvP7GS2K6Bmt3gqhM2Fc1A5T8MVyw 🔐
 <b>p5mCvP7GS2K6Bmt3gqhM2Fc1A5T8MVyw</b>
 
 ## Continue
-[Continue](/overthewire/Natas1920.md)
+[Continue](./Natas1920.md)

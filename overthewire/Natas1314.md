@@ -121,4 +121,4 @@ Successful login! The password for natas15 is SdqIqBsFcz3yotlNYErZSZwblkm0lrvx ð
 <b>SdqIqBsFcz3yotlNYErZSZwblkm0lrvx</b>
 
 ## Continue
-[Continue](/overthewire/Natas1415.md)
+[Continue](./Natas1415.md)

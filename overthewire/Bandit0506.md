@@ -36,4 +36,4 @@ morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj 🔐
 <b>morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0607.md)
+[Continue](./Bandit0607.md)

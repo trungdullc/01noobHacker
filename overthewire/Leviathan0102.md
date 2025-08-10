@@ -81,4 +81,4 @@ f0n8h2iWLP 🔐
 <b>f0n8h2iWLP</b>
 
 ## Continue
-[Continue](/overthewire/Leviathan0203.md)
+[Continue](./Leviathan0203.md)

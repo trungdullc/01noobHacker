@@ -288,4 +288,4 @@ You can find the password for the next level on this page.
 <b>0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq</b>
 
 ## Continue
-[Continue](/overthewire/Natas0001.md)
+[Continue](./Natas0001.md)

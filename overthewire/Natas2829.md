@@ -130,4 +130,4 @@ WQhx1BvcmP9irs2MP9tRnLsNaDI76YrH 🔐
 <b>WQhx1BvcmP9irs2MP9tRnLsNaDI76YrH</b>
 
 ## Continue
-[Continue](/overthewire/Natas2930.md)
+[Continue](./Natas2930.md)

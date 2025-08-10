@@ -36,4 +36,4 @@ bandit8@bandit:~$ sort data.txt | uniq -u ⌨️
 <b>4CKMh1JI91bUIZZPXDqGanal4xvAg0JM</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0809.md)
+[Continue](./Bandit0809.md)

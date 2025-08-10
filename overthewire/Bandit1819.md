@@ -65,4 +65,4 @@ bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20 ⌨️
 <b>0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1920.md)
+[Continue](./Bandit1920.md)

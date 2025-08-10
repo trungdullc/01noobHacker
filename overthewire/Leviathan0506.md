@@ -1,11 +1,11 @@
-# Leviathan Level 5 → Level 6
+# Leviathan Level 5 → Level 6 strings → ltrace → gdb → Ghidra 🧠🧠🧠🧠🧠
 
 ## Previous Flag
 <b>szo7HDB88w</b>
 
 ## Goal
 Use previous password to log in SSH with user <b>leviathan6</b> and port <b>2223</b> accessed on leviathan.labs.overthewire.org
-Du Hint: 
+Du Hint: Solve binary file w/ correct pin and gain priviledge esculation to find password in /etc/leviathan_pass/leviathan7
 
 ## What I learned
 ```
@@ -269,4 +269,4 @@ leviathan6@leviathan:~$ for i in {0000..9999}; do ./leviathan6 $i; done ⌨️
 <b>qEs5Io5yM8</b>
 
 ## Continue
-[Continue](/overthewire/Leviathan0607.md)
+[Continue](./Leviathan0607.md)

@@ -48,4 +48,4 @@ szo7HDB88w 🔐
 <b>szo7HDB88w</b>
 
 ## Continue
-[Continue](/overthewire/Leviathan0506.md)
+[Continue](./Leviathan0506.md)

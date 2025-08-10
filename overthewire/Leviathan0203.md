@@ -92,4 +92,4 @@ Connection to leviathan.labs.overthewire.org closed.
 <b>WG1egElCvO</b>
 
 ## Continue
-[Continue](/overthewire/Leviathan0304.md)
+[Continue](./Leviathan0304.md)

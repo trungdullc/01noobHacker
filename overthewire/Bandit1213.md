@@ -71,4 +71,4 @@ Connection to bandit.labs.overthewire.org closed.
 <b>MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1314.md)
+[Continue](./Bandit1314.md)

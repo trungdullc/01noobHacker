@@ -188,4 +188,4 @@ closed
 <b>kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1516.md)
+[Continue](./Bandit1516.md)

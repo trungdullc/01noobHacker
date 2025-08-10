@@ -46,4 +46,4 @@ bandit1@bandit:~$ cat ~/- ⌨️
 <b>263JGJPfgU6LtdEvgfWU1XP5yac29mFx</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0102.md)
+[Continue](./Bandit0102.md)

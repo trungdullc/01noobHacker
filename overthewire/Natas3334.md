@@ -16,11 +16,11 @@ Nothing
 
 ## Solution
 ```
-None
+Congratulations! You have reached the end... for now.
 ```
 
 ## Flag
 N/A
 
 ## Continue
-[Continue](/overthewire/Leviathan0000.md)
+[Continue](./Leviathan0000.md)

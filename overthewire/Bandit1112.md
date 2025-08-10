@@ -134,4 +134,4 @@ The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn 🔐
 <b>FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1213.md)
+[Continue](./Bandit1213.md)

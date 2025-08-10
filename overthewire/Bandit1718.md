@@ -174,4 +174,4 @@ cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 🔐
 <b>cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1819.md)
+[Continue](./Bandit1819.md)

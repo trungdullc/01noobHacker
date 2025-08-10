@@ -34,4 +34,4 @@ The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4 🔐
 <b>7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1112.md)
+[Continue](./Bandit1112.md)

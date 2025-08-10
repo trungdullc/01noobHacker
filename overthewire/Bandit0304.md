@@ -57,4 +57,4 @@ k,hI
 <b>4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0405.md)
+[Continue](./Bandit0405.md)

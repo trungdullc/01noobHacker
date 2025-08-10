@@ -119,4 +119,4 @@ http://natas28.natas.labs.overthewire.org/search.php/?query=G%2BglEae6W%2F1XjA7v
 <b>31F4j3Qi2PnuhIZQokxXk1L3QT9Cppns</b>
 
 ## Continue
-[Continue](/overthewire/Natas2829.md)
+[Continue](./Natas2829.md)

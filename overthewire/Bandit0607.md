@@ -40,4 +40,4 @@ millionth       dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc 🔐
 <b>dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0708.md)
+[Continue](./Bandit0708.md)

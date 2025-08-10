@@ -165,4 +165,4 @@ Found one more char : hPkjKYviLQctEW33QmuXL6eDVfMW4sGo 🔐
 <b>hPkjKYviLQctEW33QmuXL6eDVfMW4sGo</b>
 
 ## Continue
-[Continue](/overthewire/Natas1516.md)
+[Continue](./Natas1516.md)

@@ -221,4 +221,4 @@ win!<br>here is your result:<br>natas31m7bfjAHpJmSYgQWWeqRE2qVBuMiRNq0y<div id="
 <b>m7bfjAHpJmSYgQWWeqRE2qVBuMiRNq0y</b>
 
 ## Continue
-[Continue](/overthewire/Natas3031.md)
+[Continue](./Natas3031.md)

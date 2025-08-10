@@ -40,4 +40,4 @@ natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ 🔐
 <b>QryZXc2e0zahULdHrtHxzyYkj59kUxLQ</b>
 
 ## Continue
-[Continue](/overthewire/Natas0304.md)
+[Continue](./Natas0304.md)

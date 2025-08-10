@@ -104,4 +104,4 @@ Username: natas25 Password: ckELKUWZUfpOv6uxS6M7lXBpBssJZ4Ws 🔐
 <b>ckELKUWZUfpOv6uxS6M7lXBpBssJZ4Ws</b>
 
 ## Continue
-[Continue](/overthewire/Natas2425.md)
+[Continue](./Natas2425.md)

@@ -293,4 +293,4 @@ j4O7Q7Q5er5XFRCepmyXJaWCSIrslCJY 🔐
 <b>j4O7Q7Q5er5XFRCepmyXJaWCSIrslCJY</b>
 
 ## Continue
-[Continue](/overthewire/Natas3334.md)
+[Continue](./Natas3334.md)

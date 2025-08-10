@@ -348,4 +348,4 @@ Content-Type: text/html; charset=iso-8859-1
 <b>2v9nDlbSF7jvawaCncr5Z9kSzkmBeoCJ</b>
 
 ## Continue
-[Continue](/overthewire/Natas3233.md)
+[Continue](./Natas3233.md)

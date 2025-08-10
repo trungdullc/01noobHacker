@@ -119,4 +119,4 @@ trbs5pCjCrkuSknBBKHhaBxq6Wm1j3LC 🔐
 <b>trbs5pCjCrkuSknBBKHhaBxq6Wm1j3LC</b>
 
 ## Continue
-[Continue](/overthewire/Natas1213.md)
+[Continue](./Natas1213.md)

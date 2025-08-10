@@ -252,4 +252,4 @@ Password: d8rwGBl0Xslg3b76uh3fEbSlnOUBlozz</pre> 🔐
 <b>d8rwGBl0Xslg3b76uh3fEbSlnOUBlozz</b>
 
 ## Continue
-[Continue](/overthewire/Natas2122.md)
+[Continue](./Natas2122.md)

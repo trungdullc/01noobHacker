@@ -63,4 +63,4 @@ Find words containing: .* /etc/natas_webpass/natas11 # ⌨️
 <b>UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk</b>
 
 ## Continue
-[Continue](/overthewire/Natas1011.md)
+[Continue](./Natas1011.md)

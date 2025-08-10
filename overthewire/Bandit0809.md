@@ -38,4 +38,4 @@ bandit9@bandit:~$ strings data.txt | grep -E '==+' ⌨️
 <b>FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0910.md)
+[Continue](./Bandit0910.md)

@@ -181,4 +181,4 @@ Password: tnwER7PdfWkxsG4FNWUtoAZ9VyZTJqJr 🔐
 <b>tnwER7PdfWkxsG4FNWUtoAZ9VyZTJqJr</b>
 
 ## Continue
-[Continue](/overthewire/Natas1819.md)
+[Continue](./Natas1819.md)

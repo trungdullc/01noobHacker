@@ -76,4 +76,4 @@ leviathan0@leviathan:~/.backup$ cat bookmarks.html | grep -ie "leviathan"
 <b>3QJ3TgzHDq</b>
 
 ## Continue
-[Continue](/overthewire/Leviathan0001.md)
+[Continue](./Leviathan0001.md)

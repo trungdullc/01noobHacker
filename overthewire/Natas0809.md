@@ -71,4 +71,4 @@ t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu 🔐
 <b>t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu</b>
 
 ## Continue
-[Continue](/overthewire/Natas0910.md)
+[Continue](./Natas0910.md)

@@ -66,4 +66,4 @@ Access granted. The password for natas6 is 0RoJwHdSKWFTYR5WuiAewauSuNaBXned 🔐
 <b>0RoJwHdSKWFTYR5WuiAewauSuNaBXned</b>
 
 ## Continue
-[Continue](/overthewire/Natas0506.md)
+[Continue](./Natas0506.md)

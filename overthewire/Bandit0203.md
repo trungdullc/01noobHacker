@@ -30,4 +30,4 @@ bandit3@bandit:~/inhere$ cat ...Hiding-From-You ⌨️
 <b>2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0304.md)
+[Continue](./Bandit0304.md)

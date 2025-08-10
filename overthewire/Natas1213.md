@@ -161,4 +161,4 @@ The file upload/hrpcjtt3z1.php has been uploaded
 <b>z3UYcr4v4uBpeX8f7EZbMHlzK4UR2XtQ</b>
 
 ## Continue
-[Continue](/overthewire/Natas1314.md)
+[Continue](./Natas1314.md)

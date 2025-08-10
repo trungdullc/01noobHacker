@@ -38,4 +38,4 @@ mallory:9urtcpzBmH
 <b>3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH</b>
 
 ## Continue
-[Continue](/overthewire/Natas0203.md)
+[Continue](./Natas0203.md)

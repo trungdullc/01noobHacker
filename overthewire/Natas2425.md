@@ -204,4 +204,4 @@ Content-Type: text/html; charset=UTF-8
 <b>cVXXwxMS3Y26n5UZU89QgpGmWCelaQlE</b>
 
 ## Continue
-[Continue](/overthewire/Natas2526.md)
+[Continue](./Natas2526.md)

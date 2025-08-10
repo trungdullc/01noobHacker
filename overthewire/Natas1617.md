@@ -93,4 +93,4 @@ Password found: 6OG1PbKdVjyBlpxgD4DDbRG6ZLlCGgCJ 🔐
 <b>6OG1PbKdVjyBlpxgD4DDbRG6ZLlCGgCJ</b>
 
 ## Continue
-[Continue](/overthewire/Natas1718.md)
+[Continue](./Natas1718.md)

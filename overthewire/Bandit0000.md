@@ -56,4 +56,4 @@ The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If 🔐
 <b>ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0001.md)
+[Continue](./Bandit0001.md)

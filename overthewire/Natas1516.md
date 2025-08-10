@@ -104,4 +104,4 @@ EqjHJbo7LFNb8vwhHb9s75hokh5TF0OC 🔐
 <b>EqjHJbo7LFNb8vwhHb9s75hokh5TF0OC</b>
 
 ## Continue
-[Continue](/overthewire/Natas1617.md)
+[Continue](./Natas1617.md)

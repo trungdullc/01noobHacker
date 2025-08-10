@@ -284,4 +284,4 @@ Welcome natas28!<br>Here is your data:<br>Array
 <b>1JNwQM1Oi6J6j1k49Xyw7ZN6pXMQInVj</b>
 
 ## Continue
-[Continue](/overthewire/Natas2728.md)
+[Continue](./Natas2728.md)

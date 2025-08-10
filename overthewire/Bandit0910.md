@@ -66,4 +66,4 @@ The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr 🔐
 <b>dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1011.md)
+[Continue](./Bandit1011.md)

@@ -88,4 +88,4 @@ Access granted. The password for natas5 is 0n35PkggAPm2zbEpOU802c0x0Msn1ToK 🔐
 <b>0n35PkggAPm2zbEpOU802c0x0Msn1ToK</b>
 
 ## Continue
-[Continue](/overthewire/Natas0405.md)
+[Continue](./Natas0405.md)

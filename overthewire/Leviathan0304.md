@@ -62,4 +62,4 @@ https://cyberchef.io/#recipe=From_Binary('Space',8)&input=MDAxMTAwMDAgMDExMDAxMD
 <b>0dyxT7F4QD</b>
 
 ## Continue
-[Continue](/overthewire/Leviathan0405.md)
+[Continue](./Leviathan0405.md)

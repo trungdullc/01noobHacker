@@ -43,4 +43,4 @@ HWasnPhtq9AVKe0dmk45nxy20cvUa6EG 🔐
 <b>HWasnPhtq9AVKe0dmk45nxy20cvUa6EG</b>
 
 ## Continue
-[Continue](/overthewire/Bandit0506.md)
+[Continue](./Bandit0506.md)

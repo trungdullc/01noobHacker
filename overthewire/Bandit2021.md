@@ -49,4 +49,4 @@ tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q 🔐
 <b>tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q</b>
 
 ## Continue
-[Continue](/overthewire/Bandit2122.md)
+[Continue](./Bandit2122.md)

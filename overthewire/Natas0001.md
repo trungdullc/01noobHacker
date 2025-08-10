@@ -34,4 +34,4 @@ You can find the password for the next level on this page, but right clicking ha
 <b>TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI</b>
 
 ## Continue
-[Continue](/overthewire/Natas0102.md)
+[Continue](./Natas0102.md)

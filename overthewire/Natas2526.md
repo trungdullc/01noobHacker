@@ -193,4 +193,4 @@ u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwFU6b9xa23i6prmUsYne u3RRffXjysjgwF
 <b>u3RRffXjysjgwFU6b9xa23i6prmUsYne</b>
 
 ## Continue
-[Continue](/overthewire/Natas2627.md)
+[Continue](./Natas2627.md)

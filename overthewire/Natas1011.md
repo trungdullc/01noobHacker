@@ -214,4 +214,4 @@ Background color: <input name=bgcolor value="#ffffff">
 <b>yZdkjAYZRd3R7tq7T5kXMjMJlOIkzDeB</b>
 
 ## Continue
-[Continue](/overthewire/Natas1112.md)
+[Continue](./Natas1112.md)

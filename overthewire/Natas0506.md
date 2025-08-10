@@ -84,4 +84,4 @@ Access granted. The password for natas7 is bmg8SvU1LizuWjx3y7xkNERkHxGre0GS 🔐
 <b>bmg8SvU1LizuWjx3y7xkNERkHxGre0GS</b>
 
 ## Continue
-[Continue](/overthewire/Natas0607.md)
+[Continue](./Natas0607.md)

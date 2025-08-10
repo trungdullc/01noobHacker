@@ -82,4 +82,4 @@ Username: natas24 Password: MeuqmfJ8DDKuTr5pcvzFKSwlxedZYEWd 🔐
 <b>MeuqmfJ8DDKuTr5pcvzFKSwlxedZYEWd</b>
 
 ## Continue
-[Continue](/overthewire/Natas2324.md)
+[Continue](./Natas2324.md)

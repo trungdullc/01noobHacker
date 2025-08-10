@@ -131,4 +131,4 @@ Password: dIUQcI3uSus1JEOSSWRAEXBG8KbR8tRs</pre> 🔐
 <b>dIUQcI3uSus1JEOSSWRAEXBG8KbR8tRs</b>
 
 ## Continue
-[Continue](/overthewire/Natas2223.md)
+[Continue](./Natas2223.md)

@@ -50,4 +50,4 @@ x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO 🔐
 <b>x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO</b>
 
 ## Continue
-[Continue](/overthewire/Bandit1718.md)
+[Continue](./Bandit1718.md)
