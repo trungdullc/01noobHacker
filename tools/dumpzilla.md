@@ -7,4 +7,4 @@ python dumpzilla.py .mozilla/firefox/c3a958fk.default/ --Downloads --History --B
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

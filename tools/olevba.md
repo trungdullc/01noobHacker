@@ -18,4 +18,4 @@ oleid "FILE.msg"                                        Analyze email attachment
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

@@ -55,4 +55,4 @@ dnsrecon -d example.com -a
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

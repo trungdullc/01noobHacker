@@ -20,4 +20,4 @@ Browser: http://<victim-ip>/shell.php?cmd=id
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

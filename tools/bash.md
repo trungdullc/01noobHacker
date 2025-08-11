@@ -100,6 +100,18 @@ sed -n '2,4p' file.txt                              p: Print only lines 2 to 4
 [find](tools/find.md)<br>
 [grep]()
 
+## File Transfer over Network
+```
+⭐ssh -p <PORT> user@host                   Connect to SSH server on custom port
+⭐scp -P <PORT> file user@host:/path        Copy file to remote host on custom port
+⭐scp -P <PORT> user@host:/path/file .      Copy file from remote host on custom port
+⭐telnet <HOST> <PORT>                      Connect to remote host via Telnet on specified port
+⭐ftp <HOST>                                File Transfer Protocol client (unencrypted)
+⭐sftp -P <PORT> user@host                  Secure FTP over SSH (interactive)
+⭐rsync -e "ssh -p <PORT>" src dest         Remote sync files w/ SSH for large or incremental transfers
+⭐nc                                        Raw TCP/UDP used to transfer files in tricky environments
+```
+
 ## Networking
 ```
 ⭐arp -a                                ARP (Address Resolution Protocol) table
@@ -218,4 +230,4 @@ dnf remove <PACKAGE>                        Remove from Fedora/RHEL
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

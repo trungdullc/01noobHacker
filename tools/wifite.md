@@ -16,4 +16,4 @@ aircrack-ng wpa-handshake.cap -w rockyou.txt
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

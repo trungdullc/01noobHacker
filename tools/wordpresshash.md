@@ -6,4 +6,4 @@ Be able to login to /wp-admin/
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

@@ -32,4 +32,4 @@ nslookup -type=txt _dmarc.domain.com
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

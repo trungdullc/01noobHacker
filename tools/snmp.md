@@ -28,4 +28,4 @@ snmpwalk -v1 -c public 10.10.10.125
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

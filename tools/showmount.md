@@ -18,4 +18,4 @@ mount -t nfs -o soft 192.168.0.1:/backup mpt/
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

@@ -39,4 +39,4 @@ nmap -v -sS -p 445,139 -Pn --script smb-vuln* --script-args=unsafe=1 -oA smb_vul
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

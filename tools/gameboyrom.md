@@ -12,4 +12,4 @@ sudo add-apt-repository ppa:libretro/stable && sudo apt-get update && sudo apt-g
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

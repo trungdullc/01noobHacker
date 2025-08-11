@@ -1,11 +1,11 @@
 # exiftool
 
 ```
-Source: https://exiftool.org/)
+Source: https://exiftool.org/
 Description: Read/Write meta info in files
 
 exiftool FILE.txt
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

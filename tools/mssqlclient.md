@@ -43,4 +43,4 @@ SQL> xp_cmdshell ipconfig
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

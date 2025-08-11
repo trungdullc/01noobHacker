@@ -41,4 +41,4 @@ include $RULE_PATH/local.rules
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

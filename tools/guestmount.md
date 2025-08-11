@@ -39,4 +39,4 @@ cp /mnt/vm/var/log/messages .
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

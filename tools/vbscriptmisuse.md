@@ -41,4 +41,4 @@ file.exe                                                            .\file.exe
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

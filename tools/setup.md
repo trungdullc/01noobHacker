@@ -8,4 +8,4 @@ find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git 
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

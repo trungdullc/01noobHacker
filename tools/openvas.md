@@ -54,4 +54,4 @@ View results on web UI (https://localhost:9392)
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

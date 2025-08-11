@@ -59,4 +59,4 @@ sudo systemctl restart smbd
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

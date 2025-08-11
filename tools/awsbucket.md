@@ -9,4 +9,4 @@ i. e. `aws s3 cp --recursive --no-sign-request s3://tamuctf .`
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

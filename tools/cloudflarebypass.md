@@ -14,4 +14,4 @@ print scraper.get(url).content
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

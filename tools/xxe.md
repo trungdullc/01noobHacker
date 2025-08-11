@@ -18,4 +18,4 @@ Display the content of the file /flag :
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

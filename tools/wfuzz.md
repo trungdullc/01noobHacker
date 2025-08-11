@@ -17,4 +17,4 @@ wfuzz -z file,wordlist/others/common_pass.txt -d "uname=FUZZ&pass=FUZZ"  --hc 30
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

@@ -20,4 +20,4 @@ powershell.exe -NoProfile -encoded $Encoded
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

@@ -6,7 +6,7 @@ IP=10.10.10.123
 # Use in BASH scripts
 echo $IP
 ```
-[Setup Usages](tools/setup.md)
+[Setup Usages](./tools/setup.md)
 
 # Prepare GitHub (read git before)
 ```bash
@@ -118,7 +118,7 @@ Red Team (CRTE)
 
 # Research
 [HackerNews](https://news.ycombinator.com/) ⭐⭐⭐⭐⭐<br>
-[Search CSV Exploits](tools/searchexploits.md) ⭐⭐⭐⭐⭐
+[Search CSV Exploits](./tools/searchexploits.md) ⭐⭐⭐⭐⭐
 
 # 🏎️ Start with overTheWire ⭐⭐⭐ 🚓
 Purpose: Learn Linux commands<br>
@@ -347,7 +347,7 @@ Souce: https://try2hack.me/<br>
 
 # 🔨 Tools to use during CTF🔧
 - Operating System Command Line Codes
-    - [Linux (BASH)](/tools/bash.md)
+    - [Linux (BASH)](./tools/bash.md)
     - Windows (PowerShell)
 - ASCII Table
     - [ASCII Table](https://www.asciitable.com/)
@@ -357,14 +357,14 @@ Souce: https://try2hack.me/<br>
     - [HexEd.it](https://hexed.it/): Online hex editor for files, correcting files with a corrupt Magic Number ⭐
     - [RapidTables](https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html): Online ASCII, Hex, Binary, Decimal, Base64 converter
     - [XOR](https://xor.pw/): Online XOR Calculator
-    - [xxd](tools/xxd.md): Kali Linux | ParrotOS, Convert binary data to hexadecimal format
+    - [xxd](./tools/xxd.md): Kali Linux | ParrotOS, Convert binary data to hexadecimal format
 - General
     - [awk](https://www.gnu.org/software/gawk/manual/gawk.html): Kali Linux | ParrotOS, Search pattern inside files <b>w/ column field awareness</b>
     - [bgrep](https://github.com/nneonneo/bgrep): Kali Linux | ParrotOS Search binary strings in binary file
     - [file](https://www.geeksforgeeks.org/linux-unix/how-to-find-out-file-types-in-linux/): Kali Linux | ParrotOS, Identify file types base on content
     - [grep](https://www.man7.org/linux/man-pages/man1/grep.1.html): Kali Linux | ParrotOS, Search pattern inside files
     - [HackTricks](https://book.hacktricks.wiki/en/index.html) ⭐⭐⭐⭐⭐
-    - [sed](tools/sed.md): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
+    - [sed](./tools/sed.md): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
     - [tmux](https://github.com/tmux/tmux/wiki): Run & manage multiple terminal sessions inside 1 terminal window
 - Regular Expression Checker
     - [Debuggex](https://www.debuggex.com/): Online check regular expressions
@@ -378,7 +378,7 @@ Souce: https://try2hack.me/<br>
     - [boofuzz](https://github.com/jtpereyda/boofuzz): Network Protocol Fuzzing for Humans
     - [DLLInjector](https://github.com/OpenSecurityResearch/dllinjector): Inject DLL into running processes
     - [formatStringExploiter](https://formatstringexploiter.readthedocs.io/en/latest/): Exploiting format string vulnerabilities
-    - [honggfuzz](tools/honggfuzz.md): Security oriented software fuzzer
+    - [honggfuzz](./tools/honggfuzz.md): Security oriented software fuzzer
     - [LibC Check](https://defuse.ca/online-x86-assembler.htm#disassembly): Find all possible libc versions w/ symbol name and entry address
     - [libformatstr](https://github.com/hellman/libformatstr): Exploiting format string vulnerabilities
     - [LNjector](https://github.com/DataSearchers/LNjector---Windows-DLL-injector): DLL Injector
@@ -392,7 +392,7 @@ Souce: https://try2hack.me/<br>
     - [Syscall Reference](https://syscalls.w3challs.com/): x86 / x64 syscalls manual w/ registers value
 - Brute Force/Dictonary Attack/Hash Cracking
     - [changeme](https://github.com/ztgrace/changeme): Default credential scanner
-    - [EFF Dice-Generated Passphrases](tools/eff.md)
+    - [EFF Dice-Generated Passphrases](./tools/eff.md)
     - [fcrackzip](https://github.com/hyc/fcrackzip)
     - [Hashcat](https://hashcat.net/hashcat/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
     - [Hydra](https://www.kali.org/tools/hydra/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
@@ -407,7 +407,7 @@ Souce: https://try2hack.me/<br>
     - [Patator](https://github.com/lanjelot/patator)
     - [pdfcrack](https://github.com/alitrack/PDFCrack): Kali Linux | ParrotOS, recovering PDF passwords
     - [Turbo Intruder](https://portswigger.net/bappstore/9abaa233088242e8be252cd4ff534988): Burp Suite extension for sending large numbers of HTTP requests and analyzing results
-    - [wifite](tools/wifite.md): Automates multiple Wi-Fi attacks
+    - [wifite](./tools/wifite.md): Automates multiple Wi-Fi attacks
     - [Zip Password Cracker](https://passwordrecovery.io/zip-file-password-removal/): Online John The Riper
 - Cryptography
     - [Atbash Cipher](http://rumkin.com/tools/cipher/atbash.php)
@@ -435,7 +435,7 @@ Souce: https://try2hack.me/<br>
     - [padding-oracle-attacker](https://github.com/KishanBagaria/padding-oracle-attacker): Padding oracle attacks
     - [Keyboard Shift Cipher](https://www.dcode.fr/keyboard-shift-cipher): Web App decryption
     - [Morse Code Translator](https://morsecode.world/international/translator.html): Online Morse Code Translator
-    - [openssl](tools/openssl.md)
+    - [openssl](./tools/openssl.md)
     - [PkCrack](https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html): Breaking PkZip-encryption
     - [Playfair Cipher](http://bionsgadgets.appspot.com/ww_forms/playfair_ph_web_worker3.html)
     - [QuipQuip](https://quipqiup.com/): Substitution/vigenere Cryptogram solver
@@ -466,7 +466,7 @@ Souce: https://try2hack.me/<br>
     - [ChromeCacheView](https://www.nirsoft.net/utils/chrome_cache_view.html#google_vignette):  Reads cache folder of Google Chrome Web browser and displays file list
     - [Creddump](https://github.com/moyix/creddump): Dump Windows credentials
     - [dnscat2](https://github.com/iagox86/dnscat2): Tunneling data over DNS
-    - [exiftool](tools/exiftool.md): Read, write and edit file metadata
+    - [exiftool](./tools/exiftool.md): Read, write and edit file metadata
     - [extundelete]https://extundelete.sourceforge.net/): Recover deleted files from an ext3 or ext4 partition
     - [exiv2](https://www.exiv2.org/manpage.html): Image metadata manipulation tool
     - [firmware-mod-kit](https://code.google.com/archive/p/firmware-mod-kit/): Modify firmware images without recompiling
@@ -498,19 +498,19 @@ Souce: https://try2hack.me/<br>
     - [TestDisk](https://www.cgsecurity.org/wiki/TestDisk): CLI recover deleted files from a file system image
     - [uncompyle6](https://github.com/rocky/python-uncompyle6): Python decompile bytecode
     - [USBRip](https://github.com/snovvcrash/usbrip): Tracking USB device artifacts (history of USB events) on GNU/Linux
-    - [volatility](tools/volatility.md): Advanced memory forensics framework ⭐⭐⭐
+    - [volatility](./tools/volatility.md): Advanced memory forensics framework ⭐⭐⭐
     - [Xplico](https://www.xplico.org/): Network Forensic Analysis Framework
 - OSINT (Open-Source Intelligence)
     - [BinaryEdge](https://www.binaryedge.io/): Platform to scan, acquire, and classify public Internet data
     - [Creepy](https://github.com/ilektrojohn/creepy): Geolocation OSINT tool for gathering info from social networks
     - [dehashed](https://www.dehashed.com/): Search engine for hacked databases
-    - [dnsrecon](tools/dnsrecon.md): DNS enumeration tool ⭐⭐
+    - [dnsrecon](./tools/dnsrecon.md): DNS enumeration tool ⭐⭐
     - [graph.tips](https://graph.tips/): Search public Facebook data
     - [haveibeenpwned](https://haveibeenpwned.com/): Check if email or username has been in a data breach
     - [instant-username-search](https://instantusername.com/): Check username availability on 100+ social media sites
     - [leakcheck](https://leakcheck.io/): Check for leaked credentials
     - [Linkin eMail Finder](https://skrapp.io/tutorials/linkedin-email-finder): Chrome Extension
-    - [nslookup](tools/nslookup.md) ⭐
+    - [nslookup](./tools/nslookup.md) ⭐
     - [Sherlock](https://github.com/sherlock-project/sherlock): Hunts cheaters by username across multiple social media
     - [Shodan](https://www.shodan.io/): Search engine for Internet-connected devices (Not Free)
     - [Social Mapper](https://github.com/Greenwolf/social_mapper): Uses facial recognition to correlate social media profiles
@@ -523,21 +523,21 @@ Souce: https://try2hack.me/<br>
     - [YandexImages](https://yandex.com/images/): Reverse image search engine
 - Network
     - [drupalgeddon2](https://github.com/dreadlocked/Drupalgeddon2): Attack script for old/outdated Drupal servers
-    - [editcap](tools/editcap.md): from Wireshark
-    - [enum4linux](tools/enum4linux.md): Scan Windows Samba shares
-    - [impacket](tools/impacket.md): Start a Samba share
-    - [mssqlclient.py](tools/mssqlclient.md)
-    - [nc](tools/nc.md): Reading/Writing to network connections using TCP or UDP ⭐⭐⭐⭐⭐
+    - [editcap](./tools/editcap.md): from Wireshark
+    - [enum4linux](./tools/enum4linux.md): Scan Windows Samba shares
+    - [impacket](./tools/impacket.md): Start a Samba share
+    - [mssqlclient.py](./tools/mssqlclient.md)
+    - [nc](./tools/nc.md): Reading/Writing to network connections using TCP or UDP ⭐⭐⭐⭐⭐
     - [Network Miner](https://www.netresec.com/?page=NetworkMiner): Network Protocol Analyzer
-    - [nmap](tools/nmap.md): Network Mapper, Network Discovery, Port Scanner ⭐⭐⭐⭐⭐
-    - [OpenVAS](tools/openvas.md)
+    - [nmap](./tools/nmap.md): Network Mapper, Network Discovery, Port Scanner ⭐⭐⭐⭐⭐
+    - [OpenVAS](./tools/openvas.md)
     - [PcapXray](https://github.com/Srinivas11789/PcapXray?utm_source=cybersectools.com): Network Protocol Analyzer
-    - [smbclient](tools/smbclient.md)
-    - [smbmap](tools/smbmap.md)
-    - [Snort](tools/snort.md)
+    - [smbclient](./tools/smbclient.md)
+    - [smbmap](./tools/smbmap.md)
+    - [Snort](./tools/snort.md)⭐⭐⭐⭐⭐
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
-    - [tcpflow](tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer ⭐⭐⭐
+    - [tcpflow](./tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer ⭐⭐⭐
     - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer ⭐⭐⭐⭐⭐
     - [Yara](https://virustotal.github.io/yara/): Malware research and detection through pattern matching and rules-based analysis
 - Privilege Escalation
@@ -563,11 +563,11 @@ Souce: https://try2hack.me/<br>
     - [Demovfuscator](https://github.com/kirschju/demovfuscator): Work-in-progress deobfuscator for movfuscated binaries
     - [DogBolt](https://dogbolt.org/): Online binary file decompiler (like Ghidra & BinaryNinja)
     - [dnSpy](https://github.com/dnSpy/dnSpy): Window GUI decompile and reverse engineer .NET binaries
-    - [dumpzilla](tools/dumpzilla.md): Python script to examine a .mozilla configuration file
+    - [dumpzilla](./tools/dumpzilla.md): Python script to examine a .mozilla configuration file
     - [Easy Python Decompiler](https://sourceforge.net/projects/easypythondecompiler/): Decompile Python bytecode (.pyc)
     - [Frida](https://github.com/frida/): Dynamic instrumentation toolkit
-    - [GAMEBOY ROMS](tools/gameboyrom.md)
-    - [gcc](tools/gcc.md)
+    - [GAMEBOY ROMS](./tools/gameboyrom.md)
+    - [gcc](./tools/gcc.md)
     - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐⭐⭐
     - [gef](https://github.com/hugsy/gef): Modern experience for GDB with advanced debugging features
     - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐⭐⭐⭐
@@ -580,7 +580,7 @@ Souce: https://try2hack.me/<br>
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
     - [miasm](https://github.com/cea-sec/miasm): Reverse engineering framework in Python
     - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF): decompile and reverse APK files
-    - [objdump](tools/objdump.md)
+    - [objdump](./tools/objdump.md)
     - [Objection](https://github.com/sensepost/objection): Runtime mobile exploration
     - [Online Assembler/Disassembler](http://shell-storm.org/online/Online-Assembler-and-Disassembler/): Online wrappers around Keystone and Capstone projects
     - [peda](https://github.com/longld/peda): Python Exploit Development Assistance for gdb
@@ -604,7 +604,7 @@ Souce: https://try2hack.me/<br>
     - [ImageHide](https://www.softpedia.com/get/Security/Encrypting/ImageHide.shtml)
     - [jsteg](https://github.com/lukechampine/jsteg): CLI use against JPEG
     - [Magic Eye Solver](http://magiceye.ecksdee.co.uk/): Online Get hidden information from images
-    - [olevba](tools/olevba.md)
+    - [olevba](./tools/olevba.md)
     - [OpenStego](https://www.openstego.com/)
     - [Outguess](https://www.freebsd.org/cgi/man.cgi?query=outguess+&apropos=0&sektion=0&manpath=FreeBSD+Ports+5.1-RELEASE&format=html): Online Universal steganographic tool
     - [pdfdetach](https://www.xpdfreader.com/pdfdetach-man.html): Kali Linux | ParrotOS, Extract Embedded files from PDF
@@ -628,31 +628,31 @@ Souce: https://try2hack.me/<br>
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
         Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
-    - [Active Server Pages Extended Misuse](tools/aspxmisuse.md)
+    - [Active Server Pages Extended Misuse](./tools/aspxmisuse.md)
     - [Arachni](https://www.arachni-scanner.com/): Web Application Security Scanner Framework
-    - [AWS: S3 Buckets](tools/awsbucket.md)
+    - [AWS: S3 Buckets](./tools/awsbucket.md)
     - Backup pages ( ~ and .bak and .swp): Dig up old php source code
     - [Burp Suite](https://portswigger.net/burp/communitydownload): Kali Linux | ParrotOS, Web App security testing platform, <b>NOT capture non-web protocols</b> ⭐⭐⭐⭐⭐
-    - [CloudflareBypass](tools/cloudflarebypass.md)
+    - [CloudflareBypass](./tools/cloudflarebypass.md)
     - [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping): Bypass CloudFlare protection (testing)
     - [commix](https://www.kali.org/tools/commix/): Kali Linux | ParrotOS, Command Injection vulnerabilities
     - [CSP Evaluator](https://csp-evaluator.withgoogle.com/): Online Content Security Policy (CSP) checker
     - [debugHunter](https://github.com/devploit/debugHunter): Discover hidden debugging parameters & uncover web application secrets
-    - [dirb](tools/dirb.md): Directory enumeration
+    - [dirb](./tools/dirb.md): Directory enumeration
     - [dirbuster](https://github.com/KajanM/DirBuster): Kali Linux | ParrotOS, Find hidden directories in Web App
     - [dirhunt](https://github.com/Nekmo/dirhunt): Find web directories without bruteforce
     - [dirsearch](https://github.com/maurosoria/dirsearch): Web path scanner
     - [Edit-This-Cookie](https://github.com/ETCExtensions/Edit-This-Cookie): Editing cookies
     - [ffuf](https://github.com/ffuf/ffuf): Fast web fuzzer written in Go
     - [git-dumper](https://github.com/arthaud/git-dumper): Dump a git reptory from a website
-    - [gobuster](tools/gobuster.md): Kali Linux | ParrotOS, find hidden directories in Web App ⭐
+    - [gobuster](./tools/gobuster.md): Kali Linux | ParrotOS, find hidden directories in Web App ⭐
     - [Gopherus](https://github.com/tarunkant/Gopherus): Generates gopher link for exploiting SSRF and gaining RCE in various servers
     - [HackBar](https://github.com/PhHitachi/HackBar): Manual SQL injection atk
     - [Hookbin](https://hookbin.com/): Collect, parse, and view HTTP requests
     - [JSFiddle](https://jsfiddle.net/): Online test your JavaScript, CSS, HTML or CoffeeScript
-    - [MongoDB](tools/mongodb.md)
+    - [MongoDB](./tools/mongodb.md)
     - [ngrok](https://ngrok.com/): Secure introspectable tunnels to localhost
-    - [nikito](tools/nikito.md): Kali Linux | ParrotOS, Web Server vunerability scanner ⭐⭐⭐
+    - [nikito](./tools/nikito.md): Kali Linux | ParrotOS, Web Server vunerability scanner ⭐⭐⭐
     - [nomore403](https://github.com/devploit/nomore403): Bypass 40x errors
     - Noob: /admin/ /.git/
     - [OWASP Zap](https://owasp.org/www-project-zap/): Intercepting proxy to replay, debug, and fuzz HTTP requests and responses
@@ -665,51 +665,51 @@ Souce: https://try2hack.me/<br>
     - [revelo](http://www.kahusecurity.com/posts/revelo_javascript_deobfuscator.html): Analyze obfuscated Javascript code
     - [robots.txt](https://www.robotstxt.org/)
     - [smuggler](https://github.com/defparam/smuggler): HTTP Request Smuggling / Desync testing tool 
-    - [sqlmap](tools/sqlmap.md): Kali Linux | ParrotOS, automating SQL injection atk ⭐⭐⭐
+    - [sqlmap](./tools/sqlmap.md): Kali Linux | ParrotOS, automating SQL injection atk ⭐⭐⭐
     - [Subdomain Finder](https://subdomainfinder.c99.nl/index.php): Online Subdomain Finder
     - [W3af](https://github.com/andresriancho/w3af): Web application attack and audit framework
     - [Web App Default DB](https://github.com/pwnwiki/webappdefaultsdb/blob/master/README.md)⭐⭐⭐
     - WordPress
-        - [Wordpress Password Hash Generator](tools/wordpresshash.md)
+        - [Wordpress Password Hash Generator](./tools/wordpresshash.md)
         - [wpscan](https://github.com/wpscanteam/wpscan): Kali Linux | ParrotOS, Vulnerability scan and do reconnaissance for WordPress
-    - [wfuzz](tools/wfuzz.md): Web App Enumeration
+    - [wfuzz](./tools/wfuzz.md): Web App Enumeration
     - [XSS PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)⭐
     - [XSSer](https://xsser.03c8.net/): Automated XSS testor
     - [XSStrike](https://github.com/s0md3v/XSStrike): CLI for automated XSS attacks
     - [XSS Filter Evasion](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)⭐⭐
-    - [XXE (XML eXternal Entity)](tools/xxe.md)
+    - [XXE (XML eXternal Entity)](./tools/xxe.md)
     - [ysoserial](https://github.com/frohoff/ysoserial): Generating payloads that exploit unsafe Java object deserialization
 - Vulnerabilities
     - Java
-        - [Jenkins/Groovy Misuse](tools/jenkinmisuse.md)
+        - [Jenkins/Groovy Misuse](./tools/jenkinmisuse.md)
     - macOS
-        - [Apple Hidden Files](tools/dsstore.md)
-        - [Mac AutoLogin Password Cracking](tools/macautologin.md)
+        - [Apple Hidden Files](./tools/dsstore.md)
+        - [Mac AutoLogin Password Cracking](./tools/macautologin.md)
     - NetBIOS
-        - [Enumeration](tools/netbiosenumeration.md)
+        - [Enumeration](./tools/netbiosenumeration.md)
     - PERL
-        - [Misuse](tools/perlmisuse.md)
+        - [Misuse](./tools/perlmisuse.md)
     - PHP
-        - [Magic Hashes](/tools/magichash.md)
+        - [Magic Hashes](./tools/magichash.md)
     - phpMyAdmin
-        - [Misuse](tools/phpmyadminmisuse.md)
+        - [Misuse](./tools/phpmyadminmisuse.md)
     - PowerShell
-        - [Bypass](tools/powershellbypass.md)
+        - [Bypass](./tools/powershellbypass.md)
     - PureFTP
-        - [Misuse](tools/pureftp.md)
+        - [Misuse](./tools/pureftp.md)
     - SMB
-        - [Misuse](tools/smbmisuse.md)
+        - [Misuse](./tools/smbmisuse.md)
     - SMTP
-        - [Enumeration](tools/smtpenumeration.md)
+        - [Enumeration](./tools/smtpenumeration.md)
     - TFTP
-        - [Misuse](tools/tftpmisuse.md)
+        - [Misuse](./tools/tftpmisuse.md)
     - VBScript
-        - [Misuse](tools/vbscriptmisuse.md)
+        - [Misuse](./tools/vbscriptmisuse.md)
 - Other Helpers
     - [dockerExample](sudo apt install -y caca-utils)
     - img2txt: sudo apt install -y caca-utils: convert an image into ASCII
-    - [Restricted Environments](tools/restricted.md)⭐⭐⭐
-    - [Unflattening Base64](tools/unflattenbase64.md)
+    - [Restricted Environments](./tools/restricted.md)⭐⭐⭐
+    - [Unflattening Base64](./tools/unflattenbase64.md)
     - [Word Search Solver](https://github.com/robbiebarrat/word-search)
 - Help
     - [HackTricksAI](https://www.hacktricks.ai/): Unfiltered
@@ -742,28 +742,28 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 ```
 
 # Checklist (CTF Quick Edition)
-[OSINT Checklist](tools/osintchecklist.md)
+[OSINT Checklist](./checklists/osintchecklist.md)
 
 # Useful
-[git Commands](tools/usefulgit.md)<br>
-[Shell Commands](tools/usefulshellcommands.md)<br>
-[BASH Scripts](tools/usefulscripts.md)
+[git Commands](./tools/usefulgit.md)<br>
+[Shell Commands](./tools/usefulshellcommands.md)<br>
+[BASH Scripts](./tools/usefulscripts.md)
 
 # Red Team/Penetration Attack
 [Aircrack-ng](https://www.aircrack-ng.org/): Wi-Fi Testing, monitoring .pcap<br>
 [AMSI Bypass](https://0x00-0x00.github.io/research/2018/10/28/How-to-bypass-AMSI-and-Execute-ANY-malicious-powershell-code.html?mkt_tok=eyJpIjoiWTJGaU5qbGlaVFZsTXpVdyIsInQiOiJBSXdzQm5FMGY0S1BrTWlBcVBlZ3ErN2NcL1RNeGkwcnNSK3FZcGVvaUhFRVJiQUhVcmVIWko0aWdNNCtXcVRrcWtDRTMxRGlpM1wvQlIxVHZlU1RUNk5sRVJnQ1dUZEFVQ0JTRHk4ejNVQTBWK1Y3Um1EWHZYdGY5YWQ5V2hTZFVXIn0%3D): Anti-virus evasion with PowerShell<br>
 [atomic-red-team](https://github.com/redcanaryco/atomic-red-team): MITRE ATT&CK® Framework⭐⭐⭐⭐⭐
-[autorecon](tools/autorecon.md): automatic recon playbook ⭐⭐<br>
+[autorecon](./tools/autorecon.md): automatic recon playbook ⭐⭐<br>
 [BloodHound](https://github.com/SpecterOps/BloodHound-Legacy): Identify file/directory attack paths<br>
 [Burp Suite](https://portswigger.net/burp): Web Application Testing ⭐⭐⭐⭐⭐<br>
 [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec): Depreciated
 [dnschef](https://github.com/iphelps/dnschef): DNS manipulation (DNS spoofing, Cache Poisioning, DNS Amplification Atk)<br>
 [Ghidra](https://ghidra-sre.org/): Reverse Engineering (Disassembling, Decompiling) ⭐⭐⭐⭐⭐<br>
-[Hydra](tools/hydra.md): Attack FTP HTTP SSH SAP<br>
+[Hydra](./tools/hydra.md): Attack FTP HTTP SSH SAP<br>
 [Impacket](https://github.com/fortra/impacket): Python collection for creating exploits<br>
 [kerberoast](https://github.com/nidem/kerberoast): Attacking MS Kerberos implementations
 [Metasploit](https://www.metasploit.com/): Penetration Testing Framework for testing exploits ⭐⭐⭐⭐⭐<br>
-[msfvenom](tools/msfvenom.md)<br>
+[msfvenom](./tools/msfvenom.md)<br>
 [Osmedeus](https://github.com/j3ssie/osmedeus): Automate Reconnaissance Process<br>
 [Recon-ng](https://github.com/lanmaster53/recon-ng): Reconniance Framework<br>
 [Responder](https://github.com/lgandx/Responder): LLMNR Poisioner for Credential Harvesting
@@ -775,7 +775,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 # Reverse Shell
 [LiveShell](https://github.com/livepwn/liveshell)<br>
 [Online Reverse Shell](https://www.revshells.com/): Online ⭐<br>
-[Nishang](tools/nishang.md)⭐<br>
+[Nishang](./tools/nishang.md)⭐<br>
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
 
 # Favorite Emojis

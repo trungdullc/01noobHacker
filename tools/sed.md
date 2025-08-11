@@ -54,4 +54,4 @@ sed "s/$search/$replace/g" file.txt
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

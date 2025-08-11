@@ -25,4 +25,4 @@ chmod +x lse.sh
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

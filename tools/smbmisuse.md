@@ -29,4 +29,4 @@ net use Z: \\192.168.1.100\loot                             copy \\192.168.1.100
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)

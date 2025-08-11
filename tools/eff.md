@@ -7,4 +7,4 @@ Wordlist: https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
 ```
 
 ## Back to README.md
-[BACK](/README.md)
+[BACK](../README.md)
