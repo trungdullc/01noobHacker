@@ -120,7 +120,7 @@ Red Team (CRTE)
 [HackerNews](https://news.ycombinator.com/) ⭐⭐⭐⭐⭐<br>
 [Search CSV Exploits](./tools/searchexploits.md) ⭐⭐⭐⭐⭐
 
-# 🏎️ Start with overTheWire ⭐⭐⭐ 🚓
+# 🏎️ Start with overTheWire ⭐⭐⭐⭐ 🚓
 Purpose: Learn Linux commands<br>
 Source: https://overthewire.org/wargames/<br>
 [Start](/overthewire/0000.md)
@@ -365,7 +365,7 @@ Souce: https://try2hack.me/<br>
     - [grep](https://www.man7.org/linux/man-pages/man1/grep.1.html): Kali Linux | ParrotOS, Search pattern inside files
     - [HackTricks](https://book.hacktricks.wiki/en/index.html) ⭐⭐⭐⭐⭐
     - [sed](./tools/sed.md): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
-    - [tmux](https://github.com/tmux/tmux/wiki): Run & manage multiple terminal sessions inside 1 terminal window
+    - [tmux](./tools/tmux.md): Run & manage multiple terminal sessions inside 1 terminal window
 - Regular Expression Checker
     - [Debuggex](https://www.debuggex.com/): Online check regular expressions
     - [RegEX101](https://regex101.com/): Online RE checker
@@ -580,7 +580,7 @@ Souce: https://try2hack.me/<br>
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
     - [miasm](https://github.com/cea-sec/miasm): Reverse engineering framework in Python
     - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF): decompile and reverse APK files
-    - [objdump](./tools/objdump.md)
+    - [objdump](./tools/objdump.md) ⭐
     - [Objection](https://github.com/sensepost/objection): Runtime mobile exploration
     - [Online Assembler/Disassembler](http://shell-storm.org/online/Online-Assembler-and-Disassembler/): Online wrappers around Keystone and Capstone projects
     - [peda](https://github.com/longld/peda): Python Exploit Development Assistance for gdb
@@ -781,3 +781,4 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 # Favorite Emojis
 ⭐❤️🧠👀🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻🔐⌨️
 →
+⚠️
