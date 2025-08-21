@@ -9,6 +9,9 @@ usage: tmux [-2CDlNuVv] [-c shell-command] [-f file] [-L socket-name]
             [-S socket-path] [-T features] [command [flags]]
 narnia0@narnia:~$ man tmux
 
+# In tricky environments like picoCTF
+tmux new-session \; split-window -h \; attach ❤️❤️❤️❤️❤️
+
 # Vertical split
 Ctrl + B + % (hold shift 5)
 

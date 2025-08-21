@@ -2,6 +2,7 @@
 
 ```
 Description: CLI text editor
+Note: You can run commands inside vi/vim w/ :! ls (sudo -l) ⭐
 
 vim FILE.txt
 

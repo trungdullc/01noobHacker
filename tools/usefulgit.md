@@ -1,4 +1,4 @@
-# Useful git commands
+# Useful git commands ⭐⭐⭐⭐⭐
 
 # Important: Set Git Identity before using
 ```

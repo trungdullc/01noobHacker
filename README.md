@@ -139,7 +139,7 @@ Source: https://www.smashthestack.org/<br>
 Purpose: Learn CTF basic scenarios<br>
 Source: https://www.picoctf.org/<br>
 Guide: https://primer.picoctf.org/<br>
-<b>TODO Later</b>
+[Continue](./picoCTF/picoGym0189.md)
 
 # Continue to Dreamhack.io
 Purpose: Online wargame<br>
@@ -353,9 +353,11 @@ Souce: https://try2hack.me/<br>
     - [ASCII Table](https://www.asciitable.com/)
 - Converting
     - [base64](https://www.man7.org/linux/man-pages/man1/base64.1.html): Encoding/Decoding base64
+    - [convert](./tools/convert.md) ⭐⭐⭐
     - [hexdump](https://www.man7.org/linux/man-pages/man1/hexdump.1.html): Display file contents in hexadecimal, decimal, octal, or ascii
     - [HexEd.it](https://hexed.it/): Online hex editor for files, correcting files with a corrupt Magic Number ⭐
     - [RapidTables](https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html): Online ASCII, Hex, Binary, Decimal, Base64 converter
+    - [RapidTables (Binary Math)](https://www.rapidtables.com/calc/math/binary-calculator.html) ⭐⭐⭐⭐⭐
     - [XOR](https://xor.pw/): Online XOR Calculator
     - [xxd](./tools/xxd.md): Kali Linux | ParrotOS, Convert binary data to hexadecimal format
 - General
@@ -414,8 +416,9 @@ Souce: https://try2hack.me/<br>
     - [Bacon Cipher](http://rumkin.com/tools/cipher/baconian.php)
     - [Beaufourt Cipher](https://www.dcode.fr/beaufort-cipher)
     - [Big Integer Calculator](http://www.javascripter.net/math/calculators/100digitbigintcalculator.htm): Online Calculator
+    - [Black Chamber](https://www.simonsingh.net/The_Black_Chamber/vigenere_cracking_tool.html): Online Vigenere Cracker ⭐⭐⭐⭐
     - [Caesar Cipher](https://www.dcode.fr/caesar-cipher)
-    - [CrackStation](https://crackstation.net/): Online Password Hash Cracker
+    - [CrackStation](https://crackstation.net/): Online Password Hash Cracker ⭐⭐⭐⭐⭐
     - [Cryptii](https://cryptii.com/): Web App for encypt/decrypt & encoding
     - [<b>CyberChef</b>](https://gchq.github.io/CyberChef): Analysing/Decoding data ⭐⭐⭐⭐⭐
     - [Crunch](https://www.guballa.de/substitution-solver): Create custom dictionary for atk
@@ -778,7 +781,13 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [Nishang](./tools/nishang.md)⭐<br>
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
 
+# Editors
+[Visual Studio Code](./tools/vsc.md)
+[vim](./tools/vim.md)
+
 # Favorite Emojis
-⭐❤️🧠👀🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻🔐⌨️
+⭐❤️🧠👀🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻
+⌨️
+🔐
 →
 ⚠️

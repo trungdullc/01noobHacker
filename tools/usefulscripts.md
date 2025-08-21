@@ -1,17 +1,18 @@
-# Useful Scripts
+# Useful Scripts ⭐⭐⭐⭐⭐
 
 ```
 #!/bin/bash
 # Remember:     chmod +x myscript.sh
 # Run:          ./myscript.sh                bash myscript.sh
 
-echo "Hello Hacers!"
+# echo add \n, -n                       # bash printf != C
+echo -e "Hello Hackers!"                printf "Hello Hackers\n"          python3 -c "print('Hello Hackers')"
 
 # Loop through numbers (1 to 10)
-for i in {1..10}; do
-  echo "Line $i"
-done
-
+for i in {1..10}; do                    for i in {1..10}; do              python3 -c "for i in range(1, 11): print(f'Line {i}')"
+  echo "Line $i"                          printf "Line %d\n" "$i";
+done                                    done                              
+                                              python3 -c "import sys; [sys.stdout.write('Line %d\n' % i) for i in range(1, 11)]"
 # Loop through files in a folder
 for file in *.txt; do
   echo "Processing $file"
