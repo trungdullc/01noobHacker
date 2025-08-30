@@ -365,7 +365,7 @@ Souce: https://try2hack.me/<br>
     - [bgrep](https://github.com/nneonneo/bgrep): Kali Linux | ParrotOS Search binary strings in binary file
     - [file](https://www.geeksforgeeks.org/linux-unix/how-to-find-out-file-types-in-linux/): Kali Linux | ParrotOS, Identify file types base on content
     - [grep](https://www.man7.org/linux/man-pages/man1/grep.1.html): Kali Linux | ParrotOS, Search pattern inside files
-    - [HackTricks](https://book.hacktricks.wiki/en/index.html) ⭐⭐⭐⭐⭐
+    - [HackTricks](./tools/hacktricks.md) ⭐⭐⭐⭐⭐
     - [sed](./tools/sed.md): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
     - [tmux](./tools/tmux.md): Run & manage multiple terminal sessions inside 1 terminal window
 - Regular Expression Checker
@@ -659,7 +659,7 @@ Souce: https://try2hack.me/<br>
     - [nomore403](https://github.com/devploit/nomore403): Bypass 40x errors
     - Noob: /admin/ /.git/
     - [OWASP Zap](https://owasp.org/www-project-zap/): Intercepting proxy to replay, debug, and fuzz HTTP requests and responses
-    - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings): Payload Library ⭐⭐⭐⭐
+    - [PayloadsAllTheThings](./tools/payloadofall.md): Payload Library ⭐⭐⭐⭐
     - [PHPGGC](https://github.com/ambionics/phpggc): Library of PHP unserialize() payloads
     - [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en): Addon for chrome for debugging network requests
     - [Racoon](https://github.com/evyatarmeged/Raccoon): Scrapping/Enumerating endpoints in Web App
@@ -777,7 +777,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 
 # Reverse Shell
 [LiveShell](https://github.com/livepwn/liveshell)<br>
-[Online Reverse Shell](https://www.revshells.com/): Online ⭐<br>
+[Online Reverse Shell](./tools/revshells.md): Online ⭐⭐⭐⭐⭐<br>
 [Nishang](./tools/nishang.md)⭐<br>
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
 
@@ -790,4 +790,5 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 ⌨️
 🔐
 →
+⌘
 ⚠️

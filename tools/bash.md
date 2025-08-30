@@ -108,7 +108,7 @@ find . -mtime -4                                                                
 ⭐ grep -E "PATTERN1 | PATTERN2" FILE1 FILE2        Select-String -Pattern "pattern" FILE   search in files for PATTERN
 ⭐ grep -ir "PATTERN" DIR                                       search for pattern recursively & case insensitive in directory
 grep "PATTERN" FILE                                                                         ❤️❤️❤️❤️❤️
-grep -rl "FILENAME" DIR                                                                     ❤️❤️❤️❤️❤️
+grep -rl "FILENAME" DIR                             Get-ChildItem -Recurse | Select-String "PATTERN" ❤️❤️❤️❤️❤️
 awk '{print $1, $3}' file.txt                       `Import-Csv file                        Print 1st and 3rd columns
 awk -F: '{print $1}' /etc/passwd                                                            Use ':' as delimiter
 awk '$3 > 1000' /etc/passwd                                                                 Print lines where 3rd field > 1000

@@ -211,4 +211,4 @@ AsianHacker-picoctf@webshell:~$ curl http://titan.picoctf.net:60891/ ⌨️
 picoCTF{web_succ3ssfully_d3c0ded_f6f6b78a}
 
 ## Continue
-[Continue](./picoGym0427.md)
+[Continue](./picoGym0132.md)

