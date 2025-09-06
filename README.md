@@ -349,6 +349,7 @@ Souce: https://try2hack.me/<br>
 - Operating System Command Line Codes
     - [Linux (BASH)](./tools/bash.md)
     - Windows (PowerShell)
+    - [Python3](./tools/python3.md)
 - ASCII Table
     - [ASCII Table](https://www.asciitable.com/)
 - Converting
@@ -399,7 +400,7 @@ Souce: https://try2hack.me/<br>
     - [Hashcat](https://hashcat.net/hashcat/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
     - [Hydra](https://www.kali.org/tools/hydra/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
     - [John The Riper: Jumbo](https://github.com/openwall/john): enhanced John the Ripper
-    - [John The Riper](https://www.openwall.com/john/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
+    - [John The Riper](./tools/johntheripper.md): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
     - [jwt_tool](https://github.com/ticarpi/jwt_tool): Toolkit for testing, tweaking and cracking JSON Web Tokens
     - [keepassx](https://github.com/keepassx/keepassx): Explore Keepass databases
     - [keepass2john](https://github.com/ivanmrsulja/keepass2john): Keepass databases master passwords can be cracked with keepass2john
@@ -418,12 +419,12 @@ Souce: https://try2hack.me/<br>
     - [Big Integer Calculator](http://www.javascripter.net/math/calculators/100digitbigintcalculator.htm): Online Calculator
     - [Black Chamber](https://www.simonsingh.net/The_Black_Chamber/vigenere_cracking_tool.html): Online Vigenere Cracker ⭐⭐⭐⭐
     - [Caesar Cipher](https://www.dcode.fr/caesar-cipher)
-    - [CrackStation](https://crackstation.net/): Online Password Hash Cracker ⭐⭐⭐⭐⭐
+    - [CrackStation](./tools/crackstation.md): Online Password Hash Cracker ⭐⭐⭐⭐⭐
     - [Cryptii](https://cryptii.com/): Web App for encypt/decrypt & encoding
     - [<b>CyberChef</b>](https://gchq.github.io/CyberChef): Analysing/Decoding data ⭐⭐⭐⭐⭐
     - [Crunch](https://www.guballa.de/substitution-solver): Create custom dictionary for atk
     - [Daggers Cipher](https://www.dcode.fr/daggers-alphabet)
-    - [dCode](https://www.dcode.fr/)⭐⭐⭐⭐⭐
+    - [dCode](./tools/dcode.md)⭐⭐⭐⭐⭐
     - [FactorDB](https://factordb.com/): Online Integer Factorization
     - [FeatherDuster](https://github.com/nccgroup/featherduster): Cryptanalysis: Identify/Exploit weakness
     - [Gronsfeld Cipher](http://rumkin.com/tools/cipher/gronsfeld.php)
@@ -437,7 +438,7 @@ Souce: https://try2hack.me/<br>
     - [Hylian Language (Breath of the Wild)](https://www.dcode.fr/hylian-language-breath-of-the-wild)
     - [padding-oracle-attacker](https://github.com/KishanBagaria/padding-oracle-attacker): Padding oracle attacks
     - [Keyboard Shift Cipher](https://www.dcode.fr/keyboard-shift-cipher): Web App decryption
-    - [Morse Code Translator](https://morsecode.world/international/translator.html): Online Morse Code Translator
+    - [Morse Code Translator](./tools/audacity.md): Morse Code Translator
     - [openssl](./tools/openssl.md)
     - [PkCrack](https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html): Breaking PkZip-encryption
     - [Playfair Cipher](http://bionsgadgets.appspot.com/ww_forms/playfair_ph_web_worker3.html)
@@ -777,7 +778,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 
 # Reverse Shell
 [LiveShell](https://github.com/livepwn/liveshell)<br>
-[Online Reverse Shell](./tools/revshells.md): Online ⭐⭐⭐⭐⭐<br>
+[Online Reverse Shell](./tools/revshells.md): Online, Magic Bytes ⭐⭐⭐⭐⭐<br>
 [Nishang](./tools/nishang.md)⭐<br>
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
 
