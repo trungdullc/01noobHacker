@@ -10,8 +10,11 @@ Description: Online toolbox with hundreds of decoders, encoders, solvers, and an
     Mathematical tools: Modular arithmetic, GCD, prime factorization
     Obscure encodings: Bacon’s cipher, Polybius square, ADFGVX, rail fence
 
+https://www.guballa.de/vigenere-solver (finds keys brute force) ⭐⭐⭐⭐⭐
+
 Google: cryptogram solver (will find key if do ABCDEFGHIJKLMNOPQRSTUVWXYZ)
-https://www.quipqiup.com/ ⭐⭐⭐⭐⭐
+https://www.quipqiup.com/ ⭐⭐⭐⭐
+https://www.boxentriq.com/code-breaking/cryptogram ⭐⭐⭐⭐
 
 Cipher Identifier: https://www.dcode.fr/cipher-identifier ⭐⭐⭐
 Frequency Analysis: https://www.dcode.fr/frequency-analysis ⭐⭐⭐

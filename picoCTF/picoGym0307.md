@@ -177,4 +177,4 @@ The flag is: picoCTF{5UB5717U710N_3V0LU710N_357BF9FF} 🔐
 picoCTF{5UB5717U710N_3V0LU710N_357BF9FF}
 
 ## Continue
-[Continue](./picoGym0307.md)
+[Continue](./picoGym0308.md)

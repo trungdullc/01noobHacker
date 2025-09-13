@@ -349,7 +349,7 @@ Souce: https://try2hack.me/<br>
 - Operating System Command Line Codes
     - [Linux (BASH)](./tools/bash.md)
     - Windows (PowerShell)
-    - [Python3](./tools/python3.md)
+    - [Python3](./tools/python3.md) ⭐⭐⭐⭐⭐
 - ASCII Table
     - [ASCII Table](https://www.asciitable.com/)
 - Converting
@@ -418,6 +418,7 @@ Souce: https://try2hack.me/<br>
     - [Beaufourt Cipher](https://www.dcode.fr/beaufort-cipher)
     - [Big Integer Calculator](http://www.javascripter.net/math/calculators/100digitbigintcalculator.htm): Online Calculator
     - [Black Chamber](https://www.simonsingh.net/The_Black_Chamber/vigenere_cracking_tool.html): Online Vigenere Cracker ⭐⭐⭐⭐
+    - [Boxentriq](https://www.boxentriq.com/code-breaking/cryptogram)⭐⭐⭐⭐⭐
     - [Caesar Cipher](https://www.dcode.fr/caesar-cipher)
     - [CrackStation](./tools/crackstation.md): Online Password Hash Cracker ⭐⭐⭐⭐⭐
     - [Cryptii](https://cryptii.com/): Web App for encypt/decrypt & encoding
@@ -442,14 +443,13 @@ Souce: https://try2hack.me/<br>
     - [openssl](./tools/openssl.md)
     - [PkCrack](https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html): Breaking PkZip-encryption
     - [Playfair Cipher](http://bionsgadgets.appspot.com/ww_forms/playfair_ph_web_worker3.html)
-    - [QuipQuip](https://quipqiup.com/): Substitution/vigenere Cryptogram solver
+    - [QuipQuip](https://quipqiup.com/): Substitution/vigenere Cryptogram solver ⭐⭐⭐⭐⭐
     - [Railfence Cipher](http://rumkin.com/tools/cipher/railfence.php)
-    - [RSACTFTool](https://github.com/RsaCtfTool/RsaCtfTool): Recovering RSA private key ⭐⭐⭐⭐⭐
+    - [RSACTFTool](./tools/rsactftool.md): Recovering RSA private key ⭐⭐⭐⭐⭐
     - [RSATool](https://github.com/ius/rsatool): Generate private key w/o p | q
     - [Sheikah Language (Breathe of the Wild)](https://www.dcode.fr/sheikah-language)
     - [ShiftCipher](https://github.com/CyberJarvis/ShiftCipher): Caesar Cipher encryption/decryption
     - [Substitution Solver](https://www.guballa.de/substitution-solver): Online Substitution Solver
-    - [Substitution Cipher](https://quipqiup.com/)
     - [Vigenere Solver](https://www.guballa.de/vigenere-solver): Online Vigenere Cipher Solver
     - [XORTool](https://github.com/hellman/xortool): Analyze multi-byte XOR cipher
 - Esoteric Programming Languages (Puzzle Cryptography for fun only)
@@ -474,7 +474,7 @@ Souce: https://try2hack.me/<br>
     - [extundelete]https://extundelete.sourceforge.net/): Recover deleted files from an ext3 or ext4 partition
     - [exiv2](https://www.exiv2.org/manpage.html): Image metadata manipulation tool
     - [firmware-mod-kit](https://code.google.com/archive/p/firmware-mod-kit/): Modify firmware images without recompiling
-    - [foremost](https://www.kali.org/tools/foremost/): Kali Linux | ParrotOS, Recovering files based on headers & footers ⭐
+    - [foremost](./tools/foremost.md): Kali Linux | ParrotOS, Recovering files based on headers & footers ⭐
     - [Forensically](https://neerajlovecyber.com/ctf-cheatsheet): Online tool to analysis image
     - [FotoForensics](https://fotoforensics.com/): Tools for digital photo forensics
     - [hachoir-subfile](https://github.com/foreni-packages/hachoir-subfile): CLI carve files of another file. Similar to binwalk & foremost
@@ -596,7 +596,7 @@ Souce: https://try2hack.me/<br>
     - [WinDBG](http://www.windbg.org/): Windows debugger distributed by Microsoft
     - [veles](https://codisec.com/veles/): Binary data analysis and visualization tool
 - Steganography
-    - [Aperi'Solve](https://github.com/Zeecka/AperiSolve): runs zsteg, steghide, exiftool, binwalk, foremost ⭐⭐⭐⭐
+    - [Aperi'Solve](https://github.com/Zeecka/AperiSolve): runs zsteg, steghide, exiftool, binwalk, foremost ⭐⭐⭐⭐⭐
     - [BPStegano](https://github.com/TapanSoni/BPStegano): Python3 based LSB steganography
     - [Color Picker](https://imagecolorpicker.com/): Not really used for CTF
     - [DeepSound](https://github.com/Jpinsoft/DeepSound): Steganography tool and audio converter hides secret data into audio files
@@ -621,14 +621,14 @@ Souce: https://try2hack.me/<br>
     - [Sonic Visualizer](https://www.sonicvisualiser.org/): Audio file visualization
     - [stegbreak](https://linux.die.net/man/1/stegbreak): Brute-force dictionary attacks on JPG image
     - [stegcracker](https://www.kali.org/tools/stegcracker/): Kali Linux | ParrotOS
-    - [steghide](https://steghide.sourceforge.net/): Kali Linux | ParrotOS ⭐⭐⭐⭐
+    - [steghide](./tools/steghide.md): Kali Linux | ParrotOS ⭐⭐⭐⭐
     - [stegextract](https://github.com/evyatarmeged/stegextract): Detect hidden files and text in images
     - [Steganography Online](https://stylesuxx.github.io/steganography/): Web App
     - [Steg Online](https://www.georgeom.net/StegOnline/upload): Web App
     - [Stegosaurus](https://github.com/AngelKitty/stegosaurus): Embedding payloads within Python bytecode
     - [stegseek](https://github.com/RickdeJager/stegseek)
     - [stegsnow](https://manpages.ubuntu.com/manpages/trusty/man1/stegsnow.1.html): Whitespace steganography program
-    - [StegSolve](https://github.com/Giotino/stegsolve/releases)
+    - [StegSolve](./tools/stegsolve.md)
     - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
         Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
@@ -783,7 +783,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
 
 # Editors
-[Visual Studio Code](./tools/vsc.md)
+[Visual Studio Code](./tools/vsc.md)<br>
 [vim](./tools/vim.md)
 
 # Favorite Emojis
@@ -793,3 +793,13 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 →
 ⌘
 ⚠️
+
+TO Finish:
+[Behemoth0102](./overthewire/Behemoth0102.md)<br>
+[picoGym0444](./picoCTF/picoGym0444.md)
+
+![alt text](/static/00putty.png "Putty")
+
+Browser:
+# Accidently Exit Window
+Ctrl + Shift + T

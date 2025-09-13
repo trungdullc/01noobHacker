@@ -11,6 +11,7 @@ narnia0@narnia:~$ man tmux
 
 # In tricky environments like picoCTF
 tmux new-session \; split-window -h \; attach ❤️❤️❤️❤️❤️
+    Ctrl + B + o ❤️
 
 # Vertical split
 Ctrl + B + % (hold shift 5)

@@ -45,7 +45,16 @@ print(mapping)   # {0: 'X', 1: 'Y'}
 
 ## CTF
 [picoGym0253: list](../picoCTF/picoGym0253.md)<br>
-[picoGym0307: File](../picoCTF/picoGym0307.md)
+[picoGym0307: File](../picoCTF/picoGym0307.md)<br>
+[picoGym0407: File, with ⭐⭐⭐](../picoCTF/picoGym0407.md)<br>
+[picoGym0289: format specifier ⭐⭐⭐](../picoCTF/picoGym0289.md)<br>
+[picoGym0040: pip3 install ⭐⭐⭐](../picoCTF/picoGym0040.md)<br>
+[picoGym0158: binary](../picoCTF/picoGym0158.md)<br>
+[picoGym0159: pip3 install, modifying](../picoCTF/picoGym0159.md)<br>
+[picoGym0412: simple reverse engineering](../picoCTF/picoGym0412.md)<br>
+[picoGym0210: os](../picoCTF/picoGym0210.md)<br>
+[picoGym0474: rainbow table w/ salt ⭐⭐⭐⭐⭐](../picoCTF/picoGym0474.md)<br>
+[picoGym0422: RSA algorithm](../picoCTF/picoGym0422.md)
 
 ## Back to README.md
 [BACK](../README.md)

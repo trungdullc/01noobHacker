@@ -16,7 +16,7 @@ Edit environment vairable like $PATH
 PATH=$temp:$PATH
    $temp → expands to some directory path
    :$PATH → appends your old PATH after the new directory
-   Note: PATH gets overwrite and when doing command touch it looking in Left side dir before right side
+   Note: PATH gets overwrite and when doing command touch it looking in Left side dir before right
 ```
 
 ## Solution
