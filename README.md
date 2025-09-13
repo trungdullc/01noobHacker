@@ -542,6 +542,7 @@ Souce: https://try2hack.me/<br>
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
     - [tcpflow](./tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer ⭐⭐⭐
+    - [tshark](./tools/tshark.md): GUI Wireshark ⭐⭐⭐
     - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer ⭐⭐⭐⭐⭐
     - [Yara](https://virustotal.github.io/yara/): Malware research and detection through pattern matching and rules-based analysis
 - Privilege Escalation
@@ -596,7 +597,7 @@ Souce: https://try2hack.me/<br>
     - [WinDBG](http://www.windbg.org/): Windows debugger distributed by Microsoft
     - [veles](https://codisec.com/veles/): Binary data analysis and visualization tool
 - Steganography
-    - [Aperi'Solve](https://github.com/Zeecka/AperiSolve): runs zsteg, steghide, exiftool, binwalk, foremost ⭐⭐⭐⭐⭐
+    - [Aperi'Solve](./tools/aperisolve.md): runs zsteg, steghide, exiftool, binwalk, foremost ⭐⭐⭐⭐⭐
     - [BPStegano](https://github.com/TapanSoni/BPStegano): Python3 based LSB steganography
     - [Color Picker](https://imagecolorpicker.com/): Not really used for CTF
     - [DeepSound](https://github.com/Jpinsoft/DeepSound): Steganography tool and audio converter hides secret data into audio files
@@ -629,7 +630,7 @@ Souce: https://try2hack.me/<br>
     - [stegseek](https://github.com/RickdeJager/stegseek)
     - [stegsnow](https://manpages.ubuntu.com/manpages/trusty/man1/stegsnow.1.html): Whitespace steganography program
     - [StegSolve](./tools/stegsolve.md)
-    - [zsteg](https://linuxcommandlibrary.com/man/zsteg): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
+    - [zsteg](./tools/zsteg.md): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
         Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
     - [Active Server Pages Extended Misuse](./tools/aspxmisuse.md)

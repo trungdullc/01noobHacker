@@ -264,5 +264,8 @@ dnf install <PACKAGE>                       Install on Fedora/RHEL
 dnf remove <PACKAGE>                        Remove from Fedora/RHEL
 ```
 
+## CTF
+[picoGym0450: openssl & sha256sum](../picoCTF/picoGym0450.md)
+
 ## Back to README.md
 [BACK](../README.md)
