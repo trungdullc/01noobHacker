@@ -109,7 +109,7 @@ picoCTF{1t_w4snt_th4t_34sy_tbh_4r_2e1ff063} 🔐
     **awk '{print $6}':**Prints the 6th field from the sorted output, which is the actual segment data (TCP payload)
     **xxd -p -r:**Converts the data from a hex dump to binary (r reverses the hex dump), so the data is in its raw format
     **base64 -d:**Decodes the raw data from Base64 format back into its original binary form
-    
+
 AsianHacker-picoctf@webshell:~$ tshark -r myNetworkTraffic.pcap -Y "tcp.len==12 || tcp.len==4" -T fields -e frame.time -e tcp.segment_data | sort -k4 | awk '{print $6}' | xxd -p -r | base64 -d ⌨️
 picoCTF{1t_w4snt_th4t_34sy_tbh_4r_2e1ff063} 🔐
 
@@ -227,4 +227,4 @@ picoCTF{1t_w4snt_th4t_34sy_tbh_4r_2e1ff063} 🔐
 picoCTF{1t_w4snt_th4t_34sy_tbh_4r_2e1ff063}
 
 ## Continue
-[Continue](./picoGym0459.md)
+[Continue](./picoGym0505.md)

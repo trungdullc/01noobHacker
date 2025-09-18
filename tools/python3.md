@@ -53,8 +53,10 @@ print(mapping)   # {0: 'X', 1: 'Y'}
 [picoGym0159: pip3 install, modifying](../picoCTF/picoGym0159.md)<br>
 [picoGym0412: simple reverse engineering](../picoCTF/picoGym0412.md)<br>
 [picoGym0210: os](../picoCTF/picoGym0210.md)<br>
+[picoGym0081: tar, glob](../picoCTF/picoGym0081.md)<br>
 [picoGym0474: rainbow table w/ salt ⭐⭐⭐⭐⭐](../picoCTF/picoGym0474.md)<br>
-[picoGym0422: RSA algorithm](../picoCTF/picoGym0422.md)
+[picoGym0422: RSA algorithm](../picoCTF/picoGym0422.md)<br>
+[picoGym0051: binary](../picoCTF/picoGym0051.md)
 
 ## Back to README.md
 [BACK](../README.md)

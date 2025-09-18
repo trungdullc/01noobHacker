@@ -356,7 +356,8 @@ Souce: https://try2hack.me/<br>
     - [base64](https://www.man7.org/linux/man-pages/man1/base64.1.html): Encoding/Decoding base64
     - [convert](./tools/convert.md) ⭐⭐⭐
     - [hexdump](https://www.man7.org/linux/man-pages/man1/hexdump.1.html): Display file contents in hexadecimal, decimal, octal, or ascii
-    - [HexEd.it](https://hexed.it/): Online hex editor for files, correcting files with a corrupt Magic Number ⭐
+    - [HexEd.it](./tools/hexeditor.md): bvi or hexedit, Online hex editor for files, correcting files with a corrupt Magic Number ⭐⭐⭐⭐⭐
+    - [pdf2text](./tools/pdf2text.md): Convert pdf to text
     - [RapidTables](https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html): Online ASCII, Hex, Binary, Decimal, Base64 converter
     - [RapidTables (Binary Math)](https://www.rapidtables.com/calc/math/binary-calculator.html) ⭐⭐⭐⭐⭐
     - [XOR](https://xor.pw/): Online XOR Calculator
@@ -366,7 +367,7 @@ Souce: https://try2hack.me/<br>
     - [bgrep](https://github.com/nneonneo/bgrep): Kali Linux | ParrotOS Search binary strings in binary file
     - [file](https://www.geeksforgeeks.org/linux-unix/how-to-find-out-file-types-in-linux/): Kali Linux | ParrotOS, Identify file types base on content
     - [grep](https://www.man7.org/linux/man-pages/man1/grep.1.html): Kali Linux | ParrotOS, Search pattern inside files
-    - [HackTricks](./tools/hacktricks.md) ⭐⭐⭐⭐⭐
+    - [HackTricks](./tools/hacktricks.md) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
     - [sed](./tools/sed.md): Kali Linux | ParrotOS, Stream EDitor reads text line by line, allows search, <b>replace, delete</b>, & transform text using patterns
     - [tmux](./tools/tmux.md): Run & manage multiple terminal sessions inside 1 terminal window
 - Regular Expression Checker
@@ -462,9 +463,9 @@ Souce: https://try2hack.me/<br>
 - Forensics (File Format/Memory Dump/Network Packet Capture Analysis)
     - [A-Packets](https://apackets.com/): Online PCAP File Analysis
     - [Audacity](https://www.audacityteam.org/download/): Web App analying audio files (chromatography)
-    - [Autopsy](https://www.sleuthkit.org/autopsy/): File Recovery Tool ⭐⭐⭐⭐⭐
+    - [Autopsy](./tools/autopsy.md): File Recovery Tool ⭐⭐⭐⭐⭐
     - [Belkasoft RAM Capturer](https://belkasoft.com/ram-capturer): Volatile Memory Acquisition Tool
-    - [binwalk](tools/binwalk.md): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file ⭐⭐
+    - [binwalk](tools/binwalk.md): Kali Linux | ParrotOS, Analyzing firmware images, carve files out of another file ⭐⭐⭐
     - [Bkhive & samdump2](https://www.kali.org/tools/samdump2/): Dump SYSTEM and SAM files
     - [Bulk-extractor](https://github.com/simsong/bulk_extractor): Digital forensics exploitation tool
     - [ChromeCacheView](https://www.nirsoft.net/utils/chrome_cache_view.html#google_vignette):  Reads cache folder of Google Chrome Web browser and displays file list
@@ -498,7 +499,7 @@ Souce: https://try2hack.me/<br>
     - [scalpel](https://awjunaid.com/kali-linux/scalpel-a-file-carving-tool-for-recovering-files-from-disk-images/): Kali Linux | ParrotOS, recovering deleted files from disk images
     - [Sonic Visualiser](https://sonicvisualiser.org/): Analyzing audio files
     - [split](https://www.man7.org/linux/man-pages/man1/split.1.html) Kali Linux | ParrotOS, split files
-    - [The Sleuth Kit](https://www.sleuthkit.org/): Collection of CLI tools to analyze disk images and recover files
+    - [The Sleuth Kit](https://www.sleuthkit.org/): Collection of CLI tools to analyze disk images and recover files, Autopsy (❤️easier) ⭐⭐⭐
     - [TestDisk](https://www.cgsecurity.org/wiki/TestDisk): CLI recover deleted files from a file system image
     - [uncompyle6](https://github.com/rocky/python-uncompyle6): Python decompile bytecode
     - [USBRip](https://github.com/snovvcrash/usbrip): Tracking USB device artifacts (history of USB events) on GNU/Linux
@@ -542,8 +543,8 @@ Souce: https://try2hack.me/<br>
     - [Suricata](https://suricata.io/download/): Kali Linux | ParrotOS, Capture network w/ Wireshark/tcpdump & analyze threat w/ suricata 
     - [tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html): Kali Linux | ParrotOS CLI Network Protocol Analyzer
     - [tcpflow](./tools/tcpflow.md): Kali Linux | ParrotOS, CLI Network Protocol Analyzer ⭐⭐⭐
-    - [tshark](./tools/tshark.md): GUI Wireshark ⭐⭐⭐
-    - [Wireshark](https://www.wireshark.org/): Kali Linux | ParrotOS, Network Protocol Analyzer ⭐⭐⭐⭐⭐
+    - [tshark](./tools/tshark.md): GUI Wireshark ⭐⭐⭐⭐
+    - [Wireshark](./tools/wireshark.md): Kali Linux | ParrotOS, Network Protocol Analyzer ⭐⭐⭐⭐⭐
     - [Yara](https://virustotal.github.io/yara/): Malware research and detection through pattern matching and rules-based analysis
 - Privilege Escalation
     - [Basic Linux Privilege Escalation](https://github.com/sleventyeleven/linuxprivchecker): Foundational guide and script
@@ -630,7 +631,7 @@ Souce: https://try2hack.me/<br>
     - [stegseek](https://github.com/RickdeJager/stegseek)
     - [stegsnow](https://manpages.ubuntu.com/manpages/trusty/man1/stegsnow.1.html): Whitespace steganography program
     - [StegSolve](./tools/stegsolve.md)
-    - [zsteg](./tools/zsteg.md): Kali Linux | ParrotOS, Detect steganography in PNG/BMP
+    - [zsteg](./tools/zsteg.md): Kali Linux | ParrotOS, Detect steganography in PNG/BMP ⭐⭐⭐⭐
         Note: Use against Least Significant Bit steganography... Unfortunately only works against PNG and BMP
 - Web exploitation (also look Network)
     - [Active Server Pages Extended Misuse](./tools/aspxmisuse.md)
@@ -788,7 +789,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [vim](./tools/vim.md)
 
 # Favorite Emojis
-⭐❤️🧠👀🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻
+⭐🧠❤️👀🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻
 ⌨️
 🔐
 →

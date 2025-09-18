@@ -132,6 +132,7 @@ sed -n '2,4p' file.txt                                                  p: Print
 ⭐rsync -e "ssh -p <PORT>" src dest         Remote sync files w/ SSH for large or incremental transfers
 ⭐nc                                        Raw TCP/UDP used to transfer files in tricky environments
 ⭐⭐⭐sz FILE                              Download from remote server
+⭐⭐⭐⭐⭐rz -y                           Upload to remote server ❤️❤️❤️❤️❤️
 ```
 cd /path/to/files<br>
 python3 -m http.server 8000
