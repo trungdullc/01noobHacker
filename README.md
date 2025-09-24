@@ -395,11 +395,12 @@ Souce: https://try2hack.me/<br>
     - [strace](https://github.com/strace/strace): Kali Linux | ParrotOS, tracing library calls
     - [Syscall Reference](https://syscalls.w3challs.com/): x86 / x64 syscalls manual w/ registers value
 - Brute Force/Dictonary Attack/Hash Cracking
+    - [aircrack-ng](./tools/aircrack-ng.md): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
     - [changeme](https://github.com/ztgrace/changeme): Default credential scanner
     - [EFF Dice-Generated Passphrases](./tools/eff.md)
     - [fcrackzip](https://github.com/hyc/fcrackzip)
     - [Hashcat](https://hashcat.net/hashcat/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
-    - [Hydra](https://www.kali.org/tools/hydra/): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
+    - [Hydra](https://www.kali.org/tools/hydra/): Kali Linux | ParrotOS, SSH ⭐⭐⭐⭐⭐
     - [John The Riper: Jumbo](https://github.com/openwall/john): enhanced John the Ripper
     - [John The Riper](./tools/johntheripper.md): Kali Linux | ParrotOS ⭐⭐⭐⭐⭐
     - [jwt_tool](https://github.com/ticarpi/jwt_tool): Toolkit for testing, tweaking and cracking JSON Web Tokens

@@ -14,6 +14,7 @@ xxd FILE.txt
 ```
 
 ## CTF
-[picoGym0186: Forensic](../picoCTF/picoGym0186.md)
+[picoGym0186: Forensic](../picoCTF/picoGym0186.md)<br>
+[picoGym0415: xxd -r -p](../picoCTF/picoGym0415.md)
 
 [BACK](../README.md)

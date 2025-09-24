@@ -14,7 +14,7 @@ tshark
     -z io,phs → Generate a statistics report
         -z produce a statistics output after processing the file
         io,phs means Protocol Hierarchy Statistics
-    -y applies Wireshark Filter ❤️❤️❤️❤️❤️
+    -Y applies Wireshark Filter ❤️❤️❤️❤️❤️
 ```
 
 ## Solution
