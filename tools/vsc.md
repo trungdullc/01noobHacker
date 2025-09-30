@@ -87,6 +87,9 @@ Description: Code Editor
       <td><kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></td>
     </tr>
   </table>
-  
+
+## CTF
+[picoGym0012: Notepad++ and VSC](../picoCTF/picoGym0012.md)
+
 ## Back to README.md
 [BACK](../README.md)

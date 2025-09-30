@@ -561,7 +561,7 @@ Souce: https://try2hack.me/<br>
     - [androguard](https://github.com/androguard/androguard): Analyzing Android Apps
     - [angr](https://github.com/angr/angr): Binary analysis platform
     - [apk2gold](https://github.com/lxdvs/apk2gold): CLI tool for decompiling Android apps to Java
-    - [apktool](https://github.com/iBotPeaches/Apktool): Kali Linux | ParrotOS, reverse engineering Android APK
+    - [apktool](https://github.com/iBotPeaches/Apktool): Kali Linux | ParrotOS, reverse engineering Android APK ⭐⭐⭐
     - [Binary Ninja](https://binary.ninja/): Online Demo, Disassembler/Decompiler ⭐⭐⭐⭐⭐
     - [BinUtils](https://www.gnu.org/software/binutils/binutils.html): Collection of binary tools ⭐
     - [Compiler Explorer](https://godbolt.org/): Online compiler tool
@@ -575,19 +575,19 @@ Souce: https://try2hack.me/<br>
     - [Frida](https://github.com/frida/): Dynamic instrumentation toolkit
     - [GAMEBOY ROMS](./tools/gameboyrom.md)
     - [gcc](./tools/gcc.md)
-    - [gdb](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html): C/C++/Fortran Debugger ⭐⭐⭐⭐
+    - [gdb](./tools/gdb.md): C/C++/Fortran Debugger ⭐⭐⭐⭐
     - [gef](https://github.com/hugsy/gef): Modern experience for GDB with advanced debugging features
     - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐⭐⭐⭐
     - [Hopper](https://www.hopperapp.com/): Not Free, Disassembler/Decompiler Mac OSX and Linux
     - [IDA Free](https://hex-rays.com/ida-free): Disassembler/Decompiler Cross Platform ⭐⭐⭐⭐⭐
-    - [JADX](https://github.com/skylot/jadx): producing Java source code from Android Dex and APK files
-    - [Java Decompiler](http://www.javadecompilers.com/) Online tool to decompile Java classes, APKs
+    - [JADX](https://github.com/skylot/jadx): Decompiler from .jar/.class, producing Java source code from Android Dex and APK files ⭐⭐⭐⭐⭐
+    - [Java Decompiler](./tools/javadecompiler.md) Online tool to decompile Java classes, APKs
     - [jd-gui](https://github.com/java-decompiler/jd-gui): GUI to decompile Java code and JAR files
     - [JSDetox](https://github.com/svent/jsdetox): JavaScript malware analysis tool
     - [ltrace](https://www.man7.org/linux/man-pages/man1/ltrace.1.html): Kali Linux | ParrotOS, tracing library calls
     - [miasm](https://github.com/cea-sec/miasm): Reverse engineering framework in Python
     - [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF): decompile and reverse APK files
-    - [objdump](./tools/objdump.md) ⭐
+    - [objdump](./tools/objdump.md) CLI version of ghidra/BinaryNinja ⭐
     - [Objection](https://github.com/sensepost/objection): Runtime mobile exploration
     - [Online Assembler/Disassembler](http://shell-storm.org/online/Online-Assembler-and-Disassembler/): Online wrappers around Keystone and Capstone projects
     - [peda](https://github.com/longld/peda): Python Exploit Development Assistance for gdb
@@ -786,7 +786,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [PentestMonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet): Online
 
 # Editors
-[Visual Studio Code](./tools/vsc.md)<br>
+[Visual Studio Code](./tools/vsc.md): Notepad++<br>
 [vim](./tools/vim.md)
 
 # Favorite Emojis

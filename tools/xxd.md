@@ -15,6 +15,7 @@ xxd FILE.txt
 
 ## CTF
 [picoGym0186: Forensic](../picoCTF/picoGym0186.md)<br>
-[picoGym0415: xxd -r -p](../picoCTF/picoGym0415.md)
+[picoGym0415: xxd -r -p](../picoCTF/picoGym0415.md)<br>
+[picoGym0375: strings and jadx-gui: Decompiler](../picoCTF/picoGym0375.md)
 
 [BACK](../README.md)

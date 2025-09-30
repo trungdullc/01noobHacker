@@ -56,7 +56,11 @@ print(mapping)   # {0: 'X', 1: 'Y'}
 [picoGym0081: tar, glob](../picoCTF/picoGym0081.md)<br>
 [picoGym0474: rainbow table w/ salt ⭐⭐⭐⭐⭐](../picoCTF/picoGym0474.md)<br>
 [picoGym0422: RSA algorithm](../picoCTF/picoGym0422.md)<br>
-[picoGym0051: binary](../picoCTF/picoGym0051.md)
+[picoGym0051: binary](../picoCTF/picoGym0051.md)<br>
+[picoGym0472: Reverse Engineering](../picoCTF/picoGym0472.md)<br>
+[picoGym0060: Reverse Engineering Java/node](../picoCTF/picoGym0060.md)<br>
+[picoGym0071: Reverse Engineering JavaScript & CyberChef](../picoCTF/picoGym0071.md)<br>
+[picoGym0400: Reverse Engineering](../picoCTF/picoGym0400.md)<br>
 
 ## Back to README.md
 [BACK](../README.md)
