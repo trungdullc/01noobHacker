@@ -17,6 +17,7 @@ Other:  gef (advanced)
 [picoGym0397: x/4xb $rbp-0x4 ❤️❤️❤️](../picoCTF/picoGym0397.md)<br>
 [picoGym0398: disassemble func1](../picoCTF/picoGym0398.md)<br>
 [picoGym0313: UPX](../picoCTF/picoGym0313.md)<br>
+[picoGym0421: UPX](../picoCTF/picoGym0421.md)<br>
 [picoGym0372: start,c, info reg, x/s $rsi, x/s $rdi](../picoCTF/picoGym0372.md)<br>
 [picoGym0160: ARMv8 not compatible w/ gcc or gdb](../picoCTF/picoGym0160.md)<br>
 

@@ -572,10 +572,10 @@ Souce: https://try2hack.me/<br>
     - [dnSpy](https://github.com/dnSpy/dnSpy): Window GUI decompile and reverse engineer .NET binaries
     - [dumpzilla](./tools/dumpzilla.md): Python script to examine a .mozilla configuration file
     - [Easy Python Decompiler](https://sourceforge.net/projects/easypythondecompiler/): Decompile Python bytecode (.pyc)
-    - [Frida](https://github.com/frida/): Dynamic instrumentation toolkit
+    - [Frida](./tools/frida.md): Dynamic instrumentation toolkit, Window API ⭐⭐⭐
     - [GAMEBOY ROMS](./tools/gameboyrom.md)
     - [gcc](./tools/gcc.md)
-    - [gdb](./tools/gdb.md): C/C++/Fortran Debugger ⭐⭐⭐⭐
+    - [gdb](./tools/gdb.md): C/C++/Fortran Debugger, UPX ⭐⭐⭐⭐
     - [gef](https://github.com/hugsy/gef): Modern experience for GDB with advanced debugging features
     - [Ghidra](https://github.com/NationalSecurityAgency/ghidra): Kali Linux | ParrotOS, reverse engineer framework ⭐⭐⭐⭐⭐
     - [Hopper](https://www.hopperapp.com/): Not Free, Disassembler/Decompiler Mac OSX and Linux

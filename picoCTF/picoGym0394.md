@@ -50,4 +50,4 @@ AsianHacker-picoctf@webshell:~$ cat disassembler-dump0_d.txt ⌨️
 picoCTF{654773}
 
 ## Continue
-[Continue](./picoGym0394.md)
+[Continue](./picoGym0421.md)

@@ -61,6 +61,9 @@ print(mapping)   # {0: 'X', 1: 'Y'}
 [picoGym0060: Reverse Engineering Java/node](../picoCTF/picoGym0060.md)<br>
 [picoGym0071: Reverse Engineering JavaScript & CyberChef](../picoCTF/picoGym0071.md)<br>
 [picoGym0400: Reverse Engineering](../picoCTF/picoGym0400.md)<br>
+[picoGym0458: Reverse Engineering](../picoCTF/picoGym0458.md)<br>
+[picoGym0466: Reverse Engineering](../picoCTF/picoGym0466.md)<br>
+[picoGym0428: Reverse Engineering Python dissasembly output](../picoCTF/picoGym0428.md)<br>
 
 ## Back to README.md
 [BACK](../README.md)
