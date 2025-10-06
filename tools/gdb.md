@@ -20,6 +20,7 @@ Other:  gef (advanced)
 [picoGym0421: UPX](../picoCTF/picoGym0421.md)<br>
 [picoGym0372: start,c, info reg, x/s $rsi, x/s $rdi](../picoCTF/picoGym0372.md)<br>
 [picoGym0160: ARMv8 not compatible w/ gcc or gdb](../picoCTF/picoGym0160.md)<br>
+[picoGym0490: offset w/ p/x &main - &win ❤️](../picoCTF/picoGym0490.md)<br>
 
 ## Back to README.md
 [BACK](../README.md)

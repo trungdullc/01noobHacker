@@ -24,7 +24,9 @@ Description: Food Recipes
 [chriscook4u2](https://www.youtube.com/@chriscook4u2): ⭐⭐⭐⭐⭐<br>
 [Claire Saffitz x Dessert Person](https://www.youtube.com/@CSaffitz): ⭐⭐⭐⭐⭐<br>
 [Cook! Stacey Cook](https://www.youtube.com/@COOKSTACEYCOOK): ⭐⭐⭐⭐⭐<br>
+[Cooking with Shotgun Red](https://www.youtube.com/@CookingwithShotgunRed): ⭐⭐⭐⭐⭐<br>
 [Cowboy Kent Rollins](https://www.youtube.com/@CowboyKentRollins): ⭐⭐⭐⭐⭐<br>
+[crazyjeancooking](https://www.youtube.com/@crazyjeancooking): ⭐⭐⭐⭐⭐<br>
 [Dave, Luna & Mika’s Kitchen](https://www.youtube.com/@davelunaskitchen8355): ⭐⭐⭐⭐⭐<br>
 [KQED](https://www.youtube.com/@kqed): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Ethan Chlebowski](https://www.youtube.com/@EthanChlebowski): ⭐⭐⭐⭐⭐<br>
@@ -51,27 +53,31 @@ Description: Food Recipes
 [SAM THE COOKING GUY](https://www.youtube.com/@samthecookingguy): ⭐⭐⭐⭐⭐❤️❤️<br>
 [SharonBeMakinStuff](https://www.youtube.com/@SharonBeMakinStuff): ⭐⭐⭐⭐⭐<br>
 [Smokin' & Grillin with AB](https://www.youtube.com/@SmokinandGrillinwithAB): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
+[Taste to Share PH](https://www.youtube.com/@TastetoShare): ⭐⭐⭐⭐⭐<br>
 [Tasty](https://www.youtube.com/@buzzfeedtasty): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [ThatDudeCanCook](https://www.youtube.com/@thatdudecancook): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [The Cooking Foodie](https://www.youtube.com/@TheCookingFoodie): ⭐⭐⭐⭐⭐<br>
 [The Culinary Institute of America](https://www.youtube.com/@culinaryinstituteofamerica): ⭐⭐⭐⭐⭐<br>
+[The Stay At Home Chef](https://www.youtube.com/@Thestayathomechef): ⭐⭐⭐⭐⭐<br>
 [The Josh Elkin](https://www.youtube.com/@TheJoshElkin): ⭐⭐⭐⭐⭐<br>
 [You Suck At Cooking](https://www.youtube.com/@yousuckatcooking): ⭐⭐⭐⭐⭐❤️❤️❤️
 
 ## Art ❤️❤️❤️❤️❤️
 [Between Spoonfuls](https://www.youtube.com/@BetweenSpoonfuls): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
+[Home Chef Seattle](https://www.youtube.com/@HomeChefSeattle): ⭐⭐⭐⭐⭐<br>
 [How to Make yummy](https://www.youtube.com/@HowtoMakeyummy): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [kawaiisweetworld](https://www.youtube.com/@kawaiisweetworld): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [May's Kawaii Kitchen](https://www.youtube.com/@may.kawaiikitchen): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [Quantastic](https://www.youtube.com/@Quantastic): ⭐⭐⭐⭐⭐<br>
-[Maria Gomez](https://www.youtube.com/@beautyanddasweetz): ⭐⭐⭐⭐⭐
+[Maria Gomez](https://www.youtube.com/@beautyanddasweetz): ⭐⭐⭐⭐⭐<br>
 [Ms Shi and Mr He](https://www.youtube.com/@msshiandmrhe): ⭐⭐⭐⭐⭐
 
 ## Baking
 [Bigger Bolder Baking with Gemma Stafford](https://www.youtube.com/@biggerbolderbaking): ⭐⭐⭐⭐⭐❤️❤️<br>
 [In Shannon's Kitchen](https://www.youtube.com/@InShannonsKitchen): ⭐⭐⭐⭐⭐<br>
 [Kathrine Kwa](https://www.youtube.com/@KathrineKwa): Chinese ⭐⭐⭐⭐⭐<br>
-[Michael Lim](https://www.youtube.com/@michaellim): ⭐⭐⭐⭐⭐
+[Michael Lim](https://www.youtube.com/@michaellim): ⭐⭐⭐⭐⭐<br>
+[Simply Home Cooked](https://www.youtube.com/@SimplyHomeCooked): ⭐⭐⭐⭐⭐
 
 ## Bangladeshi
 [The Bengali Cook](https://www.youtube.com/@TheBengaliCook): ⭐⭐⭐⭐⭐<br>
@@ -144,12 +150,14 @@ Description: Food Recipes
 [Yadav Rana](https://www.youtube.com/@ChefYadavRana): ⭐⭐⭐⭐⭐<br>
 [Yummy Asian](https://www.youtube.com/@yummyasian%E7%BE%8E%E5%91%B3%E4%BA%9A%E6%B4%B2): ⭐⭐⭐⭐⭐<br>
 [Yummy Yummy](https://www.youtube.com/@yummyyummy2549): ⭐⭐⭐⭐⭐<br>
+[Yun Cuisine 云厨坊](https://www.youtube.com/@YunCuisine): ⭐⭐⭐⭐⭐<br>
 [ZenSizzle](https://www.youtube.com/@zensizzle): ⭐⭐⭐⭐⭐
 
 ## Filipino
 [Aniana TV](https://www.youtube.com/@AnianaTV): ⭐⭐⭐⭐⭐<br>
 [Foxy Folksy](https://www.youtube.com/@FoxyFolksy): ⭐⭐⭐⭐⭐<br>
 [jhen frago](https://www.youtube.com/@jhenfrago7913): ⭐⭐⭐⭐⭐<br>
+[Lian Lim Serepbest](https://www.youtube.com/@LianLim): ⭐⭐⭐⭐⭐<br>
 [Mina’s day Vlogs](https://www.youtube.com/@minasdayvlogs): Listen ⭐⭐⭐<br>
 [Mortar and Pastry](https://www.youtube.com/@MortarandPastry): ⭐⭐⭐⭐⭐<br>
 [PinoyCookingRecipes](https://www.youtube.com/@PinoyCookingRecipesbyJanette): ⭐⭐⭐⭐⭐<br>
@@ -184,7 +192,21 @@ Description: Food Recipes
 [Vito Iacopelli](https://www.youtube.com/@vitoiacopelli): ⭐⭐⭐⭐⭐❤️❤️❤️❤️
 
 ## Japan
-[emmymade](https://www.youtube.com/@emmymade): Tester ⭐⭐⭐⭐⭐❤️❤️❤️❤️
+[にぎりっ娘。nigiricco](https://www.youtube.com/@nigiricco): ⭐⭐⭐⭐⭐<br>
+[小麦粉だいすき](https://www.youtube.com/@taira1103): ⭐⭐⭐⭐⭐<br>
+[emmymade](https://www.youtube.com/@emmymade): Tester ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
+[Hiroyuki Terada - Diaries of a Master Sushi Chef](https://www.youtube.com/@DiariesofaMasterSushiChef): ⭐⭐⭐⭐⭐<br>
+[How to Make Sushi - Chef Kai](https://www.youtube.com/@Howtomakesushichefkai): ⭐⭐⭐⭐⭐<br>
+[Ian Fujimoto](https://www.youtube.com/@IanKyo): ⭐⭐⭐⭐<br>
+[Imamu room](https://www.youtube.com/@imamuroom): ⭐⭐⭐⭐⭐<br>
+[JapaneseCooking101](https://www.youtube.com/@JapaneseCooking101): ⭐⭐⭐⭐⭐<br>
+[JAPANESE COOKING CHANNEL](https://www.youtube.com/@JapaneseCookingChannel): ⭐⭐⭐⭐⭐<br>
+[JunsKitchen](https://www.youtube.com/@JunsKitchen): Cats ⭐⭐⭐⭐⭐<br>
+[Just One Cookbook](https://www.youtube.com/@justonecookbook): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
+[Kitchen Princess Bamboo / Japanese Everyday Food](https://www.youtube.com/@kitchenprincessbamboo): ⭐⭐⭐⭐⭐<br>
+[Koh Kentetsu Kitchen【料理研究家コウケンテツ公式チャンネル](https://www.youtube.com/channel/UC3p5OTQsMEnmZktWUkw_Y0A): ⭐⭐⭐⭐⭐<br>
+[Nino's Home](https://www.youtube.com/@NinosHome): ⭐⭐⭐⭐⭐<br>
+[Sushi Man Santosh](https://www.youtube.com/@sushimansantosh): ⭐⭐⭐⭐⭐<br>
 
 ## Korean
 [쿠킹하루 Cooking Haru](https://www.youtube.com/@cooking_haru): Listen ⭐⭐⭐<br>
@@ -192,6 +214,7 @@ Description: Food Recipes
 [매일맛나 delicious day](https://www.youtube.com/@deliciousday1): ⭐⭐⭐⭐⭐<br>
 [Chung's K Food](https://www.youtube.com/@chungskfood): ⭐⭐⭐⭐⭐<br>
 [Doobydobap](https://www.youtube.com/@Doobydobap): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
+[Drew Eats](https://www.youtube.com/@drew_eats): ⭐⭐⭐⭐⭐<br>
 [Future Neighbor](https://www.youtube.com/@FutureNeighbor): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Jane's Home](https://www.youtube.com/@janeshome4843): ⭐⭐⭐⭐⭐<br>
 [Korean Bapsang](https://www.youtube.com/@koreanbapsang6835): ⭐⭐⭐⭐⭐<br>
@@ -199,7 +222,8 @@ Description: Food Recipes
 [Hanbit Cho](https://www.youtube.com/@HanbitCho): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Maangchi](https://www.youtube.com/user/Maangchi): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [table diary 식탁일기](https://www.youtube.com/@table_diary): ⭐⭐⭐⭐⭐<br>
-[Two Plaid Aprons](https://www.youtube.com/@TwoPlaidAprons): ⭐⭐⭐⭐⭐
+[Two Plaid Aprons](https://www.youtube.com/@TwoPlaidAprons): ⭐⭐⭐⭐⭐<br>
+[Yum Story 얌스토리](https://www.youtube.com/@yumstory2020): ⭐⭐⭐⭐⭐
 
 ## Lao
 [House of X Tia](https://www.youtube.com/@HouseofXTia): ⭐⭐⭐⭐⭐<br>
@@ -217,6 +241,7 @@ Description: Food Recipes
 [Jose.elcook](https://www.youtube.com/@Jose.elCook): ⭐⭐⭐⭐⭐<br>
 [La Cocina de Victoriano](https://www.youtube.com/@LaCocinadeVictoriano): Spanish ⭐⭐⭐⭐⭐<br>
 [La Herencia de las Viudas - ENGLISH](https://www.youtube.com/@laherenciadelasviudas): Spanish ⭐⭐⭐⭐⭐<br>
+[Love Kari Cooking](https://www.youtube.com/@LoveKariCooking): ⭐⭐⭐⭐⭐<br>
 [Rick Bayless](https://www.youtube.com/@rickbayless): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [Simply Mamá Cooks](https://www.youtube.com/c/SimplyMam%C3%A1Cooks): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Spain on a Fork](https://www.youtube.com/@SpainonaFork): ⭐⭐⭐⭐⭐
@@ -245,12 +270,14 @@ Description: Food Recipes
 
 ## Travel
 [Best Ever Food Review Show](https://www.youtube.com/@BestEverFoodReviewShow): Travel ⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
+[Chef Hiro (シェフヒロ)](https://www.youtube.com/@chefhiro4898): ⭐⭐⭐⭐⭐<br>
 [Dan Seto](https://www.youtube.com/@DanSetoChineseCanadianRootsTV): ⭐⭐⭐⭐⭐<br>
 [Delicious Tokyo](https://www.youtube.com/@delicioustokyo8017): ⭐⭐⭐⭐⭐<br>
 [FoodieBoy 푸디보이](https://www.youtube.com/@FoodieBoyKR): Travel ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [FoodyTrip 푸디트립](https://www.youtube.com/@FoodyTrip): ⭐⭐⭐⭐⭐<br>
 [Mark Wiens](https://www.youtube.com/@MarkWiens): Travel ⭐⭐⭐⭐<br>
 [Say Cooking & Sharing](https://www.youtube.com/@SayCooking): Vietnamese ⭐⭐⭐⭐⭐<br>
+[seagull food](https://www.youtube.com/@seagullfood): ⭐⭐⭐⭐⭐<br>
 [Strictly Dumpling](https://www.youtube.com/@strictlydumpling): Travel ⭐⭐⭐⭐<br>
 [Strictly Food ASMR](https://www.youtube.com/@strictlyfoodasmr): Travel ⭐⭐⭐<br>
 [Taste The World](https://www.youtube.com/@TasteTheWorld66): ⭐⭐⭐⭐⭐<br>
@@ -324,12 +351,6 @@ Description: Food Recipes
 [Zoey and VFam](https://www.youtube.com/@ZoeyandVFam): ⭐⭐⭐⭐⭐<br>
 
 [](): ⭐⭐⭐⭐⭐<br>
-[](): ⭐⭐⭐⭐⭐<br>
-[](): ⭐⭐⭐⭐⭐<br>
-[](): ⭐⭐⭐⭐⭐<br>
-[](): ⭐⭐⭐⭐⭐<br>
-[](): ⭐⭐⭐⭐⭐<br>
-
 [](): ⭐⭐⭐⭐⭐❤️<br>
 [](): Listen ⭐⭐⭐<br>
 [](): Story ⭐⭐<br>

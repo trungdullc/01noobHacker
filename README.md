@@ -130,6 +130,11 @@ Purpose: Learn Powershell<br>
 Source: https://underthewire.tech/wargames<br>
 <b>TODO Later</b>
 
+# Continue to exploit.education
+Purpose: Basic CTF<br>
+Source: https://exploit.education/<br>
+<b>TODO Later</b>
+
 # Continue to SmashTheStack Wargaming Network
 Purpose: Basic CTF<br>
 Source: https://www.smashthestack.org/<br>
@@ -348,7 +353,7 @@ Souce: https://try2hack.me/<br>
 # 🔨 Tools to use during CTF🔧
 - Operating System Command Line Codes
     - [Linux (BASH)](./tools/bash.md)
-    - Windows (PowerShell)
+    - [Windows (PowerShell)](./tools/powershell.md)
     - [Python3](./tools/python3.md) ⭐⭐⭐⭐⭐
 - ASCII Table
     - [ASCII Table](https://www.asciitable.com/)
@@ -799,7 +804,7 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 
 TO Finish:
 [Behemoth0102](./overthewire/Behemoth0102.md)<br>
-[picoGym0444](./picoCTF/picoGym0444.md)
+[picoGym0490](./picoCTF/picoGym0490.md)
 
 ![alt text](/static/00putty.png "Putty")
 
