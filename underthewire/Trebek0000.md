@@ -1,0 +1,55 @@
+# Trebek Level 0 SSH Login w/ ssh or PSRemoting
+
+## Previous Flag
+```
+N/A
+```
+
+## Goal
+Obtain initial credentials via #StartHere channel on [Slack](https://communityinviter.com/apps/underthewire/under-the-wire). Once you are in the channel, scroll to top to see credentials.<br>
+Password: trebek1 ❤️<br><br>
+
+Be able to log onto UnderTheWire SSH server: trebek.underthewire.tech. Given port <b>22</b>.  Password stored <br>
+You have successfully connected to game server when your path changes to PS C:\Users\Trebek1\desktop>
+
+## What I learned
+```
+ssh trebek1@groot.underthewire.tech -p 22
+
+Microsoft Learn Documentation: https://learn.microsoft.com/en-us/docs/ ⭐⭐⭐⭐⭐
+```
+
+## Side Quest: joining SLACK
+```
+hello,
+you have to connect to the server with SSH (use putty or mobaxterm for example):
+host : century.underthewire.tech
+port : 22
+For the credentials they are at the top of this chat
+Username                  Password
+---------                 ---------
+century1                  century1
+cyborg1                   cyborg1
+groot1                    groot1
+oracle1                   oracle1
+trebek1                   trebek1 🔐
+```
+
+## Solution
+```
+PS C:\Users\trung.DESKTOP-G7C81CH\Downloads\01noobHacker> ssh trebek1@groot.underthewire.tech -p 22 ⌨️
+trebek1@groot.underthewire.tech's password: ⌨️ trebek1
+
+Windows PowerShell 
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Under the Wire... PowerShell Training for the People!
+PS C:\users\Trebek1\desktop> whoami ⌨️
+underthewire\trebek1
+```
+
+## Flag
+trebek1
+
+## Continue
+[Continue](./Trebek0001.md)

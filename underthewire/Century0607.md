@@ -28,7 +28,7 @@ Get-Content Readme.txt                                                          
 ## Solution
 ```
 PS C:\Users\trung.DESKTOP-G7C81CH\Downloads\01noobHacker> ssh century7@century.underthewire.tech -p 22 ⌨️
-century7@century.underthewire.tech's password: ⌨️ 197 
+century7@century.underthewire.tech's password: ⌨️ 197
 
 Windows PowerShell 
 Copyright (C) 2016 Microsoft Corporation. All rights reserved.
@@ -61,7 +61,15 @@ Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 -a----        8/30/2018   3:29 AM              7 Readme.txt
 
-PS C:\users\century7> Get-ChildItem -File -Recurse | Where-Object { $_.Name -match '^readme' } ⌨️
+PS C:\users\century7> ls -File -Recurse -Filter "*readme*" ⌨️
+
+    Directory: C:\users\century7\Downloads
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/30/2018   3:29 AM              7 Readme.txt
+
+PS C:\users\century7> Get-ChildItem -File -Recurse | Where-Object { $_.Name -match '^readme' } ⌨️❤️❤️❤️
 
     Directory: C:\users\century7\Downloads
 
@@ -72,8 +80,11 @@ Mode                LastWriteTime         Length Name
 PS C:\users\century7> Get-ChildItem -Recurse -File -Filter "readme*" | Select-Object -Expand FullName ⌨️
 C:\users\century7\Downloads\Readme.txt 👀
 
+PS C:\users\century7> cat .\Downloads\Readme.txt
+7points 🔐
 PS C:\users\century7> Get-Content .\Downloads\Readme.txt ⌨️
 7points 🔐
+
 PS C:\users\century7> exit ⌨️
 Connection to century.underthewire.tech closed.
 PS C:\Users\trung.DESKTOP-G7C81CH\Downloads\01noobHacker> ssh century8@century.underthewire.tech -p 22 ⌨️

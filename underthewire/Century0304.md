@@ -1,4 +1,4 @@
-# Century Level 03 → 04 cd "Can You Open Me"
+# Century Level 03 → 04 cd "Can You Open Me", | Where-Object {$_.Directory.Name -like '* *'} 
 
 ## Previous Flag
 ```
@@ -35,6 +35,18 @@ d👀-----        4/27/2025   7:57 PM                Can You Open Me 👀
 
 PS C:\users\century4\desktop> cd '.\Can You Open Me' ⌨️
 PS C:\users\century4\desktop\Can You Open Me> dir ⌨️
+
+    Directory: C:\users\century4\desktop\Can You Open Me
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        4/27/2025   7:57 PM             24 15768 🔐
+
+PS C:\users\century4\desktop\Can You Open Me> Get-Content .\15768 | Select-Object -First 5 ⌨️
+Great Work!  Keep it up.
+
+PS C:\users\century4\desktop\Can You Open Me> cd .. ⌨️                                                                
+PS C:\users\century4\desktop> Get-ChildItem -Recurse -File | Where-Object {$_.Directory.Name -like '* *'} ⌨️
 
     Directory: C:\users\century4\desktop\Can You Open Me
 

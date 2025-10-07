@@ -20,7 +20,7 @@ Get-Content unique.txt | Select-Object -Last 5              cat unique.txt | tai
 ## Solution
 ```
 PS C:\Users\trung.DESKTOP-G7C81CH\Downloads\01noobHacker> ssh century8@century.underthewire.tech -p 22 ⌨️
-century8@century.underthewire.tech's password: ⌨️ 7points 
+century8@century.underthewire.tech's password: ⌨️ 7points
 
 Windows PowerShell 
 Copyright (C) 2016 Microsoft Corporation. All rights reserved.
@@ -42,8 +42,11 @@ commenceable
 simptico
 zoon
 
+PS C:\users\century8\desktop> (Get-Content .\unique.txt | Sort-Object -Unique).Count ⌨️
+696 🔐
+
 PS C:\users\century8\desktop> (Get-Content unique.txt | Sort-Object | Group-Object | Where-Object { $_.Count -eq 1 } | ForEach-Object { $_.Name }).Count ⌨️
-696
+696 🔐
 PS C:\users\century8\desktop> exit ⌨️
 Connection to century.underthewire.tech closed.
 PS C:\Users\trung.DESKTOP-G7C81CH\Downloads\01noobHacker> ssh century9@century.underthewire.tech -p 22 ⌨️

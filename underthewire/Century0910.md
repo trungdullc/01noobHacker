@@ -367,6 +367,13 @@ Name     DisplayName    Description
 ----     -----------    -----------
 wuauserv Windows Update Enables the detection, download, and installation of updates 👀 for Windows 👀 and other programs. If this service is disabled, u...
 
+PS C:\users\century10\desktop> (Get-CimInstance win32_service -Filter 'DisplayName like "Windows Update"').Description.Split(' ')[9,7].ToLower() + (ls -File).Name ⌨️
+windows
+updates
+110
+PS C:\users\century10\desktop> -join((Get-CimInstance win32_service -Filter 'DisplayName like "Windows Update"').Description.Split(' ')[9,7].ToLower() + (ls -File).Name) ⌨️
+windowsupdates110 🔐
+
 PS C:\users\century10\desktop> exit ⌨️
 Connection to century.underthewire.tech closed.
 PS C:\Users\trung.DESKTOP-G7C81CH\Downloads\01noobHacker> ssh century11@century.underthewire.tech -p 22 ⌨️

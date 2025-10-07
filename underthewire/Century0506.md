@@ -227,6 +227,10 @@ d-----        8/30/2018   3:29 AM                countme972
 d-----        8/30/2018   3:29 AM                countme978
 d-----        8/30/2018   3:29 AM                countme981
 
+PS C:\users\century6\desktop> (ls -Directory).Count ⌨️
+197 🔐
+PS C:\users\century6\desktop> (dir -Directory).Count ⌨️
+197 🔐
 PS C:\users\century6\desktop> (Get-ChildItem -Directory).Count ⌨️
 197 🔐
 PS C:\users\century6\desktop> exit ⌨️

@@ -62,6 +62,9 @@ Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 -a----        8/30/2018   3:34 AM           2131 Word_File.txt
 
+PS C:\users\century9\desktop> (cat .\Word_File.txt) -split ' ' | Select-Object -Index 160 ⌨️
+pierid 🔐
+
 PS C:\users\century9\desktop> (Get-Content Word_File.txt) -replace '^(\S+\s+){160}' ⌨️
 pierid 👀 nonapplicabness patinas rabific scandaliser waggel reauthenticate sufeism lairds cookee bragget ledgering perceptual chomper obscurities merino 
 ganguela unproposed epulis loppard ignoblesse carrotage heartbrokenly unfusibness degenerate lacunae cirrocumulus knightlike overwhelmingness oxyrrhyncha capitalizations dimethylamine uninucleate syndicship graspable tropophil telchines abaiser overclement pursive

@@ -34,7 +34,7 @@ wc file.txt
 ## Solution
 ```
 PS C:\Users\trung.DESKTOP-G7C81CH\Downloads\01noobHacker> ssh century3@century.underthewire.tech -p 22 ⌨️
-century3@century.underthewire.tech's password: ⌨️ invoke-webrequest443 
+century3@century.underthewire.tech's password: ⌨️ invoke-webrequest443
 Windows PowerShell 
 Copyright (C) 2016 Microsoft Corporation. All rights reserved.
 
@@ -169,8 +169,69 @@ Mode                LastWriteTime         Length Name
 -a----        8/30/2018   3:29 AM             33 countme972
 -a----        8/30/2018   3:29 AM             33 countme996
 
+# Note: .Count not in Method or Property ❤️
+PS C:\users\century3\desktop> ls | Get-Member ⌨️
+
+   TypeName: System.IO.FileInfo
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+LinkType                  CodeProperty   System.String LinkType{get=GetLinkType;}
+Mode                      CodeProperty   System.String Mode{get=Mode;}
+Target                    CodeProperty   System.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKey...
+AppendText                Method         System.IO.StreamWriter AppendText()
+CopyTo                    Method         System.IO.FileInfo CopyTo(string destFileName), System.IO.FileInfo CopyTo(string destFileName, bool overwrite)    
+Create                    Method         System.IO.FileStream Create()
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+CreateText                Method         System.IO.StreamWriter CreateText()
+Decrypt                   Method         void Decrypt()
+Delete                    Method         void Delete()
+Encrypt                   Method         void Encrypt()
+Equals                    Method         bool Equals(System.Object obj)
+GetAccessControl          Method         System.Security.AccessControl.FileSecurity GetAccessControl(), System.Security.AccessControl.FileSecurity GetA... 
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.Streaming...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+MoveTo                    Method         void MoveTo(string destFileName)
+Open                      Method         System.IO.FileStream Open(System.IO.FileMode mode), System.IO.FileStream Open(System.IO.FileMode mode, System.... 
+OpenRead                  Method         System.IO.FileStream OpenRead()
+OpenText                  Method         System.IO.StreamReader OpenText()
+OpenWrite                 Method         System.IO.FileStream OpenWrite()
+Refresh                   Method         void Refresh()
+Replace                   Method         System.IO.FileInfo Replace(string destinationFileName, string destinationBackupFileName), System.IO.FileInfo R... 
+SetAccessControl          Method         void SetAccessControl(System.Security.AccessControl.FileSecurity fileSecurity)
+ToString                  Method         string ToString()
+PSChildName               NoteProperty   string PSChildName=countme1012
+PSDrive                   NoteProperty   PSDriveInfo PSDrive=C
+PSIsContainer             NoteProperty   bool PSIsContainer=False
+PSParentPath              NoteProperty   string PSParentPath=Microsoft.PowerShell.Core\FileSystem::C:\users\century3\desktop
+PSPath                    NoteProperty   string PSPath=Microsoft.PowerShell.Core\FileSystem::C:\users\century3\desktop\countme1012
+PSProvider                NoteProperty   ProviderInfo PSProvider=Microsoft.PowerShell.Core\FileSystem
+Attributes                Property       System.IO.FileAttributes Attributes {get;set;}
+CreationTime              Property       datetime CreationTime {get;set;}
+CreationTimeUtc           Property       datetime CreationTimeUtc {get;set;}
+Directory                 Property       System.IO.DirectoryInfo Directory {get;}
+DirectoryName             Property       string DirectoryName {get;}
+Exists                    Property       bool Exists {get;}
+Extension                 Property       string Extension {get;}
+FullName                  Property       string FullName {get;}
+IsReadOnly                Property       bool IsReadOnly {get;set;}
+LastAccessTime            Property       datetime LastAccessTime {get;set;}
+LastAccessTimeUtc         Property       datetime LastAccessTimeUtc {get;set;}
+LastWriteTime             Property       datetime LastWriteTime {get;set;}
+LastWriteTimeUtc          Property       datetime LastWriteTimeUtc {get;set;}
+Length                    Property       long Length {get;}
+Name                      Property       string Name {get;}
+BaseName                  ScriptProperty System.Object BaseName {get=if ($this.Extension.Length -gt 0){$this.Name.Remove($this.Name.Length - $this.Exte... 
+VersionInfo               ScriptProperty System.Object VersionInfo {get=[System.Diagnostics.FileVersionInfo]::GetVersionInfo($this.FullName);}
+
 PS C:\users\century3\desktop> (Get-ChildItem -File).Count ⌨️
 123 🔐
+PS C:\users\century3\desktop> (ls).Count
+123 🔐
+
 PS C:\users\century3\desktop> exit ⌨️
 Connection to century.underthewire.tech closed.
 PS C:\Users\trung.DESKTOP-G7C81CH\Downloads\01noobHacker> ssh century4@century.underthewire.tech -p 22 ⌨️

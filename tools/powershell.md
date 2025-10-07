@@ -172,18 +172,30 @@ Logical Operators
 
 ## Side Quest: Du's Investigation
 ```
-Get-Help Get-ChildItem                          # short summary + parameters
+# When Declare variables don't forget $ in front or acts as a command ⭐⭐⭐⭐⭐
+$var="hi"
+
+# Important: When using Property don't forget (). ⭐⭐⭐⭐⭐
+Get-Help Get-ChildItem ❤️❤️❤️❤️❤️             # short summary + parameters
 Get-Help Get-ChildItem -Examples                # examples only
 Get-Help Get-ChildItem -Full                    # full help
 Get-Help Get-ChildItem -Online                  # open official docs in browser (if available)
 
-Get-Command "Get-*Event*"
-Get-Command ls | Select-Object Name, CommandType, Definition, Module
-Get-Command Get-ChildItem -Syntax
-Get-Alias ls
+# Note: * multiple wild card, ? one char wild card
+# Select-Object gets the column
+Get-Alias ls ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
+Get-Variable ls ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
+Get-Command "Get-*Event*" ❤️❤️❤️❤️❤️
+Get-Command ls | Select-Object Name, CommandType, Definition, Module ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
+Get-Command Get-ChildItem -Syntax ❤️❤️❤️❤️❤️
+ls | Get-Member ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
 
+# -match (RE) vs -like (wild cards * and ?) vs -eq (no Regular Expression)
+# Note: When using Where-Object need use {}
+# $_. is current object
 | Where-Object {$_.Message -like '*group*created*'}
 | Select-Object -ExpandProperty
+Get-ChildItem -File -Recurse | Where-Object { $_.Name -match '^readme' }
 
 Get-ADUser -Filter * -Properties * | Select-Object -First 1 | Format-List *
     Get-ADUser
@@ -191,15 +203,25 @@ Get-ADUser -Filter * -Properties * | Select-Object -First 1 | Format-List *
     Get-ADTrust
     Get-ADGroup
 
+# -split
+((Get-WmiObject Win32_ComputerSystem).Domain -split '\.')[0]
+# -join
+-join((Get-CimInstance win32_service -Filter 'DisplayName like "Windows Update"').Description.Split(' ')[9,7].ToLower() + (ls -File).Name)
+
 + (ls -Exclude '*.evtx').Name.ToLower()
+(Get-Content .\unique.txt | Sort-Object -Unique).Count
+Get-Content .\Downloads\Readme.txt
+(cat .\Word_File.txt) -split ' ' | Select-Object -Index 160
+(Get-Content Word_File.txt) -replace '^(\S+\s+){160}'
 ```
 
 ## CTF
 [century0000: ssh century1@century.underthewire.tech -p 22](../underthewire/Century0000.md)<br>
-[century0001: Get-Host, Get-CimInstance -ClassName Win32_OperatingSystem](../underthewire/Century0001.md)<br>
+[century0001: (Get-Host).Version.ToString(), Get-CimInstance -ClassName Win32_OperatingSystem](../underthewire/Century0001.md)<br>
 [century0405: Get-WmiObject Win32_ComputerSystem](../underthewire/Century0405.md)<br>
-[century0102: dir, Invoke-Webrequest](../underthewire/Century0102.md)<br>
+[century0102: dir, Invoke-Webrequest ❤️❤️❤️❤️](../underthewire/Century0102.md)<br>
 [century0203: (Get-ChildItem -File).Count](../underthewire/Century0203.md)<br>
+[century0304: | Where-Object {$_.Directory.Name -like '* *'} ❤️❤️❤️❤️](../underthewire/Century0304.md)<br>
 [century0506: (Get-ChildItem -Directory).Count](../underthewire/Century0506.md)<br>
 [century0607: Get-ChildItem -Recurse -File -Filter "readme*" , Get-Content](../underthewire/Century0607.md)<br>
 [century0708: (Get-Content unique.txt | Sort-Object | Group-Object | Where-Object { $_.Count -eq 1 } | ForEach-Object { $_.Name }).Count](../underthewire/Century0708.md)<br>
@@ -249,6 +271,19 @@ Get-ADUser -Filter * -Properties * | Select-Object -First 1 | Format-List *
 [oracle1112: Get-ChildItem 'HKCU:\Software\Microsoft\Terminal Server Client](../underthewire/Oracle1112.md)<br>
 [oracle1213: Get-WinEvent -Path .\security.evtx | Where-Object {$_.Message -like '*group*created*'} | Select-Object -ExpandProperty Message](../underthewire/Oracle1213.md)<br>
 [oracle1314: Get-Alias](../underthewire/Oracle1314.md)<br>
+[trebek0001: -Flags ❤️❤️❤️❤️](../underthewire/Trebek0001.md)<br>
+[trebek0102: Get-CimInstance Win32_Service -Filter 'Name like "C-3PO"' | Select-Object *](../underthewire/Trebek0102.md)<br>
+[trebek0203: Get-WinEvent -Path .\security.evtx -FilterXPath "*[System[(EventID=4624)]] and *[EventData[Data[@Name='TargetUserName'] and (Data='Yoda')]]"](../underthewire/Trebek0203.md)<br>
+[trebek0304: Get-ChildItem "C:\Windows\Prefetch" -Filter '*access*'](../underthewire/Trebek0304.md)<br>
+[trebek0405](../underthewire/Trebek0405.md)<br>
+[trebek0708: -join[System.IO.File]::ReadAllBytes((ls .\Clone_Trooper_data.pdf).FullName)[0..7]](../underthewire/Trebek0708.md)<br>
+[trebek0809: Get-SmbShare](../underthewire/Trebek0809.md)<br>
+[trebek0910: .Split("")[0]](../underthewire/Trebek0910.md)<br>
+[trebek1011: Property ❤️❤️❤️❤️](../underthewire/Trebek1011.md)<br>
+[trebek1112: -FilterXPath "*[System[EventID=4720]]", .Where({$_.Message -like '*Lor*'}).Message](../underthewire/Trebek1112.md)<br>
+[trebek1213: (Get-ADUser -Filter * -Properties City).Where({$_.City})](../underthewire/Trebek1213.md)<br>
+[trebek1314: (Get-ADUser -Filter * -Properties City).Where({$_.City}).City](../underthewire/Trebek1314.md)<br>
+
 
 ## Back to README.md
 [BACK](../README.md)

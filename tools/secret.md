@@ -64,6 +64,7 @@ Description: Food Recipes
 
 ## Art ❤️❤️❤️❤️❤️
 [Between Spoonfuls](https://www.youtube.com/@BetweenSpoonfuls): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
+[David Nguyen](https://www.youtube.com/@dvdnguyen/): Plating ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [Home Chef Seattle](https://www.youtube.com/@HomeChefSeattle): ⭐⭐⭐⭐⭐<br>
 [How to Make yummy](https://www.youtube.com/@HowtoMakeyummy): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [kawaiisweetworld](https://www.youtube.com/@kawaiisweetworld): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
@@ -212,6 +213,7 @@ Description: Food Recipes
 [쿠킹하루 Cooking Haru](https://www.youtube.com/@cooking_haru): Listen ⭐⭐⭐<br>
 [우리의식탁 W TABLE](https://www.youtube.com/@wtable6077): Listen ⭐⭐⭐<br>
 [매일맛나 delicious day](https://www.youtube.com/@deliciousday1): ⭐⭐⭐⭐⭐<br>
+[Chef Chris Cho](https://www.youtube.com/@ChefChrisCho): ⭐⭐⭐⭐⭐<br>
 [Chung's K Food](https://www.youtube.com/@chungskfood): ⭐⭐⭐⭐⭐<br>
 [Doobydobap](https://www.youtube.com/@Doobydobap): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Drew Eats](https://www.youtube.com/@drew_eats): ⭐⭐⭐⭐⭐<br>
@@ -300,7 +302,7 @@ Description: Food Recipes
 [Daisy Kitchen](https://www.youtube.com/@DaisyKitchen): ⭐⭐⭐⭐⭐<br>
 [Địa điểm ăn uống](https://www.youtube.com/@DiaDiemAnUong): Travel ⭐⭐⭐<br>
 [Diễm Nauy](https://www.youtube.com/c/Di%E1%BB%85mNauy): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
-[Duy Tân FOOD](https://www.youtube.com/c/DuyT%C3%A2nFOOD1981): ⭐⭐⭐⭐⭐<br>
+[Duy Tân FOOD](https://www.youtube.com/c/DuyT%C3%A2nFOOD1981): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Full Of Plants](https://www.youtube.com/@FullofPlants): ⭐⭐⭐⭐⭐<br>
 [Ghiền nấu ăn](https://www.youtube.com/c/Ghi%E1%BB%81nn%E1%BA%A5u%C4%83n): ⭐⭐⭐⭐⭐<br>
 [Gia Đình Sức Khỏe Tâm Sinh](https://www.youtube.com/c/GIA%C4%90%C3%8CNHVI%E1%BB%86T1984): ⭐⭐⭐⭐⭐<br>

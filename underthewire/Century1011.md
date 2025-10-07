@@ -195,6 +195,32 @@ d--hsl        8/30/2018   3:11 AM                Templates
 -a-hs-        7/12/2020  10:55 PM         524288 NTUSER.DAT{0f893ee4-78e5-11e6-90dd-eefb07825ed9}.TMContainer00000000000000000002.regtrans-ms
 ---hs-        8/30/2018   3:11 AM             20 ntuser.ini
 
+PS C:\users\century11> Get-ChildItem -Hidden -Recurse -File -ErrorAction SilentlyContinue | Select-Object -Unique Name
+
+Name
+----
+NTUSER.DAT
+ntuser.dat.LOG1
+ntuser.dat.LOG2
+NTUSER.DAT{0f893ee4-78e5-11e6-90dd-eefb07825ed9}.TM.blf
+NTUSER.DAT{0f893ee4-78e5-11e6-90dd-eefb07825ed9}.TMContainer00000000000000000001.regtrans-ms
+NTUSER.DAT{0f893ee4-78e5-11e6-90dd-eefb07825ed9}.TMContainer00000000000000000002.regtrans-ms
+ntuser.ini
+UsrClass.dat
+UsrClass.dat.LOG1
+UsrClass.dat.LOG2
+UsrClass.dat{d82669b3-abff-11e8-90ee-e14c26db97e8}.TM.blf
+UsrClass.dat{d82669b3-abff-11e8-90ee-e14c26db97e8}.TMContainer00000000000000000001.regtrans-ms
+UsrClass.dat{d82669b3-abff-11e8-90ee-e14c26db97e8}.TMContainer00000000000000000002.regtrans-ms
+desktop.ini
+secret_sauce
+
+PS C:\users\century11> Get-ChildItem -Hidden -Recurse -File -ErrorAction SilentlyContinue | Select-Object -Unique Name | Where-Object {$_.Name -like "*secret*"} ⌨️
+
+Name        
+----        
+secret_sauce
+
 PS C:\users\century11> Get-Content .\Downloads\secret_sauce ⌨️
 Congratulations. You found it!
 PS C:\users\century11> exit ⌨️
