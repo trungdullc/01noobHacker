@@ -65,6 +65,7 @@ print(mapping)   # {0: 'X', 1: 'Y'}
 [picoGym0466: Reverse Engineering](../picoCTF/picoGym0466.md)<br>
 [picoGym0428: Reverse Engineering Python dissasembly output](../picoCTF/picoGym0428.md)<br>
 [picoGym0438:Binary Exploitation](../picoCTF/picoGym0438.md)<br>
+[247CTF: Beginners Tips And Tricks ❤️](../247ctf/BeginnerTipsAndTricks.md)<br>
 
 ## Back to README.md
 [BACK](../README.md)

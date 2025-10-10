@@ -125,26 +125,26 @@ Purpose: Learn Linux commands<br>
 Source: https://overthewire.org/wargames/<br>
 [Start](/overthewire/0000.md)
 
-# Continue to underTheWire
+# Continue to underTheWire ⭐⭐
 Purpose: Learn Powershell<br>
 Source: https://underthewire.tech/wargames<br>
-<b>TODO Later</b>
-
-# Continue to exploit.education
-Purpose: Basic CTF<br>
-Source: https://exploit.education/<br>
-<b>TODO Later</b>
-
-# Continue to SmashTheStack Wargaming Network
-Purpose: Basic CTF<br>
-Source: https://www.smashthestack.org/<br>
-<b>TODO Later</b>
+[Continue](/underthewire/Century0000.md)
 
 # Continue to picoCTF ⭐⭐⭐⭐
 Purpose: Learn CTF basic scenarios<br>
 Source: https://www.picoctf.org/<br>
 Guide: https://primer.picoctf.org/<br>
 [Continue](./picoCTF/picoGym0189.md)
+
+# Continue to exploit.education ⭐
+Purpose: Basic CTF<br>
+Source: https://exploit.education/<br>
+<b>TODO Later</b>
+
+# Continue to SmashTheStack Wargaming Network ⭐
+Purpose: Basic CTF<br>
+Source: https://www.smashthestack.org/<br>
+<b>TODO Later</b>
 
 # Continue to Dreamhack.io
 Purpose: Online wargame<br>
@@ -159,7 +159,7 @@ Source: https://www.root-me.org/en/Challenges/<br>
 # Continue to 247CTF ⭐⭐⭐⭐
 Purpose: Competitive Jeopardy-style CTFs<br>
 Source: https://247ctf.com/<br>
-<b>TODO Later</b>
+[Continue](./247ctf/BeginnerTheFlagFormat.md)
 
 # Continue to Flagyard
 Purpose: Cybersecurity Challenges<br>

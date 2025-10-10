@@ -28,6 +28,7 @@ Description: Food Recipes
 [Cowboy Kent Rollins](https://www.youtube.com/@CowboyKentRollins): ⭐⭐⭐⭐⭐<br>
 [crazyjeancooking](https://www.youtube.com/@crazyjeancooking): ⭐⭐⭐⭐⭐<br>
 [Dave, Luna & Mika’s Kitchen](https://www.youtube.com/@davelunaskitchen8355): ⭐⭐⭐⭐⭐<br>
+[Dinner & a Side](https://www.youtube.com/@DinnerandaSide): ⭐⭐⭐⭐⭐<br>
 [KQED](https://www.youtube.com/@kqed): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Ethan Chlebowski](https://www.youtube.com/@EthanChlebowski): ⭐⭐⭐⭐⭐<br>
 [Food Network](https://www.youtube.com/@FoodNetwork): ⭐⭐⭐⭐⭐<br>
@@ -219,7 +220,7 @@ Description: Food Recipes
 [Drew Eats](https://www.youtube.com/@drew_eats): ⭐⭐⭐⭐⭐<br>
 [Future Neighbor](https://www.youtube.com/@FutureNeighbor): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Jane's Home](https://www.youtube.com/@janeshome4843): ⭐⭐⭐⭐⭐<br>
-[Korean Bapsang](https://www.youtube.com/@koreanbapsang6835): ⭐⭐⭐⭐⭐<br>
+[Korean Bapsang](https://www.youtube.com/@koreanbapsang6835): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [SeonkyoungLongest](https://www.youtube.com/@SeonkyoungLongest): ⭐⭐⭐⭐⭐<br>
 [Hanbit Cho](https://www.youtube.com/@HanbitCho): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Maangchi](https://www.youtube.com/user/Maangchi): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
@@ -294,6 +295,7 @@ Description: Food Recipes
 [Bếp Quê Vlogs](https://www.youtube.com/@duytankitchen3604): Listen ⭐⭐⭐<br>
 [Boriville](https://www.youtube.com/@Boriville): ⭐⭐⭐⭐<br>
 [BP. HAM](https://www.youtube.com/@BPHAM): Listen ⭐⭐⭐<br>
+[ChefQs Travel Recipe](https://www.youtube.com/@ChefQstr): ⭐⭐⭐⭐⭐<br>
 [Cindy Lam Cuisine](https://www.youtube.com/@cindylamcuisine): ⭐⭐⭐⭐⭐<br>
 [Cô Ba Bình Dương](https://www.youtube.com/channel/UC-c0PPbJKW-KUliEZPosVvg): ⭐⭐⭐⭐⭐<br>
 [Cooking with Hana Phung](https://www.youtube.com/@CookingwithHanaPhung): ⭐⭐⭐⭐⭐<br>
