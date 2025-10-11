@@ -311,6 +311,11 @@ Purpose: Live, playable archive of DEF CON CTF<br>
 Source: https://archive.ooo/<br>
 <b>TODO Later</b>
 
+# Continue to LeetCode
+Purpose: Python Classes and Libraries<br>
+Source: https://leetcode.com/<br>
+[Continue](./LeetCodeSolutions/solution/README.md)
+
 # End with Interactive CTF
 Purpose: Dynamic Learning<br>
 Souce: https://try2hack.me/<br>
@@ -340,7 +345,6 @@ Souce: https://try2hack.me/<br>
     - [mkCTF](https://github.com/koromodako/mkctf)
     - [MotherFuckingCTF](https://github.com/andreafioraldi/motherfucking-ctf)
     - [NightShade](https://github.com/akama/NightShade): Simple CTF framework
-    - [picoCTF](https://github.com/picoCTF/picoCTF): Infrastructure used to run picoCTF
     - [rCTF](https://github.com/redpwn/rctf): depleted
     - [RootTheBox](https://github.com/moloch--/RootTheBox): CTF scoring engine for wargames
     - [ScoreBot](https://github.com/legitbs/scorebot)
@@ -811,3 +815,6 @@ TO Finish:
 Browser:
 # Accidently Exit Window
 Ctrl + Shift + T
+
+Others Writeups:
+https://github.com/Adamkadaban/CTFs/tree/master

@@ -48,6 +48,7 @@ print(mapping)   # {0: 'X', 1: 'Y'}
 [picoGym0307: File](../picoCTF/picoGym0307.md)<br>
 [picoGym0407: File, with ⭐⭐⭐](../picoCTF/picoGym0407.md)<br>
 [picoGym0289: format specifier ⭐⭐⭐](../picoCTF/picoGym0289.md)<br>
+[247CTF: 3 ways install python library ❤️❤️❤️❤️❤️](../247ctf/WebAdministrativeOrm.md)<br>
 [picoGym0040: pip3 install ⭐⭐⭐](../picoCTF/picoGym0040.md)<br>
 [picoGym0158: binary](../picoCTF/picoGym0158.md)<br>
 [picoGym0159: pip3 install, modifying](../picoCTF/picoGym0159.md)<br>
