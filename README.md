@@ -120,10 +120,15 @@ Red Team (CRTE)
 [HackerNews](https://news.ycombinator.com/) ⭐⭐⭐⭐⭐<br>
 [Search CSV Exploits](./tools/searchexploits.md) ⭐⭐⭐⭐⭐
 
-# 🏎️ Start with overTheWire ⭐⭐⭐⭐ 🚓
+# 🏎️ Start with The Python Challenge ⭐⭐⭐⭐⭐ 🚓
+Purpose: Learn Python3<br>
+Source: http://www.pythonchallenge.com/<br>
+[Continue](./thepythonchallenge/Level00.md)
+
+# Continue to overTheWire ⭐⭐⭐⭐⭐
 Purpose: Learn Linux commands<br>
 Source: https://overthewire.org/wargames/<br>
-[Start](/overthewire/0000.md)
+[Start](/overthewire/Bandit0000.md)
 
 # Continue to underTheWire ⭐⭐
 Purpose: Learn Powershell<br>
@@ -135,6 +140,11 @@ Purpose: Learn CTF basic scenarios<br>
 Source: https://www.picoctf.org/<br>
 Guide: https://primer.picoctf.org/<br>
 [Continue](./picoCTF/picoGym0189.md)
+
+# Continue to 247CTF ⭐⭐⭐⭐
+Purpose: Competitive Jeopardy-style CTFs<br>
+Source: https://247ctf.com/<br>
+[Continue](./247ctf/BeginnerTheFlagFormat.md)
 
 # Continue to exploit.education ⭐
 Purpose: Basic CTF<br>
@@ -155,11 +165,6 @@ Source: https://dreamhack.io/wargame<br>
 Purpose: Learn more CTF basic scenarios<br>
 Source: https://www.root-me.org/en/Challenges/<br>
 <b>TODO Later</b>
-
-# Continue to 247CTF ⭐⭐⭐⭐
-Purpose: Competitive Jeopardy-style CTFs<br>
-Source: https://247ctf.com/<br>
-[Continue](./247ctf/BeginnerTheFlagFormat.md)
 
 # Continue to Flagyard
 Purpose: Cybersecurity Challenges<br>

@@ -30,6 +30,7 @@ Description: Food Recipes
 [Dave, Luna & Mika’s Kitchen](https://www.youtube.com/@davelunaskitchen8355): ⭐⭐⭐⭐⭐<br>
 [Dinner & a Side](https://www.youtube.com/@DinnerandaSide): ⭐⭐⭐⭐⭐<br>
 [KQED](https://www.youtube.com/@kqed): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
+[Essen Recipes](https://www.youtube.com/@EssenRecipes): ⭐⭐⭐⭐⭐<br>
 [Ethan Chlebowski](https://www.youtube.com/@EthanChlebowski): ⭐⭐⭐⭐⭐<br>
 [Food Network](https://www.youtube.com/@FoodNetwork): ⭐⭐⭐⭐⭐<br>
 [Food Wishes](https://www.youtube.com/@foodwishes): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
@@ -43,11 +44,13 @@ Description: Food Recipes
 [John Kirkwood](https://www.youtube.com/@JohnKirkwoodProFoodHomemade): ⭐⭐⭐⭐⭐<br>
 [Joshua Weissman](https://www.youtube.com/@JoshuaWeissman): ⭐⭐⭐⭐⭐❤️❤️<br>
 [Julia Child on PBS](https://www.youtube.com/@JuliaChildonPBS): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
+[Kikifoodies](https://www.youtube.com/@Kikifoodies): ⭐⭐⭐⭐⭐<br>
 [Laura in the Kitchen](https://www.youtube.com/@LauraintheKitchen): ⭐⭐⭐⭐⭐<br>
 [Marion's Kitchen](https://www.youtube.com/@Marionskitchen): ⭐⭐⭐⭐⭐<br>
 [Medusa’s Kitchen with Chef Greg](https://www.youtube.com/@ChefGregMedusasKitchen): ⭐⭐⭐⭐⭐<br>
 [Men with the pot](https://www.youtube.com/@menwiththepot): ⭐⭐⭐⭐⭐<br>
 [Natashas Kitchen](https://www.youtube.com/@Natashaskitchen): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
+[NORA'S CULINARY](https://www.youtube.com/@NORASCULINARY): ⭐⭐⭐⭐⭐<br>
 [NOT ANOTHER COOKING SHOW](https://www.youtube.com/@NOTANOTHERCOOKINGSHOW): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Preppy Kitchen](https://www.youtube.com/channel/UCTvYEid8tmg0jqGPDkehc_Q): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Pressure Luck Cooking](https://www.youtube.com/@PressureLuck): ⭐⭐⭐⭐⭐<br>
@@ -66,13 +69,17 @@ Description: Food Recipes
 ## Art ❤️❤️❤️❤️❤️
 [Between Spoonfuls](https://www.youtube.com/@BetweenSpoonfuls): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [David Nguyen](https://www.youtube.com/@dvdnguyen/): Plating ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
+[Emmacooking](https://www.youtube.com/@emmacooking5196): ⭐⭐⭐⭐⭐<br>
+[Funistic Channel](https://www.youtube.com/@FunisticChannel): ⭐⭐⭐⭐⭐<br>
 [Home Chef Seattle](https://www.youtube.com/@HomeChefSeattle): ⭐⭐⭐⭐⭐<br>
 [How to Make yummy](https://www.youtube.com/@HowtoMakeyummy): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [kawaiisweetworld](https://www.youtube.com/@kawaiisweetworld): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [May's Kawaii Kitchen](https://www.youtube.com/@may.kawaiikitchen): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
 [Quantastic](https://www.youtube.com/@Quantastic): ⭐⭐⭐⭐⭐<br>
 [Maria Gomez](https://www.youtube.com/@beautyanddasweetz): ⭐⭐⭐⭐⭐<br>
-[Ms Shi and Mr He](https://www.youtube.com/@msshiandmrhe): ⭐⭐⭐⭐⭐
+[Ms Shi and Mr He](https://www.youtube.com/@msshiandmrhe): ⭐⭐⭐⭐⭐<br>
+[Tadum Channel](https://www.youtube.com/@tadumchannel): ⭐⭐⭐⭐⭐<br>
+[Xue Ren雪人](https://www.youtube.com/@XueRen-): ⭐⭐⭐⭐⭐
 
 ## Baking
 [Bigger Bolder Baking with Gemma Stafford](https://www.youtube.com/@biggerbolderbaking): ⭐⭐⭐⭐⭐❤️❤️<br>
@@ -87,6 +94,8 @@ Description: Food Recipes
 
 ## Chinese
 [大友大飯店](https://www.youtube.com/@otomodaihanten): Listen ⭐⭐⭐<br>
+[小青的菜](https://www.youtube.com/@xiaoqingdecaia): ⭐⭐⭐⭐⭐<br>
+[AdasGoodFoodie](https://www.youtube.com/@AdasGoodFoodie/shorts): ⭐⭐⭐⭐⭐<br>
 [adventurousbaker](https://axcheron.github.io/writeups/otw/behemoth/): ⭐⭐⭐⭐⭐<br>
 [Bao Bei](https://www.youtube.com/@BaoBeiKH): ⭐⭐⭐⭐⭐<br>
 [C.HerCreations](https://www.youtube.com/@CHerCreations): ⭐⭐⭐⭐⭐<br>
@@ -97,9 +106,13 @@ Description: Food Recipes
 [ChinaSichuanFood by Elaine](https://www.youtube.com/@ElaineLuo): ⭐⭐⭐⭐⭐<br>
 [Chinese Cooking Channel](https://www.youtube.com/@ChineseCookingChannel): ⭐⭐⭐⭐⭐<br>
 [Chinese Cooking Demystified](https://www.youtube.com/@ChineseCookingDemystified): Hard ⭐⭐⭐⭐⭐❤️❤️❤️<br>
+[Chongbian's Kitchen](https://www.youtube.com/@chongbianskitchen): ⭐⭐⭐⭐⭐<br>
 [Chop Chop Recipes](https://www.youtube.com/@ChopChopRecipes/featured): ⭐⭐⭐⭐⭐<br>
 [CiCi Li, Asian Home Cooking](https://www.youtube.com/@CiCiLi): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
+[CookingBomb 袁倩祎](https://www.youtube.com/@CookingBomb): ⭐⭐⭐⭐⭐<br>
 [Cooking with Wah Jai](https://www.youtube.com/@CookingWithWahJai): ⭐⭐⭐⭐⭐<br>
+[Cook Plan 煮食计划](https://www.youtube.com/@cookplansharing): ⭐⭐⭐⭐⭐<br>
+[Cozy Kitchen](https://www.youtube.com/@cozykitchen436): ⭐⭐⭐⭐⭐<br>
 [Da达哥厨房](https://www.youtube.com/@Da-Kitchen): ⭐⭐⭐⭐⭐<br>
 [davemakesfood](https://www.youtube.com/@davemakesfood): Listen ⭐⭐⭐<br>
 [Elias Family Kitchen](https://www.youtube.com/@eliasfamilykitchen4588): ⭐⭐⭐⭐⭐<br>
@@ -112,11 +125,13 @@ Description: Food Recipes
 [Hsiao-Ching Chou](https://www.youtube.com/@hsiaochingchou): Listen ⭐⭐⭐<br>
 [iHEARTcookinggg](https://www.youtube.com/@iHEARTcookinggg): ⭐⭐⭐⭐⭐<br>
 [It's Tam to Eat!](https://www.youtube.com/@itstamtoeat7204): ⭐⭐⭐⭐⭐<br>
+[iwen baking](https://www.youtube.com/@iwen777): ⭐⭐⭐⭐⭐<br>
 [Josephine Recipes & Lifestyle](https://www.youtube.com/@JosephineRecipes): ⭐⭐⭐⭐⭐<br>
 [Kayla | baking + travel](https://www.youtube.com/@misskaylalaw): ⭐⭐⭐⭐⭐<br>
 [Khin's Kitchen](https://www.youtube.com/@KhinsKitchen): ⭐⭐⭐⭐⭐<br>
 [Khoan Vong](https://www.youtube.com/@KhoanVong): ⭐⭐⭐⭐⭐<br>
 [Lam Thai Dim Sum](https://www.youtube.com/@ThaiLamDimSum): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
+[Linda Guo’s kitchen](https://www.youtube.com/@yumsimple6113): ⭐⭐⭐⭐⭐<br>
 [Ling’s Cooking Escapade](https://www.youtube.com/@lingscookingescapade): ⭐⭐⭐⭐⭐<br>
 [Lisa Lin](https://www.youtube.com/@hellolisalin): ⭐⭐⭐⭐⭐<br>
 [Made With Lau](https://www.youtube.com/@MadeWithLau): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
@@ -124,6 +139,7 @@ Description: Food Recipes
 [張媽媽廚房Mama Cheung](https://www.youtube.com/@mamacheung): ⭐⭐⭐⭐⭐<br>
 [Mama Shu's Cooking](https://www.youtube.com/@mamashuscooking8548): ⭐⭐⭐⭐⭐<br>
 [Moon cooking “foodpassionical”](https://www.youtube.com/@Moon.cooking): ⭐⭐⭐⭐⭐<br>
+[Mr. Hong Kitchen阿鸿厨房](https://www.youtube.com/@MrHongKitchen): ⭐⭐⭐⭐⭐<br>
 [My Mom's Chinese Recipes](https://www.youtube.com/@mymomschineserecipes855): ⭐⭐⭐⭐⭐<br>
 [Nanyang Kitchen](https://www.youtube.com/@NanyangKitchen): ⭐⭐⭐⭐⭐<br>
 [Omnivore's Cookbook](https://www.youtube.com/@omnivorescookbook): ⭐⭐⭐⭐⭐<br>
@@ -134,6 +150,7 @@ Description: Food Recipes
 [Ruyi Asian Recipes](https://www.youtube.com/@ruyiasianrecipes): ⭐⭐⭐⭐⭐<br>
 [Shadajie Kitchen](https://www.youtube.com/@shadajie-kitchen): ⭐⭐⭐⭐⭐<br>
 [Sikfan Kitchen](https://www.youtube.com/@SikfanKitchen): ⭐⭐⭐⭐⭐<br>
+[Simpol PH](https://www.youtube.com/@SimpolDotPH): ⭐⭐⭐⭐⭐<br>
 [Souped Up Recipes](https://www.youtube.com/@SoupedUpRecipes): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Spice N' Pans](https://www.youtube.com/@spicenpans): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Sue and Gambo](https://www.youtube.com/@SueandGambo): ⭐⭐⭐⭐⭐<br>
@@ -149,6 +166,7 @@ Description: Food Recipes
 [wantanmien](https://www.youtube.com/@wantanmien): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [天鵝美食 White Swan Cuisine](https://www.youtube.com/@WhiteSwanCuisine): Chinese ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Wok With Wei-ling](https://www.youtube.com/@wokwithwei-ling1017): ⭐⭐⭐⭐⭐<br>
+[XiaoMin's Fun](https://www.youtube.com/@XiaoMinDeFun): ⭐⭐⭐⭐⭐<br>
 [Yadav Rana](https://www.youtube.com/@ChefYadavRana): ⭐⭐⭐⭐⭐<br>
 [Yummy Asian](https://www.youtube.com/@yummyasian%E7%BE%8E%E5%91%B3%E4%BA%9A%E6%B4%B2): ⭐⭐⭐⭐⭐<br>
 [Yummy Yummy](https://www.youtube.com/@yummyyummy2549): ⭐⭐⭐⭐⭐<br>
@@ -166,12 +184,66 @@ Description: Food Recipes
 [Purple Apron](https://www.youtube.com/@purpleapron): ⭐⭐⭐⭐⭐
 
 ## French
+[Fallow](https://www.youtube.com/@FallowChefs/): ⭐⭐⭐⭐⭐<br>
 [French Cooking Academy](https://www.youtube.com/@FrenchCookingAcademy): ⭐⭐⭐⭐⭐
 
 ## Healthy
+[24VEGAN](https://www.youtube.com/@24VEGAN): ⭐⭐⭐⭐⭐<br>
+[Adventasty Cooking](https://www.youtube.com/@Adventasty): ⭐⭐⭐⭐⭐<br>
+[A Global Kitchen](https://www.youtube.com/@aglobalkitchen6257): ⭐⭐⭐⭐⭐<br>
+[Amanda Ducks](https://www.youtube.com/@AmandaDucks): ⭐⭐⭐⭐⭐<br>
+[Ăn chay cùng Nhi](https://www.youtube.com/c/%C4%82nchayc%C3%B9ngNhi): ⭐⭐⭐⭐⭐<br>
+[An Lac Chay](https://www.youtube.com/@thanhtrucle3536): ⭐⭐⭐⭐⭐<br>
+[An Yên ở Mỹ](https://www.youtube.com/@Anyenomy): ⭐⭐⭐⭐⭐<br>
+[Au Lac Vegan](https://www.youtube.com/@aulacvegan5942): ⭐⭐⭐⭐⭐<br>
+[Bếp Chay Nhỏ](https://www.youtube.com/@Bepchaynho): ⭐⭐⭐⭐⭐<br>
+[Bếp Chay Thầy Lâm](https://www.youtube.com/@BepChayThayLam96): ⭐⭐⭐⭐⭐<br>
+[Bếp Cô Tư](https://www.youtube.com/@bepcotu7030): ⭐⭐⭐⭐⭐<br>
+[Bếp Món Chay](https://www.youtube.com/@BepMonChay68): ⭐⭐⭐⭐⭐<br>
+[Broccoli Mum](https://www.youtube.com/@broccoli_mum): ⭐⭐⭐⭐⭐<br>
+[Cheap Lazy Vegan](https://www.youtube.com/@CheapLazyVegan): ⭐⭐⭐⭐⭐<br>
+[Cindy Tran Cuộc sống Mỹ Tx](https://www.youtube.com/@cindytrancuocsongmytx6057): ⭐⭐⭐⭐⭐<br>
+[Cooking With Lana](https://www.youtube.com/@cookingwithlana9204): ⭐⭐⭐⭐⭐<br>
+[Coqui Vegan](https://www.youtube.com/@coquivegan3345): ⭐⭐⭐⭐⭐<br>
+[Dzoãn Cẩm Vân](https://www.youtube.com/@DzoanCamVan): ⭐⭐⭐⭐⭐<br>
+[High Carb Hannah](https://www.youtube.com/HIGHCARBHANNAH): ⭐⭐⭐⭐⭐<br>
 [East Meets Kitchen](https://www.youtube.com/@EastMeetsKitchen): ⭐⭐⭐⭐⭐<br>
+[Ela Vegan](https://www.youtube.com/@ElaVegan): ⭐⭐⭐⭐⭐<br>
+[Fitgreenmind](https://www.youtube.com/@FitGreenMind): ⭐⭐⭐⭐⭐<br>
+[Food Impromptu](https://www.youtube.com/@FoodImpromptu): ⭐⭐⭐⭐⭐<br>
+[Goodlife Cookin](https://www.youtube.com/@goodlifecookin): ⭐⭐⭐⭐⭐<br>
 [Honeysuckle](https://www.youtube.com/@honeysuckle): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
-[MyHealthyDish](https://www.youtube.com/@MyHealthyDish): ⭐⭐⭐⭐⭐
+[HM together](https://www.youtube.com/@HMtogether): ⭐⭐⭐⭐⭐<br>
+[Kale Sandwich Show](https://www.youtube.com/@TheKaleSandwichShow): ⭐⭐⭐⭐⭐<br>
+[Moments for Health](https://www.youtube.com/@MomentsforHealth): ⭐⭐⭐⭐⭐<br>
+[Món Chay Quê Hương](https://www.youtube.com/@MonChayQueHuong): ⭐⭐⭐⭐⭐<br>
+[MÓN CHAY MỖI NGÀY](https://www.youtube.com/@monchaymoingay2393): ⭐⭐⭐⭐⭐<br>
+[Món Chay Ngon Vành Khuyên](https://www.youtube.com/c/V%C3%A0nhKhuy%C3%AAn): ⭐⭐⭐⭐⭐<br>
+[Nấu Chay Cùng Mẹ Gạo](https://www.youtube.com/@nauchaycungmegao): ⭐⭐⭐⭐⭐<br>
+[MyHealthyDish](https://www.youtube.com/@MyHealthyDish): ⭐⭐⭐⭐⭐<br>
+[Plantiful Kiki](https://www.youtube.com/@PlantifulKiki): ⭐⭐⭐⭐⭐<br>
+[Rainbow Plant Life](https://www.youtube.com/@RainbowPlantLife): ⭐⭐⭐⭐⭐<br>
+[Rated V For Vegan](https://www.youtube.com/@ratedvfood): ⭐⭐⭐⭐⭐<br>
+[Sarah's Vegan Kitchen](https://www.youtube.com/@SarahsVeganKitchen): ⭐⭐⭐⭐⭐<br>
+[sharing with seryna](https://www.youtube.com/@sharingwithseryna): ⭐⭐⭐⭐⭐<br>
+[So Vegan](https://www.youtube.com/@SoVegan): ⭐⭐⭐⭐⭐<br>
+[SweetPotatoSoul](https://www.youtube.com/@SweetPotatoSoul): ⭐⭐⭐⭐⭐<br>
+[Sweet Simple Vegan](https://www.youtube.com/@Sweetsimplevegan): ⭐⭐⭐⭐⭐<br>
+[Thee Burger Dude](https://www.youtube.com/@TheeBurgerDude): ⭐⭐⭐⭐⭐<br>
+[TheFoodieTakesFlight](https://www.youtube.com/@TheFoodieTakesFlight): ⭐⭐⭐⭐⭐<br>
+[The Vegan Zombie](https://www.youtube.com/@TheVeganZombie): ⭐⭐⭐⭐⭐<br>
+[The Viet Vegan](https://www.youtube.com/@Thevietvegan): ⭐⭐⭐⭐⭐<br>
+[Tiff Loves Tofu](https://www.youtube.com/@tifflovestofu/): ⭐⭐⭐⭐⭐<br>
+[Unnatural Vegan](https://www.youtube.com/@UnnaturalVegan): ⭐⭐⭐⭐⭐<br>
+[Veggie Anh](https://www.youtube.com/@VeggieAnh/): ⭐⭐⭐⭐⭐<br>
+[Vegan Hippie Sol](https://www.youtube.com/@veganhippiesol): ⭐⭐⭐⭐⭐<br>
+[Vegan Recipes](https://www.youtube.com/@VeganRecipesDE): ⭐⭐⭐⭐⭐<br>
+[Vegan Richa](https://www.youtube.com/@VeganRichaRecipes): ⭐⭐⭐⭐⭐<br>
+[Vegetarian Meals](https://www.youtube.com/@VegetarianMeals2022): ⭐⭐⭐⭐⭐<br>
+[We Cook Vegan](https://www.youtube.com/@WeCookVegan): ⭐⭐⭐⭐⭐<br>
+[Wendy the Food Scientist](https://www.youtube.com/@wendythefoodscientist/): ⭐⭐⭐⭐⭐<br>
+[WoonHeng (woon.heng)](https://www.youtube.com/@WoonHeng): ⭐⭐⭐⭐⭐<br>
+[Yeung Man Cooking](https://www.youtube.com/@YEUNGMANCOOKING): ⭐⭐⭐⭐⭐<br>
 
 ## Indian
 [Chef Ranveer Brar](https://www.youtube.com/@RanveerBrar): Hindi ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
@@ -189,9 +261,11 @@ Description: Food Recipes
 [Godfather BBQ & Italian](https://www.youtube.com/@godfatherbbqitalian): ⭐⭐⭐⭐⭐<br>
 [Italia Squisita](https://www.youtube.com/@italiasquisita): ⭐⭐⭐⭐⭐<br>
 [OrsaraRecipes](https://www.youtube.com/@OrsaraRecipes/shorts): ⭐⭐⭐⭐⭐<br>
+[Ricette cinesi di Ruyi](https://www.youtube.com/@RicettecinesidiRuyi): ⭐⭐⭐⭐⭐<br>
 [Sip and Feast](https://www.youtube.com/@sipandfeast): ⭐⭐⭐⭐⭐<br>
 [Vincenzo's Plate](https://www.youtube.com/@vincenzosplate): ⭐⭐⭐⭐⭐<br>
 [Vito Iacopelli](https://www.youtube.com/@vitoiacopelli): ⭐⭐⭐⭐⭐❤️❤️❤️❤️
+
 
 ## Japan
 [にぎりっ娘。nigiricco](https://www.youtube.com/@nigiricco): ⭐⭐⭐⭐⭐<br>
@@ -213,6 +287,7 @@ Description: Food Recipes
 ## Korean
 [쿠킹하루 Cooking Haru](https://www.youtube.com/@cooking_haru): Listen ⭐⭐⭐<br>
 [우리의식탁 W TABLE](https://www.youtube.com/@wtable6077): Listen ⭐⭐⭐<br>
+[묘식당 Rabbit's](https://www.youtube.com/@Rabbits): ⭐⭐⭐⭐⭐<br>
 [매일맛나 delicious day](https://www.youtube.com/@deliciousday1): ⭐⭐⭐⭐⭐<br>
 [Chef Chris Cho](https://www.youtube.com/@ChefChrisCho): ⭐⭐⭐⭐⭐<br>
 [Chung's K Food](https://www.youtube.com/@chungskfood): ⭐⭐⭐⭐⭐<br>
@@ -224,6 +299,7 @@ Description: Food Recipes
 [SeonkyoungLongest](https://www.youtube.com/@SeonkyoungLongest): ⭐⭐⭐⭐⭐<br>
 [Hanbit Cho](https://www.youtube.com/@HanbitCho): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Maangchi](https://www.youtube.com/user/Maangchi): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
+[Modern Pepper](https://www.youtube.com/@ModernPepper): ⭐⭐⭐⭐⭐<br>
 [table diary 식탁일기](https://www.youtube.com/@table_diary): ⭐⭐⭐⭐⭐<br>
 [Two Plaid Aprons](https://www.youtube.com/@TwoPlaidAprons): ⭐⭐⭐⭐⭐<br>
 [Yum Story 얌스토리](https://www.youtube.com/@yumstory2020): ⭐⭐⭐⭐⭐
@@ -284,37 +360,50 @@ Description: Food Recipes
 [Strictly Dumpling](https://www.youtube.com/@strictlydumpling): Travel ⭐⭐⭐⭐<br>
 [Strictly Food ASMR](https://www.youtube.com/@strictlyfoodasmr): Travel ⭐⭐⭐<br>
 [Taste The World](https://www.youtube.com/@TasteTheWorld66): ⭐⭐⭐⭐⭐<br>
-[VNT FOOD & TRAVEL](https://www.youtube.com/@VNTFOOD): Travel ⭐⭐⭐
+[VNT FOOD & TRAVEL](https://www.youtube.com/@VNTFOOD): Travel ⭐⭐⭐<br>
+[Xuân Bắc Vê Lốc](https://www.youtube.com/@Xuanbacveloc): ⭐⭐⭐⭐⭐
 
 ## Vietnamese
 [Aimee's Cooking](https://www.youtube.com/@AimeesCooking): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Alissa Nguyen formerly Gaming Foodie](https://www.youtube.com/@alissanguyen_): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Andrea Cooks at Home](https://www.youtube.com/@AndreaCooksatHome): ⭐⭐⭐⭐⭐<br>
+[Angus Nguyen](https://www.youtube.com/@ItsAngusNguyen): ⭐⭐⭐⭐⭐<br>
+[Anna Thy (bếp nhà Thy)](https://www.youtube.com/@AnnaThyPhan): ⭐⭐⭐⭐⭐<br>
 [Ăn Ngon TV](https://www.youtube.com/@anngontv79): Travel ⭐⭐⭐<br>
+[Bếp Cô Minh](https://www.youtube.com/bepcominh): ⭐⭐⭐⭐⭐<br>
 [Bếp Của Vợ](https://www.youtube.com/c/B%E1%BA%BFpC%E1%BB%A7aV%E1%BB%A3): Listen ⭐⭐⭐<br>
 [Bếp Quê Vlogs](https://www.youtube.com/@duytankitchen3604): Listen ⭐⭐⭐<br>
+[BepXua](https://www.youtube.com/@BepXua): ⭐⭐⭐⭐⭐<br>
 [Boriville](https://www.youtube.com/@Boriville): ⭐⭐⭐⭐<br>
 [BP. HAM](https://www.youtube.com/@BPHAM): Listen ⭐⭐⭐<br>
+[CALI MÓN NGON DÂN DÃ ](https://www.youtube.com/c/CALIM%C3%93NNGOND%C3%82ND%C3%83): ⭐⭐⭐⭐⭐<br>
+[Cam Thao](https://www.youtube.com/@CamThao): ⭐⭐⭐⭐⭐<br>
+[CAN FAMILY LIFE](https://www.youtube.com/@Canfamilylife_cuocsongmy): ⭐⭐⭐⭐⭐<br>
 [ChefQs Travel Recipe](https://www.youtube.com/@ChefQstr): ⭐⭐⭐⭐⭐<br>
 [Cindy Lam Cuisine](https://www.youtube.com/@cindylamcuisine): ⭐⭐⭐⭐⭐<br>
 [Cô Ba Bình Dương](https://www.youtube.com/channel/UC-c0PPbJKW-KUliEZPosVvg): ⭐⭐⭐⭐⭐<br>
 [Cooking with Hana Phung](https://www.youtube.com/@CookingwithHanaPhung): ⭐⭐⭐⭐⭐<br>
 [Cooking with Grandma](https://www.youtube.com/@CookingwithGrandma): ⭐⭐⭐⭐⭐<br>
 [Cooking with Tam and Tram](https://www.youtube.com/@COOKINGWITHTAMANDTRAM): ⭐⭐⭐⭐⭐<br>
+[Cuộc Sống Ở Frankfurt](https://www.youtube.com/c/Cu%E1%BB%99cS%E1%BB%91ng%E1%BB%9EFrankfurt): ⭐⭐⭐⭐⭐<br>
 [Daisy Kitchen](https://www.youtube.com/@DaisyKitchen): ⭐⭐⭐⭐⭐<br>
 [Địa điểm ăn uống](https://www.youtube.com/@DiaDiemAnUong): Travel ⭐⭐⭐<br>
 [Diễm Nauy](https://www.youtube.com/c/Di%E1%BB%85mNauy): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [Duy Tân FOOD](https://www.youtube.com/c/DuyT%C3%A2nFOOD1981): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
+[Erin Pham VN2UK](https://www.youtube.com/@ErinPhamVN2UK/shorts): ⭐⭐⭐⭐⭐<br>
 [Full Of Plants](https://www.youtube.com/@FullofPlants): ⭐⭐⭐⭐⭐<br>
 [Ghiền nấu ăn](https://www.youtube.com/c/Ghi%E1%BB%81nn%E1%BA%A5u%C4%83n): ⭐⭐⭐⭐⭐<br>
 [Gia Đình Sức Khỏe Tâm Sinh](https://www.youtube.com/c/GIA%C4%90%C3%8CNHVI%E1%BB%86T1984): ⭐⭐⭐⭐⭐<br>
 [GYMER THÍCH VÀO BẾP](https://www.youtube.com/@gymerthichvaobep): ⭐⭐⭐⭐⭐<br>
 [HỒNG THANH FOOD](https://www.youtube.com/@hongthanhfood865): ⭐⭐⭐⭐⭐<br>
+[House Of Hong](https://www.youtube.com/@houseofhong6669): ⭐⭐⭐⭐⭐<br>
 [Huê Phương](https://www.youtube.com/@huephuong5559): ⭐⭐⭐⭐⭐<br>
 [HuongBui Cooking](https://www.youtube.com/@lisahuongbui): ⭐⭐⭐⭐⭐<br>
+[Hương Vị Quê Nhà Vlog](https://www.youtube.com/@huongviquenhavlog6644): ⭐⭐⭐⭐⭐<br>
 [Hương Vị Saigon - YummY in Saigon](https://www.youtube.com/@huongvi_saigon): ⭐⭐⭐⭐⭐<br>
 [Jn Cooking Channel](https://www.youtube.com/@JnCookingChannel/): ⭐⭐⭐⭐⭐<br>
 [KeepingUpWithTheTrans](https://www.youtube.com/@keepingupwiththetrans1003): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
+[Khám Phá Bếp Việt](https://www.youtube.com/c/Kh%C3%A1mPh%C3%A1B%E1%BA%BFpVi%E1%BB%87t): ⭐⭐⭐⭐⭐<br>
 [Khói Lam Chiều](https://www.youtube.com/@khoilamchieu): Story ⭐⭐<br>
 [Kim Huynh Canada](https://www.youtube.com/@KimHuynhCanada): ⭐⭐⭐⭐⭐<br>
 [KTFoodStories](https://www.youtube.com/@KTFoodStories): ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️<br>
@@ -340,6 +429,7 @@ Description: Food Recipes
 [Tammy's Cooking Corner](https://www.youtube.com/@tammyscookingcorner2748): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Taylor Recipes](https://www.youtube.com/@TaylorRecipes): ⭐⭐⭐⭐⭐<br>
 [Tasty Dumpling Living](https://www.youtube.com/@TastyDumplingLiving): ⭐⭐⭐⭐⭐<br>
+[tdmaison](https://www.youtube.com/@tdmaison): ⭐⭐⭐⭐⭐<br>
 [Thao Le ABC Family](https://www.youtube.com/@BepNhaThaoPhap): Listen ⭐⭐⭐<br>
 [The Beth Kitchen](https://www.youtube.com/@Thebethkitchen): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Thích Vào Bếp](https://www.youtube.com/@thichvaobep4636): Vietnamese ⭐⭐⭐⭐⭐<br>
@@ -352,6 +442,8 @@ Description: Food Recipes
 [UyenThyOfficial](https://www.youtube.com/@uyenthyofficial3199): Listen ⭐⭐⭐❤️❤️❤️<br>
 [VànhKhuyênLê](https://www.youtube.com/@vanhkhuyenle): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
 [Van's Kitchen](https://www.youtube.com/@VansKitchen): ⭐⭐⭐⭐⭐❤️❤️❤️<br>
+[VietNam Cuisine - Vietnamese Food Recipes](https://www.youtube.com/@VietNamCuisine): ⭐⭐⭐⭐⭐<br>
+[Vietnam food](https://www.youtube.com/@huynhphuongmonngontainha): ⭐⭐⭐⭐⭐<br>
 [Weekend Meals](https://www.youtube.com/@WeekendMeals8): ⭐⭐⭐⭐⭐<br>
 [Zoey and VFam](https://www.youtube.com/@ZoeyandVFam): ⭐⭐⭐⭐⭐<br>
 

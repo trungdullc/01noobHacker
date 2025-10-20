@@ -44,6 +44,7 @@ print(mapping)   # {0: 'X', 1: 'Y'}
 ```
 
 ## CTF
+[thepythonchallege32: class ❤️❤️❤️❤️❤️](../thepythonchallenge/Level32.md)<br>
 [picoGym0253: list](../picoCTF/picoGym0253.md)<br>
 [picoGym0307: File](../picoCTF/picoGym0307.md)<br>
 [picoGym0407: File, with ⭐⭐⭐](../picoCTF/picoGym0407.md)<br>
