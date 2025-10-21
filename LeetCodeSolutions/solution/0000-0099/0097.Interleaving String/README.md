@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0097.Interleaving%20String/README_EN.md
-tags:
-    - String
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [97. Interleaving String](https://leetcode.com/problems/interleaving-string)
 
-[中文文档](/solution/0000-0099/0097.Interleaving%20String/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given strings <code>s1</code>, <code>s2</code>, and <code>s3</code>, find whether <code>s3</code> is formed by an <strong>interleaving</strong> of <code>s1</code> and <code>s2</code>.</p>
 
@@ -69,11 +54,7 @@ Since s3 can be obtained by interleaving s1 and s2, we return true.
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Could you solve it using only <code>O(s2.length)</code> additional memory space?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Memoization Search
 
@@ -95,7 +76,10 @@ To avoid repeated calculations, we can use memoization search.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the lengths of strings $s_1$ and $s_2$ respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -365,12 +349,6 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Dynamic Programming
 
 We can convert the memoization search in Solution 1 into dynamic programming.
@@ -390,8 +368,6 @@ where $f[0][0] = \textit{true}$ indicates that an empty string is an interleavin
 The answer is $f[m][n]$.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the lengths of strings $s_1$ and $s_2$ respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -550,11 +526,7 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
 We notice that the state $f[i][j]$ is only related to the states $f[i - 1][j]$, $f[i][j - 1]$, and $f[i - 1][j - 1]$. Therefore, we can use a rolling array to optimize the space complexity, reducing the original space complexity from $O(m \times n)$ to $O(n)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -709,8 +681,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0877: Stone Game](../../0800-0899/0877.Stone%20Game/README.md)

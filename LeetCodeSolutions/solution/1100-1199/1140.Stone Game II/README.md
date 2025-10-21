@@ -1,26 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1100-1199/1140.Stone%20Game%20II/README_EN.md
-rating: 2034
-source: Weekly Contest 147 Q4
-tags:
-    - Array
-    - Math
-    - Dynamic Programming
-    - Game Theory
-    - Prefix Sum
----
-
-<!-- problem:start -->
-
 # [1140. Stone Game II](https://leetcode.com/problems/stone-game-ii)
 
-[中文文档](/solution/1100-1199/1140.Stone%20Game%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Alice and Bob continue their games with piles of stones. There are a number of piles <strong>arranged in a row</strong>, and each pile has a positive integer number of stones <code>piles[i]</code>. The objective of the game is to end with the most stones.</p>
 
@@ -66,11 +46,7 @@ tags:
 	<li><code>1 &lt;= piles[i]&nbsp;&lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Prefix Sum + Memoization Search
 
@@ -89,7 +65,10 @@ Finally, we return $dfs(0, 1)$ as the answer.
 
 The time complexity is $O(n^3)$, and the space complexity is $O(n^2)$. Here, $n$ is the length of the array `piles`.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -231,15 +210,7 @@ function stoneGameII(piles: number[]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -259,8 +230,4 @@ class Solution:
         return dfs(0)
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0329: Longest Increasing Path In a Matrix](../../0300-0399/0329.Longest%20Increasing%20Path%20in%20a%20Matrix/README.md)

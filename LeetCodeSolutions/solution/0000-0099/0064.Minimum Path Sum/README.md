@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0064.Minimum%20Path%20Sum/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
-    - Matrix
----
-
-<!-- problem:start -->
-
 # [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum)
 
-[中文文档](/solution/0000-0099/0064.Minimum%20Path%20Sum/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a <code>m x n</code> <code>grid</code> filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.</p>
 
@@ -48,11 +32,7 @@ tags:
 	<li><code>0 &lt;= grid[i][j] &lt;= 200</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -68,7 +48,10 @@ Finally, return $f[m - 1][n - 1]$.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns of the grid, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -263,8 +246,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1143: Longest Common Subsequence](../../1100-1199/1143.Longest%20Common%20Subsequence/README.md)

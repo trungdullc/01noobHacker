@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0063.Unique%20Paths%20II/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
-    - Matrix
----
-
-<!-- problem:start -->
-
 # [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii)
 
-[中文文档](/solution/0000-0099/0063.Unique%20Paths%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an <code>m x n</code> integer array <code>grid</code>. There is a robot initially located at the <b>top-left corner</b> (i.e., <code>grid[0][0]</code>). The robot tries to move to the <strong>bottom-right corner</strong> (i.e., <code>grid[m - 1][n - 1]</code>). The robot can only move either down or right at any point in time.</p>
 
@@ -55,11 +39,7 @@ There are two ways to reach the bottom-right corner:
 	<li><code>obstacleGrid[i][j]</code> is <code>0</code> or <code>1</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Memoization Search
 
@@ -75,7 +55,10 @@ To avoid redundant calculations, we can use memoization.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns of the grid, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -261,12 +244,6 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Dynamic Programming
 
 We can use a dynamic programming approach by defining a 2D array $f$, where $f[i][j]$ represents the number of paths from the grid $(0,0)$ to the grid $(i,j)$.
@@ -279,8 +256,6 @@ We first initialize all values in the first column and the first row of $f$, the
 Finally, return $f[m - 1][n - 1]$.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns of the grid, respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -480,8 +455,4 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0064: Minimum Path Sum](../../0000-0099/0064.Minimum%20Path%20Sum/README.md)

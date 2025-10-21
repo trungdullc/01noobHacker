@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0518.Coin%20Change%20II/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [518. Coin Change II](https://leetcode.com/problems/coin-change-ii)
 
-[中文文档](/solution/0500-0599/0518.Coin%20Change%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer <code>amount</code> representing a total amount of money.</p>
 
@@ -63,11 +48,7 @@ tags:
 	<li><code>0 &lt;= amount &lt;= 5000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming (Complete Knapsack)
 
@@ -97,7 +78,10 @@ The final answer is $f[m][n]$.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Where $m$ and $n$ are the number of types of coins and the total amount, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -200,11 +184,7 @@ function change(amount: number, coins: number[]): number {
 }
 ```
 
-<!-- tabs:end -->
-
 We notice that $f[i][j]$ is only related to $f[i - 1][j]$ and $f[i][j - x]$. Therefore, we can optimize the two-dimensional array into a one-dimensional array, reducing the space complexity to $O(n)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -289,8 +269,4 @@ function change(amount: number, coins: number[]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0494: Target Sum](../../0400-0499/0494.Target%20Sum/README.md)

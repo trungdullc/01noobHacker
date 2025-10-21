@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0877.Stone%20Game/README_EN.md
-tags:
-    - Array
-    - Math
-    - Dynamic Programming
-    - Game Theory
----
-
-<!-- problem:start -->
-
 # [877. Stone Game](https://leetcode.com/problems/stone-game)
 
-[中文文档](/solution/0800-0899/0877.Stone%20Game/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Alice and Bob play a game with piles of stones. There are an <strong>even</strong> number of piles arranged in a row, and each pile has a <strong>positive</strong> integer number of stones <code>piles[i]</code>.</p>
 
@@ -58,15 +41,14 @@ This demonstrated that taking the first 5 was a winning move for Alice, so we re
 	<li><code>sum(piles[i])</code> is <strong>odd</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -173,15 +155,7 @@ function stoneGame(piles: number[]): boolean {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -277,8 +251,4 @@ function stoneGame(piles: number[]): boolean {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1140: Stone Game II](../../1100-1199/1140.Stone%20Game%20II/README.md)

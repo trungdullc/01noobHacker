@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0400-0499/0494.Target%20Sum/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
-    - Backtracking
----
-
-<!-- problem:start -->
-
 # [494. Target Sum](https://leetcode.com/problems/target-sum)
 
-[中文文档](/solution/0400-0499/0494.Target%20Sum/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an integer array <code>nums</code> and an integer <code>target</code>.</p>
 
@@ -59,11 +43,7 @@ tags:
 	<li><code>-1000 &lt;= target &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -91,7 +71,10 @@ The final answer is $f[m][n]$, where $m$ is the length of the array $\textit{num
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -272,19 +255,11 @@ var findTargetSumWays = function (nums, target) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Dynamic Programming (Space Optimization)
 
 We can observe that in the state transition equation of Solution 1, the value of $f[i][j]$ is only related to $f[i - 1][j]$ and $f[i - 1][j - \textit{nums}[i - 1]]$. Therefore, we can eliminate the first dimension of the space and use only a one-dimensional array.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(n)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -439,8 +414,4 @@ var findTargetSumWays = function (nums, target) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0097: Interleaving String](../../0000-0099/0097.Interleaving%20String/README.md)

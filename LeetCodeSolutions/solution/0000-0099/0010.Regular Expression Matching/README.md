@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0010.Regular%20Expression%20Matching/README_EN.md
-tags:
-    - Recursion
-    - String
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching)
 
-[中文文档](/solution/0000-0099/0010.Regular%20Expression%20Matching/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an input string <code>s</code>&nbsp;and a pattern <code>p</code>, implement regular expression matching with support for <code>&#39;.&#39;</code> and <code>&#39;*&#39;</code> where:</p>
 
@@ -63,11 +47,7 @@ tags:
 	<li>It is guaranteed for each appearance of the character <code>&#39;*&#39;</code>, there will be a previous valid character to match.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Memoization Search
 
@@ -83,7 +63,10 @@ During the process, we can use memoization search to avoid repeated calculations
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the lengths of $s$ and $p$ respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -409,12 +392,6 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Dynamic Programming
 
 We can convert the memoization search in Solution 1 into dynamic programming.
@@ -427,8 +404,6 @@ Similar to Solution 1, we can discuss different cases.
 -   If $p[j - 1]$ is not `'*'`, then if $s[i - 1]$ matches $p[j - 1]$, it is $f[i][j] = f[i - 1][j - 1]$. Otherwise, the match fails.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the lengths of $s$ and $p$ respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -673,8 +648,4 @@ bool isMatch(char* s, char* p) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0860: Lemonade Change](../../0800-0899/0860.Lemonade%20Change/README.md)

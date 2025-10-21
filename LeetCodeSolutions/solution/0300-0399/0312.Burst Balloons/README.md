@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0312.Burst%20Balloons/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [312. Burst Balloons](https://leetcode.com/problems/burst-balloons)
 
-[中文文档](/solution/0300-0399/0312.Burst%20Balloons/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given <code>n</code> balloons, indexed from <code>0</code> to <code>n - 1</code>. Each balloon is painted with a number on it represented by an array <code>nums</code>. You are asked to burst all the balloons.</p>
 
@@ -49,11 +34,7 @@ coins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167</pre>
 	<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -73,7 +54,10 @@ Finally, we return $f[0][n+1]$.
 
 The time complexity is $O(n^3)$, and the space complexity is $O(n^2)$. Where $n$ is the length of the array `nums`.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -211,8 +195,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0010: Regular Expression Matching](../../0000-0099/0010.Regular%20Expression%20Matching/README.md)

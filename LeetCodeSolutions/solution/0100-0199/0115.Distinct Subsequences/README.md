@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0115.Distinct%20Subsequences/README_EN.md
-tags:
-    - String
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [115. Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences)
 
-[中文文档](/solution/0100-0199/0115.Distinct%20Subsequences/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given two strings s and t, return <i>the number of distinct</i> <b><i>subsequences</i></b><i> of </i>s<i> which equals </i>t.</p>
 
@@ -55,11 +40,7 @@ As shown below, there are 5 ways you can generate &quot;bag&quot; from s.
 	<li><code>s</code> and <code>t</code> consist of English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -87,7 +68,10 @@ The time complexity is $O(m \times n)$, and the space complexity is $O(m \times 
 
 We notice that the calculation of $f[i][j]$ is only related to $f[i-1][..]$. Therefore, we can optimize the first dimension, reducing the space complexity to $O(n)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -231,15 +215,7 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -336,8 +312,4 @@ function numDistinct(s: string, t: string): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0072: Edit Distance](../../0000-0099/0072.Edit%20Distance/README.md)
