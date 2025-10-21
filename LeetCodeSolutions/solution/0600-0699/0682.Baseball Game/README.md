@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0600-0699/0682.Baseball%20Game/README_EN.md
-tags:
-    - Stack
-    - Array
-    - Simulation
----
-
-<!-- problem:start -->
-
 # [682. Baseball Game](https://leetcode.com/problems/baseball-game)
 
-[中文文档](/solution/0600-0699/0682.Baseball%20Game/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are keeping the scores for a baseball game with strange rules. At the beginning of the game, you start with an empty record.</p>
 
@@ -104,11 +88,7 @@ Since the record is empty, the total sum is 0.
 	<li>For operations <code>&quot;C&quot;</code> and <code>&quot;D&quot;</code>, there will always be at least one previous score on the record.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Stack + Simulation
 
@@ -125,7 +105,10 @@ Finally, sum all the elements in the stack to get the answer.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of $\textit{operations}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -268,8 +251,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0020: Valid Parentheses](../../0000-0099/0020.Valid%20Parentheses/README.md)

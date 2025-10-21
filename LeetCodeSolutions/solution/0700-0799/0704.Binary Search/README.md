@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0704.Binary%20Search/README_EN.md
-tags:
-    - Array
-    - Binary Search
----
-
-<!-- problem:start -->
-
 # [704. Binary Search](https://leetcode.com/problems/binary-search)
 
-[中文文档](/solution/0700-0799/0704.Binary%20Search/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of integers <code>nums</code> which is sorted in ascending order, and an integer <code>target</code>, write a function to search <code>target</code> in <code>nums</code>. If <code>target</code> exists, then return its index. Otherwise, return <code>-1</code>.</p>
 
@@ -48,11 +33,7 @@ tags:
 	<li><code>nums</code> is sorted in ascending order.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search
 
@@ -67,7 +48,10 @@ The loop ends when $l<r$, at this point $\textit{nums}[l]$ is the target value w
 
 The time complexity is $O(\log n)$, where $n$ is the length of the array $\textit{nums}$. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -225,8 +209,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0035: Search Insert Position](../../0000-0099/0035.Search%20Insert%20Position/README.md)

@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0901.Online%20Stock%20Span/README_EN.md
-tags:
-    - Stack
-    - Design
-    - Data Stream
-    - Monotonic Stack
----
-
-<!-- problem:start -->
-
 # [901. Online Stock Span](https://leetcode.com/problems/online-stock-span)
 
-[中文文档](/solution/0900-0999/0901.Online%20Stock%20Span/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Design an algorithm that collects daily price quotes for some stock and returns <strong>the span</strong> of that stock&#39;s price for the current day.</p>
 
@@ -64,11 +47,7 @@ stockSpanner.next(85);  // return 6
 	<li>At most <code>10<sup>4</sup></code> calls will be made to <code>next</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Monotonic Stack
 
@@ -84,7 +63,10 @@ Finally, we push $(price, cnt)$ onto the stack and return $cnt$.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of times `next(price)` is called.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -248,8 +230,4 @@ impl StockSpanner {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0853: Car Fleet](../../0800-0899/0853.Car%20Fleet/README.md)

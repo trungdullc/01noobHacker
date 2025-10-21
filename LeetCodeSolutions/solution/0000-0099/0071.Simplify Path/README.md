@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0071.Simplify%20Path/README_EN.md
-tags:
-    - Stack
-    - String
----
-
-<!-- problem:start -->
-
 # [71. Simplify Path](https://leetcode.com/problems/simplify-path)
 
-[中文文档](/solution/0000-0099/0071.Simplify%20Path/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an <em>absolute</em> path for a Unix-style file system, which always begins with a slash <code>&#39;/&#39;</code>. Your task is to transform this absolute path into its <strong>simplified canonical path</strong>.</p>
 
@@ -109,11 +94,7 @@ tags:
 	<li><code>path</code> is a valid absolute Unix path.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Stack
 
@@ -127,7 +108,10 @@ Finally, we concatenate all the elements in the stack from the bottom to the top
 
 The time complexity is $O(n)$ and the space complexity is $O(n)$, where $n$ is the length of the path.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -301,15 +285,7 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Go
 
@@ -319,8 +295,4 @@ func simplifyPath(path string) string {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0394: Decode String](../../0300-0399/0394.Decode%20String/README.md)

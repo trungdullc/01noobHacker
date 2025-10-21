@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0232.Implement%20Queue%20using%20Stacks/README_EN.md
-tags:
-    - Stack
-    - Design
-    - Queue
----
-
-<!-- problem:start -->
-
 # [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks)
 
-[中文文档](/solution/0200-0299/0232.Implement%20Queue%20using%20Stacks/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (<code>push</code>, <code>peek</code>, <code>pop</code>, and <code>empty</code>).</p>
 
@@ -67,11 +51,7 @@ myQueue.empty(); // return false
 <p>&nbsp;</p>
 <p><strong>Follow-up:</strong> Can you implement the queue such that each operation is <strong><a href="https://en.wikipedia.org/wiki/Amortized_analysis" target="_blank">amortized</a></strong> <code>O(1)</code> time complexity? In other words, performing <code>n</code> operations will take overall <code>O(n)</code> time even if one of those operations may take longer.</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Double Stack
 
@@ -85,7 +65,10 @@ When getting the front element, we first check whether `stk2` is empty. If it is
 
 When checking whether the queue is empty, we only need to check whether both stacks are empty. The time complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -368,8 +351,4 @@ impl MyQueue {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0155: Min Stack](../../0100-0199/0155.Min%20Stack/README.md)

@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0739.Daily%20Temperatures/README_EN.md
-tags:
-    - Stack
-    - Array
-    - Monotonic Stack
----
-
-<!-- problem:start -->
-
 # [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures)
 
-[中文文档](/solution/0700-0799/0739.Daily%20Temperatures/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of integers <code>temperatures</code> represents the daily temperatures, return <em>an array</em> <code>answer</code> <em>such that</em> <code>answer[i]</code> <em>is the number of days you have to wait after the</em> <code>i<sup>th</sup></code> <em>day to get a warmer temperature</em>. If there is no future day for which this is possible, keep <code>answer[i] == 0</code> instead.</p>
 
@@ -39,11 +23,7 @@ tags:
 	<li><code>30 &lt;=&nbsp;temperatures[i] &lt;= 100</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Monotonic Stack
 
@@ -55,7 +35,10 @@ After the traversal, we return the answer array.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{temperatures}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -211,8 +194,4 @@ var dailyTemperatures = function (temperatures) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0901: Online Stock Span](../../0900-0999/0901.Online%20Stock%20Span/README.md)

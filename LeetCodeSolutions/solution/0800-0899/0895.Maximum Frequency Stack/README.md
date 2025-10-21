@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0895.Maximum%20Frequency%20Stack/README_EN.md
-tags:
-    - Stack
-    - Design
-    - Hash Table
-    - Ordered Set
----
-
-<!-- problem:start -->
-
 # [895. Maximum Frequency Stack](https://leetcode.com/problems/maximum-frequency-stack)
 
-[中文文档](/solution/0800-0899/0895.Maximum%20Frequency%20Stack/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Design a stack-like data structure to push elements to the stack and pop the most frequent element from the stack.</p>
 
@@ -66,11 +49,7 @@ freqStack.pop();   // return 4, as 4, 5 and 7 is the most frequent, but 4 is clo
 	<li>It is guaranteed that there will be at least one element in the stack before calling <code>pop</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Priority Queue (Max Heap)
 
@@ -82,7 +61,10 @@ When performing a push operation, we first increment the current timestamp, i.e.
 
 When performing a pop operation, we directly pop an element from the priority queue $q$. Since the elements in the priority queue $q$ are sorted in descending order of frequency, the popped element is definitely the one with the highest frequency. If multiple elements have the same frequency, the element closest to the top of the stack is popped out, i.e., the element with the largest timestamp is popped out. After popping, we decrement the frequency of the popped element, i.e., $cnt[val] \gets cnt[val] - 1$. The time complexity of the pop operation is $O(\log n)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -220,12 +202,6 @@ func (h *hp) Pop() any     { a := *h; v := a[len(a)-1]; *h = a[:len(a)-1]; retur
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Double Hash Tables
 
 In Solution 1, in order to pop out the required element, we maintained a priority queue and had to operate on it each time, which has a time complexity of $O(\log n)$. If we can find the required element in $O(1)$ time, then the time complexity of each operation of the entire data structure can be reduced to $O(1)$.
@@ -235,8 +211,6 @@ In fact, we can use a variable $mx$ to record the current maximum frequency, a h
 When performing a push operation, we increment the frequency of the element, i.e., $cnt[val] \gets cnt[val] + 1$, and then add the element $val$ to the corresponding frequency list in the hash table $d$, i.e., $d[cnt[val]].push(val)$. If the current element's frequency is greater than $mx$, then update $mx$, i.e., $mx \gets cnt[val]$. The time complexity of the push operation is $O(1)$.
 
 When performing a pop operation, we take the list of elements with frequency $mx$ from the hash table $d$, pop out the last element $val$ in the list, and then remove $val$ from the hash table $d$, i.e., $d[mx].pop()$. Finally, we decrement the frequency of $val$, i.e., $cnt[val] \gets cnt[val] - 1$. If the list $d[mx]$ is empty, it means that all elements with the current maximum frequency have been popped out, and we need to decrement $mx$, i.e., $mx \gets mx - 1$. The time complexity of the pop operation is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -375,8 +349,4 @@ func (this *FreqStack) Pop() int {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0084: Largest Rectangle In Histogram](../../0000-0099/0084.Largest%20Rectangle%20in%20Histogram/README.md)

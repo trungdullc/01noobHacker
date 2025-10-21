@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0022.Generate%20Parentheses/README_EN.md
-tags:
-    - String
-    - Dynamic Programming
-    - Backtracking
----
-
-<!-- problem:start -->
-
 # [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses)
 
-[中文文档](/solution/0000-0099/0022.Generate%20Parentheses/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given <code>n</code> pairs of parentheses, write a function to <em>generate all combinations of well-formed parentheses</em>.</p>
 
@@ -35,11 +19,7 @@ tags:
 	<li><code>1 &lt;= n &lt;= 8</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS + Pruning
 
@@ -54,7 +34,10 @@ We design a function $dfs(l, r, t)$, where $l$ and $r$ represent the number of l
 
 The time complexity is $O(2^{n\times 2} \times n)$, and the space complexity is $O(n)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -276,15 +259,7 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Recursion
-
-<!-- tabs:start -->
 
 #### TypeScript
 
@@ -318,8 +293,4 @@ function generateParenthesis(n) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0735: Asteroid Collision](../../0700-0799/0735.Asteroid%20Collision/README.md)

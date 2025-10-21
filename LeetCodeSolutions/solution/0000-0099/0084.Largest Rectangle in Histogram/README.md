@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0084.Largest%20Rectangle%20in%20Histogram/README_EN.md
-tags:
-    - Stack
-    - Array
-    - Monotonic Stack
----
-
-<!-- problem:start -->
-
 # [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram)
 
-[中文文档](/solution/0000-0099/0084.Largest%20Rectangle%20in%20Histogram/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of integers <code>heights</code> representing the histogram&#39;s bar height where the width of each bar is <code>1</code>, return <em>the area of the largest rectangle in the histogram</em>.</p>
 
@@ -45,11 +29,7 @@ The largest rectangle is shown in the red area, which has an area = 10 units.
 	<li><code>0 &lt;= heights[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Monotonic Stack
 
@@ -67,7 +47,10 @@ for i in range(n):
     stk.append(i)
 ```
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -249,15 +232,7 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -285,8 +260,4 @@ class Solution:
         return max(h * (right[i] - left[i] - 1) for i, h in enumerate(heights))
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0704: Binary Search](../../0700-0799/0704.Binary%20Search/README.md)

@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0020.Valid%20Parentheses/README_EN.md
-tags:
-    - Stack
-    - String
----
-
-<!-- problem:start -->
-
 # [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
 
-[中文文档](/solution/0000-0099/0020.Valid%20Parentheses/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code> containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
 
@@ -68,11 +53,7 @@ tags:
 	<li><code>s</code> consists of parentheses only <code>&#39;()[]{}&#39;</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Stack
 
@@ -86,7 +67,10 @@ At the end of the traversal, if the stack is empty, it means the bracket string 
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the bracket string $s$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -325,8 +309,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0225: Implement Stack Using Queues](../../0200-0299/0225.Implement%20Stack%20using%20Queues/README.md)

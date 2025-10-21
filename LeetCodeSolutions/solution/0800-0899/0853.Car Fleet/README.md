@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0853.Car%20Fleet/README_EN.md
-tags:
-    - Stack
-    - Array
-    - Sorting
-    - Monotonic Stack
----
-
-<!-- problem:start -->
-
 # [853. Car Fleet](https://leetcode.com/problems/car-fleet)
 
-[中文文档](/solution/0800-0899/0853.Car%20Fleet/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There are <code>n</code> cars at given miles away from the starting mile 0, traveling to reach the mile <code>target</code>.</p>
 
@@ -85,15 +68,14 @@ There is only one car, hence there is only one fleet.</div>
 	<li><code>0 &lt; speed[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -205,8 +187,4 @@ function carFleet(target: number, position: number[], speed: number[]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0071: Simplify Path](../../0000-0099/0071.Simplify%20Path/README.md)
