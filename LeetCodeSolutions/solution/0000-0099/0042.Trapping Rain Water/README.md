@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0042.Trapping%20Rain%20Water/README_EN.md
-tags:
-    - Stack
-    - Array
-    - Two Pointers
-    - Dynamic Programming
-    - Monotonic Stack
----
-
-<!-- problem:start -->
-
 # [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water)
 
-[中文文档](/solution/0000-0099/0042.Trapping%20Rain%20Water/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given <code>n</code> non-negative integers representing an elevation map where the width of each bar is <code>1</code>, compute how much water it can trap after raining.</p>
 
@@ -47,11 +29,7 @@ tags:
 	<li><code>0 &lt;= height[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -59,7 +37,10 @@ We define $left[i]$ as the height of the highest bar to the left of and includin
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -257,8 +238,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0219: Contains Duplicate II](../../0200-0299/0219.Contains%20Duplicate%20II/README.md)

@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0088.Merge%20Sorted%20Array/README_EN.md
-tags:
-    - Array
-    - Two Pointers
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array)
 
-[中文文档](/solution/0000-0099/0088.Merge%20Sorted%20Array/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
 
@@ -67,11 +51,7 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 <p>&nbsp;</p>
 <p><strong>Follow up: </strong>Can you come up with an algorithm that runs in <code>O(m + n)</code> time?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Two Pointers
 
@@ -81,7 +61,10 @@ Every time we compare the two elements at the end of the two arrays, and move th
 
 The time complexity is $O(m + n)$, where $m$ and $n$ are the lengths of two arrays. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -217,8 +200,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0026: Remove Duplicates From Sorted Array](../../0000-0099/0026.Remove%20Duplicates%20from%20Sorted%20Array/README.md)

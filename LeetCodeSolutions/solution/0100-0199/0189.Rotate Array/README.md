@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0189.Rotate%20Array/README_EN.md
-tags:
-    - Array
-    - Math
-    - Two Pointers
----
-
-<!-- problem:start -->
-
 # [189. Rotate Array](https://leetcode.com/problems/rotate-array)
 
-[中文文档](/solution/0100-0199/0189.Rotate%20Array/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code>, rotate the array to the right by <code>k</code> steps, where <code>k</code> is non-negative.</p>
 
@@ -59,11 +43,7 @@ rotate 2 steps to the right: [3,99,-1,-100]
 	<li>Could you do it in-place with <code>O(1)</code> extra space?</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Reverse three times
 
@@ -83,7 +63,10 @@ For example, for the array $[1, 2, 3, 4, 5, 6, 7]$, $k = 3$, $n = 7$, $k \bmod n
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -242,8 +225,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0011: Container With Most Water ](../../0000-0099/0011.Container%20With%20Most%20Water/README.md)

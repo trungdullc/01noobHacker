@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0015.3Sum/README_EN.md
-tags:
-    - Array
-    - Two Pointers
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [15. 3Sum](https://leetcode.com/problems/3sum)
 
-[中文文档](/solution/0000-0099/0015.3Sum/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array nums, return all the triplets <code>[nums[i], nums[j], nums[k]]</code> such that <code>i != j</code>, <code>i != k</code>, and <code>j != k</code>, and <code>nums[i] + nums[j] + nums[k] == 0</code>.</p>
 
@@ -60,11 +44,7 @@ Notice that the order of the output and the order of the triplets does not matte
 	<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sort + Two Pointers
 
@@ -88,7 +68,10 @@ After the enumeration is over, we can get the answer to the triplet.
 
 The time complexity is $O(n^2)$, and the space complexity is $O(\log n)$. The $n$ is the length of the array.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -449,8 +432,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0018: 4Sum](../../0000-0099/0018.4Sum/README.md)

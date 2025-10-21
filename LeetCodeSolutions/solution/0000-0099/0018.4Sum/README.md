@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0018.4Sum/README_EN.md
-tags:
-    - Array
-    - Two Pointers
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [18. 4Sum](https://leetcode.com/problems/4sum)
 
-[中文文档](/solution/0000-0099/0018.4Sum/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array <code>nums</code> of <code>n</code> integers, return <em>an array of all the <strong>unique</strong> quadruplets</em> <code>[nums[a], nums[b], nums[c], nums[d]]</code> such that:</p>
 
@@ -52,11 +36,7 @@ tags:
 	<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting + Double Pointers
 
@@ -70,7 +50,10 @@ Next, we enumerate the first two elements of the quadruplet, $nums[i]$ and $nums
 
 The time complexity is $O(n^3)$, and the space complexity is $O(\log n)$. Here, $n$ is the length of the array.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -422,8 +405,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0189: Rotate Array](../../0100-0199/0189.Rotate%20Array/README.md)

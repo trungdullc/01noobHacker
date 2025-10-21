@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0125.Valid%20Palindrome/README_EN.md
-tags:
-    - Two Pointers
-    - String
----
-
-<!-- problem:start -->
-
 # [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome)
 
-[中文文档](/solution/0100-0199/0125.Valid%20Palindrome/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>A phrase is a <strong>palindrome</strong> if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>
 
@@ -55,11 +40,7 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 	<li><code>s</code> consists only of printable ASCII characters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Two Pointers
 
@@ -74,7 +55,10 @@ At the end of the loop, return `true`.
 
 The time complexity is $O(n)$, where $n$ is the length of the string $s$. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -295,8 +279,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0680: Valid Palindrome II](../../0600-0699/0680.Valid%20Palindrome%20II/README.md)

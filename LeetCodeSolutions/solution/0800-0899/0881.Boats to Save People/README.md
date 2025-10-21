@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0881.Boats%20to%20Save%20People/README_EN.md
-tags:
-    - Greedy
-    - Array
-    - Two Pointers
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [881. Boats to Save People](https://leetcode.com/problems/boats-to-save-people)
 
-[中文文档](/solution/0800-0899/0881.Boats%20to%20Save%20People/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array <code>people</code> where <code>people[i]</code> is the weight of the <code>i<sup>th</sup></code> person, and an <strong>infinite number of boats</strong> where each boat can carry a maximum weight of <code>limit</code>. Each boat carries at most two people at the same time, provided the sum of the weight of those people is at most <code>limit</code>.</p>
 
@@ -56,11 +39,7 @@ tags:
 	<li><code>1 &lt;= people[i] &lt;= limit &lt;= 3 * 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Greedy + Two Pointers
 
@@ -68,7 +47,10 @@ After sorting, use two pointers to point to the beginning and end of the array r
 
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$. Here, $n$ is the length of the array `people`.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -155,8 +137,4 @@ function numRescueBoats(people: number[], limit: number): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0042: Trapping Rain Water](../../0000-0099/0042.Trapping%20Rain%20Water/README.md)

@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0344.Reverse%20String/README_EN.md
-tags:
-    - Two Pointers
-    - String
----
-
-<!-- problem:start -->
-
 # [344. Reverse String](https://leetcode.com/problems/reverse-string)
 
-[中文文档](/solution/0300-0399/0344.Reverse%20String/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Write a function that reverses a string. The input string is given as an array of characters <code>s</code>.</p>
 
@@ -37,11 +22,7 @@ tags:
 	<li><code>s[i]</code> is a <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank">printable ascii character</a>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Two Pointers
 
@@ -49,7 +30,10 @@ We use two pointers $i$ and $j$, initially pointing to the start and end of the 
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -142,8 +126,4 @@ var reverseString = function (s) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0125: Valid Palindrome](../../0100-0199/0125.Valid%20Palindrome/README.md)

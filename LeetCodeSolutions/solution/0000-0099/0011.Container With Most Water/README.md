@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0011.Container%20With%20Most%20Water/README_EN.md
-tags:
-    - Greedy
-    - Array
-    - Two Pointers
----
-
-<!-- problem:start -->
-
 # [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water)
 
-[中文文档](/solution/0000-0099/0011.Container%20With%20Most%20Water/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an integer array <code>height</code> of length <code>n</code>. There are <code>n</code> vertical lines drawn such that the two endpoints of the <code>i<sup>th</sup></code> line are <code>(i, 0)</code> and <code>(i, height[i])</code>.</p>
 
@@ -51,11 +35,7 @@ tags:
 	<li><code>0 &lt;= height[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Two Pointers
 
@@ -69,7 +49,10 @@ After the iteration, we return $\textit{ans}$.
 
 The time complexity is $O(n)$, where $n$ is the length of the array $\textit{height}$. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -286,8 +269,4 @@ int maxArea(int* height, int heightSize) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0881: Boats to Save People](../../0800-0899/0881.Boats%20to%20Save%20People/README.md)
