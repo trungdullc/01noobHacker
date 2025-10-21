@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0004.Median%20of%20Two%20Sorted%20Arrays/README_EN.md
-tags:
-    - Array
-    - Binary Search
-    - Divide and Conquer
----
-
-<!-- problem:start -->
-
 # [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays)
 
-[中文文档](/solution/0000-0099/0004.Median%20of%20Two%20Sorted%20Arrays/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given two sorted arrays <code>nums1</code> and <code>nums2</code> of size <code>m</code> and <code>n</code> respectively, return <strong>the median</strong> of the two sorted arrays.</p>
 
@@ -51,11 +35,7 @@ tags:
 	<li><code>-10<sup>6</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Divide and Conquer
 
@@ -76,7 +56,10 @@ The implementation idea of the function $f(i, j, k)$ is as follows:
 
 The time complexity is $O(\log(m + n))$, and the space complexity is $O(\log(m + n))$. Here, $m$ and $n$ are the lengths of arrays $nums1$ and $nums2$ respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -376,8 +359,4 @@ double findMedianSortedArrays(int* nums1, int m, int* nums2, int n) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1095: Find in Mountain Array](../../1000-1099/1095.Find%20in%20Mountain%20Array/README.md)

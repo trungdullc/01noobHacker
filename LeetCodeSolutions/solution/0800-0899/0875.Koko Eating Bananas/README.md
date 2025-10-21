@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0875.Koko%20Eating%20Bananas/README_EN.md
-tags:
-    - Array
-    - Binary Search
----
-
-<!-- problem:start -->
-
 # [875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas)
 
-[中文文档](/solution/0800-0899/0875.Koko%20Eating%20Bananas/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Koko loves to eat bananas. There are <code>n</code> piles of bananas, the <code>i<sup>th</sup></code> pile has <code>piles[i]</code> bananas. The guards have gone and will come back in <code>h</code> hours.</p>
 
@@ -56,11 +41,7 @@ tags:
 	<li><code>1 &lt;= piles[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search
 
@@ -70,7 +51,10 @@ We define the left boundary of the binary search as $l = 1$, and the right bound
 
 The time complexity is $O(n \times \log M)$, where $n$ and $M$ are the length and maximum value of the array `piles` respectively. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -210,8 +194,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1011: Capacity to Ship Packages Within D Days](../../1000-1099/1011.Capacity%20To%20Ship%20Packages%20Within%20D%20Days/README.md)

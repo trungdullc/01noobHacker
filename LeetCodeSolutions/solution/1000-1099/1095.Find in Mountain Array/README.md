@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1000-1099/1095.Find%20in%20Mountain%20Array/README_EN.md
-rating: 1827
-source: Weekly Contest 142 Q3
-tags:
-    - Array
-    - Binary Search
-    - Interactive
----
-
-<!-- problem:start -->
-
 # [1095. Find in Mountain Array](https://leetcode.com/problems/find-in-mountain-array)
 
-[中文文档](/solution/1000-1099/1095.Find%20in%20Mountain%20Array/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p><em>(This problem is an <strong>interactive problem</strong>.)</em></p>
 
@@ -70,15 +52,14 @@ tags:
 	<li><code>0 &lt;= mountainArr.get(index) &lt;= 10<sup>9</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -344,8 +325,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0206: Reverse Linked List](../../0200-0299/0206.Reverse%20Linked%20List/README.md)

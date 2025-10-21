@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0400-0499/0410.Split%20Array%20Largest%20Sum/README_EN.md
-tags:
-    - Greedy
-    - Array
-    - Binary Search
-    - Dynamic Programming
-    - Prefix Sum
----
-
-<!-- problem:start -->
-
 # [410. Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)
 
-[中文文档](/solution/0400-0499/0410.Split%20Array%20Largest%20Sum/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> and an integer <code>k</code>, split <code>nums</code> into <code>k</code> non-empty subarrays such that the largest sum of any subarray is <strong>minimized</strong>.</p>
 
@@ -54,11 +36,7 @@ The best way is to split it into [1,2,3] and [4,5], where the largest sum among 
 	<li><code>1 &lt;= k &lt;= min(50, nums.length)</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search
 
@@ -70,7 +48,10 @@ How do we determine whether there is a way to split the array so that the maximu
 
 The time complexity is $O(n \times \log m)$, and the space complexity is $O(1)$. Here, $n$ and $m$ are the length of the array and the sum of all elements in the array, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -251,8 +232,4 @@ function splitArray(nums: number[], k: number): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0004: Median of Two Sorted Arrays](../../0000-0099/0004.Median%20of%20Two%20Sorted%20Arrays/README.md)

@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0374.Guess%20Number%20Higher%20or%20Lower/README_EN.md
-tags:
-    - Binary Search
-    - Interactive
----
-
-<!-- problem:start -->
-
 # [374. Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower)
 
-[中文文档](/solution/0300-0399/0374.Guess%20Number%20Higher%20or%20Lower/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>We are playing the Guess Game. The game is as follows:</p>
 
@@ -63,11 +48,7 @@ tags:
 	<li><code>1 &lt;= pick &lt;= n</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search
 
@@ -75,7 +56,10 @@ We perform a binary search in the interval $[1,..n]$, and find the first number 
 
 The time complexity is $O(\log n)$, where $n$ is the upper limit given in the problem. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -259,8 +243,4 @@ public class Solution : GuessGame {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0069: Sqrt(x)](../../0000-0099/0069.Sqrt(x)/README.md)

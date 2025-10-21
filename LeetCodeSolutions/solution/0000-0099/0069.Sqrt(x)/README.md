@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0069.Sqrt%28x%29/README_EN.md
-tags:
-    - Math
-    - Binary Search
----
-
-<!-- problem:start -->
-
 # [69. Sqrt(x)](https://leetcode.com/problems/sqrtx)
 
-[中文文档](/solution/0000-0099/0069.Sqrt%28x%29/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a non-negative integer <code>x</code>, return <em>the square root of </em><code>x</code><em> rounded down to the nearest integer</em>. The returned integer should be <strong>non-negative</strong> as well.</p>
 
@@ -49,11 +34,7 @@ tags:
 	<li><code>0 &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search
 
@@ -65,7 +46,10 @@ After the search ends, we return $l$.
 
 The time complexity is $O(\log x)$, and the space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -192,8 +176,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0074: Search a 2D Matrix ](../../0000-0099/0074.Search%20a%202D%20Matrix/README.md)

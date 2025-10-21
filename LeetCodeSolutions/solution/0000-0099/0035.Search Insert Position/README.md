@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0035.Search%20Insert%20Position/README_EN.md
-tags:
-    - Array
-    - Binary Search
----
-
-<!-- problem:start -->
-
 # [35. Search Insert Position](https://leetcode.com/problems/search-insert-position)
 
-[中文文档](/solution/0000-0099/0035.Search%20Insert%20Position/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
 
@@ -53,11 +38,7 @@ tags:
 	<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search
 
@@ -65,7 +46,10 @@ Since the array $nums$ is already sorted, we can use the binary search method to
 
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$. Here, $n$ is the length of the array $nums$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -222,19 +206,11 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Binary Search (Built-in Function)
 
 We can also directly use the built-in function for binary search.
 
 The time complexity is $O(\log n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -274,8 +250,4 @@ func searchInsert(nums []int, target int) int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0374: Guess Number Higher Or Lower](../../0300-0399/0374.Guess%20Number%20Higher%20or%20Lower/README.md)

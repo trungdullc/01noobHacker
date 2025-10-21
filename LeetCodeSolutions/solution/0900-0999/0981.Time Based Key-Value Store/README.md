@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0981.Time%20Based%20Key-Value%20Store/README_EN.md
-tags:
-    - Design
-    - Hash Table
-    - String
-    - Binary Search
----
-
-<!-- problem:start -->
-
 # [981. Time Based Key-Value Store](https://leetcode.com/problems/time-based-key-value-store)
 
-[中文文档](/solution/0900-0999/0981.Time%20Based%20Key-Value%20Store/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Design a time-based key-value data structure that can store multiple values for the same key at different time stamps and retrieve the key&#39;s value at a certain timestamp.</p>
 
@@ -60,11 +43,7 @@ timeMap.get(&quot;foo&quot;, 5);         // return &quot;bar2&quot;
 	<li>At most <code>2 * 10<sup>5</sup></code> calls will be made to <code>set</code> and <code>get</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Ordered Set (or Binary Search)
 
@@ -74,7 +53,10 @@ When we need to query the value corresponding to the key $\textit{key}$ at the t
 
 In terms of time complexity, for the $\textit{set}$ operation, since the insertion operation of the hash table has a time complexity of $O(1)$, the time complexity is $O(1)$. For the $\textit{get}$ operation, since the lookup operation of the hash table has a time complexity of $O(1)$ and the lookup operation of the ordered set has a time complexity of $O(\log n)$, the time complexity is $O(\log n)$. The space complexity is $O(n)$, where $n$ is the number of $\textit{set}$ operations.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -199,8 +181,4 @@ type pair struct {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0410: Split Array Largest Sum](../../0400-0499/0410.Split%20Array%20Largest%20Sum/README.md)

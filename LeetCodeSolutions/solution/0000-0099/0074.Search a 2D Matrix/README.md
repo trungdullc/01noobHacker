@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0074.Search%20a%202D%20Matrix/README_EN.md
-tags:
-    - Array
-    - Binary Search
-    - Matrix
----
-
-<!-- problem:start -->
-
 # [74. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix)
 
-[中文文档](/solution/0000-0099/0074.Search%20a%202D%20Matrix/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an <code>m x n</code> integer matrix <code>matrix</code> with the following two properties:</p>
 
@@ -54,11 +38,7 @@ tags:
 	<li><code>-10<sup>4</sup> &lt;= matrix[i][j], target &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search
 
@@ -66,7 +46,10 @@ We can logically unfold the two-dimensional matrix and then perform binary searc
 
 The time complexity is $O(\log(m \times n))$, where $m$ and $n$ are the number of rows and columns of the matrix, respectively. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -228,12 +211,6 @@ var searchMatrix = function (matrix, target) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Search from the Bottom Left or Top Right
 
 Here, we start searching from the bottom left corner and move towards the top right direction. We compare the current element $matrix[i][j]$ with $target$:
@@ -245,8 +222,6 @@ Here, we start searching from the bottom left corner and move towards the top ri
 If we still can't find $target$ after the search, return `false`.
 
 The time complexity is $O(m + n)$, where $m$ and $n$ are the number of rows and columns of the matrix, respectively. The space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -380,8 +355,4 @@ var searchMatrix = function (matrix, target) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0875: Koko Eating Bananas ](../../0800-0899/0875.Koko%20Eating%20Bananas/README.md)
