@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0787.Cheapest%20Flights%20Within%20K%20Stops/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Graph
-    - Dynamic Programming
-    - Shortest Path
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [787. Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops)
 
-[中文文档](/solution/0700-0799/0787.Cheapest%20Flights%20Within%20K%20Stops/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There are <code>n</code> cities connected by some number of flights. You are given an array <code>flights</code> where <code>flights[i] = [from<sub>i</sub>, to<sub>i</sub>, price<sub>i</sub>]</code> indicates that there is a flight from city <code>from<sub>i</sub></code> to city <code>to<sub>i</sub></code> with cost <code>price<sub>i</sub></code>.</p>
 
@@ -72,15 +53,14 @@ The optimal path with no stops from city 0 to 2 is marked in red and has cost 50
 	<li><code>src != dst</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -169,15 +149,7 @@ func findCheapestPrice(n int, flights [][]int, src int, dst int, k int) int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -332,8 +304,4 @@ func findCheapestPrice(n int, flights [][]int, src int, dst int, k int) int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0332: Reconstruct Itinerary](../../0300-0399/0332.Reconstruct%20Itinerary/README.md)

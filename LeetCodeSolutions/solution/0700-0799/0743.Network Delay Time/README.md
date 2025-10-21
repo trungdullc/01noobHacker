@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0743.Network%20Delay%20Time/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Graph
-    - Shortest Path
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [743. Network Delay Time](https://leetcode.com/problems/network-delay-time)
 
-[中文文档](/solution/0700-0799/0743.Network%20Delay%20Time/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given a network of <code>n</code> nodes, labeled from <code>1</code> to <code>n</code>. You are also given <code>times</code>, a list of travel times as directed edges <code>times[i] = (u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>)</code>, where <code>u<sub>i</sub></code> is the source node, <code>v<sub>i</sub></code> is the target node, and <code>w<sub>i</sub></code> is the time it takes for a signal to travel from source to target.</p>
 
@@ -59,11 +41,7 @@ tags:
 	<li>All the pairs <code>(u<sub>i</sub>, v<sub>i</sub>)</code> are <strong>unique</strong>. (i.e., no multiple edges.)</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Naive Dijkstra Algorithm
 
@@ -77,7 +55,10 @@ Finally, we return the maximum value in $\textit{dist}$ as the answer. If the an
 
 The time complexity is $O(n^2 + m)$, and the space complexity is $O(n^2)$. Here, $n$ and $m$ are the number of nodes and edges, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -243,12 +224,6 @@ function networkDelayTime(times: number[][], n: number, k: number): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Heap-Optimized Dijkstra Algorithm
 
 We can use a priority queue (heap) to optimize the naive Dijkstra algorithm.
@@ -260,8 +235,6 @@ We define a priority queue $\textit{pq}$, where each element is $(\textit{d}, u)
 Finally, we return the maximum value in $\textit{dist}$ as the answer. If the answer is $+\infty$, it means there are unreachable nodes, and we return $-1$.
 
 The time complexity is $O(m \times \log m + n)$, and the space complexity is $O(n + m)$. Here, $n$ and $m$ are the number of nodes and edges, respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -436,8 +409,4 @@ function networkDelayTime(times: number[][], n: number, k: number): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1584: Min Cost to Connect All Points](../../1500-1599/1584.Min%20Cost%20to%20Connect%20All%20Points/README.md)

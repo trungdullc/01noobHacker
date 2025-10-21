@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0332.Reconstruct%20Itinerary/README_EN.md
-tags:
-    - Depth-First Search
-    - Graph
-    - Eulerian Circuit
----
-
-<!-- problem:start -->
-
 # [332. Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary)
 
-[中文文档](/solution/0300-0399/0332.Reconstruct%20Itinerary/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given a list of airline <code>tickets</code> where <code>tickets[i] = [from<sub>i</sub>, to<sub>i</sub>]</code> represent the departure and the arrival airports of one flight. Reconstruct the itinerary in order and return it.</p>
 
@@ -56,11 +40,7 @@ tags:
 	<li><code>from<sub>i</sub> != to<sub>i</sub></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Eulerian Path
 
@@ -70,7 +50,10 @@ Since the problem guarantees that there is at least one feasible itinerary, we c
 
 The time complexity is $O(m \times \log m)$, and the space complexity is $O(m)$. Here, $m$ is the number of edges.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -196,8 +179,4 @@ function findItinerary(tickets: string[][]): string[] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0778: Swim In Rising Water](../../0700-0799/0778.Swim%20in%20Rising%20Water/README.md)

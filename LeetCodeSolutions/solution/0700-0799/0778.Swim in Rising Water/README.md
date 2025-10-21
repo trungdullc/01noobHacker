@@ -1,26 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0778.Swim%20in%20Rising%20Water/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Array
-    - Binary Search
-    - Matrix
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [778. Swim in Rising Water](https://leetcode.com/problems/swim-in-rising-water)
 
-[中文文档](/solution/0700-0799/0778.Swim%20in%20Rising%20Water/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an <code>n x n</code> integer matrix <code>grid</code> where each value <code>grid[i][j]</code> represents the elevation at that point <code>(i, j)</code>.</p>
 
@@ -61,15 +41,14 @@ We need to wait until time 16 so that (0, 0) and (4, 4) are connected.
 	<li>Each value <code>grid[i][j]</code> is <strong>unique</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -328,8 +307,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0269: Alien Dictionary](../../0200-0299/0269.Alien%20Dictionary/README.md)

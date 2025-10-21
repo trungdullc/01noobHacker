@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1500-1599/1584.Min%20Cost%20to%20Connect%20All%20Points/README_EN.md
-rating: 1857
-source: Weekly Contest 206 Q3
-tags:
-    - Union Find
-    - Graph
-    - Array
-    - Minimum Spanning Tree
----
-
-<!-- problem:start -->
-
 # [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points)
 
-[中文文档](/solution/1500-1599/1584.Min%20Cost%20to%20Connect%20All%20Points/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array <code>points</code> representing integer coordinates of some points on a 2D-plane, where <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code>.</p>
 
@@ -55,15 +36,14 @@ Notice that there is a unique path between every pair of points.
 	<li>All pairs <code>(x<sub>i</sub>, y<sub>i</sub>)</code> are distinct.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -267,15 +247,7 @@ function minCostConnectPoints(points: number[][]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -442,8 +414,4 @@ func abs(x int) int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0787: Cheapest Flights Within K Stops](../../0700-0799/0787.Cheapest%20Flights%20Within%20K%20Stops/README.md)

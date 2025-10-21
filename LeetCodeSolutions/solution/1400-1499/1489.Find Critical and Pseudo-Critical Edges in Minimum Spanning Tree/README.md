@@ -1,26 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1400-1499/1489.Find%20Critical%20and%20Pseudo-Critical%20Edges%20in%20Minimum%20Spanning%20Tree/README_EN.md
-rating: 2571
-source: Weekly Contest 194 Q4
-tags:
-    - Union Find
-    - Graph
-    - Minimum Spanning Tree
-    - Sorting
-    - Strongly Connected Component
----
-
-<!-- problem:start -->
-
 # [1489. Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree)
 
-[中文文档](/solution/1400-1499/1489.Find%20Critical%20and%20Pseudo-Critical%20Edges%20in%20Minimum%20Spanning%20Tree/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a weighted undirected connected graph with <code>n</code>&nbsp;vertices numbered from <code>0</code> to <code>n - 1</code>,&nbsp;and an array <code>edges</code>&nbsp;where <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>, weight<sub>i</sub>]</code> represents a bidirectional and weighted edge between nodes&nbsp;<code>a<sub>i</sub></code>&nbsp;and <code>b<sub>i</sub></code>. A minimum spanning tree (MST) is a subset of the graph&#39;s edges that connects all vertices without cycles&nbsp;and with the minimum possible total edge weight.</p>
 
@@ -65,15 +45,14 @@ The edges 2, 3, 4, and 5 are only part of some MSTs, therefore they are consider
 	<li>All pairs <code>(a<sub>i</sub>, b<sub>i</sub>)</code> are <strong>distinct</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -356,8 +335,4 @@ func findCriticalAndPseudoCriticalEdges(n int, edges [][]int) [][]int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 2392: Build a Matrix With Conditions](../../2300-2399/2392.Build%20a%20Matrix%20With%20Conditions/README.md)

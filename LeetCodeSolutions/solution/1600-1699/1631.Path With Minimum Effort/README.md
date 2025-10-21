@@ -1,28 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1600-1699/1631.Path%20With%20Minimum%20Effort/README_EN.md
-rating: 1947
-source: Weekly Contest 212 Q3
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Array
-    - Binary Search
-    - Matrix
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [1631. Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort)
 
-[中文文档](/solution/1600-1699/1631.Path%20With%20Minimum%20Effort/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are a hiker preparing for an upcoming hike. You are given <code>heights</code>, a 2D array of size <code>rows x columns</code>, where <code>heights[row][col]</code> represents the height of cell <code>(row, col)</code>. You are situated in the top-left cell, <code>(0, 0)</code>, and you hope to travel to the bottom-right cell, <code>(rows-1, columns-1)</code> (i.e.,&nbsp;<strong>0-indexed</strong>). You can move <strong>up</strong>, <strong>down</strong>, <strong>left</strong>, or <strong>right</strong>, and you wish to find a route that requires the minimum <strong>effort</strong>.</p>
 
@@ -70,11 +48,7 @@ This is better than the route of [1,2,2,2,5], where the maximum absolute differe
 	<li><code>1 &lt;= heights[i][j] &lt;= 10<sup>6</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Union-Find
 
@@ -83,8 +57,6 @@ For this problem, we can treat each cell as a node in a graph, and the absolute 
 We first construct a set of edges, then sort them in ascending order of edge weight, and add edges one by one until the top-left node and the bottom-right node are connected. At this point, the weight of the edge is the minimum physical consumption value required by the problem.
 
 The time complexity is $O(m \times n \times \log(m \times n))$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns in the two-dimensional array, respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -428,12 +400,6 @@ function minimumEffortPath(heights: number[][]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Binary Search + BFS
 
 We notice that if the maximum physical consumption value of a path is $x$, then for any $y > x$, this path also meets the conditions. This shows monotonicity, so we can use the binary search method to find the minimum physical consumption value that meets the conditions.
@@ -441,8 +407,6 @@ We notice that if the maximum physical consumption value of a path is $x$, then 
 We define the left boundary of the binary search as $l=0$, and the right boundary as $r=10^6$. Each time we take $mid=(l+r)/2$, then use BFS to determine whether there is a path from the top-left corner to the bottom-right corner, so that the absolute difference in height between adjacent nodes on the path is not greater than $mid$. If it exists, it means that $mid$ may still be the minimum physical consumption value that meets the conditions, so we set $r=mid$, otherwise we set $l=mid+1$.
 
 The time complexity is $O(m \times n \times \log M)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns in the two-dimensional array, respectively, and $M$ is the maximum value in the two-dimensional array. In this problem, $M=10^6$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -652,12 +616,6 @@ function minimumEffortPath(heights: number[][]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Heap-optimized Dijkstra Algorithm
 
 We can treat each cell as a node in a graph, and the absolute difference in height between two adjacent cells as the weight of the edge. Therefore, this problem is to solve the shortest path problem from the top-left node to the bottom-right node.
@@ -668,7 +626,10 @@ We use a priority queue (heap) to store nodes, and each time we take out the nod
 
 The time complexity is $O(m \times n \times \log(m \times n))$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns in the two-dimensional array, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -838,8 +799,4 @@ function minimumEffortPath(heights: number[][]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0743: Network Delay Time](../../0700-0799/0743.Network%20Delay%20Time/README.md)

@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0269.Alien%20Dictionary/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Graph
-    - Topological Sort
-    - Array
-    - String
----
-
-<!-- problem:start -->
-
 # [269. Alien Dictionary 🔒](https://leetcode.com/problems/alien-dictionary)
 
-[中文文档](/solution/0200-0299/0269.Alien%20Dictionary/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There is a new alien language that uses the English alphabet. However, the order of the letters is unknown to you.</p>
 
@@ -61,15 +42,14 @@ tags:
 	<li><code>words[i]</code> consists of only lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -350,8 +330,4 @@ func alienOrder(words []string) string {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1489: Find Critical and Pseudo Critical Edges in Minimum Spanning Tree](../../1400-1499/1489.Find%20Critical%20and%20Pseudo-Critical%20Edges%20in%20Minimum%20Spanning%20Tree/README.md)
