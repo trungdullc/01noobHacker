@@ -1,26 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0399.Evaluate%20Division/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Graph
-    - Array
-    - String
-    - Shortest Path
----
-
-<!-- problem:start -->
-
 # [399. Evaluate Division](https://leetcode.com/problems/evaluate-division)
 
-[中文文档](/solution/0300-0399/0399.Evaluate%20Division/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array of variable pairs <code>equations</code> and an array of real numbers <code>values</code>, where <code>equations[i] = [A<sub>i</sub>, B<sub>i</sub>]</code> and <code>values[i]</code> represent the equation <code>A<sub>i</sub> / B<sub>i</sub> = values[i]</code>. Each <code>A<sub>i</sub></code> or <code>B<sub>i</sub></code> is a string that represents a single variable.</p>
 
@@ -73,15 +53,14 @@ note: x is undefined =&gt; -1.0</pre>
 	<li><code>A<sub>i</sub>, B<sub>i</sub>, C<sub>j</sub>, D<sub>j</sub></code> consist of lower case English letters and digits.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -391,8 +370,4 @@ function calcEquation(equations: string[][], values: number[], queries: string[]
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0310: Minimum Height Trees](../../0300-0399/0310.Minimum%20Height%20Trees/README.md)

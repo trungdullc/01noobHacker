@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0953.Verifying%20an%20Alien%20Dictionary/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - String
----
-
-<!-- problem:start -->
-
 # [953. Verifying an Alien Dictionary](https://leetcode.com/problems/verifying-an-alien-dictionary)
 
-[中文文档](/solution/0900-0999/0953.Verifying%20an%20Alien%20Dictionary/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>In an alien language, surprisingly, they also use English lowercase letters, but possibly in a different <code>order</code>. The <code>order</code> of the alphabet is some permutation of lowercase letters.</p>
 
@@ -57,15 +41,14 @@ tags:
 	<li>All characters in <code>words[i]</code> and <code>order</code> are English lowercase letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -273,8 +256,4 @@ bool isAlienSorted(char** words, int wordsSize, char* order) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0997: Find the Town Judge ](../../0900-0999/0997.Find%20the%20Town%20Judge/README.md)

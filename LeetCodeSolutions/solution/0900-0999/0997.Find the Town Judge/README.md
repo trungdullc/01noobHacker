@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0997.Find%20the%20Town%20Judge/README_EN.md
-tags:
-    - Graph
-    - Array
-    - Hash Table
----
-
-<!-- problem:start -->
-
 # [997. Find the Town Judge](https://leetcode.com/problems/find-the-town-judge)
 
-[中文文档](/solution/0900-0999/0997.Find%20the%20Town%20Judge/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>In a town, there are <code>n</code> people labeled from <code>1</code> to <code>n</code>. There is a rumor that one of these people is secretly the town judge.</p>
 
@@ -66,11 +50,7 @@ tags:
 	<li><code>1 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt;= n</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Counting
 
@@ -82,7 +62,10 @@ Finally, we enumerate each person $i$ in the range $[1,..n]$. If $cnt1[i] = 0$ a
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $trust$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -210,8 +193,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0200: Number of Islands](../../0200-0299/0200.Number%20of%20Islands/README.md)

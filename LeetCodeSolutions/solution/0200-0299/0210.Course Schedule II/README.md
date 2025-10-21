@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0210.Course%20Schedule%20II/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Graph
-    - Topological Sort
----
-
-<!-- problem:start -->
-
 # [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii)
 
-[中文文档](/solution/0200-0299/0210.Course%20Schedule%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There are a total of <code>numCourses</code> courses you have to take, labeled from <code>0</code> to <code>numCourses - 1</code>. You are given an array <code>prerequisites</code> where <code>prerequisites[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that you <strong>must</strong> take course <code>b<sub>i</sub></code> first if you want to take course <code>a<sub>i</sub></code>.</p>
 
@@ -64,15 +47,14 @@ So one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].
 	<li>All the pairs <code>[a<sub>i</sub>, b<sub>i</sub>]</code> are <strong>distinct</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -312,8 +294,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0261: Graph Valid Tree](../../0200-0299/0261.Graph%20Valid%20Tree/README.md)

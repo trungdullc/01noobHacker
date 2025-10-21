@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0600-0699/0684.Redundant%20Connection/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Graph
----
-
-<!-- problem:start -->
-
 # [684. Redundant Connection](https://leetcode.com/problems/redundant-connection)
 
-[中文文档](/solution/0600-0699/0684.Redundant%20Connection/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>In this problem, a tree is an <strong>undirected graph</strong> that is connected and has no cycles.</p>
 
@@ -53,11 +36,7 @@ tags:
 	<li>The given graph is connected.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Union-Find
 
@@ -65,7 +44,11 @@ According to the problem description, we need to find an edge that can be remove
 
 The time complexity is $O(n \log n)$, and the space complexity is $O(n)$. Here, $n$ is the number of edges.
 
-<!-- tabs:start -->
+
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -216,19 +199,11 @@ var findRedundantConnection = function (edges) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Union-Find (Template Approach)
 
 Here is a template approach using Union-Find for your reference.
 
 The time complexity is $O(n \alpha(n))$, and the space complexity is $O(n)$. Here, $n$ is the number of edges, and $\alpha(n)$ is the inverse Ackermann function, which can be considered a very small constant.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -507,8 +482,4 @@ var findRedundantConnection = function (edges) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0721: Accounts Merge](../../0700-0799/0721.Accounts%20Merge/README.md)

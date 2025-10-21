@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0200.Number%20of%20Islands/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Array
-    - Matrix
----
-
-<!-- problem:start -->
-
 # [200. Number of Islands](https://leetcode.com/problems/number-of-islands)
 
-[中文文档](/solution/0200-0299/0200.Number%20of%20Islands/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an <code>m x n</code> 2D binary grid <code>grid</code> which represents a map of <code>&#39;1&#39;</code>s (land) and <code>&#39;0&#39;</code>s (water), return <em>the number of islands</em>.</p>
 
@@ -59,15 +41,14 @@ tags:
 	<li><code>grid[i][j]</code> is <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -303,15 +284,7 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -539,15 +512,7 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -794,8 +759,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0695: Max Area of Island](../../0600-0699/0695.Max%20Area%20of%20Island/README.md)

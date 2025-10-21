@@ -2,8 +2,6 @@
 
 ## Description
 
-<!-- description:start -->
-
 <p>You are given <code>row x col</code> <code>grid</code> representing a map where <code>grid[i][j] = 1</code> represents&nbsp;land and <code>grid[i][j] = 0</code> represents water.</p>
 
 <p>Grid cells are connected <strong>horizontally/vertically</strong> (not diagonally). The <code>grid</code> is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells).</p>
@@ -44,15 +42,14 @@
 	<li>There is exactly one island in <code>grid</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -176,8 +173,4 @@ function islandPerimeter(grid: number[][]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0953: Verifying An Alien Dictionary](../../0900-0999/0953.Verifying%20an%20Alien%20Dictionary/README.md)

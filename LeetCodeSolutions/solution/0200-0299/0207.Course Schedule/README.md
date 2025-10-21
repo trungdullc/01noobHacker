@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0207.Course%20Schedule/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Graph
-    - Topological Sort
----
-
-<!-- problem:start -->
-
 # [207. Course Schedule](https://leetcode.com/problems/course-schedule)
 
-[中文文档](/solution/0200-0299/0207.Course%20Schedule/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There are a total of <code>numCourses</code> courses you have to take, labeled from <code>0</code> to <code>numCourses - 1</code>. You are given an array <code>prerequisites</code> where <code>prerequisites[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that you <strong>must</strong> take course <code>b<sub>i</sub></code> first if you want to take course <code>a<sub>i</sub></code>.</p>
 
@@ -57,11 +40,7 @@ To take course 1 you should have finished course 0, and to take course 0 you sho
 	<li>All the pairs prerequisites[i] are <strong>unique</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Topological Sorting
 
@@ -73,7 +52,10 @@ If all nodes have been traversed, it means there is no cycle in the graph, and w
 
 The time complexity is $O(n + m)$, and the space complexity is $O(n + m)$. Here, $n$ and $m$ are the number of courses and prerequisites respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -297,8 +279,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0210: Course Schedule II ](../../0200-0299/0210.Course%20Schedule%20II/README.md)

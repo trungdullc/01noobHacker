@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1400-1499/1462.Course%20Schedule%20IV/README_EN.md
-rating: 1692
-source: Biweekly Contest 27 Q3
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Graph
-    - Topological Sort
----
-
-<!-- problem:start -->
-
 # [1462. Course Schedule IV](https://leetcode.com/problems/course-schedule-iv)
 
-[中文文档](/solution/1400-1499/1462.Course%20Schedule%20IV/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There are a total of <code>numCourses</code> courses you have to take, labeled from <code>0</code> to <code>numCourses - 1</code>. You are given an array <code>prerequisites</code> where <code>prerequisites[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that you <strong>must</strong> take course <code>a<sub>i</sub></code> first if you want to take course <code>b<sub>i</sub></code>.</p>
 
@@ -74,11 +55,7 @@ Course 0 is not a prerequisite of course 1, but the opposite is true.
 	<li><code>u<sub>i</sub> != v<sub>i</sub></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Floyd's Algorithm
 
@@ -94,7 +71,10 @@ After computing the reachability between all pairs of nodes, for each query $[a,
 
 The time complexity is $O(n^3)$, and the space complexity is $O(n^2)$, where $n$ is the number of nodes.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -208,12 +188,6 @@ function checkIfPrerequisite(n: number, prerequisites: number[][], queries: numb
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Topological Sorting
 
 Similar to Solution 1, we create a 2D array $f$, where $f[i][j]$ indicates whether node $i$ can reach node $j$. Additionally, we create an adjacency list $g$, where $g[i]$ represents all successor nodes of node $i$, and an array $indeg$, where $indeg[i]$ represents the in-degree of node $i$.
@@ -227,8 +201,6 @@ We define a queue $q$, initially adding all nodes with an in-degree of $0$ to th
 After computing the reachability between all pairs of nodes, for each query $[a, b]$, we can directly return $f[a][b]$.
 
 The time complexity is $O(n^3)$, and the space complexity is $O(n^2)$, where $n$ is the number of nodes.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -413,8 +385,4 @@ function checkIfPrerequisite(n: number, prerequisites: number[][], queries: numb
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0323: Number of Connected Components In An Undirected Graph](../../0300-0399/0323.Number%20of%20Connected%20Components%20in%20an%20Undirected%20Graph/README.md)

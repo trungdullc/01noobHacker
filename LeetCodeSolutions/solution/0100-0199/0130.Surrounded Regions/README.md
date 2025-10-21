@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0130.Surrounded%20Regions/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Array
-    - Matrix
----
-
-<!-- problem:start -->
-
 # [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions)
 
-[中文文档](/solution/0100-0199/0130.Surrounded%20Regions/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an <code>m x n</code> matrix <code>board</code> containing <strong>letters</strong> <code>&#39;X&#39;</code> and <code>&#39;O&#39;</code>, <strong>capture regions</strong> that are <strong>surrounded</strong>:</p>
 
@@ -61,11 +43,7 @@ tags:
 	<li><code>board[i][j]</code> is <code>&#39;X&#39;</code> or <code>&#39;O&#39;</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Depth-First Search (DFS)
 
@@ -78,7 +56,10 @@ Then we traverse the matrix again, for each position:
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns in the matrix, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -361,12 +342,6 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Union-Find Set
 
 We can also use a union-find set, connecting each 'O' on the matrix boundary with a super node $m \times n$, and connecting each 'O' in the matrix with the 'O's above, below, left, and right of it.
@@ -374,8 +349,6 @@ We can also use a union-find set, connecting each 'O' on the matrix boundary wit
 Then we traverse this matrix, for each position, if it is 'O' and it is not connected to the super node, then we replace it with 'X'.
 
 The time complexity is $O(m \times n \times \alpha(m \times n))$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns in the matrix, respectively, and $\alpha$ is the inverse Ackermann function.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -580,8 +553,4 @@ function solve(board: string[][]): void {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0752: Open The Lock](../../0700-0799/0752.Open%20the%20Lock/README.md)

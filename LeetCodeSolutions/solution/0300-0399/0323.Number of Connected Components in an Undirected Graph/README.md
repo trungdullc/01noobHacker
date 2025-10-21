@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0323.Number%20of%20Connected%20Components%20in%20an%20Undirected%20Graph/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Graph
----
-
-<!-- problem:start -->
-
 # [323. Number of Connected Components in an Undirected Graph 🔒](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph)
 
-[中文文档](/solution/0300-0399/0323.Number%20of%20Connected%20Components%20in%20an%20Undirected%20Graph/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You have a graph of <code>n</code> nodes. You are given an integer <code>n</code> and an array <code>edges</code> where <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that there is an edge between <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code> in the graph.</p>
 
@@ -50,11 +33,7 @@ tags:
 	<li>There are no repeated edges.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS
 
@@ -64,7 +43,10 @@ Then we traverse all nodes. For each node, we use DFS to traverse all its adjace
 
 The time complexity is $O(n + m)$, and the space complexity is $O(n + m)$. Where $n$ and $m$ are the number of nodes and edges, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -237,12 +219,6 @@ var countComponents = function (n, edges) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Union-Find
 
 We can use a union-find set to maintain the connected components in the graph.
@@ -252,8 +228,6 @@ First, we initialize a union-find set, then traverse all the edges. For each edg
 Finally, we return the number of connected components.
 
 The time complexity is $O(n + m \times \alpha(n))$, and the space complexity is $O(n)$. Where $n$ and $m$ are the number of nodes and edges, respectively, and $\alpha(n)$ is the inverse of the Ackermann function, which can be regarded as a very small constant.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -483,12 +457,6 @@ function countComponents(n: number, edges: number[][]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: BFS
 
 We can also use BFS (Breadth-First Search) to count the number of connected components in the graph.
@@ -498,8 +466,6 @@ Similar to Solution 1, we first construct an adjacency list $g$ based on the giv
 After traversing all nodes, we get the number of connected components in the graph.
 
 The time complexity is $O(n + m)$, and the space complexity is $O(n + m)$. Where $n$ and $m$ are the number of nodes and edges, respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -664,8 +630,4 @@ function countComponents(n: number, edges: number[][]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0684: Redundant Connection](../../0600-0699/0684.Redundant%20Connection/README.md)

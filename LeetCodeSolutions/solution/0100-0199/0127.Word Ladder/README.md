@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0127.Word%20Ladder/README_EN.md
-tags:
-    - Breadth-First Search
-    - Hash Table
-    - String
----
-
-<!-- problem:start -->
-
 # [127. Word Ladder](https://leetcode.com/problems/word-ladder)
 
-[中文文档](/solution/0100-0199/0127.Word%20Ladder/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>A <strong>transformation sequence</strong> from word <code>beginWord</code> to word <code>endWord</code> using a dictionary <code>wordList</code> is a sequence of words <code>beginWord -&gt; s<sub>1</sub> -&gt; s<sub>2</sub> -&gt; ... -&gt; s<sub>k</sub></code> such that:</p>
 
@@ -58,11 +42,7 @@ tags:
 	<li>All the words in <code>wordList</code> are <strong>unique</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: BFS
 
@@ -100,7 +80,10 @@ def extend(m1, m2, q):
             m1[t] = step + 1
 ```
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -361,15 +344,7 @@ function ladderLength(beginWord: string, endWord: string, wordList: string[]): n
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -561,8 +536,4 @@ func ladderLength(beginWord string, endWord string, wordList []string) int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1631: Path with Minimum Effort](../../1600-1699/1631.Path%20With%20Minimum%20Effort/README.md)
