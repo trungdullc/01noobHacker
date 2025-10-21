@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0046.Permutations/README_EN.md
-tags:
-    - Array
-    - Backtracking
----
-
-<!-- problem:start -->
-
 # [46. Permutations](https://leetcode.com/problems/permutations)
 
-[中文文档](/solution/0000-0099/0046.Permutations/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array <code>nums</code> of distinct integers, return all the possible <span data-keyword="permutation-array">permutations</span>. You can return the answer in <strong>any order</strong>.</p>
 
@@ -39,11 +24,7 @@ tags:
 	<li>All the integers of <code>nums</code> are <strong>unique</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS (Backtracking)
 
@@ -55,7 +36,10 @@ Similar problems:
 
 -   [47. Permutations II](https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0047.Permutations%20II/README_EN.md)
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -296,8 +280,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0090: Subsets II](../../0000-0099/0090.Subsets%20II/README.md)

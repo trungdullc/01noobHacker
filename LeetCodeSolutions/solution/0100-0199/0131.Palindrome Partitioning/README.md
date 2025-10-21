@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0131.Palindrome%20Partitioning/README_EN.md
-tags:
-    - String
-    - Dynamic Programming
-    - Backtracking
----
-
-<!-- problem:start -->
-
 # [131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning)
 
-[中文文档](/solution/0100-0199/0131.Palindrome%20Partitioning/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code>, partition <code>s</code> such that every <span data-keyword="substring-nonempty">substring</span> of the partition is a <span data-keyword="palindrome-string"><strong>palindrome</strong></span>. Return <em>all possible palindrome partitioning of </em><code>s</code>.</p>
 
@@ -36,11 +20,7 @@ tags:
 	<li><code>s</code> contains only lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Preprocessing + DFS (Backtracking)
 
@@ -54,7 +34,10 @@ Otherwise, we can start from $i$ and enumerate the end position $j$ from small t
 
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(n^2)$. Here, $n$ is the length of the string.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -271,8 +254,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0017: Letter Combinations of a Phone Number ](../../0000-0099/0017.Letter%20Combinations%20of%20a%20Phone%20Number/README.md)

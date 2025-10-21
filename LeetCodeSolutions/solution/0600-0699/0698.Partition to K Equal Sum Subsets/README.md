@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0600-0699/0698.Partition%20to%20K%20Equal%20Sum%20Subsets/README_EN.md
-tags:
-    - Bit Manipulation
-    - Memoization
-    - Array
-    - Dynamic Programming
-    - Backtracking
-    - Bitmask
----
-
-<!-- problem:start -->
-
 # [698. Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets)
 
-[中文文档](/solution/0600-0699/0698.Partition%20to%20K%20Equal%20Sum%20Subsets/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <code>true</code> if it is possible to divide this array into <code>k</code> non-empty subsets whose sums are all equal.</p>
 
@@ -48,11 +29,7 @@ tags:
 	<li>The frequency of each element is in the range <code>[1, 4]</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS + Pruning
 
@@ -64,7 +41,10 @@ We sort the array $\textit{nums}$ in descending order (to reduce the number of s
 
 If we can add all elements to $\textit{cur}$, it means we can partition the array into $k$ subsets, and we return $\textit{true}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -238,12 +218,6 @@ function canPartitionKSubsets(nums: number[], k: number): boolean {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: State Compression + Memoization
 
 Similar to Solution 1, we first check whether the array $\textit{nums}$ can be partitioned into $k$ subsets. If it cannot be divided by $k$, we directly return $\textit{false}$.
@@ -262,8 +236,6 @@ To avoid repeated searches, we use an array $\textit{f}$ of length $2^n$ to reco
 -   `1`: indicates that the current state can be partitioned into $k$ subsets.
 
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(2^n)$. Here, $n$ represents the length of the array $\textit{nums}$. For each state, we need to traverse the array $\textit{nums}$, which has a time complexity of $O(n)$. The total number of states is $2^n$, so the overall time complexity is $O(n \times 2^n)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -468,12 +440,6 @@ function canPartitionKSubsets(nums: number[], k: number): boolean {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Dynamic Programming
 
 We can use dynamic programming to solve this problem.
@@ -485,8 +451,6 @@ We enumerate the states $i$ in the range $[0, 2^n]$. For each state $i$, if $f[i
 Finally, we return $f[2^n - 1]$.
 
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(2^n)$. Here, $n$ represents the length of the array $\textit{nums}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -656,8 +620,4 @@ function canPartitionKSubsets(nums: number[], k: number): boolean {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0051: N Queens](../../0000-0099/0051.N-Queens/README.md)

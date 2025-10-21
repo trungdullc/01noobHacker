@@ -1,27 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1800-1899/1863.Sum%20of%20All%20Subset%20XOR%20Totals/README_EN.md
-rating: 1372
-source: Weekly Contest 241 Q1
-tags:
-    - Bit Manipulation
-    - Array
-    - Math
-    - Backtracking
-    - Combinatorics
-    - Enumeration
----
-
-<!-- problem:start -->
-
 # [1863. Sum of All Subset XOR Totals](https://leetcode.com/problems/sum-of-all-subset-xor-totals)
 
-[中文文档](/solution/1800-1899/1863.Sum%20of%20All%20Subset%20XOR%20Totals/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>The <strong>XOR total</strong> of an array is defined as the bitwise <code>XOR</code> of<strong> all its elements</strong>, or <code>0</code> if the array is<strong> empty</strong>.</p>
 
@@ -82,11 +61,7 @@ tags:
 	<li><code>1 &lt;= nums[i] &lt;= 20</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Enumeration
 
@@ -96,7 +71,10 @@ Specifically, we enumerate $i$ in the range $[0, 2^n)$, where $n$ is the length 
 
 The time complexity is $O(n \times 2^n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -216,12 +194,6 @@ var subsetXORSum = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: DFS (Depth-First Search)
 
 We can also use depth-first search to enumerate all subsets, and then calculate the XOR sum of each subset.
@@ -234,8 +206,6 @@ We design a function $dfs(i, s)$, where $i$ represents the current search to the
 When we have searched all elements of the array $nums$, i.e., $i=n$, the XOR sum of the current subset is $s$, and we can add it to the answer.
 
 The time complexity is $O(2^n)$, and the space complexity is $O(n)$. Where $n$ is the length of the array $nums$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -362,8 +332,4 @@ var subsetXORSum = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0078: Subsets](../../0000-0099/0078.Subsets/README.md)

@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0051.N-Queens/README_EN.md
-tags:
-    - Array
-    - Backtracking
----
-
-<!-- problem:start -->
-
 # [51. N-Queens](https://leetcode.com/problems/n-queens)
 
-[中文文档](/solution/0000-0099/0051.N-Queens/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>The <strong>n-queens</strong> puzzle is the problem of placing <code>n</code> queens on an <code>n x n</code> chessboard such that no two queens attack each other.</p>
 
@@ -46,11 +31,7 @@ tags:
 	<li><code>1 &lt;= n &lt;= 9</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS (Backtracking)
 
@@ -66,7 +47,10 @@ In the main function, we call $dfs(0)$ to start recursion, and finally return th
 
 The time complexity is $O(n^2 \times n!)$, and the space complexity is $O(n)$. Here, $n$ is the integer given in the problem.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -281,8 +265,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0052: N Queens II](../../0000-0099/0052.N-Queens%20II/README.md)

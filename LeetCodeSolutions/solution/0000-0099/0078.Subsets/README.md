@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0078.Subsets/README_EN.md
-tags:
-    - Bit Manipulation
-    - Array
-    - Backtracking
----
-
-<!-- problem:start -->
-
 # [78. Subsets](https://leetcode.com/problems/subsets)
 
-[中文文档](/solution/0000-0099/0078.Subsets/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> of <strong>unique</strong> elements, return <em>all possible</em> <span data-keyword="subset"><em>subsets</em></span> <em>(the power set)</em>.</p>
 
@@ -46,11 +30,7 @@ tags:
 	<li>All the numbers of&nbsp;<code>nums</code> are <strong>unique</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS (Backtracking)
 
@@ -63,7 +43,10 @@ In the main function, we call $dfs(0)$, i.e., start searching all subsets from t
 
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array. There are a total of $2^n$ subsets, and each subset takes $O(n)$ time to construct.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -201,12 +184,6 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Binary Enumeration
 
 We can also use the method of binary enumeration to get all subsets.
@@ -214,8 +191,6 @@ We can also use the method of binary enumeration to get all subsets.
 We can use $2^n$ binary numbers to represent all subsets of $n$ elements. For the current binary number $mask$, if the $i$th bit is $1$, it means that the $i$th element is selected, otherwise it means that the $i$th element is not selected.
 
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array. There are a total of $2^n$ subsets, and each subset takes $O(n)$ time to construct.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -330,8 +305,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0039: Combination Sum](../../0000-0099/0039.Combination%20Sum/README.md)

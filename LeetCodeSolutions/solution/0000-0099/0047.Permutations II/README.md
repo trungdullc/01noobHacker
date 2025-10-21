@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0047.Permutations%20II/README_EN.md
-tags:
-    - Array
-    - Backtracking
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [47. Permutations II](https://leetcode.com/problems/permutations-ii)
 
-[中文文档](/solution/0000-0099/0047.Permutations%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a collection of numbers, <code>nums</code>,&nbsp;that might contain duplicates, return <em>all possible unique permutations <strong>in any order</strong>.</em></p>
 
@@ -46,11 +30,7 @@ tags:
 	<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting + Backtracking
 
@@ -69,7 +49,10 @@ Similar problems:
 
 -   [46. Permutations](https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0046.Permutations/README_EN.md)
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -332,8 +315,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0079: Word Search](../../0000-0099/0079.Word%20Search/README.md)

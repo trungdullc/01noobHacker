@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0090.Subsets%20II/README_EN.md
-tags:
-    - Bit Manipulation
-    - Array
-    - Backtracking
----
-
-<!-- problem:start -->
-
 # [90. Subsets II](https://leetcode.com/problems/subsets-ii)
 
-[中文文档](/solution/0000-0099/0090.Subsets%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> that may contain duplicates, return <em>all possible</em> <span data-keyword="subset"><em>subsets</em></span><em> (the power set)</em>.</p>
 
@@ -38,11 +22,7 @@ tags:
 	<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting + DFS
 
@@ -58,7 +38,10 @@ Finally, we only need to call $\textit{dfs}(0)$ and return the answer array.
 
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -287,12 +270,6 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Sorting + Binary Enumeration
 
 Similar to Solution 1, we first sort the array $\textit{nums}$ to facilitate deduplication.
@@ -302,8 +279,6 @@ Next, we enumerate a binary number $\textit{mask}$ in the range $[0, 2^n)$, wher
 After the enumeration, we return the answer array.
 
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -529,8 +504,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0047: Permutations II](../../0000-0099/0047.Permutations%20II/README.md)

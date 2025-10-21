@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0079.Word%20Search/README_EN.md
-tags:
-    - Depth-First Search
-    - Array
-    - String
-    - Backtracking
-    - Matrix
----
-
-<!-- problem:start -->
-
 # [79. Word Search](https://leetcode.com/problems/word-search)
 
-[中文文档](/solution/0000-0099/0079.Word%20Search/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an <code>m x n</code> grid of characters <code>board</code> and a string <code>word</code>, return <code>true</code> <em>if</em> <code>word</code> <em>exists in the grid</em>.</p>
 
@@ -60,11 +42,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Could you use search pruning to make your solution faster with a larger <code>board</code>?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS (Backtracking)
 
@@ -80,7 +58,10 @@ In the main function, we enumerate each position $(i, j)$ in the grid as the sta
 
 The time complexity is $O(m \times n \times 3^k)$, and the space complexity is $O(\min(m \times n, k))$. Here, $m$ and $n$ are the number of rows and columns of the grid, respectively; and $k$ is the length of the string $word$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -397,8 +378,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0131: Palindrome Partitioning](../../0100-0199/0131.Palindrome%20Partitioning/README.md)

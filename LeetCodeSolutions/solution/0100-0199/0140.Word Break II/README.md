@@ -1,26 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0140.Word%20Break%20II/README_EN.md
-tags:
-    - Trie
-    - Memoization
-    - Array
-    - Hash Table
-    - String
-    - Dynamic Programming
-    - Backtracking
----
-
-<!-- problem:start -->
-
 # [140. Word Break II](https://leetcode.com/problems/word-break-ii)
 
-[中文文档](/solution/0100-0199/0140.Word%20Break%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code> and a dictionary of strings <code>wordDict</code>, add spaces in <code>s</code> to construct a sentence where each word is a valid dictionary word. Return all such possible sentences in <strong>any order</strong>.</p>
 
@@ -61,15 +41,14 @@ tags:
 	<li>Input is generated in a way that the length of the answer doesn&#39;t exceed&nbsp;10<sup>5</sup>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -326,8 +305,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0208: Implement Trie Prefix Tree](../../0200-0299/0208.Implement%20Trie%20(Prefix%20Tree)/README.md)
