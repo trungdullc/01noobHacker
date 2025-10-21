@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0013.Roman%20to%20Integer/README_EN.md
-tags:
-    - Hash Table
-    - Math
-    - String
----
-
-<!-- problem:start -->
-
 # [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer)
 
-[中文文档](/solution/0000-0099/0013.Roman%20to%20Integer/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Roman numerals are represented by seven different symbols:&nbsp;<code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
 
@@ -76,11 +60,7 @@ M             1000</pre>
 	<li>It is <strong>guaranteed</strong>&nbsp;that <code>s</code> is a valid roman numeral in the range <code>[1, 3999]</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Simulation
 
@@ -88,7 +68,10 @@ First, we use a hash table $d$ to record the numerical value corresponding to ea
 
 The time complexity is $O(n)$, and the space complexity is $O(m)$. Here, $n$ and $m$ are the length of the string $s$ and the size of the character set, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -353,8 +336,4 @@ int romanToInt(char* s) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0050: Pow(x, n)](../../0000-0099/0050.Pow(x,%20n)/README.md)

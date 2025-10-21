@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0048.Rotate%20Image/README_EN.md
-tags:
-    - Array
-    - Math
-    - Matrix
----
-
-<!-- problem:start -->
-
 # [48. Rotate Image](https://leetcode.com/problems/rotate-image)
 
-[中文文档](/solution/0000-0099/0048.Rotate%20Image/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an <code>n x n</code> 2D <code>matrix</code> representing an image, rotate the image by <strong>90</strong> degrees (clockwise).</p>
 
@@ -46,11 +30,7 @@ tags:
 	<li><code>-1000 &lt;= matrix[i][j] &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: In-place Rotation
 
@@ -60,7 +40,10 @@ We can first flip the matrix upside down, i.e., swap $\text{matrix}[i][j]$ with 
 
 The time complexity is $O(n^2)$, where $n$ is the side length of the matrix. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -222,8 +205,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0054: Spiral Matrix](../../0000-0099/0054.Spiral%20Matrix/README.md)

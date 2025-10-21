@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0073.Set%20Matrix%20Zeroes/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - Matrix
----
-
-<!-- problem:start -->
-
 # [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes)
 
-[中文文档](/solution/0000-0099/0073.Set%20Matrix%20Zeroes/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an <code>m x n</code> integer matrix <code>matrix</code>, if an element is <code>0</code>, set its entire row and column to <code>0</code>&#39;s.</p>
 
@@ -56,11 +40,7 @@ tags:
 	<li>Could you devise a constant space solution?</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Array Mark
 
@@ -70,7 +50,10 @@ Then traverse the matrix again, and clear the elements in the rows and columns m
 
 The time complexity is $O(m\times n)$, and the space complexity is $O(m+n)$. Where $m$ and $n$ are the number of rows and columns of the matrix respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -278,12 +261,6 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Mark in Place
 
 In the first method, we use an additional array to mark the rows and columns to be cleared. In fact, we can also use the first row and first column of the matrix to mark them, without creating an additional array.
@@ -291,8 +268,6 @@ In the first method, we use an additional array to mark the rows and columns to 
 Since the first row and the first column are used to mark, their values ​​may change due to the mark, so we need additional variables $i0$, $j0$ to mark whether the first row and the first column need to be cleared.
 
 The time complexity is $O(m\times n)$, and the space complexity is $O(1)$. Where $m$ and $n$ are the number of rows and columns of the matrix respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -585,8 +560,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 202: Happy Number](../../0200-0299/0202.Happy%20Number/README.md)

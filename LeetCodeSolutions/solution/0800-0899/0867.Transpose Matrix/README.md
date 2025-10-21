@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0867.Transpose%20Matrix/README_EN.md
-tags:
-    - Array
-    - Matrix
-    - Simulation
----
-
-<!-- problem:start -->
-
 # [867. Transpose Matrix](https://leetcode.com/problems/transpose-matrix)
 
-[中文文档](/solution/0800-0899/0867.Transpose%20Matrix/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a 2D integer array <code>matrix</code>, return <em>the <strong>transpose</strong> of</em> <code>matrix</code>.</p>
 
@@ -50,11 +34,7 @@ tags:
 	<li><code>-10<sup>9</sup> &lt;= matrix[i][j] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Simulation
 
@@ -66,7 +46,10 @@ After the traversal, we return $\textit{ans}$.
 
 The time complexity is $O(m \times n)$, where $m$ and $n$ are the number of rows and columns in the matrix $\textit{matrix}$, respectively. Ignoring the space consumption of the answer, the space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -161,8 +144,4 @@ var transpose = function (matrix) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0048: Rotate Image](../../0000-0099/0048.Rotate%20Image/README.md)

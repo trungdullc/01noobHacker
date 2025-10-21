@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0043.Multiply%20Strings/README_EN.md
-tags:
-    - Math
-    - String
-    - Simulation
----
-
-<!-- problem:start -->
-
 # [43. Multiply Strings](https://leetcode.com/problems/multiply-strings)
 
-[中文文档](/solution/0000-0099/0043.Multiply%20Strings/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given two non-negative integers <code>num1</code> and <code>num2</code> represented as strings, return the product of <code>num1</code> and <code>num2</code>, also represented as a string.</p>
 
@@ -39,11 +23,7 @@ tags:
 	<li>Both <code>num1</code> and <code>num2</code>&nbsp;do not contain any leading zero, except the number <code>0</code> itself.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Simulating Mathematical Multiplication
 
@@ -62,7 +42,10 @@ Note to check whether the most significant digit is $0$, if it is, remove it.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m + n)$. Here, $m$ and $n$ are the lengths of $num1$ and $num2$ respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -400,8 +383,4 @@ var multiply = function (num1, num2) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 2013: Detect Squares](../../2000-2099/2013.Detect%20Squares/README.md)

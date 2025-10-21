@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/2000-2099/2013.Detect%20Squares/README_EN.md
-rating: 1841
-source: Weekly Contest 259 Q3
-tags:
-    - Design
-    - Array
-    - Hash Table
-    - Counting
----
-
-<!-- problem:start -->
-
 # [2013. Detect Squares](https://leetcode.com/problems/detect-squares)
 
-[中文文档](/solution/2000-2099/2013.Detect%20Squares/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given a stream of points on the X-Y plane. Design an algorithm that:</p>
 
@@ -72,11 +53,7 @@ detectSquares.count([11, 10]); // return 2. You can choose:
 	<li>At most <code>3000</code> calls <strong>in total</strong> will be made to <code>add</code> and <code>count</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table
 
@@ -88,7 +65,10 @@ When calling the $count(x_1, y_1)$ method, we need to get three other points to 
 
 In terms of time complexity, the time complexity of calling the $add(x, y)$ method is $O(1)$, and the time complexity of calling the $count(x_1, y_1)$ method is $O(n)$; the space complexity is $O(n)$. Here, $n$ is the number of points in the data stream.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -247,8 +227,4 @@ func (this *DetectSquares) Count(point []int) (ans int) {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0136: Single Number](../../0100-0199/0136.Single%20Number/README.md)

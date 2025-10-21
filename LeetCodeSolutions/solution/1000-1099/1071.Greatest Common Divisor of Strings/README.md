@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1000-1099/1071.Greatest%20Common%20Divisor%20of%20Strings/README_EN.md
-rating: 1397
-source: Weekly Contest 139 Q1
-tags:
-    - Math
-    - String
----
-
-<!-- problem:start -->
-
 # [1071. Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings)
 
-[中文文档](/solution/1000-1099/1071.Greatest%20Common%20Divisor%20of%20Strings/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>For two strings <code>s</code> and <code>t</code>, we say &quot;<code>t</code> divides <code>s</code>&quot; if and only if <code>s = t + t + t + ... + t + t</code> (i.e., <code>t</code> is concatenated with itself one or more times).</p>
 
@@ -53,15 +36,14 @@ tags:
 	<li><code>str1</code> and <code>str2</code> consist of English uppercase letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -152,15 +134,7 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -173,8 +147,4 @@ class Solution:
         return str1[:n]
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 2807: Insert Greatest Common Divisors in Linked List](../../2800-2899/2807.Insert%20Greatest%20Common%20Divisors%20in%20Linked%20List/README.md)

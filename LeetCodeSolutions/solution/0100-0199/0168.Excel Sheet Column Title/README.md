@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0168.Excel%20Sheet%20Column%20Title/README_EN.md
-tags:
-    - Math
-    - String
----
-
-<!-- problem:start -->
-
 # [168. Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title)
 
-[中文文档](/solution/0100-0199/0168.Excel%20Sheet%20Column%20Title/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer <code>columnNumber</code>, return <em>its corresponding column title as it appears in an Excel sheet</em>.</p>
 
@@ -61,15 +46,14 @@ AB -&gt; 28
 	<li><code>1 &lt;= columnNumber &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -171,8 +155,5 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
 
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1071: Greatest Common Divisor of Strings](../../1000-1099/1071.Greatest%20Common%20Divisor%20of%20Strings/README.md)

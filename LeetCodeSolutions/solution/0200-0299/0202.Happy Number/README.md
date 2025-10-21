@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0202.Happy%20Number/README_EN.md
-tags:
-    - Hash Table
-    - Math
-    - Two Pointers
----
-
-<!-- problem:start -->
-
 # [202. Happy Number](https://leetcode.com/problems/happy-number)
 
-[中文文档](/solution/0200-0299/0202.Happy%20Number/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Write an algorithm to determine if a number <code>n</code> is happy.</p>
 
@@ -57,15 +41,14 @@ tags:
 	<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -217,15 +200,7 @@ bool isHappy(int n) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -357,8 +332,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0066: Plus One](../../0000-0099/0066.Plus%20One/README.md)
