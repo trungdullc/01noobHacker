@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0003.Longest%20Substring%20Without%20Repeating%20Characters/README_EN.md
-tags:
-    - Hash Table
-    - String
-    - Sliding Window
----
-
-<!-- problem:start -->
-
 # [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
 
-[中文文档](/solution/0000-0099/0003.Longest%20Substring%20Without%20Repeating%20Characters/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code>, find the length of the <strong>longest</strong> <span data-keyword="substring-nonempty"><strong>substring</strong></span> without duplicate characters.</p>
 
@@ -54,11 +38,7 @@ Notice that the answer must be a substring, &quot;pwke&quot; is a subsequence an
 	<li><code>s</code> consists of English letters, digits, symbols and spaces.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sliding Window
 
@@ -70,7 +50,10 @@ Finally, we return the answer $\textit{ans}$.
 
 The time complexity is $O(n)$, where $n$ is the length of the string. The space complexity is $O(|\Sigma|)$, where $\Sigma$ represents the character set, and the size of $\Sigma$ is $128$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -325,8 +308,4 @@ int lengthOfLongestSubstring(char* s) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 424: Longest Repeating Character Replacement](../../0400-0499/0424.Longest%20Repeating%20Character%20Replacement/README.md)

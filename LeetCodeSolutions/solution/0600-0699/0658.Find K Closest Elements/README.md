@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0600-0699/0658.Find%20K%20Closest%20Elements/README_EN.md
-tags:
-    - Array
-    - Two Pointers
-    - Binary Search
-    - Sorting
-    - Sliding Window
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [658. Find K Closest Elements](https://leetcode.com/problems/find-k-closest-elements)
 
-[中文文档](/solution/0600-0699/0658.Find%20K%20Closest%20Elements/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a <strong>sorted</strong> integer array <code>arr</code>, two integers <code>k</code> and <code>x</code>, return the <code>k</code> closest integers to <code>x</code> in the array. The result should also be sorted in ascending order.</p>
 
@@ -57,15 +38,14 @@ tags:
 	<li><code>-10<sup>4</sup> &lt;= arr[i], x &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sort
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -178,15 +158,7 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Binary search
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -299,15 +271,7 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -384,8 +348,4 @@ func findClosestElements(arr []int, k int, x int) []int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0076: Minimum Window Substring](../..//0000-0099/0076.Minimum%20Window%20Substring/README.md)

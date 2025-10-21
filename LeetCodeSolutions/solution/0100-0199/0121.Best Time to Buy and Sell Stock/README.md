@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0121.Best%20Time%20to%20Buy%20and%20Sell%20Stock/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)
 
-[中文文档](/solution/0100-0199/0121.Best%20Time%20to%20Buy%20and%20Sell%20Stock/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>
 
@@ -49,11 +34,7 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 	<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Enumerate + Maintain the Minimum Value of the Prefix
 
@@ -65,7 +46,10 @@ Finally, return the answer.
 
 The time complexity is $O(n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -206,8 +190,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0003: Longest Substring Without Repeating Characters](../../0000-0099/0003.Longest%20Substring%20Without%20Repeating%20Characters/README.md)

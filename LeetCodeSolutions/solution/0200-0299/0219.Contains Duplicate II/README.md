@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0219.Contains%20Duplicate%20II/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - Sliding Window
----
-
-<!-- problem:start -->
-
 # [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii)
 
-[中文文档](/solution/0200-0299/0219.Contains%20Duplicate%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <code>true</code> <em>if there are two <strong>distinct indices</strong> </em><code>i</code><em> and </em><code>j</code><em> in the array such that </em><code>nums[i] == nums[j]</code><em> and </em><code>abs(i - j) &lt;= k</code>.</p>
 
@@ -51,11 +35,7 @@ tags:
 	<li><code>0 &lt;= k &lt;= 10<sup>5</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table
 
@@ -67,7 +47,10 @@ After traversing, return $\text{false}$.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -206,8 +189,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0121: Best Time to Buy And Sell Stock](../../0100-0199/0121.Best%20Time%20to%20Buy%20and%20Sell%20Stock/README.md)

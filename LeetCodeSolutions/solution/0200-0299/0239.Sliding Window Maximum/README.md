@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0239.Sliding%20Window%20Maximum/README_EN.md
-tags:
-    - Queue
-    - Array
-    - Sliding Window
-    - Monotonic Queue
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum)
 
-[中文文档](/solution/0200-0299/0239.Sliding%20Window%20Maximum/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array of integers&nbsp;<code>nums</code>, there is a sliding window of size <code>k</code> which is moving from the very left of the array to the very right. You can only see the <code>k</code> numbers in the window. Each time the sliding window moves right by one position.</p>
 
@@ -57,11 +39,7 @@ Window position                Max
 	<li><code>1 &lt;= k &lt;= nums.length</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Priority Queue (Max-Heap)
 
@@ -71,7 +49,10 @@ First, add the first $k-1$ elements to the priority queue. Then, starting from t
 
 The time complexity is $O(n \times \log k)$, and the space complexity is $O(k)$. Here, $n$ is the length of the array.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -169,12 +150,6 @@ func (h *hp) Push(v any)   { *h = append(*h, v.(pair)) }
 func (h *hp) Pop() any     { a := *h; v := a[len(a)-1]; *h = a[:len(a)-1]; return v }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Monotonic Queue
 
 To find the maximum value in a sliding window, a common method is to use a monotonic queue.
@@ -182,8 +157,6 @@ To find the maximum value in a sliding window, a common method is to use a monot
 We can maintain a queue $q$ that is monotonically decreasing from the front to the back, storing the indices of the elements. As we traverse the array $\textit{nums}$, for the current element $\textit{nums}[i]$, we first check if the front element of the queue is out of the window. If it is, we remove the front element. Then, we compare the current element $\textit{nums}[i]$ with the elements at the back of the queue. If the elements at the back are less than or equal to the current element, we remove them until the element at the back is greater than the current element or the queue is empty. Then, we add the index of the current element to the queue. At this point, the front element of the queue is the maximum value of the current sliding window. Note that we add the front element of the queue to the result array when the index $i$ is greater than or equal to $k-1$.
 
 The time complexity is $O(n)$, and the space complexity is $O(k)$. Here, $n$ is the length of the array $\textit{nums}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -357,8 +330,4 @@ var maxSlidingWindow = function (nums, k) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0682: Baseball Game](../../0600-0699/0682.Baseball%20Game/README.md)

@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0567.Permutation%20in%20String/README_EN.md
-tags:
-    - Hash Table
-    - Two Pointers
-    - String
-    - Sliding Window
----
-
-<!-- problem:start -->
-
 # [567. Permutation in String](https://leetcode.com/problems/permutation-in-string)
 
-[中文文档](/solution/0500-0599/0567.Permutation%20in%20String/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given two strings <code>s1</code> and <code>s2</code>, return <code>true</code> if <code>s2</code> contains a <span data-keyword="permutation-string">permutation</span> of <code>s1</code>, or <code>false</code> otherwise.</p>
 
@@ -47,11 +30,7 @@ tags:
 	<li><code>s1</code> and <code>s2</code> consist of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sliding Window
 
@@ -63,7 +42,10 @@ Otherwise, if the traversal ends without finding a valid substring, we return $\
 
 The time complexity is $O(m + n)$, where $m$ and $n$ are the lengths of strings $\textit{s1}$ and $\textit{s2}$, respectively. The space complexity is $O(|\Sigma|)$, where $\Sigma$ is the character set. In this problem, the character set is lowercase letters, so the space complexity is constant.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -347,8 +329,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0209: Minimum Size Subarray Sum](../../0200-0299/0209.Minimum%20Size%20Subarray%20Sum/README.md)
