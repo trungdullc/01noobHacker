@@ -319,7 +319,7 @@ Source: https://archive.ooo/<br>
 # Continue to LeetCode
 Purpose: Python Classes and Libraries<br>
 Source: https://leetcode.com/<br>
-[Continue](./LeetCodeSolutions/solution/README.md)
+[Continue](./LeetCodeSolutions/solution/1900-1999/1929.Concatenation%20of%20Array/README.md)
 
 # End with Interactive CTF
 Purpose: Dynamic Learning<br>
@@ -823,3 +823,10 @@ Ctrl + Shift + T
 
 Others Writeups:
 https://github.com/Adamkadaban/CTFs/tree/master
+
+#### Du Solution: Python3
+```
+
+```
+
+[Continue : ](../../)

@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0217.Contains%20Duplicate/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate)
 
-[中文文档](/solution/0200-0299/0217.Contains%20Duplicate/README.md)
-
 ## Description
-
-<!-- description:start -->
-
 <p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
 
 <p>&nbsp;</p>
@@ -61,11 +44,8 @@ tags:
 	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
-<!-- description:end -->
 
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting
 
@@ -77,9 +57,38 @@ Otherwise, when the traversal ends, we return `false`.
 
 The time complexity is $O(n \times \log n)$, where $n$ is the length of the array `nums`.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
-#### Python3
+class Solution:
+   def containsDuplicate(self,nums: List[int]) -> bool:
+      for number in range(len(nums)):
+         for pointer in range(number + 1, len(nums)):
+             if nums[number] == nums[pointer]:
+                 return True
+      return False
+
+def main() -> None:
+   sol = Solution()
+   print(sol.containsDuplicate([1,2,3,1]))
+   print(sol.containsDuplicate([1,2,3,4]))
+   print(sol.containsDuplicate([1,1,1,3,3,4,3,2,4,2]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ chmod u+x ./pythonScript.py 
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+True
+False
+True
+```
+
+#### Python3: Solution.py
 
 ```python
 class Solution:
@@ -87,7 +96,7 @@ class Solution:
         return any(a == b for a, b in pairwise(sorted(nums)))
 ```
 
-#### Java
+#### Java: Solution.java
 
 ```java
 class Solution {
@@ -103,7 +112,7 @@ class Solution {
 }
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class Solution {
@@ -120,7 +129,7 @@ public:
 };
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 func containsDuplicate(nums []int) bool {
@@ -134,7 +143,7 @@ func containsDuplicate(nums []int) bool {
 }
 ```
 
-#### TypeScript
+#### TypeScript: Solution.ts
 
 ```ts
 function containsDuplicate(nums: number[]): boolean {
@@ -149,7 +158,7 @@ function containsDuplicate(nums: number[]): boolean {
 }
 ```
 
-#### Rust
+#### Rust: Solution.rs
 
 ```rust
 impl Solution {
@@ -166,7 +175,7 @@ impl Solution {
 }
 ```
 
-#### JavaScript
+#### JavaScript: Solution.js
 
 ```js
 /**
@@ -178,7 +187,7 @@ var containsDuplicate = function (nums) {
 };
 ```
 
-#### C#
+#### C#: Solution.cs
 
 ```cs
 public class Solution {
@@ -188,7 +197,7 @@ public class Solution {
 }
 ```
 
-#### PHP
+#### PHP: Solution.php
 
 ```php
 class Solution {
@@ -203,7 +212,7 @@ class Solution {
 }
 ```
 
-#### C
+#### C: Solution.c
 
 ```c
 int cmp(const void* a, const void* b) {
@@ -221,21 +230,13 @@ bool containsDuplicate(int* nums, int numsSize) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Hash Table
 
 We traverse the array and record the elements that have appeared in the hash table $s$. If an element appears for the second time, it means that there are duplicate elements in the array, and we directly return `true`.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array `nums`.
 
-<!-- tabs:start -->
-
-#### Python3
+#### Python3: Solution2.py
 
 ```python
 class Solution:
@@ -243,7 +244,7 @@ class Solution:
         return len(set(nums)) < len(nums)
 ```
 
-#### Java
+#### Java: Solution2.java
 
 ```java
 class Solution {
@@ -259,7 +260,7 @@ class Solution {
 }
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class Solution {
@@ -271,7 +272,7 @@ public:
 };
 ```
 
-#### Go
+#### Go: Solution2.go
 
 ```go
 func containsDuplicate(nums []int) bool {
@@ -286,7 +287,7 @@ func containsDuplicate(nums []int) bool {
 }
 ```
 
-#### TypeScript
+#### TypeScript: Solution2.ts
 
 ```ts
 function containsDuplicate(nums: number[]): boolean {
@@ -294,7 +295,7 @@ function containsDuplicate(nums: number[]): boolean {
 }
 ```
 
-#### Rust
+#### Rust: Solution.rs
 
 ```rust
 use std::collections::HashSet;
@@ -305,8 +306,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0242: Contains Duplicates](../../0200-0299/0242.Valid%20Anagram/README.md)

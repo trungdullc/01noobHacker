@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0128.Longest%20Consecutive%20Sequence/README_EN.md
-tags:
-    - Union Find
-    - Array
-    - Hash Table
----
-
-<!-- problem:start -->
-
 # [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence)
 
-[中文文档](/solution/0100-0199/0128.Longest%20Consecutive%20Sequence/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an unsorted array of integers <code>nums</code>, return <em>the length of the longest consecutive elements sequence.</em></p>
 
@@ -53,11 +37,7 @@ tags:
 	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table
 
@@ -69,7 +49,10 @@ After the iteration, we return the answer $\textit{ans}$.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -224,19 +207,11 @@ var longestConsecutive = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Hash Table (Optimization)
 
 Similar to Solution 1, we use a hash table $\textit{s}$ to store all the elements in the array and a variable $\textit{ans}$ to record the length of the longest consecutive sequence. However, we no longer use a hash table $\textit{d}$ to record the length of the consecutive sequence each element $x$ belongs to. During the iteration, we skip elements where $x-1$ is also in the hash table $\textit{s}$. If $x-1$ is in the hash table $\textit{s}$, then $x$ is definitely not the start of a consecutive sequence, so we can directly skip $x$.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -386,8 +361,4 @@ var longestConsecutive = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0122: Best Time to Buy And Sell Stock II](../../0100-0199/0122.Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II/README.md)

@@ -1,27 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0912.Sort%20an%20Array/README_EN.md
-tags:
-    - Array
-    - Divide and Conquer
-    - Bucket Sort
-    - Counting Sort
-    - Radix Sort
-    - Sorting
-    - Heap (Priority Queue)
-    - Merge Sort
----
-
-<!-- problem:start -->
-
 # [912. Sort an Array](https://leetcode.com/problems/sort-an-array)
 
-[中文文档](/solution/0900-0999/0912.Sort%20an%20Array/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of integers <code>nums</code>, sort the array in ascending order and return it.</p>
 
@@ -52,15 +31,14 @@ tags:
 	<li><code>-5 * 10<sup>4</sup> &lt;= nums[i] &lt;= 5 * 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -317,15 +295,7 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -552,15 +522,7 @@ var sortArray = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3
-
-<!-- tabs:start -->
 
 #### Java
 
@@ -603,8 +565,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0075: Sort Colors](../../0000-0099/0075.Sort%20Colors/README.md)

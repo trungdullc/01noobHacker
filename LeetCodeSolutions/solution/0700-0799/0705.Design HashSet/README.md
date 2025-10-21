@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0705.Design%20HashSet/README_EN.md
-tags:
-    - Design
-    - Array
-    - Hash Table
-    - Linked List
-    - Hash Function
----
-
-<!-- problem:start -->
-
 # [705. Design HashSet](https://leetcode.com/problems/design-hashset)
 
-[中文文档](/solution/0700-0799/0705.Design%20HashSet/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Design a HashSet without using any built-in hash table libraries.</p>
 
@@ -59,11 +41,7 @@ myHashSet.contains(2); // return False, (already removed)</pre>
 	<li>At most <code>10<sup>4</sup></code> calls will be made to <code>add</code>, <code>remove</code>, and <code>contains</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Static Array Implementation
 
@@ -73,9 +51,12 @@ When adding an element to the hash set, set the corresponding position in the ar
 
 The time complexity of the above operations is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
 
-#### Python3
+```
+
+#### Python3: Solution.py
 
 ```python
 class MyHashSet:
@@ -99,7 +80,7 @@ class MyHashSet:
 # param_3 = obj.contains(key)
 ```
 
-#### Java
+#### Java: Solution.java
 
 ```java
 class MyHashSet {
@@ -130,7 +111,7 @@ class MyHashSet {
  */
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class MyHashSet {
@@ -163,7 +144,7 @@ public:
  */
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 type MyHashSet struct {
@@ -196,7 +177,7 @@ func (this *MyHashSet) Contains(key int) bool {
  */
 ```
 
-#### TypeScript
+#### TypeScript: Solution.ts
 
 ```ts
 class MyHashSet {
@@ -227,19 +208,11 @@ class MyHashSet {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Array of Linked Lists
 
 We can also create an array of size $SIZE=1000$, where each position in the array is a linked list.
 
-<!-- tabs:start -->
-
-#### Python3
+#### Python3: Solution.py
 
 ```python
 class MyHashSet:
@@ -274,7 +247,7 @@ class MyHashSet:
 # param_3 = obj.contains(key)
 ```
 
-#### Java
+#### Java: Solution.java
 
 ```java
 class MyHashSet {
@@ -330,7 +303,7 @@ class MyHashSet {
  */
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class MyHashSet {
@@ -383,7 +356,7 @@ public:
  */
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 type MyHashSet struct {
@@ -434,8 +407,4 @@ func (this *MyHashSet) hash(key int) int {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0706: Design HashMap](../../0700-0799/0706.Design%20HashMap/README.md)

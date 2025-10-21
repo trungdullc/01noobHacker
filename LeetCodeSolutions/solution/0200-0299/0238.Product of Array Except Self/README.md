@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0238.Product%20of%20Array%20Except%20Self/README_EN.md
-tags:
-    - Array
-    - Prefix Sum
----
-
-<!-- problem:start -->
-
 # [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self)
 
-[中文文档](/solution/0200-0299/0238.Product%20of%20Array%20Except%20Self/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code>, return <em>an array</em> <code>answer</code> <em>such that</em> <code>answer[i]</code> <em>is equal to the product of all the elements of</em> <code>nums</code> <em>except</em> <code>nums[i]</code>.</p>
 
@@ -43,11 +28,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong>&nbsp;Can you solve the problem in <code>O(1)</code>&nbsp;extra&nbsp;space complexity? (The output array <strong>does not</strong> count as extra space for space complexity analysis.)</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Two Passes
 
@@ -61,7 +42,10 @@ After the traversal, we return the answer array $\textit{ans}$.
 
 The time complexity is $O(n)$, where $n$ is the length of the array $\textit{nums}$. Ignoring the space consumption of the answer array, the space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -244,8 +228,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0036: Valid Sudoku](../../0000-0099/0036.Valid%20Sudoku/README.md)

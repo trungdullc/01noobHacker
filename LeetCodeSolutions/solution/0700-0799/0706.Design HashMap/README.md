@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0706.Design%20HashMap/README_EN.md
-tags:
-    - Design
-    - Array
-    - Hash Table
-    - Linked List
-    - Hash Function
----
-
-<!-- problem:start -->
-
 # [706. Design HashMap](https://leetcode.com/problems/design-hashmap)
 
-[中文文档](/solution/0700-0799/0706.Design%20HashMap/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Design a HashMap without using any built-in hash table libraries.</p>
 
@@ -61,15 +43,13 @@ myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
 	<li>At most <code>10<sup>4</sup></code> calls will be made to <code>put</code>, <code>get</code>, and <code>remove</code>.</li>
 </ul>
 
-<!-- description:end -->
 
 ## Solutions
 
-<!-- solution:start -->
+#### Du Solution: Python3
+```
 
-### Solution 1
-
-<!-- tabs:start -->
+```
 
 #### Python3
 
@@ -227,8 +207,4 @@ class MyHashMap {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0049: Group Anagrams](../../0000-0099/0049.Group%20Anagrams/README.md)

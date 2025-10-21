@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1900-1999/1929.Concatenation%20of%20Array/README_EN.md
-rating: 1132
-source: Weekly Contest 249 Q1
-tags:
-    - Array
-    - Simulation
----
-
-<!-- problem:start -->
-
 # [1929. Concatenation of Array](https://leetcode.com/problems/concatenation-of-array)
 
-[中文文档](/solution/1900-1999/1929.Concatenation%20of%20Array/README.md)
-
 ## Description
-
-<!-- description:start -->
-
 <p>Given an integer array <code>nums</code> of length <code>n</code>, you want to create an array <code>ans</code> of length <code>2n</code> where <code>ans[i] == nums[i]</code> and <code>ans[i + n] == nums[i]</code> for <code>0 &lt;= i &lt; n</code> (<strong>0-indexed</strong>).</p>
 
 <p>Specifically, <code>ans</code> is the <strong>concatenation</strong> of two <code>nums</code> arrays.</p>
@@ -54,11 +36,7 @@ tags:
 	<li><code>1 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Simulation
 
@@ -66,9 +44,30 @@ We directly simulate according to the problem description by adding the elements
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
-#### Python3
+class Solution:
+   def getConcatenation(self, nums: List[int]) -> List[int]:
+      return nums + nums
+      # return nums*2
+
+def main()-> None:
+   sol = Solution()
+   print(sol.getConcatenation([1,2,1]))
+   print(sol.getConcatenation([1,3,2,1]))
+
+if __name__ == "__main__":
+   main()
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[1, 2, 1, 1, 2, 1]
+[1, 3, 2, 1, 1, 3, 2, 1]
+```
+
+#### Python3: Solution.py
 
 ```python
 class Solution:
@@ -76,7 +75,7 @@ class Solution:
         return nums + nums
 ```
 
-#### Java
+#### Java: Solutions.java
 
 ```java
 class Solution {
@@ -91,7 +90,7 @@ class Solution {
 }
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class Solution {
@@ -105,7 +104,7 @@ public:
 };
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 func getConcatenation(nums []int) []int {
@@ -113,7 +112,7 @@ func getConcatenation(nums []int) []int {
 }
 ```
 
-#### TypeScript
+#### TypeScript: Solution.ts
 
 ```ts
 function getConcatenation(nums: number[]): number[] {
@@ -121,7 +120,7 @@ function getConcatenation(nums: number[]): number[] {
 }
 ```
 
-#### Rust
+#### Rust: Solution.rs
 
 ```rust
 impl Solution {
@@ -131,7 +130,7 @@ impl Solution {
 }
 ```
 
-#### JavaScript
+#### JavaScript: Solution.js
 
 ```js
 /**
@@ -143,7 +142,7 @@ var getConcatenation = function (nums) {
 };
 ```
 
-#### C
+#### C: solution.c
 
 ```c
 /**
@@ -159,8 +158,4 @@ int* getConcatenation(int* nums, int numsSize, int* returnSize) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0217: Contains Duplicates](../../0200-0299/0217.Contains%20Duplicate/README.md)

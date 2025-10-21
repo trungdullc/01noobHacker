@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0001.Two%20Sum/README_EN.md
-tags:
-    - Array
-    - Hash Table
----
-
-<!-- problem:start -->
-
 # [1. Two Sum](https://leetcode.com/problems/two-sum)
 
-[中文文档](/solution/0000-0099/0001.Two%20Sum/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
 
@@ -59,11 +44,9 @@ tags:
 <p>&nbsp;</p>
 <strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code><font face="monospace">&nbsp;</font>time complexity?
 
-<!-- description:end -->
 
 ## Solutions
 
-<!-- solution:start -->
 
 ### Solution 1: Hash Table
 
@@ -73,9 +56,12 @@ Traverse the array $\textit{nums}$, for the current element $\textit{nums}[i]$, 
 
 Time complexity is $O(n)$, and space complexity is $O(n)$, where $n$ is the length of the array $\textit{nums}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
 
-#### Python3
+```
+
+#### Python3: Solution.py
 
 ```python
 class Solution:
@@ -87,7 +73,7 @@ class Solution:
             d[x] = i
 ```
 
-#### Java
+#### Java: Solution.java
 
 ```java
 class Solution {
@@ -105,7 +91,7 @@ class Solution {
 }
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class Solution {
@@ -124,7 +110,7 @@ public:
 };
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 func twoSum(nums []int, target int) []int {
@@ -140,7 +126,7 @@ func twoSum(nums []int, target int) []int {
 }
 ```
 
-#### TypeScript
+#### TypeScript: Solution.ts
 
 ```ts
 function twoSum(nums: number[], target: number): number[] {
@@ -156,7 +142,7 @@ function twoSum(nums: number[], target: number): number[] {
 }
 ```
 
-#### Rust
+#### Rust: Solution.rs
 
 ```rust
 use std::collections::HashMap;
@@ -176,7 +162,7 @@ impl Solution {
 }
 ```
 
-#### JavaScript
+#### JavaScript: Solution.js
 
 ```js
 /**
@@ -197,7 +183,7 @@ var twoSum = function (nums, target) {
 };
 ```
 
-#### C#
+#### C#: Solution.cs
 
 ```cs
 public class Solution {
@@ -217,7 +203,7 @@ public class Solution {
 }
 ```
 
-#### PHP
+#### PHP: Solution.php
 
 ```php
 class Solution {
@@ -239,7 +225,7 @@ class Solution {
 }
 ```
 
-#### Scala
+#### Scala: Solution.scala
 
 ```scala
 import scala.collection.mutable
@@ -262,7 +248,7 @@ object Solution {
 }
 ```
 
-#### Swift
+#### Swift: Solution.swift
 
 ```swift
 class Solution {
@@ -280,7 +266,7 @@ class Solution {
 }
 ```
 
-#### Ruby
+#### Ruby: Solution.rb
 
 ```rb
 # @param {Integer[]} nums
@@ -298,7 +284,7 @@ def two_sum(nums, target)
 end
 ```
 
-#### Kotlin
+#### Kotlin: Solution.kt
 
 ```kotlin
 class Solution {
@@ -317,7 +303,7 @@ class Solution {
 }
 ```
 
-#### Nim
+#### Nim: Solution.nim
 
 ```nim
 import std/enumerate
@@ -333,7 +319,7 @@ proc twoSum(nums: seq[int], target: int): seq[int] =
   return @[]
 ```
 
-#### Cangjie
+#### Cangjie: Solution.cj
 
 ```cj
 class Solution {
@@ -350,7 +336,7 @@ class Solution {
 }
 ```
 
-#### C
+#### C: Solution.c
 
 ```c
 #include <stdlib.h>
@@ -399,8 +385,4 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0014: Longest Common Prefix](../../0000-0099/0014.Longest%20Common%20Prefix/README.md)

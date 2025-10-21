@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0560.Subarray%20Sum%20Equals%20K/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - Prefix Sum
----
-
-<!-- problem:start -->
-
 # [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k)
 
-[中文文档](/solution/0500-0599/0560.Subarray%20Sum%20Equals%20K/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of integers <code>nums</code> and an integer <code>k</code>, return <em>the total number of subarrays whose sum equals to</em> <code>k</code>.</p>
 
@@ -39,11 +23,7 @@ tags:
 	<li><code>-10<sup>7</sup> &lt;= k &lt;= 10<sup>7</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Prefix Sum
 
@@ -55,7 +35,10 @@ After the traversal, we return the answer.
 
 The time complexity is `O(n)`, and the space complexity is `O(n)`. Where `n` is the length of the array `nums`.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -161,8 +144,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0041: First Missing Positive](../../0000-0099/0041.First%20Missing%20Positive/README.md)

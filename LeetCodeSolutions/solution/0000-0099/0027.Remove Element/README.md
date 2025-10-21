@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0027.Remove%20Element/README_EN.md
-tags:
-    - Array
-    - Two Pointers
----
-
-<!-- problem:start -->
-
 # [27. Remove Element](https://leetcode.com/problems/remove-element)
 
-[中文文档](/solution/0000-0099/0027.Remove%20Element/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> and an integer <code>val</code>, remove all occurrences of <code>val</code> in <code>nums</code> <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a>. The order of the elements may be changed. Then return <em>the number of elements in </em><code>nums</code><em> which are not equal to </em><code>val</code>.</p>
 
@@ -76,11 +61,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 	<li><code>0 &lt;= val &lt;= 100</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: One Pass
 
@@ -92,9 +73,12 @@ Finally, return $k$.
 
 The time complexity is $O(n)$ and the space complexity is $O(1)$, where $n$ is the length of the array $nums$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
 
-#### Python3
+```
+
+#### Python3: Solution.py
 
 ```python
 class Solution:
@@ -107,7 +91,7 @@ class Solution:
         return k
 ```
 
-#### Java
+#### Java: Solution.java
 
 ```java
 class Solution {
@@ -123,7 +107,7 @@ class Solution {
 }
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class Solution {
@@ -140,7 +124,7 @@ public:
 };
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 func removeElement(nums []int, val int) int {
@@ -155,7 +139,7 @@ func removeElement(nums []int, val int) int {
 }
 ```
 
-#### TypeScript
+#### TypeScript: Solution.ts
 
 ```ts
 function removeElement(nums: number[], val: number): number {
@@ -169,7 +153,7 @@ function removeElement(nums: number[], val: number): number {
 }
 ```
 
-#### Rust
+#### Rust: Solution.rs
 
 ```rust
 impl Solution {
@@ -186,7 +170,7 @@ impl Solution {
 }
 ```
 
-#### JavaScript
+#### JavaScript: Solution.js
 
 ```js
 /**
@@ -205,7 +189,7 @@ var removeElement = function (nums, val) {
 };
 ```
 
-#### C#
+#### C#: Solution.cs
 
 ```cs
 public class Solution {
@@ -221,7 +205,7 @@ public class Solution {
 }
 ```
 
-#### PHP
+#### PHP: Solution.php
 
 ```php
 class Solution {
@@ -240,8 +224,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0169: Majority Element](../../0100-0199/0169.Majority%20Element/README.md)

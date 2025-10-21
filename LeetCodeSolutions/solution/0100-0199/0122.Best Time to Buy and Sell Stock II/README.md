@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0122.Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II/README_EN.md
-tags:
-    - Greedy
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii)
 
-[中文文档](/solution/0100-0199/0122.Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>
 
@@ -60,11 +44,7 @@ Total profit is 4.
 	<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Greedy Algorithm
 
@@ -72,7 +52,10 @@ Starting from the second day, if the stock price is higher than the previous day
 
 The time complexity is $O(n)$, where $n$ is the length of the `prices` array. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -179,12 +162,6 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Dynamic Programming
 
 We define $f[i][j]$ as the maximum profit after trading on the $i$th day, where $j$ indicates whether we currently hold the stock. When holding the stock, $j=0$, and when not holding the stock, $j=1$. The initial state is $f[0][0]=-prices[0]$, and all other states are $0$.
@@ -205,8 +182,6 @@ $$
 The final answer is $f[n-1][1]$, where $n$ is the length of the `prices` array.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the `prices` array.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -289,19 +264,11 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Dynamic Programming (Space Optimization)
 
 We can find that in Solution 2, the state of the $i$th day is only related to the state of the $i-1$th day. Therefore, we can use only two variables to maintain the state of the $i-1$th day, thereby optimizing the space complexity to $O(1)$.
 
 The time complexity is $O(n)$, where $n$ is the length of the `prices` array. The space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -371,8 +338,4 @@ func maxProfit(prices []int) int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0229: Majority Element II](../../0200-0299/0229.Majority%20Element%20II/README.md)

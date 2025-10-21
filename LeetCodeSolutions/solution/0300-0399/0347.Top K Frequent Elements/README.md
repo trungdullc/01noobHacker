@@ -1,27 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0347.Top%20K%20Frequent%20Elements/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - Divide and Conquer
-    - Bucket Sort
-    - Counting
-    - Quickselect
-    - Sorting
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements)
 
-[中文文档](/solution/0300-0399/0347.Top%20K%20Frequent%20Elements/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the</em> <code>k</code> <em>most frequent elements</em>. You may return the answer in <strong>any order</strong>.</p>
 
@@ -46,11 +25,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Your algorithm&#39;s time complexity must be better than <code>O(n log n)</code>, where n is the array&#39;s size.</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Priority Queue (Min Heap)
 
@@ -62,7 +37,10 @@ Finally, we pop the elements from the min heap one by one and place them into th
 
 The time complexity is $O(n \log k)$, and the space complexity is $O(k)$. Here, $n$ is the length of the array.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -198,8 +176,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0271: Encode and Decode Strings](../../0200-0299/0271.Encode%20and%20Decode%20Strings/README.md)

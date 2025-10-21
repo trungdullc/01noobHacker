@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0169.Majority%20Element/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - Divide and Conquer
-    - Counting
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [169. Majority Element](https://leetcode.com/problems/majority-element)
 
-[中文文档](/solution/0100-0199/0169.Majority%20Element/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array <code>nums</code> of size <code>n</code>, return <em>the majority element</em>.</p>
 
@@ -44,11 +26,7 @@ tags:
 <p>&nbsp;</p>
 <strong>Follow-up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Moore Voting Algorithm
 
@@ -63,9 +41,12 @@ In general, the Moore voting algorithm requires **two passes** over the input li
 
 The time complexity is $O(n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
 
-#### Python3
+```
+
+#### Python3: Solution.py
 
 ```python
 class Solution:
@@ -79,7 +60,7 @@ class Solution:
         return m
 ```
 
-#### Java
+#### Java: Solution.java
 
 ```java
 class Solution {
@@ -98,7 +79,7 @@ class Solution {
 }
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class Solution {
@@ -118,7 +99,7 @@ public:
 };
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 func majorityElement(nums []int) int {
@@ -138,7 +119,7 @@ func majorityElement(nums []int) int {
 }
 ```
 
-#### TypeScript
+#### TypeScript: Solution.ts
 
 ```ts
 function majorityElement(nums: number[]): number {
@@ -156,7 +137,7 @@ function majorityElement(nums: number[]): number {
 }
 ```
 
-#### Rust
+#### Rust: Solution.rs
 
 ```rust
 impl Solution {
@@ -176,7 +157,7 @@ impl Solution {
 }
 ```
 
-#### JavaScript
+#### JavaScript: Solution.js
 
 ```js
 /**
@@ -198,7 +179,7 @@ var majorityElement = function (nums) {
 };
 ```
 
-#### C#
+#### C#: Solution.cs
 
 ```cs
 public class Solution {
@@ -217,7 +198,7 @@ public class Solution {
 }
 ```
 
-#### PHP
+#### PHP: Solution.php
 
 ```php
 class Solution {
@@ -243,8 +224,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0705: Design HashSet](../../0700-0799/0705.Design%20HashSet/README.md)

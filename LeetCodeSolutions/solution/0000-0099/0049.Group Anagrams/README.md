@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0049.Group%20Anagrams/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - String
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [49. Group Anagrams](https://leetcode.com/problems/group-anagrams)
 
-[中文文档](/solution/0000-0099/0049.Group%20Anagrams/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of strings <code>strs</code>, group the <span data-keyword="anagram">anagrams</span> together. You can return the answer in <strong>any order</strong>.</p>
 
@@ -63,11 +46,7 @@ tags:
 	<li><code>strs[i]</code> consists of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table
 
@@ -87,7 +66,10 @@ Finally, return the `value` list of the hash table.
 
 The time complexity is $O(n\times k\times \log k)$, where $n$ and $k$ are the lengths of the string array and the maximum length of the string, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -253,19 +235,11 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Counting
 
 We can also change the sorting part in Solution 1 to counting, that is, use the characters in each string $s$ and their occurrence times as `key`, and use the string $s$ as `value` to store in the hash table.
 
 The time complexity is $O(n\times (k + C))$, where $n$ and $k$ are the lengths of the string array and the maximum length of the string, respectively, and $C$ is the size of the character set. In this problem, $C = 26$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -364,8 +338,4 @@ function groupAnagrams(strs: string[]): string[][] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0912: Sort an Array](../../0900-0999/0912.Sort%20an%20Array/README.md)

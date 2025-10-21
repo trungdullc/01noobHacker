@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0242.Valid%20Anagram/README_EN.md
-tags:
-    - Hash Table
-    - String
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [242. Valid Anagram](https://leetcode.com/problems/valid-anagram)
 
-[中文文档](/solution/0200-0299/0242.Valid%20Anagram/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given two strings <code>s</code> and <code>t</code>, return <code>true</code> if <code>t</code> is an <span data-keyword="anagram">anagram</span> of <code>s</code>, and <code>false</code> otherwise.</p>
 
@@ -48,11 +32,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> What if the inputs contain Unicode characters? How would you adapt your solution to such a case?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Counting
 
@@ -62,9 +42,85 @@ Otherwise, we use a hash table or an array of length $26$ to record the number o
 
 The time complexity is $O(n)$, the space complexity is $O(C)$, where $n$ is the length of the string; and $C$ is the size of the character set, which is $C=26$ in this problem.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+# With a dictionary
+AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py 
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
 
-#### Python3
+class Solution:
+    def validAnagram(self, s: str, t: str) -> bool:
+        dict1, dict2 = {}, {}
+        
+        for char in s:
+            dict1[char] = dict1.get(char, 0) + 1
+        # Note: Since 1 + NULL will get error
+        # if char in dict1:
+            # dict1[char] += 1
+        # else:
+            # dict1[char] = 1
+
+        for char in t:
+            dict2[char] = dict2.get(char, 0) + 1
+
+        # print("dict1:", dict1)
+        # print("dict2:", dict2)
+        return dict1 == dict2
+
+def main() -> None:
+    sol = Solution()
+    print(sol.validAnagram(s="anagram", t="nagaram"))
+    print(sol.validAnagram(s = "rat", t = "car"))
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+True
+False
+
+
+# With a List
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+    def validAnagram(self, s: str, t: str) -> bool:
+        # Create frequency lists for 26 letters
+        list1 = [0] * 26
+        list2 = [0] * 26
+
+        for char in s:
+            list1[ord(char) - ord('a')] += 1
+
+        for char in t:
+            list2[ord(char) - ord('a')] += 1
+
+        print("list1:", list1)
+        print("list2:", list2)
+
+        return list1 == list2
+
+def main() -> None:
+    sol = Solution()
+    print(sol.validAnagram(s="anagram", t="nagaram"))  # True
+    print(sol.validAnagram(s="rat", t="car"))          # False
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+list1: [3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+list2: [3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+True
+list1: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+list2: [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+False
+```
+
+#### Python3: Solution.py
 
 ```python
 class Solution:
@@ -79,7 +135,7 @@ class Solution:
         return True
 ```
 
-#### Java
+#### Java: Solution.java
 
 ```java
 class Solution {
@@ -102,7 +158,7 @@ class Solution {
 }
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class Solution {
@@ -121,7 +177,7 @@ public:
 };
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 func isAnagram(s string, t string) bool {
@@ -142,7 +198,7 @@ func isAnagram(s string, t string) bool {
 }
 ```
 
-#### TypeScript
+#### TypeScript: Solution.ts
 
 ```ts
 function isAnagram(s: string, t: string): boolean {
@@ -158,7 +214,7 @@ function isAnagram(s: string, t: string): boolean {
 }
 ```
 
-#### Rust
+#### Rust: Solution.rs
 
 ```rust
 impl Solution {
@@ -182,7 +238,7 @@ impl Solution {
 }
 ```
 
-#### JavaScript
+#### JavaScript: Solution.js
 
 ```js
 /**
@@ -203,7 +259,7 @@ var isAnagram = function (s, t) {
 };
 ```
 
-#### C#
+#### C#: Solution.cs
 
 ```cs
 public class Solution {
@@ -221,7 +277,7 @@ public class Solution {
 }
 ```
 
-#### C
+#### C: Solution.c
 
 ```c
 int cmp(const void* a, const void* b) {
@@ -240,17 +296,9 @@ bool isAnagram(char* s, char* t) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
 
-<!-- tabs:start -->
-
-#### Python3
+#### Python3: Solution2.py
 
 ```python
 class Solution:
@@ -258,7 +306,7 @@ class Solution:
         return Counter(s) == Counter(t)
 ```
 
-#### Rust
+#### Rust: Solution2.rs
 
 ```rust
 impl Solution {
@@ -279,7 +327,7 @@ impl Solution {
 }
 ```
 
-#### C
+#### C: Solution2.c
 
 ```c
 bool isAnagram(char* s, char* t) {
@@ -302,8 +350,4 @@ bool isAnagram(char* s, char* t) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0001: Two Sum](../../0000-0099/0001.Two%20Sum/README.md)

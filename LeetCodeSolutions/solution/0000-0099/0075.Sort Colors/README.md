@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0075.Sort%20Colors/README_EN.md
-tags:
-    - Array
-    - Two Pointers
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [75. Sort Colors](https://leetcode.com/problems/sort-colors)
 
-[中文文档](/solution/0000-0099/0075.Sort%20Colors/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array <code>nums</code> with <code>n</code> objects colored red, white, or blue, sort them <strong><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> </strong>so that objects of the same color are adjacent, with the colors in the order red, white, and blue.</p>
 
@@ -51,11 +35,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong>&nbsp;Could you come up with a one-pass algorithm using only&nbsp;constant extra space?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Three Pointers
 
@@ -71,7 +51,10 @@ After the traversal, the elements in the array are divided into three parts: $[0
 
 The time complexity is $O(n)$, where $n$ is the length of the array. Only one traversal of the array is needed. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -230,8 +213,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0347: Top K Frequent Elements](../../0300-0399/0347.Top%20K%20Frequent%20Elements/README.md)

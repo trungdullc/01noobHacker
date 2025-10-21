@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0229.Majority%20Element%20II/README_EN.md
-tags:
-    - Array
-    - Hash Table
-    - Counting
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [229. Majority Element II](https://leetcode.com/problems/majority-element-ii)
 
-[中文文档](/solution/0200-0299/0229.Majority%20Element%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array of size <code>n</code>, find all elements that appear more than <code>&lfloor; n/3 &rfloor;</code> times.</p>
 
@@ -54,15 +37,14 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -262,8 +244,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0560: Subarray Sum Equals K](../../0500-0599/0560.Subarray%20Sum%20Equals%20K/README.md)

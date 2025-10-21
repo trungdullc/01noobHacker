@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0014.Longest%20Common%20Prefix/README_EN.md
-tags:
-    - Trie
-    - String
----
-
-<!-- problem:start -->
-
 # [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix)
 
-[中文文档](/solution/0000-0099/0014.Longest%20Common%20Prefix/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Write a function to find the longest common prefix string amongst an array of strings.</p>
 
@@ -46,11 +31,7 @@ tags:
 	<li><code>strs[i]</code> consists of only lowercase English letters if it is non-empty.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Character Comparison
 
@@ -60,9 +41,10 @@ If the traversal ends, it means that the first $i$ characters of all strings are
 
 The time complexity is $O(n \times m)$, where $n$ and $m$ are the length of the string array and the minimum length of the strings, respectively. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
 
-#### Python3
+
+
+#### Python3: Solution.py
 
 ```python
 class Solution:
@@ -74,7 +56,7 @@ class Solution:
         return strs[0]
 ```
 
-#### Java
+#### Java: Solution.java
 
 ```java
 class Solution {
@@ -92,7 +74,7 @@ class Solution {
 }
 ```
 
-#### C++
+#### C++: Solution.cpp
 
 ```cpp
 class Solution {
@@ -111,7 +93,7 @@ public:
 };
 ```
 
-#### Go
+#### Go: Solution.go
 
 ```go
 func longestCommonPrefix(strs []string) string {
@@ -127,7 +109,7 @@ func longestCommonPrefix(strs []string) string {
 }
 ```
 
-#### TypeScript
+#### TypeScript: Solution.ts
 
 ```ts
 function longestCommonPrefix(strs: string[]): string {
@@ -142,7 +124,7 @@ function longestCommonPrefix(strs: string[]): string {
 }
 ```
 
-#### Rust
+#### Rust: Solution.rs
 
 ```rust
 impl Solution {
@@ -160,7 +142,7 @@ impl Solution {
 }
 ```
 
-#### JavaScript
+#### JavaScript: Solution.js
 
 ```js
 /**
@@ -179,7 +161,7 @@ var longestCommonPrefix = function (strs) {
 };
 ```
 
-#### C#
+#### C#: Solution.c
 
 ```cs
 public class Solution {
@@ -197,7 +179,7 @@ public class Solution {
 }
 ```
 
-#### PHP
+#### PHP: Solution.php
 
 ```php
 class Solution {
@@ -220,7 +202,7 @@ class Solution {
 }
 ```
 
-#### Ruby
+#### Ruby: Solution.rb
 
 ```rb
 # @param {String[]} strs
@@ -250,8 +232,4 @@ def longest_common_prefix(strs)
 end
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0027: Remove Element](../../0000-0099/0027.Remove%20Element/README.md)

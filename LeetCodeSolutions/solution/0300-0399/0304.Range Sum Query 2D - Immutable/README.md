@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0304.Range%20Sum%20Query%202D%20-%20Immutable/README_EN.md
-tags:
-    - Design
-    - Array
-    - Matrix
-    - Prefix Sum
----
-
-<!-- problem:start -->
-
 # [304. Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable)
 
-[中文文档](/solution/0300-0399/0304.Range%20Sum%20Query%202D%20-%20Immutable/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a 2D matrix <code>matrix</code>, handle multiple queries of the following type:</p>
 
@@ -65,11 +48,7 @@ numMatrix.sumRegion(1, 2, 2, 4); // return 12 (i.e sum of the blue rectangle)
 	<li>At most <code>10<sup>4</sup></code> calls will be made to <code>sumRegion</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Two-dimensional Prefix Sum
 
@@ -89,7 +68,10 @@ In the initialization method, we preprocess the prefix sum array $s$, and in the
 
 The time complexity for initializing is $O(m \times n)$, and the time complexity for querying is $O(1)$. The space complexity is $O(m \times n)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -396,8 +378,4 @@ class NumMatrix(matrix: Array<IntArray>) {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0238: Product of Array Except Self](../../0200-0299/0238.Product%20of%20Array%20Except%20Self/README.md)
