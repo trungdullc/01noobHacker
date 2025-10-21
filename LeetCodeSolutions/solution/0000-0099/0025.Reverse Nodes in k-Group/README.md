@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0025.Reverse%20Nodes%20in%20k-Group/README_EN.md
-tags:
-    - Recursion
-    - Linked List
----
-
-<!-- problem:start -->
-
 # [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group)
 
-[中文文档](/solution/0000-0099/0025.Reverse%20Nodes%20in%20k-Group/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>head</code> of a linked list, reverse the nodes of the list <code>k</code> at a time, and return <em>the modified list</em>.</p>
 
@@ -50,11 +35,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow-up:</strong> Can you solve the problem in <code>O(1)</code> extra memory space?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Simulation
 
@@ -66,7 +47,10 @@ Next, we traverse the linked list, processing $k$ nodes at a time. If the remain
 
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -431,8 +415,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0094: Binary Tree Inorder Traversal](../../0000-0099/0094.Binary%20Tree%20Inorder%20Traversal/README.md)

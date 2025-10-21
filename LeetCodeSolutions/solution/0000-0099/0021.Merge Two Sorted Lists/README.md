@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0021.Merge%20Two%20Sorted%20Lists/README_EN.md
-tags:
-    - Recursion
-    - Linked List
----
-
-<!-- problem:start -->
-
 # [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists)
 
-[中文文档](/solution/0000-0099/0021.Merge%20Two%20Sorted%20Lists/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given the heads of two sorted linked lists <code>list1</code> and <code>list2</code>.</p>
 
@@ -54,11 +39,7 @@ tags:
 	<li>Both <code>list1</code> and <code>list2</code> are sorted in <strong>non-decreasing</strong> order.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recursion
 
@@ -69,7 +50,10 @@ First, we judge whether the linked lists $l_1$ and $l_2$ are empty. If one of th
 
 The time complexity is $O(m + n)$, and the space complexity is $O(m + n)$. Here, $m$ and $n$ are the lengths of the two linked lists respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -383,12 +367,6 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Iteration
 
 We can also use iteration to implement the merging of two sorted linked lists.
@@ -398,8 +376,6 @@ First, we define a dummy head node $dummy$, then loop through the two linked lis
 Finally, return $dummy.next$.
 
 The time complexity is $O(m + n)$, where $m$ and $n$ are the lengths of the two linked lists respectively. Ignoring the space consumption of the answer linked list, the space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -745,8 +721,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0141: Linked List Cycle](../../0100-0199/0141.Linked%20List%20Cycle/README.md)

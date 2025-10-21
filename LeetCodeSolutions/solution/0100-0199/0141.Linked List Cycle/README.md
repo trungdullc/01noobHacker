@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0141.Linked%20List%20Cycle/README_EN.md
-tags:
-    - Hash Table
-    - Linked List
-    - Two Pointers
----
-
-<!-- problem:start -->
-
 # [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle)
 
-[中文文档](/solution/0100-0199/0141.Linked%20List%20Cycle/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given <code>head</code>, the head of a linked list, determine if the linked list has a cycle in it.</p>
 
@@ -61,11 +45,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Can you solve it using <code>O(1)</code> (i.e. constant) memory?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table
 
@@ -73,7 +53,10 @@ We can traverse the linked list and use a hash table $s$ to record each node. Wh
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the number of nodes in the linked list.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -198,12 +181,6 @@ function hasCycle(head: ListNode | null): boolean {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Fast and Slow Pointers
 
 We define two pointers, $fast$ and $slow$, both initially pointing to $head$.
@@ -211,8 +188,6 @@ We define two pointers, $fast$ and $slow$, both initially pointing to $head$.
 The fast pointer moves two steps at a time, and the slow pointer moves one step at a time, in a continuous loop. When the fast and slow pointers meet, it indicates that there is a cycle in the linked list. If the loop ends without the pointers meeting, it indicates that there is no cycle in the linked list.
 
 The time complexity is $O(n)$, and the space complexity is $O(1)$, where $n$ is the number of nodes in the linked list.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -402,8 +377,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0143: Reorder List](../../0100-0199/0143.Reorder%20List/README.md)

@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0143.Reorder%20List/README_EN.md
-tags:
-    - Stack
-    - Recursion
-    - Linked List
-    - Two Pointers
----
-
-<!-- problem:start -->
-
 # [143. Reorder List](https://leetcode.com/problems/reorder-list)
 
-[中文文档](/solution/0100-0199/0143.Reorder%20List/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given the head of a singly linked-list. The list can be represented as:</p>
 
@@ -56,11 +39,7 @@ L<sub>0</sub> &rarr; L<sub>n</sub> &rarr; L<sub>1</sub> &rarr; L<sub>n - 1</sub>
 	<li><code>1 &lt;= Node.val &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Fast and Slow Pointers + Reverse List + Merge Lists
 
@@ -68,7 +47,10 @@ We first use fast and slow pointers to find the midpoint of the linked list, the
 
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -406,8 +388,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0019: Remove Nth Node From End of List ](../../0000-0099/0019.Remove%20Nth%20Node%20From%20End%20of%20List/README.md)

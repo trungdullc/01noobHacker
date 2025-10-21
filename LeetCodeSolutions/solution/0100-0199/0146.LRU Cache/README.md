@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0146.LRU%20Cache/README_EN.md
-tags:
-    - Design
-    - Hash Table
-    - Linked List
-    - Doubly-Linked List
----
-
-<!-- problem:start -->
-
 # [146. LRU Cache](https://leetcode.com/problems/lru-cache)
 
-[中文文档](/solution/0100-0199/0146.LRU%20Cache/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Design a data structure that follows the constraints of a <strong><a href="https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU" target="_blank">Least Recently Used (LRU) cache</a></strong>.</p>
 
@@ -64,11 +47,7 @@ lRUCache.get(4);    // return 4
 	<li>At most <code>2 * 10<sup>5</sup></code> calls will be made to <code>get</code> and <code>put</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Doubly Linked List
 
@@ -83,7 +62,10 @@ When inserting a node, if the node exists, we delete it from its original positi
 
 The time complexity is $O(1)$, and the space complexity is $O(\textit{capacity})$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -772,8 +754,4 @@ public class LRUCache {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0460: LFU Cache](../../0400-0499/0460.LFU%20Cache/README.md)

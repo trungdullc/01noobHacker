@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0206.Reverse%20Linked%20List/README_EN.md
-tags:
-    - Recursion
-    - Linked List
----
-
-<!-- problem:start -->
-
 # [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list)
 
-[中文文档](/solution/0200-0299/0206.Reverse%20Linked%20List/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>head</code> of a singly linked list, reverse the list, and return <em>the reversed list</em>.</p>
 
@@ -52,11 +37,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> A linked list can be reversed either iteratively or recursively. Could you implement both?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Head Insertion Method
 
@@ -64,7 +45,10 @@ We create a dummy node $\textit{dummy}$, then traverse the linked list and inser
 
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -285,19 +269,11 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Recursion
 
 We recursively reverse all nodes from the second node to the end of the list, then attach the $head$ to the end of the reversed list.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the length of the linked list.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -486,8 +462,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0021: Merge Two Sorted Lists](../../0000-0099/0021.Merge%20Two%20Sorted%20Lists/README.md)

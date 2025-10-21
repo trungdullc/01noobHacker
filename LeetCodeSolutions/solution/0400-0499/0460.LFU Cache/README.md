@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0400-0499/0460.LFU%20Cache/README_EN.md
-tags:
-    - Design
-    - Hash Table
-    - Linked List
-    - Doubly-Linked List
----
-
-<!-- problem:start -->
-
 # [460. LFU Cache](https://leetcode.com/problems/lfu-cache)
 
-[中文文档](/solution/0400-0499/0460.LFU%20Cache/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Design and implement a data structure for a <a href="https://en.wikipedia.org/wiki/Least_frequently_used" target="_blank">Least Frequently Used (LFU)</a> cache.</p>
 
@@ -80,15 +63,14 @@ lfu.get(4);      // return 4
 <p>&nbsp;</p>
 <span style="display: none;">&nbsp;</span>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -739,8 +721,4 @@ impl LFUCache {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0023: Merge K Sorted Lists](../../0000-0099/0023.Merge%20k%20Sorted%20Lists/README.md)

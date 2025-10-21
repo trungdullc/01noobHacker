@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0138.Copy%20List%20with%20Random%20Pointer/README_EN.md
-tags:
-    - Hash Table
-    - Linked List
----
-
-<!-- problem:start -->
-
 # [138. Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer)
 
-[中文文档](/solution/0100-0199/0138.Copy%20List%20with%20Random%20Pointer/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>A linked list of length <code>n</code> is given such that each node contains an additional random pointer, which could point to any node in the list, or <code>null</code>.</p>
 
@@ -67,11 +52,7 @@ tags:
 	<li><code>Node.random</code> is <code>null</code> or is pointing to some node in the linked list.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table
 
@@ -81,7 +62,10 @@ Next, we traverse the linked list again and use the mappings stored in the hash 
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the linked list.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -331,12 +315,6 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Simulation (Space Optimization)
 
 In Solution 1, we used an additional hash table to store the mapping between the original nodes and the copied nodes. We can also achieve this without using extra space, as follows:
@@ -346,8 +324,6 @@ In Solution 1, we used an additional hash table to store the mapping between the
 3. Finally, split the linked list into the original linked list and the copied linked list.
 
 The time complexity is $O(n)$, where $n$ is the length of the linked list. Ignoring the space occupied by the answer linked list, the space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -651,8 +627,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0002: Add Two Numbers](../../0000-0099/0002.Add%20Two%20Numbers/README.md)

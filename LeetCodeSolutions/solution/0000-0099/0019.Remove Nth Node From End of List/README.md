@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0019.Remove%20Nth%20Node%20From%20End%20of%20List/README_EN.md
-tags:
-    - Linked List
-    - Two Pointers
----
-
-<!-- problem:start -->
-
 # [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list)
 
-[中文文档](/solution/0000-0099/0019.Remove%20Nth%20Node%20From%20End%20of%20List/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>head</code> of a linked list, remove the <code>n<sup>th</sup></code> node from the end of the list and return its head.</p>
 
@@ -54,11 +39,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Could you do this in one pass?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Fast and Slow Pointers
 
@@ -68,7 +49,10 @@ Next, the `fast` pointer moves forward $n$ steps first, then `fast` and `slow` p
 
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -404,8 +388,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0138: Copy List With Random Pointer ](../../0100-0199/0138.Copy%20List%20with%20Random%20Pointer/README.md)

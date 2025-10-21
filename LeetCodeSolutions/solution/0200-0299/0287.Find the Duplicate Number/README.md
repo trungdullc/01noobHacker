@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0287.Find%20the%20Duplicate%20Number/README_EN.md
-tags:
-    - Bit Manipulation
-    - Array
-    - Two Pointers
-    - Binary Search
----
-
-<!-- problem:start -->
-
 # [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number)
 
-[中文文档](/solution/0200-0299/0287.Find%20the%20Duplicate%20Number/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of integers <code>nums</code> containing&nbsp;<code>n + 1</code> integers where each integer is in the range <code>[1, n]</code> inclusive.</p>
 
@@ -64,11 +47,7 @@ tags:
 	<li>Can you solve the problem in linear runtime complexity?</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search
 
@@ -78,7 +57,10 @@ Therefore, we can use binary search to find $x$, and check whether the number of
 
 The time complexity is $O(n \times \log n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -232,8 +214,4 @@ var findDuplicate = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0092: Reverse Linked List II](../../0000-0099/0092.Reverse%20Linked%20List%20II/README.md)

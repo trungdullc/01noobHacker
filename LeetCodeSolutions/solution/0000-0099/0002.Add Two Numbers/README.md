@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0002.Add%20Two%20Numbers/README_EN.md
-tags:
-    - Recursion
-    - Linked List
-    - Math
----
-
-<!-- problem:start -->
-
 # [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers)
 
-[中文文档](/solution/0000-0099/0002.Add%20Two%20Numbers/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong>, and each of their nodes contains a single digit. Add the two numbers and return the sum&nbsp;as a linked list.</p>
 
@@ -54,11 +38,7 @@ tags:
 	<li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Simulation
 
@@ -70,7 +50,10 @@ Finally, we return the head node of the answer linked list.
 
 The time complexity is $O(\max (m, n))$, where $m$ and $n$ are the lengths of the two linked lists. We need to traverse the entire position of the two linked lists, and each position only needs $O(1)$ time. Ignoring the space consumption of the answer, the space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -536,8 +519,4 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0287: Find The Duplicate Number](../../0200-0299/0287.Find%20the%20Duplicate%20Number/README.md)
