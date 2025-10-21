@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0767.Reorganize%20String/README_EN.md
-tags:
-    - Greedy
-    - Hash Table
-    - String
-    - Counting
-    - Sorting
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [767. Reorganize String](https://leetcode.com/problems/reorganize-string)
 
-[中文文档](/solution/0700-0799/0767.Reorganize%20String/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code>, rearrange the characters of <code>s</code> so that any two adjacent characters are not the same.</p>
 
@@ -41,15 +22,14 @@ tags:
 	<li><code>s</code> consists of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -245,15 +225,7 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -406,8 +378,4 @@ func (h *hp) Push(v any)   { *h = append(*h, v.(pair)) }
 func (h *hp) Pop() any     { a := *h; v := a[len(a)-1]; *h = a[:len(a)-1]; return v }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1405: Longest Happy String](../../1400-1499/1405.Longest%20Happy%20String/README.md)

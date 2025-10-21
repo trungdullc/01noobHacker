@@ -1,26 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1000-1099/1094.Car%20Pooling/README_EN.md
-rating: 1441
-source: Weekly Contest 142 Q2
-tags:
-    - Array
-    - Prefix Sum
-    - Sorting
-    - Simulation
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [1094. Car Pooling](https://leetcode.com/problems/car-pooling)
 
-[中文文档](/solution/1000-1099/1094.Car%20Pooling/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There is a car with <code>capacity</code> empty seats. The vehicle only drives east (i.e., it cannot turn around and drive west).</p>
 
@@ -54,11 +34,7 @@ tags:
 	<li><code>1 &lt;= capacity &lt;= 10<sup>5</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Difference Array
 
@@ -66,7 +42,10 @@ We can use the idea of a difference array, adding the number of passengers to th
 
 The time complexity is $O(n)$, and the space complexity is $O(M)$. Here, $n$ is the number of trips, and $M$ is the maximum end point in the trips. In this problem, $M \le 1000$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -242,8 +221,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0295: Find Median From Data Stream](../../0200-0299/0295.Find%20Median%20from%20Data%20Stream/README.md)
