@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0355.Design%20Twitter/README_EN.md
-tags:
-    - Design
-    - Hash Table
-    - Linked List
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [355. Design Twitter](https://leetcode.com/problems/design-twitter)
 
-[中文文档](/solution/0300-0399/0355.Design%20Twitter/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Design a simplified version of Twitter where users can post tweets, follow/unfollow another user, and is able to see the <code>10</code> most recent tweets in the user&#39;s news feed.</p>
 
@@ -63,15 +46,14 @@ twitter.getNewsFeed(1);  // User 1&#39;s news feed should return a list with 1 t
 	<li>A user cannot follow himself.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -198,8 +180,4 @@ class Twitter {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1834: Single Threaded CPU](../../1800-1899/1834.Single-Threaded%20CPU/README.md)

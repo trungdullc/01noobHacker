@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0600-0699/0621.Task%20Scheduler/README_EN.md
-tags:
-    - Greedy
-    - Array
-    - Hash Table
-    - Counting
-    - Sorting
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [621. Task Scheduler](https://leetcode.com/problems/task-scheduler)
 
-[中文文档](/solution/0600-0699/0621.Task%20Scheduler/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array of CPU <code>tasks</code>, each labeled with a letter from A to Z, and a number <code>n</code>. Each CPU interval can be idle or allow the completion of one task. Tasks can be completed in any order, but there&#39;s a constraint: there has to be a gap of <strong>at least</strong> <code>n</code> intervals between two tasks with the same label.</p>
 
@@ -116,15 +97,14 @@ font-size: 0.85rem;
 	<li><code>0 &lt;= n &lt;= 100</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -223,8 +203,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0355: Design Twitter](../../0300-0399/0355.Design%20Twitter/README.md)
