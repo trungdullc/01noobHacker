@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0005.Longest%20Palindromic%20Substring/README_EN.md
-tags:
-    - Two Pointers
-    - String
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring)
 
-[中文文档](/solution/0000-0099/0005.Longest%20Palindromic%20Substring/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code>, return <em>the longest</em> <span data-keyword="palindromic-string"><em>palindromic</em></span> <span data-keyword="substring-nonempty"><em>substring</em></span> in <code>s</code>.</p>
 
@@ -44,11 +28,7 @@ tags:
 	<li><code>s</code> consist of only digits and English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -62,7 +42,10 @@ Since $f[i][j]$ depends on $f[i + 1][j - 1]$, we need to ensure that $i + 1$ is 
 
 The time complexity is $O(n^2)$, and the space complexity is $O(n^2)$. Here, $n$ is the length of the string $s$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -337,19 +320,11 @@ proc longestPalindrome(s: string): string =
   result = s[start ..< start+mx]
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Enumerate Palindrome Midpoint
 
 We can enumerate the midpoint of the palindrome, spread to both sides, and find the longest palindrome.
 
 The time complexity is $O(n^2)$, and the space complexity is $O(1)$. Here, $n$ is the length of the string $s$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -561,8 +536,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0647: Palindromic Substrings](../../0600-0699/0647.Palindromic%20Substrings/README.md)

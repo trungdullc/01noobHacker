@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0139.Word%20Break/README_EN.md
-tags:
-    - Trie
-    - Memoization
-    - Array
-    - Hash Table
-    - String
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [139. Word Break](https://leetcode.com/problems/word-break)
 
-[中文文档](/solution/0100-0199/0139.Word%20Break/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code> and a dictionary of strings <code>wordDict</code>, return <code>true</code> if <code>s</code> can be segmented into a space-separated sequence of one or more dictionary words.</p>
 
@@ -61,15 +42,14 @@ Note that you are allowed to reuse a dictionary word.
 	<li>All the strings of <code>wordDict</code> are <strong>unique</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -213,15 +193,7 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -515,8 +487,4 @@ class Trie {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0300: Longest Increasing Subsequence ](../../0300-0399/0300.Longest%20Increasing%20Subsequence/README.md)

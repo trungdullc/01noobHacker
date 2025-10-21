@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0198.House%20Robber/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [198. House Robber](https://leetcode.com/problems/house-robber)
 
-[中文文档](/solution/0100-0199/0198.House%20Robber/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and <b>it will automatically contact the police if two adjacent houses were broken into on the same night</b>.</p>
 
@@ -48,11 +33,7 @@ Total amount you can rob = 2 + 9 + 1 = 12.
 	<li><code>0 &lt;= nums[i] &lt;= 400</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Memoization Search
 
@@ -68,7 +49,10 @@ To avoid repeated calculations, we use memoization search. The result of $\texti
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -215,12 +199,6 @@ function rob(nums) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Dynamic Programming
 
 We define $f[i]$ as the maximum total amount that can be robbed from the first $i$ houses, initially $f[0]=0$, $f[1]=nums[0]$.
@@ -244,8 +222,6 @@ $$
 The final answer is $f[n]$, where $n$ is the length of the array.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the length of the array.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -352,17 +328,9 @@ function rob(nums) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Dynamic Programming (Space Optimization)
 
 We notice that when $i \gt 2$, $f[i]$ is only related to $f[i-1]$ and $f[i-2]$. Therefore, we can use two variables instead of an array to reduce the space complexity to $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -458,8 +426,4 @@ function rob(nums) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0213: House Robber II](../../0200-0299/0213.House%20Robber%20II/README.md)

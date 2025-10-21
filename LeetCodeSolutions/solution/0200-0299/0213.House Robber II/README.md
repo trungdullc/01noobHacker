@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0213.House%20Robber%20II/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [213. House Robber II](https://leetcode.com/problems/house-robber-ii)
 
-[中文文档](/solution/0200-0299/0213.House%20Robber%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are <strong>arranged in a circle.</strong> That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and&nbsp;<b>it will automatically contact the police if two adjacent houses were broken into on the same night</b>.</p>
 
@@ -54,11 +39,7 @@ Total amount you can rob = 1 + 3 = 4.
 	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -66,7 +47,10 @@ The circular arrangement means that at most one of the first and last houses can
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -193,8 +177,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0005: Longest Palindromic Substring](../../0000-0099/0005.Longest%20Palindromic%20Substring/README.md)

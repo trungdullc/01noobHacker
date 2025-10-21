@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1100-1199/1137.N-th%20Tribonacci%20Number/README_EN.md
-rating: 1142
-source: Weekly Contest 147 Q1
-tags:
-    - Memoization
-    - Math
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [1137. N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number)
 
-[中文文档](/solution/1100-1199/1137.N-th%20Tribonacci%20Number/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>The Tribonacci sequence T<sub>n</sub> is defined as follows:&nbsp;</p>
 
@@ -52,11 +34,7 @@ T_4 = 1 + 1 + 2 = 4
 	<li>The answer is guaranteed to fit within a 32-bit integer, ie. <code>answer &lt;= 2^31 - 1</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -67,8 +45,6 @@ We define three variables $a$, $b$, $c$ to represent $T_{n-3}$, $T_{n-2}$, $T_{n
 Then we decrease $n$ to $0$, updating the values of $a$, $b$, $c$ each time, until $n$ is $0$, at which point the answer is $a$.
 
 The time complexity is $O(n)$, and the space complexity is $O(1)$. Here, $n$ is the given integer.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -189,12 +165,6 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Matrix Exponentiation to Accelerate Recurrence
 
 We define $Tib(n)$ as a $1 \times 3$ matrix $\begin{bmatrix} T_n & T_{n - 1} & T_{n - 2} \end{bmatrix}$, where $T_n$, $T_{n - 1}$ and $T_{n - 2}$ represent the $n$th, $(n - 1)$th and $(n - 2)$th Tribonacci numbers, respectively.
@@ -221,7 +191,10 @@ We define the initial matrix $res = \begin{bmatrix} 1 & 1  & 0 \end{bmatrix}$, t
 
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -532,8 +505,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0198: House Robber](../../0100-0199/0198.House%20Robber/README.md)

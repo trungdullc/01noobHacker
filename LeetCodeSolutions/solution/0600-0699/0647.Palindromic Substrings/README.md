@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0600-0699/0647.Palindromic%20Substrings/README_EN.md
-tags:
-    - Two Pointers
-    - String
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [647. Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings)
 
-[中文文档](/solution/0600-0699/0647.Palindromic%20Substrings/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code>, return <em>the number of <strong>palindromic substrings</strong> in it</em>.</p>
 
@@ -49,15 +33,14 @@ tags:
 	<li><code>s</code> consists of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -153,15 +136,7 @@ var countSubstrings = function (s) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -214,8 +189,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0091: Decode Ways](../../0000-0099/0091.Decode%20Ways/README.md)

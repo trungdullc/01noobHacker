@@ -1,18 +1,4 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0062.Unique%20Paths/README_EN.md
-tags:
-    - Math
-    - Dynamic Programming
-    - Combinatorics
----
-
-<!-- problem:start -->
-
 # [62. Unique Paths](https://leetcode.com/problems/unique-paths)
-
-[中文文档](/solution/0000-0099/0062.Unique%20Paths/README.md)
 
 ## Description
 

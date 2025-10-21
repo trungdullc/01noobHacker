@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0377.Combination%20Sum%20IV/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv)
 
-[中文文档](/solution/0300-0399/0377.Combination%20Sum%20IV/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of <strong>distinct</strong> integers <code>nums</code> and a target integer <code>target</code>, return <em>the number of possible combinations that add up to</em>&nbsp;<code>target</code>.</p>
 
@@ -59,11 +44,7 @@ Note that different sequences are counted as different combinations.
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> What if negative numbers are allowed in the given array? How does it change the problem? What limitation we need to add to the question to allow negative numbers?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -75,7 +56,10 @@ Finally, return $f[target]$.
 
 The time complexity is $O(n \times target)$, and the space complexity is $O(target)$, where $n$ is the length of the array.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -205,8 +189,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0279: Perfect Squares](../../0200-0299/0279.Perfect%20Squares/README.md)

@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0152.Maximum%20Product%20Subarray/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray)
 
-[中文文档](/solution/0100-0199/0152.Maximum%20Product%20Subarray/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code>, find a <span data-keyword="subarray-nonempty">subarray</span> that has the largest product, and return <em>the product</em>.</p>
 
@@ -47,15 +32,14 @@ tags:
 	<li>The product of any subarray of <code>nums</code> is <strong>guaranteed</strong> to fit in a <strong>32-bit</strong> integer.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -191,8 +175,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0139: Word Break](../../0100-0199/0139.Word%20Break/README.md)

@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0091.Decode%20Ways/README_EN.md
-tags:
-    - String
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
-[中文文档](/solution/0000-0099/0091.Decode%20Ways/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You have intercepted a secret message encoded as a string of numbers. The message is <strong>decoded</strong> via the following mapping:</p>
 
@@ -86,11 +71,7 @@ Given a string s containing only digits, return the <strong>number of ways</stro
 	<li><code>s</code> contains only digits and may contain leading zero(s).</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -103,7 +84,10 @@ Consider how $f[i]$ transitions.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the string.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -223,11 +207,7 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
 We notice that the state $f[i]$ is only related to the states $f[i-1]$ and $f[i-2]$, and is irrelevant to other states. Therefore, we can use two variables to replace these two states, reducing the original space complexity from $O(n)$ to $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -341,8 +321,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0322: Coin Change](../../0300-0399/0322.Coin%20Change/README.md)

@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0322.Coin%20Change/README_EN.md
-tags:
-    - Breadth-First Search
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [322. Coin Change](https://leetcode.com/problems/coin-change)
 
-[中文文档](/solution/0300-0399/0322.Coin%20Change/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer <code>amount</code> representing a total amount of money.</p>
 
@@ -56,11 +40,7 @@ tags:
 	<li><code>0 &lt;= amount &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming (Complete Knapsack)
 
@@ -90,7 +70,10 @@ The final answer is $f[m][n]$.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Where $m$ and $n$ are the number of types of coins and the total amount, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -257,15 +240,11 @@ var coinChange = function (coins, amount) {
 };
 ```
 
-<!-- tabs:end -->
-
 We notice that $f[i][j]$ is only related to $f[i - 1][j]$ and $f[i][j - x]$. Therefore, we can optimize the two-dimensional array into a one-dimensional array, reducing the space complexity to $O(n)$.
 
 Similar problems:
 
 -   [279. Perfect Squares](https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0279.Perfect%20Squares/README_EN.md)
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -379,8 +358,4 @@ var coinChange = function (coins, amount) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0152: Maximum Product Subarray](../../0100-0199/0152.Maximum%20Product%20Subarray/README.md)

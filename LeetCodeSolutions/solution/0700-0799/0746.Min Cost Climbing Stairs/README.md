@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0746.Min%20Cost%20Climbing%20Stairs/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs)
 
-[中文文档](/solution/0700-0799/0746.Min%20Cost%20Climbing%20Stairs/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an integer array <code>cost</code> where <code>cost[i]</code> is the cost of <code>i<sup>th</sup></code> step on a staircase. Once you pay the cost, you can either climb one or two steps.</p>
 
@@ -57,11 +42,7 @@ The total cost is 6.
 	<li><code>0 &lt;= cost[i] &lt;= 999</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Memoization Search
 
@@ -77,7 +58,10 @@ To avoid repeated calculations, we use memoization search, saving the results th
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $\textit{cost}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -227,12 +211,6 @@ function minCostClimbingStairs(cost) {
 }
 ```
 
-<!-- tab:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Dynamic Programming
 
 We define $f[i]$ as the minimum cost needed to reach the $i$-th stair. Initially, $f[0] = f[1] = 0$, and the answer is $f[n]$.
@@ -246,8 +224,6 @@ $$
 The final answer is $f[n]$.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $\textit{cost}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -346,17 +322,9 @@ function minCostClimbingStairs(cost) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Dynamic Programming (Space Optimization)
 
 We notice that the state transition equation for $f[i]$ only depends on $f[i - 1]$ and $f[i - 2]$. Therefore, we can use two variables $f$ and $g$ to alternately record the values of $f[i - 2]$ and $f[i - 1]$, thus optimizing the space complexity to $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -454,8 +422,4 @@ function minCostClimbingStairs(cost) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1137: N-th Tribonacci Number](../../1100-1199/1137.N-th%20Tribonacci%20Number/README.md)

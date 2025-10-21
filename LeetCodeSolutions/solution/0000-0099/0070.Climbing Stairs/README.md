@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0070.Climbing%20Stairs/README_EN.md
-tags:
-    - Memoization
-    - Math
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs)
 
-[中文文档](/solution/0000-0099/0070.Climbing%20Stairs/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p>
 
@@ -51,11 +35,7 @@ tags:
 	<li><code>1 &lt;= n &lt;= 45</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recursion
 
@@ -73,7 +53,10 @@ Since $f[i]$ is only related to $f[i - 1]$ and $f[i - 2]$, we can use two variab
 
 The time complexity is $O(n)$, and the space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -200,12 +183,6 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Matrix Quick Power to Accelerate Recursion
 
 We set $Fib(n)$ to represent a $1 \times 2$ matrix $\begin{bmatrix} F_n & F_{n - 1} \end{bmatrix}$, where $F_n$ and $F_{n - 1}$ are the $n$-th and $(n - 1)$-th Fibonacci numbers respectively.
@@ -245,8 +222,6 @@ $$
 We define the initial matrix $res = \begin{bmatrix} 1 & 1 \end{bmatrix}$, then $F_n$ is equal to the first element of the first row of the result matrix of $res$ multiplied by $base^{n - 1}$. We can solve it using matrix quick power.
 
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -465,8 +440,4 @@ function pow(a, n) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0746: Min Cost Climbing Stairs](../../0700-0799/0746.Min%20Cost%20Climbing%20Stairs/README.md)

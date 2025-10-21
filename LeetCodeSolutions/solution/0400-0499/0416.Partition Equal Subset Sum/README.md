@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0400-0499/0416.Partition%20Equal%20Subset%20Sum/README_EN.md
-tags:
-    - Array
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum)
 
-[中文文档](/solution/0400-0499/0416.Partition%20Equal%20Subset%20Sum/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code>, return <code>true</code> <em>if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or </em><code>false</code><em> otherwise</em>.</p>
 
@@ -44,11 +29,7 @@ tags:
 	<li><code>1 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -66,7 +47,10 @@ The final answer is $f[n][m]$.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Where $m$ and $n$ are half of the total sum of the array and the length of the array, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -240,19 +224,11 @@ var canPartition = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Dynamic Programming (Space Optimization)
 
 We notice that in Solution 1, $f[i][j]$ is only related to $f[i - 1][\cdot]$. Therefore, we can compress the two-dimensional array into a one-dimensional array.
 
 The time complexity is $O(n \times m)$, and the space complexity is $O(m)$. Where $n$ is the length of the array, and $m$ is half of the total sum of the array.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -411,8 +387,4 @@ var canPartition = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0377: Combination Sum IV](../../0300-0399/0377.Combination%20Sum%20IV/README.md)

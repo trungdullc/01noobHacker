@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0300.Longest%20Increasing%20Subsequence/README_EN.md
-tags:
-    - Array
-    - Binary Search
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence)
 
-[中文文档](/solution/0300-0399/0300.Longest%20Increasing%20Subsequence/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code>, return <em>the length of the longest <strong>strictly increasing </strong></em><span data-keyword="subsequence-array"><em><strong>subsequence</strong></em></span>.</p>
 
@@ -54,15 +38,14 @@ tags:
 <p>&nbsp;</p>
 <p><b>Follow up:</b>&nbsp;Can you come up with an algorithm that runs in&nbsp;<code>O(n log(n))</code> time complexity?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -178,15 +161,7 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -438,8 +413,4 @@ function search(nums: number[], x: number): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0416: Partition Equal Subset Sum](../../0400-0499/0416.Partition%20Equal%20Subset%20Sum/README.md)

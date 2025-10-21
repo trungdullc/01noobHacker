@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0343.Integer%20Break/README_EN.md
-tags:
-    - Math
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [343. Integer Break](https://leetcode.com/problems/integer-break)
 
-[中文文档](/solution/0300-0399/0343.Integer%20Break/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer <code>n</code>, break it into the sum of <code>k</code> <strong>positive integers</strong>, where <code>k &gt;= 2</code>, and maximize the product of those integers.</p>
 
@@ -45,11 +30,7 @@ tags:
 	<li><code>2 &lt;= n &lt;= 58</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -70,7 +51,10 @@ Finally, returning $f[n]$ will suffice.
 
 The time complexity is $O(n^2)$, and the space complexity is $O(n)$. Here, $n$ is the given positive integer.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -219,19 +203,11 @@ int integerBreak(int n) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 1: Mathematics
 
 When $n < 4$, since the problem requires splitting into at least two integers, $n - 1$ yields the maximum product. When $n \geq 4$, we split into as many $3$s as possible. If the last segment remaining is $4$, we split it into $2 + 2$ for the maximum product.
 
 The time complexity is $O(1)$, and the space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -396,8 +372,4 @@ int integerBreak(int n) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1406: Stone Game III](../../1400-1499/1406.Stone%20Game%20III/README.md)
