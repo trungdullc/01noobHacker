@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0252.Meeting%20Rooms/README_EN.md
-tags:
-    - Array
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [252. Meeting Rooms 🔒](https://leetcode.com/problems/meeting-rooms)
 
-[中文文档](/solution/0200-0299/0252.Meeting%20Rooms/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of meeting time <code>intervals</code>&nbsp;where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, determine if a person could attend all meetings.</p>
 
@@ -36,11 +21,7 @@ tags:
 	<li><code>0 &lt;= start<sub>i</sub> &lt;&nbsp;end<sub>i</sub> &lt;= 10<sup>6</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting
 
@@ -50,7 +31,10 @@ If no overlap is found by the end of the iteration, we return `true`.
 
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$, where $n$ is the number of meetings.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -142,8 +126,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0253: Meeting Rooms II](../../0200-0299/0253.Meeting%20Rooms%20II/README.md)

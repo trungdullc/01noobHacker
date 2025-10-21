@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0056.Merge%20Intervals/README_EN.md
-tags:
-    - Array
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [56. Merge Intervals](https://leetcode.com/problems/merge-intervals)
 
-[中文文档](/solution/0000-0099/0056.Merge%20Intervals/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array&nbsp;of <code>intervals</code>&nbsp;where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, merge all overlapping intervals, and return <em>an array of the non-overlapping intervals that cover all the intervals in the input</em>.</p>
 
@@ -45,11 +30,7 @@ tags:
 	<li><code>0 &lt;= start<sub>i</sub> &lt;= end<sub>i</sub> &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting + One-pass Traversal
 
@@ -66,7 +47,10 @@ Finally, we return the answer array.
 
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$. Here, $n$ is the number of intervals.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -278,15 +262,7 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -399,15 +375,7 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3
-
-<!-- tabs:start -->
 
 #### TypeScript
 
@@ -430,8 +398,4 @@ function merge(intervals: number[][]): number[][] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0435: Non Overlapping Intervals](../../0400-0499/0435.Non-overlapping%20Intervals/README.md)

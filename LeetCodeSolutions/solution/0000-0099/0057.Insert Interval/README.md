@@ -1,20 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0057.Insert%20Interval/README_EN.md
-tags:
-    - Array
----
-
-<!-- problem:start -->
-
 # [57. Insert Interval](https://leetcode.com/problems/insert-interval)
 
-[中文文档](/solution/0000-0099/0057.Insert%20Interval/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array of non-overlapping intervals <code>intervals</code> where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> represent the start and the end of the <code>i<sup>th</sup></code> interval and <code>intervals</code> is sorted in ascending order by <code>start<sub>i</sub></code>. You are also given an interval <code>newInterval = [start, end]</code> that represents the start and end of another interval.</p>
 
@@ -52,11 +38,7 @@ tags:
 	<li><code>0 &lt;= start &lt;= end &lt;= 10<sup>5</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting + Interval Merging
 
@@ -64,7 +46,10 @@ We can first add the new interval `newInterval` to the interval list `intervals`
 
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(n)$. Here, $n$ is the number of intervals.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -245,12 +230,6 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: One-pass Traversal
 
 We can traverse the interval list `intervals`, let the current interval be `interval`, and there are three situations for each interval:
@@ -262,8 +241,6 @@ We can traverse the interval list `intervals`, let the current interval be `inte
 After the traversal, if the new interval has not been added, then add the new interval to the answer.
 
 The time complexity is $O(n)$, where $n$ is the number of intervals. Ignoring the space consumption of the answer array, the space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -474,8 +451,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0056: Merge Intervals](../../0000-0099/0056.Merge%20Intervals/README.md)

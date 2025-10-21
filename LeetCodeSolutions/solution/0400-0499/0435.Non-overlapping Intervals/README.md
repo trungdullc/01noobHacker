@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0400-0499/0435.Non-overlapping%20Intervals/README_EN.md
-tags:
-    - Greedy
-    - Array
-    - Dynamic Programming
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [435. Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals)
 
-[中文文档](/solution/0400-0499/0435.Non-overlapping%20Intervals/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of intervals <code>intervals</code> where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, return <em>the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping</em>.</p>
 
@@ -57,11 +40,7 @@ tags:
 	<li><code>-5 * 10<sup>4</sup> &lt;= start<sub>i</sub> &lt; end<sub>i</sub> &lt;= 5 * 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting + Greedy
 
@@ -76,7 +55,10 @@ Finally, we return $\textit{ans}$.
 
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$, where $n$ is the number of intervals.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -172,8 +154,4 @@ function eraseOverlapIntervals(intervals: number[][]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0252: Meeting Rooms](../../0200-0299/0252.Meeting%20Rooms/README.md)

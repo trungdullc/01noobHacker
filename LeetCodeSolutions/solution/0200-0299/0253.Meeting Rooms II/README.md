@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0253.Meeting%20Rooms%20II/README_EN.md
-tags:
-    - Greedy
-    - Array
-    - Two Pointers
-    - Prefix Sum
-    - Sorting
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [253. Meeting Rooms II 🔒](https://leetcode.com/problems/meeting-rooms-ii)
 
-[中文文档](/solution/0200-0299/0253.Meeting%20Rooms%20II/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of meeting time intervals <code>intervals</code> where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, return <em>the minimum number of conference rooms required</em>.</p>
 
@@ -39,11 +20,7 @@ tags:
 	<li><code>0 &lt;= start<sub>i</sub> &lt; end<sub>i</sub> &lt;= 10<sup>6</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Difference Array
 
@@ -55,7 +32,10 @@ Next, we calculate the prefix sum of the difference array and find the maximum v
 
 The time complexity is $O(n + m)$ and the space complexity is $O(m)$, where $n$ is the number of meetings and $m$ is the maximum end time.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -194,12 +174,6 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Difference (Hash Map)
 
 If the meeting times span a large range, we can use a hash map instead of a difference array.
@@ -209,8 +183,6 @@ First, we create a hash map $d$, where we add to the corresponding positions for
 Then, we sort the hash map by its keys, calculate the prefix sum of the hash map, and find the maximum value of the prefix sum, which represents the minimum number of meeting rooms required.
 
 The time complexity is $O(n \times \log n)$ and the space complexity is $O(n)$, where $n$ is the number of meetings.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -345,8 +317,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 2402: Meeting Rooms III](../../2400-2499/2402.Meeting%20Rooms%20III/README.md)
