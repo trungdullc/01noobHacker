@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1000-1099/1046.Last%20Stone%20Weight/README_EN.md
-rating: 1172
-source: Weekly Contest 137 Q1
-tags:
-    - Array
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight)
 
-[中文文档](/solution/1000-1099/1046.Last%20Stone%20Weight/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array of integers <code>stones</code> where <code>stones[i]</code> is the weight of the <code>i<sup>th</sup></code> stone.</p>
 
@@ -60,15 +43,14 @@ we combine 1 and 1 to get 0 so the array converts to [1] then that&#39;s the val
 	<li><code>1 &lt;= stones[i] &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -203,8 +185,4 @@ var lastStoneWeight = function (stones) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0973: K Closest Points to Origin](../../0900-0999/0973.K%20Closest%20Points%20to%20Origin/README.md)

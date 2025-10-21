@@ -1,26 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0973.K%20Closest%20Points%20to%20Origin/README_EN.md
-tags:
-    - Geometry
-    - Array
-    - Math
-    - Divide and Conquer
-    - Quickselect
-    - Sorting
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin)
 
-[中文文档](/solution/0900-0999/0973.K%20Closest%20Points%20to%20Origin/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array of <code>points</code> where <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code> represents a point on the <strong>X-Y</strong> plane and an integer <code>k</code>, return the <code>k</code> closest points to the origin <code>(0, 0)</code>.</p>
 
@@ -57,11 +37,7 @@ We only want the closest k = 1 points from the origin, so the answer is just [[-
 	<li><code>-10<sup>4</sup> &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Custom Sorting
 
@@ -69,7 +45,10 @@ We sort all points by their distance from the origin in ascending order, and the
 
 The time complexity is $O(n \log n)$, and the space complexity is $O(\log n)$. Here, $n$ is the length of the array $\textit{points}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -141,19 +120,11 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Priority Queue (Max Heap)
 
 We can use a priority queue (max heap) to maintain the $k$ closest points to the origin.
 
 The time complexity is $O(n \times \log k)$, and the space complexity is $O(k)$. Here, $n$ is the length of the array $\textit{points}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -267,12 +238,6 @@ function kClosest(points: number[][], k: number): number[][] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Binary Search
 
 We notice that as the distance increases, the number of points increases as well. There exists a critical value such that the number of points before this value is less than or equal to $k$, and the number of points after this value is greater than $k$.
@@ -282,8 +247,6 @@ Therefore, we can use binary search to enumerate the distance. In each binary se
 After the binary search is finished, we just need to return the points whose distance is less than or equal to the left boundary.
 
 The time complexity is $O(n \times \log M)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{points}$, and $M$ is the maximum value of the distance.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -437,8 +400,4 @@ function kClosest(points: number[][], k: number): number[][] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0215: Kth Largest Element In An Array ](../../0200-0299/0215.Kth%20Largest%20Element%20in%20an%20Array/README.md)
