@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0918.Maximum%20Sum%20Circular%20Subarray/README_EN.md
-tags:
-    - Queue
-    - Array
-    - Divide and Conquer
-    - Dynamic Programming
-    - Monotonic Queue
----
-
-<!-- problem:start -->
-
 # [918. Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray)
 
-[中文文档](/solution/0900-0999/0918.Maximum%20Sum%20Circular%20Subarray/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a <strong>circular integer array</strong> <code>nums</code> of length <code>n</code>, return <em>the maximum possible sum of a non-empty <strong>subarray</strong> of </em><code>nums</code>.</p>
 
@@ -60,11 +42,7 @@ tags:
 	<li><code>-3 * 10<sup>4</sup> &lt;= nums[i] &lt;= 3 * 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Maintain Prefix Maximum
 
@@ -93,7 +71,10 @@ After the traversal, we return the maximum value of $ans$ and $s - smi$ as the a
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -187,8 +168,4 @@ function maxSubarraySumCircular(nums: number[]): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0978: Longest Turbulent Subarray](../../0900-0999/0978.Longest%20Turbulent%20Subarray/README.md)

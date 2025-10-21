@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1800-1899/1899.Merge%20Triplets%20to%20Form%20Target%20Triplet/README_EN.md
-rating: 1635
-source: Weekly Contest 245 Q3
-tags:
-    - Greedy
-    - Array
----
-
-<!-- problem:start -->
-
 # [1899. Merge Triplets to Form Target Triplet](https://leetcode.com/problems/merge-triplets-to-form-target-triplet)
 
-[中文文档](/solution/1800-1899/1899.Merge%20Triplets%20to%20Form%20Target%20Triplet/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>A <strong>triplet</strong> is an array of three integers. You are given a 2D integer array <code>triplets</code>, where <code>triplets[i] = [a<sub>i</sub>, b<sub>i</sub>, c<sub>i</sub>]</code> describes the <code>i<sup>th</sup></code> <strong>triplet</strong>. You are also given an integer array <code>target = [x, y, z]</code> that describes the <strong>triplet</strong> you want to obtain.</p>
 
@@ -74,11 +57,7 @@ The target triplet [5,5,5] is now an element of triplets.
 	<li><code>1 &lt;= a<sub>i</sub>, b<sub>i</sub>, c<sub>i</sub>, x, y, z &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Greedy
 
@@ -97,7 +76,10 @@ Finally, we just need to check whether $[d, e, f]$ is equal to $\textit{target}$
 
 Time complexity is $O(n)$, where $n$ is the length of the array $\textit{triplets}$. Space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -234,8 +216,4 @@ object Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0763: Partition Labels](../../0700-0799/0763.Partition%20Labels/README.md)

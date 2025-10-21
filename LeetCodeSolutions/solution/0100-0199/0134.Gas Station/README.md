@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0134.Gas%20Station/README_EN.md
-tags:
-    - Greedy
-    - Array
----
-
-<!-- problem:start -->
-
 # [134. Gas Station](https://leetcode.com/problems/gas-station)
 
-[中文文档](/solution/0100-0199/0134.Gas%20Station/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There are <code>n</code> gas stations along a circular route, where the amount of gas at the <code>i<sup>th</sup></code> station is <code>gas[i]</code>.</p>
 
@@ -63,15 +48,14 @@ Therefore, you can&#39;t travel around the circuit once no matter where you star
 	<li>The input is generated such that the answer is unique.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -209,8 +193,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0846: Hand of Straights](../../0800-0899/0846.Hand%20of%20Straights/README.md)

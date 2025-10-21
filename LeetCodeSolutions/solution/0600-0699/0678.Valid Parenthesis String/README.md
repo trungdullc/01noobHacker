@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0600-0699/0678.Valid%20Parenthesis%20String/README_EN.md
-tags:
-    - Stack
-    - Greedy
-    - String
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [678. Valid Parenthesis String](https://leetcode.com/problems/valid-parenthesis-string)
 
-[中文文档](/solution/0600-0699/0678.Valid%20Parenthesis%20String/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a string <code>s</code> containing only three types of characters: <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code> and <code>&#39;*&#39;</code>, return <code>true</code> <em>if</em> <code>s</code> <em>is <strong>valid</strong></em>.</p>
 
@@ -49,11 +32,7 @@ tags:
 	<li><code>s[i]</code> is <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code> or <code>&#39;*&#39;</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Dynamic Programming
 
@@ -65,7 +44,10 @@ Let `dp[i][j]` be true if and only if the interval `s[i], s[i+1], ..., s[j]` can
 -   Time Complexity: $O(n^3)$, where $n$ is the length of the string. There are $O(n^2)$ states corresponding to entries of dp, and we do an average of $O(n)$ work on each state.
 -   Space Complexity: $O(n^2)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -160,20 +142,12 @@ func checkValidString(s string) bool {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Greedy
 
 Scan twice, first from left to right to make sure that each of the closing brackets is matched successfully, and second from right to left to make sure that each of the opening brackets is matched successfully.
 
 -   Time Complexity: $O(n)$, where $n$ is the length of the string.
 -   Space Complexity: $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -289,8 +263,4 @@ func checkValidString(s string) bool {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0135: Candy](../../0100-0199/0135.Candy/README.md)

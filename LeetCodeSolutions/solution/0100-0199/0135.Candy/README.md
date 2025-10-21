@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0135.Candy/README_EN.md
-tags:
-    - Greedy
-    - Array
----
-
-<!-- problem:start -->
-
 # [135. Candy](https://leetcode.com/problems/candy)
 
-[中文文档](/solution/0100-0199/0135.Candy/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>There are <code>n</code> children standing in a line. Each child is assigned a rating value given in the integer array <code>ratings</code>.</p>
 
@@ -55,11 +40,7 @@ The third child gets 1 candy because it satisfies the above two conditions.
 	<li><code>0 &lt;= ratings[i] &lt;= 2 * 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Two traversals
 
@@ -71,7 +52,10 @@ Finally, we traverse the array of scores once, and the minimum number of candies
 
 Time complexity $O(n)$, space complexity $O(n)$. Where $n$ is the length of the array of scores.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -260,8 +244,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0057: Insert Interval](../../0000-0099/0057.Insert%20Interval/README.md)

@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0846.Hand%20of%20Straights/README_EN.md
-tags:
-    - Greedy
-    - Array
-    - Hash Table
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [846. Hand of Straights](https://leetcode.com/problems/hand-of-straights)
 
-[中文文档](/solution/0800-0899/0846.Hand%20of%20Straights/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Alice has some number of cards and she wants to rearrange the cards into groups so that each group is of size <code>groupSize</code>, and consists of <code>groupSize</code> consecutive cards.</p>
 
@@ -53,11 +36,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Note:</strong> This question is the same as 1296: <a href="https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/" target="_blank">https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/</a></p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Sorting
 
@@ -71,7 +50,10 @@ If the iteration completes successfully, it means that the array can be partitio
 
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $\textit{hand}$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -200,12 +182,6 @@ function isNStraightHand(hand: number[], groupSize: number): boolean {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Ordered Set
 
 Similar to Solution 1, we first check whether the length of the array $\textit{hand}$ is divisible by $\textit{groupSize}$. If it is not, this means that the array cannot be partitioned into multiple subarrays of length $\textit{groupSize}$, so we return $\text{false}$.
@@ -215,8 +191,6 @@ Next, we use an ordered set $\textit{sd}$ to count the occurrences of each numbe
 Then, we repeatedly take the smallest value $x$ from the ordered set and enumerate each number $y$ from $x$ to $x + \textit{groupSize} - 1$. If all these numbers appear at least once in the ordered set, we decrement their occurrence count by $1$. If any count reaches $0$, we remove that number from the ordered set. Otherwise, if we encounter a number that does not exist in the ordered set, it means that the array cannot be partitioned into valid subarrays, so we return $\text{false}$. If the iteration completes successfully, it means that the array can be partitioned into multiple valid subarrays, so we return $\text{true}$.
 
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $\textit{hand}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -842,8 +816,4 @@ class TreeMap<K = number, V = unknown> {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0649: Dota2 Senate](../../0600-0699/0649.Dota2%20Senate/README.md)

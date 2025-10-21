@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1800-1899/1871.Jump%20Game%20VII/README_EN.md
-rating: 1896
-source: Weekly Contest 242 Q3
-tags:
-    - String
-    - Dynamic Programming
-    - Prefix Sum
-    - Sliding Window
----
-
-<!-- problem:start -->
-
 # [1871. Jump Game VII](https://leetcode.com/problems/jump-game-vii)
 
-[中文文档](/solution/1800-1899/1871.Jump%20Game%20VII/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given a <strong>0-indexed</strong> binary string <code>s</code> and two integers <code>minJump</code> and <code>maxJump</code>. In the beginning, you are standing at index <code>0</code>, which is equal to <code>&#39;0&#39;</code>. You can move from index <code>i</code> to index <code>j</code> if the following conditions are fulfilled:</p>
 
@@ -58,11 +39,7 @@ In the second step, move from index 3 to index 5.
 	<li><code>1 &lt;= minJump &lt;= maxJump &lt; s.length</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Prefix Sum + Dynamic Programming
 
@@ -74,7 +51,10 @@ The final answer is $f[n-1]$.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the string $s$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -211,8 +191,4 @@ var canReach = function (s, minJump, maxJump) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0134: Gas Station](../../0100-0199/0134.Gas%20Station/README.md)

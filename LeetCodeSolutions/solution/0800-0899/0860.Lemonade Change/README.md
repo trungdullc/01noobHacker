@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0860.Lemonade%20Change/README_EN.md
-tags:
-    - Greedy
-    - Array
----
-
-<!-- problem:start -->
-
 # [860. Lemonade Change](https://leetcode.com/problems/lemonade-change)
 
-[中文文档](/solution/0800-0899/0860.Lemonade%20Change/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>At a lemonade stand, each lemonade costs <code>$5</code>. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a <code>$5</code>, <code>$10</code>, or <code>$20</code> bill. You must provide the correct change to each customer so that the net transaction is that the customer pays <code>$5</code>.</p>
 
@@ -56,15 +41,14 @@ Since not every customer received the correct change, the answer is false.
 	<li><code>bills[i]</code> is either <code>5</code>, <code>10</code>, or <code>20</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -275,15 +259,7 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: One-liner
-
-<!-- tabs:start -->
 
 #### TypeScript
 
@@ -313,8 +289,4 @@ const lemonadeChange = (bills, f = 0, t = 0) =>
     );
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0053: Maximum Subarray](../../0000-0099/0053.Maximum%20Subarray/README.md)

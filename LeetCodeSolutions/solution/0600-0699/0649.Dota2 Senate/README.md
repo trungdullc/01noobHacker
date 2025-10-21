@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0600-0699/0649.Dota2%20Senate/README_EN.md
-tags:
-    - Greedy
-    - Queue
-    - String
----
-
-<!-- problem:start -->
-
 # [649. Dota2 Senate](https://leetcode.com/problems/dota2-senate)
 
-[中文文档](/solution/0600-0699/0649.Dota2%20Senate/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>In the world of Dota2, there are two parties: the Radiant and the Dire.</p>
 
@@ -66,11 +50,7 @@ And in round 2, the third senator can just announce the victory since he is the 
 	<li><code>senate[i]</code> is either <code>&#39;R&#39;</code> or <code>&#39;D&#39;</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Queue + Simulation
 
@@ -83,7 +63,10 @@ Finally, when there are only senators from one faction left in the queues, the s
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of senators.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -261,8 +244,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1899: Merge Triplets to Form Target Triplet](../../1800-1899/1899.Merge%20Triplets%20to%20Form%20Target%20Triplet/README.md)

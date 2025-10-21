@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0763.Partition%20Labels/README_EN.md
-tags:
-    - Greedy
-    - Hash Table
-    - Two Pointers
-    - String
----
-
-<!-- problem:start -->
-
 # [763. Partition Labels](https://leetcode.com/problems/partition-labels)
 
-[中文文档](/solution/0700-0799/0763.Partition%20Labels/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given a string <code>s</code>. We want to partition the string into as many parts as possible so that each letter appears in at most one part. For example, the string <code>&quot;ababcc&quot;</code> can be partitioned into <code>[&quot;abab&quot;, &quot;cc&quot;]</code>, but partitions such as <code>[&quot;aba&quot;, &quot;bcc&quot;]</code> or <code>[&quot;ab&quot;, &quot;ab&quot;, &quot;cc&quot;]</code> are invalid.</p>
 
@@ -52,11 +35,7 @@ A partition like &quot;ababcbacadefegde&quot;, &quot;hijhklij&quot; is incorrect
 	<li><code>s</code> consists of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Greedy
 
@@ -74,7 +53,10 @@ Repeat the above process until the string traversal is complete to get the lengt
 
 Time complexity is $O(n)$, and space complexity is $O(|\Sigma|)$. Where $n$ is the length of the string $s$, and $|\Sigma|$ is the size of the character set. In this problem, $|\Sigma| = 26$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -258,8 +240,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0678: Valid Parenthesis String](../../0600-0699/0678.Valid%20Parenthesis%20String/README.md)
