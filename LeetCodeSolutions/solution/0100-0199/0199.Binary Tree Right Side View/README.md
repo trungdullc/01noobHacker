@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0199.Binary%20Tree%20Right%20Side%20View/README_EN.md
-tags:
-    - Tree
-    - Depth-First Search
-    - Breadth-First Search
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view)
 
-[中文文档](/solution/0100-0199/0199.Binary%20Tree%20Right%20Side%20View/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>root</code> of a binary tree, imagine yourself standing on the <strong>right side</strong> of it, return <em>the values of the nodes you can see ordered from top to bottom</em>.</p>
 
@@ -70,11 +53,7 @@ tags:
 	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: BFS
 
@@ -82,7 +61,10 @@ We can use breadth-first search (BFS) and define a queue $\textit{q}$ to store t
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -358,19 +340,11 @@ var rightSideView = function (root) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: DFS
 
 Use DFS (depth-first search) to traverse the binary tree. Each time, traverse the right subtree first, then the left subtree. This way, the first node visited at each level is the rightmost node of that level.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -637,8 +611,4 @@ var rightSideView = function (root) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0427: Construct Quad Tree](../../0400-0499/0427.Construct%20Quad%20Tree/README.md)

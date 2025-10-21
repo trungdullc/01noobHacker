@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0235.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Search%20Tree/README_EN.md
-tags:
-    - Tree
-    - Depth-First Search
-    - Binary Search Tree
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree)
 
-[中文文档](/solution/0200-0299/0235.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Search%20Tree/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.</p>
 
@@ -58,11 +41,7 @@ tags:
 	<li><code>p</code> and <code>q</code> will exist in the BST.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Iteration
 
@@ -70,7 +49,10 @@ Starting from the root node, we traverse the tree. If the current node's value i
 
 The time complexity is $O(n)$, where $n$ is the number of nodes in the binary search tree. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -240,12 +222,6 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Recursion
 
 We can also use a recursive approach to solve this problem.
@@ -253,8 +229,6 @@ We can also use a recursive approach to solve this problem.
 We first check if the current node's value is less than both $\textit{p}$ and $\textit{q}$ values. If it is, we recursively traverse the right subtree. If the current node's value is greater than both $\textit{p}$ and $\textit{q}$ values, we recursively traverse the left subtree. Otherwise, it means the current node is the lowest common ancestor of $\textit{p}$ and $\textit{q}$, so we return the current node.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the number of nodes in the binary search tree.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -412,8 +386,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0701: Insert into a Binary Search Tree](../../0700-0799/0701.Insert%20into%20a%20Binary%20Search%20Tree/README.md)

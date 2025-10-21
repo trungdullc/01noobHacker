@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0145.Binary%20Tree%20Postorder%20Traversal/README_EN.md
-tags:
-    - Stack
-    - Tree
-    - Depth-First Search
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [145. Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal)
 
-[中文文档](/solution/0100-0199/0145.Binary%20Tree%20Postorder%20Traversal/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>root</code> of a&nbsp;binary tree, return <em>the postorder traversal of its nodes&#39; values</em>.</p>
 
@@ -73,11 +56,7 @@ tags:
 <p>&nbsp;</p>
 <strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recursion
 
@@ -85,7 +64,10 @@ We first recursively traverse the left and right subtrees, then visit the root n
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree. The space complexity mainly depends on the stack space used for recursive calls.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -279,12 +261,6 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Stack Implementation for Postorder Traversal
 
 The order of preorder traversal is: root, left, right. If we change the order of the left and right children, the order becomes: root, right, left. Finally, reversing the result gives us the postorder traversal result.
@@ -299,8 +275,6 @@ Therefore, the idea of using a stack to implement non-recursive traversal is as 
 6. Reverse the result to get the postorder traversal result.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree. The space complexity mainly depends on the stack space.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -476,12 +450,6 @@ function postorderTraversal(root: TreeNode | null): number[] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Morris Implementation for Postorder Traversal
 
 Morris traversal does not require a stack, and its space complexity is $O(1)$. The core idea is:
@@ -498,8 +466,6 @@ Traverse the binary tree nodes,
 > The idea of Morris postorder traversal is consistent with Morris preorder traversal, just change the "root-left-right" of preorder to "root-right-left", and finally reverse the result to become "left-right-root".
 
 The time complexity is $O(n)$, where $n$ is the number of nodes in the binary tree. The space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -697,8 +663,4 @@ function postorderTraversal(root: TreeNode | null): number[] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0226: Invert Binary Tree](../../0200-0299/0226.Invert%20Binary%20Tree/README.md)

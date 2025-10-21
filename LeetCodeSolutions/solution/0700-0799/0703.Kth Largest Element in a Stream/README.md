@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0703.Kth%20Largest%20Element%20in%20a%20Stream/README_EN.md
-tags:
-    - Tree
-    - Design
-    - Binary Search Tree
-    - Binary Tree
-    - Data Stream
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
 # [703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream)
 
-[中文文档](/solution/0700-0799/0703.Kth%20Largest%20Element%20in%20a%20Stream/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are part of a university admissions office and need to keep track of the <code>kth</code> highest test score from applicants in real-time. This helps to determine cut-off marks for interviews and admissions dynamically as new applicants submit their scores.</p>
 
@@ -79,11 +60,7 @@ kthLargest.add(9); // return 8</div>
 	<li>At most <code>10<sup>4</sup></code> calls will be made to <code>add</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Priority Queue (Min Heap)
 
@@ -97,7 +74,10 @@ In this way, the elements in $\textit{minQ}$ are the largest $k$ elements in the
 
 The space complexity is $O(k)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -295,8 +275,4 @@ KthLargest.prototype.add = function (val) {
  */
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 1046: Last Stone Weight](../../1000-1099/1046.Last%20Stone%20Weight/README.md)

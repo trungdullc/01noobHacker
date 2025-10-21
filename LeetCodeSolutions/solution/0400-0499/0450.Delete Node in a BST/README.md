@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0400-0499/0450.Delete%20Node%20in%20a%20BST/README_EN.md
-tags:
-    - Tree
-    - Binary Search Tree
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst)
 
-[中文文档](/solution/0400-0499/0450.Delete%20Node%20in%20a%20BST/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a root node reference of a BST and a key, delete the node with the given key in the BST. Return <em>the <strong>root node reference</strong> (possibly updated) of the BST</em>.</p>
 
@@ -68,15 +52,14 @@ Please notice that another valid answer is [5,2,6,null,4,null,7] and it&#39;s al
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Could you solve it with time complexity <code>O(height of tree)</code>?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -359,8 +342,4 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0102: Binary Tree Level Order Traversal](../../0100-0199/0102.Binary%20Tree%20Level%20Order%20Traversal/README.md)

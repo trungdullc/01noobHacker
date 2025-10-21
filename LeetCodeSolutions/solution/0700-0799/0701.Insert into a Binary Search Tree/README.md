@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0701.Insert%20into%20a%20Binary%20Search%20Tree/README_EN.md
-tags:
-    - Tree
-    - Binary Search Tree
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [701. Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree)
 
-[中文文档](/solution/0700-0799/0701.Insert%20into%20a%20Binary%20Search%20Tree/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>You are given the <code>root</code> node of a binary search tree (BST) and a <code>value</code> to insert into the tree. Return <em>the root node of the BST after the insertion</em>. It is <strong>guaranteed</strong> that the new value does not exist in the original BST.</p>
 
@@ -57,11 +41,7 @@ tags:
 	<li>It&#39;s <strong>guaranteed</strong> that <code>val</code> does not exist in the original BST.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recursion
 
@@ -73,7 +53,10 @@ If the root node's value is less than $\textit{val}$, we recursively insert $\te
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -212,8 +195,4 @@ function insertIntoBST(root: TreeNode | null, val: number): TreeNode | null {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0450: Delete Node in a BST](../../0400-0499/0450.Delete%20Node%20in%20a%20BST/README.md)

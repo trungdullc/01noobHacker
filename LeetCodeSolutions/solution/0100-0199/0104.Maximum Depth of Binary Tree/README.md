@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0104.Maximum%20Depth%20of%20Binary%20Tree/README_EN.md
-tags:
-    - Tree
-    - Depth-First Search
-    - Breadth-First Search
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree)
 
-[中文文档](/solution/0100-0199/0104.Maximum%20Depth%20of%20Binary%20Tree/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>root</code> of a binary tree, return <em>its maximum depth</em>.</p>
 
@@ -46,11 +29,7 @@ tags:
 	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recursion
 
@@ -58,7 +37,10 @@ Recursively traverse the left and right subtrees, calculate the maximum depth of
 
 The time complexity is $O(n)$, where $n$ is the number of nodes in the binary tree. Each node is traversed only once in the recursion.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -261,8 +243,4 @@ int maxDepth(struct TreeNode* root) {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0543: Diameter of Binary Tree](../../0500-0599/0543.Diameter%20of%20Binary%20Tree/README.md)

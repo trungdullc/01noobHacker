@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0572.Subtree%20of%20Another%20Tree/README_EN.md
-tags:
-    - Tree
-    - Depth-First Search
-    - Binary Tree
-    - String Matching
-    - Hash Function
----
-
-<!-- problem:start -->
-
 # [572. Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree)
 
-[中文文档](/solution/0500-0599/0572.Subtree%20of%20Another%20Tree/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the roots of two binary trees <code>root</code> and <code>subRoot</code>, return <code>true</code> if there is a subtree of <code>root</code> with the same structure and node values of<code> subRoot</code> and <code>false</code> otherwise.</p>
 
@@ -49,11 +31,7 @@ tags:
 	<li><code>-10<sup>4</sup> &lt;= subRoot.val &lt;= 10<sup>4</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS
 
@@ -63,7 +41,10 @@ In the $\textit{isSubtree}(\textit{root}, \textit{subRoot})$ function, we first 
 
 The time complexity is $O(n \times m)$, and the space complexity is $O(n)$. Here, $n$ and $m$ are the number of nodes in the trees $root$ and $subRoot$, respectively.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -301,8 +282,4 @@ var isSubtree = function (root, subRoot) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0235: Lowest Common Ancestor of a Binary Search Tree](../../0200-0299/0235.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Search%20Tree/README.md)

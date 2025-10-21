@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0105.Construct%20Binary%20Tree%20from%20Preorder%20and%20Inorder%20Traversal/README_EN.md
-tags:
-    - Tree
-    - Array
-    - Hash Table
-    - Divide and Conquer
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal)
 
-[中文文档](/solution/0100-0199/0105.Construct%20Binary%20Tree%20from%20Preorder%20and%20Inorder%20Traversal/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given two integer arrays <code>preorder</code> and <code>inorder</code> where <code>preorder</code> is the preorder traversal of a binary tree and <code>inorder</code> is the inorder traversal of the same tree, construct and return <em>the binary tree</em>.</p>
 
@@ -50,11 +32,7 @@ tags:
 	<li><code>inorder</code> is <strong>guaranteed</strong> to be the inorder traversal of the tree.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Recursion
 
@@ -73,7 +51,10 @@ The execution process of the function $dfs(i, j, n)$ is as follows:
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -337,11 +318,7 @@ var buildTree = function (preorder, inorder) {
 };
 ```
 
-<!-- tabs:end -->
-
 If the node values given in the problem have duplicates, then we only need to record all the positions where each node value appears, and then recursively construct the tree.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -491,8 +468,4 @@ func getBinaryTrees(preOrder []int, inOrder []int) []*TreeNode {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0337: House Robber III](../../0300-0399/0337.House%20Robber%20III/README.md)

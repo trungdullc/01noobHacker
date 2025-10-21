@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0226.Invert%20Binary%20Tree/README_EN.md
-tags:
-    - Tree
-    - Depth-First Search
-    - Breadth-First Search
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree)
 
-[中文文档](/solution/0200-0299/0226.Invert%20Binary%20Tree/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>root</code> of a binary tree, invert the tree, and return <em>its root</em>.</p>
 
@@ -51,11 +34,7 @@ tags:
 	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recursion
 
@@ -63,7 +42,10 @@ First, we check if $\textit{root}$ is null. If it is, we return $\text{null}$. T
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -288,8 +270,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0104: Maximum Depth of Binary Tree](../../0100-0199/0104.Maximum%20Depth%20of%20Binary%20Tree/README.md)

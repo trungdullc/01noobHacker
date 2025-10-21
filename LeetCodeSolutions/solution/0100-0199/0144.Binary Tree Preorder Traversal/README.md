@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0144.Binary%20Tree%20Preorder%20Traversal/README_EN.md
-tags:
-    - Stack
-    - Tree
-    - Depth-First Search
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [144. Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal)
 
-[中文文档](/solution/0100-0199/0144.Binary%20Tree%20Preorder%20Traversal/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>root</code> of a binary tree, return <em>the preorder traversal of its nodes&#39; values</em>.</p>
 
@@ -73,11 +56,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recursive Traversal
 
@@ -85,7 +64,10 @@ We first visit the root node, then recursively traverse the left and right subtr
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree. The space complexity mainly depends on the stack space used for recursive calls.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -279,12 +261,6 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Stack Implementation for Non-Recursive Traversal
 
 The idea of using a stack to implement non-recursive traversal is as follows:
@@ -297,8 +273,6 @@ The idea of using a stack to implement non-recursive traversal is as follows:
 6. Return the result.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree. The space complexity mainly depends on the stack space.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -469,12 +443,6 @@ function preorderTraversal(root: TreeNode | null): number[] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Morris Preorder Traversal
 
 Morris traversal does not require a stack, and its space complexity is $O(1)$. The core idea is:
@@ -488,8 +456,6 @@ Traverse the binary tree nodes,
 1. Repeat the above steps until the binary tree node is null, and the traversal ends.
 
 The time complexity is $O(n)$, where $n$ is the number of nodes in the binary tree. The space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -686,8 +652,4 @@ function preorderTraversal(root: TreeNode | null): number[] {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0145: Binary Tree Postorder Traversal](../../0100-0199/0145.Binary%20Tree%20Postorder%20Traversal/README.md)

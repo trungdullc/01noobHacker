@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0297.Serialize%20and%20Deserialize%20Binary%20Tree/README_EN.md
-tags:
-    - Tree
-    - Depth-First Search
-    - Breadth-First Search
-    - Design
-    - String
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [297. Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree)
 
-[中文文档](/solution/0200-0299/0297.Serialize%20and%20Deserialize%20Binary%20Tree/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.</p>
 
@@ -50,11 +31,7 @@ tags:
 	<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Level Order Traversal
 
@@ -64,7 +41,10 @@ During deserialization, we split the serialized string by the delimiter to get a
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the number of nodes in the binary tree.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -481,8 +461,4 @@ public class Codec {
 // codec.deserialize(codec.serialize(root));
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0703: Kth Largest Element In a Stream](../../0700-0799/0703.Kth%20Largest%20Element%20in%20a%20Stream/README.md)

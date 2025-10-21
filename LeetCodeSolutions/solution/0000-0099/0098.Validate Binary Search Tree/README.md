@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0098.Validate%20Binary%20Search%20Tree/README_EN.md
-tags:
-    - Tree
-    - Depth-First Search
-    - Binary Search Tree
-    - Binary Tree
----
-
-<!-- problem:start -->
-
 # [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree)
 
-[中文文档](/solution/0000-0099/0098.Validate%20Binary%20Search%20Tree/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given the <code>root</code> of a binary tree, <em>determine if it is a valid binary search tree (BST)</em>.</p>
 
@@ -53,11 +36,7 @@ tags:
 	<li><code>-2<sup>31</sup> &lt;= Node.val &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recursion
 
@@ -67,7 +46,10 @@ Therefore, we use a variable `prev` to save the last node we traversed. Initiall
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the number of nodes in the binary tree.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -357,8 +339,4 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0230: Kth Smallest Element In a Bst](../../0200-0299/0230.Kth%20Smallest%20Element%20in%20a%20BST/README.md)
