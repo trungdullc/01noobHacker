@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0067.Add%20Binary/README_EN.md
-tags:
-    - Bit Manipulation
-    - Math
-    - String
-    - Simulation
----
-
-<!-- problem:start -->
-
 # [67. Add Binary](https://leetcode.com/problems/add-binary)
 
-[中文文档](/solution/0000-0099/0067.Add%20Binary/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>
 
@@ -38,11 +21,7 @@ tags:
 	<li>Each string does not contain leading zeros except for the zero itself.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Simulation
 
@@ -50,7 +29,10 @@ We use a variable $carry$ to record the current carry, and two pointers $i$ and 
 
 The time complexity is $O(\max(m, n))$, where $m$ and $n$ are the lengths of strings $a$ and $b$ respectively. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -176,15 +158,7 @@ public class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -218,8 +192,4 @@ function addBinary(a: string, b: string): string {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0190: Reverse Bits](../../0100-0199/0190.Reverse%20Bits/README.md)

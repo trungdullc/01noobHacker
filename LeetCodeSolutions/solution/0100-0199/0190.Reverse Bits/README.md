@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0190.Reverse%20Bits/README_EN.md
-tags:
-    - Bit Manipulation
-    - Divide and Conquer
----
-
-<!-- problem:start -->
-
 # [190. Reverse Bits](https://leetcode.com/problems/reverse-bits)
 
-[中文文档](/solution/0100-0199/0190.Reverse%20Bits/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Reverse bits of a given 32 bits unsigned integer.</p>
 
@@ -53,11 +38,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> If this function is called many times, how would you optimize it?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Bit Manipulation
 
@@ -67,7 +48,10 @@ For example, for the $i$-th bit, we can use `(n & 1) << (31 - i)` to extract the
 
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -157,8 +141,4 @@ var reverseBits = function (n) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0268: Missing Number](../../0200-0299/0268.Missing%20Number/README.md)

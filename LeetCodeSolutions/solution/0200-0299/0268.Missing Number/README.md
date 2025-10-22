@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0268.Missing%20Number/README_EN.md
-tags:
-    - Bit Manipulation
-    - Array
-    - Hash Table
-    - Math
-    - Binary Search
-    - Sorting
----
-
-<!-- problem:start -->
-
 # [268. Missing Number](https://leetcode.com/problems/missing-number)
 
-[中文文档](/solution/0200-0299/0268.Missing%20Number/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given an array <code>nums</code> containing <code>n</code> distinct numbers in the range <code>[0, n]</code>, return <em>the only number in the range that is missing from the array.</em></p>
 
@@ -91,11 +72,7 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Could you implement a solution using only <code>O(1)</code> extra space complexity and <code>O(n)</code> runtime complexity?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Bitwise Operation
 
@@ -108,7 +85,10 @@ Therefore, we can traverse the array, perform XOR operation between each element
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -226,19 +206,11 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Mathematics
 
 We can also solve this problem using mathematics. By calculating the sum of $[0,..n]$, subtracting the sum of all numbers in the array, we can obtain the missing number.
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -334,8 +306,4 @@ var missingNumber = function (nums) {
 };
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0371: Sum of Two Integers ](../../0300-0399/0371.Sum%20of%20Two%20Integers/README.md)

@@ -1,20 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0007.Reverse%20Integer/README_EN.md
-tags:
-    - Math
----
-
-<!-- problem:start -->
-
 # [7. Reverse Integer](https://leetcode.com/problems/reverse-integer)
 
-[中文文档](/solution/0000-0099/0007.Reverse%20Integer/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a signed 32-bit integer <code>x</code>, return <code>x</code><em> with its digits reversed</em>. If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range <code>[-2<sup>31</sup>, 2<sup>31</sup> - 1]</code>, then return <code>0</code>.</p>
 
@@ -49,11 +35,7 @@ tags:
 	<li><code>-2<sup>31</sup> &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Mathematics
 
@@ -77,7 +59,10 @@ Therefore, we can check whether $ans$ overflows by checking whether $ans$ is wit
 
 The time complexity is $O(\log |x|)$, where $|x|$ is the absolute value of $x$. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -252,8 +237,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0201: Bitwise AND of Numbers Range](../../0200-0299/0201.Bitwise%20AND%20of%20Numbers%20Range/README.md)

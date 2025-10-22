@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0136.Single%20Number/README_EN.md
-tags:
-    - Bit Manipulation
-    - Array
----
-
-<!-- problem:start -->
-
 # [136. Single Number](https://leetcode.com/problems/single-number)
 
-[中文文档](/solution/0100-0199/0136.Single%20Number/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a <strong>non-empty</strong>&nbsp;array of integers <code>nums</code>, every element appears <em>twice</em> except for one. Find that single one.</p>
 
@@ -55,11 +40,7 @@ tags:
 	<li>Each element in the array appears twice except for one element which appears only once.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Bitwise Operation
 
@@ -72,7 +53,10 @@ Performing XOR operation on all elements in the array will result in the number 
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -184,15 +168,7 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Java
 
@@ -204,8 +180,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0191: Number of 1 Bits](../../0100-0199/0191.Number%20of%201%20Bits/README.md)

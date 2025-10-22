@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0300-0399/0371.Sum%20of%20Two%20Integers/README_EN.md
-tags:
-    - Bit Manipulation
-    - Math
----
-
-<!-- problem:start -->
-
 # [371. Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers)
 
-[中文文档](/solution/0300-0399/0371.Sum%20of%20Two%20Integers/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given two integers <code>a</code> and <code>b</code>, return <em>the sum of the two integers without using the operators</em> <code>+</code> <em>and</em> <code>-</code>.</p>
 
@@ -34,15 +19,14 @@ tags:
 	<li><code>-1000 &lt;= a, b &lt;= 1000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -95,8 +79,4 @@ func getSum(a int, b int) int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0007: Reverse Integer](../../0000-0099/0007.Reverse%20Integer/README.md)

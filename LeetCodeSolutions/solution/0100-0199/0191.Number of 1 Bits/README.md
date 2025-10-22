@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0191.Number%20of%201%20Bits/README_EN.md
-tags:
-    - Bit Manipulation
-    - Divide and Conquer
----
-
-<!-- problem:start -->
-
 # [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits)
 
-[中文文档](/solution/0100-0199/0191.Number%20of%201%20Bits/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>Given a positive integer <code>n</code>, write a function that returns the number of <span data-keyword="set-bit">set bits</span> in its binary representation (also known as the <a href="http://en.wikipedia.org/wiki/Hamming_weight" target="_blank">Hamming weight</a>).</p>
 
@@ -66,15 +51,14 @@ tags:
 <p>&nbsp;</p>
 <strong>Follow up:</strong> If this function is called many times, how would you optimize it?
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1
 
-<!-- tabs:start -->
+#### Du Solution: Python3
+```
+
+```
 
 #### Python3
 
@@ -202,15 +186,7 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -330,8 +306,4 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->
+[Continue 0338: Counting Bits](../../0300-0399/0338.Counting%20Bits/README.md)

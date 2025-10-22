@@ -824,6 +824,8 @@ Ctrl + Shift + T
 Others Writeups:
 https://github.com/Adamkadaban/CTFs/tree/master
 
+#### LeetCode
+```
 #### Du Solution: Python3
 ```
 
@@ -834,3 +836,10 @@ https://github.com/Adamkadaban/CTFs/tree/master
 <!--.*?-->\r?\n?\n
 
 Get-ChildItem -Recurse -Include *.cpp, *.cs, *.nim, *.swift, *.py, *.js, *.c, *.go, *.java, *.rs, *.go, *.ts, *.php, *.sql | Remove-Item -Force
+```
+
+#### Code Force
+```
+https://codeforces.com/problemset?order=BY_SOLVED_DESC
+C++ https://github.com/kantuni/Codeforces
+```
