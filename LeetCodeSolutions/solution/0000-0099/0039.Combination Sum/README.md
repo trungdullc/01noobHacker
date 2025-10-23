@@ -65,8 +65,49 @@ Similar problems:
 -   [216. Combination Sum III](https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0216.Combination%20Sum%20III/README_EN.md)
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to find all unique combinations of candidates that sum to target.
+   Each candidate can be chosen unlimited times.
+   """
+   def combinationSum(self, candidates, target):
+      res = []
+
+      def backtrack(start, path, total):
+         if total == target:
+            res.append(path[:])
+            return
+         if total > target:
+            return
+         for i in range(start, len(candidates)):
+            path.append(candidates[i])
+            backtrack(i, path, total + candidates[i])  # Can reuse same candidate
+            path.pop()
+
+      backtrack(0, [], 0)
+      return res
+
+def main():
+   sol = Solution()
+   print(sol.combinationSum([2,3,6,7], 7))
+   print(sol.combinationSum([2,3,5], 8))
+   print(sol.combinationSum([2], 1))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[2, 2, 3], [7]]
+[[2, 2, 2, 2], [2, 3, 3], [3, 5]]
+[]
+
+real    0m0.023s
+user    0m0.014s
+sys     0m0.009s
 ```
 
 #### Python3

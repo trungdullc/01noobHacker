@@ -48,8 +48,61 @@ In the main function, we call $dfs(0)$ to start recursion, and finally return th
 The time complexity is $O(n^2 \times n!)$, and the space complexity is $O(n)$. Here, $n$ is the integer given in the problem.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        res = []
+
+        def create_board(queens):
+            board = []
+            for q in queens:
+                row = ['.'] * n
+                row[q] = 'Q'
+                board.append(''.join(row))
+            return board
+
+        def backtrack(row, diagonals, anti_diagonals, cols, queens):
+            if row == n:
+                res.append(create_board(queens))
+                return
+            
+            for col in range(n):
+                diag = row - col
+                anti_diag = row + col
+                if col in cols or diag in diagonals or anti_diag in anti_diagonals:
+                    continue
+                
+                cols.add(col)
+                diagonals.add(diag)
+                anti_diagonals.add(anti_diag)
+                queens.append(col)
+                
+                backtrack(row + 1, diagonals, anti_diagonals, cols, queens)
+                
+                cols.remove(col)
+                diagonals.remove(diag)
+                anti_diagonals.remove(anti_diag)
+                queens.pop()
+        
+        backtrack(0, set(), set(), set(), [])
+        return res
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.solveNQueens(4))
+    print(sol.solveNQueens(1))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[['.Q..', '...Q', 'Q...', '..Q.'], ['..Q.', 'Q...', '...Q', '.Q..']]
+[['Q']]
+
+real    0m0.081s
+user    0m0.020s
+sys     0m0.009s
 ```
 
 #### Python3

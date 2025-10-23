@@ -33,8 +33,40 @@ Quick Select is an algorithm for finding the $k^{th}$ largest or smallest elemen
 The time complexity is $O(n)$, and the space complexity is $O(\log n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class Solution:
+   """
+   Solution to find the kth largest element in an array using a min-heap.
+   """
+   def findKthLargest(self, nums, k):
+      # Min-heap of size k
+      heap = nums[:k]
+      heapq.heapify(heap)
+      for num in nums[k:]:
+         if num > heap[0]:
+            heapq.heappushpop(heap, num)
+      return heap[0]
+
+def main():
+   sol = Solution()
+   print(sol.findKthLargest([3,2,1,5,6,4], 2))
+   print(sol.findKthLargest([3,2,3,1,2,4,5,5,6], 4))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+5
+4
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

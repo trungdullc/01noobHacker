@@ -46,8 +46,53 @@ Specifically, we use the $cols$ array to record whether a queen has been placed 
 The time complexity is $O(n!)$, and the space complexity is $O(n)$. Here, $n$ is the number of queens.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def totalNQueens(self, n: int) -> int:
+        self.count = 0
+
+        def backtrack(row, diagonals, anti_diagonals, cols):
+            if row == n:
+                self.count += 1
+                return
+            
+            for col in range(n):
+                diag = row - col
+                anti_diag = row + col
+                if col in cols or diag in diagonals or anti_diag in anti_diagonals:
+                    continue
+                
+                cols.add(col)
+                diagonals.add(diag)
+                anti_diagonals.add(anti_diag)
+                
+                backtrack(row + 1, diagonals, anti_diagonals, cols)
+                
+                cols.remove(col)
+                diagonals.remove(diag)
+                anti_diagonals.remove(anti_diag)
+        
+        backtrack(0, set(), set(), set())
+        return self.count
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    n = 4
+    print(f"Number of solutions for n={n}: {sol.totalNQueens(n)}")
+    n = 1
+    print(f"Number of solutions for n={n}: {sol.totalNQueens(n)}")
+    
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Number of solutions for n=4: 2
+Number of solutions for n=1: 1
+
+real    0m0.085s
+user    0m0.018s
+sys     0m0.007s
 ```
 
 #### Python3

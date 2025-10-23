@@ -72,8 +72,43 @@ Specifically, we enumerate $i$ in the range $[0, 2^n)$, where $n$ is the length 
 The time complexity is $O(n \times 2^n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to compute the sum of XOR totals of all subsets of nums.
+   """
+   def subsetXORSum(self, nums) -> int:
+      def backtrack(index: int, curr_xor: int) -> int:
+         if index == len(nums):
+            return curr_xor
+         # Include nums[index]
+         take = backtrack(index + 1, curr_xor ^ nums[index])
+         # Exclude nums[index]
+         skip = backtrack(index + 1, curr_xor)
+         return take + skip
+
+      return backtrack(0, 0)
+
+def main():
+   sol = Solution()
+   print(sol.subsetXORSum([1,3]))
+   print(sol.subsetXORSum([5,1,6]))
+   print(sol.subsetXORSum([3,4,5,6,7,8]))
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+6
+28
+480
+
+real    0m0.021s
+user    0m0.021s
+sys     0m0.000s
 ```
 
 #### Python3

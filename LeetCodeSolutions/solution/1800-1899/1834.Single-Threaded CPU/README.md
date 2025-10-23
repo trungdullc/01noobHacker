@@ -74,8 +74,58 @@ We repeat the above process until the queue is empty and all tasks have been add
 The time complexity is $O(n \times \log n)$, where $n$ is the number of tasks.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class Solution:
+   """
+   Solution to determine the order in which a single-threaded CPU processes tasks.
+   """
+   def getOrder(self, tasks):
+      # Add original indices
+      tasks = sorted([(enq, proc, i) for i, (enq, proc) in enumerate(tasks)])
+      res = []
+      heap = []
+      time = 0
+      i = 0
+      n = len(tasks)
+
+      while len(res) < n:
+         # Push all tasks whose enqueueTime <= current time
+         while i < n and tasks[i][0] <= time:
+            enqueue, processing, index = tasks[i]
+            heapq.heappush(heap, (processing, index))
+            i += 1
+         if heap:
+            proc, idx = heapq.heappop(heap)
+            time += proc
+            res.append(idx)
+         else:
+            # No tasks available, jump to next enqueueTime
+            time = tasks[i][0]
+      return res
+
+def main():
+   sol = Solution()
+   tasks1 = [[1,2],[2,4],[3,2],[4,1]]
+   print(sol.getOrder(tasks1))
+
+   tasks2 = [[7,10],[7,12],[7,5],[7,4],[7,2]]
+   print(sol.getOrder(tasks2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[0, 2, 3, 1]
+[4, 3, 2, 0, 1]
+
+real    0m0.022s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

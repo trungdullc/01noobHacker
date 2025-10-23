@@ -42,8 +42,56 @@ We sort the array $\textit{nums}$ in descending order (to reduce the number of s
 If we can add all elements to $\textit{cur}$, it means we can partition the array into $k$ subsets, and we return $\textit{true}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    """
+    Determine if nums can be partitioned into k subsets with equal sum.
+    """
+    def canPartitionKSubsets(self, nums: List[int], k: int) -> bool:
+        total = sum(nums)
+        if total % k != 0:
+            return False
+        target = total // k
+        nums.sort(reverse=True)  # Optimization: try larger numbers first
+        used = [False] * len(nums)
+
+        def dfs(start_index, k_remaining, current_sum):
+            if k_remaining == 0:
+                return True
+            if current_sum == target:
+                # Start forming the next subset
+                return dfs(0, k_remaining - 1, 0)
+            for i in range(start_index, len(nums)):
+                if not used[i] and current_sum + nums[i] <= target:
+                    used[i] = True
+                    if dfs(i + 1, k_remaining, current_sum + nums[i]):
+                        return True
+                    used[i] = False
+                    # Prune: if current_sum is 0 and nums[i] cannot fit, no need to try further
+                    if current_sum == 0:
+                        break
+            return False
+        return dfs(0, k, 0)
+
+def main():
+    sol = Solution()
+    print(sol.canPartitionKSubsets([4,3,2,3,5,2,1], 4))
+    print(sol.canPartitionKSubsets([1,2,3,4], 3))
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.093s
+user    0m0.026s
+sys     0m0.004s
 ```
 
 #### Python3

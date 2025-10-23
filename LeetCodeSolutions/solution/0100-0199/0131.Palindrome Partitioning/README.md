@@ -35,8 +35,49 @@ Otherwise, we can start from $i$ and enumerate the end position $j$ from small t
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(n^2)$. Here, $n$ is the length of the string.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    """
+    Partition a string such that every substring is a palindrome.
+    """
+    def partition(self, s):
+        res = []
+
+        def is_palindrome(sub):
+            return sub == sub[::-1]
+
+        def backtrack(start, path):
+            if start == len(s):
+                res.append(path[:])
+                return
+            for end in range(start+1, len(s)+1):
+                sub = s[start:end]
+                if is_palindrome(sub):
+                    path.append(sub)
+                    backtrack(end, path)
+                    path.pop()
+
+        backtrack(0, [])
+        return res
+
+def main():
+    sol = Solution()
+    print(sol.partition("aab"))     # [["a","a","b"],["aa","b"]]
+    print(sol.partition("a"))       # [["a"]]
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[['a', 'a', 'b'], ['aa', 'b']]
+[['a']]
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

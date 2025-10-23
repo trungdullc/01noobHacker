@@ -50,8 +50,53 @@ Similar problems:
 -   [46. Permutations](https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0046.Permutations/README_EN.md)
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    """
+    Generate all unique permutations of a list of integers that may contain duplicates.
+    """
+    def permuteUnique(self, nums):
+        nums.sort()  # sort to handle duplicates
+        res = []
+        used = [False] * len(nums)
+
+        def backtrack(path):
+            if len(path) == len(nums):
+                res.append(path[:])
+                return
+            for i in range(len(nums)):
+                if used[i]:
+                    continue
+                # skip duplicates
+                if i > 0 and nums[i] == nums[i-1] and not used[i-1]:
+                    continue
+                used[i] = True
+                path.append(nums[i])
+                backtrack(path)
+                path.pop()
+                used[i] = False
+
+        backtrack([])
+        return res
+
+def main():
+    sol = Solution()
+    print(sol.permuteUnique([1,1,2]))
+    print(sol.permuteUnique([1,2,3]))
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[1, 1, 2], [1, 2, 1], [2, 1, 1]]
+[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
+real    0m0.026s
+user    0m0.020s
+sys     0m0.003s
 ```
 
 #### Python3

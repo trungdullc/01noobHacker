@@ -39,8 +39,46 @@ Finally, we only need to call $\textit{dfs}(0)$ and return the answer array.
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Generate all possible subsets of a list of integers that may contain duplicates.
+   Each subset is unique.
+   """
+   def subsetsWithDup(self, nums):
+      nums.sort()  # sort to handle duplicates
+      res = []
+
+      def backtrack(start, path):
+         res.append(path[:])
+         for i in range(start, len(nums)):
+            if i > start and nums[i] == nums[i-1]:
+               continue
+            path.append(nums[i])
+            backtrack(i+1, path)
+            path.pop()
+
+      backtrack(0, [])
+      return res
+
+def main():
+   sol = Solution()
+   print(sol.subsetsWithDup([1,2,2]))
+   print(sol.subsetsWithDup([0]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]
+[[], [0]]
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

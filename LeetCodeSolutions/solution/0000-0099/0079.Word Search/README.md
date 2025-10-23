@@ -59,8 +59,70 @@ In the main function, we enumerate each position $(i, j)$ in the grid as the sta
 The time complexity is $O(m \times n \times 3^k)$, and the space complexity is $O(\min(m \times n, k))$. Here, $m$ and $n$ are the number of rows and columns of the grid, respectively; and $k$ is the length of the string $word$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    """
+    Check if a given word exists in a 2D board following adjacent horizontal/vertical paths.
+    """
+    def exist(self, board, word):
+        if not board or not board[0]:
+            return False
+
+        m, n = len(board), len(board[0])
+
+        def dfs(r, c, idx):
+            # If all letters are matched
+            if idx == len(word):
+                return True
+            # Check boundaries and current letter
+            if r < 0 or r >= m or c < 0 or c >= n or board[r][c] != word[idx]:
+                return False
+
+            # Mark as visited
+            tmp = board[r][c]
+            board[r][c] = '#'
+
+            # Explore 4 directions
+            found = (
+                dfs(r+1, c, idx+1) or
+                dfs(r-1, c, idx+1) or
+                dfs(r, c+1, idx+1) or
+                dfs(r, c-1, idx+1)
+            )
+
+            # Backtrack
+            board[r][c] = tmp
+            return found
+
+        for i in range(m):
+            for j in range(n):
+                if board[i][j] == word[0] and dfs(i, j, 0):
+                    return True
+        return False
+
+def main():
+    sol = Solution()
+    board1 = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
+    word1 = "ABCCED"
+    print(sol.exist(board1, word1))  # True
+
+    board2 = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
+    word2 = "SEE"
+    print(sol.exist(board2, word2))  # True
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

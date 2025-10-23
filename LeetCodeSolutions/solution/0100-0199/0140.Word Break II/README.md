@@ -46,8 +46,59 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+        word_set = set(wordDict)
+        memo = {}
+
+        def backtrack(start):
+            if start in memo:
+                return memo[start]
+
+            if start == len(s):
+                return [""]
+
+            sentences = []
+            for end in range(start + 1, len(s) + 1):
+                word = s[start:end]
+                if word in word_set:
+                    for sub_sentence in backtrack(end):
+                        if sub_sentence:
+                            sentences.append(word + " " + sub_sentence)
+                        else:
+                            sentences.append(word)
+            memo[start] = sentences
+            return sentences
+        return backtrack(0)
+
+if __name__ == "__main__":
+    sol = Solution()
+    s1 = "catsanddog"
+    wordDict1 = ["cat","cats","and","sand","dog"]
+    print(sol.wordBreak(s1, wordDict1))
+
+    s2 = "pineapplepenapple"
+    wordDict2 = ["apple","pen","applepen","pine","pineapple"]
+    print(sol.wordBreak(s2, wordDict2))  
+
+    s3 = "catsandog"
+    wordDict3 = ["cats","dog","sand","and","cat"]
+    print(sol.wordBreak(s3, wordDict3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+['cat sand dog', 'cats and dog']
+['pine apple pen apple', 'pine applepen apple', 'pineapple pen apple']
+[]
+
+real    0m0.104s
+user    0m0.031s
+sys     0m0.008s
 ```
 
 #### Python3

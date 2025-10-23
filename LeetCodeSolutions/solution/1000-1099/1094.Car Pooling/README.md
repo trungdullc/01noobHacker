@@ -43,8 +43,41 @@ We can use the idea of a difference array, adding the number of passengers to th
 The time complexity is $O(n)$, and the space complexity is $O(M)$. Here, $n$ is the number of trips, and $M$ is the maximum end point in the trips. In this problem, $M \le 1000$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to determine if car pooling is possible given trips and capacity.
+   """
+   def carPooling(self, trips, capacity: int) -> bool:
+      timeline = [0] * 1001  # as locations are <= 1000
+      for num, start, end in trips:
+         timeline[start] += num
+         timeline[end] -= num
+      passengers = 0
+      for change in timeline:
+         passengers += change
+         if passengers > capacity:
+            return False
+      return True
+
+def main():
+   sol = Solution()
+   print(sol.carPooling([[2,1,5],[3,3,7]], 4))
+   print(sol.carPooling([[2,1,5],[3,3,7]], 5))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+False
+True
+
+real    0m0.038s
+user    0m0.026s
+sys     0m0.011s
 ```
 
 #### Python3

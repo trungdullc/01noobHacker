@@ -51,8 +51,66 @@ twitter.getNewsFeed(1);  // User 1&#39;s news feed should return a list with 1 t
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+from collections import defaultdict, deque
+
+class Twitter:
+   """
+   Simplified Twitter class to post tweets, follow/unfollow, and get news feed.
+   """
+   def __init__(self):
+      self.time = 0
+      self.tweets = defaultdict(deque)  # userId -> deque of (timestamp, tweetId)
+      self.followees = defaultdict(set) # userId -> set of followeeIds
+
+   def postTweet(self, userId: int, tweetId: int):
+      self.time += 1
+      self.tweets[userId].appendleft((self.time, tweetId))
+      if len(self.tweets[userId]) > 10:
+         self.tweets[userId].pop()  # Keep only recent 10 for efficiency
+
+   def getNewsFeed(self, userId: int):
+      heap = []
+      users = self.followees[userId] | {userId}
+      for u in users:
+         for t in self.tweets[u]:
+            heapq.heappush(heap, t)
+            if len(heap) > 10:
+               heapq.heappop(heap)
+      return [tweetId for (_, tweetId) in sorted(heap, reverse=True)]
+
+   def follow(self, followerId: int, followeeId: int):
+      if followerId != followeeId:
+         self.followees[followerId].add(followeeId)
+
+   def unfollow(self, followerId: int, followeeId: int):
+      self.followees[followerId].discard(followeeId)
+
+def main():
+   twitter = Twitter()
+   twitter.postTweet(1, 5)
+   print(twitter.getNewsFeed(1))
+   twitter.follow(1, 2)
+   twitter.postTweet(2, 6)
+   print(twitter.getNewsFeed(1))
+   twitter.unfollow(1, 2)
+   print(twitter.getNewsFeed(1))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[5]
+[6, 5]
+[5]
+
+real    0m0.023s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

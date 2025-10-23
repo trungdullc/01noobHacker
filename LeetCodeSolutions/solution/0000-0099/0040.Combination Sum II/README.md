@@ -65,8 +65,50 @@ Similar problems:
 -   [216. Combination Sum III](https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0216.Combination%20Sum%20III/README_EN.md)
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to find all unique combinations where each candidate is used at most once.
+   Avoids duplicate combinations by sorting and skipping duplicates during backtracking.
+   """
+   def combinationSum2(self, candidates, target):
+      candidates.sort()
+      res = []
+
+      def backtrack(start, path, total):
+         if total == target:
+            res.append(path[:])
+            return
+         if total > target:
+            return
+         for i in range(start, len(candidates)):
+            if i > start and candidates[i] == candidates[i-1]:
+               continue  # skip duplicates
+            path.append(candidates[i])
+            backtrack(i + 1, path, total + candidates[i])  # move to next index
+            path.pop()
+
+      backtrack(0, [], 0)
+      return res
+
+def main():
+   sol = Solution()
+   print(sol.combinationSum2([10,1,2,7,6,1,5], 8))
+   print(sol.combinationSum2([2,5,2,1,2], 5))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[1, 1, 6], [1, 2, 5], [1, 7], [2, 6]]
+[[1, 2, 2], [5]]
+
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

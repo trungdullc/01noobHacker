@@ -44,8 +44,42 @@ In the main function, we call $dfs(0)$, i.e., start searching all subsets from t
 The time complexity is $O(n \times 2^n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array. There are a total of $2^n$ subsets, and each subset takes $O(n)$ time to construct.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to generate all subsets (power set) of a unique integer array.
+   """
+   def subsets(self, nums):
+      res = []
+
+      def backtrack(index, path):
+         res.append(path[:])
+         for i in range(index, len(nums)):
+            path.append(nums[i])
+            backtrack(i + 1, path)
+            path.pop()
+
+      backtrack(0, [])
+      return res
+
+def main():
+   sol = Solution()
+   print(sol.subsets([1,2,3]))
+   print(sol.subsets([0]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
+[[], [0]]
+
+real    0m0.022s
+user    0m0.011s
+sys     0m0.011s
 ```
 
 #### Python3

@@ -27,8 +27,53 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from collections import Counter
+import heapq
+
+class Solution:
+   """
+   Solution to rearrange string so that no two adjacent characters are the same.
+   """
+   def reorganizeString(self, s: str) -> str:
+      count = Counter(s)
+      # Max-heap based on frequency
+      heap = [(-freq, char) for char, freq in count.items()]
+      heapq.heapify(heap)
+      prev_freq, prev_char = 0, ''
+      res = []
+
+      while heap:
+         freq, char = heapq.heappop(heap)
+         res.append(char)
+         if prev_freq < 0:
+            heapq.heappush(heap, (prev_freq, prev_char))
+         prev_freq, prev_char = freq + 1, char  # decrement frequency
+
+      result = ''.join(res)
+      return result if len(result) == len(s) else ''
+
+def main():
+   sol = Solution()
+   s1 = "aab"
+   print(sol.reorganizeString(s1))
+
+   s2 = "aaab"
+   print(sol.reorganizeString(s2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+aba
+
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

@@ -66,8 +66,57 @@ When calling the `findMedian` method, if the size of $\textit{minQ}$ is equal to
 The space complexity is $O(n)$, where $n$ is the number of elements.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class MedianFinder:
+   """
+   MedianFinder using two heaps: max-heap for lower half, min-heap for upper half.
+   """
+   def __init__(self):
+      self.small = []  # max-heap (invert values)
+      self.large = []  # min-heap
+
+   def addNum(self, num: int):
+      heapq.heappush(self.small, -num)
+      # Balance heaps
+      if self.small and self.large and (-self.small[0] > self.large[0]):
+         val = -heapq.heappop(self.small)
+         heapq.heappush(self.large, val)
+      # Maintain size property
+      if len(self.small) > len(self.large) + 1:
+         val = -heapq.heappop(self.small)
+         heapq.heappush(self.large, val)
+      elif len(self.large) > len(self.small):
+         val = heapq.heappop(self.large)
+         heapq.heappush(self.small, -val)
+
+   def findMedian(self) -> float:
+      if len(self.small) > len(self.large):
+         return -self.small[0]
+      return (-self.small[0] + self.large[0]) / 2
+
+def main():
+   mf = MedianFinder()
+   mf.addNum(1)
+   mf.addNum(2)
+   print(mf.findMedian())
+   mf.addNum(3)
+   print(mf.findMedian())
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1.5
+2
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

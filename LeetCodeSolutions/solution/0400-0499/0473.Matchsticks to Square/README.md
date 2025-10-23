@@ -36,8 +36,61 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+    """
+    Determine if matchsticks can form a square using all sticks exactly once.
+    """
+    def makesquare(self, matchsticks: List[int]) -> bool:
+        if not matchsticks:
+            return False
+
+        total_length = sum(matchsticks)
+        if total_length % 4 != 0:
+            return False
+
+        side_length = total_length // 4
+        matchsticks.sort(reverse=True)  # Optimization: try bigger sticks first
+
+        sides = [0] * 4
+
+        def dfs(index):
+            if index == len(matchsticks):
+                # Check if all sides are equal to target
+                return all(side == side_length for side in sides)
+            for i in range(4):
+                if sides[i] + matchsticks[index] <= side_length:
+                    sides[i] += matchsticks[index]
+                    if dfs(index + 1):
+                        return True
+                    sides[i] -= matchsticks[index]
+                # Prune: if side[i] is 0, no need to try next empty side
+                if sides[i] == 0:
+                    break
+            return False
+
+        return dfs(0)
+
+def main():
+    sol = Solution()
+    print(sol.makesquare([1,1,2,2,2]))
+    print(sol.makesquare([3,3,3,3,4]))
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.035s
+user    0m0.034s
+sys     0m0.000s
 ```
 
 #### Python3

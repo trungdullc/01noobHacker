@@ -50,8 +50,47 @@ Therefore, output the final maximized capital, which is 0 + 1 + 3 = 4.
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class Solution:
+   """
+   Solution to maximize capital by selecting at most k projects.
+   """
+   def findMaximizedCapital(self, k: int, w: int, profits, capital) -> int:
+      projects = sorted(zip(capital, profits))
+      max_profit_heap = []
+      i = 0
+      n = len(projects)
+
+      for _ in range(k):
+         while i < n and projects[i][0] <= w:
+            # Use negative profit for max-heap
+            heapq.heappush(max_profit_heap, -projects[i][1])
+            i += 1
+         if not max_profit_heap:
+            break
+         w += -heapq.heappop(max_profit_heap)
+      return w
+
+def main():
+   sol = Solution()
+   print(sol.findMaximizedCapital(2, 0, [1,2,3], [0,1,1]))
+   print(sol.findMaximizedCapital(3, 0, [1,2,3], [0,1,2]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+6
+
+real    0m0.023s
+user    0m0.023s
+sys     0m0.000s
 ```
 
 #### Python3

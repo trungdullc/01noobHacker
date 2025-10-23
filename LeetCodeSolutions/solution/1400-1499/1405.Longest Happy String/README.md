@@ -48,8 +48,56 @@
 The greedy strategy is to prioritize the selection of characters with the most remaining occurrences. By using a priority queue or sorting, we ensure that the character selected each time is the one with the most remaining occurrences (to avoid having three consecutive identical characters, in some cases, we need to select the character with the second most remaining occurrences).
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class Solution:
+   """
+   Solution to generate the longest happy string with constraints on 'a', 'b', 'c'.
+   """
+   def longestDiverseString(self, a: int, b: int, c: int) -> str:
+      heap = []
+      for count, char in [(-a, 'a'), (-b, 'b'), (-c, 'c')]:
+         if count != 0:
+            heapq.heappush(heap, (count, char))
+      res = []
+
+      while heap:
+         count1, char1 = heapq.heappop(heap)
+         if len(res) >= 2 and res[-1] == res[-2] == char1:
+            if not heap:
+               break
+            count2, char2 = heapq.heappop(heap)
+            res.append(char2)
+            count2 += 1
+            if count2 != 0:
+               heapq.heappush(heap, (count2, char2))
+            heapq.heappush(heap, (count1, char1))
+         else:
+            res.append(char1)
+            count1 += 1
+            if count1 != 0:
+               heapq.heappush(heap, (count1, char1))
+      return ''.join(res)
+
+def main():
+   sol = Solution()
+   print(sol.longestDiverseString(1,1,7))
+   print(sol.longestDiverseString(7,1,0))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+ccaccbcc
+aabaa
+
+real    0m0.089s
+user    0m0.027s
+sys     0m0.017s
 ```
 
 #### Python3

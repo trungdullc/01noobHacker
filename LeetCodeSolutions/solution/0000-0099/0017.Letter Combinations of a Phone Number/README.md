@@ -45,8 +45,61 @@ First, we use an array or hash table to store the letters corresponding to each 
 The time complexity is $O(4^n)$, and the space complexity is $O(4^n)$. Here, $n$ is the length of the input digits.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    """
+    Generate all letter combinations of a phone number given digits 2-9.
+    """
+    def letterCombinations(self, digits: str):
+        if not digits:
+            return []
+
+        # Mapping of digits to letters
+        phone_map = {
+            "2": "abc",
+            "3": "def",
+            "4": "ghi",
+            "5": "jkl",
+            "6": "mno",
+            "7": "pqrs",
+            "8": "tuv",
+            "9": "wxyz"
+        }
+
+        res = []
+
+        def backtrack(index, path):
+            if index == len(digits):
+                res.append("".join(path))
+                return
+            for char in phone_map[digits[index]]:
+                path.append(char)
+                backtrack(index + 1, path)
+                path.pop()
+
+        backtrack(0, [])
+        return res
+
+def main():
+    sol = Solution()
+    print(sol.letterCombinations("23"))  
+    print(sol.letterCombinations(""))
+    print(sol.letterCombinations("2"))
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
+[]
+['a', 'b', 'c']
+
+real    0m0.022s
+user    0m0.013s
+sys     0m0.009s
 ```
 
 #### Python3

@@ -37,8 +37,46 @@ Similar problems:
 -   [47. Permutations II](https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0047.Permutations%20II/README_EN.md)
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Generate all possible permutations of a list of distinct integers using backtracking.
+   """
+   def permute(self, nums):
+      res = []
+
+      def backtrack(path, remaining):
+         if not remaining:
+            res.append(path[:])
+            return
+         for i in range(len(remaining)):
+            path.append(remaining[i])
+            backtrack(path, remaining[:i] + remaining[i+1:])
+            path.pop()
+
+      backtrack([], nums)
+      return res
+
+def main():
+   sol = Solution()
+   print(sol.permute([1,2,3]))
+   print(sol.permute([0,1]))
+   print(sol.permute([1]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+[[0, 1], [1, 0]]
+[[1]]
+
+real    0m0.023s
+user    0m0.004s
+sys     0m0.019s
 ```
 
 #### Python3

@@ -102,8 +102,45 @@ font-size: 0.85rem;
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from collections import Counter
+
+class Solution:
+   """
+   Solution to calculate the minimum number of intervals to finish tasks with cooling period n.
+   """
+   def leastInterval(self, tasks, n: int) -> int:
+      count = Counter(tasks)
+      max_freq = max(count.values())
+      max_count = sum(1 for v in count.values() if v == max_freq)
+      # Formula: (max_freq - 1) * (n + 1) + max_count
+      return max(len(tasks), (max_freq - 1) * (n + 1) + max_count)
+
+def main():
+   sol = Solution()
+   tasks1 = ["A","A","A","B","B","B"]
+   print(sol.leastInterval(tasks1, 2))
+
+   tasks2 = ["A","C","A","B","D","B"]
+   print(sol.leastInterval(tasks2, 1))
+
+   tasks3 = ["A","A","A","B","B","B"]
+   print(sol.leastInterval(tasks3, 3))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+8
+6
+10
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3
