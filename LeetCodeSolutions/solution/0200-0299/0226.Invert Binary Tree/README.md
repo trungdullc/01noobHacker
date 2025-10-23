@@ -43,8 +43,92 @@ First, we check if $\textit{root}$ is null. If it is, we return $\text{null}$. T
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution class to invert a binary tree.
+   """
+
+   def invertTree(self, root):
+      """
+      Invert a binary tree.
+      :type root: TreeNode
+      :rtype: TreeNode
+      """
+      if not root:
+         return None
+
+      # Swap left and right
+      root.left, root.right = root.right, root.left
+
+      # Recurse
+      self.invertTree(root.left)
+      self.invertTree(root.right)
+
+      return root
+
+def print_tree(root):
+   """
+   Helper to print tree in level-order as list.
+   """
+   if not root:
+      return []
+   queue = [root]
+   result = []
+   while queue:
+      node = queue.pop(0)
+      if node:
+         result.append(node.val)
+         queue.append(node.left)
+         queue.append(node.right)
+      else:
+         result.append(None)
+   # Trim trailing None
+   while result and result[-1] is None:
+      result.pop()
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   root1 = TreeNode(4)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(7)
+   root1.left.left = TreeNode(1)
+   root1.left.right = TreeNode(3)
+   root1.right.left = TreeNode(6)
+   root1.right.right = TreeNode(9)
+   sol.invertTree(root1)
+   print(print_tree(root1))
+
+   root2 = TreeNode(2)
+   root2.left = TreeNode(1)
+   root2.right = TreeNode(3)
+   sol.invertTree(root2)
+   print(print_tree(root2))
+
+   print(print_tree(sol.invertTree(None)))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[4, 7, 2, 9, 6, 3, 1]
+[2, 3, 1]
+[]
+
+real    0m0.023s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

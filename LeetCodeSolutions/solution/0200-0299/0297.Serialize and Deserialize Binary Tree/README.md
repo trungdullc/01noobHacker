@@ -42,8 +42,115 @@ During deserialization, we split the serialized string by the delimiter to get a
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from collections import deque
+
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Codec:
+   """
+   Codec for serializing and deserializing a binary tree.
+   """
+   def serialize(self, root: TreeNode) -> str:
+      """Encodes a tree to a single string using level-order traversal."""
+      if not root:
+         return ""
+      queue = deque([root])
+      result = []
+      while queue:
+         node = queue.popleft()
+         if node:
+            result.append(str(node.val))
+            queue.append(node.left)
+            queue.append(node.right)
+         else:
+            result.append("null")
+      # Remove trailing "null"s
+      while result and result[-1] == "null":
+         result.pop()
+      return ",".join(result)
+
+   def deserialize(self, data: str) -> TreeNode:
+      """Decodes your encoded data to tree."""
+      if not data:
+         return None
+      nodes = data.split(",")
+      root = TreeNode(int(nodes[0]))
+      queue = deque([root])
+      i = 1
+      while queue:
+         node = queue.popleft()
+         if i < len(nodes) and nodes[i] != "null":
+            node.left = TreeNode(int(nodes[i]))
+            queue.append(node.left)
+         i += 1
+         if i < len(nodes) and nodes[i] != "null":
+            node.right = TreeNode(int(nodes[i]))
+            queue.append(node.right)
+         i += 1
+      return root
+
+def print_tree(root):
+   """
+   Level-order serialization for testing.
+   """
+   if not root:
+      return []
+   from collections import deque
+   queue = deque([root])
+   result = []
+   while queue:
+      node = queue.popleft()
+      if node:
+         result.append(node.val)
+         queue.append(node.left)
+         queue.append(node.right)
+      else:
+         result.append(None)
+   while result and result[-1] is None:
+      result.pop()
+   return result
+
+def main():
+   codec = Codec()
+   root1 = TreeNode(1)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(3)
+   root1.right.left = TreeNode(4)
+   root1.right.right = TreeNode(5)
+   serialized1 = codec.serialize(root1)
+   print(serialized1)
+   deserialized1 = codec.deserialize(serialized1)
+   print(print_tree(deserialized1))
+
+   root2 = None
+   serialized2 = codec.serialize(root2)
+   print(serialized2)
+   deserialized2 = codec.deserialize(serialized2)
+   print(print_tree(deserialized2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1,2,3,null,null,4,5
+[1, 2, 3, None, None, 4, 5]
+
+[]
+
+real    0m0.060s
+user    0m0.020s
+sys     0m0.004s
 ```
 
 #### Python3

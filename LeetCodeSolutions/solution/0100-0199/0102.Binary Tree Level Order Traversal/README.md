@@ -48,8 +48,70 @@ Finally, return the answer array.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from collections import deque
+
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to return the level order traversal of a binary tree.
+   """
+   def levelOrder(self, root: TreeNode):
+      if not root:
+         return []
+      result = []
+      queue = deque([root])
+      while queue:
+         level_size = len(queue)
+         level = []
+         for _ in range(level_size):
+            node = queue.popleft()
+            level.append(node.val)
+            if node.left:
+               queue.append(node.left)
+            if node.right:
+               queue.append(node.right)
+         result.append(level)
+      return result
+
+def main():
+   sol = Solution()
+
+   root1 = TreeNode(3)
+   root1.left = TreeNode(9)
+   root1.right = TreeNode(20)
+   root1.right.left = TreeNode(15)
+   root1.right.right = TreeNode(7)
+   print(sol.levelOrder(root1))
+
+   root2 = TreeNode(1)
+   print(sol.levelOrder(root2))
+
+   root3 = None
+   print(sol.levelOrder(root3))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[3], [9, 20], [15, 7]]
+[[1]]
+[]
+
+real    0m0.088s
+user    0m0.025s
+sys     0m0.013s
 ```
 
 #### Python3

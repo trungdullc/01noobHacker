@@ -57,8 +57,85 @@ We can create a min heap $pq$ to maintain the head nodes of all linked lists. Ea
 The time complexity is $O(n \times \log k)$, and the space complexity is $O(k)$. Here, $n$ is the total number of all linked list nodes, and $k$ is the number of linked lists given in the problem.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+import heapq
 
+class ListNode:
+   """
+   Definition for singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to merge k sorted linked lists.
+   """
+
+   def mergeKLists(self, lists):
+      """
+      Merge k sorted linked lists and return the head of the merged list.
+      :type lists: list[ListNode]
+      :rtype: ListNode
+      """
+      heap = []
+      for i, node in enumerate(lists):
+         if node:
+            heapq.heappush(heap, (node.val, i, node))
+
+      dummy = ListNode(0)
+      current = dummy
+
+      while heap:
+         val, i, node = heapq.heappop(heap)
+         current.next = node
+         current = current.next
+         if node.next:
+            heapq.heappush(heap, (node.next.val, i, node.next))
+
+      return dummy.next
+
+def list_to_nodes(lst):
+   """
+   Convert a Python list to a linked list.
+   """
+   dummy = ListNode(0)
+   current = dummy
+   for val in lst:
+      current.next = ListNode(val)
+      current = current.next
+   return dummy.next
+
+def nodes_to_list(head):
+   """
+   Convert a linked list to a Python list.
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   lists1 = [list_to_nodes(lst) for lst in [[1,4,5],[1,3,4],[2,6]]]
+   print(nodes_to_list(sol.mergeKLists(lists1)))
+   lists2 = []
+   print(nodes_to_list(sol.mergeKLists(lists2)))
+   lists3 = [list_to_nodes(lst) for lst in [[]]]
+   print(nodes_to_list(sol.mergeKLists(lists3)))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 1, 2, 3, 4, 4, 5, 6]
+[]
+[]
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

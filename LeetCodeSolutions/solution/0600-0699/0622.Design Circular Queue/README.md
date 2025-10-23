@@ -73,8 +73,100 @@ When calling the `isFull` method, we simply check if $\textit{size} = k$.
 In terms of time complexity, the above operations all have a time complexity of $O(1)$. The space complexity is $O(k)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class MyCircularQueue:
+   """
+   Circular queue implementation using a fixed-size list.
+   """
+
+   def __init__(self, k: int):
+      """
+      Initialize the queue with size k.
+      """
+      self.queue = [0] * k
+      self.head = 0
+      self.tail = 0
+      self.size = 0
+      self.capacity = k
+
+   def enQueue(self, value: int) -> bool:
+      """
+      Insert an element into the circular queue.
+      """
+      if self.isFull():
+         return False
+      self.queue[self.tail] = value
+      self.tail = (self.tail + 1) % self.capacity
+      self.size += 1
+      return True
+
+   def deQueue(self) -> bool:
+      """
+      Delete an element from the circular queue.
+      """
+      if self.isEmpty():
+         return False
+      self.head = (self.head + 1) % self.capacity
+      self.size -= 1
+      return True
+
+   def Front(self) -> int:
+      """
+      Get the front item of the queue.
+      """
+      if self.isEmpty():
+         return -1
+      return self.queue[self.head]
+
+   def Rear(self) -> int:
+      """
+      Get the last item of the queue.
+      """
+      if self.isEmpty():
+         return -1
+      return self.queue[(self.tail - 1 + self.capacity) % self.capacity]
+
+   def isEmpty(self) -> bool:
+      """
+      Check if the queue is empty.
+      """
+      return self.size == 0
+
+   def isFull(self) -> bool:
+      """
+      Check if the queue is full.
+      """
+      return self.size == self.capacity
+
+if __name__ == "__main__":
+   cq = MyCircularQueue(3)
+   print(cq.enQueue(1))
+   print(cq.enQueue(2))
+   print(cq.enQueue(3))
+   print(cq.enQueue(4))
+   print(cq.Rear())
+   print(cq.isFull())
+   print(cq.deQueue())
+   print(cq.enQueue(4))
+   print(cq.Rear())
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+True
+False
+3
+True
+True
+True
+4
+
+real    0m0.022s
+user    0m0.013s
+sys     0m0.009s
 ```
 
 #### Python3

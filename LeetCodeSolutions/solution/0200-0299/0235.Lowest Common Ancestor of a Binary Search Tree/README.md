@@ -50,8 +50,79 @@ Starting from the root node, we traverse the tree. If the current node's value i
 The time complexity is $O(n)$, where $n$ is the number of nodes in the binary search tree. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, x):
+      self.val = x
+      self.left = None
+      self.right = None
+
+class Solution:
+   """
+   Solution to find the lowest common ancestor (LCA) of two nodes in a BST.
+   """
+   def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+      current = root
+      while current:
+         if p.val < current.val and q.val < current.val:
+            current = current.left
+         elif p.val > current.val and q.val > current.val:
+            current = current.right
+         else:
+            return current
+
+def main():
+   sol = Solution()
+
+   root1 = TreeNode(6)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(8)
+   root1.left.left = TreeNode(0)
+   root1.left.right = TreeNode(4)
+   root1.right.left = TreeNode(7)
+   root1.right.right = TreeNode(9)
+   root1.left.right.left = TreeNode(3)
+   root1.left.right.right = TreeNode(5)
+   p1 = root1.left
+   q1 = root1.right
+   print(sol.lowestCommonAncestor(root1, p1, q1).val)
+
+   root2 = TreeNode(6)
+   root2.left = TreeNode(2)
+   root2.right = TreeNode(8)
+   root2.left.left = TreeNode(0)
+   root2.left.right = TreeNode(4)
+   root2.right.left = TreeNode(7)
+   root2.right.right = TreeNode(9)
+   root2.left.right.left = TreeNode(3)
+   root2.left.right.right = TreeNode(5)
+   p2 = root2.left
+   q2 = root2.left.right
+   print(sol.lowestCommonAncestor(root2, p2, q2).val)
+
+   root3 = TreeNode(2)
+   root3.left = TreeNode(1)
+   p3 = root3
+   q3 = root3.left
+   print(sol.lowestCommonAncestor(root3, p3, q3).val)
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+6
+2
+2
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

@@ -41,8 +41,65 @@ We can enumerate each node of the binary tree, and for each node, calculate the 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution class to compute diameter of a binary tree.
+   """
+
+   def diameterOfBinaryTree(self, root):
+      """
+      Return the length of the diameter (number of edges) of the binary tree.
+      :type root: TreeNode
+      :rtype: int
+      """
+      self.diameter = 0
+
+      def depth(node):
+         if not node:
+            return 0
+         left = depth(node.left)
+         right = depth(node.right)
+         # Update diameter
+         self.diameter = max(self.diameter, left + right)
+         return max(left, right) + 1
+
+      depth(root)
+      return self.diameter
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   root1 = TreeNode(1)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(3)
+   root1.left.left = TreeNode(4)
+   root1.left.right = TreeNode(5)
+   print(sol.diameterOfBinaryTree(root1))
+
+   root2 = TreeNode(1)
+   root2.left = TreeNode(2)
+   print(sol.diameterOfBinaryTree(root2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+1
+
+real    0m0.023s
+user    0m0.012s
+sys     0m0.012s
 ```
 
 #### Python3

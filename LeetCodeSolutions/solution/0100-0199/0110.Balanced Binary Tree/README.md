@@ -48,8 +48,70 @@ Therefore, if the function $height(root)$ returns $-1$, it means the binary tree
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution class to check if binary tree is height-balanced.
+   """
+
+   def isBalanced(self, root):
+      """
+      Return True if the binary tree is height-balanced.
+      :type root: TreeNode
+      :rtype: bool
+      """
+      def check(node):
+         if not node:
+            return 0, True
+         left_height, left_balanced = check(node.left)
+         right_height, right_balanced = check(node.right)
+         balanced = left_balanced and right_balanced and abs(left_height - right_height) <= 1
+         return max(left_height, right_height) + 1, balanced
+
+      _, is_bal = check(root)
+      return is_bal
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   root1 = TreeNode(3)
+   root1.left = TreeNode(9)
+   root1.right = TreeNode(20)
+   root1.right.left = TreeNode(15)
+   root1.right.right = TreeNode(7)
+   print(sol.isBalanced(root1))
+
+   root2 = TreeNode(1)
+   root2.left = TreeNode(2)
+   root2.right = TreeNode(2)
+   root2.left.left = TreeNode(3)
+   root2.left.right = TreeNode(3)
+   root2.left.left.left = TreeNode(4)
+   root2.left.left.right = TreeNode(4)
+   print(sol.isBalanced(root2))
+
+   print(sol.isBalanced(None))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+True
+
+real    0m0.022s
+user    0m0.011s
+sys     0m0.011s
 ```
 
 #### Python3

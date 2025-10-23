@@ -37,8 +37,62 @@
 
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to find the kth smallest element in a BST.
+   """
+   def kthSmallest(self, root: TreeNode, k: int) -> int:
+      stack = []
+      current = root
+      while stack or current:
+         while current:
+            stack.append(current)
+            current = current.left
+         current = stack.pop()
+         k -= 1
+         if k == 0:
+            return current.val
+         current = current.right
+
+def main():
+   sol = Solution()
+   root1 = TreeNode(3)
+   root1.left = TreeNode(1)
+   root1.right = TreeNode(4)
+   root1.left.right = TreeNode(2)
+   print(sol.kthSmallest(root1, 1))
+
+   root2 = TreeNode(5)
+   root2.left = TreeNode(3)
+   root2.right = TreeNode(6)
+   root2.left.left = TreeNode(2)
+   root2.left.right = TreeNode(4)
+   root2.left.left.left = TreeNode(1)
+   print(sol.kthSmallest(root2, 3))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+3
+
+real    0m0.113s
+user    0m0.023s
+sys     0m0.008s
 ```
 
 #### Python3

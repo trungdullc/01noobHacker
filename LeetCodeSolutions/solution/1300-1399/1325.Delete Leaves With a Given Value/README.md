@@ -50,8 +50,87 @@ After removing, new nodes become leaf nodes with value (target = 2) (Picture in 
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to delete all leaf nodes with a given target value from a binary tree.
+   """
+   def removeLeafNodes(self, root: TreeNode, target: int) -> TreeNode:
+      if not root:
+         return None
+      root.left = self.removeLeafNodes(root.left, target)
+      root.right = self.removeLeafNodes(root.right, target)
+      if not root.left and not root.right and root.val == target:
+         return None
+      return root
+
+def print_tree(root):
+   """
+   Level-order serialization of the binary tree for testing.
+   """
+   from collections import deque
+   if not root:
+      return []
+   result = []
+   queue = deque([root])
+   while queue:
+      node = queue.popleft()
+      if node:
+         result.append(node.val)
+         queue.append(node.left)
+         queue.append(node.right)
+      else:
+         result.append(None)
+   while result and result[-1] is None:
+      result.pop()
+   return result
+
+def main():
+   sol = Solution()
+   root1 = TreeNode(1)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(3)
+   root1.left.left = TreeNode(2)
+   root1.right.left = TreeNode(2)
+   root1.right.right = TreeNode(4)
+   print(print_tree(sol.removeLeafNodes(root1, 2)))
+
+   root2 = TreeNode(1)
+   root2.left = TreeNode(3)
+   root2.right = TreeNode(3)
+   root2.left.left = TreeNode(3)
+   root2.left.right = TreeNode(2)
+   print(print_tree(sol.removeLeafNodes(root2, 3)))
+
+   root3 = TreeNode(1)
+   root3.left = TreeNode(2)
+   root3.left.left = TreeNode(2)
+   root3.left.left.left = TreeNode(2)
+   print(print_tree(sol.removeLeafNodes(root3, 2)))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, None, 3, None, 4]
+[1, 3, None, None, 2]
+[1]
+
+real    0m0.023s
+user    0m0.013s
+sys     0m0.009s
 ```
 
 #### Python3

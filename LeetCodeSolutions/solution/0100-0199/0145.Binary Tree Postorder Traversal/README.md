@@ -65,8 +65,80 @@ We first recursively traverse the left and right subtrees, then visit the root n
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree. The space complexity mainly depends on the stack space used for recursive calls.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution class for binary tree postorder traversal.
+   """
+
+   def postorderTraversal(self, root):
+      """
+      Return postorder traversal of binary tree.
+      :type root: TreeNode
+      :rtype: list[int]
+      """
+      if not root:
+         return []
+
+      result = []
+      stack = [root]
+
+      while stack:
+         node = stack.pop()
+         result.append(node.val)
+         # Push left first so right is processed first
+         if node.left:
+            stack.append(node.left)
+         if node.right:
+            stack.append(node.right)
+
+      return result[::-1]           # reverse to get left->right->root
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   root1 = TreeNode(1)
+   root1.right = TreeNode(2)
+   root1.right.left = TreeNode(3)
+   print(sol.postorderTraversal(root1))
+
+   root2 = TreeNode(1)
+   root2.left = TreeNode(2)
+   root2.right = TreeNode(3)
+   root2.left.left = TreeNode(4)
+   root2.left.right = TreeNode(5)
+   root2.left.right.left = TreeNode(6)
+   root2.left.right.right = TreeNode(7)
+   root2.right.right = TreeNode(8)
+   root2.right.right.left = TreeNode(9)
+   print(sol.postorderTraversal(root2))
+
+   print(sol.postorderTraversal(None))
+
+   root4 = TreeNode(1)
+   print(sol.postorderTraversal(root4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[3, 2, 1]
+[4, 6, 7, 5, 2, 9, 8, 3, 1]
+[]
+[1]
+
+real    0m0.024s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

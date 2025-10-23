@@ -68,8 +68,144 @@ lfu.get(4);      // return 4
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Node:
+   """
+   Doubly linked list node for LFU Cache.
+   """
+   def __init__(self, key: int, value: int) -> None:
+      self.key = key
+      self.value = value
+      self.freq = 1
+      self.prev = None
+      self.next = None
+
+class DoublyLinkedList:
+   """
+   Doubly linked list to store nodes of the same frequency.
+   Head is most recently used, tail is least recently used.
+   """
+   def __init__(self):
+      self.head = Node(0, 0)
+      self.tail = Node(0, 0)
+      self.head.next = self.tail
+      self.tail.prev = self.head
+      self.size = 0
+
+   def add_node(self, node: Node) -> None:
+      """
+      Add node right after head (most recently used).
+      """
+      node.next = self.head.next
+      node.prev = self.head
+      self.head.next.prev = node
+      self.head.next = node
+      self.size += 1
+
+   def remove_node(self, node: Node) -> None:
+      """
+      Remove a node from the list.
+      """
+      node.prev.next = node.next
+      node.next.prev = node.prev
+      self.size -= 1
+
+   def remove_tail(self) -> Node:
+      """
+      Remove the least recently used node (tail.prev).
+      """
+      if self.size == 0:
+         return None
+      tail_node = self.tail.prev
+      self.remove_node(tail_node)
+      return tail_node
+
+class LFUCache:
+   """
+   LFU Cache with O(1) get and put using Node and DLL.
+   """
+   def __init__(self, capacity: int):
+      self.capacity = capacity
+      self.min_freq = 0
+      self.key_to_node = {}
+      self.freq_to_dll = {}
+
+   def _update_freq(self, node: Node) -> None:
+      """
+      Remove node from current freq list, increment freq, add to new freq list.
+      """
+      freq = node.freq
+      self.freq_to_dll[freq].remove_node(node)
+      if self.freq_to_dll[freq].size == 0:
+         del self.freq_to_dll[freq]
+         if self.min_freq == freq:
+            self.min_freq += 1
+
+      node.freq += 1
+      if node.freq not in self.freq_to_dll:
+         self.freq_to_dll[node.freq] = DoublyLinkedList()
+      self.freq_to_dll[node.freq].add_node(node)
+
+   def get(self, key: int) -> int:
+      if key not in self.key_to_node:
+         return -1
+      node = self.key_to_node[key]
+      self._update_freq(node)
+      return node.value
+
+   def put(self, key: int, value: int) -> None:
+      if self.capacity == 0:
+         return
+
+      if key in self.key_to_node:
+         node = self.key_to_node[key]
+         node.value = value
+         self._update_freq(node)
+         return
+
+      if len(self.key_to_node) >= self.capacity:
+         # Evict LFU node
+         lfu_list = self.freq_to_dll[self.min_freq]
+         evict_node = lfu_list.remove_tail()
+         del self.key_to_node[evict_node.key]
+         if lfu_list.size == 0:
+            del self.freq_to_dll[self.min_freq]
+
+      # Insert new node
+      new_node = Node(key, value)
+      self.key_to_node[key] = new_node
+      if 1 not in self.freq_to_dll:
+         self.freq_to_dll[1] = DoublyLinkedList()
+      self.freq_to_dll[1].add_node(new_node)
+      self.min_freq = 1
+
+if __name__ == "__main__":
+   lfu = LFUCache(2)
+   lfu.put(1, 1)
+   lfu.put(2, 2)
+   print(lfu.get(1))
+   lfu.put(3, 3)
+   print(lfu.get(2))
+   print(lfu.get(3))
+   lfu.put(4, 4)
+   print(lfu.get(1))
+   print(lfu.get(3))
+   print(lfu.get(4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+-1
+3
+-1
+3
+4
+
+real    0m0.022s
+user    0m0.014s
+sys     0m0.008s
 ```
 
 #### Python3

@@ -52,8 +52,84 @@ The execution process of the function $dfs(i, j, n)$ is as follows:
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to construct a binary tree from preorder and inorder traversals.
+   """
+   def buildTree(self, preorder, inorder):
+      if not preorder or not inorder:
+         return None
+      inorder_index = {val: idx for idx, val in enumerate(inorder)}
+
+      def helper(pre_left, pre_right, in_left, in_right):
+         if pre_left > pre_right:
+            return None
+         root_val = preorder[pre_left]
+         root = TreeNode(root_val)
+         index = inorder_index[root_val]
+         left_size = index - in_left
+         root.left = helper(pre_left + 1, pre_left + left_size, in_left, index - 1)
+         root.right = helper(pre_left + left_size + 1, pre_right, index + 1, in_right)
+         return root
+
+      return helper(0, len(preorder) - 1, 0, len(inorder) - 1)
+
+def print_tree(root):
+   """
+   Level-order serialization of the binary tree for testing.
+   """
+   from collections import deque
+   if not root:
+      return []
+   result = []
+   queue = deque([root])
+   while queue:
+      node = queue.popleft()
+      if node:
+         result.append(node.val)
+         queue.append(node.left)
+         queue.append(node.right)
+      else:
+         result.append(None)
+   while result and result[-1] is None:
+      result.pop()
+   return result
+
+def main():
+   sol = Solution()
+   preorder1 = [3,9,20,15,7]
+   inorder1 = [9,3,15,20,7]
+   root1 = sol.buildTree(preorder1, inorder1)
+   print(print_tree(root1))
+
+   preorder2 = [-1]
+   inorder2 = [-1]
+   root2 = sol.buildTree(preorder2, inorder2)
+   print(print_tree(root2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[3, 9, 20, None, None, 15, 7]
+[-1]
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.004s
 ```
 
 #### Python3

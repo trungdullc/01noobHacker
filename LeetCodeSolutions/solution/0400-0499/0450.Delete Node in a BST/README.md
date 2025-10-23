@@ -56,9 +56,172 @@ Please notice that another valid answer is [5,2,6,null,4,null,7] and it&#39;s al
 
 ### Solution 1
 
-#### Du Solution: Python3
+#### Du Solution: Python3 (Wrong but must learn print object) ⚠️
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to delete a node from a binary search tree.
+   """
+   def deleteNode(self, root: TreeNode, key: int) -> TreeNode:
+      if not root:
+         return None
+      if key < root.val:
+         root.left = self.deleteNode(root.left, key)
+      elif key > root.val:
+         root.right = self.deleteNode(root.right, key)
+      else:
+         if not root.left:
+            return root.right
+         if not root.right:
+            return root.left
+         # Node with two children: find inorder successor
+         successor = root.right
+         while successor.left:
+            successor = successor.left
+         root.val = successor.val
+         root.right = self.deleteNode(root.right, successor.val)
+      return root
+
+def main():
+   sol = Solution()
+
+   root1 = TreeNode(5)
+   root1.left = TreeNode(3)
+   root1.right = TreeNode(6)
+   root1.left.left = TreeNode(2)
+   root1.left.right = TreeNode(4)
+   root1.right.right = TreeNode(7)
+   print(sol.deleteNode(root1, 3))          
+   # printing TreeNode objects themselves, which shows their memory addresses, not tree structure or values ⚠️
+
+   root2 = TreeNode(5)
+   root2.left = TreeNode(3)
+   root2.right = TreeNode(6)
+   root2.left.left = TreeNode(2)
+   root2.left.right = TreeNode(4)
+   root2.right.right = TreeNode(7)
+   print(sol.deleteNode(root2, 0))
+
+   root3 = None
+   print(sol.deleteNode(root3, 0))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+<__main__.TreeNode object at 0x7f7552c47eb0>
+<__main__.TreeNode object at 0x7f7552c47d30>
+None
+
+real    0m0.022s
+user    0m0.011s
+sys     0m0.011s
 ```
 
+#### Du Solution: Python3 (Fixed)
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+from collections import deque
+
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to delete a node from a binary search tree.
+   """
+   def deleteNode(self, root: TreeNode, key: int) -> TreeNode:
+      if not root:
+         return None
+      if key < root.val:
+         root.left = self.deleteNode(root.left, key)
+      elif key > root.val:
+         root.right = self.deleteNode(root.right, key)
+      else:
+         if not root.left:
+            return root.right
+         if not root.right:
+            return root.left
+         # Node with two children: find inorder successor
+         successor = root.right
+         while successor.left:
+            successor = successor.left
+         root.val = successor.val
+         root.right = self.deleteNode(root.right, successor.val)
+      return root
+
+def print_tree(root: TreeNode):
+   """Level-order traversal to print tree as list with 'None' for missing nodes."""
+   if not root:
+      return []
+   result = []
+   queue = deque([root])
+   while queue:
+      node = queue.popleft()
+      if node:
+         result.append(node.val)
+         queue.append(node.left)
+         queue.append(node.right)
+      else:
+         result.append(None)
+   # Remove trailing Nones for cleaner output
+   while result and result[-1] is None:
+      result.pop()
+   return result
+
+def main():
+   sol = Solution()
+
+   root1 = TreeNode(5)
+   root1.left = TreeNode(3)
+   root1.right = TreeNode(6)
+   root1.left.left = TreeNode(2)
+   root1.left.right = TreeNode(4)
+   root1.right.right = TreeNode(7)
+   print(print_tree(sol.deleteNode(root1, 3)))
+
+   root2 = TreeNode(5)
+   root2.left = TreeNode(3)
+   root2.right = TreeNode(6)
+   root2.left.left = TreeNode(2)
+   root2.left.right = TreeNode(4)
+   root2.right.right = TreeNode(7)
+   print(print_tree(sol.deleteNode(root2, 0)))
+
+   root3 = None
+   print(print_tree(sol.deleteNode(root3, 0)))
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[5, 4, 6, 2, None, None, 7]
+[5, 3, 6, 2, 4, None, 7]
+[]
+
+real    0m0.024s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

@@ -38,8 +38,61 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to maximize money the thief can rob in a binary tree without alerting the police.
+   """
+   def rob(self, root: TreeNode) -> int:
+      def helper(node):
+         if not node:
+            return (0, 0)  # (rob_this_node, not_rob_this_node)
+         left = helper(node.left)
+         right = helper(node.right)
+         rob_node = node.val + left[1] + right[1]
+         not_rob_node = max(left) + max(right)
+         return (rob_node, not_rob_node)
+      return max(helper(root))
+
+def main():
+   sol = Solution()
+   root1 = TreeNode(3)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(3)
+   root1.left.right = TreeNode(3)
+   root1.right.right = TreeNode(1)
+   print(sol.rob(root1))
+
+   root2 = TreeNode(3)
+   root2.left = TreeNode(4)
+   root2.right = TreeNode(5)
+   root2.left.left = TreeNode(1)
+   root2.left.right = TreeNode(3)
+   root2.right.right = TreeNode(1)
+   print(sol.rob(root2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+7
+9
+
+real    0m0.022s
+user    0m0.011s
+sys     0m0.011s
 ```
 
 #### Python3

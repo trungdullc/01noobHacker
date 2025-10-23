@@ -62,8 +62,78 @@ We can use breadth-first search (BFS) and define a queue $\textit{q}$ to store t
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from collections import deque
+
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to return the right side view of a binary tree.
+   """
+   def rightSideView(self, root: TreeNode):
+      if not root:
+         return []
+      result = []
+      queue = deque([root])
+      while queue:
+         level_size = len(queue)
+         for i in range(level_size):
+            node = queue.popleft()
+            if i == level_size - 1:
+               result.append(node.val)
+            if node.left:
+               queue.append(node.left)
+            if node.right:
+               queue.append(node.right)
+      return result
+
+def main():
+   sol = Solution()
+
+   root1 = TreeNode(1)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(3)
+   root1.left.right = TreeNode(5)
+   root1.right.right = TreeNode(4)
+   print(sol.rightSideView(root1))
+
+   root2 = TreeNode(1)
+   root2.left = TreeNode(2)
+   root2.right = TreeNode(3)
+   root2.left.left = TreeNode(4)
+   root2.left.left.left = TreeNode(5)
+   print(sol.rightSideView(root2))
+
+   root3 = TreeNode(1)
+   root3.right = TreeNode(3)
+   print(sol.rightSideView(root3))
+
+   root4 = None
+   print(sol.rightSideView(root4))
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 3, 4]
+[1, 3, 4, 5]
+[1, 3]
+[]
+
+real    0m0.023s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

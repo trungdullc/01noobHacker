@@ -63,8 +63,117 @@ When inserting a node, if the node exists, we delete it from its original positi
 The time complexity is $O(1)$, and the space complexity is $O(\textit{capacity})$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class DLinkedNode:
+   """
+   Doubly linked list node.
+   """
+   def __init__(self, key=0, value=0):
+      self.key = key
+      self.value = value
+      self.prev = None
+      self.next = None
+
+class LRUCache:
+   """
+   LRU Cache implementation with O(1) get and put operations.
+   """
+
+   def __init__(self, capacity: int):
+      """
+      Initialize the LRU cache with given capacity.
+      """
+      self.capacity = capacity
+      self.cache = dict()
+      self.head = DLinkedNode()
+      self.tail = DLinkedNode()
+      self.head.next = self.tail
+      self.tail.prev = self.head
+
+   def _remove(self, node):
+      """
+      Remove node from linked list.
+      """
+      prev = node.prev
+      nxt = node.next
+      prev.next = nxt
+      nxt.prev = prev
+
+   def _add_to_head(self, node):
+      """
+      Add node right after head.
+      """
+      node.prev = self.head
+      node.next = self.head.next
+      self.head.next.prev = node
+      self.head.next = node
+
+   def _move_to_head(self, node):
+      """
+      Move an existing node to head (most recently used).
+      """
+      self._remove(node)
+      self._add_to_head(node)
+
+   def _pop_tail(self):
+      """
+      Remove and return tail node (least recently used).
+      """
+      node = self.tail.prev
+      self._remove(node)
+      return node
+
+   def get(self, key: int) -> int:
+      """
+      Return value of key if exists, else -1.
+      """
+      node = self.cache.get(key, None)
+      if not node:
+         return -1
+      self._move_to_head(node)
+      return node.value
+
+   def put(self, key: int, value: int) -> None:
+      """
+      Add or update key-value pair. Evict least recently used if needed.
+      """
+      node = self.cache.get(key)
+      if node:
+         node.value = value
+         self._move_to_head(node)
+      else:
+         new_node = DLinkedNode(key, value)
+         self.cache[key] = new_node
+         self._add_to_head(new_node)
+         if len(self.cache) > self.capacity:
+            tail = self._pop_tail()
+            del self.cache[tail.key]
+
+if __name__ == "__main__":
+   lruCache = LRUCache(2)
+   lruCache.put(1, 1)
+   lruCache.put(2, 2)
+   print(lruCache.get(1))
+   lruCache.put(3, 3)
+   print(lruCache.get(2))
+   lruCache.put(4, 4)
+   print(lruCache.get(1))
+   print(lruCache.get(3))
+   print(lruCache.get(4))
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+-1
+-1
+3
+4
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

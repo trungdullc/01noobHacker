@@ -46,8 +46,79 @@ We sort all points by their distance from the origin in ascending order, and the
 The time complexity is $O(n \log n)$, and the space complexity is $O(\log n)$. Here, $n$ is the length of the array $\textit{points}$.
 
 #### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+import heapq
+
+class Solution:
+   """
+   Solution to find k closest points to the origin using a max-heap.
+   """
+   def kClosest(self, points, k):
+      # Use a max-heap of size k
+      heap = []
+      for (x, y) in points:
+         dist = -(x*x + y*y)  # negative for max-heap
+         if len(heap) < k:
+            heapq.heappush(heap, (dist, [x, y]))
+         else:
+            heapq.heappushpop(heap, (dist, [x, y]))
+      return [point for (_, point) in heap]
+
+def main():
+   sol = Solution()
+   points1 = [[1,3],[-2,2]]
+   print(sol.kClosest(points1, 1))
+
+   points2 = [[3,3],[5,-1],[-2,4]]
+   print(sol.kClosest(points2, 2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[-2, 2]]
+[[-2, 4], [3, 3]]
+
+real    0m0.061s
+user    0m0.020s
+sys     0m0.008s
 ```
 
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution to find k closest points to the origin using built-in sorted.
+   """
+   def kClosest(self, points, k):
+      # Sort points by squared distance to origin
+      points.sort(key=lambda p: p[0]**2 + p[1]**2)
+      return points[:k]
+
+def main():
+   sol = Solution()
+   points1 = [[1,3],[-2,2]]
+   print(sol.kClosest(points1, 1))
+
+   points2 = [[3,3],[5,-1],[-2,4]]
+   print(sol.kClosest(points2, 2))
+
+if __name__ == "__main__":
+   main()
+W
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[-2, 2]]
+[[3, 3], [-2, 4]]
+
+real    0m0.021s
+user    0m0.007s
+sys     0m0.014s
 ```
 
 #### Python3

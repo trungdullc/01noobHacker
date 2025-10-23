@@ -42,8 +42,77 @@ In the $\textit{isSubtree}(\textit{root}, \textit{subRoot})$ function, we first 
 The time complexity is $O(n \times m)$, and the space complexity is $O(n)$. Here, $n$ and $m$ are the number of nodes in the trees $root$ and $subRoot$, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution class to check if one binary tree is a subtree of another.
+   """
+
+   def isSameTree(self, s, t):
+      if not s and not t:
+         return True
+      if not s or not t:
+         return False
+      return (s.val == t.val and
+              self.isSameTree(s.left, t.left) and
+              self.isSameTree(s.right, t.right))
+
+   def isSubtree(self, root, subRoot):
+      """
+      Return True if subRoot is a subtree of root.
+      :type root: TreeNode
+      :type subRoot: TreeNode
+      :rtype: bool
+      """
+      if not root:
+         return False
+      if self.isSameTree(root, subRoot):
+         return True
+      return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   root1 = TreeNode(3)
+   root1.left = TreeNode(4)
+   root1.right = TreeNode(5)
+   root1.left.left = TreeNode(1)
+   root1.left.right = TreeNode(2)
+   sub1 = TreeNode(4)
+   sub1.left = TreeNode(1)
+   sub1.right = TreeNode(2)
+   print(sol.isSubtree(root1, sub1))
+
+   root2 = TreeNode(3)
+   root2.left = TreeNode(4)
+   root2.right = TreeNode(5)
+   root2.left.left = TreeNode(1)
+   root2.left.right = TreeNode(2)
+   root2.left.right.left = TreeNode(0)
+   sub2 = TreeNode(4)
+   sub2.left = TreeNode(1)
+   sub2.right = TreeNode(2)
+   print(sol.isSubtree(root2, sub2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.023s
+user    0m0.020s
+sys     0m0.004s
 ```
 
 #### Python3

@@ -67,8 +67,65 @@ Node 3 -&gt; (3,1,3) is the maximum value in the path.</pre>
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to count the number of good nodes in a binary tree.
+   """
+   def goodNodes(self, root: TreeNode) -> int:
+      def dfs(node, max_so_far):
+         if not node:
+            return 0
+         count = 1 if node.val >= max_so_far else 0
+         max_so_far = max(max_so_far, node.val)
+         count += dfs(node.left, max_so_far)
+         count += dfs(node.right, max_so_far)
+         return count
+      return dfs(root, root.val)
+
+def main():
+   sol = Solution()
+
+   root1 = TreeNode(3)
+   root1.left = TreeNode(1)
+   root1.right = TreeNode(4)
+   root1.left.left = TreeNode(3)
+   root1.right.left = TreeNode(1)
+   root1.right.right = TreeNode(5)
+   print(sol.goodNodes(root1))
+
+   root2 = TreeNode(3)
+   root2.left = TreeNode(3)
+   root2.left.left = TreeNode(4)
+   root2.left.right = TreeNode(2)
+   print(sol.goodNodes(root2))
+
+   root3 = TreeNode(1)
+   print(sol.goodNodes(root3))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+3
+1
+
+real    0m0.097s
+user    0m0.014s
+sys     0m0.017s
 ```
 
 #### Python3

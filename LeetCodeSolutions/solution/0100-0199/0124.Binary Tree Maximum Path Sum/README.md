@@ -58,8 +58,61 @@ In the main function, we call $dfs(root)$ to get the maximum path sum of each no
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to find the maximum path sum in a binary tree.
+   """
+   def maxPathSum(self, root: TreeNode) -> int:
+      self.max_sum = float('-inf')
+      
+      def helper(node):
+         if not node:
+            return 0
+         left = max(helper(node.left), 0)
+         right = max(helper(node.right), 0)
+         self.max_sum = max(self.max_sum, node.val + left + right)
+         return node.val + max(left, right)
+      
+      helper(root)
+      return self.max_sum
+
+def main():
+   sol = Solution()
+   root1 = TreeNode(1)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(3)
+   print(sol.maxPathSum(root1))
+
+   root2 = TreeNode(-10)
+   root2.left = TreeNode(9)
+   root2.right = TreeNode(20)
+   root2.right.left = TreeNode(15)
+   root2.right.right = TreeNode(7)
+   print(sol.maxPathSum(root2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+6
+42
+
+real    0m0.021s
+user    0m0.017s
+sys     0m0.004s
 ```
 
 #### Python3

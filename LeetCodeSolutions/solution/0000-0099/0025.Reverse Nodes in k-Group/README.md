@@ -48,8 +48,95 @@ Next, we traverse the linked list, processing $k$ nodes at a time. If the remain
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class ListNode:
+   """
+   Definition for singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to reverse nodes in k-groups.
+   """
+
+   def reverseKGroup(self, head, k):
+      """
+      Reverse nodes of linked list in groups of k.
+      :type head: ListNode
+      :type k: int
+      :rtype: ListNode
+      """
+      dummy = ListNode(0)
+      dummy.next = head
+      prev_group = dummy
+
+      while True:
+         # Check if there are k nodes left
+         kth = prev_group
+         count = 0
+         while count < k and kth:
+            kth = kth.next
+            count += 1
+         if not kth:
+            break
+
+         group_start = prev_group.next
+         next_group = kth.next
+
+         # Reverse group
+         prev = next_group
+         curr = group_start
+         for _ in range(k):
+            tmp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = tmp
+
+         # Connect previous group to reversed group
+         prev_group.next = prev
+         prev_group = group_start
+
+      return dummy.next
+
+def list_to_nodes(lst):
+   """
+   Convert Python list to linked list.
+   """
+   dummy = ListNode(0)
+   curr = dummy
+   for val in lst:
+      curr.next = ListNode(val)
+      curr = curr.next
+   return dummy.next
+
+def nodes_to_list(head):
+   """
+   Convert linked list to Python list.
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(nodes_to_list(sol.reverseKGroup(list_to_nodes([1,2,3,4,5]), 2)))
+   print(nodes_to_list(sol.reverseKGroup(list_to_nodes([1,2,3,4,5]), 3)))
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[2, 1, 4, 3, 5]
+[3, 2, 1, 4, 5]
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

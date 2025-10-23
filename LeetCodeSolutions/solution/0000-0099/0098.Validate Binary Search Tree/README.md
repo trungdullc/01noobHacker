@@ -47,8 +47,58 @@ Therefore, we use a variable `prev` to save the last node we traversed. Initiall
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to validate if a binary tree is a BST.
+   """
+   def isValidBST(self, root: TreeNode) -> bool:
+      def helper(node, low, high):
+         if not node:
+            return True
+         if not (low < node.val < high):
+            return False
+         return helper(node.left, low, node.val) and helper(node.right, node.val, high)
+      import math
+      return helper(root, -math.inf, math.inf)
+
+def main():
+   sol = Solution()
+
+   root1 = TreeNode(2)
+   root1.left = TreeNode(1)
+   root1.right = TreeNode(3)
+   print(sol.isValidBST(root1))
+
+   root2 = TreeNode(5)
+   root2.left = TreeNode(1)
+   root2.right = TreeNode(4)
+   root2.right.left = TreeNode(3)
+   root2.right.right = TreeNode(6)
+   print(sol.isValidBST(root2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.101s
+user    0m0.026s
+sys     0m0.005s
 ```
 
 #### Python3

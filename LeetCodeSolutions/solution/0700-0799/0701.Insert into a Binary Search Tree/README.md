@@ -54,8 +54,80 @@ If the root node's value is less than $\textit{val}$, we recursively insert $\te
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution to insert a value into a binary search tree.
+   """
+   def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
+      if not root:
+         return TreeNode(val)
+      current = root
+      while True:
+         if val < current.val:
+            if current.left:
+               current = current.left
+            else:
+               current.left = TreeNode(val)
+               break
+         else:
+            if current.right:
+               current = current.right
+            else:
+               current.right = TreeNode(val)
+               break
+      return root
+
+def main():
+   sol = Solution()
+
+   # Example 1
+   root1 = TreeNode(4)
+   root1.left = TreeNode(2)
+   root1.right = TreeNode(7)
+   root1.left.left = TreeNode(1)
+   root1.left.right = TreeNode(3)
+   print(sol.insertIntoBST(root1, 5))
+
+   root2 = TreeNode(40)
+   root2.left = TreeNode(20)
+   root2.right = TreeNode(60)
+   root2.left.left = TreeNode(10)
+   root2.left.right = TreeNode(30)
+   root2.right.left = TreeNode(50)
+   root2.right.right = TreeNode(70)
+   print(sol.insertIntoBST(root2, 25))
+
+   root3 = TreeNode(4)
+   root3.left = TreeNode(2)
+   root3.right = TreeNode(7)
+   root3.left.left = TreeNode(1)
+   root3.left.right = TreeNode(3)
+   print(sol.insertIntoBST(root3, 5))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+<__main__.TreeNode object at 0x7f8ce82d3eb0>
+<__main__.TreeNode object at 0x7f8ce82d3c70>
+<__main__.TreeNode object at 0x7f8ce82d3970>
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.004s
 ```
 
 #### Python3

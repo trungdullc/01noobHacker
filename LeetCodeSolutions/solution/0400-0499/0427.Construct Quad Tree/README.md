@@ -79,8 +79,105 @@ Explanation is shown in the photo below:
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Node:
+   """
+   Definition for a QuadTree node.
+   """
+   def __init__(self, val, isLeaf, topLeft=None, topRight=None, bottomLeft=None, bottomRight=None):
+      self.val = val
+      self.isLeaf = isLeaf
+      self.topLeft = topLeft
+      self.topRight = topRight
+      self.bottomLeft = bottomLeft
+      self.bottomRight = bottomRight
+
+class Solution:
+   """
+   Solution to construct a Quad-Tree from a 2D grid.
+   """
+   def construct(self, grid):
+      def helper(r0, c0, size):
+         # Check if all values in current grid are the same
+         val = grid[r0][c0]
+         isLeaf = True
+         for i in range(r0, r0 + size):
+            for j in range(c0, c0 + size):
+               if grid[i][j] != val:
+                  isLeaf = False
+                  break
+            if not isLeaf:
+               break
+         if isLeaf:
+            return Node(val == 1, True)
+         half = size // 2
+         return Node(
+            True,                   # val can be any if not leaf
+            False,
+            topLeft=helper(r0, c0, half),
+            topRight=helper(r0, c0 + half, half),
+            bottomLeft=helper(r0 + half, c0, half),
+            bottomRight=helper(r0 + half, c0 + half, half)
+         )
+      n = len(grid)
+      return helper(0, 0, n)
+
+def print_quad_tree(node):
+   """
+   Level-order serialization of the quad tree in the [isLeaf, val] format.
+   """
+   if not node:
+      return []
+   from collections import deque
+   result = []
+   queue = deque([node])
+   while queue:
+      n = queue.popleft()
+      if n:
+         result.append([1 if n.isLeaf else 0, 1 if n.val else 0])
+         if n.isLeaf:
+            queue.extend([None, None, None, None])
+         else:
+            queue.extend([n.topLeft, n.topRight, n.bottomLeft, n.bottomRight])
+      else:
+         result.append(None)
+   # Remove trailing None
+   while result and result[-1] is None:
+      result.pop()
+   return result
+
+def main():
+   sol = Solution()
+   grid1 = [[0,1],[1,0]]
+   root1 = sol.construct(grid1)
+   print(print_quad_tree(root1))
+
+   grid2 = [
+      [1,1,1,1,0,0,0,0],
+      [1,1,1,1,0,0,0,0],
+      [1,1,1,1,1,1,1,1],
+      [1,1,1,1,1,1,1,1],
+      [1,1,1,1,0,0,0,0],
+      [1,1,1,1,0,0,0,0],
+      [1,1,1,1,0,0,0,0],
+      [1,1,1,1,0,0,0,0]
+   ]
+   root2 = sol.construct(grid2)
+   print(print_quad_tree(root2))
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[0, 1], [1, 0], [1, 1], [1, 1], [1, 0]]
+[[0, 1], [1, 1], [0, 1], [1, 1], [1, 0], None, None, None, None, [1, 0], [1, 0], [1, 1], [1, 1]]
+
+real    0m0.022s
+user    0m0.009s
+sys     0m0.013s
 ```
 
 #### Python3

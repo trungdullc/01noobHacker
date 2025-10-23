@@ -75,8 +75,61 @@ In this way, the elements in $\textit{minQ}$ are the largest $k$ elements in the
 The space complexity is $O(k)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class KthLargest:
+   """
+   Class to maintain the kth largest element in a stream using a min-heap.
+   """
+   def __init__(self, k: int, nums):
+      self.k = k
+      self.heap = nums
+      heapq.heapify(self.heap)
+      while len(self.heap) > k:
+         heapq.heappop(self.heap)
+
+   def add(self, val: int) -> int:
+      if len(self.heap) < self.k:
+         heapq.heappush(self.heap, val)
+      elif val > self.heap[0]:
+         heapq.heappushpop(self.heap, val)
+      return self.heap[0]
+
+def main():
+   kthLargest1 = KthLargest(3, [4, 5, 8, 2])
+   print(kthLargest1.add(3))
+   print(kthLargest1.add(5))
+   print(kthLargest1.add(10))
+   print(kthLargest1.add(9))
+   print(kthLargest1.add(4))
+
+   kthLargest2 = KthLargest(4, [7, 7, 7, 7, 8, 3])
+   print(kthLargest2.add(2))
+   print(kthLargest2.add(10))
+   print(kthLargest2.add(9))
+   print(kthLargest2.add(9))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+5
+5
+8
+8
+7
+7
+7
+8
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

@@ -48,8 +48,45 @@ we combine 1 and 1 to get 0 so the array converts to [1] then that&#39;s the val
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class Solution:
+   """
+   Solution to find the last stone weight after repeatedly smashing the two heaviest stones.
+   """
+   def lastStoneWeight(self, stones) -> int:
+      # Use a max-heap by pushing negative values
+      heap = [-stone for stone in stones]
+      heapq.heapify(heap)
+      while len(heap) > 1:
+         first = -heapq.heappop(heap)
+         second = -heapq.heappop(heap)
+         if first != second:
+            heapq.heappush(heap, -(first - second))
+      return -heap[0] if heap else 0
+
+def main():
+   sol = Solution()
+   stones1 = [2,7,4,1,8,1]
+   print(sol.lastStoneWeight(stones1))
+
+   stones2 = [1]
+   print(sol.lastStoneWeight(stones2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+1
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

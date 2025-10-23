@@ -65,8 +65,80 @@ We first visit the root node, then recursively traverse the left and right subtr
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree. The space complexity mainly depends on the stack space used for recursive calls.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution class for binary tree preorder traversal.
+   """
+
+   def preorderTraversal(self, root):
+      """
+      Return preorder traversal of binary tree.
+      :type root: TreeNode
+      :rtype: list[int]
+      """
+      if not root:
+         return []
+
+      result = []
+      stack = [root]
+
+      while stack:
+         node = stack.pop()
+         result.append(node.val)
+         # Push right first so left is processed first
+         if node.right:
+            stack.append(node.right)
+         if node.left:
+            stack.append(node.left)
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   root1 = TreeNode(1)
+   root1.right = TreeNode(2)
+   root1.right.left = TreeNode(3)
+   print(sol.preorderTraversal(root1))
+
+   root2 = TreeNode(1)
+   root2.left = TreeNode(2)
+   root2.right = TreeNode(3)
+   root2.left.left = TreeNode(4)
+   root2.left.right = TreeNode(5)
+   root2.left.right.left = TreeNode(6)
+   root2.left.right.right = TreeNode(7)
+   root2.right.right = TreeNode(8)
+   root2.right.right.left = TreeNode(9)
+   print(sol.preorderTraversal(root2))
+
+   print(sol.preorderTraversal(None))
+
+   root4 = TreeNode(1)
+   print(sol.preorderTraversal(root4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3]
+[1, 2, 4, 5, 6, 7, 3, 8, 9]
+[]
+[1]
+
+real    0m0.022s
+user    0m0.013s
+sys     0m0.009s
 ```
 
 #### Python3

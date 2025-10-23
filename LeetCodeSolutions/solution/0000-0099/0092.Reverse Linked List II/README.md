@@ -41,8 +41,91 @@ Define a dummy head node `dummy`, pointing to the head node `head` of the linked
 The time complexity is $O(n)$, and the space complexity is $O(1)$. Here, $n$ is the length of the linked list.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class ListNode:
+   """
+   Definition for a singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to reverse a sublist of a linked list.
+   """
+
+   def reverseBetween(self, head, left, right):
+      """
+      Reverse nodes from position left to right.
+      :type head: ListNode
+      :type left: int
+      :type right: int
+      :rtype: ListNode
+      """
+      if not head or left == right:
+         return head
+
+      dummy = ListNode(0)
+      dummy.next = head
+      prev = dummy
+
+      # Move prev to node before left
+      for _ in range(left - 1):
+         prev = prev.next
+
+      # Reverse sublist
+      reverse_prev = prev
+      current = prev.next
+      prev_node = None
+      for _ in range(right - left + 1):
+         next_node = current.next
+         current.next = prev_node
+         prev_node = current
+         current = next_node
+
+      # Connect reversed sublist
+      reverse_prev.next.next = current
+      reverse_prev.next = prev_node
+
+      return dummy.next
+
+def list_to_nodes(lst):
+   """
+   Convert a Python list to a linked list.
+   """
+   dummy = ListNode(0)
+   current = dummy
+   for val in lst:
+      current.next = ListNode(val)
+      current = current.next
+   return dummy.next
+
+def nodes_to_list(head):
+   """
+   Convert a linked list to a Python list.
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(nodes_to_list(sol.reverseBetween(list_to_nodes([1,2,3,4,5]), 2, 4)))
+   print(nodes_to_list(sol.reverseBetween(list_to_nodes([5]), 1, 1)))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 4, 3, 2, 5]
+[5]
+
+real    0m0.022s
+user    0m0.021s
+sys     0m0.000s
 ```
 
 #### Python3

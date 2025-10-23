@@ -65,8 +65,68 @@ We first recursively traverse the left subtree, then visit the root node, and fi
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree, and the space complexity mainly depends on the stack space of the recursive call.
 
 #### Du Solution: Python3
-```
+```python
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+
+class Solution:
+   """
+   Solution class for binary tree inorder traversal.
+   """
+
+   def inorderTraversal(self, root):
+      """
+      Return inorder traversal of binary tree.
+      :type root: TreeNode
+      :rtype: list[int]
+      """
+      result = []
+      stack = []
+      current = root
+
+      while current or stack:
+         while current:
+            stack.append(current)
+            current = current.left
+         current = stack.pop()
+         result.append(current.val)
+         current = current.right
+
+      return result
+
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   root1 = TreeNode(1)
+   root1.right = TreeNode(2)
+   root1.right.left = TreeNode(3)
+   print(sol.inorderTraversal(root1))
+
+   root2 = TreeNode(1)
+   root2.left = TreeNode(2)
+   root2.right = TreeNode(3)
+   root2.left.left = TreeNode(4)
+   root2.left.right = TreeNode(5)
+   root2.left.right.left = TreeNode(6)
+   root2.left.right.right = TreeNode(7)
+   root2.right.right = TreeNode(8)
+   root2.right.right.left = TreeNode(9)
+   print(sol.inorderTraversal(root2))
+
+   print(sol.inorderTraversal(None))
+
+   root4 = TreeNode(1)
+   print(sol.inorderTraversal(root4))
 ```
 
 #### Python3

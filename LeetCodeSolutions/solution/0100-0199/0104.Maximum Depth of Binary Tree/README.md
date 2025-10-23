@@ -38,8 +38,57 @@ Recursively traverse the left and right subtrees, calculate the maximum depth of
 The time complexity is $O(n)$, where $n$ is the number of nodes in the binary tree. Each node is traversed only once in the recursion.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TreeNode:
+   """
+   Definition for a binary tree node.
+   """
+   def __init__(self, val=0, left=None, right=None):
+      self.val = val
+      self.left = left
+      self.right = right
+
+class Solution:
+   """
+   Solution class to find the maximum depth of a binary tree.
+   """
+
+   def maxDepth(self, root):
+      """
+      Return the maximum depth of the binary tree.
+      :type root: TreeNode
+      :rtype: int
+      """
+      if not root:
+         return 0
+      left_depth = self.maxDepth(root.left)
+      right_depth = self.maxDepth(root.right)
+      return max(left_depth, right_depth) + 1
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   root1 = TreeNode(3)
+   root1.left = TreeNode(9)
+   root1.right = TreeNode(20)
+   root1.right.left = TreeNode(15)
+   root1.right.right = TreeNode(7)
+   print(sol.maxDepth(root1))
+
+   root2 = TreeNode(1)
+   root2.right = TreeNode(2)
+   print(sol.maxDepth(root2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+2
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3
