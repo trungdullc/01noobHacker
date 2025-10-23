@@ -28,6 +28,64 @@ my_bool: bool = False
 
 # Special
 my_none: None = None
+
+AsianHacker-picoctf@webshell:/tmp$ python3 -q ⌨️
+>>> help(enumerate) ⌨️
+Help on class enumerate in module builtins:
+
+class enumerate(object)
+ |  enumerate(iterable, start=0)
+ |  
+ |  Return an enumerate object.
+ |  
+ |    iterable
+ |      an object supporting iteration
+ |  
+ |  The enumerate object yields pairs containing a count (from start, which
+ |  defaults to zero) and a value yielded by the iterable argument.
+ |  
+ |  enumerate is useful for obtaining an indexed list:
+ |      (0, seq[0]), (1, seq[1]), (2, seq[2]), ...
+ |  
+ |  Methods defined here:
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __next__(self, /)
+ |      Implement next(self).
+ |  
+ |  __reduce__(...)
+ |      Return state information for pickling.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  __class_getitem__(...) from builtins.type
+ |      See PEP 585
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+
+# Default: 0 index
+>>> for index, value in enumerate("abc"): ⌨️
+...    print(index, value) ⌨️
+... 
+0 a
+1 b
+2 c
+ >>> for index, value in enumerate("abc", start=1): ⌨️
+...    print(index, value) ⌨️
+... 
+1 a
+2 b
+3 c
 ```
 
 ## Side Quest
@@ -43,8 +101,145 @@ reset_mapping()
 print(mapping)   # {0: 'X', 1: 'Y'}
 ```
 
+## Side Quest ❤️❤️❤️❤️❤️
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat mymodule.py ⌨️
+# Example class
+class MyClass:
+    """This is MyClass. It demonstrates help() usage."""
+    def greet(self):
+        print("Hello from MyClass!")
+
+# Example function
+def my_function():
+    """Prints a greeting message."""
+    print("Hello from my_function!")
+
+AsianHacker-picoctf@webshell:/tmp$ cat main.py ⌨️
+#!/usr/bin/python3
+from mymodule import MyClass, my_function
+
+def main() -> None:
+    obj = MyClass()
+    obj.greet()          # Hello from MyClass!
+    my_function()        # Hello from my_function!
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./main.py ⌨️
+Hello from MyClass!
+Hello from my_function!
+
+AsianHacker-picoctf@webshell:/tmp$ python3 -q ⌨️
+>>> from mymodule import MyClass, my_function
+>>> dir(MyClass) ⌨️
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'greet']
+>>> dir(my_function) ⌨️
+['__annotations__', '__builtins__', '__call__', '__class__', '__closure__', '__code__', '__defaults__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__get__', '__getattribute__', '__globals__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+>>> help(MyClass) ⌨️
+Help on class MyClass in module mymodule:
+
+class MyClass(builtins.object)
+ |  This is MyClass. It demonstrates help() usage.
+ |  
+ |  Methods defined here:
+ |  
+ |  greet(self)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+
+>>> help(my_function) ⌨️
+Help on function my_function in module mymodule:
+
+my_function()
+    Prints a greeting message.
+```
+
+## Side Quest ❤️❤️❤️❤️❤️
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat mymodule.py 
+# Example class
+class MyClass:
+    """This is MyClass. It demonstrates help() usage."""
+    def greet(self):
+        print("Hello from MyClass!")
+
+# Example function
+def my_function():
+    """Prints a greeting message."""
+    print("Hello from my_function!")
+AsianHacker-picoctf@webshell:/tmp$ cat main.py 
+#!/usr/bin/python3
+import mymodule 👀
+
+def main() -> None:
+    obj = mymodule.MyClass()
+    obj.greet()  
+    mymodule.my_function()
+
+if __name__ == "__main__":
+    main()
+AsianHacker-picoctf@webshell:/tmp$ ./main.py 
+Hello from MyClass!
+Hello from my_function!
+```
+
+## Side Quest: Import from a subdirectory (package) ❤️❤️❤️❤️❤️
+```python
+project/
+│
+├─ mypackage/
+│   ├─ __init__.py ❤️
+│   └─ utils.py
+└─ main.py
+
+AsianHacker-picoctf@webshell:/tmp$ cat mypackage/__init__.py ⌨️
+from .util import MyClass, my_function 👀 . is current and .. is parent
+
+print("Done importing")
+
+AsianHacker-picoctf@webshell:/tmp$ cat mypackage/util.py ⌨️
+# Example class
+class MyClass:
+    """This is MyClass. It demonstrates help() usage."""
+    def greet(self):
+        print("Hello from MyClass!")
+
+# Example function
+def my_function():
+    """Prints a greeting message."""
+    print("Hello from my_function!")
+
+AsianHacker-picoctf@webshell:/tmp$ cat main.py ⌨️
+#!/usr/bin/python3
+import mypackage as pkg 👀 works like import                # Note: from mypackage import *
+
+def main() -> None:
+    obj = pkg.MyClass() 👀
+    obj.greet()  
+    pkg.my_function() 👀
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./main.py ⌨️
+Done importing
+Hello from MyClass!
+Hello from my_function!
+```
+
 ## CTF
 [thepythonchallege32: class ❤️❤️❤️❤️❤️](../thepythonchallenge/Level32.md)<br>
+[LeetCode0705: HashSets ❤️❤️❤️❤️❤️](../LeetCodeSolutions/solution/0700-0799/0705.Design%20HashSet/README.md)<br>
+[LeetCode0706: HashMaps ❤️❤️❤️❤️❤️](../LeetCodeSolutions/solution/0700-0799/0706.Design%20HashMap/README.md)<br>
 [picoGym0253: list](../picoCTF/picoGym0253.md)<br>
 [picoGym0307: File](../picoCTF/picoGym0307.md)<br>
 [picoGym0407: File, with ⭐⭐⭐](../picoCTF/picoGym0407.md)<br>

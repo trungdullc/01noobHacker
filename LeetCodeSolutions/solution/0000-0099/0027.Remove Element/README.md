@@ -75,7 +75,35 @@ The time complexity is $O(n)$ and the space complexity is $O(1)$, where $n$ is t
 
 #### Du Solution: Python3
 ```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class Solution:
+   def removeElement(self, nums: List[int], val: int) -> int:
+      k = 0
+
+      for i in range(len(nums)):
+         if nums[i] != val:
+            nums[k] = nums[i]       # Note: Starts at 0
+            k += 1
+      return k
+
+def main() -> None:
+   sol = Solution()
+
+   k1 = sol.removeElement([3,2,2,3], 3)
+   print(k1, nums1[:k1])
+
+   k2 = sol.removeElement([0,1,2,2,3,0,4,2], 2)
+   print(k2, nums2[:k2])
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+2 [2, 2]
+5 [0, 1, 3, 0, 4]
 ```
 
 #### Python3: Solution.py

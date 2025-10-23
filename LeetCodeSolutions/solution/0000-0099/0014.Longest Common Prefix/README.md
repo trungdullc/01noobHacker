@@ -41,8 +41,44 @@ If the traversal ends, it means that the first $i$ characters of all strings are
 
 The time complexity is $O(n \times m)$, where $n$ and $m$ are the length of the string array and the minimum length of the strings, respectively. The space complexity is $O(1)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class Solution:
+   def longestCommonPrefix(self, strs: List[str]) -> str:
+      if not strs:                      # Fastest case: Empty List
+         return ""
 
+      shortest = min(strs, key=len)     # Find the shortest string, "flow"
+
+      if len(shortest) == 0:
+         return ""
+
+      # Compare each character of the shortest string with all strings
+      for i, char in enumerate(shortest):
+         if any(s[i] != char for s in strs): ❤️ any breaks when condition true
+            return shortest[:i]
+
+      return shortest
+
+def main() -> None:
+   sol = Solution()
+   print(sol.longestCommonPrefix(["flower","flow","flight"]))
+   print(sol.longestCommonPrefix(["dog","racecar","car"]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+fl
+
+real    0m0.086s
+user    0m0.025s
+sys     0m0.004s
+```
 
 #### Python3: Solution.py
 

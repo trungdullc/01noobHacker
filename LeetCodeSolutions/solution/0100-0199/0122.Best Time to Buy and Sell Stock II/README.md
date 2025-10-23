@@ -53,8 +53,48 @@ Starting from the second day, if the stock price is higher than the previous day
 The time complexity is $O(n)$, where $n$ is the length of the `prices` array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def maxProfit(self, prices):
+      """
+      Calculate the maximum profit from buying and selling stocks given daily prices.
+      You can make as many transactions as you like (buy/sell multiple times), 
+      but can hold only one share at a time.
+
+      The strategy: sum all positive price differences between consecutive days.
+
+      Example:
+      >>> Solution().maxProfit([7,1,5,3,6,4])
+      7
+      (Buy at 1, sell at 5, buy at 3, sell at 6)
+
+      >>> Solution().maxProfit([1,2,3,4,5])
+      4
+      (Buy at 1, sell at 5)
+
+      >>> Solution().maxProfit([7,6,4,3,1])
+      0
+      (No profitable transactions)
+      """
+      profit = 0
+      for i in range(1, len(prices)):
+         if prices[i] > prices[i - 1]:
+            profit += prices[i] - prices[i - 1]
+      return profit
+
+if __name__ == "__main__":
+   s = Solution()
+   print(s.maxProfit([7, 1, 5, 3, 6, 4]))
+   print(s.maxProfit([1, 2, 3, 4, 5]))
+   print(s.maxProfit([7, 6, 4, 3, 1]))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+7
+4
+0
 ```
 
 #### Python3

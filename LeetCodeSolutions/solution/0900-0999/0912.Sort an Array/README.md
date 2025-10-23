@@ -36,8 +36,75 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class Solution:
+   # Partition function:
+   #  - Chooses a pivot (median-of-three: left, mid, right)
+   #  - Rearranges elements so that all values less than the pivot are to its left,
+   #    and all values greater than the pivot are to its right.
+   #  - Returns the final position (index) of the pivot after partitioning.
+   def partition(self, nums: List[int], left: int, right: int) -> int:
+      mid = (left + right) >> 1
+      nums[mid], nums[left + 1] = nums[left + 1], nums[mid]
+
+      # Median-of-three ordering
+      if nums[left] > nums[right]:
+         nums[left], nums[right] = nums[right], nums[left]
+      if nums[left + 1] > nums[right]:
+         nums[left + 1], nums[right] = nums[right], nums[left + 1]
+      if nums[left] > nums[left + 1]:
+         nums[left], nums[left + 1] = nums[left + 1], nums[left]
+
+      pivot = nums[left + 1]
+      i = left + 1
+      j = right
+
+      # Partition loop
+      while True:
+         while True:
+            i += 1
+            if not nums[i] < pivot:
+               break
+         while True:
+            j -= 1
+            if not nums[j] > pivot:
+               break
+         if i > j:
+            break
+         nums[i], nums[j] = nums[j], nums[i]
+
+      nums[left + 1], nums[j] = nums[j], nums[left + 1]
+      return j
+
+   def quickSort(self, nums: List[int], left: int, right: int) -> None:
+      if right <= left + 1:
+         if right == left + 1 and nums[right] < nums[left]:
+            nums[left], nums[right] = nums[right], nums[left]
+         return
+
+      j = self.partition(nums, left, right)
+      self.quickSort(nums, left, j - 1)
+      self.quickSort(nums, j + 1, right)
+
+   def sortArray(self, nums: List[int]) -> List[int]:
+      self.quickSort(nums, 0, len(nums) - 1)
+      return nums
+
+def main() -> None:
+   sol = Solution()
+   print(sol.sortArray([5,2,3,1]))
+   print(sol.sortArray([5,1,1,2,0,0]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[1, 2, 3, 5]
+[0, 0, 1, 1, 2, 5]
 ```
 
 #### Python3

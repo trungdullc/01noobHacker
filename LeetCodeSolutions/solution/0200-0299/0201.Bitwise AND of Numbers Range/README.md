@@ -38,8 +38,33 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
 
+class Solution:
+   def rangeBitwiseAnd(self, left: int, right: int) -> int:
+      while left < right:
+         right &= right - 1
+      return right
+
+def main() -> None:
+   sol = Solution()
+   print(sol.rangeBitwiseAnd(left = 5, right = 7))
+   print(sol.rangeBitwiseAnd(left = 0, right = 0))
+   print(sol.rangeBitwiseAnd(left = 1, right = 2147483647))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+0
+0
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

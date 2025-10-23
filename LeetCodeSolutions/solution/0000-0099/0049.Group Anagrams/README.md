@@ -68,19 +68,33 @@ The time complexity is $O(n\times k\times \log k)$, where $n$ and $k$ are the le
 
 #### Du Solution: Python3
 ```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
 
-```
+from collections import defaultdict
+from typing import List
 
-#### Python3
-
-```python
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        d = defaultdict(list)
+        d: dict[str,str] = defaultdict(list)
         for s in strs:
-            k = ''.join(sorted(s))
-            d[k].append(s)
+            sortedWord = ''.join(sorted(s))             # Note: sorted very important
+            d[sortedWord].append(s)                     # append to dict d
         return list(d.values())
+
+def main() -> None:
+   sol = Solution()
+   print(sol.groupAnagrams(strs = ["eat","tea","tan","ate","nat","bat"]))
+   print(sol.groupAnagrams([""]))
+   print(sol.groupAnagrams(["a"]))
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+[['']]
+[['a']]
 ```
 
 #### Java

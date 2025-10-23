@@ -47,23 +47,79 @@
 The XOR operation has the following properties:
 
 -   Any number XOR 0 is still the original number, i.e., $x \oplus 0 = x$;
--   Any number XOR itself is 0, i.e., $x \oplus x = 0$;
+-   Any number XOR itself is 0, i.e., $x \oplus x = 0$; ⭐⭐⭐⭐⭐
 
 Performing XOR operation on all elements in the array will result in the number that only appears once.
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class Solution:
+   def singlenumber(self, nums: List[int]):
+      singleFinder = 0
+
+      for num in nums:
+         singleFinder ^= num
+      return singleFinder
+
+def main()-> None:
+   sol = Solution()
+   print(sol.singlenumber([2,2,1]))
+   print(sol.singlenumber([4,1,2,1,2]))
+   print(sol.singlenumber([1]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+1
+4
+1
 ```
 
 #### Python3
 
 ```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+from functools import reduce    # No way I remembering this 👀
+from operator import xor        # No way I remebering this 👀
+
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
-        return reduce(xor, nums)
+    def singlenumber(self, nums: List[int]):
+        # Use reduce to apply XOR across all numbers
+        return reduce(xor, nums) 👀
+
+def main() -> None:
+    sol = Solution()
+    print(sol.singlenumber([2, 2, 1]))
+    print(sol.singlenumber([4, 1, 2, 1, 2]))
+    print(sol.singlenumber([1]))
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ python3 -q
+>>> from functools import reduce
+>>> help(reduce)
+
+Help on built-in function reduce in module _functools:
+
+reduce(...)
+    reduce(function, iterable[, initial]) -> value
+    
+    Apply a function of two arguments cumulatively to the items of a sequence
+    or iterable, from left to right, so as to reduce the iterable to a single
+    value.  For example, reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates
+    ((((1+2)+3)+4)+5).  If initial is present, it is placed before the items
+    of the iterable in the calculation, and serves as a default when the
+    iterable is empty.
 ```
 
 #### Java

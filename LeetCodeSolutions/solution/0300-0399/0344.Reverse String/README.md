@@ -31,8 +31,37 @@ We use two pointers $i$ and $j$, initially pointing to the start and end of the 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def reverseString(self, s: List[str]) -> None:
+      """
+      Reverse the input string (list of characters) in-place using O(1) extra memory.
+      Uses two-pointer approach swapping characters from both ends toward the center.
+      """
+      left, right = 0, len(s) - 1
+      while left < right:
+         s[left], s[right] = s[right], s[left]
+         left += 1
+         right -= 1
+
+if __name__ == "__main__":
+   sol = Solution()
+   s1 = ["h", "e", "l", "l", "o"]
+   sol.reverseString(s1)
+   print(s1)
+
+   s2 = ["H", "a", "n", "n", "a", "h"]
+   sol.reverseString(s2)
+   print(s2)
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+['o', 'l', 'l', 'e', 'h']
+['h', 'a', 'n', 'n', 'a', 'H']
 ```
 
 #### Python3

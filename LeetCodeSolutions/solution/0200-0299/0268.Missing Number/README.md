@@ -86,8 +86,73 @@ Therefore, we can traverse the array, perform XOR operation between each element
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+   def missingNumber(self, nums: List[int]) -> int:
+      ans = len(nums)
+
+      # Note: range not get last # reason why ans = len(nums)
+      for i in range(len(nums)):
+         ans += i - nums[i]         # easier
+         # ans ^= i ^ nums[i]
+
+      return ans
+
+def main()-> None:
+   sol = Solution()
+   print(sol.missingNumber([3,0,1]))
+   print(sol.missingNumber([0,1]))
+   print(sol.missingNumber([9,6,4,2,3,5,7,0,1]))
+   
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+2
+8
+
+real    0m0.100s
+user    0m0.024s
+sys     0m0.004s
 ```
 
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+   def missingNumber(self, nums: List[int]) -> int:
+      ans = len(nums)
+
+      for index, value in enumerate(nums, start=0): 👀
+         ans += index - value
+
+      return ans
+
+def main()-> None:
+   sol = Solution()
+   print(sol.missingNumber([3,0,1]))
+   print(sol.missingNumber([0,1]))
+   print(sol.missingNumber([9,6,4,2,3,5,7,0,1]))
+   
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+2
+8
+
+real    0m0.069s
+user    0m0.020s
+sys     0m0.008s
 ```
 
 #### Python3

@@ -30,8 +30,81 @@ We use a variable $carry$ to record the current carry, and two pointers $i$ and 
 The time complexity is $O(\max(m, n))$, where $m$ and $n$ are the lengths of strings $a$ and $b$ respectively. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        result = []                                 # Note: list, not a string
+        carry = 0
+        i, j = len(a) - 1, len(b) - 1               # start from rightmost bits
+
+        while i >= 0 or j >= 0 or carry:
+            digitA = int(a[i]) if i >= 0 else 0
+            digitB = int(b[j]) if j >= 0 else 0
+
+            total = digitA + digitB + carry
+            result.append(str(total % 2))
+            carry = total // 2
+
+            i -= 1
+            j -= 1
+
+        # reverse the result list and join into string
+        return ''.join(reversed(result))
+
+def main() -> None:
+    sol = Solution()
+    print(sol.addBinary("11", "1"))
+    print(sol.addBinary("1010", "1011"))
+
+if __name__ == "__main__":
+    main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+100
+10101
 ```
 
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+   def addBinary(self, a: str, b: str) -> str:
+      result = ""
+      carry = 0
+      a, b = a[::-1], b[::-1]                                   # reverse string to start at R first
+
+      for i in range(max(len(a), len(b))):                      # continue w/ longest
+         digitA = ord(a[i]) - ord("0") if i < len(a) else 0     # ord(): ascii -> int
+         digitB = ord(b[i]) - ord("0") if i < len(b) else 0
+
+         total = digitA + digitB + carry
+         char = str(total % 2)
+         result = char + result                                 # add char to front
+         carry = total // 2
+
+      if carry:
+         result = "1" + result
+
+      return result
+
+def main() -> None:
+   sol = Solution()
+   print(sol.addBinary("11", "1"))
+   print(sol.addBinary("1010", "1011"))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+100
+10101
 ```
 
 #### Python3

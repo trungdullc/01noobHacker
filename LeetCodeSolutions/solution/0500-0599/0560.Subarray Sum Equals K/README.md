@@ -36,8 +36,40 @@ After the traversal, we return the answer.
 The time complexity is `O(n)`, and the space complexity is `O(n)`. Where `n` is the length of the array `nums`.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+from collections import defaultdict
+
+class Solution:
+   def subarraySum(self, nums: List[int], k: int) -> int:
+      """
+      Return the total number of continuous subarrays whose sum equals k.
+      Uses prefix sum and a hashmap to achieve O(n) time complexity.
+      """
+      prefix_sum_count = defaultdict(int)
+      prefix_sum_count[0] = 1       # Base case: sum 0 occurs once
+      current_sum = 0
+      count = 0
+      
+      for num in nums:
+         current_sum += num
+         if current_sum - k in prefix_sum_count:
+            count += prefix_sum_count[current_sum - k]
+         prefix_sum_count[current_sum] += 1
+      
+      return count
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.subarraySum([1, 1, 1], 2))
+   print(sol.subarraySum([1, 2, 3], 3))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+2
+2
 ```
 
 #### Python3

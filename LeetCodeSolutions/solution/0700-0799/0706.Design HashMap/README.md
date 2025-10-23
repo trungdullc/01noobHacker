@@ -46,9 +46,66 @@ myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
 
 ## Solutions
 
-#### Du Solution: Python3
-```
+#### NeetCode Solution ❤️❤️❤️❤️❤️
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+class ListNode:
+   def __init__(self, key=-1, val=-1, next=None):
+      self.key = key
+      self.val = val
+      self.next = next
 
+class MyHashMap:
+   def __init__(self):
+      self.map = [ListNode() for _ in range(1000)]   # Creates 1000 dummy head nodes
+
+   def hash(self, key: int) -> int:
+      return key % len(self.map)
+
+   def put(self, key: int, value: int) -> None:
+      cur = self.map[self.hash(key)]
+      while cur.next:
+         if cur.next.key == key:                     # Update existing key
+            cur.next.val = value
+            return
+         cur = cur.next
+      cur.next = ListNode(key, value)                # Insert new key-value pair
+
+   def get(self, key: int) -> int:
+      cur = self.map[self.hash(key)].next
+      while cur:
+         if cur.key == key:
+            return cur.val                           # Return value if found
+         cur = cur.next
+      return -1                                      # Not found
+
+   def remove(self, key: int) -> None:
+      cur = self.map[self.hash(key)]
+      while cur.next:
+         if cur.next.key == key:                     # Remove key if found
+            cur.next = cur.next.next
+            return
+         cur = cur.next
+
+def main() -> None:
+   myHashMap = MyHashMap()
+   myHashMap.put(1, 1)                              # map = [[1,1]]
+   myHashMap.put(2, 2)                              # map = [[1,1],[2,2]]
+   print(myHashMap.get(1))                          # 1
+   print(myHashMap.get(3))                          # -1
+   myHashMap.put(2, 1)                              # update existing key, map = [[1,1],[2,1]]
+   print(myHashMap.get(2))                          # 1
+   myHashMap.remove(2)                              # remove key=2
+   print(myHashMap.get(2))                          # -1
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ python3 pythonScript.py 
+1
+-1
+1
+-1
 ```
 
 #### Python3

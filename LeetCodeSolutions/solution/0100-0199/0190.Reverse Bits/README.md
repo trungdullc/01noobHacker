@@ -49,8 +49,56 @@ For example, for the $i$-th bit, we can use `(n & 1) << (31 - i)` to extract the
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$.
 
 #### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+
+class Solution:
+   def reverseBits(self, n: str) -> tuple[int,int]:
+      n = n[::-1]                   # Reverse string
+      ans = int(n,2)                # Math ❤️
+      return ans, f"{ans:032b}"     # return format specifier tuple ❤️
+
+def main() -> None:
+   sol = Solution()
+   print(sol.reverseBits("00000010100101000001111010011100"))
+   print(sol.reverseBits("11111111111111111111111111111101"))
+
+if __name__ == "__main__":
+   main()
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+(964176192, '00111001011110000010100101000000')
+(3221225471, '10111111111111111111111111111111')
 ```
 
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+
+class Solution:
+   def reverseBits(self, n: str) -> tuple[int,int]:
+      num = int(n, 2)       # binary str to int (does math) ❤️
+      ans = 0
+
+      # Look at last digit and shift to far left then inner
+      for i in range(32):
+         ans |= (num & 1) << (31 - i)
+         num >>= 1
+      # Convert back to binary string with 32 bits
+      return ans, f"{ans:032b}"
+
+def main() -> None:
+   sol = Solution()
+   print(sol.reverseBits("00000010100101000001111010011100"))
+   print(sol.reverseBits("11111111111111111111111111111101"))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+(964176192, '00111001011110000010100101000000')
+(3221225471, '10111111111111111111111111111111')
 ```
 
 #### Python3

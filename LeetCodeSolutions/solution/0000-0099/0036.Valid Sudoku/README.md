@@ -75,8 +75,85 @@ Traverse the sudoku, for each digit, check whether the row, column and $3 \times
 The time complexity is $O(C)$ and the space complexity is $O(C)$, where $C$ is the number of empty spaces in the sudoku. In this question, $C=81$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class Solution:
+   def isValidSudoku(self, board: List[List[str]]) -> bool:
+      """
+      Determines if a 9x9 Sudoku board is valid.
+      Only filled cells (digits 1-9) are validated for rows, columns, and 3x3 boxes.
+
+      Parameters:
+         board (List[List[str]]): 9x9 Sudoku board with digits as strings and '.' for empty cells.
+
+      Returns:
+         bool: True if the board is valid, False otherwise.
+      """
+      rows = [set() for _ in range(9)]
+      cols = [set() for _ in range(9)]
+      boxes = [set() for _ in range(9)]  # 3x3 sub-boxes
+
+      for i in range(9):
+         for j in range(9):
+            num = board[i][j]
+            if num == '.':
+               continue
+
+            # Check row
+            if num in rows[i]:
+               return False
+            rows[i].add(num)
+
+            # Check column
+            if num in cols[j]:
+               return False
+            cols[j].add(num)
+
+            # Check box
+            box_index = (i // 3) * 3 + (j // 3)
+            if num in boxes[box_index]:
+               return False
+            boxes[box_index].add(num)
+
+      return True
+
+def main() -> None:
+   sol = Solution()
+   board1 = [
+      ["5","3",".",".","7",".",".",".","."],
+      ["6",".",".","1","9","5",".",".","."],
+      [".","9","8",".",".",".",".","6","."],
+      ["8",".",".",".","6",".",".",".","3"],
+      ["4",".",".","8",".","3",".",".","1"],
+      ["7",".",".",".","2",".",".",".","6"],
+      [".","6",".",".",".",".","2","8","."],
+      [".",".",".","4","1","9",".",".","5"],
+      [".",".",".",".","8",".",".","7","9"]
+   ]
+   board2 = [
+      ["8","3",".",".","7",".",".",".","."],
+      ["6",".",".","1","9","5",".",".","."],
+      [".","9","8",".",".",".",".","6","."],
+      ["8",".",".",".","6",".",".",".","3"],
+      ["4",".",".","8",".","3",".",".","1"],
+      ["7",".",".",".","2",".",".",".","6"],
+      [".","6",".",".",".",".","2","8","."],
+      [".",".",".","4","1","9",".",".","5"],
+      [".",".",".",".","8",".",".","7","9"]
+   ]
+   
+   print(sol.isValidSudoku(board1))
+   print(sol.isValidSudoku(board2))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+True
+False
 ```
 
 #### Python3

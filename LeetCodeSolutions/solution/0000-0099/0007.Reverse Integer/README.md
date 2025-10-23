@@ -61,7 +61,44 @@ The time complexity is $O(\log |x|)$, where $|x|$ is the absolute value of $x$. 
 
 #### Du Solution: Python3
 ```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+import math
 
+class Solution:
+   def reverse(self, x: int) -> int:
+      MIN, MAX = -(2**31), 2**31 - 1
+      result = 0
+
+      while x:
+         digit = int(math.fmod(x, 10))              # -1 % 10 = 9, Python weird
+         x = int(x / 10)                            # x // 10
+
+         if (result > MAX // 10 or (result == MAX // 10 and digit >= MAX % 10)):
+            return 0
+         if (result < MIN // 10 or (result == MIN // 10 and digit <= MIN % 10)):
+            return 0
+         result = (result * 10) + digit ❤️
+
+      return result
+
+def main() -> None:
+   sol = Solution()
+   print(sol.reverse(123))
+   print(sol.reverse(-123))
+   print(sol.reverse(120))
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+321
+-321
+21
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

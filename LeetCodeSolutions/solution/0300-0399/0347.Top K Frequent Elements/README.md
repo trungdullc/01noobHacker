@@ -38,8 +38,36 @@ Finally, we pop the elements from the min heap one by one and place them into th
 The time complexity is $O(n \log k)$, and the space complexity is $O(k)$. Here, $n$ is the length of the array.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+from collections import defaultdict
 
+class Solution:
+   def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+      # Count frequency of each element
+      freq: dict[int, int] = defaultdict(int)
+      for num in nums:
+         freq[num] += 1
+
+      # Sort elements by frequency (descending) and take top k
+      # key=lambda x: x[1] tells sorted() to sort items based on second element of each tuple (frequency)
+      sorted_items = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+      top_k = [item[0] for item in sorted_items[:k]]
+      return top_k
+
+def main() -> None:
+   sol = Solution()
+   print(sol.topKFrequent([1,1,1,2,2,3], 2))
+   print(sol.topKFrequent([1], 1))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[1, 2]
+[1]
 ```
 
 #### Python3

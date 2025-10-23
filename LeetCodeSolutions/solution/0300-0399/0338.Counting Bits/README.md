@@ -48,13 +48,70 @@
 ## Solutions
 
 ### Solution 1
-
-#### Du Solution: Python3
+```
+Python List Comprehension is useful easier than C/C++ ternary conditional operator
 ```
 
+#### Du Solution1: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+   def hammingweight(self, n: int) -> int:
+      counter = 0
+      while n:
+         n &= n-1
+         counter +=1
+      return counter
+
+   def countBits(self, n: int) -> List[int]:
+      ans = [0] * (n+1)                         # Note: need set default value
+      for i in range(n):
+         ans[i] = i                             # or get error here
+      for i in range(len(ans)):
+          ans[i] = self.hammingweight(i)        # Note: calling own fx
+      return ans
+   
+def main()-> None:
+   sol = Solution()
+   print(sol.countBits(2))
+   print(sol.countBits(5))
+   
+if __name__ == "__main__":
+   main()
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[0, 1, 1]
+[0, 1, 1, 2, 1, 2]
 ```
 
-#### Python3
+#### Du Solution2
+```python
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+   def hammingweight(self, n: int) -> int:
+      counter = 0
+      while n:
+         n &= n-1
+         counter +=1
+      return counter
+
+   def countBits(self, n: int) -> List[int]:
+      return [self.hammingweight(i) for i in range(n + 1)] 👀
+
+def main()-> None:
+   sol = Solution()
+   print(sol.countBits(2))
+   print(sol.countBits(5))
+
+if __name__ == "__main__":
+   main()
+```
+
+#### Python3 
 
 ```python
 class Solution:

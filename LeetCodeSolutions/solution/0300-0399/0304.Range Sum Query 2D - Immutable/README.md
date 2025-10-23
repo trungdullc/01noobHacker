@@ -69,8 +69,58 @@ In the initialization method, we preprocess the prefix sum array $s$, and in the
 The time complexity for initializing is $O(m \times n)$, and the time complexity for querying is $O(1)$. The space complexity is $O(m \times n)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class NumMatrix:
+   def __init__(self, matrix: List[List[int]]):
+      """
+      Precompute a prefix sum matrix so that sumRegion queries can be answered in O(1) time.
+      """
+      if not matrix or not matrix[0]:
+         self.dp = []
+         return
+
+      m, n = len(matrix), len(matrix[0])
+      # dp[i+1][j+1] = sum of elements in rectangle from (0,0) to (i,j)
+      self.dp = [[0]*(n+1) for _ in range(m+1)]
+
+      for i in range(m):
+         for j in range(n):
+            self.dp[i+1][j+1] = matrix[i][j] + self.dp[i][j+1] + self.dp[i+1][j] - self.dp[i][j]
+
+   def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+      """
+      Use inclusion-exclusion on the precomputed prefix sums to get sum in O(1)
+      """
+      return (self.dp[row2+1][col2+1] 
+              - self.dp[row1][col2+1] 
+              - self.dp[row2+1][col1] 
+              + self.dp[row1][col1])
+
+def main() -> None:
+   matrix = [
+      [3, 0, 1, 4, 2],
+      [5, 6, 3, 2, 1],
+      [1, 2, 0, 1, 5],
+      [4, 1, 0, 1, 7],
+      [1, 0, 3, 0, 5]
+   ]
+
+   numMatrix = NumMatrix(matrix)
+   print(numMatrix.sumRegion(2, 1, 4, 3))
+   print(numMatrix.sumRegion(1, 1, 2, 2))
+   print(numMatrix.sumRegion(1, 2, 2, 4))
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+8
+11
+12
 ```
 
 #### Python3

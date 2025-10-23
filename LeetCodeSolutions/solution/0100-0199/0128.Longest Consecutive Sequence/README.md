@@ -50,8 +50,44 @@ After the iteration, we return the answer $\textit{ans}$.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def longestConsecutive(self, nums):
+      """
+      Return the length of the longest consecutive elements sequence in an unsorted integer array.
+      Runs in O(n) time using a hash set to efficiently check consecutive numbers.
+      """
+      num_set = set(nums)
+      longest = 0
+      
+      for n in num_set:
+         # Only start counting when n is the start of a sequence
+         if n - 1 not in num_set:
+            length = 1
+            while n + length in num_set:
+               length += 1
+            longest = max(longest, length)
+      
+      return longest
+
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.longestConsecutive([100, 4, 200, 1, 3, 2]))
+   print(sol.longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]))
+   print(sol.longestConsecutive([1, 0, 1, 2]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+9
+3
+
+real    0m0.022s
+user    0m0.017s
+sys     0m0.004s
 ```
 
 #### Python3

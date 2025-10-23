@@ -54,10 +54,50 @@
 ## Solutions
 
 ### Solution 1
+```
+Brian Kernighan’s Algorithm
+Each loop iteration removes one 1 bit
+n &= n - 1
 
-#### Du Solution: Python3
+Binary      Decimal = 25    
+11001
+11000 &     Counter
+11000       1
+10111 &
+10000       1
+01111 &
+00000       1 = total 3 ones in binary
 ```
 
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+   def hammingweight(self, n: int) -> int:
+      counter = 0
+      while n:
+         if n & 1 == 1:
+            counter += 1
+         n >> 1
+      return counter
+
+def main()-> None:
+   sol = Solution()
+   print(sol.hammingweight(11))
+   print(sol.hammingweight(128))
+   print(sol.hammingweight(2147483645))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py 
+AsianHacker-picoctf@webshell:/tmp$ python3 pythonScript.py 
+3
+1
+30
 ```
 
 #### Python3

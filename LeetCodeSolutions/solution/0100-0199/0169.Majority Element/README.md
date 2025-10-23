@@ -42,8 +42,42 @@ In general, the Moore voting algorithm requires **two passes** over the input li
 The time complexity is $O(n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+from collections import defaultdict
 
+class Solution:
+   def majorityElement(self, nums: List[int]) -> int:
+      count: dict[int, int] = defaultdict(int) ❤️ Real important fixes many errors w/ {}
+      result = 0
+      maxCounter = 0
+
+      for num in nums:
+         count[num] += 1
+
+         if count[num] > maxCounter:
+            result = num                    # Records maxNumber
+            maxCounter = count[num]         # Overwrites: counter
+
+      return result
+
+def main() -> None:
+   sol = Solution()
+   print(sol.majorityElement([3,2,3]))
+   print(sol.majorityElement([2,2,1,1,1,2,2]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+2
+
+real    0m0.032s
+user    0m0.024s
+sys     0m0.004s
 ```
 
 #### Python3: Solution.py

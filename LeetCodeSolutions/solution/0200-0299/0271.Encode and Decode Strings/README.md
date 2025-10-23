@@ -86,8 +86,84 @@ During decoding, we first take the first four digits of the string to get the le
 The time complexity is $O(n)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class Codec:
+   def encode(self, strs: List[str]) -> str:
+      """
+      Encodes a list of strings to a single string.
+      Uses length-prefix encoding: 'length#string'.
+      """
+      encoded = ''
+      for s in strs:
+         encoded += f"{len(s)}#{s}"
+      return encoded
+
+   def decode(self, s: str) -> List[str]:
+      """
+      Decodes a single string to a list of strings.
+      Reads length prefix and extracts each string accordingly.
+      """
+      decoded = []
+      i = 0
+      while i < len(s):
+         # Find the delimiter '#' to get the length
+         j = i
+         while s[j] != '#':
+            j += 1
+         length = int(s[i:j])
+         # Extract the string of given length
+         decoded.append(s[j+1:j+1+length])
+         # Move to the next encoded string
+         i = j + 1 + length
+      return decoded
+
+def main() -> None:
+   codec = Codec()
+   dummy_input1 = ["Hello","World"]
+   encoded1 = codec.encode(dummy_input1)
+   print("Encoded:", encoded1)
+   print("Decoded:", codec.decode(encoded1))  # Output: ['Hello', 'World']
+
+   dummy_input2 = [""]
+   encoded2 = codec.encode(dummy_input2)
+   print("Encoded:", encoded2)
+   print("Decoded:", codec.decode(encoded2))  # Output: ['']
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+Encoded: 5#Hello5#World
+Decoded: ['Hello', 'World']
+Encoded: 0#
+Decoded: ['']
+
+AsianHacker-picoctf@webshell:/tmp$ python -q ⌨️ 
+>>> from pythonScript import Codec ⌨️
+>>> help(Codec.encode) ⌨️
+
+Help on function encode in module pythonScript:
+
+encode(self, strs: List[str]) -> str
+    Encodes a list of strings to a single string.
+    Uses length-prefix encoding: 'length#string'.
+(END)
+
+>>> dir(codec) ⌨️
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'decode', 'encode']
+>>> codec = Codec() ⌨️
+>>> help(codec.decode) ⌨️
+Help on method decode in module pythonScript:
+
+decode(s: str) -> List[str] method of pythonScript.Codec instance
+    Decodes a single string to a list of strings.
+    Reads length prefix and extracts each string accordingly.
+(END)
+>>> exit() ⌨️
 ```
 
 #### Python3

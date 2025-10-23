@@ -42,8 +42,55 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def majorityElement(self, nums: List[int]) -> List[int]:
+      """
+      Find all elements that appear more than ⌊ n/3 ⌋ times in the given integer array.
+      Uses the Boyer-Moore Voting Algorithm to achieve O(n) time and O(1) space complexity.
+      """
+      if not nums:
+         return []
+      
+      # Find two potential candidates
+      candidate1, candidate2, count1, count2 = None, None, 0, 0
+      
+      for n in nums:
+         if n == candidate1:
+            count1 += 1
+         elif n == candidate2:
+            count2 += 1
+         elif count1 == 0:
+            candidate1, count1 = n, 1
+         elif count2 == 0:
+            candidate2, count2 = n, 1
+         else:
+            count1 -= 1
+            count2 -= 1
+      
+      # Verify the candidates
+      result = []
+      for c in [candidate1, candidate2]:
+         if c is not None and nums.count(c) > len(nums) // 3:
+            result.append(c)
+      
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.majorityElement([3, 2, 3]))
+   print(sol.majorityElement([1]))
+   print(sol.majorityElement([1, 2]))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[3]
+[1]
+[1, 2]
 ```
 
 #### Python3

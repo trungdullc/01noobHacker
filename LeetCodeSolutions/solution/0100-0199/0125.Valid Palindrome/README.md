@@ -11,7 +11,7 @@
 
 <pre>
 <strong>Input:</strong> s = &quot;A man, a plan, a canal: Panama&quot;
-<strong>Output:</strong> true
+<strong>Output:</strong> True
 <strong>Explanation:</strong> &quot;amanaplanacanalpanama&quot; is a palindrome.
 </pre>
 
@@ -19,7 +19,7 @@
 
 <pre>
 <strong>Input:</strong> s = &quot;race a car&quot;
-<strong>Output:</strong> false
+<strong>Output:</strong> False
 <strong>Explanation:</strong> &quot;raceacar&quot; is not a palindrome.
 </pre>
 
@@ -27,7 +27,7 @@
 
 <pre>
 <strong>Input:</strong> s = &quot; &quot;
-<strong>Output:</strong> true
+<strong>Output:</strong> True
 <strong>Explanation:</strong> s is an empty string &quot;&quot; after removing non-alphanumeric characters.
 Since an empty string reads the same forward and backward, it is a palindrome.
 </pre>
@@ -56,8 +56,29 @@ At the end of the loop, return `true`.
 The time complexity is $O(n)$, where $n$ is the length of the string $s$. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def isPalindrome(self, s: str) -> bool:
+      """
+      Check if the given string is a palindrome.
+      Converts to lowercase and removes all non-alphanumeric characters before checking.
+      """
+      cleaned = [ch.lower() for ch in s if ch.isalnum()]   # keep only letters and digits
+      return cleaned == cleaned[::-1]                      # compare with reversed version
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.isPalindrome("A man, a plan, a canal: Panama"))
+   print(sol.isPalindrome("race a car"))
+   print(sol.isPalindrome(" "))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+True
+False
+True
 ```
 
 #### Python3

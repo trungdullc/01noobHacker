@@ -52,8 +52,48 @@ After the traversal, the elements in the array are divided into three parts: $[0
 The time complexity is $O(n)$, where $n$ is the length of the array. Only one traversal of the array is needed. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class Solution:
+   def sortColors(self, nums: List[int]) -> None:
+      """
+      Sorts nums in-place so that all 0s, 1s, and 2s are grouped together in order.
+      Uses Dutch National Flag algorithm with three pointers.
+      """
+      low = 0                       # next position for 0
+      mid = 0                       # current element under consideration
+      high = len(nums) - 1          # next position for 2
+
+      while mid <= high:
+         if nums[mid] == 0:
+            nums[low], nums[mid] = nums[mid], nums[low]
+            low += 1
+            mid += 1
+         elif nums[mid] == 1:
+            mid += 1
+         else:                      # nums[mid] == 2
+            nums[mid], nums[high] = nums[high], nums[mid]
+            high -= 1
+
+def main() -> None:
+   sol = Solution()
+   nums1 = [2,0,2,1,1,0]
+   sol.sortColors(nums1)            # Note: in-place does not return
+   print(nums1)
+
+   nums2 = [2,0,1]
+   sol.sortColors(nums2)
+   print(nums2)
+
+if __name__ == "__main__":
+   main()
+   
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[0, 0, 1, 1, 2, 2]
+[0, 1, 2]
 ```
 
 #### Python3

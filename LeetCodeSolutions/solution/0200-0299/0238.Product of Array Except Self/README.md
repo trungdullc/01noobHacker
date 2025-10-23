@@ -43,8 +43,51 @@ After the traversal, we return the answer array $\textit{ans}$.
 The time complexity is $O(n)$, where $n$ is the length of the array $\textit{nums}$. Ignoring the space consumption of the answer array, the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
+class Solution:
+   def productExceptSelf(self, nums: List[int]) -> List[int]:
+      """
+      Returns an array answer such that answer[i] is equal to the product
+      of all the elements of nums except nums[i].
+
+      Parameters:
+         nums (List[int]): Input list of integers
+
+      Returns:
+         List[int]: Product of array except self, without using division.
+      """
+      n = len(nums)
+      answer = [1] * n
+
+      # Compute prefix products
+      prefix = 1
+      for i in range(n):
+         answer[i] = prefix
+         prefix *= nums[i]
+
+      # Multiply by suffix products
+      suffix = 1
+      for i in range(n-1, -1, -1):
+         answer[i] *= suffix
+         suffix *= nums[i]
+
+      return answer
+
+def main() -> None:
+   sol = Solution()
+   print(sol.productExceptSelf([1, 2, 3, 4]))
+   print(sol.productExceptSelf([-1, 1, 0, -3, 3]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[24, 12, 8, 6]
+[0, 0, 9, 0, 0]
 ```
 
 #### Python3

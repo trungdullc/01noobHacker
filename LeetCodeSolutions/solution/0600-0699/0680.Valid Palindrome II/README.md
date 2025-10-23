@@ -47,7 +47,46 @@ The time complexity is $O(n)$, where $n$ is the length of the string $s$. The sp
 
 #### Du Solution: Python3
 ```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def validPalindrome(self, s: str) -> bool:
+      """
+      Return True if the string can become a palindrome after deleting at most one character.
+      Uses two-pointer approach to check palindrome and allows skipping one mismatch.
+      """
+      def is_palindrome_range(left: int, right: int) -> bool:
+         while left < right:
+            if s[left] != s[right]:
+               return False
+            left += 1
+            right -= 1
+         return True
+
+      left, right = 0, len(s) - 1
+      while left < right:
+         if s[left] != s[right]:
+            # Skip either the left or right character
+            return is_palindrome_range(left + 1, right) or is_palindrome_range(left, right - 1)
+         left += 1
+         right -= 1
+      return True
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.validPalindrome("aba"))
+   print(sol.validPalindrome("abca"))
+   print(sol.validPalindrome("abc"))  
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+False
+
+real    0m0.065s
+user    0m0.017s
+sys     0m0.015s
 ```
 
 #### Python3

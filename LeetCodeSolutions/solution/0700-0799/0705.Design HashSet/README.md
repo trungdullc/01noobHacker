@@ -51,9 +51,69 @@ When adding an element to the hash set, set the corresponding position in the ar
 
 The time complexity of the above operations is $O(1)$.
 
-#### Du Solution: Python3
-```
+#### NeetCode Solution ❤️❤️❤️❤️❤️
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+from typing import Optional 👀
 
+class ListNode:
+   def __init__(self, key: int):
+      self.key = key
+      self.next: Optional['ListNode'] = None 👀
+
+class MyHashSet:
+   def __init__(self):
+      self.set: list[ListNode] = [ListNode(0) for _ in range(10**4)]   # Creates 10000 independent ListNodes, set[0] = ListNode(0)
+      # self.set = [ListNode(0)] * 10**4               # bug
+
+   def add(self, key: int) -> None:
+      index = key % len(self.set)                       # no collision
+      currentPtr: ListNode = self.set[index]
+      
+      while currentPtr.next:                            # not NULL, is dummy node
+         if currentPtr.next.key == key:                 # check duplicates in set
+            return
+         currentPtr = currentPtr.next
+      currentPtr.next = ListNode(key)
+
+   def remove(self, key: int) -> None:
+      currentPtr = self.set[key % len(self.set)]
+      
+      while currentPtr.next:
+         if currentPtr.next.key == key:
+            currentPtr.next = currentPtr.next.next
+            return
+         currentPtr = currentPtr.next
+      
+   def contains(self, key: int) -> bool:
+      currentPtr = self.set[key % len(self.set)]
+      
+      while currentPtr.next:
+         if currentPtr.next.key == key:
+            return True
+         currentPtr = currentPtr.next
+      return False
+
+# Test custom Class
+def main() -> None:
+   myHashSet = MyHashSet()
+   myHashSet.add(1)    
+   myHashSet.add(2)    
+   print(myHashSet.contains(1))         # True
+   print(myHashSet.contains(3))         # False
+   myHashSet.add(2)    
+   print(myHashSet.contains(2))         # True
+   myHashSet.remove(2)
+   print(myHashSet.contains(2))         # False
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ python3 pythonScript.py 
+True
+False
+True
+False
 ```
 
 #### Python3: Solution.py

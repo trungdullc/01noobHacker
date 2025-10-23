@@ -826,6 +826,7 @@ https://github.com/Adamkadaban/CTFs/tree/master
 
 #### LeetCode
 ```
+ChatGPT: 3-space indentation style, shebang, class, docstring, and main test block
 #### Du Solution: Python3
 ```
 
@@ -843,3 +844,7 @@ Get-ChildItem -Recurse -Include *.cpp, *.cs, *.nim, *.swift, *.py, *.js, *.c, *.
 https://codeforces.com/problemset?order=BY_SOLVED_DESC
 C++ https://github.com/kantuni/Codeforces
 ```
+
+:set tabstop=3
+:set shiftwidth=3
+gg=G

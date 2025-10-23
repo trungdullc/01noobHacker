@@ -50,8 +50,43 @@ After the traversal, we traverse the array again. If $i+1$ is not equal to $nums
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def firstMissingPositive(self, nums: List[int]) -> int:
+      """
+      Return the smallest missing positive integer from an unsorted array.
+      Runs in O(n) time and O(1) extra space using in-place index swapping.
+
+      Idea:
+      - Place each number n in index n-1 if 1 <= n <= len(nums).
+      - Then scan through to find the first index i where nums[i] != i+1.
+      - If all positions are correct, return len(nums) + 1.
+      """
+      n = len(nums)
+      for i in range(n):
+         while 1 <= nums[i] <= n and nums[nums[i] - 1] != nums[i]:
+            nums[nums[i] - 1], nums[i] = nums[i], nums[nums[i] - 1]
+
+      for i in range(n):
+         if nums[i] != i + 1:
+            return i + 1
+      return n + 1
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.firstMissingPositive([1, 2, 0]))
+   print(sol.firstMissingPositive([3, 4, -1, 1]))
+   print(sol.firstMissingPositive([7, 8, 9, 11, 12]))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+3
+2
+1
 ```
 
 #### Python3
