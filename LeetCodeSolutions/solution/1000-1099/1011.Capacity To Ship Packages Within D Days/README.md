@@ -60,8 +60,60 @@ Note that the cargo must be shipped in the order given, so using a ship of capac
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to determine the least ship capacity needed to transport all packages within D days.
+   """
+
+   def shipWithinDays(self, weights: list[int], days: int) -> int:
+      """
+      Finds the minimal ship capacity required to ship all packages within the given number of days.
+      
+      Args:
+         weights (list[int]): List of package weights.
+         days (int): Number of days to complete the shipment.
+      
+      Returns:
+         int: The minimum ship capacity.
+      """
+      def can_ship(capacity: int) -> bool:
+         total = 0
+         required_days = 1
+         for w in weights:
+            if total + w > capacity:
+               required_days += 1
+               total = 0
+            total += w
+         return required_days <= days
+
+      left, right = max(weights), sum(weights)
+      result = right
+
+      while left <= right:
+         mid = (left + right) // 2
+         if can_ship(mid):
+            result = mid
+            right = mid - 1
+         else:
+            left = mid + 1
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.shipWithinDays([1,2,3,4,5,6,7,8,9,10], 5))
+   print(sol.shipWithinDays([3,2,2,4,1,4], 3))
+   print(sol.shipWithinDays([1,2,3,1,1], 4))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+15
+6
+3
 ```
 
 #### Python3

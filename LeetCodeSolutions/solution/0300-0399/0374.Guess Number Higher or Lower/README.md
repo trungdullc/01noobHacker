@@ -57,8 +57,74 @@ We perform a binary search in the interval $[1,..n]$, and find the first number 
 The time complexity is $O(\log n)$, where $n$ is the upper limit given in the problem. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to guess the picked number using a binary search approach.
+   """
+
+   def __init__(self, pick: int):
+      """
+      Initializes the solution with the picked number.
+      
+      Args:
+         pick (int): The number to be guessed.
+      """
+      self._pick = pick
+
+   # Note: Already pre-defined API
+   def guess(self, num: int) -> int:
+      """
+      Simulated API: returns -1, 1, or 0 based on the guess.
+      """
+      if num > self._pick:
+         return -1
+      elif num < self._pick:
+         return 1
+      else:
+         return 0
+
+   def guessNumber(self, n: int) -> int:
+      """
+      Returns the number that was picked using binary search.
+      
+      Args:
+         n (int): The upper bound of the range [1, n].
+      
+      Returns:
+         int: The picked number.
+      """
+      left, right = 1, n
+
+      while left <= right:
+         mid = left + (right - left) // 2
+         res = self.guess(mid)
+         if res == 0:
+            return mid
+         elif res < 0:
+            right = mid - 1
+         else:
+            left = mid + 1
+
+      return -1  # This should never happen if pick is in [1, n]
+
+if __name__ == "__main__":
+   sol1 = Solution(6)
+   print(sol1.guessNumber(10))
+
+   sol2 = Solution(1)
+   print(sol2.guessNumber(1))
+
+   sol3 = Solution(1)
+   print(sol3.guessNumber(2))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+6
+1
+1
 ```
 
 #### Python3

@@ -63,8 +63,99 @@ Next, we traverse the linked list again and use the mappings stored in the hash 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the linked list.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Node:
+   """
+   Definition for a Node in a linked list with a random pointer.
+   """
+   def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+      self.val = int(x)
+      self.next = next
+      self.random = random
+
+class Solution:
+   """
+   Solution class to deep copy a linked list with random pointers.
+   """
+
+   def copyRandomList(self, head):
+      """
+      Deep copy a linked list with random pointers.
+      :type head: Node
+      :rtype: Node
+      """
+      if not head:
+         return None
+
+      # Step 1: Copy nodes and store in a hashmap
+      old_to_new = {}
+      current = head
+      while current:
+         old_to_new[current] = Node(current.val)
+         current = current.next
+
+      # Step 2: Assign next and random pointers
+      current = head
+      while current:
+         if current.next:
+            old_to_new[current].next = old_to_new[current.next]
+         if current.random:
+            old_to_new[current].random = old_to_new[current.random]
+         current = current.next
+
+      return old_to_new[head]
+
+def list_to_nodes(arr):
+   """
+   Convert input array [[val, random_index], ...] to linked list with random pointers.
+   """
+   if not arr:
+      return None
+   nodes = [Node(x[0]) for x in arr]
+   for i, (val, rand_idx) in enumerate(arr):
+      if i < len(nodes) - 1:
+         nodes[i].next = nodes[i + 1]
+      if rand_idx is not None:
+         nodes[i].random = nodes[rand_idx]
+   return nodes[0]
+
+def nodes_to_list(head):
+   """
+   Convert linked list with random pointers back to array [[val, random_index], ...].
+   """
+   nodes = []
+   node_to_index = {}
+   current = head
+   idx = 0
+   while current:
+      nodes.append(current)
+      node_to_index[current] = idx
+      current = current.next
+      idx += 1
+
+   result = []
+   for node in nodes:
+      rand_idx = node_to_index[node.random] if node.random else None
+      result.append([node.val, rand_idx])
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(nodes_to_list(sol.copyRandomList(list_to_nodes([[7,None],[13,0],[11,4],[10,2],[1,0]]))))
+   print(nodes_to_list(sol.copyRandomList(list_to_nodes([[1,1],[2,1]]))))
+   print(nodes_to_list(sol.copyRandomList(list_to_nodes([[3,None],[3,0],[3,None]]))))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[7, None], [13, 0], [11, 4], [10, 2], [1, 0]]
+[[1, 1], [2, 1]]
+[[3, None], [3, 0], [3, None]]
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

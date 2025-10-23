@@ -54,8 +54,79 @@ When we need to query the value corresponding to the key $\textit{key}$ at the t
 In terms of time complexity, for the $\textit{set}$ operation, since the insertion operation of the hash table has a time complexity of $O(1)$, the time complexity is $O(1)$. For the $\textit{get}$ operation, since the lookup operation of the hash table has a time complexity of $O(1)$ and the lookup operation of the ordered set has a time complexity of $O(\log n)$, the time complexity is $O(\log n)$. The space complexity is $O(n)$, where $n$ is the number of $\textit{set}$ operations.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TimeMap:
+   """
+   A time-based key-value store that supports storing and retrieving values
+   based on timestamps.
+   """
+
+   def __init__(self):
+      """Initializes the data structure."""
+      self.store = {}
+
+   def set(self, key: str, value: str, timestamp: int) -> None:
+      """
+      Stores the given key-value pair with the associated timestamp.
+
+      Args:
+         key (str): The key to store.
+         value (str): The value to associate with the key.
+         timestamp (int): The time at which the value is stored.
+      """
+      if key not in self.store:
+         self.store[key] = []
+      self.store[key].append((timestamp, value))
+
+   def get(self, key: str, timestamp: int) -> str:
+      """
+      Retrieves the most recent value at or before the given timestamp.
+
+      Args:
+         key (str): The key to retrieve.
+         timestamp (int): The timestamp at which to retrieve the value.
+
+      Returns:
+         str: The corresponding value, or an empty string if not found.
+      """
+      if key not in self.store:
+         return ""
+
+      values = self.store[key]
+      left, right = 0, len(values) - 1
+      res = ""
+
+      while left <= right:
+         mid = (left + right) // 2
+         if values[mid][0] <= timestamp:
+            res = values[mid][1]
+            left = mid + 1
+         else:
+            right = mid - 1
+
+      return res
+
+if __name__ == "__main__":
+   timeMap = TimeMap()
+   timeMap.set("foo", "bar", 1)
+   print(timeMap.get("foo", 1))
+   print(timeMap.get("foo", 3))
+   timeMap.set("foo", "bar2", 4)
+   print(timeMap.get("foo", 4))
+   print(timeMap.get("foo", 5))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+bar
+bar
+bar2
+bar2
+
+real    0m0.024s
+user    0m0.016s
+sys     0m0.008s
 ```
 
 #### Python3

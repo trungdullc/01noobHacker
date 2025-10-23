@@ -57,8 +57,87 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+# Don't implement this
+class MountainArray:
+   """
+   This is a simulation of the MountainArray interface.
+   In the actual problem, this interface is provided by the judge.
+   """
+   def __init__(self, arr):
+      self._arr = arr
+
+   def get(self, k):
+      return self._arr[k]
+
+   def length(self):
+      return len(self._arr)
+
+
+class Solution:
+   """
+   Solution class to find the minimum index of a target in a mountain array.
+   """
+
+   def findInMountainArray(self, target, mountainArr):
+      """
+      :type target: int
+      :type mountainArr: MountainArray
+      :rtype: int
+      """
+
+      def find_peak():
+         left, right = 0, mountainArr.length() - 1
+         while left < right:
+            mid = left + (right - left) // 2
+            if mountainArr.get(mid) < mountainArr.get(mid + 1):
+               left = mid + 1
+            else:
+               right = mid
+         return left
+
+      def binary_search(left, right, target, ascending=True):
+         while left <= right:
+            mid = left + (right - left) // 2
+            value = mountainArr.get(mid)
+            if value == target:
+               return mid
+            if ascending:
+               if value < target:
+                  left = mid + 1
+               else:
+                  right = mid - 1
+            else:
+               if value < target:
+                  right = mid - 1
+               else:
+                  left = mid + 1
+         return -1
+
+      peak = find_peak()
+      # Try to find in ascending part
+      index = binary_search(0, peak, target, ascending=True)
+      if index != -1:
+         return index
+      # Try to find in descending part
+      return binary_search(peak + 1, mountainArr.length() - 1, target, ascending=False)
+
+if __name__ == "__main__":
+   mountainArr1 = MountainArray([1,2,3,4,5,3,1])
+   target1 = 3
+   sol = Solution()
+   print(sol.findInMountainArray(target1, mountainArr1))
+
+   mountainArr2 = MountainArray([0,1,2,4,2,1])
+   target2 = 3
+   print(sol.findInMountainArray(target2, mountainArr2))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+2
+-1
 ```
 
 #### Python3

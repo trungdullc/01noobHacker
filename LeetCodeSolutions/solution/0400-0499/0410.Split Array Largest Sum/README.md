@@ -49,8 +49,65 @@ How do we determine whether there is a way to split the array so that the maximu
 The time complexity is $O(n \times \log m)$, and the space complexity is $O(1)$. Here, $n$ and $m$ are the length of the array and the sum of all elements in the array, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to split an array into k subarrays such that
+   the largest subarray sum is minimized.
+   """
+
+   def splitArray(self, nums: list[int], k: int) -> int:
+      """
+      Splits nums into k non-empty subarrays to minimize the largest sum.
+
+      Args:
+         nums (list[int]): The list of integers to split.
+         k (int): The number of subarrays to create.
+
+      Returns:
+         int: The minimized largest subarray sum.
+      """
+      def canSplit(maxSum: int) -> bool:
+         count = 1
+         current = 0
+         for num in nums:
+            if current + num > maxSum:
+               count += 1
+               current = num
+               if count > k:
+                  return False
+            else:
+               current += num
+         return True
+
+      left, right = max(nums), sum(nums)
+      res = right
+
+      while left <= right:
+         mid = (left + right) // 2
+         if canSplit(mid):
+            res = mid
+            right = mid - 1
+         else:
+            left = mid + 1
+
+      return res
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.splitArray([7,2,5,10,8], 2))
+   print(sol.splitArray([1,2,3,4,5], 2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+18
+9
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.004s
 ```
 
 #### Python3

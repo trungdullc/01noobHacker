@@ -58,8 +58,51 @@ Therefore, we can use binary search to find $x$, and check whether the number of
 The time complexity is $O(n \times \log n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution class to find the duplicate number in an array.
+   """
+
+   def findDuplicate(self, nums):
+      """
+      Find the duplicate number using cycle detection.
+      :type nums: list[int]
+      :rtype: int
+      """
+      # Step 1: Find intersection point
+      slow = fast = nums[0]
+      while True:
+         slow = nums[slow]
+         fast = nums[nums[fast]]
+         if slow == fast:
+            break
+
+      # Step 2: Find entrance to the cycle
+      slow = nums[0]
+      while slow != fast:
+         slow = nums[slow]
+         fast = nums[fast]
+
+      return slow
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.findDuplicate([1,3,4,2,2]))
+   print(sol.findDuplicate([3,1,3,4,2]))
+   print(sol.findDuplicate([3,3,3,3,3]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+3
+3
+
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

@@ -52,8 +52,60 @@ The termination condition for binary search is $left \geq right$. If at the end 
 The time complexity is $O(\log n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to search for a target value in a rotated sorted array.
+   """
+
+   def search(self, nums: list[int], target: int) -> int:
+      """
+      Searches for the target in the rotated sorted array using binary search.
+
+      Args:
+         nums (list[int]): Rotated sorted array of distinct integers.
+         target (int): The integer to search for.
+
+      Returns:
+         int: The index of target if found; otherwise, -1.
+      """
+      left, right = 0, len(nums) - 1
+
+      while left <= right:
+         mid = (left + right) // 2
+
+         if nums[mid] == target:
+            return mid
+
+         # Left half is sorted
+         if nums[left] <= nums[mid]:
+            if nums[left] <= target < nums[mid]:
+               right = mid - 1
+            else:
+               left = mid + 1
+         # Right half is sorted
+         else:
+            if nums[mid] < target <= nums[right]:
+               left = mid + 1
+            else:
+               right = mid - 1
+
+      return -1
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.search([4,5,6,7,0,1,2], 0))
+   print(sol.search([4,5,6,7,0,1,2], 3))
+   print(sol.search([1], 0))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+4
+-1
+-1
 ```
 
 #### Python3

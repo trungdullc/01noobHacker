@@ -47,8 +47,53 @@ Since the array $nums$ is already sorted, we can use the binary search method to
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$. Here, $n$ is the length of the array $nums$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to find the index to insert a target in a sorted array.
+   """
+
+   def searchInsert(self, nums: list[int], target: int) -> int:
+      """
+      Returns the index if the target is found, or the index where it would be inserted.
+      
+      Args:
+         nums (list[int]): Sorted list of distinct integers.
+         target (int): The integer to search or insert.
+      
+      Returns:
+         int: Index of target or insertion position.
+      """
+      left, right = 0, len(nums) - 1
+
+      while left <= right:
+         mid = left + (right - left) // 2
+         if nums[mid] == target:
+            return mid
+         elif nums[mid] < target:
+            left = mid + 1
+         else:
+            right = mid - 1
+      return left
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.searchInsert([1,3,5,6], 5))
+   print(sol.searchInsert([1,3,5,6], 2))
+   print(sol.searchInsert([1,3,5,6], 7))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+1
+4
+
+real    0m0.024s
+user    0m0.020s
+sys     0m0.004s
 ```
 
 #### Python3

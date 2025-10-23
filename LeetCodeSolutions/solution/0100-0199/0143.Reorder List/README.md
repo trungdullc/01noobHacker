@@ -48,8 +48,93 @@ We first use fast and slow pointers to find the midpoint of the linked list, the
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class ListNode:
+   """
+   Definition for a singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to reorder a linked list.
+   """
+
+   def reorderList(self, head):
+      """
+      Reorder a linked list in-place.
+      :type head: ListNode
+      :rtype: None
+      """
+      if not head or not head.next:
+         return
+
+      # Step 1: Find middle
+      slow = fast = head
+      while fast.next and fast.next.next:
+         slow = slow.next
+         fast = fast.next.next
+
+      # Step 2: Reverse second half
+      prev, curr = None, slow.next
+      slow.next = None
+      while curr:
+         next_node = curr.next
+         curr.next = prev
+         prev = curr
+         curr = next_node
+
+      # Step 3: Merge two halves
+      first, second = head, prev
+      while second:
+         tmp1, tmp2 = first.next, second.next
+         first.next = second
+         second.next = tmp1
+         first, second = tmp1, tmp2
+
+def list_to_nodes(lst):
+   """
+   Convert a Python list to a linked list.
+   """
+   dummy = ListNode(0)
+   current = dummy
+   for val in lst:
+      current.next = ListNode(val)
+      current = current.next
+   return dummy.next
+
+def nodes_to_list(head):
+   """
+   Convert a linked list to a Python list.
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   head1 = list_to_nodes([1,2,3,4])
+   sol.reorderList(head1)
+   print(nodes_to_list(head1))
+
+   head2 = list_to_nodes([1,2,3,4,5])
+   sol.reorderList(head2)
+   print(nodes_to_list(head2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 4, 2, 3]
+[1, 5, 2, 4, 3]
+
+real    0m0.024s
+user    0m0.016s
+sys     0m0.008s
 ```
 
 #### Python3

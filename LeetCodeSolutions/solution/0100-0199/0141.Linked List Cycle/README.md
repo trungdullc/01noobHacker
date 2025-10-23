@@ -54,8 +54,67 @@ We can traverse the linked list and use a hash table $s$ to record each node. Wh
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the number of nodes in the linked list.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class ListNode:
+   """
+   Definition for a singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to detect a cycle in a linked list.
+   """
+
+   def hasCycle(self, head):
+      """
+      Detect if the linked list has a cycle.
+      :type head: ListNode
+      :rtype: bool
+      """
+      slow = fast = head
+      while fast and fast.next:
+         slow = slow.next
+         fast = fast.next.next
+         if slow == fast:
+            return True
+      return False
+
+def list_to_nodes(lst, pos=-1):
+   """
+   Convert a Python list to a linked list and create a cycle if pos >= 0.
+   """
+   dummy = ListNode(0)
+   current = dummy
+   nodes = []
+   for val in lst:
+      node = ListNode(val)
+      nodes.append(node)
+      current.next = node
+      current = node
+   if pos >= 0 and nodes:
+      current.next = nodes[pos]
+   return dummy.next
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.hasCycle(list_to_nodes([3,2,0,-4], pos=1)))
+   print(sol.hasCycle(list_to_nodes([1,2], pos=0)))
+   print(sol.hasCycle(list_to_nodes([1], pos=-1)))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+False
+
+real    0m0.023s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

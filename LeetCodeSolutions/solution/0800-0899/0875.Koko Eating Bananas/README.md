@@ -52,8 +52,54 @@ We define the left boundary of the binary search as $l = 1$, and the right bound
 The time complexity is $O(n \times \log M)$, where $n$ and $M$ are the length and maximum value of the array `piles` respectively. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import math
+
+class Solution:
+   """
+   A class to determine the minimum eating speed for Koko to finish all bananas within h hours.
+   """
+
+   def minEatingSpeed(self, piles: list[int], h: int) -> int:
+      """
+      Finds the smallest integer k such that Koko can eat all bananas within h hours.
+      
+      Args:
+         piles (list[int]): List of integers representing banana piles.
+         h (int): Total number of hours available.
+      
+      Returns:
+         int: Minimum integer k (bananas per hour) for Koko to finish on time.
+      """
+      left, right = 1, max(piles)
+      result = right
+
+      while left <= right:
+         mid = (left + right) // 2
+         hours = sum(math.ceil(p / mid) for p in piles)
+
+         if hours <= h:
+            result = mid
+            right = mid - 1
+         else:
+            left = mid + 1
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.minEatingSpeed([3,6,7,11], 8))
+   print(sol.minEatingSpeed([30,11,23,4,20], 5))
+   print(sol.minEatingSpeed([30,11,23,4,20], 6))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+4
+30
+23
 ```
 
 #### Python3

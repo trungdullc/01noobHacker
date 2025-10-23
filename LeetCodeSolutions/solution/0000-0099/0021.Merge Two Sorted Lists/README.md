@@ -51,8 +51,129 @@ First, we judge whether the linked lists $l_1$ and $l_2$ are empty. If one of th
 The time complexity is $O(m + n)$, and the space complexity is $O(m + n)$. Here, $m$ and $n$ are the lengths of the two linked lists respectively.
 
 #### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+# ListNode is given
+class ListNode:
+   """
+   Definition for a singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to merge two sorted linked lists.
+   """
+
+   def mergeTwoLists(self, list1, list2):
+      """
+      Merge two sorted linked lists and return the head of the merged list.
+      :type list1: ListNode
+      :type list2: ListNode
+      :rtype: ListNode
+      """
+      dummy = ListNode(0)
+      current = dummy
+      while list1 and list2:
+         if list1.val <= list2.val:
+            current.next = list1
+            list1 = list1.next
+         else:
+            current.next = list2
+            list2 = list2.next
+         current = current.next
+      current.next = list1 if list1 else list2
+      return dummy.next
+
+def list_to_nodes(lst):
+   """
+   Helper to convert a Python list to a linked list.
+   """
+   dummy = ListNode(0)
+   current = dummy
+   for val in lst:
+      current.next = ListNode(val)
+      current = current.next
+   return dummy.next
+
+def nodes_to_list(head):
+   """
+   Helper to convert a linked list to a Python list.
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(nodes_to_list(sol.mergeTwoLists(list_to_nodes([1,2,4]), list_to_nodes([1,3,4]))))
+   print(nodes_to_list(sol.mergeTwoLists(list_to_nodes([]), list_to_nodes([]))))
+   print(nodes_to_list(sol.mergeTwoLists(list_to_nodes([]), list_to_nodes([0]))))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 1, 2, 3, 4, 4]
+[]
+[0]
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution class to merge two sorted lists.
+   """
+
+   def mergeTwoLists(self, list1, list2):
+      """
+      Merge two sorted lists into one sorted list.
+      :type list1: list[int]
+      :type list2: list[int]
+      :rtype: list[int]
+      """
+      merged = []
+      i, j = 0, 0
+      while i < len(list1) and j < len(list2):
+         if list1[i] <= list2[j]:
+            merged.append(list1[i])
+            i += 1
+         else:
+            merged.append(list2[j])
+            j += 1
+      while i < len(list1):
+         merged.append(list1[i])
+         i += 1
+      while j < len(list2):
+         merged.append(list2[j])
+         j += 1
+      return merged
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.mergeTwoLists([1,2,4], [1,3,4]))
+   print(sol.mergeTwoLists([], []))
+   print(sol.mergeTwoLists([], [0]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 1, 2, 3, 4, 4]
+[]
+[0]
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

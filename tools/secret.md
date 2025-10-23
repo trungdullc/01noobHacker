@@ -83,6 +83,7 @@ Description: Food Recipes
 
 ## Baking
 [Bigger Bolder Baking with Gemma Stafford](https://www.youtube.com/@biggerbolderbaking): ⭐⭐⭐⭐⭐❤️❤️<br>
+[Cooking-with-Kelsi](https://www.youtube.com/@Cooking-with-Kelsi): ⭐⭐⭐⭐⭐<br>
 [In Shannon's Kitchen](https://www.youtube.com/@InShannonsKitchen): ⭐⭐⭐⭐⭐<br>
 [Kathrine Kwa](https://www.youtube.com/@KathrineKwa): Chinese ⭐⭐⭐⭐⭐<br>
 [Michael Lim](https://www.youtube.com/@michaellim): ⭐⭐⭐⭐⭐<br>
@@ -121,6 +122,7 @@ Description: Food Recipes
 [Francine Shuen](https://www.youtube.com/@francineshuen): ⭐⭐⭐⭐⭐<br>
 [FullHappyBelly](https://www.youtube.com/@FullHappyBelly): ⭐⭐⭐⭐⭐<br>
 [田园时光Garden Time homemade cuisine](https://www.youtube.com/@MsCnck): ⭐⭐⭐⭐⭐<br>
+[Gabaomom Cuisine](https://www.youtube.com/@gabaomomcuisine): ⭐⭐⭐⭐⭐<br>
 [HAPPY WOK](https://www.youtube.com/@HAPPYWOK): ⭐⭐⭐⭐⭐<br>
 [Hsiao-Ching Chou](https://www.youtube.com/@hsiaochingchou): Listen ⭐⭐⭐<br>
 [iHEARTcookinggg](https://www.youtube.com/@iHEARTcookinggg): ⭐⭐⭐⭐⭐<br>
@@ -215,6 +217,7 @@ Description: Food Recipes
 [Honeysuckle](https://www.youtube.com/@honeysuckle): ⭐⭐⭐⭐⭐❤️❤️❤️❤️<br>
 [HM together](https://www.youtube.com/@HMtogether): ⭐⭐⭐⭐⭐<br>
 [Kale Sandwich Show](https://www.youtube.com/@TheKaleSandwichShow): ⭐⭐⭐⭐⭐<br>
+[Ly Cooks](https://www.youtube.com/@LyCooks): ⭐⭐⭐⭐⭐<br>
 [Moments for Health](https://www.youtube.com/@MomentsforHealth): ⭐⭐⭐⭐⭐<br>
 [Món Chay Quê Hương](https://www.youtube.com/@MonChayQueHuong): ⭐⭐⭐⭐⭐<br>
 [MÓN CHAY MỖI NGÀY](https://www.youtube.com/@monchaymoingay2393): ⭐⭐⭐⭐⭐<br>
@@ -286,6 +289,7 @@ Description: Food Recipes
 
 ## Korean
 [쿠킹하루 Cooking Haru](https://www.youtube.com/@cooking_haru): Listen ⭐⭐⭐<br>
+[살림나라 알뜰공주 Nara_Gongju](https://www.youtube.com/@Nara_Gongju): ⭐⭐⭐⭐⭐<br>
 [우리의식탁 W TABLE](https://www.youtube.com/@wtable6077): Listen ⭐⭐⭐<br>
 [묘식당 Rabbit's](https://www.youtube.com/@Rabbits): ⭐⭐⭐⭐⭐<br>
 [매일맛나 delicious day](https://www.youtube.com/@deliciousday1): ⭐⭐⭐⭐⭐<br>
@@ -451,3 +455,5 @@ Description: Food Recipes
 [](): ⭐⭐⭐⭐⭐❤️<br>
 [](): Listen ⭐⭐⭐<br>
 [](): Story ⭐⭐<br>
+
+[Chinese Study Music](https://www.youtube.com/watch?v=7c1WFceoLAM)

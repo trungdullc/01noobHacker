@@ -56,8 +56,51 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to find the minimum element in a rotated sorted array.
+   """
+
+   def findMin(self, nums: list[int]) -> int:
+      """
+      Finds the minimum element in a rotated sorted array using binary search.
+
+      Args:
+         nums (list[int]): A rotated sorted array of unique integers.
+
+      Returns:
+         int: The minimum element in the array.
+      """
+      left, right = 0, len(nums) - 1
+
+      while left < right:
+         mid = (left + right) // 2
+         if nums[mid] > nums[right]:
+            left = mid + 1
+         else:
+            right = mid
+
+      return nums[left]
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.findMin([3,4,5,1,2]))
+   print(sol.findMin([4,5,6,7,0,1,2]))
+   print(sol.findMin([11,13,15,17]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+0
+11
+
+real    0m0.068s
+user    0m0.031s
+sys     0m0.000s
 ```
 
 #### Python3

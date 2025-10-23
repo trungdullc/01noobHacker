@@ -51,8 +51,84 @@ Finally, we return the head node of the answer linked list.
 The time complexity is $O(\max (m, n))$, where $m$ and $n$ are the lengths of the two linked lists. We need to traverse the entire position of the two linked lists, and each position only needs $O(1)$ time. Ignoring the space consumption of the answer, the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class ListNode:
+   """
+   Definition for a singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to add two numbers represented as reversed linked lists.
+   """
+
+   def addTwoNumbers(self, l1, l2):
+      """
+      Add two numbers represented by linked lists and return the sum as a linked list.
+      :type l1: ListNode
+      :type l2: ListNode
+      :rtype: ListNode
+      """
+      dummy = ListNode(0)
+      current = dummy
+      carry = 0
+
+      while l1 or l2 or carry:
+         val1 = l1.val if l1 else 0
+         val2 = l2.val if l2 else 0
+         total = val1 + val2 + carry
+         carry = total // 10
+         current.next = ListNode(total % 10)
+         current = current.next
+
+         if l1:
+            l1 = l1.next
+         if l2:
+            l2 = l2.next
+
+      return dummy.next
+
+def list_to_nodes(lst):
+   """
+   Convert a Python list to a linked list.
+   """
+   dummy = ListNode(0)
+   current = dummy
+   for val in lst:
+      current.next = ListNode(val)
+      current = current.next
+   return dummy.next
+
+def nodes_to_list(head):
+   """
+   Convert a linked list to a Python list.
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(nodes_to_list(sol.addTwoNumbers(list_to_nodes([2,4,3]), list_to_nodes([5,6,4]))))
+   print(nodes_to_list(sol.addTwoNumbers(list_to_nodes([0]), list_to_nodes([0]))))
+   print(nodes_to_list(sol.addTwoNumbers(list_to_nodes([9,9,9,9,9,9,9]), list_to_nodes([9,9,9,9]))))
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[7, 0, 8]
+[0]
+[8, 9, 9, 9, 0, 0, 0, 1]
+
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

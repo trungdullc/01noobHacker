@@ -47,8 +47,48 @@ After the search ends, we return $l$.
 The time complexity is $O(\log x)$, and the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to compute the integer square root of a non-negative integer.
+   """
+
+   def mySqrt(self, x: int) -> int:
+      """
+      Returns the square root of x rounded down to the nearest integer.
+      
+      Args:
+         x (int): A non-negative integer.
+      
+      Returns:
+         int: The integer part of the square root of x.
+      """
+      if x < 2:
+         return x
+
+      left, right = 1, x // 2
+      while left <= right:
+         mid = left + (right - left) // 2
+         if mid * mid == x:
+            return mid
+         elif mid * mid < x:
+            left = mid + 1
+         else:
+            right = mid - 1
+      return right
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.mySqrt(4))
+   print(sol.mySqrt(8))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+2
+2
 ```
 
 #### Python3

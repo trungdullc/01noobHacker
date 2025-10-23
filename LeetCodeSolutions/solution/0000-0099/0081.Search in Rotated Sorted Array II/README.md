@@ -48,8 +48,67 @@ After the binary search, if $\textit{nums}[l] = \textit{target}$, it means the t
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to determine if a target exists in a rotated sorted array
+   that may contain duplicates.
+   """
+
+   def search(self, nums: list[int], target: int) -> bool:
+      """
+      Searches for the target in a rotated sorted array with duplicates.
+
+      Args:
+         nums (list[int]): Rotated sorted array (may contain duplicates).
+         target (int): Target integer to search for.
+
+      Returns:
+         bool: True if target exists in nums, False otherwise.
+      """
+      left, right = 0, len(nums) - 1
+
+      while left <= right:
+         mid = (left + right) // 2
+
+         if nums[mid] == target:
+            return True
+
+         # Skip duplicates
+         if nums[left] == nums[mid] == nums[right]:
+            left += 1
+            right -= 1
+         # Left half is sorted
+         elif nums[left] <= nums[mid]:
+            if nums[left] <= target < nums[mid]:
+               right = mid - 1
+            else:
+               left = mid + 1
+         # Right half is sorted
+         else:
+            if nums[mid] < target <= nums[right]:
+               left = mid + 1
+            else:
+               right = mid - 1
+
+      return False
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.search([2,5,6,0,0,1,2], 0))
+   print(sol.search([2,5,6,0,0,1,2], 3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.074s
+user    0m0.030s
+sys     0m0.004s
 ```
 
 #### Python3

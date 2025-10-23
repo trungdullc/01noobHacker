@@ -50,8 +50,83 @@ Next, the `fast` pointer moves forward $n$ steps first, then `fast` and `slow` p
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class ListNode:
+   """
+   Definition for a singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to remove the nth node from the end of a linked list.
+   """
+
+   def removeNthFromEnd(self, head, n):
+      """
+      Remove the nth node from the end of the list.
+      :type head: ListNode
+      :type n: int
+      :rtype: ListNode
+      """
+      dummy = ListNode(0)
+      dummy.next = head
+      slow = fast = dummy
+
+      # Move fast n+1 steps ahead
+      for _ in range(n + 1):
+         fast = fast.next
+
+      # Move both pointers until fast reaches the end
+      while fast:
+         slow = slow.next
+         fast = fast.next
+
+      # Remove the target node
+      slow.next = slow.next.next
+
+      return dummy.next
+
+def list_to_nodes(lst):
+   """
+   Convert a Python list to a linked list.
+   """
+   dummy = ListNode(0)
+   current = dummy
+   for val in lst:
+      current.next = ListNode(val)
+      current = current.next
+   return dummy.next
+
+def nodes_to_list(head):
+   """
+   Convert a linked list to a Python list.
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(nodes_to_list(sol.removeNthFromEnd(list_to_nodes([1,2,3,4,5]), 2)))
+   print(nodes_to_list(sol.removeNthFromEnd(list_to_nodes([1]), 1)))
+   print(nodes_to_list(sol.removeNthFromEnd(list_to_nodes([1,2]), 1)))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 5]
+[]
+[1]
+
+real    0m0.061s
+user    0m0.016s
+sys     0m0.012s
 ```
 
 #### Python3

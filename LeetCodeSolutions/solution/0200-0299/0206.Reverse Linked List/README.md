@@ -46,8 +46,111 @@ We create a dummy node $\textit{dummy}$, then traverse the linked list and inser
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution class to reverse a list without using slicing.
+   """
+
+   def reverseList(self, head):
+      """
+      Reverses a list manually.
+      :type head: list[int]
+      :rtype: list[int]
+      """
+      left, right = 0, len(head) - 1
+      while left < right:
+         head[left], head[right] = head[right], head[left]
+         left += 1
+         right -= 1
+      return head
+      # return head[::-1]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.reverseList([1,2,3,4,5]))
+   print(sol.reverseList([1,2]))
+   print(sol.reverseList([]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[5, 4, 3, 2, 1]
+[2, 1]
+[]
+
+real    0m0.024s
+user    0m0.014s
+sys     0m0.009s
 ```
 
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class ListNode:
+   """
+   Definition for a singly-linked list node.
+   """
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution class to reverse a singly linked list.
+   """
+
+   def reverseList(self, head):
+      """
+      Reverses a singly linked list.
+      :type head: ListNode
+      :rtype: ListNode
+      """
+      prev = None
+      curr = head
+      while curr:
+         next_node = curr.next
+         curr.next = prev
+         prev = curr
+         curr = next_node
+      return prev
+
+def print_list(head):
+   """
+   Helper function to print linked list as a Python list.
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+   reversed_head1 = sol.reverseList(head1)
+   print(print_list(reversed_head1))
+
+   head2 = ListNode(1, ListNode(2))
+   reversed_head2 = sol.reverseList(head2)
+   print(print_list(reversed_head2))
+
+   head3 = None
+   reversed_head3 = sol.reverseList(head3)
+   print(print_list(reversed_head3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[5, 4, 3, 2, 1]
+[2, 1]
+[]
+
+real    0m0.023s
+user    0m0.023s
+sys     0m0.000s
 ```
 
 #### Python3
