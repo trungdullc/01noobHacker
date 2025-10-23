@@ -48,8 +48,37 @@ After traversing, return $\text{false}$.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+      """
+      Returns True if the array contains duplicate numbers within k distance.
+      Uses a hashmap to store the last seen index of each number.
+      """
+      index_map: dict[int, int] = {}                # num -> last index
+
+      for i, num in enumerate(nums):
+         if num in index_map and i - index_map[num] <= k:
+            return True
+         index_map[num] = i
+
+      return False
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.containsNearbyDuplicate([1,2,3,1], 3))
+   print(sol.containsNearbyDuplicate([1,0,1,1], 1))
+   print(sol.containsNearbyDuplicate([1,2,3,1,2,3], 2))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+True
+True
+False
 ```
 
 #### Python3

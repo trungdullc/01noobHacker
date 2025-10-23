@@ -64,8 +64,44 @@ For example, for the array $[1, 2, 3, 4, 5, 6, 7]$, $k = 3$, $n = 7$, $k \bmod n
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def rotate(self, nums: List[int], k: int) -> None:
+      """
+      Rotates the array nums to the right by k steps in-place.
+      Uses reversal algorithm for O(1) extra space.
+      """
+      n = len(nums)
+      k %= n
+
+      def reverse(start: int, end: int) -> None:
+         while start < end:
+            nums[start], nums[end] = nums[end], nums[start]
+            start += 1
+            end -= 1
+
+      reverse(0, n - 1)
+      reverse(0, k - 1)
+      reverse(k, n - 1)
+
+if __name__ == "__main__":
+   sol = Solution()
+   arr1 = [1,2,3,4,5,6,7]
+   sol.rotate(arr1, 3)
+   print(arr1)
+
+   arr2 = [-1,-100,3,99]
+   sol.rotate(arr2, 2)
+   print(arr2)
+   
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[5, 6, 7, 1, 2, 3, 4]
+[3, 99, -1, -100]
 ```
 
 #### Python3

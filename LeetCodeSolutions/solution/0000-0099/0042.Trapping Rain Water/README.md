@@ -38,8 +38,45 @@ We define $left[i]$ as the height of the highest bar to the left of and includin
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def trap(self, height: List[int]) -> int:
+      """
+      Returns the total amount of trapped rain water.
+      Uses two-pointer approach: keep track of max height from left and right.
+      """
+      if not height:
+         return 0
+
+      left, right = 0, len(height) - 1
+      left_max, right_max = height[left], height[right]
+      water = 0
+
+      while left < right:
+         if left_max < right_max:
+            left += 1
+            left_max = max(left_max, height[left])
+            water += max(0, left_max - height[left])
+         else:
+            right -= 1
+            right_max = max(right_max, height[right])
+            water += max(0, right_max - height[right])
+
+      return water
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.trap([0,1,0,2,1,0,1,3,2,1,2,1]))
+   print(sol.trap([4,2,0,3,2,5]))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+6
+9
 ```
 
 #### Python3

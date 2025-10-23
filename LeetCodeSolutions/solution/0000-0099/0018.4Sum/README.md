@@ -51,8 +51,59 @@ Next, we enumerate the first two elements of the quadruplet, $nums[i]$ and $nums
 The time complexity is $O(n^3)$, and the space complexity is $O(\log n)$. Here, $n$ is the length of the array.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+      """
+      Return all unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that
+      nums[a] + nums[b] + nums[c] + nums[d] == target.
+      Uses sorting and two-pointer approach to avoid duplicates efficiently.
+      """
+      nums.sort()
+      res = []
+      n = len(nums)
+
+      for i in range(n):
+         if i > 0 and nums[i] == nums[i - 1]:
+            continue
+         for j in range(i + 1, n):
+            if j > i + 1 and nums[j] == nums[j - 1]:
+               continue
+
+            left, right = j + 1, n - 1
+            while left < right:
+               total = nums[i] + nums[j] + nums[left] + nums[right]
+               if total == target:
+                  res.append([nums[i], nums[j], nums[left], nums[right]])
+                  left += 1
+                  right -= 1
+                  while left < right and nums[left] == nums[left - 1]:
+                     left += 1
+                  while left < right and nums[right] == nums[right + 1]:
+                     right -= 1
+               elif total < target:
+                  left += 1
+               else:
+                  right -= 1
+      return res
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.fourSum([1,0,-1,0,-2,2], 0))
+   print(sol.fourSum([2,2,2,2,2], 8))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+[[2, 2, 2, 2]]
+
+real    0m0.055s
+user    0m0.025s
+sys     0m0.004s
 ```
 
 #### Python3

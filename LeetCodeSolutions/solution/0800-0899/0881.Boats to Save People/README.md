@@ -48,8 +48,41 @@ After sorting, use two pointers to point to the beginning and end of the array r
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$. Here, $n$ is the length of the array `people`.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def numRescueBoats(self, people: List[int], limit: int) -> int:
+      """
+      Returns the minimum number of boats required to carry all people.
+      Uses two-pointer greedy approach: pair the lightest and heaviest person if possible.
+      """
+      people.sort()
+      left = 0
+      right = len(people) - 1
+      boats = 0
+
+      while left <= right:
+         if people[left] + people[right] <= limit:
+            left += 1
+         right -= 1
+         boats += 1
+
+      return boats
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.numRescueBoats([1,2], 3))
+   print(sol.numRescueBoats([3,2,2,1], 3))
+   print(sol.numRescueBoats([3,5,3,4], 5))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+1
+3
+4
 ```
 
 #### Python3

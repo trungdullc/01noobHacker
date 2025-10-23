@@ -69,8 +69,54 @@ After the enumeration is over, we can get the answer to the triplet.
 The time complexity is $O(n^2)$, and the space complexity is $O(\log n)$. The $n$ is the length of the array.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def threeSum(self, nums: List[int]) -> List[List[int]]:
+      """
+      Return all unique triplets [nums[i], nums[j], nums[k]] such that
+      nums[i] + nums[j] + nums[k] == 0.
+      Uses sorting and two-pointer approach to avoid duplicates efficiently.
+      """
+      nums.sort()
+      res = []
+
+      for i in range(len(nums)):
+         if i > 0 and nums[i] == nums[i - 1]:
+            continue    # skip duplicates
+         
+         left, right = i + 1, len(nums) - 1
+         while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            if total == 0:
+               res.append([nums[i], nums[left], nums[right]])
+               left += 1
+               right -= 1
+               while left < right and nums[left] == nums[left - 1]:
+                  left += 1
+               while left < right and nums[right] == nums[right + 1]:
+                  right -= 1
+            elif total < 0:
+               left += 1
+            else:
+               right -= 1
+
+      return res
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.threeSum([-1,0,1,2,-1,-4]))
+   print(sol.threeSum([0,1,1]))
+   print(sol.threeSum([0,0,0]))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[[-1, -1, 2], [-1, 0, 1]]
+[]
+[[0, 0, 0]]
 ```
 
 #### Python3

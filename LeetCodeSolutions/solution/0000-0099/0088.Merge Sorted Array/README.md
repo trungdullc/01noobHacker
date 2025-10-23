@@ -62,8 +62,51 @@ Every time we compare the two elements at the end of the two arrays, and move th
 The time complexity is $O(m + n)$, where $m$ and $n$ are the lengths of two arrays. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+      """
+      Merge two sorted arrays nums1 and nums2 into nums1 in-place.
+      Starts filling from the end to avoid overwriting elements in nums1.
+      """
+      i, j, k = m - 1, n - 1, m + n - 1
+      while i >= 0 and j >= 0:
+         if nums1[i] > nums2[j]:
+            nums1[k] = nums1[i]
+            i -= 1
+         else:
+            nums1[k] = nums2[j]
+            j -= 1
+         k -= 1
+      # Copy remaining elements from nums2 if any
+      while j >= 0:
+         nums1[k] = nums2[j]
+         j -= 1
+         k -= 1
+
+if __name__ == "__main__":
+   sol = Solution()
+   nums1 = [1,2,3,0,0,0]
+   sol.merge(nums1, 3, [2,5,6], 3)
+   print(nums1)
+
+   nums1 = [1]
+   sol.merge(nums1, 1, [], 0)
+   print(nums1)
+
+   nums1 = [0]
+   sol.merge(nums1, 0, [1], 1)
+   print(nums1)
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[1, 2, 2, 3, 5, 6]
+[1]
+[1]
 ```
 
 #### Python3

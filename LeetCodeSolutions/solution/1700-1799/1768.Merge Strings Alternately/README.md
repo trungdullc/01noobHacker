@@ -63,15 +63,11 @@ merged: a p b q c   d
 </pre>
 
 <p>&nbsp;</p>
-
 <p><strong>Constraints:</strong></p>
 
 <ul>
-
     <li><code>1 &lt;= word1.length, word2.length &lt;= 100</code></li>
-
     <li><code>word1</code> and <code>word2</code> consist of lowercase English letters.</li>
-
 </ul>
 
 ## Solutions
@@ -83,8 +79,38 @@ We traverse the two strings `word1` and `word2`, take out the characters one by 
 The time complexity is $O(m + n)$, where $m$ and $n$ are the lengths of the two strings respectively. Ignoring the space consumption of the answer, the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def mergeAlternately(self, word1: str, word2: str) -> str:
+      """
+      Merge two strings by adding letters in alternating order, starting with word1.
+      If one string is longer, append the remaining characters at the end.
+      """
+      merged = []
+      i, j = 0, 0
+      while i < len(word1) and j < len(word2):
+         merged.append(word1[i])
+         merged.append(word2[j])
+         i += 1
+         j += 1
+      # Append remaining characters if any
+      merged.append(word1[i:])
+      merged.append(word2[j:])
+      return ''.join(merged)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.mergeAlternately("abc", "pqr"))
+   print(sol.mergeAlternately("ab", "pqrs"))
+   print(sol.mergeAlternately("abcd", "pq"))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+apbqcr
+apbqrs
+apbqcd
 ```
 
 #### Python3

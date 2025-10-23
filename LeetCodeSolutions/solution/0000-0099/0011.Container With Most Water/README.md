@@ -50,8 +50,42 @@ After the iteration, we return $\textit{ans}$.
 The time complexity is $O(n)$, where $n$ is the length of the array $\textit{height}$. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def maxArea(self, height: List[int]) -> int:
+      """
+      Returns the maximum area of water a container can store.
+      Uses two-pointer approach for O(n) time and O(1) space.
+      """
+      left = 0
+      right = len(height) - 1
+      max_area = 0
+
+      while left < right:
+         width = right - left
+         current_height = min(height[left], height[right])
+         max_area = max(max_area, width * current_height)
+
+         if height[left] < height[right]:
+            left += 1
+         else:
+            right -= 1
+
+      return max_area
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.maxArea([1,8,6,2,5,4,8,3,7]))
+   print(sol.maxArea([1,1]))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+49
+1
 ```
 
 #### Python3

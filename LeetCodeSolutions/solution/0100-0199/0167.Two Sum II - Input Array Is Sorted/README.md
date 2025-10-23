@@ -55,8 +55,41 @@ Note that the array is sorted in non-decreasing order, so for each `numbers[i]`,
 The time complexity is $O(n \times \log n)$, where $n$ is the length of the array `numbers`. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def twoSum(self, numbers: List[int], target: int) -> List[int]:
+      """
+      Find two numbers in a sorted array that sum up to target.
+      Uses two pointers starting from the beginning and end for O(n) time and O(1) space.
+      Returns 1-indexed positions as [index1, index2].
+      """
+      left, right = 0, len(numbers) - 1
+      while left < right:
+         curr_sum = numbers[left] + numbers[right]
+         if curr_sum == target:
+            return [left + 1, right + 1]
+         elif curr_sum < target:
+            left += 1
+         else:
+            right -= 1
+      return []  # Should never happen per problem constraints
+
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.twoSum([2,7,11,15], 9))
+   print(sol.twoSum([2,3,4], 6))
+   print(sol.twoSum([-1,0], -1))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[1, 2]
+[1, 3]
+[1, 2]
 ```
 
 #### Python3
