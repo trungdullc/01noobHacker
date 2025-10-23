@@ -61,8 +61,49 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def evalRPN(self, tokens):
+      """
+      Evaluate the value of an arithmetic expression in Reverse Polish Notation.
+      Supports '+', '-', '*', '/' operators. Division truncates toward zero.
+      """
+      stack = []
+
+      for token in tokens:
+         if token in "+-*/":
+            b = stack.pop()
+            a = stack.pop()
+            if token == '+':
+               stack.append(a + b)
+            elif token == '-':
+               stack.append(a - b)
+            elif token == '*':
+               stack.append(a * b)
+            else:                               # division
+               stack.append(int(a / b))         # truncate toward zero
+         else:
+            stack.append(int(token))
+
+      return stack[0] if stack else 0
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.evalRPN(["2","1","+","3","*"]))
+   print(sol.evalRPN(["4","13","5","/","+"]))
+   print(sol.evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+9
+6
+22
+
+real    0m0.048s
+user    0m0.020s
+sys     0m0.007s
 ```
 
 #### Python3

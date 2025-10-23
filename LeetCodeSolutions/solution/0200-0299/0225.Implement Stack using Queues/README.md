@@ -64,9 +64,70 @@ We use two queues $q_1$ and $q_2$, where $q_1$ is used to store the elements in 
 
 The space complexity is $O(n)$, where $n$ is the number of elements in the stack.
 
-#### Du Solution: Python3
+#### Neetcode Solution
 ```
 
+```
+
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from collections import deque
+
+class MyStack:
+   def __init__(self):
+      """
+      Initialize your data structure here using two queues.
+      """
+      self.q1 = deque()
+      self.q2 = deque()
+
+   def push(self, x: int) -> None:
+      """
+      Push element x onto stack.
+      """
+      self.q2.append(x)
+      # Move all elements from q1 to q2 to maintain LIFO order
+      while self.q1:
+         self.q2.append(self.q1.popleft())
+      # Swap q1 and q2
+      self.q1, self.q2 = self.q2, self.q1
+
+   def pop(self) -> int:
+      """
+      Removes the element on top of the stack and returns it.
+      """
+      return self.q1.popleft()
+
+   def top(self) -> int:
+      """
+      Get the top element.
+      """
+      return self.q1[0]
+
+   def empty(self) -> bool:
+      """
+      Returns whether the stack is empty.
+      """
+      return not self.q1
+
+if __name__ == "__main__":
+   stack = MyStack()
+   stack.push(1)
+   stack.push(2)
+   print(stack.top())
+   print(stack.pop())
+   print(stack.empty())
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+2
+False
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

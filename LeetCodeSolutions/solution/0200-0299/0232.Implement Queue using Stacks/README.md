@@ -65,9 +65,75 @@ When getting the front element, we first check whether `stk2` is empty. If it is
 
 When checking whether the queue is empty, we only need to check whether both stacks are empty. The time complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Neetcode Solution
 ```
 
+```
+
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class MyQueue:
+   def __init__(self):
+      """
+      Initialize your data structure here using two stacks.
+      """
+      self.in_stack = []
+      self.out_stack = []
+
+   def push(self, x: int) -> None:
+      """
+      Push element x to the back of queue.
+      """
+      self.in_stack.append(x)
+
+   def pop(self) -> int:
+      """
+      Removes the element from in front of queue and returns it.
+      """
+      self.move()
+      return self.out_stack.pop()
+
+   def peek(self) -> int:
+      """
+      Get the front element.
+      """
+      self.move()
+      return self.out_stack[-1]
+
+   def empty(self) -> bool:
+      """
+      Returns whether the queue is empty.
+      """
+      return not self.in_stack and not self.out_stack
+
+   def move(self) -> None:
+      """
+      Move elements from in_stack to out_stack if out_stack is empty.
+      This reverses order to simulate FIFO queue behavior.
+      """
+      if not self.out_stack:
+         while self.in_stack:
+            self.out_stack.append(self.in_stack.pop())
+
+if __name__ == "__main__":
+   queue = MyQueue()
+   queue.push(1)
+   queue.push(2)
+   print(queue.peek())
+   print(queue.pop())
+   print(queue.empty())
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+1
+False
+
+real    0m0.025s
+user    0m0.012s
+sys     0m0.013s
 ```
 
 #### Python3

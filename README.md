@@ -826,7 +826,7 @@ https://github.com/Adamkadaban/CTFs/tree/master
 
 #### LeetCode
 ```
-ChatGPT: 3-space indentation style, shebang, class, docstring, and main test block
+ChatGPT: write in python, 3-space indentation style, shebang, class, docstring, and main test block (exclude results comments in main) and call sol = Solution and have each example in seperate call
 
 AsianHacker-picoctf@webshell:/tmp$ grep -E '^class ' pythonScript.py
 class Solution

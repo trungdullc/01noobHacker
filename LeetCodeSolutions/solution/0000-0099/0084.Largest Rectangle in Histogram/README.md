@@ -48,8 +48,51 @@ for i in range(n):
 ```
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to compute the largest rectangle area in a histogram.
+   """
+
+   def largestRectangleArea(self, heights: list[int]) -> int:
+      """
+      Computes the area of the largest rectangle in the histogram.
+      
+      Args:
+         heights (list[int]): List of bar heights.
+      
+      Returns:
+         int: The area of the largest rectangle.
+      """
+      stack = []
+      max_area = 0
+      heights.append(0)                     # Sentinel to pop all remaining bars
+
+      for i, h in enumerate(heights):
+         while stack and heights[stack[-1]] > h:
+            height = heights[stack.pop()]
+            width = i if not stack else i - stack[-1] - 1
+            max_area = max(max_area, height * width)
+         stack.append(i)
+
+      return max_area
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.largestRectangleArea([2,1,5,6,2,3]))
+   print(sol.largestRectangleArea([2,4]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+10
+4
+
+real    0m0.024s
+user    0m0.008s
+sys     0m0.015s
 ```
 
 #### Python3

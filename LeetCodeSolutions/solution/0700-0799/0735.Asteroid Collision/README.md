@@ -56,8 +56,46 @@ Finally, we return the elements in the stack as the answer.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the length of the array $asteroids$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def asteroidCollision(self, asteroids):
+      """
+      Simulate collisions of asteroids.
+      Positive values move right, negative values move left.
+      Use a stack to resolve collisions in order.
+      """
+      stack = []
+
+      for ast in asteroids:
+         while stack and ast < 0 < stack[-1]:
+            if stack[-1] < -ast:
+               stack.pop()
+               continue
+            elif stack[-1] == -ast:
+               stack.pop()
+            break
+         else:
+            stack.append(ast)
+
+      return stack
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.asteroidCollision([5,10,-5]))
+   print(sol.asteroidCollision([8,-8]))
+   print(sol.asteroidCollision([10,2,-5]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[5, 10]
+[]
+[10]
+
+real    0m0.025s
+user    0m0.016s
+sys     0m0.008s
 ```
 
 #### Python3

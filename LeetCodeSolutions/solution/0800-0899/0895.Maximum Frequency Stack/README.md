@@ -62,8 +62,72 @@ When performing a push operation, we first increment the current timestamp, i.e.
 When performing a pop operation, we directly pop an element from the priority queue $q$. Since the elements in the priority queue $q$ are sorted in descending order of frequency, the popped element is definitely the one with the highest frequency. If multiple elements have the same frequency, the element closest to the top of the stack is popped out, i.e., the element with the largest timestamp is popped out. After popping, we decrement the frequency of the popped element, i.e., $cnt[val] \gets cnt[val] - 1$. The time complexity of the pop operation is $O(\log n)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from collections import defaultdict
+
+class FreqStack:
+   """
+   A stack-like data structure that supports pushing elements and
+   popping the most frequent element. If multiple elements have the
+   same frequency, the one closest to the top is popped first.
+   """
+
+   def __init__(self):
+      """
+      Initializes an empty FreqStack.
+      """
+      self.freq = defaultdict(int)       # Tracks frequency of each element
+      self.group = defaultdict(list)     # Maps frequency to elements with that frequency
+      self.max_freq = 0                  # Tracks current maximum frequency
+
+   def push(self, val: int) -> None:
+      """
+      Pushes an integer val onto the top of the stack.
+      """
+      self.freq[val] += 1
+      f = self.freq[val]
+      if f > self.max_freq:
+         self.max_freq = f
+      self.group[f].append(val)
+
+   def pop(self) -> int:
+      """
+      Removes and returns the most frequent element from the stack.
+      If there is a tie, returns the element closest to the stack's top.
+      """
+      val = self.group[self.max_freq].pop()
+      self.freq[val] -= 1
+      if not self.group[self.max_freq]:
+         self.max_freq -= 1
+      return val
+
+if __name__ == "__main__":
+   freqStack = FreqStack()
+   
+   freqStack.push(5)
+   freqStack.push(7)
+   freqStack.push(5)
+   freqStack.push(7)
+   freqStack.push(4)
+   freqStack.push(5)
+
+   print(freqStack.pop())
+   print(freqStack.pop())
+   print(freqStack.pop())
+   print(freqStack.pop())
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+5
+7
+5
+4
+
+real    0m0.031s
+user    0m0.020s
+sys     0m0.008s
 ```
 
 #### Python3

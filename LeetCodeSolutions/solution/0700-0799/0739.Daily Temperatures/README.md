@@ -36,8 +36,42 @@ After the traversal, we return the answer array.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{temperatures}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def dailyTemperatures(self, temperatures):
+      """
+      Return an array where each element represents the number of days
+      until a warmer temperature occurs. Use a monotonic decreasing stack.
+      """
+      n = len(temperatures)
+      answer = [0] * n
+      stack = []  # stores indices of temperatures
+
+      for i, temp in enumerate(temperatures):
+         while stack and temperatures[stack[-1]] < temp:
+            idx = stack.pop()
+            answer[idx] = i - idx
+         stack.append(i)
+
+      return answer
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.dailyTemperatures([73,74,75,71,69,72,76,73]))
+   print(sol.dailyTemperatures([30,40,50,60]))
+   print(sol.dailyTemperatures([30,60,90]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 1, 4, 2, 1, 1, 0, 0]
+[1, 1, 1, 0]
+[1, 1, 0]
+
+real    0m0.023s
+user    0m0.022s
+sys     0m0.001s
 ```
 
 #### Python3

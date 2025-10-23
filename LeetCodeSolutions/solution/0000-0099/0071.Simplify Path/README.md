@@ -109,8 +109,58 @@ Finally, we concatenate all the elements in the stack from the bottom to the top
 The time complexity is $O(n)$ and the space complexity is $O(n)$, where $n$ is the length of the path.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to simplify Unix-style absolute file paths into their canonical form.
+   """
+
+   def simplifyPath(self, path: str) -> str:
+      """
+      Simplifies the given absolute Unix-style path.
+      
+      Args:
+         path (str): The absolute path to simplify.
+      
+      Returns:
+         str: The simplified canonical path.
+      """
+      stack = []
+      parts = path.split('/')
+
+      for part in parts:
+         if part == '' or part == '.':
+            continue
+         elif part == '..':
+            if stack:
+               stack.pop()
+         else:
+            stack.append(part)
+
+      return '/' + '/'.join(stack)
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.simplifyPath("/home/"))
+   print(sol.simplifyPath("/home//foo/"))
+   print(sol.simplifyPath("/home/user/Documents/../Pictures"))
+   print(sol.simplifyPath("/../"))
+   print(sol.simplifyPath("/.../a/../b/c/../d/./"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+/home
+/home/foo
+/home/user/Pictures
+/
+/.../b/d
+
+real    0m0.027s
+user    0m0.018s
+sys     0m0.008s
 ```
 
 #### Python3

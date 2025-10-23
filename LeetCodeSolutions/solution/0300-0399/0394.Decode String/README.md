@@ -47,8 +47,59 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   A class to decode strings encoded with the pattern k[encoded_string].
+   """
+
+   def decodeString(self, s: str) -> str:
+      """
+      Decodes the given encoded string.
+      
+      Args:
+         s (str): The encoded string.
+      
+      Returns:
+         str: The decoded string.
+      """
+      stack = []
+      current_num = 0
+      current_str = ""
+
+      for char in s:
+         if char.isdigit():
+            current_num = current_num * 10 + int(char)
+         elif char == '[':
+            stack.append((current_str, current_num))
+            current_str = ""
+            current_num = 0
+         elif char == ']':
+            prev_str, num = stack.pop()
+            current_str = prev_str + current_str * num
+         else:
+            current_str += char
+
+      return current_str
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.decodeString("3[a]2[bc]"))
+   print(sol.decodeString("3[a2[c]]"))
+   print(sol.decodeString("2[abc]3[cd]ef"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+aaabcbc
+accaccacc
+abcabccdcdcdef
+
+real    0m0.023s
+user    0m0.023s
+sys     0m0.001s
 ```
 
 #### Python3

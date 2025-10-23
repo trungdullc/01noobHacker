@@ -68,8 +68,45 @@ At the end of the traversal, if the stack is empty, it means the bracket string 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the bracket string $s$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def isValid(self, s: str) -> bool:
+      """
+      Check if the input string s containing parentheses is valid.
+      Valid if all open brackets are closed in the correct order and type.
+      """
+      stack = []
+      mapping = {')': '(', '}': '{', ']': '['}
+
+      for char in s:
+         if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+               return False
+         else:
+            stack.append(char)
+
+      return not stack
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.isValid("()"))
+   print(sol.isValid("()[]{}"))
+   print(sol.isValid("(]"))
+   print(sol.isValid("([])"))
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+False
+True
+
+real    0m0.038s
+user    0m0.014s
+sys     0m0.008s
 ```
 
 #### Python3

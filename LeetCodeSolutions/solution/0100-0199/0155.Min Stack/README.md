@@ -51,9 +51,71 @@ minStack.getMin(); // return -2
 
 ### Solution 1
 
-#### Du Solution: Python3
+#### Neetcode Solution
 ```
 
+```
+
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class MinStack:
+   def __init__(self):
+      """
+      Initialize your data structure here.
+      """
+      self.stack = []
+      self.min_stack = []
+
+   def push(self, val: int) -> None:
+      """
+      Push element val onto stack and update minimum stack.
+      """
+      self.stack.append(val)
+      if not self.min_stack or val <= self.min_stack[-1]:
+         self.min_stack.append(val)
+
+   def pop(self) -> None:
+      """
+      Remove the element on top of the stack.
+      """
+      if self.stack:
+         val = self.stack.pop()
+         if val == self.min_stack[-1]:
+            self.min_stack.pop()
+
+   def top(self) -> int:
+      """
+      Get the top element.
+      """
+      return self.stack[-1] if self.stack else None
+
+   def getMin(self) -> int:
+      """
+      Retrieve the minimum element in the stack.
+      """
+      return self.min_stack[-1] if self.min_stack else None
+
+if __name__ == "__main__":
+   minStack = MinStack()
+   minStack.push(-2)
+   minStack.push(0)
+   minStack.push(-3)
+   print(minStack.getMin())
+   minStack.pop()
+   print(minStack.top())
+   print(minStack.getMin())
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+-3
+0
+-2
+
+real    0m0.024s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

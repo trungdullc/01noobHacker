@@ -73,8 +73,42 @@ There is only one car, hence there is only one fleet.</div>
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def carFleet(self, target: int, position: list[int], speed: list[int]) -> int:
+      """
+      Return the number of car fleets that will arrive at the destination.
+      """
+      # Pair each car's position with its time to reach the target
+      cars = sorted(zip(position, speed), reverse=True)
+      times = [(target - pos) / spd for pos, spd in cars]
+      
+      fleets = 0
+      while times:
+         lead = times.pop(0)  # Time for the car closest to the target
+         # Any car behind that takes less or equal time joins this fleet
+         while times and times[0] <= lead:
+            times.pop(0)
+         fleets += 1
+      return fleets
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.carFleet(12, [10,8,0,5,3], [2,4,1,1,3]))
+   print(sol.carFleet(10, [3], [3]))
+   print(sol.carFleet(100, [0,2,4], [4,2,1]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+1
+1
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.004s
 ```
 
 #### Python3

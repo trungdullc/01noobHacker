@@ -35,8 +35,42 @@ We design a function $dfs(l, r, t)$, where $l$ and $r$ represent the number of l
 The time complexity is $O(2^{n\times 2} \times n)$, and the space complexity is $O(n)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def generateParenthesis(self, n):
+      """
+      Generate all combinations of well-formed parentheses for n pairs.
+      Uses backtracking to explore valid sequences.
+      """
+      result = []
+
+      def backtrack(s='', left=0, right=0):
+         if len(s) == 2 * n:
+            result.append(s)
+            return
+         if left < n:
+            backtrack(s + '(', left + 1, right)
+         if right < left:
+            backtrack(s + ')', left, right + 1)
+
+      backtrack()
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.generateParenthesis(3))
+   print(sol.generateParenthesis(1))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+['((()))', '(()())', '(())()', '()(())', '()()()']
+['()']
+
+real    0m0.026s
+user    0m0.021s
+sys     0m0.005s
 ```
 
 #### Python3

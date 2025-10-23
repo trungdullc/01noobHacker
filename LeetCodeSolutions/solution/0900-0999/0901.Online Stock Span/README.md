@@ -64,8 +64,50 @@ Finally, we push $(price, cnt)$ onto the stack and return $cnt$.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of times `next(price)` is called.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class StockSpanner:
+   def __init__(self):
+      """
+      Initialize a stack to store pairs (price, span).
+      """
+      self.stack = []
+
+   def next(self, price: int) -> int:
+      """
+      Return the stock span for the given price.
+      Use a monotonic decreasing stack to efficiently compute spans.
+      """
+      span = 1
+      while self.stack and self.stack[-1][0] <= price:
+         span += self.stack.pop()[1]
+      self.stack.append((price, span))
+      return span
+
+if __name__ == "__main__":
+   stockSpanner = StockSpanner()
+   print(stockSpanner.next(100))
+   print(stockSpanner.next(80))
+   print(stockSpanner.next(60))
+   print(stockSpanner.next(70))
+   print(stockSpanner.next(60))
+   print(stockSpanner.next(75))
+   print(stockSpanner.next(85))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+1
+1
+2
+1
+4
+6
+
+real    0m0.073s
+user    0m0.026s
+sys     0m0.003s
 ```
 
 #### Python3

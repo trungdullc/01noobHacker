@@ -106,8 +106,48 @@ Finally, sum all the elements in the stack to get the answer.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of $\textit{operations}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+   def calPoints(self, ops: List[str]) -> int:
+      """
+      Calculate the total score after performing a list of operations:
+      - Integer x: record a new score x
+      - '+': sum of previous two scores
+      - 'D': double the previous score
+      - 'C': remove the previous score
+      """
+      stack = []
+
+      for op in ops:
+         if op == '+':
+            stack.append(stack[-1] + stack[-2])
+         elif op == 'D':
+            stack.append(2 * stack[-1])
+         elif op == 'C':
+            stack.pop()
+         else:
+            stack.append(int(op))
+
+      return sum(stack)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.calPoints(["5","2","C","D","+"]))
+   print(sol.calPoints(["5","-2","4","C","D","9","+","+"]))
+   print(sol.calPoints(["1","C"]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+30
+27
+0
+
+real    0m0.029s
+user    0m0.025s
+sys     0m0.004s
 ```
 
 #### Python3
