@@ -46,8 +46,44 @@ Finally, the answer is $n - l$, where $n$ is the length of the string.
 The time complexity is $O(n)$, and the space complexity is $O(|\Sigma|)$. Where $n$ is the length of the string, and $|\Sigma|$ is the size of the character set. In this problem, the character set is uppercase English letters, so $|\Sigma| = 26$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from collections import defaultdict
 
+class Solution:
+   def characterReplacement(self, s: str, k: int) -> int:
+      """
+      Returns the length of the longest substring where you can replace
+      at most k characters to make all characters in the substring the same.
+      Uses sliding window with a hashmap to count characters.
+      """
+      count = defaultdict(int)
+      max_count = 0  # max frequency of a single character in current window
+      left = 0
+      max_len = 0
+
+      for right, char in enumerate(s):
+         count[char] += 1
+         max_count = max(max_count, count[char])
+
+         # If window size minus max_count > k, shrink from left
+         while (right - left + 1) - max_count > k:
+            count[s[left]] -= 1
+            left += 1
+
+         max_len = max(max_len, right - left + 1)
+
+      return max_len
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.characterReplacement("ABAB", 2))
+   print(sol.characterReplacement("AABABBA", 1))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+4
+4
 ```
 
 #### Python3

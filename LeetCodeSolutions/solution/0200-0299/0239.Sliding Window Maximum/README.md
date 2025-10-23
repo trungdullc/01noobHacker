@@ -50,8 +50,53 @@ First, add the first $k-1$ elements to the priority queue. Then, starting from t
 The time complexity is $O(n \times \log k)$, and the space complexity is $O(k)$. Here, $n$ is the length of the array.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from collections import deque
+from typing import List
 
+class Solution:
+   def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+      """
+      Returns a list of the maximums in each sliding window of size k.
+      Uses a deque to maintain indices of elements in decreasing order.
+      """
+      if not nums or k == 0:
+         return []
+
+      deq = deque()
+      result = []
+
+      for i in range(len(nums)):
+         # Remove indices outside the current window
+         while deq and deq[0] < i - k + 1:
+            deq.popleft()
+
+         # Remove smaller elements from the back
+         while deq and nums[i] > nums[deq[-1]]:
+            deq.pop()
+
+         deq.append(i)
+
+         # Append current max to result starting from when first window is full
+         if i >= k - 1:
+            result.append(nums[deq[0]])
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3))
+   print(sol.maxSlidingWindow([1], 1))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[3, 3, 5, 5, 6, 7]
+[1]
+
+real    0m0.094s
+user    0m0.021s
+sys     0m0.009s
 ```
 
 #### Python3

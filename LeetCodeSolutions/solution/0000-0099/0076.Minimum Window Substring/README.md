@@ -63,8 +63,64 @@ After the traversal, if no minimum window substring is found, return an empty st
 The time complexity is $O(m + n)$, and the space complexity is $O(|\Sigma|)$. Here, $m$ and $n$ are the lengths of strings $s$ and $t$, respectively; and $|\Sigma|$ is the size of the character set, which is $128$ in this problem.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from collections import Counter
 
+class Solution:
+   def minWindow(self, s: str, t: str) -> str:
+      """
+      Returns the minimum window in s which contains all characters of t.
+      Uses sliding window with character count tracking.
+      """
+      if not s or not t:
+         return ""
+
+      dict_t = Counter(t)
+      required = len(dict_t)
+      l, r = 0, 0
+      formed = 0
+      window_counts = {}
+      ans = float("inf"), None, None  # window length, left, right
+
+      while r < len(s):
+         char = s[r]
+         window_counts[char] = window_counts.get(char, 0) + 1
+
+         if char in dict_t and window_counts[char] == dict_t[char]:
+            formed += 1
+
+         while l <= r and formed == required:
+            char = s[l]
+
+            if r - l + 1 < ans[0]:
+               ans = (r - l + 1, l, r)
+
+            window_counts[char] -= 1
+            if char in dict_t and window_counts[char] < dict_t[char]:
+               formed -= 1
+
+            l += 1
+
+         r += 1
+
+      return "" if ans[0] == float("inf") else s[ans[1]:ans[2]+1]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.minWindow("ADOBECODEBANC", "ABC"))
+   print(sol.minWindow("a", "a"))
+   print(sol.minWindow("a", "aa"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+BANC
+a
+
+
+real    0m0.046s
+user    0m0.021s
+sys     0m0.010s
 ```
 
 #### Python3

@@ -47,8 +47,40 @@ Finally, return the answer.
 The time complexity is $O(n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+``` python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+   def maxProfit(self, prices: List[int]) -> int:
+      """
+      Returns the maximum profit from buying and selling a stock once.
+      Tracks the minimum price seen so far and computes profit at each step.
+      """
+      if not prices:
+         return 0
+
+      min_price = prices[0]
+      max_profit = 0
+
+      for price in prices:
+         if price < min_price:
+            min_price = price
+         elif price - min_price > max_profit:
+            max_profit = price - min_price
+
+      return max_profit
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.maxProfit([7,1,5,3,6,4]))
+   print(sol.maxProfit([7,6,4,3,1]))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+5
+0
 ```
 
 #### Python3

@@ -43,8 +43,50 @@ Otherwise, if the traversal ends without finding a valid substring, we return $\
 The time complexity is $O(m + n)$, where $m$ and $n$ are the lengths of strings $\textit{s1}$ and $\textit{s2}$, respectively. The space complexity is $O(|\Sigma|)$, where $\Sigma$ is the character set. In this problem, the character set is lowercase letters, so the space complexity is constant.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from collections import Counter
 
+class Solution:
+   def checkInclusion(self, s1: str, s2: str) -> bool:
+      """
+      Returns True if s2 contains a permutation of s1 as a substring.
+      Uses sliding window and character count comparison.
+      """
+      len1, len2 = len(s1), len(s2)
+      if len1 > len2:
+         return False
+
+      count1 = Counter(s1)
+      count2 = Counter(s2[:len1])
+
+      if count1 == count2:
+         return True
+
+      for i in range(len1, len2):
+         count2[s2[i]] += 1                # add new character
+         count2[s2[i - len1]] -= 1         # remove oldest character in window
+         if count2[s2[i - len1]] == 0:
+            del count2[s2[i - len1]]       # clean up zero count
+
+         if count1 == count2:
+            return True
+
+      return False
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.checkInclusion("ab", "eidbaooo"))
+   print(sol.checkInclusion("ab", "eidboaoo"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.025s
+user    0m0.020s
+sys     0m0.004s
 ```
 
 #### Python3

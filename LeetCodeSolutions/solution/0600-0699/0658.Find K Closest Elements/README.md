@@ -43,8 +43,39 @@
 ### Solution 1: Sort
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+   def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+      """
+      Returns k closest integers to x in arr.
+      Uses two pointers to shrink the window from both ends until its size is k.
+      """
+      left, right = 0, len(arr) - 1
+
+      while right - left + 1 > k:
+         if abs(arr[left] - x) > abs(arr[right] - x):
+            left += 1
+         else:
+            right -= 1
+
+      return arr[left:right+1]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.findClosestElements([1,2,3,4,5], 4, 3))
+   print(sol.findClosestElements([1,1,2,3,4,5], 4, -1))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 4]
+[1, 1, 2, 3]
+
+real    0m0.085s
+user    0m0.017s
+sys     0m0.012s
 ```
 
 #### Python3

@@ -52,8 +52,42 @@ Finally, if $ans \leq n$, it means that there exists a subarray that satisfies t
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $nums$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+   def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+      """
+      Returns the minimal length of a contiguous subarray whose sum >= target.
+      Uses a sliding window approach in O(n) time and O(1) space.
+      """
+      n = len(nums)
+      left = 0
+      curr_sum = 0
+      min_len = float('inf')
+
+      for right in range(n):
+         curr_sum += nums[right]                 # expand the window
+
+         while curr_sum >= target:               # shrink from left
+            min_len = min(min_len, right - left + 1)
+            curr_sum -= nums[left]
+            left += 1
+
+      return 0 if min_len == float('inf') else min_len
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.minSubArrayLen(7, [2,3,1,2,4,3]))
+   print(sol.minSubArrayLen(4, [1,4,4]))
+   print(sol.minSubArrayLen(11, [1,1,1,1,1,1,1,1]))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+2
+1
+0
 ```
 
 #### Python3

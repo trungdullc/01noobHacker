@@ -51,8 +51,39 @@ Finally, we return the answer $\textit{ans}$.
 The time complexity is $O(n)$, where $n$ is the length of the string. The space complexity is $O(|\Sigma|)$, where $\Sigma$ represents the character set, and the size of $\Sigma$ is $128$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   def lengthOfLongestSubstring(self, s: str) -> int:
+      """
+      Returns the length of the longest substring without repeating characters.
+      Uses a sliding window with a set to track characters in the current substring.
+      """
+      char_set = set()
+      left = 0
+      max_len = 0
+
+      for right, char in enumerate(s):
+         while char in char_set:
+            char_set.remove(s[left])
+            left += 1
+         char_set.add(char)
+         max_len = max(max_len, right - left + 1)
+
+      return max_len
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.lengthOfLongestSubstring("abcabcbb"))
+   print(sol.lengthOfLongestSubstring("bbbbb"))
+   print(sol.lengthOfLongestSubstring("pwwkew"))
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+3
+1
+3
 ```
 
 #### Python3
