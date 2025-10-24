@@ -32,8 +32,45 @@ If no overlap is found by the end of the iteration, we return `true`.
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$, where $n$ is the number of meetings.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Meeting Rooms problem.
+   """
+   def canAttendMeetings(self, intervals: list[list[int]]) -> bool:
+      """
+      Determine if a person can attend all meetings without overlaps.
+      
+      Args:
+         intervals (list[list[int]]): List of meeting intervals [start, end].
+      
+      Returns:
+         bool: True if all meetings can be attended, False otherwise.
+      """
+      # Sort intervals by start time
+      intervals.sort(key=lambda x: x[0])
+
+      for i in range(1, len(intervals)):
+         if intervals[i][0] < intervals[i - 1][1]:
+            return False
+
+      return True
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.canAttendMeetings([[0,30],[5,10],[15,20]]))
+   print(sol.canAttendMeetings([[7,10],[2,4]]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+False
+True
+
+real    0m0.023s
+user    0m0.014s
+sys     0m0.009s
 ```
 
 #### Python3

@@ -33,8 +33,54 @@ Next, we calculate the prefix sum of the difference array and find the maximum v
 The time complexity is $O(n + m)$ and the space complexity is $O(m)$, where $n$ is the number of meetings and $m$ is the maximum end time.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class Solution:
+   """
+   Solution for the Meeting Rooms II problem.
+   """
+   def minMeetingRooms(self, intervals: list[list[int]]) -> int:
+      """
+      Return the minimum number of conference rooms required to host all meetings.
+      
+      Args:
+         intervals (list[list[int]]): List of meeting intervals [start, end].
+      
+      Returns:
+         int: Minimum number of rooms required.
+      """
+      if not intervals:
+         return 0
+
+      # Sort intervals by start time
+      intervals.sort(key=lambda x: x[0])
+
+      # Min-heap to track end times of ongoing meetings
+      heap = []
+
+      for interval in intervals:
+         if heap and heap[0] <= interval[0]:
+            heapq.heappop(heap)
+         heapq.heappush(heap, interval[1])
+
+      return len(heap)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.minMeetingRooms([[0,30],[5,10],[15,20]]))
+   print(sol.minMeetingRooms([[7,10],[2,4]]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+1
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

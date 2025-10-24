@@ -53,8 +53,51 @@ Therefore, you can&#39;t travel around the circuit once no matter where you star
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+    def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
+        """
+        Determines the starting gas station index from which a car can complete a
+        circular route.
+
+        Parameters:
+            gas (List[int]): Amount of gas at each station.
+            cost (List[int]): Gas cost to travel to the next station.
+
+        Returns:
+            int: The starting station index if the circuit can be completed,
+                 otherwise -1.
+        """
+        total_gas = 0
+        tank = 0
+        start = 0
+        for i in range(len(gas)):
+            diff = gas[i] - cost[i]
+            total_gas += diff
+            tank += diff
+            if tank < 0:
+                start = i + 1
+                tank = 0
+
+        return start if total_gas >= 0 else -1
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]))
+    print(sol.canCompleteCircuit([2,3,4], [3,4,3]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+-1
+
+real    0m0.080s
+user    0m0.016s
+sys     0m0.012s
 ```
 
 #### Python3

@@ -56,8 +56,54 @@ Finally, we return $\textit{ans}$.
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$, where $n$ is the number of intervals.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Non-overlapping Intervals problem.
+   """
+   def eraseOverlapIntervals(self, intervals: list[list[int]]) -> int:
+      """
+      Return the minimum number of intervals to remove to make the rest non-overlapping.
+      
+      Args:
+         intervals (list[list[int]]): List of intervals [start, end].
+      
+      Returns:
+         int: Minimum number of intervals to remove.
+      """
+      if not intervals:
+         return 0
+
+      # Sort intervals by end time
+      intervals.sort(key=lambda x: x[1])
+      count = 0
+      end = float('-inf')
+
+      for interval in intervals:
+         if interval[0] >= end:
+            end = interval[1]
+         else:
+            count += 1
+
+      return count
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.eraseOverlapIntervals([[1,2],[2,3],[3,4],[1,3]]))
+   print(sol.eraseOverlapIntervals([[1,2],[1,2],[1,2]]))
+   print(sol.eraseOverlapIntervals([[1,2],[2,3]]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+2
+0
+
+real    0m0.024s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

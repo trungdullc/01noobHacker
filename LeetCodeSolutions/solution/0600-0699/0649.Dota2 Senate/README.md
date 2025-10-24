@@ -64,8 +64,59 @@ Finally, when there are only senators from one faction left in the queues, the s
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of senators.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from collections import deque
+
+class Solution:
+    def predictPartyVictory(self, senate: str) -> str:
+        """
+        Predicts which party will finally announce victory in the Dota2 Senate.
+
+        Parameters:
+            senate (str): String representing senators, 'R' for Radiant, 'D' for Dire.
+
+        Returns:
+            str: "Radiant" if the Radiant party wins, "Dire" if the Dire party wins.
+        """
+        radiant = deque()
+        dire = deque()
+        n = len(senate)
+        
+        # Initialize queues with indices of each party
+        for i, s in enumerate(senate):
+            if s == 'R':
+                radiant.append(i)
+            else:
+                dire.append(i)
+        
+        # Simulate rounds
+        while radiant and dire:
+            r_index = radiant.popleft()
+            d_index = dire.popleft()
+            if r_index < d_index:
+                # Radiant bans Dire
+                radiant.append(r_index + n)
+            else:
+                # Dire bans Radiant
+                dire.append(d_index + n)
+        
+        return "Radiant" if radiant else "Dire"
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.predictPartyVictory("RD"))    
+    print(sol.predictPartyVictory("RDD"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Radiant
+Dire
+
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

@@ -48,8 +48,52 @@ Finally, we return the answer array.
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$. Here, $n$ is the number of intervals.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Merge Intervals problem.
+   """
+   def merge(self, intervals: list[list[int]]) -> list[list[int]]:
+      """
+      Merge all overlapping intervals in a list of intervals.
+      
+      Args:
+         intervals (list[list[int]]): List of intervals [start, end].
+      
+      Returns:
+         list[list[int]]: List of merged non-overlapping intervals.
+      """
+      if not intervals:
+         return []
+
+      # Sort intervals by start time
+      intervals.sort(key=lambda x: x[0])
+      merged = [intervals[0]]
+
+      for current in intervals[1:]:
+         last = merged[-1]
+         if current[0] <= last[1]:  # Overlapping
+            last[1] = max(last[1], current[1])
+         else:
+            merged.append(current)
+
+      return merged
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.merge([[1,3],[2,6],[8,10],[15,18]]))
+   print(sol.merge([[1,4],[4,5]]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[1, 6], [8, 10], [15, 18]]
+[[1, 5]]
+
+real    0m0.037s
+user    0m0.024s
+sys     0m0.004s
 ```
 
 #### Python3

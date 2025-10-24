@@ -80,8 +80,68 @@ Similar problems:
 -   [1882. Process Tasks Using Servers](https://github.com/doocs/leetcode/blob/main/solution/1800-1899/1882.Process%20Tasks%20Using%20Servers/README_EN.md)
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class Solution:
+   """
+   Solution for the Meeting Rooms III problem.
+   """
+   def mostBooked(self, n: int, meetings: list[list[int]]) -> int:
+      """
+      Return the number of the room that held the most meetings.
+      
+      Args:
+         n (int): Number of rooms numbered from 0 to n-1.
+         meetings (list[list[int]]): List of meetings [start, end] with unique start times.
+      
+      Returns:
+         int: Room number that held the most meetings. If tie, return the smallest room number.
+      """
+      # Sort meetings by start time
+      meetings.sort(key=lambda x: x[0])
+
+      available = list(range(n))  # Min-heap of available rooms
+      heapq.heapify(available)
+      ongoing = []  # Min-heap of (end_time, room)
+      count = [0] * n
+
+      for start, end in meetings:
+         # Free up rooms that have finished before current meeting
+         while ongoing and ongoing[0][0] <= start:
+            free_end, room = heapq.heappop(ongoing)
+            heapq.heappush(available, room)
+
+         duration = end - start
+         if available:
+            room = heapq.heappop(available)
+            heapq.heappush(ongoing, (start + duration, room))
+         else:
+            free_end, room = heapq.heappop(ongoing)
+            heapq.heappush(ongoing, (free_end + duration, room))
+         count[room] += 1
+
+      # Return room with max meetings (tie broken by smallest number)
+      max_meetings = max(count)
+      for i, c in enumerate(count):
+         if c == max_meetings:
+            return i
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.mostBooked(2, [[0,10],[1,5],[2,7],[3,4]]))
+   print(sol.mostBooked(3, [[1,20],[2,10],[3,5],[4,9],[6,8]]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+0
+1
+
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

@@ -47,8 +47,61 @@ We can first add the new interval `newInterval` to the interval list `intervals`
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(n)$. Here, $n$ is the number of intervals.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Insert Interval problem.
+   """
+   def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
+      """
+      Insert a new interval into a list of non-overlapping, sorted intervals, 
+      merging if necessary to maintain non-overlapping order.
+      
+      Args:
+         intervals (list[list[int]]): Sorted list of non-overlapping intervals.
+         newInterval (list[int]): Interval to insert.
+      
+      Returns:
+         list[list[int]]: New list of merged intervals after insertion.
+      """
+      result = []
+      i = 0
+      n = len(intervals)
+
+      # Add all intervals ending before newInterval starts
+      while i < n and intervals[i][1] < newInterval[0]:
+         result.append(intervals[i])
+         i += 1
+
+      # Merge overlapping intervals
+      while i < n and intervals[i][0] <= newInterval[1]:
+         newInterval[0] = min(newInterval[0], intervals[i][0])
+         newInterval[1] = max(newInterval[1], intervals[i][1])
+         i += 1
+      result.append(newInterval)
+
+      # Add remaining intervals
+      while i < n:
+         result.append(intervals[i])
+         i += 1
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.insert([[1,3],[6,9]], [2,5]))
+   print(sol.insert([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,8]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[1, 5], [6, 9]]
+[[1, 2], [3, 10], [12, 16]]
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

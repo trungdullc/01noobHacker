@@ -53,8 +53,54 @@ Finally, we traverse the array of scores once, and the minimum number of candies
 Time complexity $O(n)$, space complexity $O(n)$. Where $n$ is the length of the array of scores.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Candy problem.
+   """
+   def candy(self, ratings: list[int]) -> int:
+      """
+      Calculate the minimum number of candies to distribute to children 
+      based on their ratings, following the rules:
+      - Each child must have at least one candy.
+      - Children with higher ratings get more candies than neighbors.
+      
+      Args:
+         ratings (list[int]): List of integer ratings for children.
+      
+      Returns:
+         int: Minimum number of candies required.
+      """
+      n = len(ratings)
+      candies = [1] * n
+
+      # Left to right
+      for i in range(1, n):
+         if ratings[i] > ratings[i - 1]:
+            candies[i] = candies[i - 1] + 1
+
+      # Right to left
+      for i in range(n - 2, -1, -1):
+         if ratings[i] > ratings[i + 1]:
+            candies[i] = max(candies[i], candies[i + 1] + 1)
+
+      return sum(candies)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.candy([1,0,2]))
+   print(sol.candy([1,2,2]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+5
+4
+
+real    0m0.021s
+user    0m0.021s
+sys     0m0.000s
 ```
 
 #### Python3

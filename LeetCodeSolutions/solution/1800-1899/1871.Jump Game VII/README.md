@@ -52,8 +52,59 @@ The final answer is $f[n-1]$.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the string $s$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def canReach(self, s: str, minJump: int, maxJump: int) -> bool:
+        """
+        Determines if it is possible to reach the last index of a binary string s
+        starting from index 0, following jump rules.
+
+        You can jump from index i to any index j if:
+        - i + minJump <= j <= min(i + maxJump, len(s) - 1)
+        - s[j] == '0'
+
+        Uses a greedy sliding window approach to mark reachable indices efficiently.
+
+        Parameters:
+            s (str): A binary string containing '0' and '1'.
+            minJump (int): Minimum number of indices you can jump forward.
+            maxJump (int): Maximum number of indices you can jump forward.
+
+        Returns:
+            bool: True if the last index is reachable, False otherwise.
+        """
+        n = len(s)
+        reachable = [False] * n
+        reachable[0] = True
+        farthest = 0
+
+        for i in range(n):
+            if not reachable[i]:
+                continue
+            start = max(i + minJump, farthest + 1)
+            end = min(i + maxJump, n - 1)
+            for j in range(start, end + 1):
+                if s[j] == '0':
+                    reachable[j] = True
+            farthest = max(farthest, end)
+
+        return reachable[-1]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.canReach("011010", 2, 3))
+    print(sol.canReach("01101110", 2, 3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.023s
+user    0m0.014s
+sys     0m0.009s
 ```
 
 #### Python3

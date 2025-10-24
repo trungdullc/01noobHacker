@@ -54,8 +54,50 @@ Repeat the above process until the string traversal is complete to get the lengt
 Time complexity is $O(n)$, and space complexity is $O(|\Sigma|)$. Where $n$ is the length of the string $s$, and $|\Sigma|$ is the size of the character set. In this problem, $|\Sigma| = 26$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Partition Labels problem.
+   """
+   def partitionLabels(self, s: str):
+      """
+      Partition a string into as many parts as possible so that each letter 
+      appears in at most one part, and return a list of the sizes of these parts.
+      
+      Args:
+         s (str): Input string to partition.
+      
+      Returns:
+         List[int]: List of integers representing the sizes of the partitions.
+      """
+      last_occurrence = {c: i for i, c in enumerate(s)}
+      result = []
+      start = 0
+      end = 0
+
+      for i, c in enumerate(s):
+         end = max(end, last_occurrence[c])
+         if i == end:
+            result.append(end - start + 1)
+            start = i + 1
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.partitionLabels("ababcbacadefegdehijhklij"))
+   print(sol.partitionLabels("eccbbbbdec"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[9, 7, 8]
+[10]
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.004s
 ```
 
 #### Python3

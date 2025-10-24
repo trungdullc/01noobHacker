@@ -77,8 +77,49 @@ Finally, we just need to check whether $[d, e, f]$ is equal to $\textit{target}$
 Time complexity is $O(n)$, where $n$ is the length of the array $\textit{triplets}$. Space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class Solution:
+    def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
+        """
+        Determines if it's possible to obtain the target triplet by merging triplets.
+
+        Parameters:
+            triplets (List[List[int]]): A list of triplets [ai, bi, ci].
+            target (List[int]): The target triplet [x, y, z].
+
+        Returns:
+            bool: True if target triplet can be obtained, False otherwise.
+        """
+        can_merge = [False, False, False]  # Track if we can achieve each element in target
+
+        for t in triplets:
+            # Skip triplets that exceed target in any component
+            if t[0] <= target[0] and t[1] <= target[1] and t[2] <= target[2]:
+                for i in range(3):
+                    if t[i] == target[i]:
+                        can_merge[i] = True
+
+        return all(can_merge)
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.mergeTriplets([[2,5,3],[1,8,4],[1,7,5]], [2,7,5])) 
+    print(sol.mergeTriplets([[3,4,5],[4,5,6]], [3,2,5]))          
+    print(sol.mergeTriplets([[2,5,3],[2,3,4],[1,2,5],[5,2,3]], [5,5,5]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+True
+
+real    0m0.085s
+user    0m0.024s
+sys     0m0.004s
 ```
 
 #### Python3

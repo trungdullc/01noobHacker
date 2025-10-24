@@ -45,8 +45,59 @@ Let `dp[i][j]` be true if and only if the interval `s[i], s[i+1], ..., s[j]` can
 -   Space Complexity: $O(n^2)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Valid Parenthesis String problem.
+   """
+   def checkValidString(self, s: str) -> bool:
+      """
+      Check if the input string containing '(', ')', and '*' is valid.
+      
+      '*' can be treated as '(', ')', or an empty string.
+      
+      Args:
+         s (str): Input string to validate.
+      
+      Returns:
+         bool: True if the string is valid, False otherwise.
+      """
+      low = 0   # minimum possible open '(' count
+      high = 0  # maximum possible open '(' count
+
+      for c in s:
+         if c == '(':
+            low += 1
+            high += 1
+         elif c == ')':
+            low = max(low - 1, 0)
+            high -= 1
+         else:  # c == '*'
+            low = max(low - 1, 0)
+            high += 1
+         
+         if high < 0:
+            return False
+
+      return low == 0
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.checkValidString("()"))
+   print(sol.checkValidString("(*)"))
+   print(sol.checkValidString("(*))"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+True
+
+real    0m0.022s
+user    0m0.015s
+sys     0m0.007s
 ```
 
 #### Python3

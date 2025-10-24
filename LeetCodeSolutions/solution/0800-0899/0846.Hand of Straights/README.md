@@ -51,8 +51,59 @@ If the iteration completes successfully, it means that the array can be partitio
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $\textit{hand}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+from collections import Counter
+import heapq
+
+class Solution:
+    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
+        """
+        Determines if a hand of cards can be rearranged into groups of consecutive cards.
+
+        Parameters:
+            hand (List[int]): List of integers representing cards.
+            groupSize (int): Desired size of each group.
+
+        Returns:
+            bool: True if the hand can be rearranged into groups of consecutive cards,
+                  False otherwise.
+        """
+        if len(hand) % groupSize != 0:
+            return False
+
+        count = Counter(hand)
+        min_heap = list(count.keys())
+        heapq.heapify(min_heap)
+
+        while min_heap:
+            first = min_heap[0]
+            for card in range(first, first + groupSize):
+                if card not in count:
+                    return False
+                count[card] -= 1
+                if count[card] == 0:
+                    if card != min_heap[0]:
+                        return False
+                    heapq.heappop(min_heap)
+
+        return True
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isNStraightHand([1,2,3,6,2,3,4,7,8], 3))
+    print(sol.isNStraightHand([1,2,3,4,5], 4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.033s
+user    0m0.017s
+sys     0m0.013s
 ```
 
 #### Python3
