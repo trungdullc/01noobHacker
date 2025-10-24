@@ -46,6 +46,54 @@ Then we decrease $n$ to $0$, updating the values of $a$, $b$, $c$ each time, unt
 
 The time complexity is $O(n)$, and the space complexity is $O(1)$. Here, $n$ is the given integer.
 
+#### Du Solutiion
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        """
+        Computes the n-th Tribonacci number.
+
+        The Tribonacci sequence is defined as:
+        T0 = 0, T1 = 1, T2 = 1
+        Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0
+
+        Approach:
+        - Handle base cases directly (n < 3).
+        - Use iterative dynamic programming with O(1) space.
+        - Keep track of the last three values and update iteratively.
+
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
+        if n == 0:
+            return 0
+        elif n == 1 or n == 2:
+            return 1
+
+        a, b, c = 0, 1, 1
+        for _ in range(3, n + 1):
+            a, b, c = b, c, a + b + c
+        return c
+
+if __name__ == "__main__":
+    sol = Solution()
+    print("Example 1 Output:", sol.tribonacci(4))
+    print("Example 2 Output:", sol.tribonacci(25))
+    print("Example 3 Output:", sol.tribonacci(0))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: 4
+Example 2 Output: 1389537
+Example 3 Output: 0
+
+real    0m0.022s
+user    0m0.015s
+sys     0m0.008s
+```
+
 #### Python3
 
 ```python

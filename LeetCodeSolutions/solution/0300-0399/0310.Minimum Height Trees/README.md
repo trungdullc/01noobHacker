@@ -49,8 +49,58 @@ If the tree has multiple nodes, there must be leaf nodes. A leaf node is a node 
 The time complexity is $O(n)$ and the space complexity is $O(n)$, where $n$ is the number of nodes.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import deque, defaultdict
 
+class Solution:
+    def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
+        if n == 1:
+            return [0]
+
+        # Step 1: Build the graph
+        graph = defaultdict(set)
+        for u, v in edges:
+            graph[u].add(v)
+            graph[v].add(u)
+
+        # Step 2: Initialize the first layer of leaves
+        leaves = [i for i in range(n) if len(graph[i]) == 1]
+
+        # Step 3: Trim leaves layer by layer
+        remaining_nodes = n
+        while remaining_nodes > 2:
+            remaining_nodes -= len(leaves)
+            new_leaves = []
+            for leaf in leaves:
+                neighbor = graph[leaf].pop()  # only neighbor
+                graph[neighbor].remove(leaf)
+                if len(graph[neighbor]) == 1:
+                    new_leaves.append(neighbor)
+            leaves = new_leaves
+
+        # Step 4: The remaining nodes are roots of MHTs
+        return leaves
+
+if __name__ == "__main__":
+    sol = Solution()
+    n1 = 4
+    edges1 = [[1,0],[1,2],[1,3]]
+    print(sol.findMinHeightTrees(n1, edges1))
+
+    n2 = 6
+    edges2 = [[3,0],[3,1],[3,2],[3,4],[5,4]]
+    print(sol.findMinHeightTrees(n2, edges2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1]
+[3, 4]
+
+real    0m0.085s
+user    0m0.025s
+sys     0m0.004s
 ```
 
 #### Python3

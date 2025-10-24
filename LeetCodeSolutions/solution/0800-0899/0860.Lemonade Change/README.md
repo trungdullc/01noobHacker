@@ -46,8 +46,58 @@ Since not every customer received the correct change, the answer is false.
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def lemonadeChange(self, bills: list[int]) -> bool:
+        """
+        Determines if we can provide correct change to each customer.
+
+        Rules:
+        - Each lemonade costs $5.
+        - Customers pay with $5, $10, or $20 bills.
+        - Start with no money in hand.
+
+        Parameters:
+            bills (list[int]): List of bills paid by customers.
+
+        Returns:
+            bool: True if we can give correct change to all customers, False otherwise.
+        """
+        five, ten = 0, 0
+
+        for bill in bills:
+            if bill == 5:
+                five += 1
+            elif bill == 10:
+                if five == 0:
+                    return False
+                five -= 1
+                ten += 1
+            else:  # bill == 20
+                if ten > 0 and five > 0:
+                    ten -= 1
+                    five -= 1
+                elif five >= 3:
+                    five -= 3
+                else:
+                    return False
+        return True
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.lemonadeChange([5,5,5,10,20]))
+    print(sol.lemonadeChange([5,5,10,10,20]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.023s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

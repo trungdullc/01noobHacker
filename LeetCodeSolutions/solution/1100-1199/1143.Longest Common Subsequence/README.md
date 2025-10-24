@@ -64,8 +64,54 @@ $$
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the lengths of $text1$ and $text2$, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        """
+        Computes the length of the Longest Common Subsequence (LCS) between
+        two input strings.
+
+        A subsequence is formed by deleting zero or more characters without
+        changing the relative order of the remaining characters.
+
+        Parameters:
+            text1 (str): The first string.
+            text2 (str): The second string.
+
+        Returns:
+            int: The length of the longest common subsequence shared by both strings.
+        """
+        m, n = len(text1), len(text2)
+
+        # dp[i][j] = LCS length of text1[:i] and text2[:j]
+        dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if text1[i - 1] == text2[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1] + 1
+                else:
+                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+
+        return dp[m][n]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.longestCommonSubsequence("abcde", "ace"))
+    print(sol.longestCommonSubsequence("abc", "abc"))  
+    print(sol.longestCommonSubsequence("abc", "def"))  
+    
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+3
+0
+
+real    0m0.021s
+user    0m0.017s
+sys     0m0.004s
 ```
 
 #### Python3

@@ -83,8 +83,76 @@ In the main function, we return $\text{dfs}(node)$.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    """
+    Provides a method to find the maximum area of an island in a binary grid.
+    """
+
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        """
+        Returns the maximum area (number of connected 1's) of an island in the grid.
+
+        Args:
+            grid (List[List[int]]): 2D binary grid.
+
+        Returns:
+            int: Maximum area of any island.
+        """
+        if not grid:
+            return 0
+
+        m, n = len(grid), len(grid[0])
+        max_area = 0
+
+        def dfs(i, j):
+            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] != 1:
+                return 0
+            grid[i][j] = 0  # mark visited
+            area = 1
+            area += dfs(i + 1, j)
+            area += dfs(i - 1, j)
+            area += dfs(i, j + 1)
+            area += dfs(i, j - 1)
+            return area
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    max_area = max(max_area, dfs(i, j))
+
+        return max_area
+
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    grid1 = [
+        [0,0,1,0,0,0,0,1,0,0,0,0,0],
+        [0,0,0,0,0,0,0,1,1,1,0,0,0],
+        [0,1,1,0,1,0,0,0,0,0,0,0,0],
+        [0,1,0,0,1,1,0,0,1,0,1,0,0],
+        [0,1,0,0,1,1,0,0,1,1,1,0,0],
+        [0,0,0,0,0,0,0,0,0,0,1,0,0],
+        [0,0,0,0,0,0,0,1,1,1,0,0,0],
+        [0,0,0,0,0,0,0,1,1,0,0,0,0]
+    ]
+    print(sol.maxAreaOfIsland(grid1))
+
+    grid2 = [[0,0,0,0,0,0,0,0]]
+    print(sol.maxAreaOfIsland(grid2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+6
+0
+
+real    0m0.036s
+user    0m0.030s
+sys     0m0.004s
 ```
 
 #### Python3

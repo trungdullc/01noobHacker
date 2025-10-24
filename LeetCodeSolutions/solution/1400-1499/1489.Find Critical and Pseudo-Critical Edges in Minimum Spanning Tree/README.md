@@ -50,8 +50,110 @@ The edges 2, 3, 4, and 5 are only part of some MSTs, therefore they are consider
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+class UnionFind:
+    """Disjoint Set Union (Union-Find) structure with path compression and union by rank."""
+    def __init__(self, n):
+        self.parent = list(range(n))
+        self.rank = [0] * n
+
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union(self, x, y):
+        rx, ry = self.find(x), self.find(y)
+        if rx == ry:
+            return False
+        if self.rank[rx] < self.rank[ry]:
+            self.parent[rx] = ry
+        elif self.rank[rx] > self.rank[ry]:
+            self.parent[ry] = rx
+        else:
+            self.parent[ry] = rx
+            self.rank[rx] += 1
+        return True
+
+class Solution:
+    def findCriticalAndPseudoCriticalEdges(self, n: int, edges: List[List[int]]) -> List[List[int]]:
+        """
+        Finds all critical and pseudo-critical edges in a graph's Minimum Spanning Tree (MST).
+        Uses Kruskal's algorithm and tests each edge by including/excluding it.
+        
+        Time Complexity: O(E^2 * α(V)), where α is inverse Ackermann (from Union-Find)
+        Space Complexity: O(E + V)
+        """
+        # Add original indices to edges for result mapping
+        indexed_edges = [edge + [i] for i, edge in enumerate(edges)]
+        indexed_edges.sort(key=lambda x: x[2])  # sort by weight
+
+        # Helper: compute MST cost, optionally excluding or forcing an edge
+        def kruskal(n, edges, exclude_idx=-1, include_edge=None):
+            uf = UnionFind(n)
+            cost = 0
+            count = 0
+
+            # If a specific edge must be included first
+            if include_edge:
+                a, b, w, _ = include_edge
+                if uf.union(a, b):
+                    cost += w
+                    count += 1
+
+            for i, (a, b, w, _) in enumerate(edges):
+                if i == exclude_idx:
+                    continue
+                if uf.union(a, b):
+                    cost += w
+                    count += 1
+                    if count == n - 1:
+                        break
+
+            return cost if count == n - 1 else float('inf')
+
+        # Compute MST weight for baseline
+        base_weight = kruskal(n, indexed_edges)
+
+        critical, pseudo = [], []
+
+        for i, edge in enumerate(indexed_edges):
+            # Test if edge is critical (excluding increases total cost)
+            if kruskal(n, indexed_edges, exclude_idx=i) > base_weight:
+                critical.append(edge[3])
+            # Test if edge is pseudo-critical (including it can form MST)
+            elif kruskal(n, indexed_edges, include_edge=edge) == base_weight:
+                pseudo.append(edge[3])
+
+        return [critical, pseudo]
+
+if __name__ == "__main__":
+    sol = Solution()
+    n1 = 5
+    edges1 = [[0,1,1],[1,2,1],[2,3,2],[0,3,2],[0,4,3],[3,4,3],[1,4,6]]
+    print("Example 1 Output:", sol.findCriticalAndPseudoCriticalEdges(n1, edges1))
+
+    n2 = 4
+    edges2 = [[0,1,1],[1,2,1],[2,3,1],[0,3,1]]
+    print("Example 2 Output:", sol.findCriticalAndPseudoCriticalEdges(n2, edges2))
+
+    n3 = 3
+    edges3 = [[0,1,1],[1,2,1],[0,2,2]]
+    print("Example 3 Output:", sol.findCriticalAndPseudoCriticalEdges(n3, edges3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: [[0, 1], [2, 3, 4, 5]]
+Example 2 Output: [[], [0, 1, 2, 3]]
+Example 3 Output: [[0, 1], []]
+
+real    0m0.103s
+user    0m0.018s
+sys     0m0.013s
 ```
 
 #### Python3

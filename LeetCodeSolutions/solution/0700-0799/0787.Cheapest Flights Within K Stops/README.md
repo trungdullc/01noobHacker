@@ -58,8 +58,69 @@ The optimal path with no stops from city 0 to 2 is marked in red and has cost 50
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+import heapq
+from collections import defaultdict
 
+class Solution:
+    def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
+        """
+        Returns the cheapest price from src to dst with at most k stops.
+
+        Parameters:
+        n (int): number of cities
+        flights (List[List[int]]): list of [from, to, price]
+        src (int): starting city
+        dst (int): destination city
+        k (int): maximum number of stops
+
+        Returns:
+        int: cheapest price if a route exists, else -1
+
+        Example:
+        >>> sol = Solution()
+        >>> sol.findCheapestPrice(4, [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]], 0, 3, 1)
+        700
+        """
+        graph = defaultdict(list)
+        for u, v, w in flights:
+            graph[u].append((v, w))
+
+        # (price_so_far, current_city, stops_remaining)
+        heap = [(0, src, k+1)]
+
+        while heap:
+            price, city, stops = heapq.heappop(heap)
+            if city == dst:
+                return price
+            if stops > 0:
+                for nei, cost in graph[city]:
+                    heapq.heappush(heap, (price + cost, nei, stops-1))
+
+        return -1
+
+if __name__ == "__main__":
+    sol = Solution()
+    flights1 = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]]
+    print(sol.findCheapestPrice(4, flights1, 0, 3, 1))
+
+    flights2 = [[0,1,100],[1,2,100],[0,2,500]]
+    print(sol.findCheapestPrice(3, flights2, 0, 2, 1))
+
+    flights3 = [[0,1,100],[1,2,100],[0,2,500]]
+    print(sol.findCheapestPrice(3, flights3, 0, 2, 0))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+700
+200
+500
+
+real    0m0.070s
+user    0m0.022s
+sys     0m0.008s
 ```
 
 #### Python3

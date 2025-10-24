@@ -54,8 +54,49 @@ Since $f[i]$ is only related to $f[i - 1]$ and $f[i - 2]$, we can use two variab
 The time complexity is $O(n)$, and the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        """
+        Calculates the number of distinct ways to climb to the top of a staircase of n steps,
+        where each move allows either 1 or 2 steps.
+        
+        Approach:
+        - This is a Fibonacci-style problem.
+        - The number of ways to reach step n = ways(n-1) + ways(n-2)
+        - Base cases:
+            ways(1) = 1
+            ways(2) = 2
+        
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
+        if n <= 2:
+            return n
+        
+        prev1, prev2 = 1, 2
+        for _ in range(3, n + 1):
+            prev1, prev2 = prev2, prev1 + prev2
+        
+        return prev2
+
+if __name__ == "__main__":
+    sol = Solution()
+    print("Example 1 Output:", sol.climbStairs(2))
+    print("Example 2 Output:", sol.climbStairs(3))
+    print("Example 3 Output:", sol.climbStairs(5))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: 2
+Example 2 Output: 3
+Example 3 Output: 8
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

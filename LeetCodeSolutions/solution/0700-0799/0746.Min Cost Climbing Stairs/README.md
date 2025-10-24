@@ -59,8 +59,51 @@ To avoid repeated calculations, we use memoization search, saving the results th
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $\textit{cost}$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def minCostClimbingStairs(self, cost: list[int]) -> int:
+        """
+        Calculates the minimum cost to reach the top of the floor.
+
+        You can start from step 0 or step 1, and at each move you can climb
+        either 1 or 2 steps, paying the cost of the step you are currently on.
+
+        Approach:
+        - Use dynamic programming to compute the minimum cost at each step.
+        - dp[i] = cost[i] + min(dp[i-1], dp[i-2])
+        - The answer is min(dp[-1], dp[-2]) since you can end on the last or second-to-last step.
+
+        Time Complexity: O(n)
+        Space Complexity: O(1) — optimized version only keeps track of last two steps.
+        """
+        n = len(cost)
+        if n == 2:
+            return min(cost[0], cost[1])
+
+        prev2, prev1 = cost[0], cost[1]
+        for i in range(2, n):
+            curr = cost[i] + min(prev1, prev2)
+            prev2, prev1 = prev1, curr
+
+        return min(prev1, prev2)
+
+if __name__ == "__main__":
+    sol = Solution()
+    print("Example 1 Output:", sol.minCostClimbingStairs([10, 15, 20]))
+    print("Example 2 Output:", sol.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]))
+    print("Example 3 Output:", sol.minCostClimbingStairs([0, 1, 2, 2]))
+    
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: 15
+Example 2 Output: 6
+Example 3 Output: 2
+
+real    0m0.025s
+user    0m0.016s
+sys     0m0.009s
 ```
 
 #### Python3

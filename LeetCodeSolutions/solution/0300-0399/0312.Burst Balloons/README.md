@@ -55,8 +55,52 @@ Finally, we return $f[0][n+1]$.
 The time complexity is $O(n^3)$, and the space complexity is $O(n^2)$. Where $n$ is the length of the array `nums`.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def maxCoins(self, nums: list[int]) -> int:
+        """
+        Computes the maximum coins obtained by bursting balloons wisely.
+
+        Strategy:
+        - Use dynamic programming.
+        - Consider bursting the last balloon in a subarray to simplify calculations.
+        - dp[left][right] = max coins from bursting balloons in nums[left:right+1]
+
+        Parameters:
+            nums (list[int]): List of integers representing balloons.
+
+        Returns:
+            int: Maximum coins that can be collected.
+        """
+        n = len(nums)
+        nums = [1] + nums + [1]
+        dp = [[0] * (n + 2) for _ in range(n + 2)]
+
+        for length in range(1, n + 1):
+            for left in range(1, n - length + 2):
+                right = left + length - 1
+                for k in range(left, right + 1):
+                    dp[left][right] = max(
+                        dp[left][right],
+                        nums[left - 1] * nums[k] * nums[right + 1] + dp[left][k - 1] + dp[k + 1][right]
+                    )
+        return dp[1][n]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxCoins([3,1,5,8]))
+    print(sol.maxCoins([1,5]))   
+    
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+167
+10
+
+real    0m0.023s
+user    0m0.014s
+sys     0m0.009s
 ```
 
 #### Python3

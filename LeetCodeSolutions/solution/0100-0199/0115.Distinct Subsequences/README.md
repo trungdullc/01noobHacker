@@ -69,8 +69,55 @@ The time complexity is $O(m \times n)$, and the space complexity is $O(m \times 
 We notice that the calculation of $f[i][j]$ is only related to $f[i-1][..]$. Therefore, we can optimize the first dimension, reducing the space complexity to $O(n)$.
 
 #### Du Solution: Python3
-```
+```python
+ AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def numDistinct(self, s: str, t: str) -> int:
+        """
+        Counts the number of distinct subsequences of s that equal t.
+
+        Uses dynamic programming:
+        - dp[i][j] = number of subsequences of s[:i] matching t[:j]
+        - If s[i-1] == t[j-1], can match or skip
+        - Otherwise, skip s[i-1]
+
+        Parameters:
+            s (str): Source string.
+            t (str): Target string.
+
+        Returns:
+            int: Number of distinct subsequences of s equal to t.
+        """
+        m, n = len(s), len(t)
+        dp = [[0] * (n + 1) for _ in range(m + 1)]
+        
+        # Empty t can always be formed by deleting all chars from s
+        for i in range(m + 1):
+            dp[i][0] = 1
+
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if s[i - 1] == t[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]
+                else:
+                    dp[i][j] = dp[i - 1][j]
+
+        return dp[m][n]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.numDistinct("rabbbit", "rabbit"))
+    print(sol.numDistinct("babgbag", "bag")) 
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+5
+
+real    0m0.021s
+user    0m0.017s
+sys     0m0.004s
 ```
 
 #### Python3

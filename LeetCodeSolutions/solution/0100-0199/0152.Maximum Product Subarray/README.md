@@ -37,8 +37,52 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to find the maximum product of any contiguous subarray in an integer array.
+   """
+
+   def maxProduct(self, nums: list[int]) -> int:
+      """
+      Finds the contiguous subarray within an array (containing at least one number)
+      which has the largest product.
+
+      Args:
+         nums (list[int]): The input array of integers.
+
+      Returns:
+         int: The maximum product of any contiguous subarray.
+      """
+      if not nums:
+         return 0
+
+      max_prod = min_prod = result = nums[0]
+
+      for num in nums[1:]:
+         if num < 0:
+            max_prod, min_prod = min_prod, max_prod
+         max_prod = max(num, max_prod * num)
+         min_prod = min(num, min_prod * num)
+         result = max(result, max_prod)
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.maxProduct([2, 3, -2, 4]))
+   print(sol.maxProduct([-2, 0, -1]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+6
+0
+
+real    0m0.021s
+user    0m0.021s
+sys     0m0.000s
 ```
 
 #### Python3

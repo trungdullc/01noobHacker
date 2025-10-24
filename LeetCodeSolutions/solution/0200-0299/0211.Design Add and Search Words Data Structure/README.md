@@ -49,8 +49,64 @@ wordDictionary.search(&quot;b..&quot;); // return True
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.is_end_of_word = False
+
+class WordDictionary:
+    def __init__(self):
+        self.root = TrieNode()
+
+    def addWord(self, word: str) -> None:
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.is_end_of_word = True
+
+    def search(self, word: str) -> bool:
+        def dfs(index, node):
+            if index == len(word):
+                return node.is_end_of_word
+            char = word[index]
+            if char == '.':
+                for child in node.children.values():
+                    if dfs(index + 1, child):
+                        return True
+                return False
+            else:
+                if char not in node.children:
+                    return False
+                return dfs(index + 1, node.children[char])
+        
+        return dfs(0, self.root)
+
+if __name__ == "__main__":
+    wordDictionary = WordDictionary()
+    wordDictionary.addWord("bad")
+    wordDictionary.addWord("dad")
+    wordDictionary.addWord("mad")
+    
+    print(wordDictionary.search("pad")) 
+    print(wordDictionary.search("bad"))
+    print(wordDictionary.search(".ad"))
+    print(wordDictionary.search("b.."))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+False
+True
+True
+True
+
+real    0m0.022s
+user    0m0.017s
+sys     0m0.005s
 ```
 
 #### Python3

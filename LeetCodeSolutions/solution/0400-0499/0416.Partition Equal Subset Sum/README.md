@@ -48,8 +48,54 @@ The final answer is $f[n][m]$.
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Where $m$ and $n$ are half of the total sum of the array and the length of the array, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to determine if an array can be partitioned into two subsets with equal sum.
+   """
+
+   def canPartition(self, nums: list[int]) -> bool:
+      """
+      Determines if the array can be split into two subsets with equal sums.
+
+      Uses dynamic programming to check if a subset with sum equal to half of
+      the total sum exists.
+
+      Args:
+         nums (list[int]): The input array of integers.
+
+      Returns:
+         bool: True if such a partition exists, False otherwise.
+      """
+      total = sum(nums)
+      if total % 2 != 0:
+         return False
+
+      target = total // 2
+      dp = [False] * (target + 1)
+      dp[0] = True
+
+      for num in nums:
+         for i in range(target, num - 1, -1):
+            dp[i] = dp[i] or dp[i - num]
+
+      return dp[target]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.canPartition([1,5,11,5]))
+   print(sol.canPartition([1,2,3,5]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

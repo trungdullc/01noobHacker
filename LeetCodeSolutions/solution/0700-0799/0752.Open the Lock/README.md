@@ -54,8 +54,58 @@ because the wheels of the lock become stuck after the display becomes the dead e
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import deque
 
+class Solution:
+    """
+    Solves the Open the Lock problem using BFS.
+    """
+
+    def openLock(self, deadends: List[str], target: str) -> int:
+        dead = set(deadends)
+        if '0000' in dead:
+            return -1
+        
+        queue = deque([('0000', 0)])
+        visited = set('0000')
+
+        while queue:
+            node, steps = queue.popleft()
+            if node == target:
+                return steps
+            for i in range(4):
+                for d in (-1, 1):
+                    new_digit = (int(node[i]) + d) % 10
+                    new_node = node[:i] + str(new_digit) + node[i+1:]
+                    if new_node not in dead and new_node not in visited:
+                        visited.add(new_node)
+                        queue.append((new_node, steps + 1))
+        return -1
+
+if __name__ == "__main__":
+    examples = [
+        (["0201","0101","0102","1212","2002"], "0202"),
+        (["8888"], "0009"),
+        (["8887","8889","8878","8898","8788","8988","7888","9888"], "8888")
+    ]
+
+    sol = Solution()
+    for i, (deadends, target) in enumerate(examples, 1):
+        res = sol.openLock(deadends, target)
+        print(f"Example {i} output: {res}")
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 output: 6
+Example 2 output: 1
+Example 3 output: -1
+
+real    0m0.330s
+user    0m0.091s
+sys     0m0.008s
 ```
 
 #### Python3

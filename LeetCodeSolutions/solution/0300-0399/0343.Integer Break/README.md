@@ -52,8 +52,49 @@ Finally, returning $f[n]$ will suffice.
 The time complexity is $O(n^2)$, and the space complexity is $O(n)$. Here, $n$ is the given positive integer.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to maximize the product obtained by breaking an integer n into
+   at least two positive integers.
+   """
+
+   def integerBreak(self, n: int) -> int:
+      """
+      Returns the maximum product obtainable by splitting n into the sum of
+      at least two positive integers.
+
+      Uses dynamic programming, where dp[i] stores the maximum product for i.
+
+      Args:
+         n (int): The integer to be split.
+
+      Returns:
+         int: The maximum product obtainable.
+      """
+      dp = [0] * (n + 1)
+
+      for i in range(2, n + 1):
+         for j in range(1, i):
+            dp[i] = max(dp[i], j * (i - j), j * dp[i - j])
+
+      return dp[n]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.integerBreak(2))
+   print(sol.integerBreak(10))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+36
+
+real    0m0.024s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

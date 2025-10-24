@@ -47,8 +47,57 @@ We can use a union-find set to determine whether there is a cycle. We traverse t
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(n)$, where $n$ is the number of nodes.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import defaultdict, deque
 
+class Solution:
+    def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        # A valid tree must have exactly n-1 edges
+        if len(edges) != n - 1:
+            return False
+        
+        # Build adjacency list
+        graph = defaultdict(list)
+        for u, v in edges:
+            graph[u].append(v)
+            graph[v].append(u)
+        
+        # BFS to check connectivity
+        visited = set()
+        queue = deque([0])
+        
+        while queue:
+            node = queue.popleft()
+            if node in visited:
+                continue
+            visited.add(node)
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+        
+        # Tree is valid if all nodes are connected
+        return len(visited) == n
+
+if __name__ == "__main__":
+    sol = Solution()
+    n1 = 5
+    edges1 = [[0,1],[0,2],[0,3],[1,4]]
+    print(sol.validTree(n1, edges1))
+
+    n2 = 5
+    edges2 = [[0,1],[1,2],[2,3],[1,3],[1,4]]
+    print(sol.validTree(n2, edges2)) 
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.078s
+user    0m0.032s
+sys     0m0.010s
 ```
 
 #### Python3

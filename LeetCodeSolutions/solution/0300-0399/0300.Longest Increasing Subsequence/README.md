@@ -43,8 +43,54 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to find the length of the longest strictly increasing subsequence in an array.
+   """
+
+   def lengthOfLIS(self, nums: list[int]) -> int:
+      """
+      Returns the length of the longest strictly increasing subsequence.
+
+      Uses dynamic programming to track the length of the LIS ending at each index.
+
+      Args:
+         nums (list[int]): The input array of integers.
+
+      Returns:
+         int: The length of the longest increasing subsequence.
+      """
+      if not nums:
+         return 0
+
+      n = len(nums)
+      dp = [1] * n
+
+      for i in range(n):
+         for j in range(i):
+            if nums[i] > nums[j]:
+               dp[i] = max(dp[i], dp[j] + 1)
+
+      return max(dp)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.lengthOfLIS([10,9,2,5,3,7,101,18]))
+   print(sol.lengthOfLIS([0,1,0,3,2,3]))
+   print(sol.lengthOfLIS([7,7,7,7,7,7,7]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+4
+1
+
+real    0m0.023s
+user    0m0.013s
+sys     0m0.009s
 ```
 
 #### Python3

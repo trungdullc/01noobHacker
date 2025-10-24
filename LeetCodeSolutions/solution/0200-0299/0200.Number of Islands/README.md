@@ -46,8 +46,76 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    """
+    Provides a method to count the number of islands in a 2D grid.
+    """
+
+    def numIslands(self, grid: List[List[str]]) -> int:
+        """
+        Counts the number of islands (connected '1's) in the given grid.
+
+        Args:
+            grid (List[List[str]]): 2D grid of '1's (land) and '0's (water).
+
+        Returns:
+            int: Number of islands.
+        """
+        if not grid:
+            return 0
+
+        m, n = len(grid), len(grid[0])
+        count = 0
+
+        def dfs(i, j):
+            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] != "1":
+                return
+            grid[i][j] = "0"                # mark as visited
+            # Explore all four directions
+            dfs(i + 1, j)
+            dfs(i - 1, j)
+            dfs(i, j + 1)
+            dfs(i, j - 1)
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == "1":
+                    count += 1
+                    dfs(i, j)
+
+        return count
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    grid1 = [
+        ["1","1","1","1","0"],
+        ["1","1","0","1","0"],
+        ["1","1","0","0","0"],
+        ["0","0","0","0","0"]
+    ]
+    print(sol.numIslands(grid1))
+
+    grid2 = [
+        ["1","1","0","0","0"],
+        ["1","1","0","0","0"],
+        ["0","0","1","0","0"],
+        ["0","0","0","1","1"]
+    ]
+    print(sol.numIslands(grid2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+3
+
+real    0m0.031s
+user    0m0.023s
+sys     0m0.008s
 ```
 
 #### Python3

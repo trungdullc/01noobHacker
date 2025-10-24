@@ -52,8 +52,57 @@ So one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import deque, defaultdict
 
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        # Build graph and indegree map
+        graph = defaultdict(list)
+        indegree = [0] * numCourses
+        for dest, src in prerequisites:
+            graph[src].append(dest)
+            indegree[dest] += 1
+        
+        # Initialize queue with courses that have no prerequisites
+        queue = deque([i for i in range(numCourses) if indegree[i] == 0])
+        order = []
+
+        while queue:
+            course = queue.popleft()
+            order.append(course)
+            for next_course in graph[course]:
+                indegree[next_course] -= 1
+                if indegree[next_course] == 0:
+                    queue.append(next_course)
+
+        return order if len(order) == numCourses else []
+
+if __name__ == "__main__":
+    sol = Solution()
+    numCourses1 = 2
+    prerequisites1 = [[1,0]]
+    print(sol.findOrder(numCourses1, prerequisites1))
+
+    numCourses2 = 4
+    prerequisites2 = [[1,0],[2,0],[3,1],[3,2]]
+    print(sol.findOrder(numCourses2, prerequisites2))
+
+    numCourses3 = 1
+    prerequisites3 = []
+    print(sol.findOrder(numCourses3, prerequisites3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[0, 1]
+[0, 1, 2, 3]
+[0]
+
+real    0m0.089s
+user    0m0.029s
+sys     0m0.000s
 ```
 
 #### Python3

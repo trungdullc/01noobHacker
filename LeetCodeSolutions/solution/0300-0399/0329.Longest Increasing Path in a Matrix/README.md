@@ -58,8 +58,62 @@ Similar problems:
 -   [2328. Number of Increasing Paths in a Grid](https://github.com/doocs/leetcode/blob/main/solution/2300-2399/2328.Number%20of%20Increasing%20Paths%20in%20a%20Grid/README_EN.md)
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def longestIncreasingPath(self, matrix: list[list[int]]) -> int:
+        """
+        Finds the length of the longest increasing path in a 2D matrix.
+
+        From each cell, you can move up, down, left, or right to a strictly
+        increasing neighboring cell.
+
+        Parameters:
+            matrix (list[list[int]]): 2D list of integers.
+
+        Returns:
+            int: Length of the longest increasing path.
+        """
+        if not matrix or not matrix[0]:
+            return 0
+
+        m, n = len(matrix), len(matrix[0])
+        memo = [[0] * n for _ in range(m)]
+
+        def dfs(x, y):
+            if memo[x][y]:
+                return memo[x][y]
+            val = matrix[x][y]
+            max_len = 1
+            for dx, dy in [(-1,0),(1,0),(0,-1),(0,1)]:
+                nx, ny = x + dx, y + dy
+                if 0 <= nx < m and 0 <= ny < n and matrix[nx][ny] > val:
+                    max_len = max(max_len, 1 + dfs(nx, ny))
+            memo[x][y] = max_len
+            return max_len
+
+        result = 0
+        for i in range(m):
+            for j in range(n):
+                result = max(result, dfs(i, j))
+        return result
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.longestIncreasingPath([[9,9,4],[6,6,8],[2,1,1]]))
+    print(sol.longestIncreasingPath([[3,4,5],[3,2,6],[2,2,1]]))
+    print(sol.longestIncreasingPath([[1]]))                     
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+4
+1
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.004s
 ```
 
 #### Python3

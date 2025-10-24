@@ -72,8 +72,55 @@ After the traversal, we return the maximum value of $ans$ and $s - smi$ as the a
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def maxSubarraySumCircular(self, nums: list[int]) -> int:
+        """
+        Computes the maximum sum of a circular subarray.
+
+        Strategy:
+        - Max subarray sum can be either:
+          1. Standard max subarray (non-circular)
+          2. Circular: total sum - min subarray sum
+        - Use Kadane's algorithm for both max and min subarray sums.
+
+        Parameters:
+            nums (list[int]): Circular integer array.
+
+        Returns:
+            int: Maximum sum of a non-empty circular subarray.
+        """
+        total = sum(nums)
+        max_sum = curr_max = nums[0]
+        min_sum = curr_min = nums[0]
+
+        for num in nums[1:]:
+            curr_max = max(num, curr_max + num)
+            max_sum = max(max_sum, curr_max)
+
+            curr_min = min(num, curr_min + num)
+            min_sum = min(min_sum, curr_min)
+
+        # If all numbers are negative, max_sum is the answer
+        return max(max_sum, total - min_sum) if max_sum > 0 else max_sum
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxSubarraySumCircular([1,-2,3,-2]))
+    print(sol.maxSubarraySumCircular([5,-3,5]))    
+    print(sol.maxSubarraySumCircular([-3,-2,-3]))  
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+10
+-2
+
+real    0m0.049s
+user    0m0.027s
+sys     0m0.000s
 ```
 
 #### Python3

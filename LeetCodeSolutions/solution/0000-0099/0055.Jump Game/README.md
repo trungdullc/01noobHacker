@@ -50,8 +50,48 @@ Similar problems:
 -   [1326. Minimum Number of Taps to Open to Water a Garden](https://github.com/doocs/leetcode/blob/main/solution/1300-1399/1326.Minimum%20Number%20of%20Taps%20to%20Open%20to%20Water%20a%20Garden/README_EN.md)
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def canJump(self, nums: list[int]) -> bool:
+        """
+        Determines if you can reach the last index of the array.
+
+        Each element in nums represents the maximum jump length from that position.
+        Uses a greedy approach to track the farthest reachable index.
+
+        Parameters:
+            nums (list[int]): Array of non-negative integers.
+
+        Returns:
+            bool: True if the last index is reachable, False otherwise.
+        """
+        max_reach = 0
+        n = len(nums)
+
+        for i, jump in enumerate(nums):
+            if i > max_reach:
+                return False
+            max_reach = max(max_reach, i + jump)
+            if max_reach >= n - 1:
+                return True
+
+        return True
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.canJump([2,3,1,1,4]))
+    print(sol.canJump([3,2,1,0,4])) 
+    
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

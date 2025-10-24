@@ -41,8 +41,62 @@ Notice that there is a unique path between every pair of points.
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+import heapq
 
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        """
+        Returns the minimum cost to connect all points in a 2D plane.
+        
+        Parameters:
+        points (List[List[int]]): List of points [x, y]
+        
+        Returns:
+        int: Minimum total cost (sum of Manhattan distances) to connect all points
+        """
+        n = len(points)
+        if n == 0:
+            return 0
+        
+        in_mst = [False] * n
+        min_heap = [(0, 0)]                 # (cost, point_index)
+        total_cost = 0
+        edges_used = 0
+        
+        while edges_used < n:
+            cost, u = heapq.heappop(min_heap)
+            if in_mst[u]:
+                continue
+            in_mst[u] = True
+            total_cost += cost
+            edges_used += 1
+            
+            for v in range(n):
+                if not in_mst[v]:
+                    manhattan_distance = abs(points[u][0] - points[v][0]) + abs(points[u][1] - points[v][1])
+                    heapq.heappush(min_heap, (manhattan_distance, v))
+        
+        return total_cost
+
+if __name__ == "__main__":
+    sol = Solution()
+    points1 = [[0,0],[2,2],[3,10],[5,2],[7,0]]
+    print(sol.minCostConnectPoints(points1))
+    
+    points2 = [[3,12],[-2,5],[-4,1]]
+    print(sol.minCostConnectPoints(points2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+20
+18
+
+real    0m0.082s
+user    0m0.022s
+sys     0m0.008s
 ```
 
 #### Python3

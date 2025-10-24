@@ -58,8 +58,65 @@ note: x is undefined =&gt; -1.0</pre>
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import defaultdict
 
+class Solution:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+        # Step 1: Build graph
+        graph = defaultdict(dict)
+        for (a, b), val in zip(equations, values):
+            graph[a][b] = val
+            graph[b][a] = 1 / val
+
+        # Step 2: DFS to find value
+        def dfs(src, dst, visited):
+            if src not in graph or dst not in graph:
+                return -1.0
+            if src == dst:
+                return 1.0
+            visited.add(src)
+            for neighbor, val in graph[src].items():
+                if neighbor not in visited:
+                    temp = dfs(neighbor, dst, visited)
+                    if temp != -1.0:
+                        return val * temp
+            return -1.0
+
+        # Step 3: Evaluate all queries
+        result = []
+        for u, v in queries:
+            result.append(dfs(u, v, set()))
+        return result
+
+if __name__ == "__main__":
+    sol = Solution()
+    equations1 = [["a","b"],["b","c"]]
+    values1 = [2.0,3.0]
+    queries1 = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
+    print(sol.calcEquation(equations1, values1, queries1))
+
+    equations2 = [["a","b"],["b","c"],["bc","cd"]]
+    values2 = [1.5,2.5,5.0]
+    queries2 = [["a","c"],["c","b"],["bc","cd"],["cd","bc"]]
+    print(sol.calcEquation(equations2, values2, queries2))
+
+    equations3 = [["a","b"]]
+    values3 = [0.5]
+    queries3 = [["a","b"],["b","a"],["a","c"],["x","y"]]
+    print(sol.calcEquation(equations3, values3, queries3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[6.0, 0.5, -1.0, 1.0, -1.0]
+[3.75, 0.4, 5.0, 0.2]
+[0.5, 2.0, -1.0, -1.0]
+
+real    0m0.030s
+user    0m0.022s
+sys     0m0.008s
 ```
 
 #### Python3

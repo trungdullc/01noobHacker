@@ -71,8 +71,54 @@ The final answer is $f[m][n]$.
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Where $m$ and $n$ are the number of types of coins and the total amount, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to find the minimum number of coins required to make up a given amount.
+   """
+
+   def coinChange(self, coins: list[int], amount: int) -> int:
+      """
+      Determines the fewest number of coins needed to make up a given amount.
+      
+      Uses dynamic programming to compute the minimum number of coins for each
+      sub-amount up to the target amount.
+
+      Args:
+         coins (list[int]): List of coin denominations.
+         amount (int): The target amount.
+
+      Returns:
+         int: The minimum number of coins needed to make up the amount,
+              or -1 if it is not possible.
+      """
+      dp = [float('inf')] * (amount + 1)
+      dp[0] = 0
+
+      for i in range(1, amount + 1):
+         for coin in coins:
+            if i - coin >= 0:
+               dp[i] = min(dp[i], dp[i - coin] + 1)
+
+      return dp[amount] if dp[amount] != float('inf') else -1
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.coinChange([1, 2, 5], 11))
+   print(sol.coinChange([2], 3))
+   print(sol.coinChange([1], 0))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+-1
+0
+
+real    0m0.021s
+user    0m0.017s
+sys     0m0.004s
 ```
 
 #### Python3

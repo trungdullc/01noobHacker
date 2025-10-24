@@ -48,8 +48,53 @@ we can combine 1 and 1 to get 0, so the array converts to [1], then that&#39;s t
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def lastStoneWeightII(self, stones: list[int]) -> int:
+        """
+        Computes the smallest possible weight of the last stone after repeatedly
+        smashing stones together according to the rules.
+
+        This problem is equivalent to partitioning the stones into two groups
+        such that the difference of their sums is minimized.
+
+        Parameters:
+            stones (list[int]): List of positive integers representing stone weights.
+
+        Returns:
+            int: The minimal possible weight of the remaining stone (0 if none).
+        """
+        total = sum(stones)
+        target = total // 2
+
+        # dp[i] = True if sum i is achievable
+        dp = [False] * (target + 1)
+        dp[0] = True
+
+        for stone in stones:
+            for i in range(target, stone - 1, -1):
+                dp[i] = dp[i] or dp[i - stone]
+
+        # Find the largest achievable sum <= total // 2
+        for i in range(target, -1, -1):
+            if dp[i]:
+                return total - 2 * i
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.lastStoneWeightII([2,7,4,1,8,1]))   
+    print(sol.lastStoneWeightII([31,26,33,21,40]))
+    
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+5
+
+real    0m0.021s
+user    0m0.018s
+sys     0m0.004s
 ```
 
 #### Python3

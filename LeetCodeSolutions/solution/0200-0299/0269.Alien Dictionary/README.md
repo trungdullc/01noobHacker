@@ -47,8 +47,74 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from collections import defaultdict, deque
+from typing import List
+
+class Solution:
+    def alienOrder(self, words: List[str]) -> str:
+        """
+        Determines the lexicographical order of characters in an alien language
+        based on a sorted list of words. Uses topological sorting (Kahn's Algorithm).
+
+        Time Complexity: O(V + E), where V = number of unique letters, E = number of edges.
+        Space Complexity: O(V + E)
+        """
+        # Build adjacency list and in-degree map
+        adj = defaultdict(set)
+        indegree = {c: 0 for word in words for c in word}
+
+        # Build edges from adjacent word pairs
+        for i in range(len(words) - 1):
+            w1, w2 = words[i], words[i + 1]
+            # Invalid case: prefix conflict
+            if len(w1) > len(w2) and w1.startswith(w2):
+                return ""
+            for c1, c2 in zip(w1, w2):
+                if c1 != c2:
+                    if c2 not in adj[c1]:
+                        adj[c1].add(c2)
+                        indegree[c2] += 1
+                    break
+
+        # Topological sort using queue
+        queue = deque([c for c in indegree if indegree[c] == 0])
+        order = []
+
+        while queue:
+            c = queue.popleft()
+            order.append(c)
+            for nei in adj[c]:
+                indegree[nei] -= 1
+                if indegree[nei] == 0:
+                    queue.append(nei)
+
+        if len(order) < len(indegree):
+            return ""               # Cycle detected (invalid order)
+        return "".join(order)
+
+if __name__ == "__main__":
+    sol = Solution()
+    words1 = ["wrt", "wrf", "er", "ett", "rftt"]
+    print("Example 1 Output:", sol.alienOrder(words1))  
+
+    words2 = ["z", "x"]
+    print("Example 2 Output:", sol.alienOrder(words2))
+
+    words3 = ["z", "x", "z"]
+    print("Example 3 Output:", sol.alienOrder(words3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: wertf
+Example 2 Output: zx
+Example 3 Output: 
+
+real    0m0.034s
+user    0m0.017s
+sys     0m0.013s
 ```
 
 #### Python3

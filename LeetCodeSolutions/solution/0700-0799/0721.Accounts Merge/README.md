@@ -52,8 +52,72 @@ Next, we iterate through all the accounts again. For the $i$th account, we use t
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(n)$. Here, $n$ is the number of accounts.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import defaultdict
 
+class Solution:
+    def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
+        parent = {}
+        owner = {}
+
+        def find(x):
+            parent.setdefault(x, x)
+            if parent[x] != x:
+                parent[x] = find(parent[x])
+            return parent[x]
+
+        def union(x, y):
+            parent[find(x)] = find(y)
+
+        # Step 1: Union emails in the same account
+        for account in accounts:
+            name = account[0]
+            first_email = account[1]
+            for email in account[1:]:
+                union(email, first_email)
+                owner[email] = name
+
+        # Step 2: Group emails by root parent
+        groups = defaultdict(list)
+        for email in parent:
+            root = find(email)
+            groups[root].append(email)
+
+        # Step 3: Format result with sorted emails
+        result = []
+        for root, emails in groups.items():
+            result.append([owner[root]] + sorted(emails))
+        return result
+
+if __name__ == "__main__":
+    sol = Solution()
+    accounts1 = [
+        ["John","johnsmith@mail.com","john_newyork@mail.com"],
+        ["John","johnsmith@mail.com","john00@mail.com"],
+        ["Mary","mary@mail.com"],
+        ["John","johnnybravo@mail.com"]
+    ]
+    print(sol.accountsMerge(accounts1))
+
+    accounts2 = [
+        ["Gabe","Gabe0@m.co","Gabe3@m.co","Gabe1@m.co"],
+        ["Kevin","Kevin3@m.co","Kevin5@m.co","Kevin0@m.co"],
+        ["Ethan","Ethan5@m.co","Ethan4@m.co","Ethan0@m.co"],
+        ["Hanzo","Hanzo3@m.co","Hanzo1@m.co","Hanzo0@m.co"],
+        ["Fern","Fern5@m.co","Fern1@m.co","Fern0@m.co"]
+    ]
+    print(sol.accountsMerge(accounts2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[['John', 'john00@mail.com', 'john_newyork@mail.com', 'johnsmith@mail.com'], ['Mary', 'mary@mail.com'], ['John', 'johnnybravo@mail.com']]
+[['Gabe', 'Gabe0@m.co', 'Gabe1@m.co', 'Gabe3@m.co'], ['Kevin', 'Kevin0@m.co', 'Kevin3@m.co', 'Kevin5@m.co'], ['Ethan', 'Ethan0@m.co', 'Ethan4@m.co', 'Ethan5@m.co'], ['Hanzo', 'Hanzo0@m.co', 'Hanzo1@m.co', 'Hanzo3@m.co'], ['Fern', 'Fern0@m.co', 'Fern1@m.co', 'Fern5@m.co']]
+
+real    0m0.029s
+user    0m0.012s
+sys     0m0.016s
 ```
 
 #### Python3

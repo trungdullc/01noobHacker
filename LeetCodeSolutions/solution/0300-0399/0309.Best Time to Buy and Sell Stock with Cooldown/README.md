@@ -55,8 +55,57 @@ To avoid repeated calculations, we use the method of memoization search, and use
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $prices$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def maxProfit(self, prices: list[int]) -> int:
+        """
+        Calculates the maximum profit from stock trading with cooldown.
+
+        You may buy and sell multiple times but after a sell, you cannot buy
+        the next day (1-day cooldown). You cannot hold multiple stocks at once.
+
+        Uses dynamic programming with three states:
+            - hold: max profit while holding a stock
+            - sold: max profit on the day of selling
+            - rest: max profit while not holding stock and not selling today
+
+        Parameters:
+            prices (list[int]): List of stock prices per day.
+
+        Returns:
+            int: Maximum achievable profit.
+        """
+        if not prices:
+            return 0
+
+        n = len(prices)
+        hold = -prices[0]
+        sold = 0
+        rest = 0
+
+        for price in prices[1:]:
+            prev_sold = sold
+            sold = hold + price
+            hold = max(hold, rest - price)
+            rest = max(rest, prev_sold)
+
+        return max(sold, rest)
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxProfit([1,2,3,0,2]))
+    print(sol.maxProfit([1]))        
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+0
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

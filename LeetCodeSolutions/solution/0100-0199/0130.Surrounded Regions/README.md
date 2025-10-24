@@ -57,8 +57,68 @@ Then we traverse the matrix again, for each position:
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns in the matrix, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    """
+    Solves the Surrounded Regions problem.
+    """
+
+    def solve(self, board: List[List[str]]) -> None:
+        """
+        Modifies the board in-place to capture all regions surrounded by 'X'.
+        """
+        if not board or not board[0]:
+            return
+
+        m, n = len(board), len(board[0])
+
+        def dfs(r, c):
+            if 0 <= r < m and 0 <= c < n and board[r][c] == 'O':
+                board[r][c] = 'E'  # Mark as escaped
+                # Visit all 4 directions
+                dfs(r+1, c)
+                dfs(r-1, c)
+                dfs(r, c+1)
+                dfs(r, c-1)
+
+        # Step 1: Mark all 'O's connected to borders as escaped
+        for i in range(m):
+            dfs(i, 0)       # Left edge
+            dfs(i, n-1)     # Right edge
+        for j in range(n):
+            dfs(0, j)       # Top edge
+            dfs(m-1, j)     # Bottom edge
+
+        # Step 2: Flip captured 'O's to 'X', and restore escaped 'E's to 'O'
+        for i in range(m):
+            for j in range(n):
+                if board[i][j] == 'O':
+                    board[i][j] = 'X'  # Captured
+                elif board[i][j] == 'E':
+                    board[i][j] = 'O'  # Escaped
+
+if __name__ == "__main__":
+    boards = [
+        [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]],
+        [["X"]]
+    ]
+
+    sol = Solution()
+    for i, board in enumerate(boards, 1):
+        sol.solve(board)
+        print(f"Example {i} output: {board}")
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 output: [['X', 'X', 'X', 'X'], ['X', 'X', 'X', 'X'], ['X', 'X', 'X', 'X'], ['X', 'O', 'X', 'X']]
+Example 2 output: [['X']]
+
+real    0m0.028s
+user    0m0.024s
+sys     0m0.004s
 ```
 
 #### Python3

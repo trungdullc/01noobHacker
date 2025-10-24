@@ -43,8 +43,51 @@ Since $f[i][j]$ depends on $f[i + 1][j - 1]$, we need to ensure that $i + 1$ is 
 The time complexity is $O(n^2)$, and the space complexity is $O(n^2)$. Here, $n$ is the length of the string $s$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        """
+        Expands around all possible centers to find the longest palindromic substring.
+        Time Complexity: O(n^2)
+        Space Complexity: O(1)
+        """
+        if not s:
+            return ""
+        
+        start, end = 0, 0
+
+        def expand(left: int, right: int) -> int:
+            # Expand while characters match
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                left -= 1
+                right += 1
+            return right - left - 1     # Length of palindrome
+
+        for i in range(len(s)):
+            len1 = expand(i, i)         # Odd length palindrome
+            len2 = expand(i, i + 1)     # Even length palindrome
+            max_len = max(len1, len2)
+            if max_len > end - start:
+                start = i - (max_len - 1) // 2
+                end = i + max_len // 2
+
+        return s[start:end+1]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print("Example 1 Output:", sol.longestPalindrome("babad"))
+    print("Example 2 Output:", sol.longestPalindrome("cbbd"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: aba
+Example 2 Output: bb
+
+real    0m0.024s
+user    0m0.019s
+sys     0m0.005s
 ```
 
 #### Python3

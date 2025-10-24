@@ -61,8 +61,74 @@ Finally, if the number of fresh oranges is $0$, we return the current round numb
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Where $m$ and $n$ are the number of rows and columns of the grid, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import deque
 
+class Solution:
+    """
+    Solves the Rotting Oranges problem using BFS.
+    """
+
+    def orangesRotting(self, grid: List[List[int]]) -> int:
+        """
+        Returns the minimum number of minutes until no fresh orange remains,
+        or -1 if impossible.
+        """
+        if not grid or not grid[0]:
+            return -1
+
+        m, n = len(grid), len(grid[0])
+        queue = deque()
+        fresh_count = 0
+
+        # Collect all rotten oranges and count fresh oranges
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 2:
+                    queue.append((i, j))
+                elif grid[i][j] == 1:
+                    fresh_count += 1
+
+        # Directions: up, down, left, right
+        directions = [(0,1),(1,0),(0,-1),(-1,0)]
+        minutes = 0
+
+        while queue and fresh_count > 0:
+            for _ in range(len(queue)):
+                x, y = queue.popleft()
+                for dx, dy in directions:
+                    nx, ny = x + dx, y + dy
+                    if 0 <= nx < m and 0 <= ny < n and grid[nx][ny] == 1:
+                        grid[nx][ny] = 2
+                        fresh_count -= 1
+                        queue.append((nx, ny))
+            minutes += 1
+
+        return minutes if fresh_count == 0 else -1
+
+if __name__ == "__main__":
+    grids = [
+        [[2,1,1],[1,1,0],[0,1,1]],
+        [[2,1,1],[0,1,1],[1,0,1]],
+        [[0,2]]
+    ]
+
+    sol = Solution()
+    for i, grid in enumerate(grids, 1):
+        result = sol.orangesRotting(grid)
+        print(f"Example {i} output: {result}")
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 output: 4
+Example 2 output: -1
+Example 3 output: 0
+
+real    0m0.058s
+user    0m0.026s
+sys     0m0.004s
 ```
 
 #### Python3

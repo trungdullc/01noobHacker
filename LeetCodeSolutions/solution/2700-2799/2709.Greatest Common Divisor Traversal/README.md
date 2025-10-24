@@ -48,8 +48,97 @@ To go from index 0 to index 2, we can just go directly because gcd(nums[0], nums
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from math import gcd, isqrt
+from collections import defaultdict
 
+class Solution:
+    def canTraverseAllPairs(self, nums: List[int]) -> bool:
+        """
+        Determines if all indices in nums can be traversed based on gcd > 1 connectivity.
+        
+        Approach:
+        - Factorize each number into its prime factors.
+        - Use Union-Find (Disjoint Set Union) to connect indices that share a common prime.
+        - If all indices belong to the same connected component, return True.
+        
+        Time Complexity: O(n * sqrt(max(nums))) — efficient for constraints
+        Space Complexity: O(n)
+        """
+
+        n = len(nums)
+        if n == 1:
+            return True
+        if 1 in nums:  # 1 has no prime factors → can't connect
+            return False
+
+        parent = list(range(n))
+        rank = [1] * n
+
+        def find(x):
+            while x != parent[x]:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(x, y):
+            rx, ry = find(x), find(y)
+            if rx == ry:
+                return
+            if rank[rx] < rank[ry]:
+                parent[rx] = ry
+            elif rank[rx] > rank[ry]:
+                parent[ry] = rx
+            else:
+                parent[ry] = rx
+                rank[rx] += 1
+
+        def prime_factors(num):
+            factors = set()
+            d = 2
+            while d * d <= num:
+                while num % d == 0:
+                    factors.add(d)
+                    num //= d
+                d += 1
+            if num > 1:
+                factors.add(num)
+            return factors
+
+        # Map each prime factor to the first index it appeared at
+        prime_to_index = {}
+
+        for i, val in enumerate(nums):
+            factors = prime_factors(val)
+            for f in factors:
+                if f in prime_to_index:
+                    union(i, prime_to_index[f])
+                else:
+                    prime_to_index[f] = i
+
+        root0 = find(0)
+        for i in range(1, n):
+            if find(i) != root0:
+                return False
+        return True
+
+if __name__ == "__main__":
+    sol = Solution()
+    print("Example 1 Output:", sol.canTraverseAllPairs([2, 3, 6]))
+    print("Example 2 Output:", sol.canTraverseAllPairs([3, 9, 5]))
+    print("Example 3 Output:", sol.canTraverseAllPairs([4, 3, 12, 8]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: True
+Example 2 Output: False
+Example 3 Output: True
+
+real    0m0.074s
+user    0m0.034s
+sys     0m0.011s
 ```
 
 #### Python3

@@ -47,8 +47,50 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+def islandPerimeter(grid: List[List[int]]) -> int:
+    rows, cols = len(grid), len(grid[0])
+    perimeter = 0
+    
+    for r in range(rows):
+        for c in range(cols):
+            if grid[r][c] == 1:
+                perimeter += 4
+                # Check top neighbor
+                if r > 0 and grid[r-1][c] == 1:
+                    perimeter -= 2
+                # Check left neighbor
+                if c > 0 and grid[r][c-1] == 1:
+                    perimeter -= 2
+    return perimeter
+
+if __name__ == "__main__":
+    grid1 = [
+        [0,1,0,0],
+        [1,1,1,0],
+        [0,1,0,0],
+        [1,1,0,0]
+    ]
+    print(islandPerimeter(grid1)) 
+
+    grid2 = [[1]]
+    print(islandPerimeter(grid2))
+
+    grid3 = [[1,0]]
+    print(islandPerimeter(grid3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+16
+4
+4
+
+real    0m0.058s
+user    0m0.018s
+sys     0m0.011s
 ```
 
 #### Python3

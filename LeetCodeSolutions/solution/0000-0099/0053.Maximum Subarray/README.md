@@ -63,8 +63,48 @@ Since $f[i]$ is only related to $f[i - 1]$, we can use a single variable $f$ to 
 The time complexity is $O(n)$, where $n$ is the length of the array $\textit{nums}$. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def maxSubArray(self, nums: list[int]) -> int:
+        """
+        Finds the contiguous subarray with the largest sum.
+
+        Uses Kadane's algorithm:
+        - Iterate through nums, track current sum and max sum.
+        - If current sum becomes negative, reset to 0.
+
+        Parameters:
+            nums (list[int]): List of integers.
+
+        Returns:
+            int: Maximum subarray sum.
+        """
+        max_sum = nums[0]
+        current_sum = nums[0]
+
+        for num in nums[1:]:
+            current_sum = max(num, current_sum + num)
+            max_sum = max(max_sum, current_sum)
+
+        return max_sum
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    print(sol.maxSubArray([1]))                     
+    print(sol.maxSubArray([5,4,-1,7,8]))            
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+6
+1
+23
+
+real    0m0.024s
+user    0m0.015s
+sys     0m0.009s
 ```
 
 #### Python3

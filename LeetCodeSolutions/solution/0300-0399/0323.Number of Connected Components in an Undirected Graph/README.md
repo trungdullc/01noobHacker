@@ -44,8 +44,52 @@ Then we traverse all nodes. For each node, we use DFS to traverse all its adjace
 The time complexity is $O(n + m)$, and the space complexity is $O(n + m)$. Where $n$ and $m$ are the number of nodes and edges, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        parent = [i for i in range(n)]
+
+        def find(x):
+            if parent[x] != x:
+                parent[x] = find(parent[x])
+            return parent[x]
+
+        def union(x, y):
+            rootX = find(x)
+            rootY = find(y)
+            if rootX != rootY:
+                parent[rootY] = rootX  # Merge
+                return True
+            return False
+
+        components = n
+        for u, v in edges:
+            if union(u, v):
+                components -= 1
+
+        return components
+
+if __name__ == "__main__":
+    sol = Solution()
+    n1 = 5
+    edges1 = [[0,1],[1,2],[3,4]]
+    print(sol.countComponents(n1, edges1))
+
+    n2 = 5
+    edges2 = [[0,1],[1,2],[2,3],[3,4]]
+    print(sol.countComponents(n2, edges2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+1
+
+real    0m0.038s
+user    0m0.026s
+sys     0m0.005s
 ```
 
 #### Python3

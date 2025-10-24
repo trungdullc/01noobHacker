@@ -57,8 +57,67 @@ Note that there are other possible paths for these cells to flow to the Pacific 
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    """
+    Solves the Pacific Atlantic Water Flow problem.
+    """
+
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        if not heights or not heights[0]:
+            return []
+
+        m, n = len(heights), len(heights[0])
+        
+        # Sets to mark reachable cells from each ocean
+        pacific = set()
+        atlantic = set()
+
+        # Directions: up, down, left, right
+        directions = [(0,1),(0,-1),(1,0),(-1,0)]
+
+        def dfs(r, c, reachable):
+            reachable.add((r, c))
+            for dr, dc in directions:
+                nr, nc = r + dr, c + dc
+                if 0 <= nr < m and 0 <= nc < n:
+                    if (nr, nc) not in reachable and heights[nr][nc] >= heights[r][c]:
+                        dfs(nr, nc, reachable)
+
+        # Run DFS from all cells adjacent to the Pacific and Atlantic oceans
+        for i in range(m):
+            dfs(i, 0, pacific)       # Left edge -> Pacific
+            dfs(i, n-1, atlantic)    # Right edge -> Atlantic
+        for j in range(n):
+            dfs(0, j, pacific)       # Top edge -> Pacific
+            dfs(m-1, j, atlantic)    # Bottom edge -> Atlantic
+
+        # Intersection of cells reachable from both oceans
+        return list(map(list, pacific & atlantic))
+
+
+if __name__ == "__main__":
+    heights_list = [
+        [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]],
+        [[1]]
+    ]
+    
+    sol = Solution()
+    for i, heights in enumerate(heights_list, 1):
+        result = sol.pacificAtlantic(heights)
+        print(f"Example {i} output: {result}")
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 output: [[4, 0], [0, 4], [3, 1], [1, 4], [3, 0], [2, 2], [1, 3]]
+Example 2 output: [[0, 0]]
+
+real    0m0.064s
+user    0m0.024s
+sys     0m0.008s
 ```
 
 #### Python3

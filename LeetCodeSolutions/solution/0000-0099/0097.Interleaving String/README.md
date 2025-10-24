@@ -77,8 +77,63 @@ To avoid repeated calculations, we can use memoization search.
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the lengths of strings $s_1$ and $s_2$ respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
+        """
+        Determines if s3 is formed by an interleaving of s1 and s2.
+
+        An interleaving of s1 and s2 is a string that contains all characters
+        of s1 and s2 in order, possibly alternating between them.
+
+        Parameters:
+            s1 (str): First string.
+            s2 (str): Second string.
+            s3 (str): Target string to check for interleaving.
+
+        Returns:
+            bool: True if s3 is an interleaving of s1 and s2, False otherwise.
+        """
+        m, n = len(s1), len(s2)
+        if len(s3) != m + n:
+            return False
+
+        dp = [[False] * (n + 1) for _ in range(m + 1)]
+        dp[0][0] = True
+
+        # Fill first row
+        for j in range(1, n + 1):
+            dp[0][j] = dp[0][j - 1] and s2[j - 1] == s3[j - 1]
+
+        # Fill first column
+        for i in range(1, m + 1):
+            dp[i][0] = dp[i - 1][0] and s1[i - 1] == s3[i - 1]
+
+        # Fill rest
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                dp[i][j] = (dp[i - 1][j] and s1[i - 1] == s3[i + j - 1]) or \
+                           (dp[i][j - 1] and s2[j - 1] == s3[i + j - 1])
+
+        return dp[m][n]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isInterleave("aabcc", "dbbca", "aadbbcbcac"))
+    print(sol.isInterleave("aabcc", "dbbca", "aadbbbaccc")) 
+    print(sol.isInterleave("", "", ""))                    
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+True
+
+real    0m0.022s
+user    0m0.011s
+sys     0m0.011s
 ```
 
 #### Python3

@@ -63,8 +63,56 @@ Finally, we enumerate each person $i$ in the range $[1,..n]$. If $cnt1[i] = 0$ a
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $trust$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    """
+    Provides a method to find the town judge in a town based on trust relationships.
+    """
+
+    def findJudge(self, n: int, trust: List[List[int]]) -> int:
+        """
+        Determines the town judge if one exists.
+
+        Args:
+            n (int): Number of people in the town.
+            trust (List[List[int]]): List of trust pairs [a, b] meaning a trusts b.
+
+        Returns:
+            int: Label of the town judge or -1 if no judge exists.
+        """
+        if n == 1 and not trust:
+            return 1                                # Single person is trivially the judge
+
+        trust_counts = [0] * (n + 1)                # index 0 unused
+
+        for a, b in trust:
+            trust_counts[a] -= 1                    # trusts someone: decrease
+            trust_counts[b] += 1                    # trusted by someone: increase
+
+        for person in range(1, n + 1):
+            if trust_counts[person] == n - 1:       # trusted by everyone else, trusts nobody
+                return person
+
+        return -1
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.findJudge(2, [[1,2]]))
+    print(sol.findJudge(3, [[1,3],[2,3]]))
+    print(sol.findJudge(3, [[1,3],[2,3],[3,1]])) 
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+3
+-1
+
+real    0m0.106s
+user    0m0.022s
+sys     0m0.009s
 ```
 
 #### Python3

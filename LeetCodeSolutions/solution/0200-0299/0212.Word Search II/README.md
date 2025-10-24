@@ -40,8 +40,79 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.is_word = False
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+    
+    def insert(self, word: str):
+        node = self.root
+        for ch in word:
+            if ch not in node.children:
+                node.children[ch] = TrieNode()
+            node = node.children[ch]
+        node.is_word = True
+
+def findWords(board: List[List[str]], words: List[str]) -> List[str]:
+    trie = Trie()
+    for word in words:
+        trie.insert(word)
+
+    rows, cols = len(board), len(board[0])
+    res = set()
+    
+    def dfs(r, c, node, path):
+        if node.is_word:
+            res.add(path)
+            # do not return, continue to find longer words
+        
+        if not (0 <= r < rows and 0 <= c < cols):
+            return
+        char = board[r][c]
+        if char not in node.children:
+            return
+        
+        board[r][c] = '#'       # mark as visited
+        for dr, dc in [(0,1),(1,0),(-1,0),(0,-1)]:
+            dfs(r + dr, c + dc, node.children[char], path + char)
+        board[r][c] = char      # unmark
+
+    for r in range(rows):
+        for c in range(cols):
+            dfs(r, c, trie.root, "")
+    
+    return list(res)
+
+if __name__ == "__main__":
+    board1 = [
+        ["o","a","a","n"],
+        ["e","t","a","e"],
+        ["i","h","k","r"],
+        ["i","f","l","v"]
+    ]
+    words1 = ["oath","pea","eat","rain"]
+    print(findWords(board1, words1))
+
+    board2 = [["a","b"],["c","d"]]
+    words2 = ["abcb"]
+    print(findWords(board2, words2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+['eat', 'oath']
+[]
+
+real    0m0.090s
+user    0m0.026s
+sys     0m0.004s
 ```
 
 #### Python3

@@ -58,6 +58,57 @@ We first construct a set of edges, then sort them in ascending order of edge wei
 
 The time complexity is $O(m \times n \times \log(m \times n))$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns in the two-dimensional array, respectively.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+import heapq
+
+class Solution:
+    def minimumEffortPath(self, heights: List[List[int]]) -> int:
+        rows, cols = len(heights), len(heights[0])
+        # effort[i][j] = minimum effort to reach cell (i,j)
+        effort = [[float('inf')] * cols for _ in range(rows)]
+        effort[0][0] = 0
+        heap = [(0, 0, 0)]  # (current effort, row, col)
+
+        directions = [(0,1),(1,0),(-1,0),(0,-1)]
+
+        while heap:
+            curr_effort, r, c = heapq.heappop(heap)
+            if r == rows-1 and c == cols-1:
+                return curr_effort
+            for dr, dc in directions:
+                nr, nc = r + dr, c + dc
+                if 0 <= nr < rows and 0 <= nc < cols:
+                    next_effort = max(curr_effort, abs(heights[nr][nc] - heights[r][c]))
+                    if next_effort < effort[nr][nc]:
+                        effort[nr][nc] = next_effort
+                        heapq.heappush(heap, (next_effort, nr, nc))
+        return 0  # fallback, though we always should reach the bottom-right
+
+if __name__ == "__main__":
+    sol = Solution()
+    heights1 = [[1,2,2],[3,8,2],[5,3,5]]
+    print(sol.minimumEffortPath(heights1))
+
+    heights2 = [[1,2,3],[3,8,4],[5,3,5]]
+    print(sol.minimumEffortPath(heights2))
+
+    heights3 = [[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]
+    print(sol.minimumEffortPath(heights3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+1
+0
+
+real    0m0.042s
+user    0m0.022s
+sys     0m0.009s
+```
+
 #### Python3
 
 ```python

@@ -57,8 +57,50 @@ Similar problems:
 -   [1326. Minimum Number of Taps to Open to Water a Garden](https://github.com/doocs/leetcode/blob/main/solution/1300-1399/1326.Minimum%20Number%20of%20Taps%20to%20Open%20to%20Water%20a%20Garden/README_EN.md)
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def jump(self, nums: list[int]) -> int:
+        """
+        Returns the minimum number of jumps to reach the last index.
+
+        Uses a greedy approach:
+        - Track the farthest reachable index within the current jump (end of current range).
+        - When reaching the end of current range, increment jump count and update range.
+
+        Parameters:
+            nums (list[int]): Array where each element is max jump length.
+
+        Returns:
+            int: Minimum number of jumps to reach the last index.
+        """
+        n = len(nums)
+        jumps = 0
+        current_end = 0
+        farthest = 0
+
+        for i in range(n - 1):
+            farthest = max(farthest, i + nums[i])
+            if i == current_end:
+                jumps += 1
+                current_end = farthest
+
+        return jumps
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.jump([2,3,1,1,4]))
+    print(sol.jump([2,3,0,1,4]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+2
+
+real    0m0.023s
+user    0m0.008s
+sys     0m0.015s
 ```
 
 #### Python3

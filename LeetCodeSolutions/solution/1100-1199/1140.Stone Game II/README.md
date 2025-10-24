@@ -66,8 +66,60 @@ Finally, we return $dfs(0, 1)$ as the answer.
 The time complexity is $O(n^3)$, and the space complexity is $O(n^2)$. Here, $n$ is the length of the array `piles`.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from functools import lru_cache
+
+class Solution:
+    def stoneGameII(self, piles: list[int]) -> int:
+        """
+        Computes the maximum number of stones Alice can collect in Stone Game II.
+
+        Rules:
+        - Players take turns. Alice starts first.
+        - On their turn, a player can take 1 to 2*M piles from the start of the remaining piles.
+        - M is updated to max(M, X) after taking X piles.
+        - Both players play optimally.
+
+        Parameters:
+            piles (list[int]): List of integers representing stone piles.
+
+        Returns:
+            int: Maximum number of stones Alice can collect.
+        """
+        n = len(piles)
+        suffix_sum = [0] * (n + 1)
+        for i in range(n - 1, -1, -1):
+            suffix_sum[i] = piles[i] + suffix_sum[i + 1]
+
+        @lru_cache(None)
+        def dp(i, M):
+            if i >= n:
+                return 0
+            max_stones = 0
+            for X in range(1, 2 * M + 1):
+                if i + X > n:
+                    break
+                # Opponent plays optimally, so we get the remaining minus what they get
+                max_stones = max(max_stones, suffix_sum[i] - dp(i + X, max(M, X)))
+            return max_stones
+
+        return dp(0, 1)
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.stoneGameII([2,7,9,4,4]))    
+    print(sol.stoneGameII([1,2,3,4,5,100]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+10
+104
+
+real    0m0.024s
+user    0m0.023s
+sys     0m0.002s
 ```
 
 #### Python3

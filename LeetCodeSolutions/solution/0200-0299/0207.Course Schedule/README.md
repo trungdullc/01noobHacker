@@ -53,8 +53,58 @@ If all nodes have been traversed, it means there is no cycle in the graph, and w
 The time complexity is $O(n + m)$, and the space complexity is $O(n + m)$. Here, $n$ and $m$ are the number of courses and prerequisites respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import deque, defaultdict
 
+class Solution:
+    """
+    Determines if all courses can be finished given prerequisites.
+    """
+
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        # Build graph and in-degree count
+        graph = defaultdict(list)
+        in_degree = [0] * numCourses
+
+        for course, pre in prerequisites:
+            graph[pre].append(course)
+            in_degree[course] += 1
+
+        # Queue for courses with no prerequisites
+        queue = deque([i for i in range(numCourses) if in_degree[i] == 0])
+        visited = 0
+
+        while queue:
+            course = queue.popleft()
+            visited += 1
+            for neighbor in graph[course]:
+                in_degree[neighbor] -= 1
+                if in_degree[neighbor] == 0:
+                    queue.append(neighbor)
+
+        return visited == numCourses
+
+if __name__ == "__main__":
+    examples = [
+        (2, [[1,0]]),
+        (2, [[1,0],[0,1]])
+    ]
+
+    sol = Solution()
+    for i, (numCourses, prerequisites) in enumerate(examples, 1):
+        res = sol.canFinish(numCourses, prerequisites)
+        print(f"Example {i} output: {res}")
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 output: True
+Example 2 output: False
+
+real    0m0.030s
+user    0m0.019s
+sys     0m0.011s
 ```
 
 #### Python3

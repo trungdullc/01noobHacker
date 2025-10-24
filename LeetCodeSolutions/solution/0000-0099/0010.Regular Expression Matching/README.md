@@ -64,8 +64,61 @@ During the process, we can use memoization search to avoid repeated calculations
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the lengths of $s$ and $p$ respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def isMatch(self, s: str, p: str) -> bool:
+        """
+        Determines if the string s matches the pattern p.
+
+        Supported pattern characters:
+        - '.' matches any single character.
+        - '*' matches zero or more of the preceding element.
+
+        Parameters:
+            s (str): Input string.
+            p (str): Pattern string.
+
+        Returns:
+            bool: True if s matches p entirely, False otherwise.
+        """
+        m, n = len(s), len(p)
+        dp = [[False] * (n + 1) for _ in range(m + 1)]
+        dp[0][0] = True
+
+        # Initialize patterns like a*, a*b*, a*b*c* matching empty string
+        for j in range(2, n + 1):
+            if p[j - 1] == '*':
+                dp[0][j] = dp[0][j - 2]
+
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if p[j - 1] == '.' or p[j - 1] == s[i - 1]:
+                    dp[i][j] = dp[i - 1][j - 1]
+                elif p[j - 1] == '*':
+                    # Zero occurrences of preceding element
+                    dp[i][j] = dp[i][j - 2]
+                    # One or more occurrences if preceding element matches
+                    if p[j - 2] == '.' or p[j - 2] == s[i - 1]:
+                        dp[i][j] |= dp[i - 1][j]
+        return dp[m][n]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isMatch("aa", "a"))  
+    print(sol.isMatch("aa", "a*"))
+    print(sol.isMatch("ab", ".*"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+False
+True
+True
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

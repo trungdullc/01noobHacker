@@ -61,8 +61,51 @@ The time complexity is $O(m \times n)$, and the space complexity is $O(m \times 
 We notice that $f[i][j]$ is only related to $f[i - 1][j]$ and $f[i][j - 1]$, so we can optimize the first dimension space and only keep the second dimension space, resulting in a time complexity of $O(m \times n)$ and a space complexity of $O(n)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to count the number of unique paths for a robot moving in a grid.
+   """
+
+   def uniquePaths(self, m: int, n: int) -> int:
+      """
+      Returns the number of unique paths from the top-left corner to the
+      bottom-right corner of an m x n grid, where the robot can only move
+      either right or down at any step.
+
+      Uses dynamic programming where dp[i][j] represents the number of ways
+      to reach cell (i, j).
+
+      Args:
+         m (int): Number of rows in the grid.
+         n (int): Number of columns in the grid.
+
+      Returns:
+         int: The total number of unique paths.
+      """
+      dp = [[1] * n for _ in range(m)]
+
+      for i in range(1, m):
+         for j in range(1, n):
+            dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
+
+      return dp[m - 1][n - 1]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.uniquePaths(3, 7))
+   print(sol.uniquePaths(3, 2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+28
+3
+
+real    0m0.021s
+user    0m0.012s
+sys     0m0.009s
 ```
 
 #### Python3

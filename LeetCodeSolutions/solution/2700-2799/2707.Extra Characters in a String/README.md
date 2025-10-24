@@ -58,8 +58,44 @@ The final answer is $f[n]$.
 The time complexity is $O(n^3 + L)$, and the space complexity is $O(n + L)$. Here, $n$ is the length of string $s$, and $L$ is the sum of the lengths of all words in the dictionary.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+
+def minExtraChar(s: str, dictionary: List[str]) -> int:
+    n = len(s)
+    dp = [0] * (n + 1)  # dp[i] = min extra chars for s[i:]
+    word_set = set(dictionary)
+
+    # fill dp from end to start
+    for i in range(n - 1, -1, -1):
+        # assume current character is extra
+        dp[i] = 1 + dp[i + 1]
+        # try to match dictionary words starting at i
+        for j in range(i + 1, n + 1):
+            if s[i:j] in word_set:
+                dp[i] = min(dp[i], dp[j])
+
+    return dp[0]
+
+if __name__ == "__main__":
+    s1 = "leetscode"
+    dict1 = ["leet", "code", "leetcode"]
+    print(minExtraChar(s1, dict1))
+
+    s2 = "sayhelloworld"
+    dict2 = ["hello", "world"]
+    print(minExtraChar(s2, dict2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+3
+
+real    0m0.028s
+user    0m0.012s
+sys     0m0.016s
 ```
 
 #### Python3

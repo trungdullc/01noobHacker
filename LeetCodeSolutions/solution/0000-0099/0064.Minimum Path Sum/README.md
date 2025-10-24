@@ -49,8 +49,56 @@ Finally, return $f[m - 1][n - 1]$.
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns of the grid, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def minPathSum(self, grid: list[list[int]]) -> int:
+        """
+        Computes the minimum path sum from the top-left to the bottom-right
+        corner of a 2D grid. The robot may only move right or down, and each
+        cell contains a non-negative integer cost.
+
+        Parameters:
+            grid (list[list[int]]): The cost grid where grid[i][j] >= 0.
+
+        Returns:
+            int: The minimum possible sum of values along a valid path.
+        """
+        m, n = len(grid), len(grid[0])
+
+        # dp[i][j] represents min cost to reach cell (i, j)
+        dp = [[0] * n for _ in range(m)]
+        dp[0][0] = grid[0][0]
+
+        # Fill first column
+        for i in range(1, m):
+            dp[i][0] = dp[i - 1][0] + grid[i][0]
+
+        # Fill first row
+        for j in range(1, n):
+            dp[0][j] = dp[0][j - 1] + grid[0][j]
+
+        # Fill the rest
+        for i in range(1, m):
+            for j in range(1, n):
+                dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
+
+        return dp[m - 1][n - 1]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.minPathSum([[1,3,1],[1,5,1],[4,2,1]]))
+    print(sol.minPathSum([[1,2,3],[4,5,6]]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+7
+12
+
+real    0m0.025s
+user    0m0.021s
+sys     0m0.004s
 ```
 
 #### Python3

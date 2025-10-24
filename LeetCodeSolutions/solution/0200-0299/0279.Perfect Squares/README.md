@@ -35,8 +35,51 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to find the least number of perfect square numbers that sum to n.
+   """
+
+   def numSquares(self, n: int) -> int:
+      """
+      Returns the minimum number of perfect squares whose sum is n.
+
+      Uses dynamic programming to find the smallest number of squares
+      that sum to each value up to n.
+
+      Args:
+         n (int): The target number.
+
+      Returns:
+         int: The least number of perfect squares that sum to n.
+      """
+      dp = [float('inf')] * (n + 1)
+      dp[0] = 0
+
+      for i in range(1, n + 1):
+         j = 1
+         while j * j <= i:
+            dp[i] = min(dp[i], dp[i - j * j] + 1)
+            j += 1
+
+      return dp[n]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.numSquares(12))
+   print(sol.numSquares(13))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+2
+
+real    0m0.026s
+user    0m0.026s
+sys     0m0.000s
 ```
 
 #### Python3

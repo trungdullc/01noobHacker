@@ -70,8 +70,61 @@ To prevent repeated calculations, we can use memoization search.
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the number of piles of stones.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for Stone Game III where Alice and Bob play optimally to maximize score.
+   """
+
+   def stoneGameIII(self, stoneValue: list[int]) -> str:
+      """
+      Determines the winner of the stone game.
+
+      Uses dynamic programming where dp[i] represents the maximum score difference
+      (current player score - opponent score) starting from index i.
+
+      Args:
+         stoneValue (list[int]): List of stone values.
+
+      Returns:
+         str: "Alice", "Bob", or "Tie" depending on the optimal outcome.
+      """
+      n = len(stoneValue)
+      dp = [0] * (n + 1)
+
+      for i in range(n - 1, -1, -1):
+         best = float('-inf')
+         total = 0
+         for take in range(3):
+            if i + take < n:
+               total += stoneValue[i + take]
+               best = max(best, total - dp[i + take + 1])
+         dp[i] = best
+
+      if dp[0] > 0:
+         return "Alice"
+      elif dp[0] < 0:
+         return "Bob"
+      else:
+         return "Tie"
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.stoneGameIII([1,2,3,7]))
+   print(sol.stoneGameIII([1,2,3,-9]))
+   print(sol.stoneGameIII([1,2,3,6]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Bob
+Alice
+Tie
+
+real    0m0.049s
+user    0m0.028s
+sys     0m0.005s
 ```
 
 #### Python3

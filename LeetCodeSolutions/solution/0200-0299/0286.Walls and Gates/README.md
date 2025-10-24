@@ -42,8 +42,69 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import deque
 
+class Solution:
+    """
+    Solves the Walls and Gates problem.
+    """
+
+    def wallsAndGates(self, rooms: List[List[int]]) -> None:
+        """
+        Fill each empty room with the distance to its nearest gate.
+        Modifies rooms in-place.
+        """
+        if not rooms or not rooms[0]:
+            return
+
+        m, n = len(rooms), len(rooms[0])
+        INF = 2147483647
+        queue = deque()
+
+        # Collect all gates as starting points
+        for i in range(m):
+            for j in range(n):
+                if rooms[i][j] == 0:
+                    queue.append((i, j))
+
+        directions = [(0,1),(1,0),(0,-1),(-1,0)]
+
+        while queue:
+            x, y = queue.popleft()
+            for dx, dy in directions:
+                nx, ny = x + dx, y + dy
+                if 0 <= nx < m and 0 <= ny < n and rooms[nx][ny] == INF:
+                    rooms[nx][ny] = rooms[x][y] + 1
+                    queue.append((nx, ny))
+
+if __name__ == "__main__":
+    rooms = [
+        [2147483647,-1,0,2147483647],
+        [2147483647,2147483647,2147483647,-1],
+        [2147483647,-1,2147483647,-1],
+        [0,-1,2147483647,2147483647]
+    ]
+
+    sol = Solution()
+    sol.wallsAndGates(rooms)
+    print("Rooms after filling distances to nearest gates:")
+    for row in rooms:
+        print(row)
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Rooms after filling distances to nearest gates:
+[3, -1, 0, 1]
+[2, 2, 1, -1]
+[1, -1, 2, -1]
+[0, -1, 3, 4]
+
+real    0m0.082s
+user    0m0.021s
+sys     0m0.009s
 ```
 
 #### Python3

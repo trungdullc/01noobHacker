@@ -46,8 +46,48 @@ The time complexity is $O(n \log n)$, and the space complexity is $O(n)$. Here, 
 
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+        n = len(edges)
+        parent = [i for i in range(n+1)]
+        
+        def find(x):
+            if parent[x] != x:
+                parent[x] = find(parent[x])
+            return parent[x]
+        
+        def union(x, y):
+            rootX = find(x)
+            rootY = find(y)
+            if rootX == rootY:
+                return False  # Already connected → cycle detected
+            parent[rootY] = rootX
+            return True
+        
+        for u, v in edges:
+            if not union(u, v):
+                return [u, v]  # This edge creates a cycle
+
+if __name__ == "__main__":
+    sol = Solution()
+    edges1 = [[1,2],[1,3],[2,3]]
+    print(sol.findRedundantConnection(edges1))
+    
+    edges2 = [[1,2],[2,3],[3,4],[1,4],[1,5]]
+    print(sol.findRedundantConnection(edges2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[2, 3]
+[1, 4]
+
+real    0m0.070s
+user    0m0.026s
+sys     0m0.004s
 ```
 
 #### Python3

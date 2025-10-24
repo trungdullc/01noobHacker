@@ -56,8 +56,55 @@ Finally, we return the maximum value in $\textit{dist}$ as the answer. If the an
 The time complexity is $O(n^2 + m)$, and the space complexity is $O(n^2)$. Here, $n$ and $m$ are the number of nodes and edges, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+import heapq
+from collections import defaultdict
 
+class Solution:
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        # Build adjacency list: graph[u] = [(v, w), ...]
+        graph = defaultdict(list)
+        for u, v, w in times:
+            graph[u].append((v, w))
+
+        # Min-heap: (time to reach node, node)
+        heap = [(0, k)]
+        dist = {}  # shortest time to reach each node
+
+        while heap:
+            time, node = heapq.heappop(heap)
+            if node in dist:
+                continue
+            dist[node] = time
+            for nei, wt in graph[node]:
+                if nei not in dist:
+                    heapq.heappush(heap, (time + wt, nei))
+
+        # If all nodes are reached, return max time; else return -1
+        return max(dist.values()) if len(dist) == n else -1
+
+if __name__ == "__main__":
+    sol = Solution()S
+    times1 = [[2,1,1],[2,3,1],[3,4,1]]
+    print(sol.networkDelayTime(times1, n=4, k=2))
+
+    times2 = [[1,2,1]]
+    print(sol.networkDelayTime(times2, n=2, k=1))
+
+    times3 = [[1,2,1]]
+    print(sol.networkDelayTime(times3, n=2, k=2)) 
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+1
+-1
+
+real    0m0.085s
+user    0m0.019s
+sys     0m0.011s
 ```
 
 #### Python3

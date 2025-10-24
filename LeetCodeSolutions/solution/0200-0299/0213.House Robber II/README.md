@@ -48,8 +48,56 @@ The circular arrangement means that at most one of the first and last houses can
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def rob(self, nums: list[int]) -> int:
+        """
+        Computes the maximum amount of money that can be robbed in a circular street.
+        Since the first and last houses are adjacent, we cannot rob both.
+        
+        Approach:
+        - Reduce problem to two linear House Robber I problems:
+            1. Rob houses 0 to n-2
+            2. Rob houses 1 to n-1
+        - Return the maximum of the two cases.
+        
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
+        if not nums:
+            return 0
+        if len(nums) == 1:
+            return nums[0]
+
+        # Helper function for linear houses
+        def rob_linear(houses: list[int]) -> int:
+            prev1 = prev2 = 0
+            for val in houses:
+                new_val = max(prev1, prev2 + val)
+                prev2, prev1 = prev1, new_val
+            return prev1
+
+        return max(rob_linear(nums[:-1]), rob_linear(nums[1:]))
+
+if __name__ == "__main__":
+    sol = Solution()
+    print("Example 1 Output:", sol.rob([2,3,2]))
+    nums2 = [1,2,3,1]
+    print("Example 2 Output:", sol.rob( [1,2,3,1]))
+    nums3 = [1,2,3]
+    print("Example 3 Output:", sol.rob([1,2,3]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: 3
+Example 2 Output: 4
+Example 3 Output: 3
+
+real    0m0.024s
+user    0m0.020s
+sys     0m0.004s
 ```
 
 #### Python3

@@ -38,8 +38,54 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to count the number of palindromic substrings in a given string.
+   """
+
+   def countSubstrings(self, s: str) -> int:
+      """
+      Counts all palindromic substrings in the input string.
+
+      A substring is considered palindromic if it reads the same
+      forward and backward. Single-character substrings are included.
+
+      Args:
+         s (str): The input string.
+
+      Returns:
+         int: The total number of palindromic substrings in s.
+      """
+      def expand(left: int, right: int) -> int:
+         count = 0
+         while left >= 0 and right < len(s) and s[left] == s[right]:
+            count += 1
+            left -= 1
+            right += 1
+         return count
+
+      total = 0
+      for i in range(len(s)):
+         total += expand(i, i)
+         total += expand(i, i + 1)
+      return total
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.countSubstrings("abc"))
+   print(sol.countSubstrings("aaa"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+6
+
+real    0m0.026s
+user    0m0.020s
+sys     0m0.004s
 ```
 
 #### Python3

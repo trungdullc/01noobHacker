@@ -81,8 +81,53 @@ def extend(m1, m2, q):
 ```
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import deque
 
+class Solution:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        wordSet = set(wordList)
+        if endWord not in wordSet:
+            return 0
+
+        queue = deque([(beginWord, 1)])  # (current word, transformation length)
+        visited = set([beginWord])
+
+        while queue:
+            word, length = queue.popleft()
+            if word == endWord:
+                return length
+            # Try all single-letter transformations
+            for i in range(len(word)):
+                for c in 'abcdefghijklmnopqrstuvwxyz':
+                    nextWord = word[:i] + c + word[i+1:]
+                    if nextWord in wordSet and nextWord not in visited:
+                        visited.add(nextWord)
+                        queue.append((nextWord, length + 1))
+        return 0
+
+if __name__ == "__main__":
+    sol = Solution()
+    beginWord1 = "hit"
+    endWord1 = "cog"
+    wordList1 = ["hot","dot","dog","lot","log","cog"]
+    print(sol.ladderLength(beginWord1, endWord1, wordList1))
+
+    beginWord2 = "hit"
+    endWord2 = "cog"
+    wordList2 = ["hot","dot","dog","lot","log"]
+    print(sol.ladderLength(beginWord2, endWord2, wordList2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+5
+0
+
+real    0m0.029s
+user    0m0.018s
+sys     0m0.011s
 ```
 
 #### Python3

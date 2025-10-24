@@ -64,8 +64,96 @@ No matrix can satisfy all the conditions, so we return the empty matrix.
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+from typing import List
+from collections import defaultdict, deque
+
+class Solution:
+    def buildMatrix(self, k: int, rowConditions: List[List[int]], colConditions: List[List[int]]) -> List[List[int]]:
+        """
+        Builds a k x k matrix that satisfies given row and column precedence constraints.
+        Each integer 1..k appears exactly once.
+        If impossible due to cyclic dependencies, returns an empty matrix.
+
+        Approach:
+        - Perform topological sorting on rowConditions to determine row order.
+        - Perform topological sorting on colConditions to determine column order.
+        - Map each number to (row_index, col_index) and place them in a k x k matrix.
+
+        Time Complexity: O(k + r + c)
+        Space Complexity: O(k)
+        """
+
+        def topo_sort(conditions):
+            graph = defaultdict(list)
+            indeg = [0] * (k + 1)
+            for u, v in conditions:
+                graph[u].append(v)
+                indeg[v] += 1
+
+            q = deque([i for i in range(1, k + 1) if indeg[i] == 0])
+            order = []
+
+            while q:
+                node = q.popleft()
+                order.append(node)
+                for nei in graph[node]:
+                    indeg[nei] -= 1
+                    if indeg[nei] == 0:
+                        q.append(nei)
+
+            return order if len(order) == k else []
+
+        row_order = topo_sort(rowConditions)
+        col_order = topo_sort(colConditions)
+
+        if not row_order or not col_order:
+            return []
+
+        pos_row = {num: i for i, num in enumerate(row_order)}
+        pos_col = {num: i for i, num in enumerate(col_order)}
+
+        matrix = [[0] * k for _ in range(k)]
+        for num in range(1, k + 1):
+            r, c = pos_row[num], pos_col[num]
+            matrix[r][c] = num
+
+        return matrix
+
+if __name__ == "__main__":
+    sol = Solution()
+    k1 = 3
+    row1 = [[1,2],[3,2]]
+    col1 = [[2,1],[3,2]]
+    print("Example 1 Output:")
+    print(sol.buildMatrix(k1, row1, col1))
+
+    k2 = 3
+    row2 = [[1,2],[2,3],[3,1],[2,3]]
+    col2 = [[2,1]]
+    print("Example 2 Output:")
+    print(sol.buildMatrix(k2, row2, col2))
+
+    k3 = 4
+    row3 = [[1,2],[2,3]]
+    col3 = [[1,3],[3,4]]
+    print("Example 3 Output:")
+    print(sol.buildMatrix(k3, row3, col3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output:
+[[0, 0, 1], [3, 0, 0], [0, 2, 0]]
+Example 2 Output:
+[]
+Example 3 Output:
+[[1, 0, 0, 0], [0, 0, 0, 4], [0, 2, 0, 0], [0, 0, 3, 0]]
+
+real    0m0.068s
+user    0m0.009s
+sys     0m0.021s
 ```
 
 #### Python3

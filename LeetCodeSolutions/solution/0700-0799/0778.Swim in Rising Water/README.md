@@ -46,8 +46,64 @@ We need to wait until time 16 so that (0, 0) and (4, 4) are connected.
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+from typing import List
+
+class Solution:
+    def swimInWater(self, grid: List[List[int]]) -> int:
+        """
+        Uses Dijkstra's algorithm (min-heap) to find the least time required
+        to reach bottom-right from top-left in a grid where each cell
+        indicates elevation level.
+
+        Time Complexity: O(n^2 log n)
+        Space Complexity: O(n^2)
+        """
+        n = len(grid)
+        visited = [[False]*n for _ in range(n)]
+        min_heap = [(grid[0][0], 0, 0)]  # (time/elevation, row, col)
+        directions = [(1,0), (-1,0), (0,1), (0,-1)]
+
+        while min_heap:
+            time, r, c = heapq.heappop(min_heap)
+            if r == n-1 and c == n-1:
+                return time
+            if visited[r][c]:
+                continue
+            visited[r][c] = True
+
+            for dr, dc in directions:
+                nr, nc = r + dr, c + dc
+                if 0 <= nr < n and 0 <= nc < n and not visited[nr][nc]:
+                    heapq.heappush(min_heap, (max(time, grid[nr][nc]), nr, nc))
+
+        return -1       # should never happen
+
+if __name__ == "__main__":
+    sol = Solution()
+    grid1 = [[0,2],[1,3]]
+    print("Example 1 Output:", sol.swimInWater(grid1))
+
+    grid2 = [
+        [0,1,2,3,4],
+        [24,23,22,21,5],
+        [12,13,14,15,16],
+        [11,17,18,19,20],
+        [10,9,8,7,6]
+    ]
+    print("Example 2 Output:", sol.swimInWater(grid2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: 3
+Example 2 Output: 16
+
+real    0m0.030s
+user    0m0.025s
+sys     0m0.004s
 ```
 
 #### Python3

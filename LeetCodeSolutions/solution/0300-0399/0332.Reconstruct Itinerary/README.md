@@ -51,8 +51,60 @@ Since the problem guarantees that there is at least one feasible itinerary, we c
 The time complexity is $O(m \times \log m)$, and the space complexity is $O(m)$. Here, $m$ is the number of edges.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import defaultdict
 
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        """
+        Reconstructs the itinerary using all tickets exactly once, starting from "JFK".
+
+        Parameters:
+        -----------
+        tickets : List[List[str]]
+            Each ticket represented as [from, to].
+
+        Returns:
+        --------
+        List[str]
+            The itinerary in lexicographically smallest order.
+        """
+        graph = defaultdict(list)
+        for src, dst in sorted(tickets, reverse=True):
+            graph[src].append(dst)
+
+        route = []
+
+        def dfs(airport: str):
+            while graph[airport]:
+                dfs(graph[airport].pop())
+            route.append(airport)
+
+        dfs("JFK")
+        return route[::-1]
+
+if __name__ == "__main__":
+    sol = Solution()
+    tickets1 = [["MUC","LHR"],["JFK","MUC"],["SFO","SJC"],["LHR","SFO"]]
+    print(sol.findItinerary(tickets1))
+
+    tickets2 = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+    print(sol.findItinerary(tickets2))
+
+    tickets3 = [["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]
+    print(sol.findItinerary(tickets3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+['JFK', 'MUC', 'LHR', 'SFO', 'SJC']
+['JFK', 'ATL', 'JFK', 'SFO', 'ATL', 'SFO']
+['JFK', 'NRT', 'JFK', 'KUL']
+
+real    0m0.095s
+user    0m0.025s
+sys     0m0.005s
 ```
 
 #### Python3

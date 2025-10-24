@@ -50,8 +50,51 @@ To avoid repeated calculations, we use memoization search. The result of $\texti
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def rob(self, nums: list[int]) -> int:
+        """
+        Computes the maximum amount of money that can be robbed 
+        without triggering alarms in adjacent houses.
+
+        Approach:
+        - Dynamic Programming (bottom-up)
+        - At each house i, choose between:
+            1. Robbing this house (nums[i] + dp[i-2])
+            2. Skipping it (dp[i-1])
+        - Keep only two variables for O(1) space optimization.
+
+        Recurrence:
+            dp[i] = max(dp[i-1], dp[i-2] + nums[i])
+
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+        """
+        prev1 = prev2 = 0  # prev1 = dp[i-1], prev2 = dp[i-2]
+
+        for num in nums:
+            new_val = max(prev1, prev2 + num)
+            prev2, prev1 = prev1, new_val
+
+        return prev1
+
+if __name__ == "__main__":
+    sol = Solution()
+    print("Example 1 Output:", sol.rob([1, 2, 3, 1]))
+    print("Example 2 Output:", sol.rob([2, 7, 9, 3, 1]))
+    print("Example 3 Output:", sol.rob([5, 1, 2, 6]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+Example 1 Output: 4
+Example 2 Output: 12
+Example 3 Output: 11
+
+real    0m0.023s
+user    0m0.008s
+sys     0m0.015s
 ```
 
 #### Python3

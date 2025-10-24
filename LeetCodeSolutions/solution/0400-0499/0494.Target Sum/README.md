@@ -72,8 +72,53 @@ The final answer is $f[m][n]$, where $m$ is the length of the array $\textit{num
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def findTargetSumWays(self, nums: list[int], target: int) -> int:
+        """
+        Calculates the number of ways to assign '+' or '-' symbols to each
+        number in the list so that the total sum equals the target.
+
+        This problem is equivalent to partitioning nums into two subsets
+        (P and N) such that sum(P) - sum(N) = target. Using subset sum DP.
+
+        Parameters:
+            nums (list[int]): List of non-negative integers.
+            target (int): Desired sum after assigning '+' or '-' to each number.
+
+        Returns:
+            int: Number of ways to reach the target sum.
+        """
+        total = sum(nums)
+        # If (target + total) is odd or target > total, no solution
+        if abs(target) > total or (target + total) % 2 != 0:
+            return 0
+        
+        subset_sum = (target + total) // 2
+        dp = [0] * (subset_sum + 1)
+        dp[0] = 1  # One way to reach sum 0
+
+        for num in nums:
+            for s in range(subset_sum, num - 1, -1):
+                dp[s] += dp[s - num]
+
+        return dp[subset_sum]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.findTargetSumWays([1,1,1,1,1], 3))
+    print(sol.findTargetSumWays([1], 1))        
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+5
+1
+
+real    0m0.023s
+user    0m0.022s
+sys     0m0.000s
 ```
 
 #### Python3

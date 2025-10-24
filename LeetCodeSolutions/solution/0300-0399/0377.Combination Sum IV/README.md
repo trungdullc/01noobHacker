@@ -57,8 +57,51 @@ Finally, return $f[target]$.
 The time complexity is $O(n \times target)$, and the space complexity is $O(target)$, where $n$ is the length of the array.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to count the number of possible combinations that sum up to a target using given numbers.
+   """
+
+   def combinationSum4(self, nums: list[int], target: int) -> int:
+      """
+      Counts all combinations of numbers from nums that add up to target.
+      
+      Uses dynamic programming where dp[i] stores the number of combinations
+      that sum up to i.
+
+      Args:
+         nums (list[int]): Array of distinct integers.
+         target (int): The target sum.
+
+      Returns:
+         int: Number of possible combinations that sum up to target.
+      """
+      dp = [0] * (target + 1)
+      dp[0] = 1
+
+      for i in range(1, target + 1):
+         for num in nums:
+            if i - num >= 0:
+               dp[i] += dp[i - num]
+
+      return dp[target]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.combinationSum4([1,2,3], 4))
+   print(sol.combinationSum4([9], 3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+7
+0
+
+real    0m0.022s
+user    0m0.021s
+sys     0m0.000s
 ```
 
 #### Python3

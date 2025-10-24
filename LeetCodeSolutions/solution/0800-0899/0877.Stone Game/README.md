@@ -46,8 +46,42 @@ This demonstrated that taking the first 5 was a winning move for Alice, so we re
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def stoneGame(self, piles: list[int]) -> bool:
+        """
+        Determines if Alice can win the stone game given a list of piles.
+
+        Both players play optimally. On their turn, a player can pick the
+        entire pile from the beginning or end of the row. The total number
+        of stones is odd, so there are no ties.
+
+        Parameters:
+            piles (list[int]): List of integers representing stone piles.
+
+        Returns:
+            bool: True if Alice wins, False if Bob wins.
+        """
+        # Since the number of piles is even and both play optimally,
+        # Alice can always choose either even-indexed or odd-indexed piles
+        # to maximize her stones. She can guarantee a win.
+        return True
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.stoneGame([5,3,4,5]))
+    print(sol.stoneGame([3,7,2,3]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+
+real    0m0.021s
+user    0m0.011s
+sys     0m0.010s
 ```
 
 #### Python3

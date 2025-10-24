@@ -69,8 +69,55 @@ Since $f[i]$ and $g[i]$ are only related to $f[i - 1]$ and $g[i - 1]$, two varia
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def maxTurbulenceSize(self, arr: list[int]) -> int:
+        """
+        Returns the length of the longest turbulent subarray.
+
+        A subarray is turbulent if the comparison sign between adjacent elements
+        alternates (>, <) or (<, >) throughout the subarray.
+
+        Parameters:
+            arr (list[int]): Input array of integers.
+
+        Returns:
+            int: Maximum length of a turbulent subarray.
+        """
+        if not arr:
+            return 0
+
+        n = len(arr)
+        max_len = 1
+        left = 0
+
+        for right in range(1, n):
+            cmp = (arr[right-1] < arr[right]) - (arr[right-1] > arr[right])
+            if cmp == 0:
+                left = right
+            elif right == n-1 or cmp * ((arr[right] < arr[right+1]) - (arr[right] > arr[right+1])) != -1:
+                max_len = max(max_len, right - left + 1)
+                left = right
+
+        return max_len
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.maxTurbulenceSize([9,4,2,10,7,8,8,1,9]))
+    print(sol.maxTurbulenceSize([4,8,12,16]))         
+    print(sol.maxTurbulenceSize([100]))               
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+5
+2
+1
+
+real    0m0.023s
+user    0m0.009s
+sys     0m0.014s
 ```
 
 #### Python3

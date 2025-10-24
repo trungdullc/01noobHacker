@@ -47,8 +47,55 @@ Note that you are allowed to reuse a dictionary word.
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution to determine if a string can be segmented into a sequence of dictionary words.
+   """
+
+   def wordBreak(self, s: str, wordDict: list[str]) -> bool:
+      """
+      Determines if the string s can be segmented into one or more words from wordDict.
+
+      Uses dynamic programming to check each prefix of the string.
+
+      Args:
+         s (str): The input string.
+         wordDict (list[str]): List of valid words.
+
+      Returns:
+         bool: True if s can be segmented into dictionary words, False otherwise.
+      """
+      word_set = set(wordDict)
+      n = len(s)
+      dp = [False] * (n + 1)
+      dp[0] = True
+
+      for i in range(1, n + 1):
+         for j in range(i):
+            if dp[j] and s[j:i] in word_set:
+               dp[i] = True
+               break
+
+      return dp[n]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.wordBreak("leetcode", ["leet","code"]))
+   print(sol.wordBreak("applepenapple", ["apple","pen"]))
+   print(sol.wordBreak("catsandog", ["cats","dog","sand","and","cat"]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+False
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3

@@ -72,8 +72,67 @@ After computing the reachability between all pairs of nodes, for each query $[a,
 The time complexity is $O(n^3)$, and the space complexity is $O(n^2)$, where $n$ is the number of nodes.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
+from collections import defaultdict, deque
 
+class Solution:
+    def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[bool]:
+        # Build adjacency list
+        graph = defaultdict(list)
+        indegree = [0] * numCourses
+        for pre, course in prerequisites:
+            graph[pre].append(course)
+            indegree[course] += 1
+        
+        # Track reachable courses for each course
+        reachable = [set() for _ in range(numCourses)]
+        
+        # Start with courses that have no prerequisites
+        queue = deque([i for i in range(numCourses) if indegree[i] == 0])
+        
+        while queue:
+            node = queue.popleft()
+            for neighbor in graph[node]:
+                # Everything reachable from node is also reachable from neighbor
+                reachable[neighbor].update(reachable[node])
+                reachable[neighbor].add(node)
+                
+                indegree[neighbor] -= 1
+                if indegree[neighbor] == 0:
+                    queue.append(neighbor)
+        
+        # Answer queries
+        return [u in reachable[v] for u, v in queries]
+
+if __name__ == "__main__":
+    sol = Solution()
+    
+    numCourses1 = 2
+    prerequisites1 = [[1,0]]
+    queries1 = [[0,1],[1,0]]
+    print(sol.checkIfPrerequisite(numCourses1, prerequisites1, queries1)) 
+    
+    numCourses2 = 2
+    prerequisites2 = []
+    queries2 = [[1,0],[0,1]]
+    print(sol.checkIfPrerequisite(numCourses2, prerequisites2, queries2))  
+    
+    numCourses3 = 3
+    prerequisites3 = [[1,2],[1,0],[2,0]]
+    queries3 = [[1,0],[1,2]]
+    print(sol.checkIfPrerequisite(numCourses3, prerequisites3, queries3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[False, True]
+[False, False]
+[True, True]
+
+real    0m0.070s
+user    0m0.019s
+sys     0m0.011s
 ```
 
 #### Python3

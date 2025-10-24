@@ -46,8 +46,71 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    """
+    Provides a method to verify if a list of words is sorted 
+    according to a given alien language order.
+    """
+    
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        """
+        Determine if the words are sorted lexicographically 
+        in the given alien order.
+
+        Args:
+            words (List[str]): List of words in the alien language.
+            order (str): String representing the order of characters in the alien language.
+
+        Returns:
+            bool: True if words are sorted according to the alien order, False otherwise.
+
+        Examples:
+            Example 1:
+                >>> sol = Solution()
+                >>> sol.isAlienSorted(["hello","leetcode"], "hlabcdefgijkmnopqrstuvwxyz")
+                True
+
+            Example 2:
+                >>> sol.isAlienSorted(["word","world","row"], "worldabcefghijkmnpqstuvxyz")
+                False
+
+            Example 3:
+                >>> sol.isAlienSorted(["apple","app"], "abcdefghijklmnopqrstuvwxyz")
+                False
+        """
+        order_index = {ch: i for i, ch in enumerate(order)}
+        
+        def in_correct_order(word1: str, word2: str) -> bool:
+            for c1, c2 in zip(word1, word2):
+                if order_index[c1] < order_index[c2]:
+                    return True
+                elif order_index[c1] > order_index[c2]:
+                    return False
+            return len(word1) <= len(word2)
+        
+        for i in range(len(words) - 1):
+            if not in_correct_order(words[i], words[i+1]):
+                return False
+        return True
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isAlienSorted(["hello","leetcode"], "hlabcdefgijkmnopqrstuvwxyz"))
+    print(sol.isAlienSorted(["word","world","row"], "worldabcefghijkmnpqstuvxyz"))
+    print(sol.isAlienSorted(["apple","app"], "abcdefghijklmnopqrstuvwxyz"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+False
+
+real    0m0.028s
+user    0m0.028s
 ```
 
 #### Python3

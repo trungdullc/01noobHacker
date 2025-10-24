@@ -79,8 +79,49 @@ The final answer is $f[m][n]$.
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Where $m$ and $n$ are the number of types of coins and the total amount, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def change(self, amount: int, coins: list[int]) -> int:
+        """
+        Computes the number of combinations to make up a given amount using
+        the provided coin denominations. Each coin can be used unlimited times.
+
+        Uses dynamic programming where dp[i] stores the number of combinations
+        to make amount i.
+
+        Parameters:
+            amount (int): Target amount to make.
+            coins (list[int]): List of distinct positive coin denominations.
+
+        Returns:
+            int: Number of unique combinations to reach the target amount.
+        """
+        dp = [0] * (amount + 1)
+        dp[0] = 1  # Base case: 1 way to make amount 0
+
+        for coin in coins:
+            for i in range(coin, amount + 1):
+                dp[i] += dp[i - coin]
+
+        return dp[amount]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.change(5, [1,2,5]))
+    print(sol.change(3, [2]))    
+    print(sol.change(10, [10]))  
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+0
+1
+
+real    0m0.024s
+user    0m0.024s
+sys     0m0.000s
 ```
 
 #### Python3

@@ -56,8 +56,61 @@ To avoid redundant calculations, we can use memoization.
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns of the grid, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: list[list[int]]) -> int:
+        """
+        Calculates the number of unique paths from the top-left corner to the
+        bottom-right corner of a grid, avoiding obstacles. The robot can move
+        only right or down. Cells with a value of 1 are obstacles and cannot
+        be entered.
+
+        Parameters:
+            obstacleGrid (list[list[int]]): A 2D grid where:
+                - 0 represents a free cell
+                - 1 represents an obstacle
+        
+        Returns:
+            int: The total number of unique valid paths. Guaranteed <= 2 * 10^9.
+        """
+
+        m, n = len(obstacleGrid), len(obstacleGrid[0])
+
+        # If start or end is blocked, no paths exist.
+        if obstacleGrid[0][0] == 1 or obstacleGrid[m - 1][n - 1] == 1:
+            return 0
+
+        # DP table
+        dp = [[0] * n for _ in range(m)]
+        dp[0][0] = 1  # starting position
+
+        for i in range(m):
+            for j in range(n):
+                if obstacleGrid[i][j] == 1:
+                    dp[i][j] = 0
+                else:
+                    if i > 0:
+                        dp[i][j] += dp[i - 1][j]
+                    if j > 0:
+                        dp[i][j] += dp[i][j - 1]
+
+        return dp[m - 1][n - 1]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.uniquePathsWithObstacles([[0,0,0],[0,1,0],[0,0,0]]))
+    print(sol.uniquePathsWithObstacles([[0,1],[0,0]]))            
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+1
+
+real    0m0.027s
+user    0m0.023s
+sys     0m0.004s
 ```
 
 #### Python3
