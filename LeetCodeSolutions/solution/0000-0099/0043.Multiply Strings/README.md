@@ -43,8 +43,55 @@ Note to check whether the most significant digit is $0$, if it is, remove it.
 The time complexity is $O(m \times n)$, and the space complexity is $O(m + n)$. Here, $m$ and $n$ are the lengths of $num1$ and $num2$ respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Multiply Strings problem.
+   """
+   def multiply(self, num1: str, num2: str) -> str:
+      """
+      Multiply two non-negative integers represented as strings.
+      
+      Args:
+         num1 (str): First number as a string.
+         num2 (str): Second number as a string.
+      
+      Returns:
+         str: Product of num1 and num2 as a string.
+      """
+      if num1 == "0" or num2 == "0":
+         return "0"
+
+      m, n = len(num1), len(num2)
+      result = [0] * (m + n)
+
+      for i in range(m - 1, -1, -1):
+         for j in range(n - 1, -1, -1):
+            mul = (ord(num1[i]) - ord('0')) * (ord(num2[j]) - ord('0'))
+            sum_ = mul + result[i + j + 1]
+
+            result[i + j + 1] = sum_ % 10
+            result[i + j] += sum_ // 10
+
+      # Convert result array to string
+      result_str = ''.join(map(str, result))
+      return result_str.lstrip('0')
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.multiply("2", "3"))
+   print(sol.multiply("123", "456"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+6
+56088
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Python3

@@ -56,33 +56,44 @@ The time complexity is $O(n)$, where $n$ is the length of the array. The space c
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/python3
-from typing import List
+#!/usr/bin/env python3
 
 class Solution:
-   def singlenumber(self, nums: List[int]):
-      singleFinder = 0
-
+   """
+   Solution for the Single Number problem.
+   """
+   def singleNumber(self, nums: list[int]) -> int:
+      """
+      Find the element that appears only once in the array.
+      
+      Args:
+         nums (list[int]): List of integers where every element appears twice except one.
+      
+      Returns:
+         int: The single number that appears only once.
+      """
+      result = 0
       for num in nums:
-         singleFinder ^= num
-      return singleFinder
-
-def main()-> None:
-   sol = Solution()
-   print(sol.singlenumber([2,2,1]))
-   print(sol.singlenumber([4,1,2,1,2]))
-   print(sol.singlenumber([1]))
+         result ^= num
+      return result
 
 if __name__ == "__main__":
-   main()
+   sol = Solution()
+   print(sol.singleNumber([2,2,1]))
+   print(sol.singleNumber([4,1,2,1,2]))
+   print(sol.singleNumber([1]))
 
-AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
 1
 4
 1
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.004s
 ```
 
-#### Python3
+#### Du Solution: Python3
 
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

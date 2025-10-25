@@ -53,8 +53,52 @@ Therefore, the answer is to fill each bit of the binary of $n-1$ into the $0$ bi
 The time complexity is $O(\log x)$, and the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Minimum Array End problem.
+   """
+   def minimumPossibleValue(self, n: int, x: int) -> int:
+      """
+      Construct a strictly increasing array of size n where bitwise AND of all elements is x.
+      Return the minimum possible value of the last element.
+      
+      Args:
+         n (int): Size of the array.
+         x (int): Target bitwise AND of all elements.
+      
+      Returns:
+         int: Minimum possible value of the last element.
+      """
+      # If n == 1, only element is x
+      if n == 1:
+         return x
+      # Construct array: first element = x, last element = x + n - 1
+      # All bits beyond x must be set to 1 to ensure AND = x
+      last = x
+      for bit in range(31, -1, -1):
+         if not (x & (1 << bit)):
+            last |= (1 << bit)
+            n -= 1
+            if n == 1:
+               break
+      return last
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.minimumPossibleValue(3, 4))
+   print(sol.minimumPossibleValue(2, 7))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3221225476
+2147483655
+
+real    0m0.023s
+user    0m0.022s
+sys     0m0.001s
 ```
 
 #### Python3

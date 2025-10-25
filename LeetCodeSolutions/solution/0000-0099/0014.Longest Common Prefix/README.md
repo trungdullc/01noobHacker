@@ -44,6 +44,50 @@ The time complexity is $O(n \times m)$, where $n$ and $m$ are the length of the 
 #### Du Solution
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Longest Common Prefix problem.
+   """
+   def longestCommonPrefix(self, strs: list[str]) -> str:
+      """
+      Find the longest common prefix among an array of strings.
+      
+      Args:
+         strs (list[str]): Array of strings.
+      
+      Returns:
+         str: Longest common prefix or empty string if none exists.
+      """
+      if not strs:
+         return ""
+      
+      prefix = strs[0]
+      for s in strs[1:]:
+         while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+               return ""
+      return prefix
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.longestCommonPrefix(["flower","flow","flight"]))
+   print(sol.longestCommonPrefix(["dog","racecar","car"]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+fl
+
+
+real    0m0.022s
+user    0m0.015s
+sys     0m0.008s
+```
+
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List
 

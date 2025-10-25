@@ -85,6 +85,47 @@ Therefore, we can traverse the array, perform XOR operation between each element
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
+#### Du Solution:
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Missing Number problem.
+   """
+   def missingNumber(self, nums: list[int]) -> int:
+      """
+      Find the missing number in the array containing numbers from 0 to n.
+      
+      Args:
+         nums (list[int]): List of n distinct numbers in the range [0, n].
+      
+      Returns:
+         int: The missing number.
+      """
+      n = len(nums)
+      missing = n
+      for i, num in enumerate(nums):
+         missing ^= i ^ num
+      return missing
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.missingNumber([3,0,1]))
+   print(sol.missingNumber([0,1]))
+   print(sol.missingNumber([9,6,4,2,3,5,7,0,1]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+2
+8
+
+real    0m0.024s
+user    0m0.024s
+sys     0m0.000s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

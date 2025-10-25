@@ -49,6 +49,63 @@ After the traversal, we traverse the array again. If $i+1$ is not equal to $nums
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+from typing import List
+
+class Solution:
+   """
+   Class to find the first missing positive integer in an unsorted array.
+
+   Methods
+   -------
+   firstMissingPositive(nums: List[int]) -> int
+       Returns the smallest positive integer not present in nums.
+   """
+
+   def firstMissingPositive(self, nums: List[int]) -> int:
+      """
+      Uses index placement to achieve O(n) time and O(1) space.
+
+      Parameters
+      ----------
+      nums : List[int]
+          Input array of integers.
+
+      Returns
+      -------
+      int
+          The smallest missing positive integer.
+      """
+      n = len(nums)
+      for i in range(n):
+         while 1 <= nums[i] <= n and nums[nums[i] - 1] != nums[i]:
+            nums[nums[i] - 1], nums[i] = nums[i], nums[nums[i] - 1]
+
+      for i in range(n):
+         if nums[i] != i + 1:
+            return i + 1
+      return n + 1
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.firstMissingPositive([1,2,0]))
+   print(sol.firstMissingPositive([3,4,-1,1]))
+   print(sol.firstMissingPositive([7,8,9,11,12]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+2
+1
+
+real    0m0.028s
+user    0m0.016s
+sys     0m0.012s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

@@ -55,8 +55,46 @@ We start traversing from the last element of the array, add one to the current e
 The time complexity is $O(n)$, where $n$ is the length of the array. Ignoring the space consumption of the answer, the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Plus One problem.
+   """
+   def plusOne(self, digits: list[int]) -> list[int]:
+      """
+      Increment the integer represented by the digits array by one.
+      
+      Args:
+         digits (list[int]): List of digits representing a number.
+      
+      Returns:
+         list[int]: List of digits representing the incremented number.
+      """
+      n = len(digits)
+      for i in range(n - 1, -1, -1):
+         if digits[i] < 9:
+            digits[i] += 1
+            return digits
+         digits[i] = 0
+      return [1] + digits
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.plusOne([1,2,3]))
+   print(sol.plusOne([4,3,2,1]))
+   print(sol.plusOne([9]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 4]
+[4, 3, 2, 2]
+[1, 0]
+
+real    0m0.024s
+user    0m0.017s
+sys     0m0.007s
 ```
 
 #### Python3

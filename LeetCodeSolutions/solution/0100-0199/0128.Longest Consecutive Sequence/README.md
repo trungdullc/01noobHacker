@@ -49,6 +49,69 @@ After the iteration, we return the answer $\textit{ans}$.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+from typing import List
+
+class Solution:
+   """
+   Class to find the length of the longest consecutive sequence in an array.
+
+   Methods
+   -------
+   longestConsecutive(nums: List[int]) -> int
+       Returns the length of the longest consecutive elements sequence.
+   """
+
+   def longestConsecutive(self, nums: List[int]) -> int:
+      """
+      Find the longest consecutive sequence in an unsorted integer array.
+
+      Parameters
+      ----------
+      nums : List[int]
+          Unsorted list of integers.
+
+      Returns
+      -------
+      int
+          Length of the longest consecutive elements sequence.
+      """
+      num_set = set(nums)
+      longest = 0
+
+      for num in num_set:
+         if num - 1 not in num_set:
+            current_num = num
+            current_streak = 1
+
+            while current_num + 1 in num_set:
+               current_num += 1
+               current_streak += 1
+
+            longest = max(longest, current_streak)
+
+      return longest
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.longestConsecutive([100,4,200,1,3,2]))
+   print(sol.longestConsecutive([0,3,7,2,5,8,4,6,0,1]))
+   print(sol.longestConsecutive([1,0,1,2]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+9
+3
+
+real    0m0.034s
+user    0m0.026s
+sys     0m0.004s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

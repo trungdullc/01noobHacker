@@ -49,8 +49,67 @@ We use two pointers $pre$ and $cur$ to point to the current node and the next no
 The time complexity is $O(n \times \log M)$, where $n$ is the length of the linked list, and $M$ is the maximum value of the nodes in the linked list. Ignoring the space consumption of the result linked list, the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import math
+
+# Definition for singly-linked list.
+class ListNode:
+   def __init__(self, val=0, next=None):
+      self.val = val
+      self.next = next
+
+class Solution:
+   """
+   Solution for the Insert Greatest Common Divisors in Linked List problem.
+   """
+   def insertGreatestCommonDivisors(self, head: ListNode) -> ListNode:
+      """
+      Insert a new node with the GCD of every pair of adjacent nodes.
+      
+      Args:
+         head (ListNode): Head of the linked list.
+      
+      Returns:
+         ListNode: Head of the modified linked list.
+      """
+      current = head
+      while current and current.next:
+         gcd_val = math.gcd(current.val, current.next.val)
+         new_node = ListNode(gcd_val)
+         new_node.next = current.next
+         current.next = new_node
+         current = new_node.next
+      return head
+
+def print_linked_list(head: ListNode):
+   """Helper function to print linked list as list"""
+   result = []
+   current = head
+   while current:
+      result.append(current.val)
+      current = current.next
+   return result
+
+if __name__ == "__main__":
+   head1 = ListNode(18, ListNode(6, ListNode(10, ListNode(3))))
+   sol = Solution()
+   new_head1 = sol.insertGreatestCommonDivisors(head1)
+   print(print_linked_list(new_head1))
+
+   head2 = ListNode(7)
+   new_head2 = sol.insertGreatestCommonDivisors(head2)
+   print(print_linked_list(new_head2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[18, 6, 6, 2, 10, 1, 3]
+[7]
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

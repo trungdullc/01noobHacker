@@ -44,8 +44,34 @@ We directly simulate according to the problem description by adding the elements
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
-#### Du Solution: Python3
+#### Du Solution:
+```python
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Concatenation of Array problem.
+   """
+   def getConcatenation(self, nums: list[int]) -> list[int]:
+      """
+      Concatenate the array with itself.
+      
+      Args:
+         nums (list[int]): Original array.
+      
+      Returns:
+         list[int]: Concatenated array of length 2n.
+      """
+      return nums + nums
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.getConcatenation([1,2,1]))
+   print(sol.getConcatenation([1,3,2,1]))
 ```
+
+#### Du Solution: Python3
+```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List

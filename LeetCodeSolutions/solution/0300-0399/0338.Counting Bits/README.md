@@ -52,6 +52,44 @@
 Python List Comprehension is useful easier than C/C++ ternary conditional operator
 ```
 
+#### Du Solution:
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Counting Bits problem.
+   """
+   def countBits(self, n: int) -> list[int]:
+      """
+      Return an array where ans[i] is the number of 1s in binary representation of i.
+      
+      Args:
+         n (int): Non-negative integer.
+      
+      Returns:
+         list[int]: List of counts of 1 bits from 0 to n.
+      """
+      ans = [0] * (n + 1)
+      for i in range(1, n + 1):
+         ans[i] = ans[i >> 1] + (i & 1)
+      return ans
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.countBits(2))
+   print(sol.countBits(5))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[0, 1, 1]
+[0, 1, 1, 2, 1, 2]
+
+real    0m0.024s
+user    0m0.014s
+sys     0m0.009s
+```
+
 #### Du Solution1: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

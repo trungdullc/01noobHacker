@@ -319,6 +319,7 @@ Source: https://archive.ooo/<br>
 # Continue to LeetCode
 Purpose: Python Classes and Libraries<br>
 Source: https://leetcode.com/<br>
+Note: In-Place affect original obj, fx/method returns -> None<br>
 [Continue](./LeetCodeSolutions/solution/1900-1999/1929.Concatenation%20of%20Array/README.md)
 
 # End with Interactive CTF
@@ -733,6 +734,7 @@ Souce: https://try2hack.me/<br>
     - [Unflattening Base64](./tools/unflattenbase64.md)
     - [Word Search Solver](https://github.com/robbiebarrat/word-search)
 - Help
+    - [HelpTerminal](./tools/help.md)
     - [HackTricksAI](https://www.hacktricks.ai/): Unfiltered
     - [Phind](https://www.phind.com/): Unfiltered
     - [Perplexity](https://www.perplexity.ai/): Unfiltered

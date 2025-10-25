@@ -46,8 +46,46 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Happy Number problem.
+   """
+   def isHappy(self, n: int) -> bool:
+      """
+      Determine if a number is happy.
+      
+      Args:
+         n (int): Positive integer to check.
+      
+      Returns:
+         bool: True if n is a happy number, False otherwise.
+      """
+      def sum_of_squares(num: int) -> int:
+         return sum(int(digit) ** 2 for digit in str(num))
+
+      seen = set()
+      while n != 1 and n not in seen:
+         seen.add(n)
+         n = sum_of_squares(n)
+
+      return n == 1
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.isHappy(19))
+   print(sol.isHappy(2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.022s
+user    0m0.011s
+sys     0m0.011s
 ```
 
 #### Python3

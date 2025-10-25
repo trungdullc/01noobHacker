@@ -80,6 +80,49 @@ Similar problems:
 
 -   [80. Remove Duplicates from Sorted Array II](https://github.com/doocs/leetcode/blob/main/solution/0000-0099/0080.Remove%20Duplicates%20from%20Sorted%20Array%20II/README_EN.md)
 
+#### Du Solution:
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Class to remove duplicates from a sorted array in-place.
+   """
+
+   def removeDuplicates(self, nums: list[int]) -> int:
+      """
+      Remove duplicates in-place and return the number of unique elements.
+      """
+      if not nums:
+         return 0
+      k = 1
+      for i in range(1, len(nums)):
+         if nums[i] != nums[i - 1]:
+            nums[k] = nums[i]
+            k += 1
+      return k
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   nums = [1,1,2]
+   k = sol.removeDuplicates(nums)
+   print(k, nums[:k])
+
+   nums = [0,0,1,1,1,2,2,3,3,4]
+   k = sol.removeDuplicates(nums)
+   print(k, nums[:k])
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2 [1, 2]
+5 [0, 1, 2, 3, 4]
+
+real    0m0.021s
+user    0m0.021s
+sys     0m0.000s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

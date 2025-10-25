@@ -41,8 +41,46 @@
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import math
+
+class Solution:
+   """
+   Solution for the Greatest Common Divisor of Strings problem.
+   """
+   def gcdOfStrings(self, str1: str, str2: str) -> str:
+      """
+      Return the largest string that divides both str1 and str2.
+      
+      Args:
+         str1 (str): First input string.
+         str2 (str): Second input string.
+      
+      Returns:
+         str: The greatest common divisor string, or "" if none exists.
+      """
+      if str1 + str2 != str2 + str1:
+         return ""
+      gcd_len = math.gcd(len(str1), len(str2))
+      return str1[:gcd_len]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.gcdOfStrings("ABCABC", "ABC"))
+   print(sol.gcdOfStrings("ABABAB", "ABAB"))
+   print(sol.gcdOfStrings("LEET", "CODE"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+ABC
+AB
+
+
+real    0m0.022s
+user    0m0.018s
+sys     0m0.004s
 ```
 
 #### Python3

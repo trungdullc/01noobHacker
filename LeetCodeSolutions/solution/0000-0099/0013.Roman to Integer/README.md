@@ -69,8 +69,61 @@ First, we use a hash table $d$ to record the numerical value corresponding to ea
 The time complexity is $O(n)$, and the space complexity is $O(m)$. Here, $n$ and $m$ are the length of the string $s$ and the size of the character set, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$  cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Roman to Integer problem.
+   """
+   def romanToInt(self, s: str) -> int:
+      """
+      Convert a Roman numeral string to an integer.
+      
+      Args:
+         s (str): Roman numeral string.
+      
+      Returns:
+         int: Integer value of the Roman numeral.
+      """
+      roman_map = {
+         'I': 1,
+         'V': 5,
+         'X': 10,
+         'L': 50,
+         'C': 100,
+         'D': 500,
+         'M': 1000
+      }
+
+      total = 0
+      prev_value = 0
+
+      for char in reversed(s):
+         value = roman_map[char]
+         if value < prev_value:
+            total -= value
+         else:
+            total += value
+         prev_value = value
+
+      return total
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.romanToInt("III"))
+   print(sol.romanToInt("LVIII"))
+   print(sol.romanToInt("MCMXCIV"))
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+58
+1994
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
 
 #### Python3

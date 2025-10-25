@@ -23,6 +23,52 @@
 
 ### Solution 1
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Sum of Two Integers problem.
+   """
+   def getSum(self, a: int, b: int) -> int:
+      """
+      Return the sum of two integers without using '+' or '-'.
+      
+      Args:
+         a (int): First integer.
+         b (int): Second integer.
+      
+      Returns:
+         int: Sum of a and b.
+      """
+      # 32-bit mask to simulate integer overflow
+      mask = 0xFFFFFFFF
+      while b != 0:
+         # XOR gives sum without carry
+         sum_ = (a ^ b) & mask
+         # AND gives carry, shifted left
+         carry = ((a & b) << 1) & mask
+         a, b = sum_, carry
+
+      # if a is negative in 32-bit representation
+      return a if a <= 0x7FFFFFFF else ~(a ^ mask)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.getSum(1, 2))
+   print(sol.getSum(2, 3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+5
+
+real    0m0.022s
+user    0m0.009s
+sys     0m0.013s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

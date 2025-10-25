@@ -66,8 +66,77 @@ When calling the $count(x_1, y_1)$ method, we need to get three other points to 
 In terms of time complexity, the time complexity of calling the $add(x, y)$ method is $O(1)$, and the time complexity of calling the $count(x_1, y_1)$ method is $O(n)$; the space complexity is $O(n)$. Here, $n$ is the number of points in the data stream.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from collections import defaultdict
 
+class DetectSquares:
+   """
+   Solution for the Detect Squares problem.
+   """
+   def __init__(self):
+      """
+      Initialize an empty data structure to store points and their counts.
+      """
+      self.points = defaultdict(lambda: defaultdict(int))
+
+   def add(self, point: list[int]) -> None:
+      """
+      Add a point to the data structure.
+      
+      Args:
+         point (list[int]): Point [x, y] to add.
+      """
+      x, y = point
+      self.points[x][y] += 1
+
+   def count(self, point: list[int]) -> int:
+      """
+      Count the number of ways to form axis-aligned squares with the given point.
+      
+      Args:
+         point (list[int]): Query point [x, y].
+      
+      Returns:
+         int: Number of squares that can be formed.
+      """
+      x, y = point
+      result = 0
+
+      if x not in self.points:
+         return 0
+
+      for col_y, count_col_y in self.points[x].items():
+         if col_y == y:
+            continue
+         side_length = abs(col_y - y)
+         
+         # Check for squares on both sides horizontally
+         for new_x in [x - side_length, x + side_length]:
+            if new_x in self.points:
+               result += count_col_y * self.points[new_x].get(y, 0) * self.points[new_x].get(col_y, 0)
+
+      return result
+
+if __name__ == "__main__":
+   detectSquares = DetectSquares()
+   detectSquares.add([3, 10])
+   detectSquares.add([11, 2])
+   detectSquares.add([3, 2])
+   print(detectSquares.count([11, 10]))
+   print(detectSquares.count([14, 8]))
+   detectSquares.add([11, 2])
+   print(detectSquares.count([11, 10]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+0
+2
+
+real    0m0.022s
+user    0m0.017s
+sys     0m0.004s
 ```
 
 #### Python3

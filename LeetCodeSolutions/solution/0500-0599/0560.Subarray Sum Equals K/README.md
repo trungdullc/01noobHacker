@@ -35,6 +35,67 @@ After the traversal, we return the answer.
 
 The time complexity is `O(n)`, and the space complexity is `O(n)`. Where `n` is the length of the array `nums`.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+from typing import List
+from collections import defaultdict
+
+class Solution:
+   """
+   Class to find the total number of continuous subarrays whose sum equals k.
+
+   Methods
+   -------
+   subarraySum(nums: List[int], k: int) -> int
+       Returns the count of subarrays whose sum equals k.
+   """
+
+   def subarraySum(self, nums: List[int], k: int) -> int:
+      """
+      Uses a prefix sum with hashmap to count subarrays efficiently.
+
+      Parameters
+      ----------
+      nums : List[int]
+          Input array of integers.
+      k : int
+          Target sum.
+
+      Returns
+      -------
+      int
+          Number of subarrays whose sum equals k.
+      """
+      count = 0
+      prefix_sum = 0
+      sums = defaultdict(int)
+      sums[0] = 1
+
+      for num in nums:
+         prefix_sum += num
+         if (prefix_sum - k) in sums:
+            count += sums[prefix_sum - k]
+         sums[prefix_sum] += 1
+
+      return count
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.subarraySum([1,1,1], 2))
+   print(sol.subarraySum([1,2,3], 3))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2
+2
+
+real    0m0.089s
+user    0m0.024s
+sys     0m0.009s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

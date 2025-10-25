@@ -37,6 +37,49 @@
 
 ### Solution 1
 
+#### Du Solution:
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Bitwise AND of Numbers Range problem.
+   """
+   def rangeBitwiseAnd(self, left: int, right: int) -> int:
+      """
+      Return the bitwise AND of all numbers in the range [left, right].
+      
+      Args:
+         left (int): Start of the range.
+         right (int): End of the range.
+      
+      Returns:
+         int: Bitwise AND of all numbers in the range.
+      """
+      shift = 0
+      while left < right:
+         left >>= 1
+         right >>= 1
+         shift += 1
+      return left << shift
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.rangeBitwiseAnd(5, 7))
+   print(sol.rangeBitwiseAnd(0, 0))
+   print(sol.rangeBitwiseAnd(1, 2147483647))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+4
+0
+0
+
+real    0m0.022s
+user    0m0.017s
+sys     0m0.004s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

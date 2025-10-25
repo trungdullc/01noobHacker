@@ -47,8 +47,56 @@ The core idea of the fast powering algorithm is to decompose the exponent $n$ in
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$. Here, $n$ is the exponent.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Pow(x, n) problem.
+   """
+   def myPow(self, x: float, n: int) -> float:
+      """
+      Calculate x raised to the power n.
+      
+      Args:
+         x (float): Base.
+         n (int): Exponent.
+      
+      Returns:
+         float: Result of x ** n.
+      """
+      if n == 0:
+         return 1.0
+      if n < 0:
+         x = 1 / x
+         n = -n
+
+      result = 1.0
+      current_product = x
+
+      while n > 0:
+         if n % 2 == 1:
+            result *= current_product
+         current_product *= current_product
+         n //= 2
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.myPow(2.0, 10))
+   print(sol.myPow(2.1, 3))
+   print(sol.myPow(2.0, -2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1024.0
+9.261000000000001
+0.25
+
+real    0m0.024s
+user    0m0.023s
+sys     0m0.000s
 ```
 
 #### Python3

@@ -51,6 +51,45 @@ The time complexity is $O(\log n)$, and the space complexity is $O(1)$.
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Reverse Bits problem.
+   """
+   def reverseBits(self, n: int) -> int:
+      """
+      Reverse the bits of a 32-bit unsigned integer.
+      
+      Args:
+         n (int): 32-bit unsigned integer.
+      
+      Returns:
+         int: Integer obtained by reversing the bits of n.
+      """
+      result = 0
+      for _ in range(32):
+         result = (result << 1) | (n & 1)
+         n >>= 1
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.reverseBits(0b00000010100101000001111010011100))
+   print(sol.reverseBits(0b11111111111111111111111111111101))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+964176192
+3221225471
+
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
+```
+
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 
 class Solution:

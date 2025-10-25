@@ -61,6 +61,59 @@ Every time we compare the two elements at the end of the two arrays, and move th
 
 The time complexity is $O(m + n)$, where $m$ and $n$ are the lengths of two arrays. The space complexity is $O(1)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Class to merge two sorted arrays in-place.
+   """
+
+   def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+      """
+      Merge nums2 into nums1 in-place so that nums1 becomes sorted.
+      """
+      i, j, k = m - 1, n - 1, m + n - 1
+      while i >= 0 and j >= 0:
+         if nums1[i] > nums2[j]:
+            nums1[k] = nums1[i]
+            i -= 1
+         else:
+            nums1[k] = nums2[j]
+            j -= 1
+         k -= 1
+      while j >= 0:
+         nums1[k] = nums2[j]
+         j -= 1
+         k -= 1
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   nums1 = [1,2,3,0,0,0]
+   sol.merge(nums1, 3, [2,5,6], 3)
+   print(nums1)
+
+   nums1 = [1]
+   sol.merge(nums1, 1, [], 0)
+   print(nums1)
+
+   nums1 = [0]
+   sol.merge(nums1, 0, [1], 1)
+   print(nums1)
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 2, 3, 5, 6]
+[1]
+[1]
+
+real    0m0.048s
+user    0m0.019s
+sys     0m0.013s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

@@ -73,8 +73,54 @@ Finally, return $k$.
 
 The time complexity is $O(n)$ and the space complexity is $O(1)$, where $n$ is the length of the array $nums$.
 
-#### Du Solution: Python3
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Remove Element problem.
+   """
+   def removeElement(self, nums: list[int], val: int) -> int:
+      """
+      Remove all occurrences of val in nums in-place.
+      
+      Args:
+         nums (list[int]): Input array.
+         val (int): Value to remove.
+      
+      Returns:
+         int: Number of elements not equal to val.
+      """
+      k = 0
+      for num in nums:
+         if num != val:
+            nums[k] = num
+            k += 1
+      return k
+
+if __name__ == "__main__":
+   sol = Solution()
+   arr1 = [3,2,2,3]
+   k1 = sol.removeElement(arr1, 3)
+   print(k1, arr1[:k1])
+   
+   arr2 = [0,1,2,2,3,0,4,2]
+   k2 = sol.removeElement(arr2, 2)
+   print(k2, arr2[:k2])
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+2 [2, 2]
+5 [0, 1, 3, 0, 4]
+
+real    0m0.022s
+user    0m0.011s
+sys     0m0.011s
 ```
+
+#### Du Solution: Python3
+```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List

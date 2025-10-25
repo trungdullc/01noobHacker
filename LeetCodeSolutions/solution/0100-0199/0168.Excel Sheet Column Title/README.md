@@ -51,8 +51,45 @@ AB -&gt; 28
 ### Solution 1
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Excel Sheet Column Title problem.
+   """
+   def convertToTitle(self, columnNumber: int) -> str:
+      """
+      Convert a positive integer to its corresponding Excel column title.
+      
+      Args:
+         columnNumber (int): The column number to convert.
+      
+      Returns:
+         str: The corresponding Excel column title.
+      """
+      result = []
+      while columnNumber > 0:
+         columnNumber -= 1
+         result.append(chr(columnNumber % 26 + ord('A')))
+         columnNumber //= 26
+      return ''.join(reversed(result))
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.convertToTitle(1))
+   print(sol.convertToTitle(28))
+   print(sol.convertToTitle(701))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+A
+AB
+ZY
+
+real    0m0.022s
+user    0m0.021s
+sys     0m0.000s
 ```
 
 #### Python3

@@ -72,6 +72,47 @@ Binary      Decimal = 25
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Number of 1 Bits problem.
+   """
+   def hammingWeight(self, n: int) -> int:
+      """
+      Count the number of set bits (1s) in the binary representation of n.
+      
+      Args:
+         n (int): Positive integer.
+      
+      Returns:
+         int: Number of 1 bits in n.
+      """
+      count = 0
+      while n:
+         n &= n - 1  # Remove the lowest set bit
+         count += 1
+      return count
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.hammingWeight(11))
+   print(sol.hammingWeight(128))
+   print(sol.hammingWeight(2147483645))
+ 
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+1
+30
+
+real    0m0.056s
+user    0m0.020s
+sys     0m0.004s
+```
+
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List
 

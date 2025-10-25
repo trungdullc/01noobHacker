@@ -61,6 +61,51 @@ AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py
 #!/usr/bin/env python3
 
 class Solution:
+   """
+   Class to check if a string is a valid palindrome considering only alphanumeric characters and ignoring cases.
+   """
+
+   def isPalindrome(self, s: str) -> bool:
+      """
+      Returns True if the input string is a palindrome, False otherwise.
+
+      Parameters
+      ----------
+      s : str
+          Input string to check.
+      """
+      filtered = [c.lower() for c in s if c.isalnum()]
+      left, right = 0, len(filtered) - 1
+      while left < right:
+         if filtered[left] != filtered[right]:
+            return False
+         left += 1
+         right -= 1
+      return True
+
+if __name__ == "__main__":
+   sol = Solution()
+   
+   print(sol.isPalindrome("A man, a plan, a canal: Panama"))
+   print(sol.isPalindrome("race a car"))
+   print(sol.isPalindrome(" "))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+True
+
+real    0m0.021s
+user    0m0.013s
+sys     0m0.009s
+```
+
+#### Du Solution: Python3
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
    def isPalindrome(self, s: str) -> bool:
       """
       Check if the given string is a palindrome.

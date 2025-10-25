@@ -41,6 +41,49 @@ In general, the Moore voting algorithm requires **two passes** over the input li
 
 The time complexity is $O(n)$, where $n$ is the length of the array $nums$. The space complexity is $O(1)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Majority Element problem.
+   """
+   def majorityElement(self, nums: list[int]) -> int:
+      """
+      Find the element that appears more than n/2 times in the array.
+      
+      Args:
+         nums (list[int]): Input array.
+      
+      Returns:
+         int: The majority element.
+      """
+      count = 0
+      candidate = None
+
+      for num in nums:
+         if count == 0:
+            candidate = num
+         count += (1 if num == candidate else -1)
+
+      return candidate
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.majorityElement([3,2,3]))
+   print(sol.majorityElement([2,2,1,1,1,2,2]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+2
+
+real    0m0.024s
+user    0m0.017s
+sys     0m0.007s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

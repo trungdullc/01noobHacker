@@ -42,8 +42,52 @@ Otherwise, we use a hash table or an array of length $26$ to record the number o
 
 The time complexity is $O(n)$, the space complexity is $O(C)$, where $n$ is the length of the string; and $C$ is the size of the character set, which is $C=26$ in this problem.
 
-#### Du Solution: Python3
+#### Du Solution:
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Valid Anagram problem.
+   """
+   def isAnagram(self, s: str, t: str) -> bool:
+      """
+      Check if t is an anagram of s.
+      
+      Args:
+         s (str): First string.
+         t (str): Second string.
+      
+      Returns:
+         bool: True if t is an anagram of s, False otherwise.
+      """
+      if len(s) != len(t):
+         return False
+      count_s = {}
+      count_t = {}
+      for char in s:
+         count_s[char] = count_s.get(char, 0) + 1
+      for char in t:
+         count_t[char] = count_t.get(char, 0) + 1
+      return count_s == count_t
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.isAnagram("anagram", "nagaram"))
+   print(sol.isAnagram("rat", "car"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.022s
+user    0m0.014s
+sys     0m0.007s
 ```
+
+#### Du Solution: Python3
+```python
 # With a dictionary
 AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py 
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

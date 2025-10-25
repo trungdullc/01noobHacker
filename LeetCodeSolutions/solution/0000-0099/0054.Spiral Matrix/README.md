@@ -38,8 +38,68 @@ We can simulate the entire traversal process. We use $i$ and $j$ to represent th
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns of the matrix, respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Spiral Matrix problem.
+   """
+   def spiralOrder(self, matrix: list[list[int]]) -> list[int]:
+      """
+      Return all elements of the matrix in spiral order.
+      
+      Args:
+         matrix (list[list[int]]): 2D m x n matrix.
+      
+      Returns:
+         list[int]: List of elements in spiral order.
+      """
+      if not matrix or not matrix[0]:
+         return []
+
+      result = []
+      top, bottom = 0, len(matrix) - 1
+      left, right = 0, len(matrix[0]) - 1
+
+      while top <= bottom and left <= right:
+         # Traverse top row
+         for j in range(left, right + 1):
+            result.append(matrix[top][j])
+         top += 1
+
+         # Traverse right column
+         for i in range(top, bottom + 1):
+            result.append(matrix[i][right])
+         right -= 1
+
+         if top <= bottom:
+            # Traverse bottom row
+            for j in range(right, left - 1, -1):
+               result.append(matrix[bottom][j])
+            bottom -= 1
+
+         if left <= right:
+            # Traverse left column
+            for i in range(bottom, top - 1, -1):
+               result.append(matrix[i][left])
+            left += 1
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.spiralOrder([[1,2,3],[4,5,6],[7,8,9]]))
+   print(sol.spiralOrder([[1,2,3,4],[5,6,7,8],[9,10,11,12]]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 6, 9, 8, 7, 4, 5]
+[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+
+real    0m0.024s
+user    0m0.012s
+sys     0m0.012s
 ```
 
 #### Python3

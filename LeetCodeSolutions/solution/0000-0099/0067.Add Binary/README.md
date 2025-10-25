@@ -29,6 +29,57 @@ We use a variable $carry$ to record the current carry, and two pointers $i$ and 
 
 The time complexity is $O(\max(m, n))$, where $m$ and $n$ are the lengths of strings $a$ and $b$ respectively. The space complexity is $O(1)$.
 
+#### Du Solution:
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Add Binary problem.
+   """
+   def addBinary(self, a: str, b: str) -> str:
+      """
+      Add two binary strings and return the sum as a binary string.
+      
+      Args:
+         a (str): First binary string.
+         b (str): Second binary string.
+      
+      Returns:
+         str: Sum of a and b as a binary string.
+      """
+      result = []
+      i, j = len(a) - 1, len(b) - 1
+      carry = 0
+
+      while i >= 0 or j >= 0 or carry:
+         total = carry
+         if i >= 0:
+            total += int(a[i])
+            i -= 1
+         if j >= 0:
+            total += int(b[j])
+            j -= 1
+         result.append(str(total % 2))
+         carry = total // 2
+
+      return ''.join(reversed(result))
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.addBinary("11", "1"))
+   print(sol.addBinary("1010", "1011"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+100
+10101
+
+real    0m0.023s
+user    0m0.022s
+sys     0m0.001s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

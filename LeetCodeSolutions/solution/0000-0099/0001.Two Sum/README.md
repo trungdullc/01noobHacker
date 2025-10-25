@@ -56,6 +56,50 @@ Traverse the array $\textit{nums}$, for the current element $\textit{nums}[i]$, 
 
 Time complexity is $O(n)$, and space complexity is $O(n)$, where $n$ is the length of the array $\textit{nums}$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Two Sum problem.
+   """
+   def twoSum(self, nums: list[int], target: int) -> list[int]:
+      """
+      Return indices of the two numbers such that they add up to target.
+      
+      Args:
+         nums (list[int]): Input array of integers.
+         target (int): Target sum.
+      
+      Returns:
+         list[int]: Indices of the two numbers adding up to target.
+      """
+      num_to_index = {}
+      for i, num in enumerate(nums):
+         complement = target - num
+         if complement in num_to_index:
+            return [num_to_index[complement], i]
+         num_to_index[num] = i
+      return []
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.twoSum([2,7,11,15], 9))
+   print(sol.twoSum([3,2,4], 6))
+   print(sol.twoSum([3,3], 6))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[0, 1]
+[1, 2]
+[0, 1]
+
+real    0m0.023s
+user    0m0.018s
+sys     0m0.005s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

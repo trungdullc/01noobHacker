@@ -74,6 +74,88 @@ Traverse the sudoku, for each digit, check whether the row, column and $3 \times
 
 The time complexity is $O(C)$ and the space complexity is $O(C)$, where $C$ is the number of empty spaces in the sudoku. In this question, $C=81$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+from typing import List
+
+class Solution:
+   """
+   Class to determine if a 9x9 Sudoku board is valid.
+
+   Methods
+   -------
+   isValidSudoku(board: List[List[str]]) -> bool
+       Returns True if the board is valid according to Sudoku rules.
+   """
+
+   def isValidSudoku(self, board: List[List[str]]) -> bool:
+      """
+      Check whether a 9x9 Sudoku board is valid.
+
+      Parameters
+      ----------
+      board : List[List[str]]
+          9x9 Sudoku board with digits '1'-'9' and '.' for empty cells.
+
+      Returns
+      -------
+      bool
+          True if board is valid, False otherwise.
+      """
+      rows = [set() for _ in range(9)]
+      cols = [set() for _ in range(9)]
+      boxes = [set() for _ in range(9)]
+
+      for r in range(9):
+         for c in range(9):
+            val = board[r][c]
+            if val == ".":
+               continue
+            if val in rows[r] or val in cols[c] or val in boxes[(r//3)*3 + c//3]:
+               return False
+            rows[r].add(val)
+            cols[c].add(val)
+            boxes[(r//3)*3 + c//3].add(val)
+
+      return True
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.isValidSudoku([
+      ["5","3",".",".","7",".",".",".","."],
+      ["6",".",".","1","9","5",".",".","."],
+      [".","9","8",".",".",".",".","6","."],
+      ["8",".",".",".","6",".",".",".","3"],
+      ["4",".",".","8",".","3",".",".","1"],
+      ["7",".",".",".","2",".",".",".","6"],
+      [".","6",".",".",".",".","2","8","."],
+      [".",".",".","4","1","9",".",".","5"],
+      [".",".",".",".","8",".",".","7","9"]
+   ]))
+   print(sol.isValidSudoku([
+      ["8","3",".",".","7",".",".",".","."],
+      ["6",".",".","1","9","5",".",".","."],
+      [".","9","8",".",".",".",".","6","."],
+      ["8",".",".",".","6",".",".",".","3"],
+      ["4",".",".","8",".","3",".",".","1"],
+      ["7",".",".",".","2",".",".",".","6"],
+      [".","6",".",".",".",".","2","8","."],
+      [".",".",".","4","1","9",".",".","5"],
+      [".",".",".",".","8",".",".","7","9"]
+   ]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+
+real    0m0.029s
+user    0m0.012s
+sys     0m0.016s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

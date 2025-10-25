@@ -59,8 +59,58 @@ Therefore, we can check whether $ans$ overflows by checking whether $ans$ is wit
 
 The time complexity is $O(\log |x|)$, where $|x|$ is the absolute value of $x$. The space complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Reverse Integer problem.
+   """
+   def reverse(self, x: int) -> int:
+      """
+      Reverse digits of a 32-bit signed integer.
+      
+      Args:
+         x (int): Input integer.
+      
+      Returns:
+         int: Reversed integer or 0 if it overflows 32-bit signed range.
+      """
+      INT_MAX, INT_MIN = 2**31 - 1, -2**31
+      result = 0
+      negative = x < 0
+      x = abs(x)
+
+      while x != 0:
+         pop = x % 10
+         x //= 10
+
+         if result > (INT_MAX - pop) // 10:
+            return 0
+         result = result * 10 + pop
+
+      return -result if negative else result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.reverse(123))
+   print(sol.reverse(-123))
+   print(sol.reverse(120))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+321
+-321
+21
+
+real    0m0.025s
+user    0m0.025s
+sys     0m0.000s
 ```
+
+#### Du Solution: Python3
+```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 import math

@@ -41,6 +41,78 @@
 
 ### Solution 1
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+from typing import List
+
+class Solution:
+   """
+   Class to find all elements in an array that appear more than n/3 times.
+
+   Methods
+   -------
+   majorityElement(nums: List[int]) -> List[int]
+       Returns a list of elements appearing more than n/3 times.
+   """
+
+   def majorityElement(self, nums: List[int]) -> List[int]:
+      """
+      Uses the Boyer-Moore Voting algorithm extended for n/3 threshold.
+
+      Parameters
+      ----------
+      nums : List[int]
+          Input array of integers.
+
+      Returns
+      -------
+      List[int]
+          List of majority elements appearing more than n/3 times.
+      """
+      if not nums:
+         return []
+
+      candidate1, candidate2, count1, count2 = None, None, 0, 0
+
+      for num in nums:
+         if candidate1 == num:
+            count1 += 1
+         elif candidate2 == num:
+            count2 += 1
+         elif count1 == 0:
+            candidate1, count1 = num, 1
+         elif count2 == 0:
+            candidate2, count2 = num, 1
+         else:
+            count1 -= 1
+            count2 -= 1
+
+      result = []
+      for cand in [candidate1, candidate2]:
+         if cand is not None and nums.count(cand) > len(nums)//3:
+            result.append(cand)
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.majorityElement([3,2,3]))
+   print(sol.majorityElement([1]))
+   print(sol.majorityElement([1,2]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[3]
+[1]
+[1, 2]
+
+real    0m0.027s
+user    0m0.020s
+sys     0m0.008s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

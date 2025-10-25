@@ -37,6 +37,47 @@ Finally, we pop the elements from the min heap one by one and place them into th
 
 The time complexity is $O(n \log k)$, and the space complexity is $O(k)$. Here, $n$ is the length of the array.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for Top K Frequent Elements.
+   """
+   def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+      """
+      Return the k most frequent elements in the array.
+      
+      Args:
+         nums (list[int]): Input array of integers.
+         k (int): Number of top frequent elements to return.
+      
+      Returns:
+         list[int]: List of k most frequent elements.
+      """
+      from collections import Counter
+      import heapq
+
+      freq_map = Counter(nums)
+      # Use nlargest to get top k elements based on frequency
+      return [item for item, _ in heapq.nlargest(k, freq_map.items(), key=lambda x: x[1])]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.topKFrequent([1,1,1,2,2,3], 2))
+   print(sol.topKFrequent([1], 1))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2]
+[1]
+
+real    0m0.023s
+user    0m0.018s
+sys     0m0.005s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

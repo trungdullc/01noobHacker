@@ -78,6 +78,48 @@ We traverse the two strings `word1` and `word2`, take out the characters one by 
 
 The time complexity is $O(m + n)$, where $m$ and $n$ are the lengths of the two strings respectively. Ignoring the space consumption of the answer, the space complexity is $O(1)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Class to merge two strings alternately.
+   """
+
+   def mergeAlternately(self, word1: str, word2: str) -> str:
+      """
+      Merge two strings by alternating characters. Extra characters are appended at the end.
+      """
+      merged = []
+      i, j = 0, 0
+      while i < len(word1) or j < len(word2):
+         if i < len(word1):
+            merged.append(word1[i])
+            i += 1
+         if j < len(word2):
+            merged.append(word2[j])
+            j += 1
+      return "".join(merged)
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.mergeAlternately("abc", "pqr"))
+   print(sol.mergeAlternately("ab", "pqrs"))
+   print(sol.mergeAlternately("abcd", "pq"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+apbqcr
+apbqrs
+apbqcd
+
+real    0m0.023s
+user    0m0.016s
+sys     0m0.007s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

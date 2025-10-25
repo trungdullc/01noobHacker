@@ -35,6 +35,60 @@
 
 ### Solution 1
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for sorting an array without built-in functions.
+   """
+   def sortArray(self, nums: list[int]) -> list[int]:
+      """
+      Sort the array in ascending order using merge sort.
+      
+      Args:
+         nums (list[int]): Input array.
+      
+      Returns:
+         list[int]: Sorted array.
+      """
+      def merge(left, right):
+         result = []
+         i = j = 0
+         while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+               result.append(left[i])
+               i += 1
+            else:
+               result.append(right[j])
+               j += 1
+         result.extend(left[i:])
+         result.extend(right[j:])
+         return result
+
+      if len(nums) <= 1:
+         return nums
+      mid = len(nums) // 2
+      left = self.sortArray(nums[:mid])
+      right = self.sortArray(nums[mid:])
+      return merge(left, right)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.sortArray([5,2,3,1]))
+   print(sol.sortArray([5,1,1,2,0,0]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 5]
+[0, 0, 1, 1, 2, 5]
+
+real    0m0.021s
+user    0m0.013s
+sys     0m0.009s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

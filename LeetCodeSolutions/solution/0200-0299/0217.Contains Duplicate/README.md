@@ -57,8 +57,50 @@ Otherwise, when the traversal ends, we return `false`.
 
 The time complexity is $O(n \times \log n)$, where $n$ is the length of the array `nums`.
 
-#### Du Solution: Python3
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Contains Duplicate problem.
+   """
+   def containsDuplicate(self, nums: list[int]) -> bool:
+      """
+      Check if any value appears at least twice in the array.
+      
+      Args:
+         nums (list[int]): Input array.
+      
+      Returns:
+         bool: True if any duplicates exist, False otherwise.
+      """
+      seen = set()
+      for num in nums:
+         if num in seen:
+            return True
+         seen.add(num)
+      return False
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.containsDuplicate([1,2,3,1]))
+   print(sol.containsDuplicate([1,2,3,4]))
+   print(sol.containsDuplicate([1,1,1,3,3,4,3,2,4,2]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+True
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
 ```
+
+#### Du Solution: Python3
+```python
 AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3

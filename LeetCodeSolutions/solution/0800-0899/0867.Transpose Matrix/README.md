@@ -47,8 +47,45 @@ After the traversal, we return $\textit{ans}$.
 The time complexity is $O(m \times n)$, where $m$ and $n$ are the number of rows and columns in the matrix $\textit{matrix}$, respectively. Ignoring the space consumption of the answer, the space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Transpose Matrix problem.
+   """
+   def transpose(self, matrix: list[list[int]]) -> list[list[int]]:
+      """
+      Return the transpose of a given 2D matrix.
+      
+      Args:
+         matrix (list[list[int]]): 2D integer array.
+      
+      Returns:
+         list[list[int]]: Transposed matrix.
+      """
+      rows, cols = len(matrix), len(matrix[0])
+      transposed = [[0] * rows for _ in range(cols)]
+
+      for i in range(rows):
+         for j in range(cols):
+            transposed[j][i] = matrix[i][j]
+
+      return transposed
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.transpose([[1,2,3],[4,5,6],[7,8,9]]))
+   print(sol.transpose([[1,2,3],[4,5,6]]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+[[1, 4], [2, 5], [3, 6]]
+
+real    0m0.022s
+user    0m0.011s
+sys     0m0.011s
 ```
 
 #### Python3

@@ -52,6 +52,61 @@ Starting from the second day, if the stock price is higher than the previous day
 
 The time complexity is $O(n)$, where $n$ is the length of the `prices` array. The space complexity is $O(1)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+from typing import List
+
+class Solution:
+   """
+   Class to calculate the maximum profit from stock prices when
+   multiple transactions are allowed.
+
+   Methods
+   -------
+   maxProfit(prices: List[int]) -> int
+       Returns the maximum profit achievable.
+   """
+
+   def maxProfit(self, prices: List[int]) -> int:
+      """
+      Calculate the maximum profit from given stock prices allowing
+      multiple buy-sell transactions.
+
+      Parameters
+      ----------
+      prices : List[int]
+          List of stock prices.
+
+      Returns
+      -------
+      int
+          Maximum profit achievable.
+      """
+      profit = 0
+      for i in range(1, len(prices)):
+         if prices[i] > prices[i-1]:
+            profit += prices[i] - prices[i-1]
+      return profit
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.maxProfit([7,1,5,3,6,4]))
+   print(sol.maxProfit([1,2,3,4,5]))
+   print(sol.maxProfit([7,6,4,3,1]))
+ 
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+7
+4
+0
+
+real    0m0.058s
+user    0m0.024s
+sys     0m0.009s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

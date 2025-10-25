@@ -63,8 +63,61 @@ After the above process is over, we return the answer array $ans$.
 The time complexity is $O(n \times \log n + m \times \log m)$, and the space complexity is $O(n + m)$. Where $n$ and $m$ are the lengths of the arrays `intervals` and `queries` respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+import heapq
+
+class Solution:
+   """
+   Solution for the Minimum Interval to Include Each Query problem.
+   """
+   def minInterval(self, intervals: list[list[int]], queries: list[int]) -> list[int]:
+      """
+      For each query, find the size of the smallest interval containing it.
+      Return -1 if no such interval exists.
+      
+      Args:
+         intervals (list[list[int]]): List of intervals [left, right].
+         queries (list[int]): List of query integers.
+      
+      Returns:
+         list[int]: List of minimum interval sizes for each query.
+      """
+      intervals.sort()
+      sorted_queries = sorted((q, i) for i, q in enumerate(queries))
+      result = [-1] * len(queries)
+      heap = []
+      j = 0
+      n = len(intervals)
+
+      for q, idx in sorted_queries:
+         while j < n and intervals[j][0] <= q:
+            left, right = intervals[j]
+            heapq.heappush(heap, (right - left + 1, right))
+            j += 1
+
+         while heap and heap[0][1] < q:
+            heapq.heappop(heap)
+
+         if heap:
+            result[idx] = heap[0][0]
+
+      return result
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.minInterval([[1,4],[2,4],[3,6],[4,4]], [2,3,4,5]))
+   print(sol.minInterval([[2,3],[2,5],[1,8],[20,25]], [2,19,5,22]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[3, 3, 1, 4]
+[2, -1, 4, 6]
+
+real    0m0.024s
+user    0m0.016s
+sys     0m0.008s
 ```
 
 #### Python3

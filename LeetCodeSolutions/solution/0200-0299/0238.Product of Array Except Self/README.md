@@ -42,6 +42,66 @@ After the traversal, we return the answer array $\textit{ans}$.
 
 The time complexity is $O(n)$, where $n$ is the length of the array $\textit{nums}$. Ignoring the space consumption of the answer array, the space complexity is $O(1)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+from typing import List
+
+class Solution:
+   """
+   Class to solve the 'Product of Array Except Self' problem.
+
+   Methods
+   -------
+   productExceptSelf(nums: List[int]) -> List[int]
+       Returns an array where each element is the product of all other elements in the input list.
+   """
+
+   def productExceptSelf(self, nums: List[int]) -> List[int]:
+      """
+      Compute the product of array except self.
+
+      Parameters
+      ----------
+      nums : List[int]
+          Input array of integers.
+
+      Returns
+      -------
+      List[int]
+          Array where each element at index i is the product of all numbers in nums except nums[i].
+      """
+      n = len(nums)
+      answer = [1] * n
+
+      prefix = 1
+      for i in range(n):
+         answer[i] = prefix
+         prefix *= nums[i]
+
+      suffix = 1
+      for i in range(n-1, -1, -1):
+         answer[i] *= suffix
+         suffix *= nums[i]
+
+      return answer
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.productExceptSelf([1,2,3,4]))
+   print(sol.productExceptSelf([-1,1,0,-3,3]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[24, 12, 8, 6]
+[0, 0, 9, 0, 0]
+
+real    0m0.053s
+user    0m0.025s
+sys     0m0.004s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

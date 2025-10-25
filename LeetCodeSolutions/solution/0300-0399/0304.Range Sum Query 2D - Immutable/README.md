@@ -68,6 +68,82 @@ In the initialization method, we preprocess the prefix sum array $s$, and in the
 
 The time complexity for initializing is $O(m \times n)$, and the time complexity for querying is $O(1)$. The space complexity is $O(m \times n)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class NumMatrix:
+    """
+    NumMatrix class for fast range sum queries on a 2D matrix.
+    Uses 2D prefix sums.
+    """
+    def __init__(self, matrix: list[list[int]]):
+        """
+        Initializes the object and precomputes the 2D prefix sums.
+        
+        Args:
+            matrix (list[list[int]]): Input 2D matrix.
+        """
+        if not matrix or not matrix[0]:
+            self.prefix = []
+            return
+        
+        m, n = len(matrix), len(matrix[0])
+        self.prefix = [[0]*(n+1) for _ in range(m+1)]
+        
+        # Build prefix sum matrix
+        for i in range(m):
+            for j in range(n):
+                self.prefix[i+1][j+1] = (
+                    self.prefix[i][j+1] +
+                    self.prefix[i+1][j] -
+                    self.prefix[i][j] +
+                    matrix[i][j]
+                )
+
+    def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+        """
+        Returns the sum of the submatrix from (row1,col1) to (row2,col2) inclusive.
+        
+        Args:
+            row1, col1 (int): Top-left coordinates of the rectangle.
+            row2, col2 (int): Bottom-right coordinates of the rectangle.
+            
+        Returns:
+            int: Sum of the rectangle elements.
+        """
+        return (
+            self.prefix[row2+1][col2+1]
+            - self.prefix[row1][col2+1]
+            - self.prefix[row2+1][col1]
+            + self.prefix[row1][col1]
+        )
+
+if __name__ == "__main__":
+   matrix = [
+       [3, 0, 1, 4, 2],
+       [5, 6, 3, 2, 1],
+       [1, 2, 0, 1, 5],
+       [4, 1, 0, 1, 7],
+       [1, 0, 3, 0, 5]
+   ]
+
+   numMatrix = NumMatrix(matrix)
+   print(numMatrix.sumRegion(2, 1, 4, 3)) 
+   print(numMatrix.sumRegion(1, 1, 2, 2))  
+   print(numMatrix.sumRegion(1, 2, 2, 4))  
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+8
+11
+12
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

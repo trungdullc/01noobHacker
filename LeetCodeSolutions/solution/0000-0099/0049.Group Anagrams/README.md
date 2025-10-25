@@ -66,8 +66,52 @@ Finally, return the `value` list of the hash table.
 
 The time complexity is $O(n\times k\times \log k)$, where $n$ and $k$ are the lengths of the string array and the maximum length of the string, respectively.
 
-#### Du Solution: Python3
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Solution for the Group Anagrams problem.
+   """
+   def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+      """
+      Group strings that are anagrams of each other.
+      
+      Args:
+         strs (list[str]): List of input strings.
+      
+      Returns:
+         list[list[str]]: Groups of anagrams.
+      """
+      from collections import defaultdict
+
+      anagram_map = defaultdict(list)
+      for s in strs:
+         key = tuple(sorted(s))
+         anagram_map[key].append(s)
+
+      return list(anagram_map.values())
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+   print(sol.groupAnagrams([""]))
+   print(sol.groupAnagrams(["a"]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+[['']]
+[['a']]
+
+real    0m0.024s
+user    0m0.016s
+sys     0m0.008s
 ```
+
+#### Du Solution: Python3
+```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 

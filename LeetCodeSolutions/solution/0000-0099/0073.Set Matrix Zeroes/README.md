@@ -51,8 +51,67 @@ Then traverse the matrix again, and clear the elements in the rows and columns m
 The time complexity is $O(m\times n)$, and the space complexity is $O(m+n)$. Where $m$ and $n$ are the number of rows and columns of the matrix respectively.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py 
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Set Matrix Zeroes problem.
+   """
+   def setZeroes(self, matrix: list[list[int]]) -> None:
+      """
+      Set entire row and column to 0 if an element is 0, in-place.
+      
+      Args:
+         matrix (list[list[int]]): 2D integer matrix.
+      
+      Returns:
+         None: The matrix is modified in-place.
+      """
+      m, n = len(matrix), len(matrix[0])
+      first_row_zero = any(matrix[0][j] == 0 for j in range(n))
+      first_col_zero = any(matrix[i][0] == 0 for i in range(m))
+
+      # Use first row and first column as markers
+      for i in range(1, m):
+         for j in range(1, n):
+            if matrix[i][j] == 0:
+               matrix[i][0] = 0
+               matrix[0][j] = 0
+
+      # Set zeros based on markers
+      for i in range(1, m):
+         for j in range(1, n):
+            if matrix[i][0] == 0 or matrix[0][j] == 0:
+               matrix[i][j] = 0
+
+      # Set first row and first column zeros if needed
+      if first_row_zero:
+         for j in range(n):
+            matrix[0][j] = 0
+      if first_col_zero:
+         for i in range(m):
+            matrix[i][0] = 0
+
+if __name__ == "__main__":
+   sol = Solution()
+   matrix1 = [[1,1,1],[1,0,1],[1,1,1]]
+   sol.setZeroes(matrix1)
+   print(matrix1)
+
+   matrix2 = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+   sol.setZeroes(matrix2)
+   print(matrix2)
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[1, 0, 1], [0, 0, 0], [1, 0, 1]]
+[[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]
+
+real    0m0.021s
+user    0m0.021s
+sys     0m0.000s
 ```
 
 #### Python3

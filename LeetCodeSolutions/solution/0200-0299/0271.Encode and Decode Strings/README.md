@@ -85,6 +85,70 @@ During decoding, we first take the first four digits of the string to get the le
 
 The time complexity is $O(n)$.
 
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Codec:
+   """
+   Codec for encoding and decoding lists of strings.
+   """
+   def encode(self, strs: list[str]) -> str:
+      """
+      Encodes a list of strings to a single string.
+      
+      Each string is encoded as "length#string" to ensure correct decoding.
+      
+      Args:
+         strs (list[str]): List of strings to encode.
+      
+      Returns:
+         str: Encoded single string.
+      """
+      return ''.join(f"{len(s)}#{s}" for s in strs)
+
+   def decode(self, s: str) -> list[str]:
+      """
+      Decodes a single string to a list of strings.
+      
+      Args:
+         s (str): Encoded string.
+      
+      Returns:
+         list[str]: Original list of strings.
+      """
+      res, i = [], 0
+      while i < len(s):
+         j = i
+         # Find the delimiter '#' to extract length
+         while s[j] != '#':
+            j += 1
+         length = int(s[i:j])
+         res.append(s[j+1:j+1+length])
+         i = j + 1 + length
+      return res
+
+if __name__ == "__main__":
+   codec = Codec()
+   
+   data1 = ["Hello","World"]
+   encoded1 = codec.encode(data1)
+   print(codec.decode(encoded1))
+   
+   data2 = [""]
+   encoded2 = codec.encode(data2)
+   print(codec.decode(encoded2))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+['Hello', 'World']
+['']
+
+real    0m0.024s
+user    0m0.023s
+sys     0m0.001s
+```
+
 #### Du Solution: Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 

@@ -45,8 +45,56 @@ If we have not encountered a situation where the characters pointed to by the po
 
 The time complexity is $O(n)$, where $n$ is the length of the string $s$. The space complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Du Solution
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Class to check if a string can become a palindrome after deleting at most one character.
+   """
+
+   def validPalindrome(self, s: str) -> bool:
+      """
+      Returns True if the string can be a palindrome after deleting at most one character.
+      """
+
+      def is_palindrome_range(left: int, right: int) -> bool:
+         while left < right:
+            if s[left] != s[right]:
+               return False
+            left += 1
+            right -= 1
+         return True
+
+      left, right = 0, len(s) - 1
+      while left < right:
+         if s[left] != s[right]:
+            return is_palindrome_range(left+1, right) or is_palindrome_range(left, right-1)
+         left += 1
+         right -= 1
+      return True
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   print(sol.validPalindrome("aba"))
+   print(sol.validPalindrome("abca"))
+   print(sol.validPalindrome("abc"))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py  
+True
+True
+False
+
+real    0m0.022s
+user    0m0.012s
+sys     0m0.009s
 ```
+
+#### Du Solution: Python3
+```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 

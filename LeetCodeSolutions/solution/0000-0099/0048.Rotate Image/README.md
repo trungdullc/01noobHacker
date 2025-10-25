@@ -41,8 +41,51 @@ We can first flip the matrix upside down, i.e., swap $\text{matrix}[i][j]$ with 
 The time complexity is $O(n^2)$, where $n$ is the side length of the matrix. The space complexity is $O(1)$.
 
 #### Du Solution: Python3
-```
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
 
+class Solution:
+   """
+   Solution for the Rotate Image problem.
+   """
+   def rotate(self, matrix: list[list[int]]) -> None:
+      """
+      Rotate the n x n matrix by 90 degrees clockwise in-place.
+      
+      Args:
+         matrix (list[list[int]]): 2D square matrix to rotate.
+      
+      Returns:
+         None: The matrix is modified in-place.
+      """
+      n = len(matrix)
+      # Transpose the matrix
+      for i in range(n):
+         for j in range(i, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+      # Reverse each row
+      for i in range(n):
+         matrix[i].reverse()
+
+if __name__ == "__main__":
+   sol = Solution()
+   matrix1 = [[1,2,3],[4,5,6],[7,8,9]]
+   sol.rotate(matrix1)
+   print(matrix1)
+
+   matrix2 = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+   sol.rotate(matrix2)
+   print(matrix2)
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+[[15, 13, 2, 5], [14, 3, 4, 1], [12, 6, 8, 9], [16, 7, 10, 11]]
+
+real    0m0.024s
+user    0m0.019s
+sys     0m0.005s
 ```
 
 #### Python3
