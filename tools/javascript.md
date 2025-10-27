@@ -295,6 +295,29 @@ true
 2 === 2;
 true
 
+// Create the house object
+var house = {
+    size: "big",
+    colour: "blue"
+};
+
+// add another property if true
+if (house.size === "big" && house.colour === "blue") {
+    house.windows = 4;
+    console.log("added windows: 4");
+}
+VM7227:4 added windows: 4
+
+// delete property
+delete house.windows;
+true
+
+var color = "red";
+if (color == "red" || color == "blue"){
+   console.log("The color either red or blue");
+}
+VM7355:3 The color either red or blue
+
 // String Concatination on JS very loose
 "1, 2, " + 3;
 '1, 2, 3'
@@ -422,7 +445,7 @@ var mySet = new Set([1, 2, 3, 2]);
 console.log(mySet);             // duplicates removed
 VM4174:2 Set(3) {1, 2, 3}
 
-for (let val of mySet) {
+for (let val of mySet) {        // below for of vs for in
   console.log(val);
 }
 VM4399:2 1
@@ -619,7 +642,393 @@ Math.pow(a,b) / ** → exponentiation
 
 ## Side Quest ❤️❤️❤️❤️❤️ Logic and Control Structures
 ```javascript
+// if statement similar to C/Java
+var count = 1;
+if (count == 3){
+   console.log("count is 3")
+} else if (count == 4){
+   console.log("count is 4")
+} else {
+   console.log("count is neither 3 or 4")
+}
+VM6654:7 count is neither 3 or 4
 
+// switch statement similar to C
+grade = 'B';
+switch (grade) {
+  case 'A':
+    console.log("Great job");
+    break;
+  case 'B':
+    console.log("OK job");
+    break;
+  case 'C':
+    console.log("You can do better");
+    break;
+  default:
+    console.log("Failure");
+    break;
+}
+VM7400:7 OK job
+
+// while statement
+while (true){
+   console.log("Goes forever w/o break");
+   break;
+}
+VM6664:2 Goes forever w/o break
+
+// do while: Browser                        // Node.js version
+                                            const readline = require("readline-sync");
+
+function getInput() {                       function getInput() {
+  return prompt("Enter something:");           return readline.question("Enter something: ");
+}                                           }
+
+function isValid(x) {                       function isValid(x) {
+  return x !== "";                             return x.length > 0;
+}                                           }
+
+var input;                                  let input;
+do {                                        do {
+  input = getInput();                          input = getInput();
+} while (!isValid(input));                  } while (!isValid(input));
+
+console.log("You entered:", input);         console.log("Success:", input);
+VM6708:14 You entered: HackerDu
+
+// for loop similar to C/Java
+for (var i = 0; i < 2; i++) {
+    console.log(`i is ${i}`);               // similar python fstring, must use backticks ❤️❤️❤️❤️❤️
+    console.log("i is " + i);               // old school
+}
+VM6861:2 i is 0
+VM6861:3 i is 0
+VM6861:2 i is 1
+VM6861:3 i is 1
+
+// Breaking out of labeled loops is similar to Java
+outer:
+for (var i = 0; i < 10; i++) {
+    for (var j = 0; j < 10; j++) {
+        console.log("WTF")
+        
+        if (i == 0 && j ==2) {
+            break outer;                // JS break to label, Different 👀
+        }
+    }
+}
+VM6861: (3) WTF                         // 3x WTF output
+
+// Important: template literals only work when the entire string is inside backticks ❤️❤️❤️❤️❤️
+// for/in statement: iteration over properties of an object
+var description = "";
+var person = {fname:"Paul", lname:"Ken", age:18};
+for (var x in person){
+    description += person[x] + " ";     // description += `${person[x]} `;
+}
+
+// for each C/Java/Python
+// for/of statement: iteration over iterable objects (built-in String, Array, NodeList objects, TypedArray, Map, Set
+var myPets = "";
+var pets = ["cat", "dog", "hamster", "hedgehog"];
+for (var pet of pets){
+    myPets += pet + " ";
+}
+'cat dog hamster hedgehog '
+```
+
+## Side Quest ❤️❤️❤️❤️❤️ more Functions
+```javascript
+function myFunction(myString){
+    return myString.toUpperCase();
+}
+myFunction("foo");
+'FOO'
+
+// Note: setTimeout() and setInterval() not JS language, but is provided by browsers and Node.js
+function myFunction(){
+   console.log("Call me")
+}
+setTimeout(myFunction, 5000);
+1831
+VM7478:2 Call me
+
+// Dangerous will call every 5 seconds
+function myFunction(){
+   console.log("Call me every 5 sec")
+}
+setInterval(myFunction, 5000);
+
+// JS function scope similar to C/Java/Python but blocks act globally
+// Immediately Invoked Function Expression(IIFE) get executed vs function definition (formats are different)
+(function(){
+    var temporary = 5;
+    window.permanent = 10;
+})();
+
+temporary
+VM7526:1 Uncaught ReferenceError: temporary is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM7526:1
+permanent
+10
+
+function sayHelloInFiveSeconds(name){
+    var prompt = "Hello, " + name + "!";
+
+    function inner(){ 👀
+        alert(prompt);
+    }
+    setTimeout(inner, 5000);
+    // setTimeout is asynchronous, so the sayHelloInFiveSeconds function will exit immediately
+    // and setTimeout will call inner afterwards
+}
+sayHelloInFiveSeconds("Hacker");
+```
+
+## Side Quest ❤️❤️❤️❤️❤️ Objects, Constructors and Prototypes
+```javascript
+// Similar to C struct (can't contain fx, but can have fx pointer) and C++/Java/Python Class
+// this similar to Python self
+myObj = {
+    myString: "Hello Hackers",
+    myFunc: function(){
+        return this.myString;
+    }
+};
+myObj.myFunc();
+'Hello Hackers'
+
+// .bind()
+var myObj = {
+    myString: "Hello Hackers",
+    myFunc: function(){
+        return this.myString;
+    }
+};
+
+myObj.myFunc = myObj.myFunc.bind(myObj);
+
+var myFunc = myObj.myFunc;
+console.log(myFunc());
+VM7698:11 Hello Hackers
+
+// Note: didn't call fx w/in obj
+var myFunc = myObj.myFunc;
+myFunc();
+undefined
+
+// Arrow Function (does not lose this)
+var myObj = {
+    myString: "Hello Hackers",
+    myFunc: () => "Hello Hackers"
+};
+
+var myFunc = myObj.myFunc;
+myFunc();
+'Hello Hackers'
+
+// Created a stand alone fx then added fx to myObj
+var myOtherFunc = function(){
+    return this.myString.toUpperCase();             // assume there a property called myString
+};
+myObj.myOtherFunc = myOtherFunc;
+myObj.myOtherFunc();
+'HELLO HACKERS'
+myObj
+{myString: 'Hello Hackers', myFunc: ƒ, myOtherFunc: ƒ}
+
+Function.call
+ƒ call() { [native code] }
+Function.apply
+ƒ apply() { [native code] }
+var anotherFunc = function(s){
+    return this.myString + s;
+};
+anotherFunc.call(myObj, " And Hello Moon!");        // arg is string
+'Hello Hackers And Hello Moon!'
+
+anotherFunc.apply(myObj, [" And Hello Sun!"]);      // arg is Array object
+'Hello Hackers And Hello Sun!'
+
+Math.min(42, 6, 27);
+6
+Math.min([42, 6, 27]);                              // min not accept obj use .apply()
+NaN
+Math.min(...[42, 6, 27]); 
+6
+Math.min.apply(Math, [42, 6, 27]);
+6
+
+// .bind() (perm)
+var boundFunc = anotherFunc.bind(myObj);
+boundFunc(" And Hello Saturn!"); 
+'Hello Hackers And Hello Saturn!'
+
+// currying
+var product = function(a, b){ return a * b; };
+var doubler = product.bind(this, 2);                // product(2, 8)
+doubler(8);
+
+var MyConstructor = function(){
+    this.myNumber = 5;
+};
+                                                    // new -> call constructor: { myNumber: 5 };
+myNewObj = new MyConstructor();                     // global, lives inside window.myNewObjvar obj = { myNumber: 5 };
+myNewObj.myNumber;
+
+// JavaScript has no concept of 'instances' created from 'class'
+// combines instantiation and inheritance into a single concept: a 'prototype'
+// Every JavaScript object has a 'prototype', magic property `__proto__`
+var myObj = {
+    myString: "Hello world!"
+};
+var myPrototype = {
+    meaningOfLife: 42,
+    myFunc: function(){
+        return this.myString.toLowerCase();
+    }
+};
+
+myObj.__proto__ = myPrototype;
+myObj.meaningOfLife;
+42
+myObj.myFunc();
+'hello world!'
+
+// if your property isn't on your prototype, add it
+myPrototype.__proto__ = {
+    myBoolean: true
+};
+myObj.myBoolean;
+true
+// easier normal person way
+myPrototype.meaningOfLife = 69;
+myObj.meaningOfLife;
+69
+
+for (var x in myObj){
+    console.log(x);
+}
+VM8255:2 myString
+VM8255:2 meaningOfLife
+VM8255:2 myFunc
+VM8255:2 myBoolean
+
+for (var x in myObj){
+    console.log(myObj[x]);
+}
+VM8265:2 Hello world!
+VM8265:2 43
+VM8265:2 ƒ (){
+        return this.myString.toLowerCase();
+    }
+VM8265:2 true
+
+// consider properties attached to the object itself and not its prototypes: `hasOwnProperty()` check
+for (var x in myObj){
+    if (myObj.hasOwnProperty(x)){
+        console.log(myObj[x]);
+    }
+}
+VM8281:3 Hello world!
+
+// Create a new object with a given prototype
+var myObj = Object.create(myPrototype);
+myObj.meaningOfLife;
+43
+
+var MyConstructor = function(){                         // function MyConstructor() {
+    this.myNumber = 5;                                  //    this.myNumber = 5;
+};                                                      // };
+
+MyConstructor.prototype = {
+    myNumber: 5,
+    getMyNumber: function(){
+        return this.myNumber;
+    }
+};
+{myNumber: 5, getMyNumber: ƒ}
+
+var myNewObj2 = new MyConstructor();
+myNewObj2.getMyNumber();
+5
+myNewObj2.myNumber = 6;
+myNewObj2.getMyNumber();
+6
+
+// Built-in types
+var myNumber = 12;
+var myNumberObj = new Number(12);
+
+myNumber == myNumberObj;
+true
+myNumber === myNumberObj;
+false                                           // ⚠️
+
+// Important: Objects in JavaScript are compared by reference, not by contents
+var myArray = [0, 1, 2]
+var myArrayObj = new Array(0,1,2)
+
+myArray == myArrayObj                           // JS objects compare by reference
+false
+
+// JS objects are always truthy
+if (1){
+    console.log("hi");
+}
+VM8904:2 hi
+
+if (0) {
+    console.log("This code won't execute, because 0 is falsy");
+}
+undefined
+if (false) {
+    console.log("This code won't execute, because 0 is falsy");
+}
+undefined
+
+// Beware
+if (new Number(1)) {
+    console.log("This code will always run no matter number");
+}
+VM9059:2 This code will always run no matter number
+
+// Wrapper objects and the regular builtins share a prototype
+// add functionality to a string
+String.prototype.firstCharacter = function(){
+    return this.charAt(0);
+};
+"abc".firstCharacter();
+'a'
+
+// polyfilling: implementing newer features of JavaScript in an older subset of JavaScript
+if (Object.create === undefined){ // don't overwrite it if it exists
+    Object.create = function(proto){
+        // make a temporary constructor with the right prototype
+        var Constructor = function(){};
+        Constructor.prototype = proto;
+        // then use it to create a new, appropriately-prototyped object
+        return new Constructor();
+    };
+}
+```
+
+## Side Quest ❤️❤️❤️❤️❤️ ES6
+```javascript
+// "let" keyword allows you to define variables in a lexical scope vs fx scope
+// "const" similar to let scope but can't redefine
+let name = "Bob";
+name = "HackerDu";
+'HackerDu'
+
+// lambda syntax: allows functions to be defined in a lexical scope
+const isEven = (number) => {                        // function isEven(number) {
+    return number % 2 === 0;                        //    return number % 2 === 0;
+};                                                  // };
+console.log(isEven(7));
+VM9248:4 false
 ```
 
 ## Back to README.md
