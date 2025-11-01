@@ -32,6 +32,8 @@ for (int i = 0; i &lt; actualLength; i++) {
 
 <p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
 
+<p style="color: yellow;">Hacker: In-place means affects original<br>Remove all occurance and return new length</p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -94,9 +96,10 @@ class Solution:
          int: Number of elements not equal to val.
       """
       k = 0
-      for num in nums:
-         if num != val:
-            nums[k] = num
+
+      for num in nums:                  # [3,2,3,2,3], val = 2
+         if num != val:                 # Places values in front if not target value then counter++ ❤️
+            nums[k] = num               # [3,skip,3,skip,3] so really [3,3,3,2,3] and we just want nums[0:3] since k = 3
             k += 1
       return k
 
@@ -104,7 +107,7 @@ if __name__ == "__main__":
    sol = Solution()
    arr1 = [3,2,2,3]
    k1 = sol.removeElement(arr1, 3)
-   print(k1, arr1[:k1])
+   print(k1, arr1[:k1])                 # print(f"{k1}")
    
    arr2 = [0,1,2,2,3,0,4,2]
    k2 = sol.removeElement(arr2, 2)
@@ -128,16 +131,15 @@ from typing import List
 class Solution:
    def removeElement(self, nums: List[int], val: int) -> int:
       k = 0
-
-      for i in range(len(nums)):
-         if nums[i] != val:
-            nums[k] = nums[i]       # Note: Starts at 0
+                                        # Note: Same logic as above but uses for range instead of foreach style
+      for i in range(len(nums)):        # for num in nums:      for i,v in enumerate(nums):  
+         if nums[i] != val:             #    num != val:           nums[i] != val:
+            nums[k] = nums[i]
             k += 1
       return k
 
 def main() -> None:
    sol = Solution()
-
    k1 = sol.removeElement([3,2,2,3], 3)
    print(k1, nums1[:k1])
 
@@ -152,17 +154,35 @@ AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py
 5 [0, 1, 3, 0, 4]
 ```
 
-#### Python3: Solution.py
+#### JavaScript: Solution.js
 
-```python
-class Solution:
-    def removeElement(self, nums: List[int], val: int) -> int:
-        k = 0
-        for x in nums:
-            if x != val:
-                nums[k] = x
-                k += 1
-        return k
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+// CLASS VERSION                        // FUNCTION EXPRESSION VERSION                      // ARROW FUNCTION VERSION
+class Solution {                        const removeElement = function(nums, val) {         const removeElement = (nums, val) => {
+  removeElement(nums, val) {               let k = 0;                                          let k = 0;
+    let k = 0;                             for (const x of nums) {                             for (const x of nums) {
+    for (const x of nums) {                   if (x !== val) {                                    if (x !== val) {
+      if (x !== val) {                           nums[k++] = x;                                      nums[k++] = x;
+        nums[k++] = x;                        }                                                   }
+      }                                    }                                                   }
+    }                                      return k;                                           return k;
+    return k;                           };                                                  };
+  }
+}
+
+const sol = new Solution();
+let arr1 = [3, 2, 2, 3];
+let k1 = sol.removeElement(arr1, 3);
+console.log(k1, arr1.slice(0, k1));
+
+let arr2 = [0,1,2,2,3,0,4,2];
+let k2 = sol.removeElement(arr2, 2);
+console.log(k2, arr2.slice(0, k2)); 
 ```
 
 #### Java: Solution.java
@@ -242,25 +262,6 @@ impl Solution {
         k as i32
     }
 }
-```
-
-#### JavaScript: Solution.js
-
-```js
-/**
- * @param {number[]} nums
- * @param {number} val
- * @return {number}
- */
-var removeElement = function (nums, val) {
-    let k = 0;
-    for (const x of nums) {
-        if (x !== val) {
-            nums[k++] = x;
-        }
-    }
-    return k;
-};
 ```
 
 #### C#: Solution.cs

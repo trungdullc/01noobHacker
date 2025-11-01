@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0509.Fibonacci%20Number/README_EN.md
-tags:
-    - Recursion
-    - Memoization
-    - Math
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
 # [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number)
 
-[中文文档](/solution/0500-0599/0509.Fibonacci%20Number/README.md)
-
 ## Description
-
-<!-- description:start -->
 
 <p>The <b>Fibonacci numbers</b>, commonly denoted <code>F(n)</code> form a sequence, called the <b>Fibonacci sequence</b>, such that each number is the sum of the two preceding ones, starting from <code>0</code> and <code>1</code>. That is,</p>
 
@@ -60,11 +43,7 @@ F(n) = F(n - 1) + F(n - 2), for n &gt; 1.
 	<li><code>0 &lt;= n &lt;= 30</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recurrence
 
@@ -76,7 +55,198 @@ Finally, we return $a$.
 
 The time complexity is $O(n)$, where $n$ is the given integer. The space complexity is $O(1)$.
 
-<!-- tabs:start -->
+#### Du Solution: Recursion 
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   def fib(self, N: int) -> int:
+      """
+      This function computes the Nth Fibonacci number using recursion.
+      fib(N) = fib(N-1) + fib(N-2)
+      Base cases:
+        fib(0) = 0
+        fib(1) = 1
+      Runtime Complexity: O(n²)
+      """
+      if N == 0:
+         return 0
+      elif N == 1:
+         return 1
+      return self.fib(N-1) + self.fib(N-2)              # Note: need self because inside class
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.fib(2))
+   print(sol.fib(3))
+   print(sol.fib(4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+2
+3
+
+real    0m0.023s
+user    0m0.019s
+sys     0m0.004s
+```
+
+#### Du Solution: Recursion with cache
+```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from functools import cache   # functools provides handy function utilities; 
+                              # cache stores results of function calls to avoid recomputation
+
+class Solution:
+   @cache
+   def fib(self, N: int) -> int:
+      """
+      Compute the Nth Fibonacci number using recursion with caching.
+      The @cache decorator remembers previous function calls, preventing
+      repeated calculations and making this version much faster than a
+      plain recursive Fibonacci implementation.
+      """
+      if N == 0:
+         return 0
+      elif N == 1:
+         return 1
+      return self.fib(N-1) + self.fib(N-2)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.fib(2))
+   print(sol.fib(3))
+   print(sol.fib(4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+2
+3
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
+```
+
+#### Du Solution: Top Down Dynamic Programming (Memoization)
+# Called memoization bc fx “keeps a memo” (a memory) of results it has already computed, so it doesn’t compute them again
+```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   def fib(self, N: int) -> int:
+      """
+      Compute the Nth Fibonacci number using an explicit memo dictionary.
+      The inner function `f` checks if the value has already been computed.
+      If so, it returns the memoized result; otherwise, it computes and stores it.
+      Runtime Complexity: O(n)
+      """
+      memo: dict[int, int] = {0: 0, 1: 1}
+
+      def f(n: int) -> int:
+         if n in memo:               # check if already computed
+            return memo[n]
+         memo[n] = f(n-1) + f(n-2)   # compute + store
+         return memo[n]
+
+      return f(N)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.fib(2))
+   print(sol.fib(3))
+   print(sol.fib(4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+2
+3
+
+real    0m0.022s
+user    0m0.022s
+sys     0m0.000s
+```
+
+#### Du Solution: Bottom Up Dynamic Programming (Tabulation)
+# It’s called tabulation because you build a table of results from the bottom up fib(0) -> fib(1) -> fib(2)
+```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   def fib(self, n: int) -> int:
+      """
+      Compute the nth Fibonacci number using an iterative dynamic programming
+      approach. This avoids recursion entirely by building up a list (dp)
+      where each value is based on the sum of the previous two values.
+      """
+      dp = [0, 1]
+
+      for i in range(2, n + 1):
+         new = dp[i-2] + dp[i-1]
+         dp.append(new)
+
+      return dp[n]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.fib(2))
+   print(sol.fib(3))
+   print(sol.fib(4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+2
+3
+
+real    0m0.022s
+user    0m0.019s
+sys     0m0.004s
+```
+
+#### Du Solution: Bottom Up No-memory Dynamic Programming
+# Note: Not always possible
+```
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   def fib(self, n: int) -> int:
+      """
+      Compute the nth Fibonacci number using an iterative approach
+      with constant space. This version only stores two values:
+      the previous Fibonacci number and the current one, updating
+      them step by step until reaching n.
+      """
+      if n < 2:
+         return n
+
+      prev, current = 0, 1
+
+      for i in range(2, n + 1):
+         prev, current = current, prev + current
+
+      return current
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.fib(2))
+   print(sol.fib(3))
+   print(sol.fib(4))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+1
+2
+3
+
+real    0m0.027s
+user    0m0.021s
+sys     0m0.004s
+   return current
+```
 
 #### Python3
 
@@ -200,12 +370,6 @@ class Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Matrix Exponentiation
 
 We define $\textit{Fib}(n)$ as a $1 \times 2$ matrix $\begin{bmatrix} F_n & F_{n - 1} \end{bmatrix}$, where $F_n$ and $F_{n - 1}$ are the $n$-th and $(n - 1)$-th Fibonacci numbers, respectively.
@@ -246,13 +410,10 @@ We define the initial matrix $res = \begin{bmatrix} 1 & 0 \end{bmatrix}$, then $
 
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$.
 
-<!-- tabs:start -->
-
 #### Python3
 
 ```python
 import numpy as np
-
 
 class Solution:
     def fib(self, n: int) -> int:
@@ -496,9 +657,3 @@ function pow(a, n) {
     return res;
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

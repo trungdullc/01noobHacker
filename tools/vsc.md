@@ -91,5 +91,72 @@ Description: Code Editor
 ## CTF
 [picoGym0012: Notepad++ and VSC](../picoCTF/picoGym0012.md)
 
+## Useful
+```
+multiple selection            alt + mouse click
+easy scroll and view errors   Right Click Right Scroll Bar > Minimap
+```
+
+## Extensions
+```
+Code Spell Checker            ❤️❤️❤️❤️❤️
+Quokka                        run and debug .js and .ts
+Code Runner                   run code in vsc
+Live Server                   local development server
+remote ssh
+GitHub Copilot                AI Help and unit test (Paid Subscription)
+Live Share                    Team works on same code
+Prettier
+Docker
+JavaScript (ES6) code snippets
+ES7 React/Redux/GraphQL
+
+# AI
+Python Extension Pack
+Path Intellisense
+GitHub Pull Request           click ... ❤️❤️❤️❤️❤️
+Ruff                          Auto Formatter (PEP8 Python Style)
+```
+
+## AI
+```
+File > Save Workspace as      Double click shortcut new-project.code-workspace
+
+# Create Virtual Environment 
+python -m venv .venv
+# Activate the Virtual Environment
+Windows: .\.venv\Scripts\activate       macOS/Linux: source .venv/bin/activate
+# Select Python Interpreter and choose the interpreter from .venv folder
+Ctrl + Shift + P: Command Pallete   Python: Select Interpreter
+# Install Required Packages
+pip3 install django                     pip3 install flask
+which pip
+pip3 install pandas
+# Deactivate the Virtual Environment
+deactivate
+
+# Format
+Settings > Format on Save
+Settings > Default Formatter > Ruff
+```
+
+## Run Jupyter Notebook (Rarely Use)
+```
+Double click notebook folder
+Create notebook.ipynb (Note: Same like Google Colab Notebook)
+
+Shortcuts:
+   dd               delete cell
+   b                insert cell
+```
+
+## Run Jupyter Interactive Window
+```
+Settings > Jupyter Interactive Window
+Enable: When pressing shift+enter, send selected code in a Python file to the Jupyter interactive window as opposed to the Python terminal
+
+... > Variables     See variables still in memory
+```
+
 ## Back to README.md
 [BACK](../README.md)

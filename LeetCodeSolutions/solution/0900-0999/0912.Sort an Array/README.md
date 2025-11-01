@@ -6,6 +6,8 @@
 
 <p>You must solve the problem <strong>without using any built-in</strong> functions in <code>O(nlog(n))</code> time complexity and with the smallest space complexity possible.</p>
 
+<p style="color: yellow;">Hacker: Sort an array of int in ascending order (going up higher)</p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -34,6 +36,31 @@
 ## Solutions
 
 ### Solution 1
+
+#### Du Solution: cheat
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+class Solution:
+   """
+   Correct way is to do with quick sort or merge sort
+   """
+   def sortArray(self, nums: list[int]) -> list[int]:
+       return sorted(nums)
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.sortArray([5,2,3,1]))
+   print(sol.sortArray([5,1,1,2,0,0]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 5]
+[0, 0, 1, 1, 2, 5]
+
+real    0m0.023s
+user    0m0.018s
+sys     0m0.005s
+```
 
 #### Du Solution
 ```python
@@ -89,64 +116,49 @@ user    0m0.013s
 sys     0m0.009s
 ```
 
-#### Du Solution: Python3
+#### Python3
+
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List
+from random import randint
 
 class Solution:
-   # Partition function:
-   #  - Chooses a pivot (median-of-three: left, mid, right)
-   #  - Rearranges elements so that all values less than the pivot are to its left,
-   #    and all values greater than the pivot are to its right.
-   #  - Returns the final position (index) of the pivot after partitioning.
-   def partition(self, nums: List[int], left: int, right: int) -> int:
-      mid = (left + right) >> 1
-      nums[mid], nums[left + 1] = nums[left + 1], nums[mid]
+    """
+    Find a quick sorting algorithm better than bubble sort and insert sort
+    """
+    def sortArray(self, nums: List[int]) -> List[int]:
+        # Define an inner function to perform Quick Sort on nums[l:r+1]
+        def quick_sort(l, r):
+            # Base case: if the left index >= right index, the segment is empty or one element
+            if l >= r:
+                return
 
-      # Median-of-three ordering
-      if nums[left] > nums[right]:
-         nums[left], nums[right] = nums[right], nums[left]
-      if nums[left + 1] > nums[right]:
-         nums[left + 1], nums[right] = nums[right], nums[left + 1]
-      if nums[left] > nums[left + 1]:
-         nums[left], nums[left + 1] = nums[left + 1], nums[left]
+            x = nums[randint(l, r)]             # Pick a random pivot element from nums[l:r]
 
-      pivot = nums[left + 1]
-      i = left + 1
-      j = right
+            # Initialize pointers:
+            # i: boundary for elements < pivot
+            # j: boundary for elements > pivot
+            # k: current index scanning through the segment
+            i, j, k = l - 1, r + 1, l
 
-      # Partition loop
-      while True:
-         while True:
-            i += 1
-            if not nums[i] < pivot:
-               break
-         while True:
-            j -= 1
-            if not nums[j] > pivot:
-               break
-         if i > j:
-            break
-         nums[i], nums[j] = nums[j], nums[i]
+            # Partition loop: iterate while k is less than j
+            while k < j:
+                if nums[k] < x:
+                    nums[i + 1], nums[k] = nums[k], nums[i + 1]     # Current element < pivot, move it to the left part
+                    i, k = i + 1, k + 1                             # expand left boundary, move to next element
+                elif nums[k] > x:
+                    j -= 1                                          # Current element > pivot, move it to the right part
+                    nums[j], nums[k] = nums[k], nums[j]             # swap with right boundary
+                    # do not move k, because swapped element needs to be checked
+                else:
+                    k = k + 1               # Current element == pivot, leave it in the middle
+            quick_sort(l, i)                # Recursively sort the left partition (< pivot)
+            quick_sort(j, r)                # Recursively sort the right partition (> pivot)
+        quick_sort(0, len(nums) - 1)        # Start quick sort on the whole array
 
-      nums[left + 1], nums[j] = nums[j], nums[left + 1]
-      return j
-
-   def quickSort(self, nums: List[int], left: int, right: int) -> None:
-      if right <= left + 1:
-         if right == left + 1 and nums[right] < nums[left]:
-            nums[left], nums[right] = nums[right], nums[left]
-         return
-
-      j = self.partition(nums, left, right)
-      self.quickSort(nums, left, j - 1)
-      self.quickSort(nums, j + 1, right)
-
-   def sortArray(self, nums: List[int]) -> List[int]:
-      self.quickSort(nums, 0, len(nums) - 1)
-      return nums
+        return nums                         # Return the sorted array
 
 def main() -> None:
    sol = Solution()
@@ -156,35 +168,13 @@ def main() -> None:
 if __name__ == "__main__":
    main()
 
-AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
 [1, 2, 3, 5]
 [0, 0, 1, 1, 2, 5]
-```
 
-#### Python3
-
-```python
-class Solution:
-    def sortArray(self, nums: List[int]) -> List[int]:
-        def quick_sort(l, r):
-            if l >= r:
-                return
-            x = nums[randint(l, r)]
-            i, j, k = l - 1, r + 1, l
-            while k < j:
-                if nums[k] < x:
-                    nums[i + 1], nums[k] = nums[k], nums[i + 1]
-                    i, k = i + 1, k + 1
-                elif nums[k] > x:
-                    j -= 1
-                    nums[j], nums[k] = nums[k], nums[j]
-                else:
-                    k = k + 1
-            quick_sort(l, i)
-            quick_sort(j, r)
-
-        quick_sort(0, len(nums) - 1)
-        return nums
+real    0m0.060s
+user    0m0.027s
+sys     0m0.004s
 ```
 
 #### Java

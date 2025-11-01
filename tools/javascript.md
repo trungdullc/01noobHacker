@@ -4,8 +4,10 @@
 Description: Programming Languange
 
 // clear console
-clear()
+clear() ❤️
 Console was cleared
+
+console.dir() ❤️❤️❤️❤️❤️
 
 // Note: using var because can reassign easier than let and const
 // Use JS only as last resort to solve things since logic and math sometimes bug w/ its loose design 👀

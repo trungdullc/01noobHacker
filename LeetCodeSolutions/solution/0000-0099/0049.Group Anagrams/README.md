@@ -4,6 +4,8 @@
 
 <p>Given an array of strings <code>strs</code>, group the <span data-keyword="anagram">anagrams</span> together. You can return the answer in <strong>any order</strong>.</p>
 
+<p style="color: yellow;">Hacker: Group the anagrams together given an array of strings</p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -87,12 +89,13 @@ class Solution:
       """
       from collections import defaultdict
 
-      anagram_map = defaultdict(list)
-      for s in strs:
-         key = tuple(sorted(s))
-         anagram_map[key].append(s)
+      anagram_map = defaultdict(list)       # defaultdict(<class 'list'>, {})
 
-      return list(anagram_map.values())
+      for s in strs:                        # sorted() is python built-in and not in-place like sort() bc dir(str)
+         key = tuple(sorted(s))             # Lists are mutable and unhashable, can't use list as a dict key ['a', 'b'] ❤️
+         anagram_map[key].append(s)         # key = ('a', 'e', 't') s = "eat"
+
+      return list(anagram_map.values())     # .values() since not need keys, nested list is return
 
 if __name__ == "__main__":
    sol = Solution()
@@ -122,8 +125,8 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         d: dict[str,str] = defaultdict(list)
         for s in strs:
-            sortedWord = ''.join(sorted(s))             # Note: sorted very important
-            d[sortedWord].append(s)                     # append to dict d
+            sortedWord = ''.join(sorted(s))     # Note: sorted very important ['a', 'e', 't'] → "aet" ❤️
+            d[sortedWord].append(s)             # "aet": "eat"
         return list(d.values())
 
 def main() -> None:
@@ -139,6 +142,28 @@ AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py
 [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
 [['']]
 [['a']]
+```
+
+#### JavaScript
+
+```js
+// CLASS VERSION                                        // FUNCTION EXPRESSION VERSION
+class Solution {                                        const groupAnagrams = function(strs) {
+  groupAnagrams(strs) {                                   const anagramMap = {};
+    const anagramMap = {};                                for (const s of strs) {
+    for (const s of strs) {                                 const key = s.split('').sort().join('');
+      const key = s.split('').sort().join('');              if (!anagramMap[key]) anagramMap[key] = [];
+      if (!anagramMap[key]) anagramMap[key] = [];           anagramMap[key].push(s);
+      anagramMap[key].push(s);                            }
+    }                                                     return Object.values(anagramMap);
+    return Object.values(anagramMap);                   };
+  }
+}
+
+const sol = new Solution();
+console.log(sol.groupAnagrams(["eat","tea","tan","ate","nat","bat"]));
+console.log(sol.groupAnagrams([""]));
+console.log(sol.groupAnagrams(["a"]));
 ```
 
 #### Java

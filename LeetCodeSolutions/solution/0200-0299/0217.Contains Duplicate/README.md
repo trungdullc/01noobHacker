@@ -3,6 +3,8 @@
 ## Description
 <p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
 
+<p style="color: yellow;">Hacker: Return boolean to check if array contains any duplicate</p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -57,6 +59,38 @@ Otherwise, when the traversal ends, we return `false`.
 
 The time complexity is $O(n \times \log n)$, where $n$ is the length of the array `nums`.
 
+#### Du Solution: Cheat
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+   def containsDuplicate(self, nums: List[int]) -> bool:
+      """
+      Compare length of original array vs set that removes duplicates
+      """
+      return len(nums) != len(set(nums)) 🧠
+
+def main() -> None:
+   sol = Solution()
+   print(sol.containsDuplicate([1, 2, 3, 1]))
+   print(sol.containsDuplicate([1, 2, 3, 4]))
+   print(sol.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+False
+True
+
+real    0m0.073s
+user    0m0.023s
+sys     0m0.005s
+```
+
 #### Du Solution
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
@@ -64,7 +98,7 @@ AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py
 
 class Solution:
    """
-   Solution for the Contains Duplicate problem.
+   Brute Force Solution for the Contains Duplicate problem.
    """
    def containsDuplicate(self, nums: list[int]) -> bool:
       """
@@ -76,11 +110,12 @@ class Solution:
       Returns:
          bool: True if any duplicates exist, False otherwise.
       """
-      seen = set()
+      seen: set[int] = set()            # set() only way to create () is tuple
+
       for num in nums:
          if num in seen:
             return True
-         seen.add(num)
+         seen.add(num)                  # dir(seen)
       return False
 
 if __name__ == "__main__":
@@ -99,7 +134,7 @@ user    0m0.019s
 sys     0m0.004s
 ```
 
-#### Du Solution: Python3
+#### Du Solution: Brute Force
 ```python
 AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
@@ -130,41 +165,51 @@ False
 True
 ```
 
-#### Du Solution: Python3
-```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/python3
-from typing import List
+#### JavaScript
+```javascript
+  /**
+   * Cheat way comparing length/size
+   * @param {number[]} nums - Input array of integers
+   * @returns {boolean} - True if any duplicates exist 
+   */                                           // Important: in class remove function keyword ⭐
+// CLASS VERSION                                // FUNCTION EXPRESSION VERSION                  // ARROW FUNCTION VERSION
+class Solution {                                const containsDuplicate = function(nums) {      const containsDuplicate = (nums) => {
+  containsDuplicate(nums) {                      return nums.length !== new Set(nums).size;      return nums.length !== new Set(nums).size;
+    return nums.length !== new Set(nums).size;  };                                              };
+  }
+}
 
-class Solution:
-   def containsDuplicate(self, nums: List[int]) -> bool:
-      return len(nums) != len(set(nums))
-
-def main() -> None:
-   sol = Solution()
-   print(sol.containsDuplicate([1, 2, 3, 1]))
-   print(sol.containsDuplicate([1, 2, 3, 4]))
-   print(sol.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
-
-if __name__ == "__main__":
-   main()
-
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-True
-False
-True
-
-real    0m0.073s
-user    0m0.023s
-sys     0m0.005s
+const sol = new Solution();
+console.log(sol.containsDuplicate([1, 2, 3, 1]));
+console.log(sol.containsDuplicate([1, 2, 3, 4])); 
+console.log(sol.containsDuplicate([1,1,1,3,3,4,3,2,4,2])); 
 ```
 
-#### Python3: Solution.py
+#### JavaScript
+```javascript
+  /**
+   * Brute Force / Hash Set approach for Contains Duplicate
+   * @param {number[]} nums - Input array of integers
+   * @returns {boolean} - True if any duplicates exist
+   */
+// CLASS VERSION                    // FUNCTION EXPRESSION VERSION                      // ARROW FUNCTION VERSION
+class Solution {                    const containsDuplicate = function(nums) {          const containsDuplicate = (nums) => {
+containsDuplicate(nums) {           const seen = new Set();                             const seen = new Set();     // Set(0) {size: 0}
+    const seen = new Set();           for (const num of nums) {                           for (const num of nums) { // dir(seen)
+    for (const num of nums) {           if (seen.has(num)) {                                if (seen.has(num)) {    // [[Prototype]]: Set
+      if (seen.has(num)) {                return true;                                        return true;          //    has: ƒ has()
+        return true;                    }                                                   }
+      }                                 seen.add(num);                                      seen.add(num);
+      seen.add(num);                  }                                                   }
+    }                                 return false;                                       return false;
+    return false;                   };                                                  };
+  }
+}
 
-```python
-class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-        return any(a == b for a, b in pairwise(sorted(nums)))
+const sol = new Solution();
+console.log(sol.containsDuplicate([1,2,3,1]));
+console.log(sol.containsDuplicate([1,2,3,4]));
+console.log(sol.containsDuplicate([1,1,1,3,3,4,3,2,4,2]));
 ```
 
 #### Java: Solution.java

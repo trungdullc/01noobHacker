@@ -4,6 +4,8 @@
 
 <p>Given two strings <code>s</code> and <code>t</code>, return <code>true</code> if <code>t</code> is an <span data-keyword="anagram">anagram</span> of <code>s</code>, and <code>false</code> otherwise.</p>
 
+<p style="color: yellow;">Hacker: Return boolean to determine if 2 strings anagrams</p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -42,7 +44,29 @@ Otherwise, we use a hash table or an array of length $26$ to record the number o
 
 The time complexity is $O(n)$, the space complexity is $O(C)$, where $n$ is the length of the string; and $C$ is the size of the character set, which is $C=26$ in this problem.
 
+#### Python3: cheat
+
+```python
+from collections import Counter
+# automatically counts how many times each element appears in a string or list
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+
+        cnt = Counter(s)                            # Counter({'a': 3, 'n': 1, 'g': 1, 'r': 1, 'm': 1})
+
+        # Subtracting everything if something is less than 0 means not the same ❤️
+        for c in t:
+            cnt[c] -= 1
+            if cnt[c] < 0:
+                return False
+        return True                                 # Counter(s) == Counter(t)
+```
+
 #### Du Solution:
+
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
@@ -64,13 +88,16 @@ class Solution:
       """
       if len(s) != len(t):
          return False
-      count_s = {}
-      count_t = {}
+
+      # Comparing frequency dictionary is same
+      # Note: would have to to "a": 0 to "z": 0 if wanted to use cict1[0] ⭐
+      dict1, dict2 = {}, {}                     # dict1 = dict()
+
       for char in s:
-         count_s[char] = count_s.get(char, 0) + 1
+         dict1[char] = dict1.get(char, 0) + 1   # safer, if char not exist default to 0
       for char in t:
-         count_t[char] = count_t.get(char, 0) + 1
-      return count_s == count_t
+         dict2[char] = dict2.get(char, 0) + 1
+      return dict1 == dict2                     # ❤️
 
 if __name__ == "__main__":
    sol = Solution()
@@ -86,46 +113,9 @@ user    0m0.014s
 sys     0m0.007s
 ```
 
-#### Du Solution: Python3
+#### Du Solution
 ```python
-# With a dictionary
-AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py 
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/python3
-
-class Solution:
-    def validAnagram(self, s: str, t: str) -> bool:
-        dict1, dict2 = {}, {}
-        
-        for char in s:
-            dict1[char] = dict1.get(char, 0) + 1
-        # Note: Since 1 + NULL will get error
-        # if char in dict1:
-            # dict1[char] += 1
-        # else:
-            # dict1[char] = 1
-
-        for char in t:
-            dict2[char] = dict2.get(char, 0) + 1
-
-        # print("dict1:", dict1)
-        # print("dict2:", dict2)
-        return dict1 == dict2
-
-def main() -> None:
-    sol = Solution()
-    print(sol.validAnagram(s="anagram", t="nagaram"))
-    print(sol.validAnagram(s = "rat", t = "car"))
-
-if __name__ == "__main__":
-    main()
-
-AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
-True
-False
-
-
-# With a List
+# Python with a List instead of a dict or Counter()
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List
@@ -145,12 +135,12 @@ class Solution:
         print("list1:", list1)
         print("list2:", list2)
 
-        return list1 == list2
+        return list1 == list2 ❤️
 
 def main() -> None:
     sol = Solution()
-    print(sol.validAnagram(s="anagram", t="nagaram"))  # True
-    print(sol.validAnagram(s="rat", t="car"))          # False
+    print(sol.validAnagram(s="anagram", t="nagaram"))
+    print(sol.validAnagram(s="rat", t="car"))
 
 if __name__ == "__main__":
     main()
@@ -164,19 +154,42 @@ list2: [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
 False
 ```
 
-#### Python3: Solution.py
+#### JavaScript
+```javascript
+class Solution {
+  /**
+   * Check if t is an anagram of s.
+   *
+   * @param {string} s - First string
+   * @param {string} t - Second string
+   * @returns {boolean} True if t is an anagram of s, False otherwise
+   */
+  isAnagram(s, t) {
+    if (s.length !== t.length) return false;
 
-```python
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-        cnt = Counter(s)
-        for c in t:
-            cnt[c] -= 1
-            if cnt[c] < 0:
-                return False
-        return True
+    const countS = {};
+    const countT = {};
+
+    for (let char of s)
+      countS[char] = (countS[char] || 0) + 1;
+
+    for (let char of t)
+      countT[char] = (countT[char] || 0) + 1;
+
+    // Compare frequency dictionaries
+    for (let key in countS) {
+      if (countS[key] !== countT[key]) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+}
+
+const sol = new Solution();
+console.log(sol.isAnagram("anagram", "nagaram"));
+console.log(sol.isAnagram("rat", "car")); 
 ```
 
 #### Java: Solution.java

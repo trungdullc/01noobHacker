@@ -6,6 +6,8 @@
 
 <p>The majority element is the element that appears more than <code>&lfloor;n / 2&rfloor;</code> times. You may assume that the majority element always exists in the array.</p>
 
+<p style="color: yellow;">Hacker: Return the number that occurs more than n/2 times given an array </p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 <pre><strong>Input:</strong> nums = [3,2,3]
@@ -44,72 +46,39 @@ The time complexity is $O(n)$, where $n$ is the length of the array $nums$. The 
 #### Du Solution
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/env python3
-
-class Solution:
-   """
-   Solution for the Majority Element problem.
-   """
-   def majorityElement(self, nums: list[int]) -> int:
-      """
-      Find the element that appears more than n/2 times in the array.
-      
-      Args:
-         nums (list[int]): Input array.
-      
-      Returns:
-         int: The majority element.
-      """
-      count = 0
-      candidate = None
-
-      for num in nums:
-         if count == 0:
-            candidate = num
-         count += (1 if num == candidate else -1)
-
-      return candidate
-
-if __name__ == "__main__":
-   sol = Solution()
-   print(sol.majorityElement([3,2,3]))
-   print(sol.majorityElement([2,2,1,1,1,2,2]))
-
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-3
-2
-
-real    0m0.024s
-user    0m0.017s
-sys     0m0.007s
-```
-
-#### Du Solution: Python3
-```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List
 from collections import defaultdict
 
 class Solution:
-   def majorityElement(self, nums: List[int]) -> int:
-      count: dict[int, int] = defaultdict(int) ❤️ Real important fixes many errors w/ {}
-      result = 0
-      maxCounter = 0
+   """
+   Solution for the Majority Element problem.
+   """
+   def majorityElement(self, nums: List[int], n: int) -> int:
+      """
+      Find the element that appears more than n/2 times in the array.
+      
+      Args:
+         nums (list[int]): Input array.
+         n: size of array
+      Returns:
+         int: The majority element.
+      """
+      freqDict: dict[int, int] = defaultdict(int)   # ❤️ Real important fixes many errors w/ {}
 
       for num in nums:
-         count[num] += 1
+         freqDict[num] += 1                         # Add count to frequency Dictionary
 
-         if count[num] > maxCounter:
-            result = num                    # Records maxNumber
-            maxCounter = count[num]         # Overwrites: counter
+      for key in freqDict:
+         if freqDict[key] > n/2:
+            return key
 
-      return result
+      return 0
 
 def main() -> None:
    sol = Solution()
-   print(sol.majorityElement([3,2,3]))
-   print(sol.majorityElement([2,2,1,1,1,2,2]))
+   print(sol.majorityElement([3,2,3], 3))
+   print(sol.majorityElement([2,2,1,1,1,2,2], 7))
 
 if __name__ == "__main__":
    main()
@@ -120,6 +89,41 @@ AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py
 
 real    0m0.032s
 user    0m0.024s
+sys     0m0.004s
+```
+
+#### Du Solution
+
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+from collections import Counter
+
+class Solution:
+   def majorityElement(self, nums: List[int], n: int) -> int:
+      freqDict: dict[int, int] = Counter(nums)              # Counter fx mapped counts
+
+      for key in freqDict:
+         if freqDict[key] > n/2:
+            return key
+
+      return 0
+
+def main() -> None:
+   sol = Solution()
+   print(sol.majorityElement([3,2,3], 3))
+   print(sol.majorityElement([2,2,1,1,1,2,2], 7))
+
+if __name__ == "__main__":
+   main()
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+3
+2
+
+real    0m0.102s
+user    0m0.026s
 sys     0m0.004s
 ```
 
@@ -135,6 +139,29 @@ class Solution:
             else:
                 cnt += 1 if m == x else -1
         return m
+```
+
+#### JavaScript
+```js
+// CLASS VERSION                                      // FUNCTION EXPRESSION VERSION
+class Solution {                                      const majorityElement = function(nums, n) {
+  majorityElement(nums, n) {                            const freqDict = {}; 
+    const freqDict = {};                                for (const num of nums) {
+    for (const num of nums) {                             freqDict[num] = (freqDict[num] || 0) + 1;
+      freqDict[num] = (freqDict[num] || 0) + 1;         }
+    }                                                   for (const key in freqDict) {
+    for (const key in freqDict) {                         if (freqDict[key] > n/2) {
+      if (freqDict[key] > n / 2) {                          return Number(key);
+        return key;                                       }
+      }                                                 }
+    }                                                   return 0;
+    return 0;                                         };
+  }
+}
+
+const sol = new Solution();
+console.log(sol.majorityElement([3,2,3], 3));
+console.log(sol.majorityElement([2,2,1,1,1,2,2], 7));
 ```
 
 #### Java: Solution.java

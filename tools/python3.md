@@ -1,7 +1,32 @@
 # Python3
 
 ```
-Description: Programming Languange
+Description: Programming Language
+Resources:
+    https://pythontutor.com/render.html#mode=display
+    https://github.com/Asabeneh/30-Days-Of-Python
+    https://www.youtube.com/@programmingwithmosh
+    https://www.youtube.com/@abdul_bari
+
+DataSets(.csv):
+    https://www.kaggle.com/datasets
+
+Libraries:
+    AI:
+        LangChain
+        LangGraph
+        numpy
+        sklearn.model_selection
+        pandas
+        tensorflow
+        torch
+
+# Important Concept
+>>> myArray: list[int] = [1, 2, 4, 5]
+>>> dir(myArray)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', 
+'__ge__', '__getattribute__', '__getitem__', '__getstate__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> len(myArray)    # Under the hood Python translates it to: myArray.__len__() ⭐⭐⭐⭐⭐
 
 # Text
 my_str: str = ""
@@ -234,6 +259,28 @@ AsianHacker-picoctf@webshell:/tmp$ ./main.py ⌨️
 Done importing
 Hello from MyClass!
 Hello from my_function!
+```
+
+## Side Quest: async -> await
+```python
+import asyncio
+
+async def greet(name, delay):
+    print(f"{name} starts greeting")
+    await asyncio.sleep(delay)
+    print(f"{name} says hello after {delay} second(s)")
+
+async def main():
+    # Run tasks concurrently
+    task1 = asyncio.create_task(greet("Hacker", 2))
+    task2 = asyncio.create_task(greet("Du", 1))
+    
+    # Wait for both tasks to finish
+    await task1
+    await task2
+
+if __name__ == "__main__":
+    asyncio.run(main())                 # Note: not main(), in a callback fx
 ```
 
 ## CTF

@@ -6,6 +6,8 @@
 
 <p>If there is no common prefix, return an empty string <code>&quot;&quot;</code>.</p>
 
+<p style="color: yellow;">Hacker: Find and print longest common prefix froma list of strings</p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -48,7 +50,7 @@ AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py
 
 class Solution:
    """
-   Solution for the Longest Common Prefix problem.
+   Solution for the Longest Common Prefix problem that subtract ending
    """
    def longestCommonPrefix(self, strs: list[str]) -> str:
       """
@@ -63,11 +65,13 @@ class Solution:
       if not strs:
          return ""
       
-      prefix = strs[0]
-      for s in strs[1:]:
-         while not s.startswith(prefix):
-            prefix = prefix[:-1]
-            if not prefix:
+      prefix = strs[0]                      # flower: Use first since all have to match
+
+      # Loop through each remaining string in the list
+      for s in strs[1:]:                    # "flow","flight"
+         while not s.startswith(prefix):    # flow not start with flower
+            prefix = prefix[:-1]            # flower rm last: flow ❤️ Important :-1
+            if not prefix:                  # if prefix empty
                return ""
       return prefix
 
@@ -86,42 +90,39 @@ sys     0m0.008s
 ```
 
 #### Du Solution
+
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/python3
-from typing import List
-
+#!/usr/bin/env python3
 class Solution:
-   def longestCommonPrefix(self, strs: List[str]) -> str:
-      if not strs:                      # Fastest case: Empty List
+   """
+   This solution was easier for me to understand since it brute force
+   """
+   def longestCommonPrefix(self, strs):
+      """
+      Short circuit and return when it doesn't match
+      """
+      if not strs:
          return ""
 
-      shortest = min(strs, key=len)     # Find the shortest string, "flow"
-
-      if len(shortest) == 0:
-         return ""
-
-      # Compare each character of the shortest string with all strings
-      for i, char in enumerate(shortest):
-         if any(s[i] != char for s in strs): ❤️ any breaks when condition true
-            return shortest[:i]
-
-      return shortest
-
-def main() -> None:
-   sol = Solution()
-   print(sol.longestCommonPrefix(["flower","flow","flight"]))
-   print(sol.longestCommonPrefix(["dog","racecar","car"]))
+      for i in range(len(strs[0])):             # 0 to 3(exclusive)
+         for s in strs:                         # flower
+            if s[i] != strs[0][i]:              # since it [] it eval 1 char then goes back to for i
+               return strs[0][:i]               # Important :i slices ending ❤️
+      return minString
 
 if __name__ == "__main__":
-   main()
+   sol = Solution()
+   print(sol.longestCommonPrefix(["flower", "flow", "fly"]))
+   print(sol.longestCommonPrefix(["dog","racecar","car"]))
 
 AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
 fl
 
-real    0m0.086s
-user    0m0.025s
-sys     0m0.004s
+
+real    0m0.023s
+user    0m0.015s
+sys     0m0.008s
 ```
 
 #### Python3: Solution.py
@@ -134,6 +135,32 @@ class Solution:
                 if len(s) <= i or s[i] != strs[0][i]:
                     return s[:i]
         return strs[0]
+```
+
+#### JavaScript: Solution.js
+
+```js
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+// CLASS VERSION                                        // FUNCTION EXPRESSION VERSION
+class Solution {                                        const longestCommonPrefix = function(strs) {
+  longestCommonPrefix(strs) {                             for (let j = 0; j < strs[0].length; j++) {
+    for (let j = 0; j < strs[0].length; j++) {              for (let i = 0; i < strs.length; i++) {
+      for (let i = 0; i < strs.length; i++) {                 if (strs[0][j] !== strs[i][j]) {
+        if (strs[0][j] !== strs[i][j]) {                        return strs[0].substring(0, j);     // strs[0][0:j] Python
+          return strs[0].substring(0, j);                     }
+        }                                                   }
+      }                                                   }
+    }                                                     return strs[0];
+    return strs[0];                                     };
+  }
+}
+
+const sol = Solution
+console.log(sol.longestCommonPrefix(["flower", "flow", "flight"]));
+console.log(sol.longestCommonPrefix(["dog", "racecar", "car"])); 
 ```
 
 #### Java: Solution.java
@@ -220,25 +247,6 @@ impl Solution {
         String::new()
     }
 }
-```
-
-#### JavaScript: Solution.js
-
-```js
-/**
- * @param {string[]} strs
- * @return {string}
- */
-var longestCommonPrefix = function (strs) {
-    for (let j = 0; j < strs[0].length; j++) {
-        for (let i = 0; i < strs.length; i++) {
-            if (strs[0][j] !== strs[i][j]) {
-                return strs[0].substring(0, j);
-            }
-        }
-    }
-    return strs[0];
-};
 ```
 
 #### C#: Solution.c

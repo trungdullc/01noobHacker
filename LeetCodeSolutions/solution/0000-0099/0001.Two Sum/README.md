@@ -8,6 +8,8 @@
 
 <p>You can return the answer in any order.</p>
 
+<p style="color: yellow;">Hacker: Two numbers in an array add up to equal target sum return both indicies </p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -47,7 +49,6 @@
 
 ## Solutions
 
-
 ### Solution 1: Hash Table
 
 We can use a hash table $\textit{d}$ to store each element and its corresponding index.
@@ -76,12 +77,13 @@ class Solution:
       Returns:
          list[int]: Indices of the two numbers adding up to target.
       """
-      num_to_index = {}
-      for i, num in enumerate(nums):
-         complement = target - num
-         if complement in num_to_index:
-            return [num_to_index[complement], i]
-         num_to_index[num] = i
+      num_to_index = {}                                 # dict{complement: index}
+
+      for index, val in enumerate(nums):                # use enumerate over range() if want both index and value ❤️
+         complement = target - val                      # different not the index, 9 -2 = 7
+         if complement in num_to_index:                 
+            return [num_to_index[complement], index]
+         num_to_index[val] = index                      # !7, 2: 0 Tip: Easier to do by using numbers 
       return []
 
 if __name__ == "__main__":
@@ -110,8 +112,8 @@ class Solution:
    def twoSum(self, nums: List[int], target: int) -> List[int]:
       seen: dict[int,int] = {}
 
-      for index, value in enumerate(nums, start=0):
-         diff = target - value # can use walrus operator
+      for index, value in enumerate(nums, start = 0):           # help(enumerate)
+         diff = target - value                                  # can use walrus operator
 
          if diff in seen:
             return [seen[diff], index]
@@ -144,9 +146,44 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         d = {}
         for i, x in enumerate(nums):
-            if (y := target - x) in d: ❤️ walrus operator assign y first then check in d
+            if (y := target - x) in d:              # ❤️ walrus operator assign y first then check in d
                 return [d[y], i]
             d[x] = i
+```
+
+#### JavaScript
+```javascript
+class Solution {
+  /**
+   * Return indices of the two numbers such that they add up to target.
+   *
+   * @param {number[]} nums - Input array of integers
+   * @param {number} target - Target sum
+   * @returns {number[]} - Indices of the two numbers adding up to target
+   */
+  twoSum(nums, target) {
+    const numToIndex = {};
+
+    for (let i = 0; i < nums.length; i++) {
+      const val = nums[i];
+      const complement = target - val;
+
+      // .hasOwnProperty() checks numToIndex key
+      if (numToIndex.hasOwnProperty(complement)) {
+        return [numToIndex[complement], i];
+      }
+
+      numToIndex[val] = i;
+    }
+
+    return [];
+  }
+}
+
+const sol = new Solution();
+console.log(sol.twoSum([2,7,11,15], 9));
+console.log(sol.twoSum([3,2,4], 6));
+console.log(sol.twoSum([3,3], 6));  
 ```
 
 #### Java: Solution.java

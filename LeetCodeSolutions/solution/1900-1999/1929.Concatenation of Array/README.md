@@ -7,6 +7,8 @@
 
 <p>Return <em>the array </em><code>ans</code>.</p>
 
+<p style="color: yellow;">Hacker: Return concatenation of same array called <b>ans</b></p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -44,15 +46,19 @@ We directly simulate according to the problem description by adding the elements
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the array $\textit{nums}$.
 
-#### Du Solution:
+#### Du Solution: Python3 cheat solution
 ```python
-#!/usr/bin/env python3
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
 
 class Solution:
    """
-   Solution for the Concatenation of Array problem.
+   Solution for the Concatenation of Array problem
+   Note: n: int not even used
+   Note: This is array not vector since size given think C/C++
    """
-   def getConcatenation(self, nums: list[int]) -> list[int]:
+   def getConcatenation(self, nums: List[int]) -> List[int]:
       """
       Concatenate the array with itself.
       
@@ -62,24 +68,8 @@ class Solution:
       Returns:
          list[int]: Concatenated array of length 2n.
       """
-      return nums + nums
-
-if __name__ == "__main__":
-   sol = Solution()
-   print(sol.getConcatenation([1,2,1]))
-   print(sol.getConcatenation([1,3,2,1]))
-```
-
-#### Du Solution: Python3
-```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/python3
-from typing import List
-
-class Solution:
-   def getConcatenation(self, nums: List[int]) -> List[int]:
-      return nums + nums
-      # return nums*2
+      return nums + nums 🧠
+      # return nums*2 🧠
 
 def main()-> None:
    sol = Solution()
@@ -94,12 +84,79 @@ AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py
 [1, 3, 2, 1, 1, 3, 2, 1]
 ```
 
-#### Python3: Solution.py
-
+#### Du Solution: Python3 cheat solution
 ```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
-        return nums + nums
+        ans: List[int] = []         # Important: start empty ⭐
+
+        for num in nums:
+            ans.append(num)
+        for num in nums:
+            ans.append(num)
+
+        return ans
+
+def main() -> None:
+    sol = Solution()
+    print(sol.getConcatenation([1,2,1]))
+    print(sol.getConcatenation([1,3,2,1])) 
+
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+[1, 2, 1, 1, 2, 1]
+[1, 3, 2, 1, 1, 3, 2, 1]
+```
+
+#### Python3: Brute force
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/python3
+from typing import List
+
+class Solution:
+    def getConcatenation(self, nums: List[int], n: int) -> List[int]:
+      ans: List[int] = [0] * n              # Important: start w/ [0, 0 ...n] ⭐
+
+      for i in range(nums.__len__()):       # loops to length orignal array
+         ans[i] = nums[i]                   # First half
+         ans[i + int(n/2)] = nums[i]        # Second half
+      return ans
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.getConcatenation([1,2,1], 6))
+   print(sol.getConcatenation([1,3,2,1], 8))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 1, 1, 2, 1]
+[1, 3, 2, 1, 1, 3, 2, 1]
+
+real    0m0.030s
+user    0m0.021s
+sys     0m0.009s
+```
+
+#### JavaScript
+```js
+// CLASS VERSION                            // FUNCTION EXPRESSION VERSION                  // ARROW FUNCTION VERSION
+                                                                                            // mod solution < Python (loop only half)
+class Solution {                            const getConcatenation = function(nums, n) {    const getConcatenation = (nums, n) => {
+  getConcatenation(nums, n) {                 const ans = new Array(n);                       const ans = new Array(n);  // ⭐
+    const ans = new Array(n);                 for (let i = 0; i < n; i++) {                   for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n; i++) {               ans[i] = nums[i % nums.length];                 ans[i] = nums[i % nums.length];  // 🧠
+      ans[i] = nums[i % nums.length];         }                                               }
+    }                                         return ans;                                     return ans;
+    return ans;                             };                                              };
+  }
+}
+
+const sol = new Solution()
+console.log(sol.getConcatenation([1, 2, 1], 6));
+console.log(sol.getConcatenation([1, 3, 2, 1], 8));
 ```
 
 #### Java: Solutions.java

@@ -365,6 +365,15 @@ Souce: https://try2hack.me/<br>
     - [Linux (BASH)](./tools/bash.md)
     - [Windows (PowerShell)](./tools/powershell.md)
     - [Python3](./tools/python3.md) ⭐⭐⭐⭐⭐
+    - [JavaScript](./tools/javascript.md)
+    - [Flipper Zero: JS](./tools/flipperzero.md)
+    Resources:
+    -[W3Schools](https://www.w3schools.com/)
+    -[FreecodeCamp](https://www.freecodecamp.org/)
+    -[Codecademy](https://www.codecademy.com/)
+    -[LinkedinLearning](https://www.linkedin.com/learning-login/)
+    -[Udemy](https://www.udemy.com/) My favorite
+    -[Youtube](https://www.youtube.com/)
 - ASCII Table
     - [ASCII Table](https://www.asciitable.com/)
 - Converting
@@ -805,6 +814,14 @@ OSCE/OSWE/OSEP                                                  Advanced offensi
 [Visual Studio Code](./tools/vsc.md): Notepad++<br>
 [vim](./tools/vim.md)
 
+# Random Documentations
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/html
+
+# Software Engineer (Automation)
+[Computer Science](./tools/computerscience.md)
+[Youtube: Researching](./tools/youtube.md)
+[vsc](./tools/vsc.md)
+
 # Favorite Emojis
 ⭐🧠❤️👀🕵️‍♀️🐱‍💻💻🌐🏎️🐢👻
 ⌨️
@@ -823,11 +840,29 @@ Browser:
 # Accidently Exit Window
 Ctrl + Shift + T
 
-Others Writeups:
+# Others Writeups:
 https://github.com/Adamkadaban/CTFs/tree/master
+
+
+// CLASS VERSION                        // FUNCTION EXPRESSION VERSION                      // ARROW FUNCTION VERSION
+class Solution {                        const removeElement = function(nums, val) {         const removeElement = (nums, val) => {
+  removeElement(nums, val) {               let k = 0;                                          let k = 0;
+    let k = 0;                             for (const x of nums) {                             for (const x of nums) {
+    for (const x of nums) {                   if (x !== val) {                                    if (x !== val) {
+      if (x !== val) {                           nums[k++] = x;                                      nums[k++] = x;
+        nums[k++] = x;                        }                                                   }
+      }                                    }                                                   }
+    }                                      return k;                                           return k;
+    return k;                           };                                                  };
+  }
+}
+0027
 
 #### LeetCode
 ```
+Order: Python > JS > Bash > C++
+<p style="color: yellow;">Hacker: </p>
+
 ChatGPT: write in python, 3-space indentation style, shebang, class, docstring, and main test block (exclude results comments in main) and call sol = Solution and have each example in seperate call, remove the comments from main block
 
 AsianHacker-picoctf@webshell:/tmp$ grep -E '^class ' pythonScript.py
@@ -854,3 +889,6 @@ C++ https://github.com/kantuni/Codeforces
 :set tabstop=3
 :set shiftwidth=3
 gg=G
+
+¹²³⁴⁵⁶⁷⁸⁹⁰ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ
+₀₁₂₃₄₅₆₇₈₉ₐ ₑ ₕ ᵢ ⱼ ₖ ₗ ₘ ₙ ₒ ₚ ᵣ ₛ ₜ ᵤ ᵥ ₓ
