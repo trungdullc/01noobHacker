@@ -1,27 +1,83 @@
-# 选择排序
-
-选择排序算法的实现思路有点类似插入排序，也分已排序区间和未排序区间。但是选择排序每次会从未排序区间中找到最小的元素，将其放到已排序区间的末尾。
-
-## 代码示例
-
-<!-- tabs:start -->
-
 #### Python3
 
 ```python
-def selection_sort(arr):
-    n = len(arr)
-    for i in range(n - 1):
-        min_index = i
-        for j in range(i + 1, n):
-            if arr[j] < arr[min_index]:
-                min_index = j
-        arr[min_index], arr[i] = arr[i], arr[min_index]
 
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+# def swap(num1, num2):
+#    num1 ^= num2
+#    num2 ^= num1
+#    num1 ^= num2
 
-arr = [26, 11, 99, 33, 69, 77, 55, 56, 67]
-selection_sort(arr)
-print(arr)
+class Solution:
+   def SelectionSort(self, a: list[int], N: int) -> list[int]:
+      """
+      Selecting unsorted smallest number and moving it to left side
+      Find min and swap with pivot
+      Left Sorted Partition | Right Unsorted Partition
+      i is pivot
+      minPtr is tracker of index of smallest number which will go to pivot at end if moved from there
+      j is pointer
+      """
+      for i in range(N - 1):            # redo N-1 times, i is pivot
+         minPtr = i
+         for j in range(i + 1, N):
+            if a[j] < a[minPtr]:        # if minPtr gt a[j] means no longer min number, reassign
+               minPtr = j
+         if minPtr != i:                # Note: Outside for loop, swap at end if minPtr moved away from pivot
+            a[i], a[minPtr] = a[minPtr], a[i]
+      return a
+
+"""
+Iteration 0         Iteration 1                 Iteration 2             Iteration 3
+minPtr = 0                  minPtr = 2                  minPtr = 2                minPtr = 4
+    j            sorted     j                              j                          j
+[2, 4, 3, 6, 1]     [1 | 4, 3, 6, 2]            [1, 2 | 3, 6, 4]        [1, 2, 3 | 4, 6]  swap()
+minPtr = 0                 minPtr = 2                   minPtr = 2
+       j                       j                              j
+[2, 4, 3, 6, 1]     [1 | 4, 3, 6, 2]            [1, 2 | 3, 6, 4]
+minPtr = 0                  minPtr = 4
+          j                       j
+[2, 4, 3, 6, 1]     [1 | 2, 3, 6, 4] swap()
+           minPtr = 4
+             j
+[1, 4, 3, 6, 2]  swap()
+"""
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.SelectionSort([2, 4, 3, 6, 1], 5))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py
+[1, 2, 3, 4, 6]
+
+real    0m0.022s
+user    0m0.017s
+sys     0m0.004s
+```
+
+#### JavaScript
+
+```js
+// JS Class Version                                         // JS Function Expression Version
+class Solution {                                            const selectionSort = function(a, N) {
+  selectionSort(a, N) {                                       for (let i = 0; i < N - 1; i++) {
+    for (let i = 0; i < N - 1; i++) {                           let minPtr = i;
+      let minPtr = i;                                           for (let j = i + 1; j < N; j++) {
+      for (let j = i + 1; j < N; j++) {                           if (a[j] < a[minPtr]) {
+        if (a[j] < a[minPtr]) {                                     minPtr = j;
+          minPtr = j;                                             }
+        }                                                       }
+      }                                                         if (minPtr !== i) {
+      if (minPtr !== i) {                                         [a[i], a[minPtr]] = [a[minPtr], a[i]];
+        [a[i], a[minPtr]] = [a[minPtr], a[i]];                  }
+      }                                                       }
+    }                                                         return a;
+    return a;                                               };
+  }
+}
+
+const sol = new Solution();
+console.log(sol.selectionSort([2,4,3,6,1], 5));
 ```
 
 #### Java
@@ -148,29 +204,6 @@ fn main() {
 }
 ```
 
-#### JavaScript
-
-```js
-function selectionSort(inputArr) {
-    let len = inputArr.length;
-    for (let i = 0; i <= len - 2; i++) {
-        let j = i;
-        let min = j;
-        while (j <= len - 1) {
-            if (inputArr[j] < inputArr[min]) min = j;
-            j++;
-        }
-        let temp = inputArr[i];
-        inputArr[i] = inputArr[min];
-        inputArr[min] = temp;
-    }
-    return inputArr;
-}
-
-let arr = [6, 3, 2, 1, 5];
-console.log(selectionSort(arr));
-```
-
 #### C#
 
 ```cs
@@ -211,5 +244,3 @@ public class Program
 
 }
 ```
-
-<!-- tabs:end -->

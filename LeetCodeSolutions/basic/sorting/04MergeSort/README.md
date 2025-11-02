@@ -1,115 +1,64 @@
-# 归并排序
-
-归并排序的核心思想是分治，把一个复杂问题拆分成若干个子问题来求解。
-
-归并排序的算法思想是：把数组从中间划分为两个子数组，一直递归地把子数组划分成更小的数组，直到子数组里面只有一个元素的时候开始排序。排序的方法就是按照大小顺序合并两个元素。接着依次按照递归的顺序返回，不断合并排好序的数组，直到把整个数组排好序。
-
-**归并排序算法模板：**
-
-```java
-void mergeSort(int[] nums, int left, int right) {
-    if (left >= right) {
-        return;
-    }
-    int mid = (left + right) >>> 1;
-    mergeSort(nums, left, mid);
-    mergeSort(nums, mid + 1, right);
-    int i = left, j = mid + 1, k = 0;
-    while (i <= mid && j <= right) {
-        if (nums[i] <= nums[j]) {
-            tmp[k++] = nums[i++];
-        } else {
-            tmp[k++] = nums[j++];
-        }
-    }
-    while (i <= mid) {
-        tmp[k++] = nums[i++];
-    }
-    while (j <= right) {
-        tmp[k++] = nums[j++];
-    }
-    for (i = left, j = 0; i <= right; ++i, ++j) {
-        nums[i] = tmp[j];
-    }
-}
-```
-
-## 题目描述
-
-给定你一个长度为 `n` 的整数数列。
-
-请你使用归并排序对这个数列按照从小到大进行排序。
-
-并将排好序的数列按顺序输出。
-
-**输入格式**
-
-输入共两行，第一行包含整数 n。
-
-第二行包含 n 个整数（所有整数均在 1∼10^9 范围内），表示整个数列。
-
-**输出格式**
-
-输出共一行，包含 n 个整数，表示排好序的数列。
-
-**数据范围**
-
-1≤n≤100000
-
-**输入样例：**
-
-```
-5
-3 1 2 4 5
-```
-
-**输出样例：**
-
-```
-1 2 3 4 5
-```
-
-## 代码实现
-
-<!-- tabs:start -->
+# Note: Divide and Conquer into smaller chunks normally done recursively
 
 #### Python3
 
 ```python
-N = int(input())
-nums = list(map(int, input().split()))
 
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
-def merge_sort(nums, left, right):
-    if left >= right:
-        return
-    mid = (left + right) >> 1
-    merge_sort(nums, left, mid)
-    merge_sort(nums, mid + 1, right)
-    tmp = []
-    i, j = left, mid + 1
-    while i <= mid and j <= right:
-        if nums[i] <= nums[j]:
-            tmp.append(nums[i])
-            i += 1
-        else:
-            tmp.append(nums[j])
-            j += 1
-    while i <= mid:
-        tmp.append(nums[i])
-        i += 1
-    while j <= right:
-        tmp.append(nums[j])
-        j += 1
+"""
+                       [2,4,3,6,1]
+                     /             \
+              [2,4]                 [3,6,1]
+             /     \               /       \
+         [2]       [4]          [3]       [6,1]
+                                          /    \
+                                       [6]     [1]
+"""
+class Solution:
+    def MergeSort(self, a: List[int]) -> List[int]:
+        if len(a) <= 1:                     # Base case: list already sorted
+            return a
+        
+        # Step 1: Divide by recursion
+        mid = len(a) // 2
+        left: int = self.MergeSort(a[:mid])      # Need base case or never stops
+        right: int = self.MergeSort(a[mid:])
+        
+        return self._merge(left, right)
 
-    j = 0
-    for i in range(left, right + 1):
-        nums[i] = tmp[j]
-        j += 1
+    # private helper fx
+    def _merge(self, left: List[int], right: List[int]) -> List[int]:
+        result = []
+        i = j = 0
 
+        # Step 2: Conquer w/ Merge sorted lists
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                result.append(left[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
 
-merge_sort(nums, 0, N - 1)
-print(' '.join(list(map(str, nums))))
+        # Append remaining elements
+        result.extend(left[i:])
+        result.extend(right[j:])
+
+        return result
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.MergeSort([2, 4, 3, 6, 1]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 4, 6]
+
+real    0m0.028s
+user    0m0.016s
+sys     0m0.012s
 ```
 
 #### Java
@@ -369,5 +318,3 @@ process.stdin.on('end', function () {
     });
 });
 ```
-
-<!-- tabs:end -->

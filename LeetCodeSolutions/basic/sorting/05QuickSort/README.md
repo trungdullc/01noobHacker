@@ -1,100 +1,50 @@
-# 快速排序
-
-快速排序也采用了分治的思想：把原始的数组筛选成较小和较大的两个子数组，然后递归地排序两个子数组。
-
-**快速排序算法模板：**
-
-```java
-void quickSort(int[] nums, int left, int right) {
-    if (left >= right) {
-        return;
-    }
-    int i = left - 1, j = right + 1;
-    int x = nums[left];
-    while (i < j) {
-        while (nums[++i] < x)
-            ;
-        while (nums[--j] > x)
-            ;
-        if (i < j) {
-            int t = nums[i];
-            nums[i] = nums[j];
-            nums[j] = t;
-        }
-    }
-    quickSort(nums, left, j);
-    quickSort(nums, j + 1, right);
-}
-```
-
-## 题目描述
-
-给定你一个长度为 `n` 的整数数列。
-
-请你使用快速排序对这个数列按照从小到大进行排序。
-
-并将排好序的数列按顺序输出。
-
-**输入格式**
-
-输入共两行，第一行包含整数 n。
-
-第二行包含 n 个整数（所有整数均在 1∼10^9 范围内），表示整个数列。
-
-**输出格式**
-
-输出共一行，包含 n 个整数，表示排好序的数列。
-
-**数据范围**
-
-1≤n≤100000
-
-**输入样例：**
-
-```
-5
-3 1 2 4 5
-```
-
-**输出样例：**
-
-```
-1 2 3 4 5
-```
-
-## 代码实现
-
-<!-- tabs:start -->
-
 #### Python3
 
 ```python
-N = int(input())
-nums = list(map(int, input().split()))
 
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+from typing import List
 
-def quick_sort(nums, left, right):
-    if left >= right:
-        return
-    i, j = left - 1, right + 1
-    x = nums[(left + right) >> 1]
-    while i < j:
-        while 1:
-            i += 1
-            if nums[i] >= x:
-                break
-        while 1:
-            j -= 1
-            if nums[j] <= x:
-                break
-        if i < j:
-            nums[i], nums[j] = nums[j], nums[i]
-    quick_sort(nums, left, j)
-    quick_sort(nums, j + 1, right)
+class Solution:
+    """
+    Done w/ recurssion
+    pivot is in correct position
+    all items on left are smaller all items on right are bigger
+    """
+    def QuickSort(self, a: List[int]) -> List[int]:
+        self._quick(a, 0, len(a) - 1)       # Uses index 0 as left and last index as right
+        return a
 
+    def _quick(self, a: List[int], left: int, right: int) -> None:
+        if left >= right:
+            return
+        
+        pivot = a[right]                    # Choose last element as pivot
+        i = left                            # i will track the pivot position
+        
+        for j in range(left, right):        # Partition step
+            if a[j] <= pivot:
+                a[i], a[j] = a[j], a[i]
+                i += 1
+        
+        # Place pivot in its correct sorted spot
+        a[i], a[right] = a[right], a[i]
 
-quick_sort(nums, 0, N - 1)
-print(' '.join(list(map(str, nums))))
+        # Recursively sort left and right partitions
+        self._quick(nums, left, i - 1)
+        self._quick(nums, i + 1, right)
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.QuickSort([2, 4, 3, 6, 1]))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 4, 6]
+
+real    0m0.046s
+user    0m0.032s
+sys     0m0.000s
 ```
 
 #### Java
@@ -326,5 +276,3 @@ process.stdin.on('end', function () {
     });
 });
 ```
-
-<!-- tabs:end -->

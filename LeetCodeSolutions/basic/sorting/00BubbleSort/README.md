@@ -1,42 +1,69 @@
-# 冒泡排序
-
-定义一个布尔变量 `hasChange`，用来标记每轮是否进行了交换。在每轮遍历开始时，将 `hasChange` 设置为 false。
-
-若当轮没有发生交换，说明此时数组已经按照升序排列，`hasChange` 依然是为 false。此时外层循环直接退出，排序结束。
-
-## 代码示例
-
-<!-- tabs:start -->
-
 #### Python3
 
 ```python
-def bubbleSort(arr):
-    n = len(arr)
-    # Iterate over all array elements
-    for i in range(n):
-        # Last i elements are already in place
-        for j in range(n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+# Important: def not ned self unless in class ⭐
+# def swap(num1, num2):
+#    num1 ^= num2
+#    num2 ^= num1
+#    num1 ^= num2
 
+"""
+Iteration 0                         Iteration 1                         Iteration 2                         Iteration 3
+ j j+1              # pointers       j j+1     Sorted Partition          j j+1                               j j+1 
+[2, 4, 3, 6, 1]                     [2, 3, 4, 1 | 6]                    [2, 3, 1 | 4, 6]                    [1, 2 | 3, 4, 6] swap()
+    j j+1                               j j+1                              j j+1 
+[2, 3, 4, 6, 1]     swap()          [2, 3, 4, 1 | 6]                    [2, 1, 3 | 4, 6]  swap() i = 2
+       j j+1                               j j+1 
+[2, 3, 4, 6, 1]                     [2, 3, 1, 4 | 6]  swap() i = 1
+          j j+1
+[2, 3, 4, 1, 6]     swap() i=0
+"""
+class Solution:
+   def bubbleSort(self, a: list[int], N: int) -> list[int]:
+      """
+      Compare 1,2 then 2,3 ... last - 1, last
+      Check if left is bigger than right, if true swap
+      Right Side is sorted partition (Ascending)
+      """
+      for i in range(N):                           # redo N-1 times
+         for j in range(N - i - 1):                # -i so not always go to end for sorting
+            if a[j] > a[j + 1]:
+               a[j], a[j + 1] = a[j + 1], a[j]     # No Need XOR swap(a[j], a[j+1])
+      return a
 
-# 改进版本
-def bubbleSort(arr):
-    n = len(arr)
-    for i in range(n - 1):
-        has_change = False
-        for j in range(n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                has_change = True
-        if not has_change:
-            break
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.bubbleSort([2, 4, 3, 6, 1], 5))
 
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 4, 6]
 
-arr = [64, 34, 25, 12, 22, 11, 90]
-bubbleSort(arr)
-print(arr)
+real    0m0.023s
+user    0m0.019s
+sys     0m0.005s
+```
+
+#### JavaScript
+
+```js
+// Class Version                                       // Function Expression Version 
+class Solution {                                       const bubbleSort = function(a, N) {
+  bubbleSort(a, N) {                                     for (let i = 0; i < N; i++) {
+    for (let i = 0; i < N; i++) {                          for (let j = 0; j < N - i - 1; j++) {
+      for (let j = 0; j < N - i - 1; j++) {                  if (a[j] > a[j + 1]) {
+        if (a[j] > a[j + 1]) {                                 [a[j], a[j + 1]] = [a[j + 1], a[j]];
+          [a[j], a[j + 1]] = [a[j + 1], a[j]];               }
+        }                                                  }
+      }                                                  }
+    }                                                    return a;
+    return a;                                          };
+  }
+}
+
+const sol = new Solution();
+console.log(sol.bubbleSort([2,4,3,6,1], 5));
 ```
 
 #### Java
@@ -153,33 +180,6 @@ fn main() {
 }
 ```
 
-#### JavaScript
-
-```js
-function bubbleSort(inputArr) {
-    for (let i = inputArr.length - 1; i > 0; i--) {
-        let hasChange = false;
-        for (let j = 0; j < i; j++) {
-            if (inputArr[j] > inputArr[j + 1]) {
-                const temp = inputArr[j];
-                inputArr[j] = inputArr[j + 1];
-                inputArr[j + 1] = temp;
-                hasChange = true;
-            }
-        }
-
-        if (!hasChange) {
-            break;
-        }
-    }
-
-    return inputArr;
-}
-
-const arr = [6, 3, 2, 1, 5];
-console.log(bubbleSort(arr));
-```
-
 #### C#
 
 ```cs
@@ -229,5 +229,3 @@ public class Program
     }
 }
 ```
-
-<!-- tabs:end -->

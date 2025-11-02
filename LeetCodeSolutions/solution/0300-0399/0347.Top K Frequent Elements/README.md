@@ -4,6 +4,8 @@
 
 <p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the</em> <code>k</code> <em>most frequent elements</em>. You may return the answer in <strong>any order</strong>.</p>
 
+<p style="color: yellow;">Hacker: Find the most frequent elements based on k given an array.</p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 <pre><strong>Input:</strong> nums = [1,1,1,2,2,3], k = 2
@@ -37,32 +39,23 @@ Finally, we pop the elements from the min heap one by one and place them into th
 
 The time complexity is $O(n \log k)$, and the space complexity is $O(k)$. Here, $n$ is the length of the array.
 
-#### Du Solution
+#### Du Solution: cheat
+
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
-class Solution:
-   """
-   Solution for Top K Frequent Elements.
-   """
-   def topKFrequent(self, nums: list[int], k: int) -> list[int]:
-      """
-      Return the k most frequent elements in the array.
-      
-      Args:
-         nums (list[int]): Input array of integers.
-         k (int): Number of top frequent elements to return.
-      
-      Returns:
-         list[int]: List of k most frequent elements.
-      """
-      from collections import Counter
-      import heapq
+from typing import List
+from collections import Counter
 
-      freq_map = Counter(nums)
-      # Use nlargest to get top k elements based on frequency
-      return [item for item, _ in heapq.nlargest(k, freq_map.items(), key=lambda x: x[1])]
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        cnt = Counter(nums)
+        # dir(Counter)
+        # help(Counter.most_common)
+        # Counter(nums).most_common(k) returns a list of tuples (value, frequency)
+        # [(1, 3), (2, 2), (3,1)].most_common(2)
+        return [x for x, _ in cnt.most_common(k)]
 
 if __name__ == "__main__":
    sol = Solution()
@@ -73,9 +66,9 @@ AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py
 [1, 2]
 [1]
 
-real    0m0.023s
-user    0m0.018s
-sys     0m0.005s
+real    0m0.084s
+user    0m0.024s
+sys     0m0.004
 ```
 
 #### Du Solution: Python3
@@ -111,13 +104,51 @@ AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py
 [1]
 ```
 
-#### Python3
-
+#### Du Solution
 ```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        cnt = Counter(nums)
-        return [x for x, _ in cnt.most_common(k)]
+   """
+   Solution for Top K Frequent Elements.
+   """
+   def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+      """
+      Return the k most frequent elements in the array.
+      
+      Args:
+         nums (list[int]): Input array of integers.
+         k (int): Number of top frequent elements to return.
+      
+      Returns:
+         list[int]: List of k most frequent elements.
+      """
+      from collections import Counter
+      import heapq
+
+      freq_map = Counter(nums)      # Counter({1: 3, 2: 2, 3: 1})
+
+      # Use nlargest to get top k elements based on frequency
+      # freq_map.items() produces pairs: (1, 3), (2, 2), (3, 1)
+      # heapq.nlargest finds the k items with the largest key
+      # x refers to each tuple (item, freq)
+      # x[1] is the frequency part (the second element)
+      # item, _ : [(1, 3), (2, 2)] → [1, 2] since returning items only
+      return [item for item, _ in heapq.nlargest(k, freq_map.items(), key=lambda x: x[1])]
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.topKFrequent([1,1,1,2,2,3], 2))
+   print(sol.topKFrequent([1], 1))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2]
+[1]
+
+real    0m0.023s
+user    0m0.018s
+sys     0m0.005s
 ```
 
 #### Java

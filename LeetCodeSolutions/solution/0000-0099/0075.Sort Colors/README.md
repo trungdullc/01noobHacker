@@ -8,6 +8,8 @@
 
 <p>You must solve this problem without using the library&#39;s sort function.</p>
 
+<p style="color: yellow;">Hacker: Sort and array of 0, 1, 2 in ascending order</p>
+
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
@@ -51,54 +53,31 @@ After the traversal, the elements in the array are divided into three parts: $[0
 
 The time complexity is $O(n)$, where $n$ is the length of the array. Only one traversal of the array is needed. The space complexity is $O(1)$.
 
-#### Du Solution
+#### Du Solution: cheat
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class Solution:
-   """
-   Solution for the Sort Colors problem.
-   """
    def sortColors(self, nums: list[int]) -> None:
-      """
-      Sort the array in-place so that colors are in order 0, 1, 2.
-      
-      Args:
-         nums (list[int]): List of integers representing colors.
-      
-      Returns:
-         None: The list is modified in-place.
-      """
-      low, mid, high = 0, 0, len(nums) - 1
-      
-      while mid <= high:
-         if nums[mid] == 0:
-            nums[low], nums[mid] = nums[mid], nums[low]
-            low += 1
-            mid += 1
-         elif nums[mid] == 1:
-            mid += 1
-         else:
-            nums[mid], nums[high] = nums[high], nums[mid]
-            high -= 1
+      nums.sort()
 
 if __name__ == "__main__":
    sol = Solution()
    nums1 = [2,0,2,1,1,0]
-   sol.sortColors(nums1)
+   sol.sortColors(nums1)            # Note: in-place does not return
    print(nums1)
-   
+
    nums2 = [2,0,1]
    sol.sortColors(nums2)
    print(nums2)
 
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+AsianHacker-picoctf@webshell:/tmp$ time python3 pythonScript.py 
 [0, 0, 1, 1, 2, 2]
 [0, 1, 2]
 
-real    0m0.022s
-user    0m0.018s
+real    0m0.024s
+user    0m0.020s
 sys     0m0.004s
 ```
 

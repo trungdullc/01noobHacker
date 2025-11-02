@@ -1,39 +1,70 @@
-# 插入排序
-
-先来看一个问题。一个有序的数组，我们往里面添加一个新的数据后，如何继续保持数据有序呢？很简单，我们只要遍历数组，找到数据应该插入的位置将其插入即可。
-
-这是一个动态排序的过程，即动态地往有序集合中添加数据，我们可以通过这种方法保持集合中的数据一直有序。而对于一组静态数据，我们也可以借鉴上面讲的插入方法，来进行排序，于是就有了插入排序算法。
-
-那么插入排序具体是如何借助上面的思想来实现排序的呢？
-
-首先，我们将数组中的数据分为两个区间，**已排序区间**和**未排序区间**。初始已排序区间只有一个元素，就是数组的第一个元素。插入算法的核心思想是取未排序区间中的元素，在已排序区间中找到合适的插入位置将其插入，并保证已排序区间数据一直有序。重复这个过程，直到未排序区间中元素为空，算法结束。
-
-与冒泡排序对比：
-
--   在冒泡排序中，经过每一轮的排序处理后，数组后端的数是排好序的。
--   在插入排序中，经过每一轮的排序处理后，数组前端的数是排好序的。
-
-## 代码示例
-
-<!-- tabs:start -->
-
 #### Python3
 
 ```python
-def insertion_sort(array):
-    for i in range(len(array)):
-        cur_index = i
-        while array[cur_index - 1] > array[cur_index] and cur_index - 1 >= 0:
-            array[cur_index], array[cur_index - 1] = (
-                array[cur_index - 1],
-                array[cur_index],
-            )
-            cur_index -= 1
-    return array
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+# Important: def not ned self unless in class ⭐
+# def swap(num1, num2):
+#    num1 ^= num2
+#    num2 ^= num1
+#    num1 ^= num2
 
+"""
+Iteration 0         Iteration 1             Iteration 2         Iteration 3
+j-1 j   # pointers     j-1 j                      j-1 j                  j-1 j
+[2, 4, 3, 6, 1]     [2, 3, 4, 6, 1] swap()  [2, 3, 4, 6, 1]     [2, 3, 4, 1, 6] swap()
+                    j-1 j                      j-1 j                  j-1 j
+                    [2, 3, 4, 6, 1]         [2, 3, 4, 6, 1]     [2, 3, 1, 4, 6] swap()
+                                            j-1 j                  j-1 j
+                                            [2, 3, 4, 6, 1]     [2, 1, 3, 4, 6] swap()
+                                                                j-1 j
+                                                                [1, 2, 3, 4, 6] swap()
+"""
+class Solution:
+   def InsertionSort(self, a: list[int], N:int) -> list[int]:
+      """
+      Recursion check left, if smaller then swap()
+      Left Sorted Partition | Right Unsorted Partition
+      """
+      for i in range(N-1):      # redo N-1 times
+         j = i + 1              # start at 2nd and reset
+         while j > 0 and a[j-1] > a[j]:
+            a[j], a[j-1] = a[j-1], a[j]
+            j -=1
+      return a
 
-array = [10, 17, 50, 7, 30, 24, 27, 45, 15, 5, 36, 21]
-print(insertion_sort(array))
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.InsertionSort([2, 4, 3, 6, 1], 5))
+
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+[1, 2, 3, 4, 6]
+
+real    0m0.025s
+user    0m0.016s
+sys     0m0.008s
+```
+
+#### JavaScript
+
+```js
+// JS Class Version                                    // JS Function Expression Version
+
+class Solution {                                          const insertionSort = function(a, N) {
+  insertionSort(a, N) {                                     for (let i = 0; i < N - 1; i++) {
+    for (let i = 0; i < N - 1; i++) {                         let j = i + 1;
+      let j = i + 1;                                          while (j > 0 && a[j - 1] > a[j]) {
+      while (j > 0 && a[j - 1] > a[j]) {                        [a[j], a[j - 1]] = [a[j - 1], a[j]];
+        [a[j], a[j - 1]] = [a[j - 1], a[j]];                    j--;
+        j--;                                                  }
+      }                                                     }
+    }                                                       return a;
+    return a;                                             };
+  }
+}
+
+const sol = new Solution();
+console.log(sol.InsertionSort([2, 4, 3, 6, 1], 5)))
 ```
 
 #### Java
@@ -149,27 +180,6 @@ fn main() {
 }
 ```
 
-#### JavaScript
-
-```js
-function insertionSort(inputArr) {
-    let len = inputArr.length;
-    for (let i = 1; i <= len - 1; i++) {
-        let temp = inputArr[i];
-        let j = i - 1;
-        while (j >= 0 && inputArr[j] > temp) {
-            inputArr[j + 1] = inputArr[j];
-            j--;
-        }
-        inputArr[j + 1] = temp;
-    }
-    return inputArr;
-}
-
-let arr = [6, 3, 2, 1, 5];
-console.log(insertionSort(arr));
-```
-
 #### C#
 
 ```cs
@@ -209,5 +219,3 @@ public class Program
     }
 }
 ```
-
-<!-- tabs:end -->
