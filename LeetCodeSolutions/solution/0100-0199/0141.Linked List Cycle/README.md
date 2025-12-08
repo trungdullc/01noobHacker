@@ -1,4 +1,4 @@
-# [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle)
+# [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -53,89 +53,127 @@ We can traverse the linked list and use a hash table $s$ to record each node. Wh
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the number of nodes in the linked list.
 
-#### Du Solution: Python3
+#### Du Solution1
 ```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
+from typing import Optional
 
 class ListNode:
-   """
-   Definition for a singly-linked list node.
-   """
-   def __init__(self, val=0, next=None):
-      self.val = val
-      self.next = next
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+
+def buildList(arr, pos):
+    """
+    Helper Function: Build linked list from array + cycle
+    arr: list of values
+    pos: index where tail connects (-1 = no cycle)
+    """
+
+    if not arr:
+        return None
+
+    headPtr = currPtr = ListNode(arr[0])        # headPtr doesn't move
+    nodes = [headPtr]                           # Important: keep references to every node for cycle creation
+
+    for x in arr[1:]:
+        currPtr.next = ListNode(x)
+        currPtr = currPtr.next
+        nodes.append(currPtr)
+
+    if pos != -1:
+        cycleNodePtr = nodes[pos]
+        currPtr.next = cycleNodePtr             # tail → cycleNode
+
+    return headPtr
 
 class Solution:
-   """
-   Solution class to detect a cycle in a linked list.
-   """
+    """
+    Detect cycle using a hash set
+    Runtime Complexity: O(n)
+    Space Complexity:  O(n)
+    """
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        seen = set()
 
-   def hasCycle(self, head):
-      """
-      Detect if the linked list has a cycle.
-      :type head: ListNode
-      :rtype: bool
-      """
-      slow = fast = head
-      while fast and fast.next:
-         slow = slow.next
-         fast = fast.next.next
-         if slow == fast:
-            return True
-      return False
+        curPtr = head
 
-def list_to_nodes(lst, pos=-1):
-   """
-   Convert a Python list to a linked list and create a cycle if pos >= 0.
-   """
-   dummy = ListNode(0)
-   current = dummy
-   nodes = []
-   for val in lst:
-      node = ListNode(val)
-      nodes.append(node)
-      current.next = node
-      current = node
-   if pos >= 0 and nodes:
-      current.next = nodes[pos]
-   return dummy.next
+        while curPtr:
+            if curPtr in seen:
+                return True
+            seen.add(curPtr)
+            curPtr = curPtr.next
+        return False
 
 if __name__ == "__main__":
-   sol = Solution()
-   print(sol.hasCycle(list_to_nodes([3,2,0,-4], pos=1)))
-   print(sol.hasCycle(list_to_nodes([1,2], pos=0)))
-   print(sol.hasCycle(list_to_nodes([1], pos=-1)))
+    sol = Solution()
 
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-True
-True
-False
+    head1 = buildList([3,2,0,-4], pos=1)
+    print(sol.hasCycle(head1))
 
-real    0m0.023s
-user    0m0.018s
-sys     0m0.005s
+    head2 = buildList([1,2], pos=0)
+    print(sol.hasCycle(head2))
+
+    head3 = buildList([1], pos=-1)
+    print(sol.hasCycle(head3))
 ```
 
-#### Python3
-
+#### Du Solution2
 ```python
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+#!/usr/bin/env python3
+from typing import Optional
 
+class ListNode:
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+
+def buildList(arr, pos):
+    if not arr:
+        return None
+
+    headPtr = currPtr = ListNode(arr[0])
+    nodes = [headPtr]
+
+    for x in arr[1:]:
+        currPtr.next = ListNode(x)
+        currPtr = currPtr.next
+        nodes.append(currPtr)
+
+    if pos != -1:
+        cycleNodePtr = nodes[pos]
+        currPtr.next = cycleNodePtr
+
+    return headPtr
 
 class Solution:
+    """
+    Fast and slow pointers
+    Runtime Complexity: O(n)
+    Space Complexity:  O(1)
+    """
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        s = set()
-        while head:
-            if head in s:
+        slowPtr, fastPtr = head, head
+
+        while fastPtr and fastPtr.next:
+            slowPtr = slowPtr.next                      # how slowPtr moves
+            fastPtr = fastPtr.next.next                 # how fastPtr moves
+
+            if slowPtr == fastPtr:
                 return True
-            s.add(head)
-            head = head.next
-        return False
+        return False                                    # if fastPtr reaches None, no cycle exist
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    head1 = buildList([3,2,0,-4], pos=1)
+    print(sol.hasCycle(head1))
+
+    head2 = buildList([1,2], pos=0)
+    print(sol.hasCycle(head2))
+
+    head3 = buildList([1], pos=-1)
+    print(sol.hasCycle(head3))
 ```
 
 #### Java

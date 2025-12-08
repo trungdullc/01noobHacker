@@ -1,4 +1,4 @@
-# [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
+# [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -67,26 +67,55 @@ At the end of the traversal, if the stack is empty, it means the bracket string 
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the length of the bracket string $s$.
 
-#### Du Solution: Python3
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Brute Force
+   Runtime Complexity: O(n²)
+   Space Complexity: O(n)
+   """
+
+   def isValid(self, s: str) -> bool:
+      while '()' in s or '{}' in s or '[]' in s:            # checks inner for match
+         s = s.replace('()', '')                            # removes match and repeats
+         s = s.replace('{}', '')
+         s = s.replace('[]', '')
+      return s == ''                                        # if s is empty means True
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.isValid("()"))
+   print(sol.isValid("()[]{}"))
+   print(sol.isValid("(]"))
+   print(sol.isValid("([])"))
+   print(sol.isValid("([)]"))
+```
+
+#### Du Solution2
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class Solution:
-   def isValid(self, s: str) -> bool:
-      """
-      Check if the input string s containing parentheses is valid.
-      Valid if all open brackets are closed in the correct order and type.
-      """
+   """
+      Stack Solution
+      Runtime Complexity: O(n)
+      Space Complexity: O(n)
+   """
+   def isValid(self, s: str) -> bool:                       # Best to use this as example ([])
       stack = []
-      mapping = {')': '(', '}': '{', ']': '['}
+      mapping = {')': '(', '}': '{', ']': '['}              # Detecting end
 
       for char in s:
-         if char in mapping:
-            top_element = stack.pop() if stack else '#'
-            if mapping[char] != top_element:
+         if char in mapping:                                # Step 2: if key is end
+            top_element = stack.pop() if stack else '#'     # Assign top element and remove from stack
+                                                            # Note: stack [bottom, ..., top]
+            if mapping[char] != top_element:                # if not match top element means rules failed
                return False
-         else:
+         else:                                              # Step 1: if char not in mapping put in stack
             stack.append(char)
 
       return not stack
@@ -97,6 +126,7 @@ if __name__ == "__main__":
    print(sol.isValid("()[]{}"))
    print(sol.isValid("(]"))
    print(sol.isValid("([])"))
+   print(sol.isValid("([)]"))
    
 AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
 True
@@ -109,19 +139,49 @@ user    0m0.014s
 sys     0m0.008s
 ```
 
-#### Python3
-
+#### Du Solution3
 ```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
 class Solution:
-    def isValid(self, s: str) -> bool:
-        stk = []
-        d = {'()', '[]', '{}'}
-        for c in s:
-            if c in '({[':
-                stk.append(c)
-            elif not stk or stk.pop() + c not in d:
-                return False
-        return not stk
+   """
+      Stack Solution
+      Runtime Complexity: O(n)
+      Space Complexity: O(n)
+   """
+   def isValid(self, s: str) -> bool:                       # Best to use this as example ([])
+      stack = []                                            # Note: Contains only left side items
+      mapping = {')': '(', '}': '{', ']': '['}              # Detecting end
+
+      for char in s:
+         if char in mapping:                                # Step 2: if key is end
+            if stack and stack[-1] == mapping[char]:        # If stack not empty and last element in mapping          
+               stack.pop()                                  # remove from stack right side/top
+            else:
+               return False
+         else:                                              # Step 1: if char not in mapping put in stack
+            stack.append(char)
+
+      return True if not stack else False
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.isValid("()"))
+   print(sol.isValid("()[]{}"))
+   print(sol.isValid("(]"))
+   print(sol.isValid("([])"))
+   print(sol.isValid("([)]"))
+   
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+True
+True
+False
+True
+
+real    0m0.038s
+user    0m0.014s
+sys     0m0.008s
 ```
 
 #### Java

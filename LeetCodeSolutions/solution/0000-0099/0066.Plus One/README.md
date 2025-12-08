@@ -1,4 +1,4 @@
-# [66. Plus One](https://leetcode.com/problems/plus-one)
+# [66. Plus One](https://leetcode.com/problems/plus-one) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -54,25 +54,85 @@ We start traversing from the last element of the array, add one to the current e
 
 The time complexity is $O(n)$, where $n$ is the length of the array. Ignoring the space consumption of the answer, the space complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Recursive Solution
+    Runtime Complexity: O(n)
+    Spac Complexity: O(n)
+    """
+    def plusOne(self, digits: List[int]) -> List[int]:
+        if not digits:                                  # if not a number, assume 0
+            return [1]                                  # add 1 to it
+
+        if digits[-1] < 9:                              # if last digit is not 9
+            digits[-1] += 1                             # add 1 to it
+            return digits                               # return digits
+        else:
+            return self.plusOne(digits[:-1]) + [0]      # Important: digits[-1] diff digits[:-1]
+                                                        # returns a list slice without last element
+                                                        # [9][:-1] → []
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.plusOne([1,2,3]))  
+    print(sol.plusOne([4,3,2,1]))
+    print(sol.plusOne([9]))
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Iteration Solution
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def plusOne(self, digits: List[int]) -> List[int]:
+        one = 1                     # flag
+        i = 0                       # index acts as a pointer
+        digits.reverse()            # reverse the list/array
+
+        while one:
+            if i < len(digits):
+                if digits[i] == 9:  # if last digit 9 set to 0
+                    digits[i] = 0   
+                else:
+                    digits[i] += 1  # else add 1 to last digit
+                    one = 0
+            else:
+                digits.append(one)
+                one = 0
+            i += 1                  # increase index
+
+        digits.reverse()            # reverse to get array in original order
+        return digits
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.plusOne([1,2,3]))  
+    print(sol.plusOne([4,3,2,1]))
+    print(sol.plusOne([9]))
+```
+
+#### Du Solution3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class Solution:
    """
-   Solution for the Plus One problem.
+   Iteration Solution
+   Runtime Complexity: O(n)
+   Space Complexity: O(n)
    """
    def plusOne(self, digits: list[int]) -> list[int]:
-      """
-      Increment the integer represented by the digits array by one.
-      
-      Args:
-         digits (list[int]): List of digits representing a number.
-      
-      Returns:
-         list[int]: List of digits representing the incremented number.
-      """
       n = len(digits)
       for i in range(n - 1, -1, -1):
          if digits[i] < 9:

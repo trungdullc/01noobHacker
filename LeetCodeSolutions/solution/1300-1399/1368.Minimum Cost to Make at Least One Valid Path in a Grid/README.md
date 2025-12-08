@@ -1,27 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1300-1399/1368.Minimum%20Cost%20to%20Make%20at%20Least%20One%20Valid%20Path%20in%20a%20Grid/README_EN.md
-rating: 2068
-source: Weekly Contest 178 Q4
-tags:
-    - Breadth-First Search
-    - Graph
-    - Array
-    - Matrix
-    - Shortest Path
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
-# [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid)
-
-[中文文档](/solution/1300-1399/1368.Minimum%20Cost%20to%20Make%20at%20Least%20One%20Valid%20Path%20in%20a%20Grid/README.md)
+# [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>Given an <code>m x n</code> grid. Each cell of the grid has a sign pointing to the next cell you should visit if you are currently in this cell. The sign of <code>grid[i][j]</code> can be:</p>
 
@@ -76,11 +55,7 @@ The total cost = 3.
 	<li><code>1 &lt;= grid[i][j] &lt;= 4</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Double-ended Queue BFS
 
@@ -89,8 +64,6 @@ This problem is essentially a shortest path model, but what we are looking for i
 In an undirected graph where the edge weights are only 0 and 1, we can use a double-ended queue for BFS. The principle is that when the weight of the point that can be expanded currently is 0, it is added to the front of the queue; when the weight is 1, it is added to the end of the queue.
 
 > If the weight of an edge is 0, then the weight of the newly expanded node is the same as the weight of the current queue head node. Obviously, it can be used as the starting point for the next expansion.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -260,9 +233,3 @@ function minCost(grid: number[][]): number {
     return ans[m - 1][n - 1];
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

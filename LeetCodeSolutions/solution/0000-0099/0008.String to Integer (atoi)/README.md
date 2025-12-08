@@ -1,20 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0008.String%20to%20Integer%20%28atoi%29/README_EN.md
-tags:
-    - String
----
-
-<!-- problem:start -->
-
-# [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi)
-
-[中文文档](/solution/0000-0099/0008.String%20to%20Integer%20%28atoi%29/README.md)
+# [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>Implement the <code>myAtoi(string s)</code> function, which converts a string to a 32-bit signed integer.</p>
 
@@ -127,11 +113,7 @@ Step 3: &quot;<u>0</u>-1&quot; (&quot;0&quot; is read in; reading stops because 
 	<li><code>s</code> consists of English letters (lower-case and upper-case), digits (<code>0-9</code>), <code>&#39; &#39;</code>, <code>&#39;+&#39;</code>, <code>&#39;-&#39;</code>, and <code>&#39;.&#39;</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Traverse the String
 
@@ -144,8 +126,6 @@ Then we traverse the following characters. If it is a digit, we judge whether ad
 After the traversal ends, we return the result according to the positive or negative sign.
 
 The time complexity is $O(n)$, where $n$ is the length of the string. We only need to process all characters in turn. The space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -403,9 +383,3 @@ int myAtoi(char* s) {
     return res * sign;
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

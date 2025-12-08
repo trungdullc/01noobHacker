@@ -1,4 +1,4 @@
-# [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs)
+# [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -58,7 +58,107 @@ To avoid repeated calculations, we use memoization search, saving the results th
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $\textit{cost}$.
 
-#### Du Solution: Python3
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Recursion Solution with Depth First Search
+    Runtime Complexity: O(2ⁿ)
+    Space Complexity: O(n)
+    """
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        def dfs(i):
+            if i >= len(cost):
+                return 0
+            return cost[i] + min(dfs(i + 1), dfs(i + 2))
+        return min(dfs(0), dfs(1))
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.minCostClimbingStairs([10, 15, 20]))  
+    print(sol.minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]))  
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Dynamic Programming (Top-Down)
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        memo = [-1] * len(cost)
+        def dfs(i):
+            if i >= len(cost):
+                return 0
+            if memo[i] != -1:
+                return memo[i]
+            memo[i] = cost[i] + min(dfs(i + 1), dfs(i + 2))
+            return memo[i]
+        return min(dfs(0), dfs(1))
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.minCostClimbingStairs([10, 15, 20]))  
+    print(sol.minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]))  
+```
+
+#### Du Solution3
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Dynamic Programming (Bottom-Up)
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        n = len(cost)
+        dp = [0] * (n + 1)
+
+        for i in range(2, n + 1):
+            dp[i] = min(dp[i - 1] + cost[i - 1],
+                        dp[i - 2] + cost[i - 2])
+        return dp[n]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.minCostClimbingStairs([10, 15, 20]))  
+    print(sol.minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]))  
+```
+
+#### Du Solution4
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Dynamic Programming (Space Optimized)
+    Runtime Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        for i in range(len(cost) - 3, -1, -1):
+            cost[i] += min(cost[i + 1], cost[i + 2])
+        return min(cost[0], cost[1])
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.minCostClimbingStairs([10, 15, 20]))  
+    print(sol.minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]))  
+```
+
+#### Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3

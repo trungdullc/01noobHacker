@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/2500-2599/2537.Count%20the%20Number%20of%20Good%20Subarrays/README_EN.md
-rating: 1891
-source: Weekly Contest 328 Q3
-tags:
-    - Array
-    - Hash Table
-    - Sliding Window
----
-
-<!-- problem:start -->
-
-# [2537. Count the Number of Good Subarrays](https://leetcode.com/problems/count-the-number-of-good-subarrays)
-
-[中文文档](/solution/2500-2599/2537.Count%20the%20Number%20of%20Good%20Subarrays/README.md)
+# [2537. Count the Number of Good Subarrays](https://leetcode.com/problems/count-the-number-of-good-subarrays) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the number of <strong>good</strong> subarrays of</em> <code>nums</code>.</p>
 
@@ -55,11 +37,7 @@ tags:
 	<li><code>1 &lt;= nums[i], k &lt;= 10<sup>9</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Hash Table + Two Pointers
 
@@ -72,8 +50,6 @@ As we iterate through the array $\textit{nums}$, we treat the current element $x
 Finally, we return the answer.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the array $\textit{nums}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -221,9 +197,3 @@ impl Solution {
     }
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

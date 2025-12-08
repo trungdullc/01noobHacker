@@ -1,4 +1,4 @@
-# [190. Reverse Bits](https://leetcode.com/problems/reverse-bits)
+# [190. Reverse Bits](https://leetcode.com/problems/reverse-bits) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -48,25 +48,98 @@ For example, for the $i$-th bit, we can use `(n & 1) << (31 - i)` to extract the
 
 The time complexity is $O(\log n)$, and the space complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    """
+    Brute Force
+    Runtime Complexity: O(1)
+    Space Complexity: O(1)
+    """
+    def reverseBits(self, n: int) -> int:
+        binary = ""
+
+        for i in range(32):
+            if n & (1 << i):                            # 0191: Number of 1 Bits
+                binary += "1"
+            else:
+                binary += "0"
+
+        ans = 0
+        for i, bit in enumerate(binary[::-1]):
+            if bit == "1":
+                ans |= (1 << i)                         # bitwise OR to turn on a bit
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.reverseBits(43261596))
+    print(sol.reverseBits(2147483644))
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    """
+    Bit Manipulation
+    Runtime Complexity: O(1)
+    Space Complexity: O(1)
+    """
+    def reverseBits(self, n: int) -> int:
+        ans = 0
+
+        for i in range(32):
+            bit = (n >> i) & 1                      # 0191: Number of 1 Bits, get LSB
+            ans += (bit << (31 - i))                # put in MSB
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.reverseBits(43261596))
+    print(sol.reverseBits(2147483644))
+```
+
+#### Du Solution3
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    """
+    Bit Manipulation (Optimal)
+    Runtime Complexity: O(1)
+    Space Complexity: O(1)
+    """
+    def reverseBits(self, n: int) -> int:                               # Note: No way I getting this solution in 5-10 minutes
+        res = n
+        res = (res >> 16) | (res << 16) & 0xFFFFFFFF                    # Swap left 16 bits w/ right 16 bits, letter is a 4-bit nibble
+        res = ((res & 0xff00ff00) >> 8) | ((res & 0x00ff00ff) << 8)     # Swap bytes inside each 16-bit half
+        res = ((res & 0xf0f0f0f0) >> 4) | ((res & 0x0f0f0f0f) << 4)     # Swap 4-bit nibbles
+        res = ((res & 0xcccccccc) >> 2) | ((res & 0x33333333) << 2)     # Swap 2-bit pairs
+        res = ((res & 0xaaaaaaaa) >> 1) | ((res & 0x55555555) << 1)     # Swap individual bits
+        return res & 0xFFFFFFFF
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.reverseBits(43261596))
+    print(sol.reverseBits(2147483644))
+```
+
+#### Python3 (Wrong argument)
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class Solution:
    """
-   Solution for the Reverse Bits problem.
+   Bit Manipulation
+   Runtime Complexity: O(1)
+   Space Complexity: O(1)
    """
    def reverseBits(self, n: int) -> int:
-      """
-      Reverse the bits of a 32-bit unsigned integer.
-      
-      Args:
-         n (int): 32-bit unsigned integer.
-      
-      Returns:
-         int: Integer obtained by reversing the bits of n.
-      """
       result = 0
       for _ in range(32):
          result = (result << 1) | (n & 1)
@@ -87,7 +160,7 @@ user    0m0.022s
 sys     0m0.000s
 ```
 
-#### Du Solution: Python3
+#### Python3 (wrong argument)
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
@@ -110,7 +183,7 @@ AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py
 (3221225471, '10111111111111111111111111111111')
 ```
 
-#### Du Solution: Python3
+#### Python3 (wrong argument)
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
@@ -138,18 +211,6 @@ if __name__ == "__main__":
 AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
 (964176192, '00111001011110000010100101000000')
 (3221225471, '10111111111111111111111111111111')
-```
-
-#### Python3
-
-```python
-class Solution:
-    def reverseBits(self, n: int) -> int:
-        ans = 0
-        for i in range(32):
-            ans |= (n & 1) << (31 - i)
-            n >>= 1
-        return ans
 ```
 
 #### Java

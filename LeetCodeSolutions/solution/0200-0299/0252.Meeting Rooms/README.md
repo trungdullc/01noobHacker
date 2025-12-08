@@ -1,4 +1,4 @@
-# [252. Meeting Rooms 🔒](https://leetcode.com/problems/meeting-rooms)
+# [252. Meeting Rooms 🔒](https://leetcode.com/problems/meeting-rooms) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -31,7 +31,88 @@ If no overlap is found by the end of the iteration, we return `true`.
 
 The time complexity is $O(n \times \log n)$, and the space complexity is $O(\log n)$, where $n$ is the number of meetings.
 
-#### Du Solution: Python3
+#### Du Soluton1
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Interval:
+    """
+    Interval Definition
+    """
+    def __init__(self, start: int, end: int):
+        self.start = start
+        self.end = end
+
+    def __repr__(self):
+        return f"[{self.start}, {self.end}]"
+
+class Solution:
+    """
+    Brute Force
+    Runtime Complexity: O(n²)
+    Space Complexity: O(1)
+    """
+    def canAttendMeetings(self, intervals: List[Interval]) -> bool:
+        n = len(intervals)
+
+        for i in range(n):
+            A = intervals[i]
+            for j in range(i + 1, n):
+                B = intervals[j]
+                if min(A.end, B.end) > max(A.start, B.start):
+                    return False
+        return True
+
+if __name__ == "__main__":
+    s = Solution()
+    intervals1 = [Interval(0, 30), Interval(5, 10), Interval(15, 20)]
+    intervals2 = [Interval(7, 10), Interval(2, 4)]
+
+    print(s.canAttendMeetings(intervals1))
+    print(s.canAttendMeetings(intervals2))
+```
+
+#### Du Soluton2
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Interval:
+    def __init__(self, start: int, end: int):
+        self.start = start
+        self.end = end
+
+    def __repr__(self):
+        return f"[{self.start}, {self.end}]"
+
+class Solution:
+    """
+    Sorting
+    Runtime Complexity: O(nlogn)
+    Space Complexity: O(n)
+    """
+    def canAttendMeetings(self, intervals: List[Interval]) -> bool:
+        intervals.sort(key=lambda i: i.start)
+
+        for i in range(1, len(intervals)):
+            i1 = intervals[i - 1]
+            i2 = intervals[i]
+
+            if i1.end > i2.start:
+                return False
+        return True
+
+if __name__ == "__main__":
+    s = Solution()
+    intervals1 = [Interval(0, 30), Interval(5, 10), Interval(15, 20)]
+    intervals2 = [Interval(7, 10), Interval(2, 4)]
+
+    print(s.canAttendMeetings(intervals1))
+    print(s.canAttendMeetings(intervals2))
+```
+
+#### Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3

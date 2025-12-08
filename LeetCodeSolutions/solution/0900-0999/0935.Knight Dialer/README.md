@@ -1,20 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0935.Knight%20Dialer/README_EN.md
-tags:
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
-# [935. Knight Dialer](https://leetcode.com/problems/knight-dialer)
-
-[中文文档](/solution/0900-0999/0935.Knight%20Dialer/README.md)
+# [935. Knight Dialer](https://leetcode.com/problems/knight-dialer) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>The chess knight has a <strong>unique movement</strong>,&nbsp;it may move two squares vertically and one square horizontally, or two squares horizontally and one square vertically (with both forming the shape of an <strong>L</strong>). The possible movements of chess knight are shown in this diagram:</p>
 
@@ -60,11 +46,7 @@ tags:
 	<li><code>1 &lt;= n &lt;= 5000</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Recurrence
 
@@ -104,8 +86,6 @@ Then, we update $f$ to $g$ and continue calculating the phone numbers of the nex
 Finally, we sum all the elements in $f$ and take the result modulo $10^9 + 7$ to get the answer.
 
 The time complexity is $O(n)$, where $n$ is the length of the phone number. The space complexity is $O(|\Sigma|)$, where $\Sigma$ is the set of digits, and in this problem $|\Sigma| = 10$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -637,9 +617,3 @@ public class Solution {
     }
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

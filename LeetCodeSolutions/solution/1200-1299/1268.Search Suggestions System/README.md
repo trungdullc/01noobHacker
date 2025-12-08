@@ -1,27 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1200-1299/1268.Search%20Suggestions%20System/README_EN.md
-rating: 1573
-source: Weekly Contest 164 Q3
-tags:
-    - Trie
-    - Array
-    - String
-    - Binary Search
-    - Sorting
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
-# [1268. Search Suggestions System](https://leetcode.com/problems/search-suggestions-system)
-
-[中文文档](/solution/1200-1299/1268.Search%20Suggestions%20System/README.md)
+# [1268. Search Suggestions System](https://leetcode.com/problems/search-suggestions-system) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array of strings <code>products</code> and a string <code>searchWord</code>.</p>
 
@@ -61,11 +40,7 @@ After typing mou, mous and mouse the system suggests [&quot;mouse&quot;,&quot;mo
 	<li><code>searchWord</code> consists of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sorting + Trie
 
@@ -81,8 +56,6 @@ Each node of the trie maintains the following information:
 During the search, we start from the root node of the trie, find the index array corresponding to each prefix, and store it in the result array. Finally, we only need to map each index in the index array to the `products` array.
 
 The time complexity is $O(L \times \log n + m)$, and the space complexity is $O(L)$. Where $L$ is the sum of the lengths of all strings in the `products` array, and $n$ and $m$ are the lengths of the `products` array and `searchWord`, respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -299,9 +272,3 @@ func suggestedProducts(products []string, searchWord string) (ans [][]string) {
 	return
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

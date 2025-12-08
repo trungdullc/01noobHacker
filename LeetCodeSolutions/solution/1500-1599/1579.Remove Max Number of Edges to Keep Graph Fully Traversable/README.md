@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1500-1599/1579.Remove%20Max%20Number%20of%20Edges%20to%20Keep%20Graph%20Fully%20Traversable/README_EN.md
-rating: 2131
-source: Weekly Contest 205 Q4
-tags:
-    - Union Find
-    - Graph
----
-
-<!-- problem:start -->
-
-# [1579. Remove Max Number of Edges to Keep Graph Fully Traversable](https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable)
-
-[中文文档](/solution/1500-1599/1579.Remove%20Max%20Number%20of%20Edges%20to%20Keep%20Graph%20Fully%20Traversable/README.md)
+# [1579. Remove Max Number of Edges to Keep Graph Fully Traversable](https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>Alice and Bob have an undirected graph of <code>n</code> nodes and three types of edges:</p>
 
@@ -75,16 +58,9 @@ tags:
 	<li>All tuples <code>(type<sub>i</sub>, u<sub>i</sub>, v<sub>i</sub>)</code> are distinct.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
 
-<!-- solution:start -->
-
 ### Solution 1
-
-<!-- tabs:start -->
-
 #### Python3
 
 ```python
@@ -339,9 +315,3 @@ func maxNumEdgesToRemove(n int, edges [][]int) (ans int) {
 	return -1
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

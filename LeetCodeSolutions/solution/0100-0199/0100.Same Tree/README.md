@@ -1,4 +1,4 @@
-# [100. Same Tree](https://leetcode.com/problems/same-tree)
+# [100. Same Tree](https://leetcode.com/problems/same-tree) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -46,8 +46,211 @@ First, determine whether the root nodes of the two binary trees are the same. If
 
 The time complexity is $O(\min(m, n))$, and the space complexity is $O(\min(m, n))$. Here, $m$ and $n$ are the number of nodes in the two binary trees, respectively. The space complexity mainly depends on the number of layers of recursive calls, which will not exceed the number of nodes in the smaller binary tree.
 
-#### Du Solution: Python3
+#### Du Solution1
+```python
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    """
+    TreeNode Definition
+    """
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(arr: List[Optional[int]]) -> Optional[TreeNode]:
+    """
+    Helper Fx: Convert array to Binary Tree
+    """
+    if not arr:
+        return None
+
+    root = TreeNode(arr[0])
+    queue = deque([root])
+    i = 1
+
+    while queue and i < len(arr):
+        node = queue.popleft()
+
+        # left child
+        if arr[i] is not None:
+            node.left = TreeNode(arr[i])
+            queue.append(node.left)
+        i += 1
+        if i >= len(arr):
+            break
+
+        # right child
+        if arr[i] is not None:
+            node.right = TreeNode(arr[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Depth First Search
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if not p and not q:
+            return True
+        if p and q and p.val == q.val:
+            return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)    # Recursive
+        return False
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isSameTree(buildTree([1,2,3]), buildTree([1,2,3])))
+    print(sol.isSameTree(buildTree([1,2]), buildTree([1,None,2])))
+    print(sol.isSameTree(buildTree([1,2,1]), buildTree([1,1,2]))) 
 ```
+
+#### Du Solution2
+```python
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val = 0, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(arr: List[Optional[int]]) -> Optional[TreeNode]:
+    if not arr:
+        return None
+
+    root = TreeNode(arr[0])
+    queue = deque([root])
+    i = 1
+
+    while queue and i < len(arr):
+        node = queue.popleft()
+
+        # left child
+        if arr[i] is not None:
+            node.left = TreeNode(arr[i])
+            queue.append(node.left)
+        i += 1
+        if i >= len(arr):
+            break
+
+        # right child
+        if arr[i] is not None:
+            node.right = TreeNode(arr[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Iterative Solution with Depth First Search
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        stack = [(p, q)]
+
+        while stack:
+            node1, node2 = stack.pop()
+
+            if not node1 and not node2:
+                continue
+            if not node1 or not node2 or node1.val != node2.val:
+                return False
+
+            stack.append((node1.right, node2.right))
+            stack.append((node1.left, node2.left))
+
+        return True
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isSameTree(buildTree([1,2,3]), buildTree([1,2,3])))
+    print(sol.isSameTree(buildTree([1,2]), buildTree([1,None,2])))
+    print(sol.isSameTree(buildTree([1,2,1]), buildTree([1,1,2]))) 
+```
+
+#### Du Solution3
+```python
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val = 0, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(arr: List[Optional[int]]) -> Optional[TreeNode]:
+    if not arr:
+        return None
+
+    root = TreeNode(arr[0])
+    queue = deque([root])
+    i = 1
+
+    while queue and i < len(arr):
+        node = queue.popleft()
+
+        # left child
+        if arr[i] is not None:
+            node.left = TreeNode(arr[i])
+            queue.append(node.left)
+        i += 1
+        if i >= len(arr):
+            break
+
+        # right child
+        if arr[i] is not None:
+            node.right = TreeNode(arr[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Breadth First Search
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        q1 = deque([p])
+        q2 = deque([q])
+
+        while q1 and q2:
+            for _ in range(len(q1)):
+                nodeP = q1.popleft()
+                nodeQ = q2.popleft()
+
+                if nodeP is None and nodeQ is None:
+                    continue
+                if nodeP is None or nodeQ is None or nodeP.val != nodeQ.val:
+                    return False
+
+                q1.append(nodeP.left)
+                q1.append(nodeP.right)
+                q2.append(nodeQ.left)
+                q2.append(nodeQ.right)
+
+        return True
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isSameTree(buildTree([1,2,3]), buildTree([1,2,3])))
+    print(sol.isSameTree(buildTree([1,2]), buildTree([1,None,2])))
+    print(sol.isSameTree(buildTree([1,2,1]), buildTree([1,1,2]))) 
+```
+
+#### Python3
+```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
@@ -61,24 +264,12 @@ class TreeNode:
       self.right = right
 
 class Solution:
-   """
-   Solution class to check if two binary trees are the same.
-   """
-
    def isSameTree(self, p, q):
-      """
-      Return True if two binary trees are identical.
-      :type p: TreeNode
-      :type q: TreeNode
-      :rtype: bool
-      """
       if not p and not q:
          return True
       if not p or not q:
          return False
-      return (p.val == q.val and
-              self.isSameTree(p.left, q.left) and
-              self.isSameTree(p.right, q.right))
+      return (p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
 
 if __name__ == "__main__":
    sol = Solution()
@@ -113,24 +304,6 @@ False
 real    0m0.022s
 user    0m0.018s
 sys     0m0.005s
-```
-
-#### Python3
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        if p == q:
-            return True
-        if p is None or q is None or p.val != q.val:
-            return False
-        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 ```
 
 #### Java

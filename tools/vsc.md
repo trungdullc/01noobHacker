@@ -37,7 +37,7 @@ Description: Code Editor
       <td><kbd>Option</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd></td>
     </tr>
     <tr>
-      <td>Comment/Uncomment Line</td>
+      <td>Comment/Uncomment Line ❤️</td>
       <td><kbd>Ctrl</kbd> + <kbd>/</kbd></td>
       <td><kbd>Cmd</kbd> + <kbd>/</kbd></td>
     </tr>
@@ -67,7 +67,7 @@ Description: Code Editor
       <td><kbd>F12</kbd></td>
     </tr>
     <tr>
-      <td>Rename Symbol</td>
+      <td>Rename Symbol ❤️</td>
       <td><kbd>F2</kbd></td>
       <td><kbd>F2</kbd></td>
     </tr>

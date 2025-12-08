@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0921.Minimum%20Add%20to%20Make%20Parentheses%20Valid/README_EN.md
-tags:
-    - Stack
-    - Greedy
-    - String
----
-
-<!-- problem:start -->
-
-# [921. Minimum Add to Make Parentheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid)
-
-[中文文档](/solution/0900-0999/0921.Minimum%20Add%20to%20Make%20Parentheses%20Valid/README.md)
+# [921. Minimum Add to Make Parentheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
-
 <p>A parentheses string is valid if and only if:</p>
 
 <ul>
@@ -57,11 +40,7 @@ tags:
 	<li><code>s[i]</code> is either <code>&#39;(&#39;</code> or <code>&#39;)&#39;</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Greedy + Stack
 
@@ -75,8 +54,6 @@ Iterate through each character $c$ in the string $s$:
 After the iteration ends, the number of remaining elements in the stack is the number of parentheses that need to be added.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$, where $n$ is the length of the string $s$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -160,12 +137,6 @@ function minAddToMakeValid(s: string): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Greedy + Counting
 
 Solution 1 uses a stack to implement parenthesis matching, but we can also directly implement it through counting.
@@ -180,8 +151,6 @@ Iterate through each character $c$ in the string $s$:
 After the iteration ends, add the value of `cnt` to `ans`, which is the answer.
 
 The time complexity is $O(n)$, and the space complexity is $O(1)$, where $n$ is the length of the string $s$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -280,15 +249,7 @@ function minAddToMakeValid(s: string): number {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 3: Replace + recursion
-
-<!-- tabs:start -->
 
 #### TypeScript
 
@@ -314,9 +275,3 @@ var minAddToMakeValid = function (s) {
     return s.length === l ? l : minAddToMakeValid(s);
 };
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

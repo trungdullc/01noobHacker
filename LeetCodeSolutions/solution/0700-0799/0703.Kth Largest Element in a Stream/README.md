@@ -1,4 +1,4 @@
-# [703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream)
+# [703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -74,85 +74,125 @@ In this way, the elements in $\textit{minQ}$ are the largest $k$ elements in the
 
 The space complexity is $O(k)$.
 
-#### Du Solution: Python3
+#### Du Solution1
 ```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
-
-import heapq
+from typing import List
 
 class KthLargest:
-   """
-   Class to maintain the kth largest element in a stream using a min-heap.
-   """
-   def __init__(self, k: int, nums):
-      self.k = k
-      self.heap = nums
-      heapq.heapify(self.heap)
-      while len(self.heap) > k:
-         heapq.heappop(self.heap)
-
-   def add(self, val: int) -> int:
-      if len(self.heap) < self.k:
-         heapq.heappush(self.heap, val)
-      elif val > self.heap[0]:
-         heapq.heappushpop(self.heap, val)
-      return self.heap[0]
-
-def main():
-   kthLargest1 = KthLargest(3, [4, 5, 8, 2])
-   print(kthLargest1.add(3))
-   print(kthLargest1.add(5))
-   print(kthLargest1.add(10))
-   print(kthLargest1.add(9))
-   print(kthLargest1.add(4))
-
-   kthLargest2 = KthLargest(4, [7, 7, 7, 7, 8, 3])
-   print(kthLargest2.add(2))
-   print(kthLargest2.add(10))
-   print(kthLargest2.add(9))
-   print(kthLargest2.add(9))
-
-if __name__ == "__main__":
-   main()
-
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-4
-5
-5
-8
-8
-7
-7
-7
-8
-
-real    0m0.023s
-user    0m0.019s
-sys     0m0.004s
-```
-
-#### Python3
-
-```python
-class KthLargest:
-
+    """
+    Sorting Solution
+    Runtime Complexity: O(m∗nlogn)          # n is the current size of the array
+    Space Complexity: O(m)                  # m is the number of calls made to add() 
+    """
     def __init__(self, k: int, nums: List[int]):
         self.k = k
-        self.min_q = []
-        for x in nums:
-            self.add(x)
+        self.arr = nums
 
     def add(self, val: int) -> int:
-        heappush(self.min_q, val)
-        if len(self.min_q) > self.k:
-            heappop(self.min_q)
-        return self.min_q[0]
+        self.arr.append(val)
+        self.arr.sort()
+        return self.arr[len(self.arr) - self.k]
 
+if __name__ == "__main__":
+    # zip(list1, list2) pairs elements together:
+    # zip(["a","b","c"], [1,2,3])
+    # produces:
+    #   ("a", 1)
+    #   ("b", 2)
+    #   ("c", 3)
 
-# Your KthLargest object will be instantiated and called as such:
-# obj = KthLargest(k, nums)
-# param_1 = obj.add(val)
+    commands = ["KthLargest", "add", "add", "add", "add", "add"]
+    inputs = [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+    output = []
+    kth = None
+
+    for cmd, arg in zip(commands, inputs):
+        if cmd == "KthLargest":
+            k, nums = arg
+            kth = KthLargest(k, nums)
+            output.append(None)
+        else:
+            val = arg[0]
+            output.append(kth.add(val))
+
+    print("Output:", output)
+    print()
+
+    commands = ["KthLargest", "add", "add", "add", "add"]
+    inputs = [[4, [7, 7, 7, 7, 8, 3]], [2], [10], [9], [9]]
+    output = []
+    kth = None
+
+    for cmd, arg in zip(commands, inputs):
+        if cmd == "KthLargest":
+            k, nums = arg
+            kth = KthLargest(k, nums)
+            output.append(None)
+        else:
+            val = arg[0]
+            output.append(kth.add(val))
+
+    print("Output:", output)
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+import heapq
+from typing import List
+
+class KthLargest:
+    """
+    Min-Heap Solution
+    Runtime Complexity: O(m∗logk)           # m is the number of calls made to add()
+    Space Complexity: O(k)
+    """
+    def __init__(self, k: int, nums: List[int]):
+        self.minHeap, self.k = nums, k
+        heapq.heapify(self.minHeap)
+        while len(self.minHeap) > k:
+            heapq.heappop(self.minHeap)
+
+    def add(self, val: int) -> int:
+        heapq.heappush(self.minHeap, val)
+        if len(self.minHeap) > self.k:
+            heapq.heappop(self.minHeap)
+        return self.minHeap[0]
+
+if __name__ == "__main__":
+    commands = ["KthLargest", "add", "add", "add", "add", "add"]
+    inputs = [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+    output = []
+    kth = None
+
+    for cmd, arg in zip(commands, inputs):
+        if cmd == "KthLargest":
+            k, nums = arg
+            kth = KthLargest(k, nums)
+            output.append(None)
+        else:
+            val = arg[0]
+            output.append(kth.add(val))
+
+    print("Output:", output)
+    print()
+
+    commands = ["KthLargest", "add", "add", "add", "add"]
+    inputs = [[4, [7, 7, 7, 7, 8, 3]], [2], [10], [9], [9]]
+    output = []
+    kth = None
+
+    for cmd, arg in zip(commands, inputs):
+        if cmd == "KthLargest":
+            k, nums = arg
+            kth = KthLargest(k, nums)
+            output.append(None)
+        else:
+            val = arg[0]
+            output.append(kth.add(val))
+
+    print("Output:", output)
 ```
 
 #### Java

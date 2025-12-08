@@ -1,4 +1,4 @@
-# [704. Binary Search](https://leetcode.com/problems/binary-search)
+# [704. Binary Search](https://leetcode.com/problems/binary-search) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -48,45 +48,49 @@ The loop ends when $l<r$, at this point $\textit{nums}[l]$ is the target value w
 
 The time complexity is $O(\log n)$, where $n$ is the length of the array $\textit{nums}$. The space complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Du Solution1
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class Solution:
    """
-   A class to perform binary search on a sorted array.
+   A class to perform binary search on a sorted array
+   Iterative Approach: 2 Pointers and a middle variable
+   Runtime Complexity: O(logn)
+   Space Complexity: O(1)
    """
 
-   def search(self, nums: list[int], target: int) -> int:
+   def binarySearch(self, nums: list[int], target: int) -> int:
       """
-      Searches for the target in a sorted array using binary search.
+      Searches for the target in a sorted array using binary search
       
       Args:
-         nums (list[int]): Sorted list of integers.
-         target (int): The integer to search for.
+         nums (list[int]): Sorted list of integers
+         target (int): The integer to search for
       
       Returns:
-         int: The index of target if found; otherwise, -1.
+         int: The index of target if found; otherwise, -1
       """
       left, right = 0, len(nums) - 1
-
-      while left <= right:
-         mid = left + (right - left) // 2
-         if nums[mid] == target:
-            return mid
-         elif nums[mid] < target:
-            left = mid + 1
-         else:
-            right = mid - 1
+                                                            # Note: left not always 0
+      while left <= right:                                  # if left > right: return -1
+         middle = left + (right - left) // 2                # middle = left + (right - left) >> 1
+         # middle = (left + right) // 2                     # Important: can lead to overflow
+         if nums[middle] == target:
+            return middle                                   # return index not value of where found
+         # reassign left or right pointer
+         elif nums[middle] < target:                        # if target > reassign left
+            left = middle + 1
+         else:                                              # if target < reassign right
+            right = middle - 1
 
       return -1
 
 if __name__ == "__main__":
    sol = Solution()
-
-   print(sol.search([-1,0,3,5,9,12], 9))
-   print(sol.search([-1,0,3,5,9,12], 2))
+   print(sol.binarySearch([-1,0,3,5,9,12], 9))
+   print(sol.binarySearch([-1,0,3,5,9,12], 2))
 
 AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
 4
@@ -97,19 +101,20 @@ user    0m0.024s
 sys     0m0.005s
 ```
 
-#### Python3
-
+#### Du Solution Cheat (Note: never going remember this)
 ```python
+#!/usr/bin/env python3
+from bisect import bisect_left
+
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        l, r = 0, len(nums) - 1
-        while l < r:
-            mid = (l + r) >> 1
-            if nums[mid] >= target:
-                r = mid
-            else:
-                l = mid + 1
-        return l if nums[l] == target else -1
+   def binarySearch(self, nums: list[int], target: int) -> int:
+        index = bisect_left(nums, target)
+        return index if index < len(nums) and nums[index] == target else -1
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.binarySearch([-1,0,3,5,9,12], 9))
+   print(sol.binarySearch([-1,0,3,5,9,12], 2))
 ```
 
 #### Java

@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/2400-2499/2416.Sum%20of%20Prefix%20Scores%20of%20Strings/README_EN.md
-rating: 1725
-source: Weekly Contest 311 Q4
-tags:
-    - Trie
-    - Array
-    - String
-    - Counting
----
-
-<!-- problem:start -->
-
-# [2416. Sum of Prefix Scores of Strings](https://leetcode.com/problems/sum-of-prefix-scores-of-strings)
-
-[中文文档](/solution/2400-2499/2416.Sum%20of%20Prefix%20Scores%20of%20Strings/README.md)
+# [2416. Sum of Prefix Scores of Strings](https://leetcode.com/problems/sum-of-prefix-scores-of-strings) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array <code>words</code> of size <code>n</code> consisting of <strong>non-empty</strong> strings.</p>
 
@@ -73,11 +54,7 @@ Each prefix has a score of one, so the total is answer[0] = 1 + 1 + 1 + 1 = 4.
 	<li><code>words[i]</code> consists of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Prefix Tree
 
@@ -96,8 +73,6 @@ Define two methods for the prefix tree:
 We traverse all strings, inserting each string into the prefix tree. Then we traverse all strings again, calling the `search` method for each string and summing up the occurrence counts of each prefix.
 
 Time complexity is $O(L)$, and space complexity is $O(L)$, where $L$ is the total length of all strings.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -383,9 +358,3 @@ var sumPrefixScores = function (words) {
     return words.map(w => trie.search(w));
 };
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

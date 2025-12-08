@@ -1,4 +1,4 @@
-# [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate)
+# [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 <p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
@@ -59,58 +59,67 @@ Otherwise, when the traversal ends, we return `false`.
 
 The time complexity is $O(n \times \log n)$, where $n$ is the length of the array `nums`.
 
-#### Du Solution: Cheat
+#### Du Solution 1: Brute Force
 ```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/python3
-from typing import List
+AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py          
+#!/usr/bin/python3                                              #!/usr/bin/python3
+from typing import List                                         from typing import List
 
-class Solution:
-   def containsDuplicate(self, nums: List[int]) -> bool:
-      """
-      Compare length of original array vs set that removes duplicates
-      """
-      return len(nums) != len(set(nums)) 🧠
-
+class Solution:                                                 class Solution:
+   """                                                             """
+   Brute Force solution with 2 pointers, i,j                       Learning __init__
+   Runtime Complexity: O(n²)                                       """
+   Space Complexity: O(1)
+   """                                                          def __init__(self, nums: List[int]):
+                                                                   self.nums = nums
+   def containsDuplicate(self,nums: List[int]) -> bool:
+      for ptrI in range(len(nums)):                             def containsDuplicate(self,nums: List[int]) -> bool:
+         for ptrJ in range(ptrI + 1, len(nums)):                   for ptrI in range(len(nums)):
+             if nums[ptrI] == nums[ptrJ]:                             for ptrJ in range(ptrI + 1, len(nums)):
+                 return True                                             if nums[ptrI] == nums[ptrJ]:
+      return False                                                          return True
+                                                                   return False
 def main() -> None:
-   sol = Solution()
-   print(sol.containsDuplicate([1, 2, 3, 1]))
-   print(sol.containsDuplicate([1, 2, 3, 4]))
-   print(sol.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
-
-if __name__ == "__main__":
-   main()
-
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
+   sol = Solution()                                             def main() -> None:
+   print(sol.containsDuplicate([1,2,3,1]))                         sol = Solution([1,2,3,1])
+   print(sol.containsDuplicate([1,2,3,4]))                         print(sol.containsDuplicate())
+   print(sol.containsDuplicate([1,1,1,3,3,4,3,2,4,2]))             sol = Solution([1,2,3,4])
+                                                                   print(sol.containsDuplicate())
+if __name__ == "__main__":                                         sol = Solution([1,1,1,3,3,4,3,2,4,2])
+   main()                                                          print(sol.containsDuplicate())
+    
+AsianHacker-picoctf@webshell:/tmp$ chmod u+x ./pythonScript.py  if __name__ == "__main__": 
+AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py               main()
 True
 False
 True
-
-real    0m0.073s
-user    0m0.023s
-sys     0m0.005s
 ```
 
-#### Du Solution
+#### Du Solution 2
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
+from typing import List
+
 class Solution:
    """
-   Brute Force Solution for the Contains Duplicate problem.
+   Brute Force Solution using a set
+   Runtime Complexity: O(n)
+   Space Complexity: O(n)                       # due to set, list, dict
    """
-   def containsDuplicate(self, nums: list[int]) -> bool:
+   def containsDuplicate(self, nums: List[int]) -> bool:
       """
-      Check if any value appears at least twice in the array.
+      Check if any value appears at least twice in the array
       
       Args:
-         nums (list[int]): Input array.
+         nums (list[int]): Input array
       
       Returns:
-         bool: True if any duplicates exist, False otherwise.
+         bool: True if any duplicates exist, False otherwise
       """
-      seen: set[int] = set()            # set() only way to create () is tuple
+      seen: set[int] = set()            # set() only way to create, since () is tuple
 
       for num in nums:
          if num in seen:
@@ -134,35 +143,38 @@ user    0m0.019s
 sys     0m0.004s
 ```
 
-#### Du Solution: Brute Force
+#### Du Solution: Cheat
 ```python
-AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List
 
 class Solution:
-   def containsDuplicate(self,nums: List[int]) -> bool:
-      for number in range(len(nums)):
-         for pointer in range(number + 1, len(nums)):
-             if nums[number] == nums[pointer]:
-                 return True
-      return False
+   def containsDuplicate(self, nums: List[int]) -> bool:
+      """
+      Compare length of original array vs set that removes duplicates
+      Runtime Complexity: O(n)
+      Space Complexity: O(n)                    # due to sort used in set(), use  nums.sort() for inplace sort O(1)
+      """
+      return len(nums) != len(set(nums)) 🧠
 
 def main() -> None:
    sol = Solution()
-   print(sol.containsDuplicate([1,2,3,1]))
-   print(sol.containsDuplicate([1,2,3,4]))
-   print(sol.containsDuplicate([1,1,1,3,3,4,3,2,4,2]))
+   print(sol.containsDuplicate([1, 2, 3, 1]))
+   print(sol.containsDuplicate([1, 2, 3, 4]))
+   print(sol.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
 
 if __name__ == "__main__":
    main()
 
-AsianHacker-picoctf@webshell:/tmp$ chmod u+x ./pythonScript.py 
-AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
+AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
 True
 False
 True
+
+real    0m0.073s
+user    0m0.023s
+sys     0m0.005s
 ```
 
 #### JavaScript

@@ -364,6 +364,7 @@ Souce: https://try2hack.me/<br>
 - Operating System Command Line Codes
     - [Linux (BASH)](./tools/bash.md)
     - [Windows (PowerShell)](./tools/powershell.md)
+    - [Windows Batch scripting used w/ .bat](./tools/windowScripting.md)
     - [Python3](./tools/python3.md) ⭐⭐⭐⭐⭐
     - [JavaScript](./tools/javascript.md)
     - [Flipper Zero: JS](./tools/flipperzero.md)
@@ -829,6 +830,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/html
 →
 ⌘
 ⚠️
+²
+
+⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 TO Finish:
 [Behemoth0102](./overthewire/Behemoth0102.md)<br>

@@ -1,4 +1,4 @@
-# [269. Alien Dictionary 🔒](https://leetcode.com/problems/alien-dictionary)
+# [269. Alien Dictionary 🔒](https://leetcode.com/problems/alien-dictionary) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 

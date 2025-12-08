@@ -1,26 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0505.The%20Maze%20II/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Graph
-    - Array
-    - Matrix
-    - Shortest Path
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
-# [505. The Maze II 🔒](https://leetcode.com/problems/the-maze-ii)
-
-[中文文档](/solution/0500-0599/0505.The%20Maze%20II/README.md)
+# [505. The Maze II 🔒](https://leetcode.com/problems/the-maze-ii) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>There is a ball in a <code>maze</code> with empty spaces (represented as <code>0</code>) and walls (represented as <code>1</code>). The ball can go through the empty spaces by rolling <strong>up, down, left or right</strong>, but it won&#39;t stop rolling until hitting a wall. When the ball stops, it could choose the next direction.</p>
 
@@ -71,15 +51,8 @@ The length of the path is 1 + 1 + 3 + 1 + 2 + 2 + 2 = 12.
 	<li>The maze contains <strong>at least 2 empty spaces</strong>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
-
 ### Solution 1
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -257,9 +230,3 @@ function shortestDistance(maze: number[][], start: number[], destination: number
     return dist[di][dj] === Infinity ? -1 : dist[di][dj];
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

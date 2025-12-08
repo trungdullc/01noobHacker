@@ -1,4 +1,4 @@
-# [136. Single Number](https://leetcode.com/problems/single-number)
+# [136. Single Number](https://leetcode.com/problems/single-number) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -53,48 +53,146 @@ Performing XOR operation on all elements in the array will result in the number 
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Du Solution1
 ```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
+from typing import List
 
 class Solution:
-   """
-   Solution for the Single Number problem.
-   """
-   def singleNumber(self, nums: list[int]) -> int:
-      """
-      Find the element that appears only once in the array.
-      
-      Args:
-         nums (list[int]): List of integers where every element appears twice except one.
-      
-      Returns:
-         int: The single number that appears only once.
-      """
-      result = 0
-      for num in nums:
-         result ^= num
-      return result
+    """
+    Brute Force
+    Runtime Complexity: O(n²)
+    Space Complexity: O(1)
+    """
+  def singleNumber(self, nums: List[int]) -> int:
+        for i in range(len(nums)):
+            found_duplicate = False
+            for j in range(len(nums)):
+                if nums[i] == nums[j] and i != j:       # When 2nd iteration need check left as well
+                    found_duplicate = True
+                    break
+            if not found_duplicate:                     # else:     (use w/o found_duplicate flag but confusing C/C++)                   
+                return nums[i]
 
 if __name__ == "__main__":
-   sol = Solution()
-   print(sol.singleNumber([2,2,1]))
-   print(sol.singleNumber([4,1,2,1,2]))
-   print(sol.singleNumber([1]))
-
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-1
-4
-1
-
-real    0m0.022s
-user    0m0.018s
-sys     0m0.004s
+    sol = Solution()
+    print(sol.singleNumber([2,2,1]))    
+    print(sol.singleNumber([4,1,2,1,2]))
+    print(sol.singleNumber([1]))        
 ```
 
-#### Du Solution: Python3
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import List
 
+class Solution:
+    """
+    Sorting Solution
+    Runtime Complexity: O(nlogn)
+    Space Complexity: O(n)
+    """
+    def singleNumber(self, nums: List[int]) -> int:
+        nums.sort()                         # Important: Sort so identical next and need skip by 2
+
+        i = 0                               # for i in range(0, len(nums)-1, 2):
+        while i < len(nums) - 1:            #     if nums[i] != nums[i + 1]:
+            if nums[i] == nums[i + 1]:      #         return nums[i]
+                i += 2
+            else:
+                return nums[i]
+        return nums[-1]                     # unique number is at the end
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.singleNumber([2,2,1]))    
+    print(sol.singleNumber([4,1,2,1,2]))
+    print(sol.singleNumber([1]))        
+```
+
+#### Du Solution3
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Hash Map Solution
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def singleNumber(self, nums: List[int]) -> int:
+        seen = {}                                               # seen = dict()
+
+        for num in nums:
+            seen[num] = seen.get(num, 0) + 1                    # Safer and don't need -1 since said so in description
+
+        return [num for num in seen if seen[num] == 1][0]       # Convert num to list then index to get int
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.singleNumber([2,2,1]))    
+    print(sol.singleNumber([4,1,2,1,2]))
+    print(sol.singleNumber([1]))        
+```
+
+#### Du Solution3.5
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Hash Set Solution
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def singleNumber(self, nums: List[int]) -> int:
+        seen = set()                        # dir(set), Important: {} does not mean set
+
+        for num in nums:
+            if num in seen:
+                seen.remove(num)            # remove if duplicate and the single will stay in seen
+            else:
+                seen.add(num)               # {num}
+        return list(seen)[0]                # {num} → [num], since set can't use []
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.singleNumber([2,2,1]))    
+    print(sol.singleNumber([4,1,2,1,2]))
+    print(sol.singleNumber([1]))        
+```
+
+#### Du Solution4
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Bit Manipulation
+        bitwise XOR Property: ^ (Python), ⊕ (Boolean Algebra), +̅  (circuit design)
+        1 ^ 1 = 0 (exclusive means exclude vs bitwise OR would be inclusive)
+        1 ^ 0 = 1
+    Runtime Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    def singleNumber(self, nums: List[int]) -> int:
+        ans = 0
+
+        for num in nums:
+            ans = num ^ ans                             # XOR all numbers and the single one will result
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.singleNumber([2,2,1]))    
+    print(sol.singleNumber([4,1,2,1,2]))
+    print(sol.singleNumber([1]))        
+```
+
+#### Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3

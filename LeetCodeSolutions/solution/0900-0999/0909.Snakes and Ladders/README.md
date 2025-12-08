@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0900-0999/0909.Snakes%20and%20Ladders/README_EN.md
-tags:
-    - Breadth-First Search
-    - Array
-    - Matrix
----
-
-<!-- problem:start -->
-
-# [909. Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders)
-
-[中文文档](/solution/0900-0999/0909.Snakes%20and%20Ladders/README.md)
+# [909. Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an <code>n x n</code> integer matrix <code>board</code> where the cells are labeled from <code>1</code> to <code>n<sup>2</sup></code> in a <a href="https://en.wikipedia.org/wiki/Boustrophedon" target="_blank"><strong>Boustrophedon style</strong></a> starting from the bottom left of the board (i.e. <code>board[n - 1][0]</code>) and alternating direction each row.</p>
 
@@ -76,11 +60,7 @@ This is the lowest possible number of moves to reach the last square, so return 
 	<li>The squares labeled <code>1</code> and <code>n<sup>2</sup></code> are not the starting points of any snake or ladder.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: BFS
 
@@ -95,8 +75,6 @@ If the square corresponding to $y$ has a snake or ladder, we need to move to the
 If we ultimately cannot reach the endpoint, we return $-1$.
 
 The time complexity is $O(n^2)$, and the space complexity is $O(n^2)$. Here, $n$ is the length of the side of the board.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -322,9 +300,3 @@ impl Solution {
     }
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

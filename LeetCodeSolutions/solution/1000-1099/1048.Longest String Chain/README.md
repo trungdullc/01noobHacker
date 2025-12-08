@@ -1,27 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1000-1099/1048.Longest%20String%20Chain/README_EN.md
-rating: 1599
-source: Weekly Contest 137 Q3
-tags:
-    - Array
-    - Hash Table
-    - Two Pointers
-    - String
-    - Dynamic Programming
-    - Sorting
----
-
-<!-- problem:start -->
-
-# [1048. Longest String Chain](https://leetcode.com/problems/longest-string-chain)
-
-[中文文档](/solution/1000-1099/1048.Longest%20String%20Chain/README.md)
+# [1048. Longest String Chain](https://leetcode.com/problems/longest-string-chain) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an array of <code>words</code> where each word consists of lowercase English letters.</p>
 
@@ -70,15 +49,9 @@ tags:
 	<li><code>words[i]</code> only consists of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
 
-<!-- solution:start -->
-
 ### Solution 1
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -257,9 +230,3 @@ class Solution:
             res = max(res, x)
         return res
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

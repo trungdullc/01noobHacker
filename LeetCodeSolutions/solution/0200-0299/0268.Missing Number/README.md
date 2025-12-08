@@ -1,4 +1,4 @@
-# [268. Missing Number](https://leetcode.com/problems/missing-number)
+# [268. Missing Number](https://leetcode.com/problems/missing-number) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -85,7 +85,112 @@ Therefore, we can traverse the array, perform XOR operation between each element
 
 The time complexity is $O(n)$, where $n$ is the length of the array. The space complexity is $O(1)$.
 
-#### Du Solution:
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Sorting Solution
+    Runtime Complexity: O(nlogn)
+    Space Complexity: O(n)
+    """
+    def missingNumber(self, nums: List[int]) -> int:
+        numLength = len(nums)
+        nums.sort()
+
+        for i in range(numLength):
+            if nums[i] != i:
+                return i
+        return numLength
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.missingNumber([3,0,1]))
+    print(sol.missingNumber([0,1]))
+    print(sol.missingNumber([9,6,4,2,3,5,7,0,1]))
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    HashSet Solution
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def missingNumber(self, nums: List[int]) -> int:
+        num_set = set(nums)                 # {3, 0, 1}         # Optional: set, can do with List
+
+        n = len(nums)
+        for i in range(n + 1):                                  # for i in range(len(nums) + 1):
+            if i not in num_set:                                #    if i not in nums:
+                return i                                        #       return i
+        return (n + 1)                                          #    return (len(nums) + 1)
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.missingNumber([3,0,1]))
+    print(sol.missingNumber([0,1]))
+    print(sol.missingNumber([9,6,4,2,3,5,7,0,1]))
+```
+
+#### Du Solution3
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Bitwise XOR Solution
+        a ^ a = 0
+        a ^ 0 = a
+    Runtime Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    def missingNumber(self, nums: List[int]) -> int:
+        xorr = len(nums)
+        for i in range(len(nums)):
+            xorr ^= i ^ nums[i]
+        return xorr
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.missingNumber([3,0,1]))
+    print(sol.missingNumber([0,1]))
+    print(sol.missingNumber([9,6,4,2,3,5,7,0,1]))
+```
+
+#### Du Solution4
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Math Solution
+    Runtime Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    def missingNumber(self, nums: List[int]) -> int:
+        ans = len(nums)
+
+        for i in range(len(nums)):
+            ans += i - nums[i]              # add i and subtract[i] should result in 0
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.missingNumber([3,0,1]))
+    print(sol.missingNumber([0,1]))
+    print(sol.missingNumber([9,6,4,2,3,5,7,0,1]))
+```
+
+#### Python
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
@@ -126,7 +231,7 @@ user    0m0.024s
 sys     0m0.000s
 ```
 
-#### Du Solution: Python3
+#### Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
@@ -162,7 +267,7 @@ user    0m0.024s
 sys     0m0.004s
 ```
 
-#### Du Solution: Python3
+#### Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3

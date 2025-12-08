@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0733.Flood%20Fill/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Array
-    - Matrix
----
-
-<!-- problem:start -->
-
-# [733. Flood Fill](https://leetcode.com/problems/flood-fill)
-
-[中文文档](/solution/0700-0799/0733.Flood%20Fill/README.md)
+# [733. Flood Fill](https://leetcode.com/problems/flood-fill) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an image represented by an <code>m x n</code> grid of integers <code>image</code>, where <code>image[i][j]</code> represents the pixel value of the image. You are also given three integers <code>sr</code>, <code>sc</code>, and <code>color</code>. Your task is to perform a <strong>flood fill</strong> on the image starting from the pixel <code>image[sr][sc]</code>.</p>
 
@@ -73,19 +56,13 @@ tags:
 	<li><code>0 &lt;= sc &lt; n</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS
 
 We denote the initial pixel's color as $\textit{oc}$. If $\textit{oc}$ is not equal to the target color $\textit{color}$, we start a depth-first search from $(\textit{sr}, \textit{sc})$ to change the color of all eligible pixels to the target color.
 
 The time complexity is $O(m \times n)$, and the space complexity is $O(m \times n)$. Here, $m$ and $n$ are the number of rows and columns of the 2D array $\textit{image}$, respectively.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -466,9 +443,3 @@ impl Solution {
     }
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0700-0799/0785.Is%20Graph%20Bipartite/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Graph
----
-
-<!-- problem:start -->
-
-# [785. Is Graph Bipartite](https://leetcode.com/problems/is-graph-bipartite)
-
-[中文文档](/solution/0700-0799/0785.Is%20Graph%20Bipartite/README.md)
+# [785. Is Graph Bipartite](https://leetcode.com/problems/is-graph-bipartite) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>There is an <strong>undirected</strong> graph with <code>n</code> nodes, where each node is numbered between <code>0</code> and <code>n - 1</code>. You are given a 2D array <code>graph</code>, where <code>graph[u]</code> is an array of nodes that node <code>u</code> is adjacent to. More formally, for each <code>v</code> in <code>graph[u]</code>, there is an undirected edge between node <code>u</code> and node <code>v</code>. The graph has the following properties:</p>
 
@@ -60,19 +43,13 @@ tags:
 	<li>If <code>graph[u]</code> contains <code>v</code>, then <code>graph[v]</code> contains <code>u</code>.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Coloring Method to Determine Bipartite Graph
 
 Traverse all nodes for coloring. For example, initially color them white, and use DFS to color the adjacent nodes with another color. If the target color to be colored is different from the color that the node has already been colored, it means that it cannot form a bipartite graph.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Where $n$ is the number of nodes.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -410,9 +387,3 @@ impl Solution {
     }
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

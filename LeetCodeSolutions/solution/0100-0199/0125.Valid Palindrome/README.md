@@ -1,4 +1,4 @@
-# [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome)
+# [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -55,14 +55,47 @@ At the end of the loop, return `true`.
 
 The time complexity is $O(n)$, where $n$ is the length of the string $s$. The space complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Du Solution1
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class Solution:
    """
-   Class to check if a string is a valid palindrome considering only alphanumeric characters and ignoring cases.
+   Brute Force with reversed string
+   Runtime Complexity: O(n)
+   Space Complexity: O(n)
+
+   >>> dir(str)
+   ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+   """
+
+   def isPalindrome(self, s: str) -> bool:
+      """
+      Check if the given string is a palindrome
+      Converts to lowercase and removes all non-alphanumeric characters before checking
+      """
+      filtered = [char.lower() for char in s if char.isalnum()]                 # Important Concept: List comprehension ❤️
+      reversed_filtered = filtered[::-1]                                        # reversed_filtered = list(reversed(filtered))
+      return filtered == reversed_filtered
+
+if __name__ == "__main__":
+   sol = Solution()   
+   print(sol.isPalindrome("A man, a plan, a canal: Panama"))
+   print(sol.isPalindrome("race a car"))
+   print(sol.isPalindrome(" "))
+```
+
+#### Du Solution2
+```python
+AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
+#!/usr/bin/env python3
+
+class Solution:
+   """
+   Brute Force with 2 pointers
+   Runtime Complexity: O(n)
+   Space Complexity: O(1)
    """
 
    def isPalindrome(self, s: str) -> bool:
@@ -74,18 +107,18 @@ class Solution:
       s : str
           Input string to check.
       """
-      filtered = [c.lower() for c in s if c.isalnum()]
+      filtered = [char.lower() for char in s if char.isalnum()]                 # Important Concept: List comprehension ❤️
+
       left, right = 0, len(filtered) - 1
       while left < right:
-         if filtered[left] != filtered[right]:
+         if filtered[left] != filtered[right]:                                  # check if same
             return False
-         left += 1
+         left += 1                                                              # move pointer
          right -= 1
       return True
 
 if __name__ == "__main__":
-   sol = Solution()
-   
+   sol = Solution()   
    print(sol.isPalindrome("A man, a plan, a canal: Panama"))
    print(sol.isPalindrome("race a car"))
    print(sol.isPalindrome(" "))
@@ -98,32 +131,6 @@ True
 real    0m0.021s
 user    0m0.013s
 sys     0m0.009s
-```
-
-#### Du Solution: Python3
-```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/env python3
-
-class Solution:
-   def isPalindrome(self, s: str) -> bool:
-      """
-      Check if the given string is a palindrome.
-      Converts to lowercase and removes all non-alphanumeric characters before checking.
-      """
-      cleaned = [ch.lower() for ch in s if ch.isalnum()]   # keep only letters and digits
-      return cleaned == cleaned[::-1]                      # compare with reversed version
-
-if __name__ == "__main__":
-   sol = Solution()
-   print(sol.isPalindrome("A man, a plan, a canal: Panama"))
-   print(sol.isPalindrome("race a car"))
-   print(sol.isPalindrome(" "))
-
-AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py 
-True
-False
-True
 ```
 
 #### Python3

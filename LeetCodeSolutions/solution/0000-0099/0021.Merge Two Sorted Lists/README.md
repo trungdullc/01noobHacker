@@ -1,4 +1,4 @@
-# [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists)
+# [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) ⭐⭐⭐⭐⭐
 
 ## Description
 
@@ -50,34 +50,167 @@ First, we judge whether the linked lists $l_1$ and $l_2$ are empty. If one of th
 
 The time complexity is $O(m + n)$, and the space complexity is $O(m + n)$. Here, $m$ and $n$ are the lengths of the two linked lists respectively.
 
-#### Du Solution: Python3
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+from typing import Optional
+
+class ListNode:
+    """
+    Definition for singly-linked list
+    """
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+
+def buildList(arr):
+    """
+    build a linked list given an array/list
+    """
+    if not arr:
+        return None
+
+    headPtr = ListNode(arr[0])                      # headPtr not move
+    currPtr = headPtr                               # currPtr moves
+
+    for x in arr[1:]:
+        currPtr.next = ListNode(x)
+        currPtr = currPtr.next
+    return headPtr
+
+def printList(head):
+    """
+    Helper Fx: print linked list
+    """
+    result = []
+
+    while head:
+        result.append(head.val)
+        head = head.next                            # moves head pointer
+    print(result)
+
+class Solution:
+    """
+    Merge 2 Sorted List Recursive
+    Runtime Complexity: O(m + n)
+    Space Complexity: O(m + n)
+    """
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        # Base Case: If 1 list is empty, return other
+        if list1 is None:
+            return list2
+        if list2 is None:
+            return list1
+
+        # Choose smaller head
+        if list1.val <= list2.val:
+            list1.next = self.mergeTwoLists(list1.next, list2)      # Recursion
+            return list1
+        else:
+            list2.next = self.mergeTwoLists(list1, list2.next)      # Recursion
+            return list2
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    l1, l2 = buildList([1, 2, 4]), buildList([1, 3, 4]) 
+    printList(sol.mergeTwoLists(l1, l2))
+
+    l3, l4 = buildList([]), buildList([])
+    printList(sol.mergeTwoLists(l3, l4))
+
+    l5, l6 = buildList([]), buildList([0])
+    printList(sol.mergeTwoLists(l5, l6))
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import Optional
+
+class ListNode:
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+
+def buildList(arr):
+    if not arr:
+        return None
+
+    headPtr = ListNode(arr[0])
+    currPtr = headPtr
+
+    for x in arr[1:]:
+        currPtr.next = ListNode(x)
+        currPtr = currPtr.next
+    return headPtr
+
+def printList(head):
+    result = []
+
+    while head:
+        result.append(head.val)
+        head = head.next
+    print(result)
+
+class Solution:
+    """
+    Iterative Solution using a dummyPtr and currPtr
+    Runtime Complexity: O(m + n)
+    Space Complexity: O(1)
+    """
+    def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
+        dummyPtr = currPtr = ListNode()             # dummyPtr stays on ListNode[0:None]
+
+        while list1 and list2:
+            if list1.val < list2.val:               # if list1.value smaller
+                currPtr.next = list1                # selects lower ListNode
+                list1 = list1.next                  # reassign list1
+            else:
+                currPtr.next = list2
+                list2 = list2.next
+            currPtr = currPtr.next                  # reassign nodePtr
+
+        currPtr.next = list1 or list2               # if list1 is not empty chain it else chain list2
+
+        return dummyPtr.next                        # return dummyPtr.next since it first is O:ListNode(list1)
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    l1, l2 = buildList([1, 2, 4]), buildList([1, 3, 4]) 
+    printList(sol.mergeTwoLists(l1, l2))
+
+    l3, l4 = buildList([]), buildList([])
+    printList(sol.mergeTwoLists(l3, l4))
+
+    l5, l6 = buildList([]), buildList([0])
+    printList(sol.mergeTwoLists(l5, l6))
+```
+
+#### Du Solution2
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
-# ListNode is given
 class ListNode:
-   """
-   Definition for a singly-linked list node.
-   """
-   def __init__(self, val=0, next=None):
+   def __init__(self, val = 0, next = None):
       self.val = val
       self.next = next
 
 class Solution:
    """
-   Solution class to merge two sorted linked lists.
+   Iterative Solution using a dummyPtr and currPtr
+   Runtime Complexity: O(m + n)
+   Space Complexity: O(1)
    """
-
    def mergeTwoLists(self, list1, list2):
       """
-      Merge two sorted linked lists and return the head of the merged list.
-      :type list1: ListNode
-      :type list2: ListNode
-      :rtype: ListNode
+      Merge two sorted linked lists and return the head of the merged list
       """
       dummy = ListNode(0)
       current = dummy
+
       while list1 and list2:
          if list1.val <= list2.val:
             current.next = list1
@@ -91,7 +224,7 @@ class Solution:
 
 def list_to_nodes(lst):
    """
-   Helper to convert a Python list to a linked list.
+   Helper to convert a Python list to a linked list
    """
    dummy = ListNode(0)
    current = dummy
@@ -102,7 +235,7 @@ def list_to_nodes(lst):
 
 def nodes_to_list(head):
    """
-   Helper to convert a linked list to a Python list.
+   Helper to convert a linked list to a Python list
    """
    result = []
    while head:
@@ -124,78 +257,6 @@ AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py
 real    0m0.023s
 user    0m0.015s
 sys     0m0.008s
-```
-
-#### Du Solution: Python3
-```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/env python3
-
-class Solution:
-   """
-   Solution class to merge two sorted lists.
-   """
-
-   def mergeTwoLists(self, list1, list2):
-      """
-      Merge two sorted lists into one sorted list.
-      :type list1: list[int]
-      :type list2: list[int]
-      :rtype: list[int]
-      """
-      merged = []
-      i, j = 0, 0
-      while i < len(list1) and j < len(list2):
-         if list1[i] <= list2[j]:
-            merged.append(list1[i])
-            i += 1
-         else:
-            merged.append(list2[j])
-            j += 1
-      while i < len(list1):
-         merged.append(list1[i])
-         i += 1
-      while j < len(list2):
-         merged.append(list2[j])
-         j += 1
-      return merged
-
-if __name__ == "__main__":
-   sol = Solution()
-   print(sol.mergeTwoLists([1,2,4], [1,3,4]))
-   print(sol.mergeTwoLists([], []))
-   print(sol.mergeTwoLists([], [0]))
-
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-[1, 1, 2, 3, 4, 4]
-[]
-[0]
-
-real    0m0.023s
-user    0m0.015s
-sys     0m0.008s
-```
-
-#### Python3
-
-```python
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def mergeTwoLists(
-        self, list1: Optional[ListNode], list2: Optional[ListNode]
-    ) -> Optional[ListNode]:
-        if list1 is None or list2 is None:
-            return list1 or list2
-        if list1.val <= list2.val:
-            list1.next = self.mergeTwoLists(list1.next, list2)
-            return list1
-        else:
-            list2.next = self.mergeTwoLists(list1, list2.next)
-            return list2
 ```
 
 #### Java

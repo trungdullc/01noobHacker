@@ -1,4 +1,4 @@
-# [572. Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree)
+# [572. Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -41,25 +41,197 @@ In the $\textit{isSubtree}(\textit{root}, \textit{subRoot})$ function, we first 
 
 The time complexity is $O(n \times m)$, and the space complexity is $O(n)$. Here, $n$ and $m$ are the number of nodes in the trees $root$ and $subRoot$, respectively.
 
-#### Du Solution: Python3
+#### Du Solution1
+```python
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    """
+    TreeNode Definition
+    """
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(arr: List[Optional[int]]) -> Optional[TreeNode]:
+    """
+    Helper Fx: Convert array to binary tree
+    """
+    if not arr:
+        return None
+
+    root = TreeNode(arr[0])
+    queue = deque([root])
+    i = 1
+
+    while queue and i < len(arr):
+        node = queue.popleft()
+
+        # left child
+        if arr[i] is not None:
+            node.left = TreeNode(arr[i])
+            queue.append(node.left)
+        i += 1
+        if i >= len(arr):
+            break
+
+        # right child
+        if arr[i] is not None:
+            node.right = TreeNode(arr[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Recursive Solution with Depth First Search (DFS)
+        Walk through every node of the main tree (root) using DFS
+        At each node, check if the subtree starting here is exactly the same as subRoot
+    Runtime Complexity: O(m*n)                      # m is the number of nodes in subRoot, n is number of nodes in root
+    Space Complexity: O(m+n)
+    """
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        if not subRoot:
+            return True
+        if not root:
+            return False
+
+        # Check if the current trees match
+        if self.sameTree(root, subRoot):
+            return True
+
+        # Recurse left and right
+        return (self.isSubtree(root.left, subRoot) or
+                self.isSubtree(root.right, subRoot))
+
+    def sameTree(self, a: Optional[TreeNode], b: Optional[TreeNode]) -> bool:
+        if not a and not b:
+            return True
+        if a and b and a.val == b.val:
+            return self.sameTree(a.left, b.left) and self.sameTree(a.right, b.right)
+        return False
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    print(sol.isSubtree(
+        buildTree([3,4,5,1,2]),
+        buildTree([4,1,2])
+    ))
+
+    print(sol.isSubtree(
+        buildTree([3,4,5,1,2,None,None,None,None,0]),
+        buildTree([4,1,2])
+    ))
+```
+
+#### Du Solution2
+```python
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(arr: List[Optional[int]]) -> Optional[TreeNode]:
+    if not arr:
+        return None
+
+    root = TreeNode(arr[0])
+    queue = deque([root])
+    i = 1
+
+    while queue and i < len(arr):
+        node = queue.popleft()
+
+        # left child
+        if arr[i] is not None:
+            node.left = TreeNode(arr[i])
+            queue.append(node.left)
+        i += 1
+        if i >= len(arr):
+            break
+
+        # right child
+        if arr[i] is not None:
+            node.right = TreeNode(arr[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Serialization And Pattern Matching
+        Not comparing trees directly, convert each tree into a string
+        While serializing, include markers for null children (#) and separators ($) so not identical
+        Use linear-time pattern matching algorithm (Z-function or KMP) instead of substring search
+    Runtime complexity: O(m+n)
+    Space complexity: O(m+n)
+    """
+    def serialize(self, root: Optional[TreeNode]) -> str:
+        if root == None:
+            return "$#"
+
+        return ("$" + str(root.val) + self.serialize(root.left) + self.serialize(root.right))
+
+    def z_function(self, s: str) -> list:
+        z = [0] * len(s)
+        l, r, n = 0, 0, len(s)
+        for i in range(1, n):
+            if i <= r:
+                z[i] = min(r - i + 1, z[i - l])
+            while i + z[i] < n and s[z[i]] == s[i + z[i]]:
+                z[i] += 1
+            if i + z[i] - 1 > r:
+                l, r = i, i + z[i] - 1
+        return z
+
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        serialized_root = self.serialize(root)
+        serialized_subRoot = self.serialize(subRoot)
+        combined = serialized_subRoot + "|" + serialized_root
+
+        z_values = self.z_function(combined)
+        sub_len = len(serialized_subRoot)
+
+        for i in range(sub_len + 1, len(combined)):
+            if z_values[i] == sub_len:
+                return True
+        return False
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    print(sol.isSubtree(
+        buildTree([3,4,5,1,2]),
+        buildTree([4,1,2])
+    ))
+
+    print(sol.isSubtree(
+        buildTree([3,4,5,1,2,None,None,None,None,0]),
+        buildTree([4,1,2])
+    ))
+```
+
+#### Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class TreeNode:
-   """
-   Definition for a binary tree node.
-   """
    def __init__(self, val=0, left=None, right=None):
       self.val = val
       self.left = left
       self.right = right
 
 class Solution:
-   """
-   Solution class to check if one binary tree is a subtree of another.
-   """
-
    def isSameTree(self, s, t):
       if not s and not t:
          return True
@@ -70,12 +242,6 @@ class Solution:
               self.isSameTree(s.right, t.right))
 
    def isSubtree(self, root, subRoot):
-      """
-      Return True if subRoot is a subtree of root.
-      :type root: TreeNode
-      :type subRoot: TreeNode
-      :rtype: bool
-      """
       if not root:
          return False
       if self.isSameTree(root, subRoot):
@@ -116,14 +282,7 @@ sys     0m0.004s
 ```
 
 #### Python3
-
 ```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         def same(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:

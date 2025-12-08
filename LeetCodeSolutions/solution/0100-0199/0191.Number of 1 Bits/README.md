@@ -1,4 +1,4 @@
-# [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits)
+# [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -69,88 +69,127 @@ Binary      Decimal = 25
 00000       1 = total 3 ones in binary
 ```
 
-#### Du Solution: Python3
+#### Du Solution1
 ```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class Solution:
-   """
-   Solution for the Number of 1 Bits problem.
-   """
-   def hammingWeight(self, n: int) -> int:
-      """
-      Count the number of set bits (1s) in the binary representation of n.
-      
-      Args:
-         n (int): Positive integer.
-      
-      Returns:
-         int: Number of 1 bits in n.
-      """
-      count = 0
-      while n:
-         n &= n - 1  # Remove the lowest set bit
-         count += 1
-      return count
-
-if __name__ == "__main__":
-   sol = Solution()
-   print(sol.hammingWeight(11))
-   print(sol.hammingWeight(128))
-   print(sol.hammingWeight(2147483645))
- 
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-3
-1
-30
-
-real    0m0.056s
-user    0m0.020s
-sys     0m0.004s
-```
-
-#### Du Solution: Python3
-```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
-#!/usr/bin/python3
-from typing import List
-
-class Solution:
-   def hammingweight(self, n: int) -> int:
-      counter = 0
-      while n:
-         if n & 1 == 1:
-            counter += 1
-         n >> 1
-      return counter
-
-def main()-> None:
-   sol = Solution()
-   print(sol.hammingweight(11))
-   print(sol.hammingweight(128))
-   print(sol.hammingweight(2147483645))
-
-if __name__ == "__main__":
-   main()
-
-AsianHacker-picoctf@webshell:/tmp$ vi pythonScript.py 
-AsianHacker-picoctf@webshell:/tmp$ python3 pythonScript.py 
-3
-1
-30
-```
-
-#### Python3
-
-```python
-class Solution:
+    """
+    Brute Force
+    Runtime Complexity: O(1)
+    Space Complexity: O(1)
+    """
     def hammingWeight(self, n: int) -> int:
         ans = 0
+        # Convert decimal into binary
         while n:
-            n &= n - 1
+            if n%2 == 1:
+                ans += 1                # Count the number of 1's
+            n //= 2                     # Note: Instead of int division could have right shifted by 1
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.hammingWeight(11))
+    print(sol.hammingWeight(128))
+    print(sol.hammingWeight(2147483645))
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    """
+    Bit Mask
+        Right Shift n and mask w/ 1
+    Runtime Complexity: O(1)
+    Space Complexity: O(1)
+    """
+    def hammingWeight(self, n: int) -> int:
+        ans = 0
+
+        while n:
+            ans += 1 if n & 1 else 0
+            n >>= 1
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.hammingWeight(11))                # Output: 3 (binary 1011)
+    print(sol.hammingWeight(128))               # Output: 1 (binary 10000000)
+    print(sol.hammingWeight(2147483645))        # Output: 30
+```
+
+#### Du Solution3
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    """
+    Bit Mask
+        Shift 1 and mask
+    Runtime Complexity: O(1)
+    Space Complexity: O(1)
+    """
+    def hammingWeight(self, n: int) -> int:
+        ans = 0
+
+        for i in range(32):                     # Assuming 32 signed bit number
+            if (1 << i) & n:                    # Check i-th bit is set by moving 1 over and checking
+                ans += 1
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.hammingWeight(11))                # Output: 3 (binary 1011)
+    print(sol.hammingWeight(128))               # Output: 1 (binary 10000000)
+    print(sol.hammingWeight(2147483645))        # Output: 30
+```
+
+#### Du Solution4
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    """
+    Bit Mask (Optimal)
+    Runtime Complexity: O(1)
+    Space Complexity: O(1)
+    """
+    def hammingWeight(self, n: int) -> int:
+        ans = 0
+
+        while n:
+            n &= n - 1                  # Competitive Programming: Remove lowest set bit quicker (try w/ numbers)
             ans += 1
         return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.hammingWeight(11))                # Output: 3 (binary 1011)
+    print(sol.hammingWeight(128))               # Output: 1 (binary 10000000)
+    print(sol.hammingWeight(2147483645))        # Output: 30
+```
+
+#### Du Solution5
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    """
+    Built-In Function
+    Runtime Complexity: O(1)
+    Space Complexity: O(1)
+    """
+    def hammingWeight(self, n: int) -> int:
+        return bin(n).count('1')
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.hammingWeight(11))                # Output: 3 (binary 1011)
+    print(sol.hammingWeight(128))               # Output: 1 (binary 10000000)
+    print(sol.hammingWeight(2147483645))        # Output: 30
 ```
 
 #### Java

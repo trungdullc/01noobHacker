@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0100-0199/0108.Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree/README_EN.md
-tags:
-    - Tree
-    - Binary Search Tree
-    - Array
-    - Divide and Conquer
-    - Binary Tree
----
-
-<!-- problem:start -->
-
-# [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree)
-
-[中文文档](/solution/0100-0199/0108.Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree/README.md)
+# [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>Given an integer array <code>nums</code> where the elements are sorted in <strong>ascending order</strong>, convert <em>it to a </em><span data-keyword="height-balanced"><strong><em>height-balanced</em></strong></span> <em>binary search tree</em>.</p>
 
@@ -49,11 +31,8 @@ tags:
 	<li><code>nums</code> is sorted in a <strong>strictly increasing</strong> order.</li>
 </ul>
 
-<!-- description:end -->
 
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Binary Search + Recursion
 
@@ -70,8 +49,6 @@ The execution process of the function $\textit{dfs}(l, r)$ is as follows:
 The answer is the return value of the function $\textit{dfs}(0, n - 1)$.
 
 The time complexity is $O(n)$, and the space complexity is $O(\log n)$. Here, $n$ is the length of the array $\textit{nums}$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -314,9 +291,3 @@ public class Solution {
     }
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

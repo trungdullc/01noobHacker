@@ -1,25 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1500-1599/1514.Path%20with%20Maximum%20Probability/README_EN.md
-rating: 1846
-source: Weekly Contest 197 Q3
-tags:
-    - Graph
-    - Array
-    - Shortest Path
-    - Heap (Priority Queue)
----
-
-<!-- problem:start -->
-
-# [1514. Path with Maximum Probability](https://leetcode.com/problems/path-with-maximum-probability)
-
-[中文文档](/solution/1500-1599/1514.Path%20with%20Maximum%20Probability/README.md)
+# [1514. Path with Maximum Probability](https://leetcode.com/problems/path-with-maximum-probability) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>You are given an undirected weighted graph of&nbsp;<code>n</code>&nbsp;nodes (0-indexed), represented by an edge list where&nbsp;<code>edges[i] = [a, b]</code>&nbsp;is an undirected edge connecting the nodes&nbsp;<code>a</code>&nbsp;and&nbsp;<code>b</code>&nbsp;with a probability of success of traversing that edge&nbsp;<code>succProb[i]</code>.</p>
 
@@ -71,11 +52,7 @@ tags:
 	<li>There is at most one edge between every two nodes.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Heap-Optimized Dijkstra Algorithm
 
@@ -88,8 +65,6 @@ In each iteration, we take out the node $a$ with the highest probability from $\
 Finally, we obtain the maximum probability from the starting point to the endpoint.
 
 The time complexity is $O(m \times \log m)$, and the space complexity is $O(m)$. Here, $m$ is the number of edges.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -281,9 +256,3 @@ function maxProbability(
     return dist[end_node];
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

@@ -1,22 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0400-0499/0438.Find%20All%20Anagrams%20in%20a%20String/README_EN.md
-tags:
-    - Hash Table
-    - String
-    - Sliding Window
----
-
-<!-- problem:start -->
-
-# [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string)
-
-[中文文档](/solution/0400-0499/0438.Find%20All%20Anagrams%20in%20a%20String/README.md)
+# [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>Given two strings <code>s</code> and <code>p</code>, return an array of all the start indices of <code>p</code>&#39;s <span data-keyword="anagram">anagrams</span> in <code>s</code>. You may return the answer in <strong>any order</strong>.</p>
 
@@ -50,15 +34,9 @@ The substring with start index = 2 is &quot;ab&quot;, which is an anagram of &qu
 	<li><code>s</code> and <code>p</code> consist of lowercase English letters.</li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
 
-<!-- solution:start -->
-
 ### Solution 1
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -409,9 +387,3 @@ function findAnagrams(s: string, p: string): number[] {
     return ans;
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

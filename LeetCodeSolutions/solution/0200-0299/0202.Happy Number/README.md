@@ -1,4 +1,4 @@
-# [202. Happy Number](https://leetcode.com/problems/happy-number)
+# [202. Happy Number](https://leetcode.com/problems/happy-number) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -43,29 +43,97 @@
 
 ## Solutions
 
-### Solution 1
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+from typing import Set
 
-#### Du Solution: Python3
+class Solution:
+    """
+    Hash Set Solution
+    Runtime Complexity: O(logn)
+    Space Complexity: O(logn)
+    """
+    def isHappy(self, n: int) -> bool:
+        visit = set()
+
+        while n not in visit:
+            visit.add(n)
+            n = self.sumOfSquares(n)        # Note: Use self when using fx w/in same class
+
+            if n == 1:
+                return True
+        return False
+
+    def sumOfSquares(self, n: int) -> int:
+        output = 0
+
+        while n:
+            digit = n % 10                  # get last digit
+            digit = digit ** 2              # square it
+            output += digit                 # record it
+            n = n // 10                     # move down a tens unit
+        return output
+
+if __name__ == "__main__":
+    sol = Solution()
+    examples = [19, 2]
+
+    for testcase in examples:
+        print(sol.isHappy(testcase))
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    """
+    Fast And Slow Pointers
+    Runtime Complexity: O(logn)
+    Space Complexity: O(1)
+    """
+    def isHappy(self, n: int) -> bool:
+        slow, fast = n, self.sumOfSquares(n)
+
+        while slow != fast:                         # if slow == fast means False
+            fast = self.sumOfSquares(fast)
+            fast = self.sumOfSquares(fast)
+            slow = self.sumOfSquares(slow)
+        return True if fast == 1 else False
+
+    def sumOfSquares(self, n: int) -> int:
+        output = 0
+
+        while n:
+            digit = n % 10
+            digit = digit ** 2
+            output += digit
+            n = n // 10
+        return output
+
+if __name__ == "__main__":
+    sol = Solution()
+    examples = [19, 2]
+    
+    for testcase in examples:
+        print(sol.isHappy(testcase))
+```
+
+#### Du Solution3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class Solution:
-   """
-   Solution for the Happy Number problem.
-   """
+    """
+    Convert to str
+    Runtime Complexity: O(logn)
+    Space Complexity: O(logn)
+    """
    def isHappy(self, n: int) -> bool:
-      """
-      Determine if a number is happy.
-      
-      Args:
-         n (int): Positive integer to check.
-      
-      Returns:
-         bool: True if n is a happy number, False otherwise.
-      """
       def sum_of_squares(num: int) -> int:
-         return sum(int(digit) ** 2 for digit in str(num))
+         return sum(int(digit) ** 2 for digit in str(num))          # convert num to str
 
       seen = set()
       while n != 1 and n not in seen:

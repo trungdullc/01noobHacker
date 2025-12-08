@@ -1,24 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/1400-1499/1423.Maximum%20Points%20You%20Can%20Obtain%20from%20Cards/README_EN.md
-rating: 1573
-source: Weekly Contest 186 Q2
-tags:
-    - Array
-    - Prefix Sum
-    - Sliding Window
----
-
-<!-- problem:start -->
-
-# [1423. Maximum Points You Can Obtain from Cards](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards)
-
-[中文文档](/solution/1400-1499/1423.Maximum%20Points%20You%20Can%20Obtain%20from%20Cards/README.md)
+# [1423. Maximum Points You Can Obtain from Cards](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>There are several cards <strong>arranged in a row</strong>, and each card has an associated number of points. The points are given in the integer array <code>cardPoints</code>.</p>
 
@@ -62,11 +44,7 @@ tags:
 	<li><code>1 &lt;= k &lt;= cardPoints.length</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: Sliding Window
 
@@ -77,8 +55,6 @@ Initially, we place the window at the end of the array, i.e., the $k$ positions 
 Next, we consider the situation where we take $1, 2, ..., k$ cards from the beginning of the array in turn. Suppose the card taken is $cardPoints[i]$. Then we add it to $s$. Due to the length limit of the window is $k$, we need to subtract $cardPoints[n-k+i]$ from $s$. In this way, we can calculate the sum of the points of the $k$ cards taken and update the answer $ans$.
 
 The time complexity is $O(k)$, where $k$ is the integer given in the problem. The space complexity is $O(1)$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -324,9 +300,3 @@ class Solution {
   }
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

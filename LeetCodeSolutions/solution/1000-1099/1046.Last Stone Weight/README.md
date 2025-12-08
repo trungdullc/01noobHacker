@@ -1,4 +1,4 @@
-# [1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight)
+# [1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -45,9 +45,160 @@ we combine 1 and 1 to get 0 so the array converts to [1] then that&#39;s the val
 
 ## Solutions
 
-### Solution 1
+#### Du Solution1
+```python
+from typing import List
 
-#### Du Solution: Python3
+class Solution:
+    """
+    Sorting Solution
+    Runtime complexity: O(n²logn)
+    Space complexity: O(n)
+    """
+    def lastStoneWeight(self, stones: List[int]) -> int:
+
+        while len(stones) > 1:
+            stones.sort()
+            cur = stones.pop() - stones.pop()
+            if cur:
+                stones.append(cur)
+
+        return stones[0] if stones else 0
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    stones1 = [2,7,4,1,8,1]
+    print("Output:", sol.lastStoneWeight(stones1))
+
+    stones2 = [1]
+    print("Output:", sol.lastStoneWeight(stones2))
+```
+
+#### Du Solution2
+```python
+from typing import List
+
+class Solution:
+    """
+    Binary Search Solution
+    Runtime complexity: O(n²)
+    Space complexity: O(n)
+    """
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        stones.sort()
+        n = len(stones)
+
+        while n > 1:
+            cur = stones.pop() - stones.pop()
+            n -= 2
+            if cur > 0:
+                l, r = 0, n
+                while l < r:
+                    mid = (l + r) // 2
+                    if stones[mid] < cur:
+                        l = mid + 1
+                    else:
+                        r = mid
+                pos = l
+                n += 1
+                stones.append(0)
+                for i in range(n - 1, pos, -1):
+                    stones[i] = stones[i - 1]
+                stones[pos] = cur
+
+        return stones[0] if n > 0 else 0
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    stones1 = [2,7,4,1,8,1]
+    print("Output:", sol.lastStoneWeight(stones1))
+
+    stones2 = [1]
+    print("Output:", sol.lastStoneWeight(stones2))
+```
+
+#### Du Solution3
+```python
+import heapq
+from typing import List
+
+class Solution:
+    """
+    Heap Solution
+    Runtime complexity: O(nlogn)
+    Space complexity: O(n)
+    """
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        stones = [-s for s in stones]
+        heapq.heapify(stones)
+
+        while len(stones) > 1:
+            first = heapq.heappop(stones)
+            second = heapq.heappop(stones)
+            if second > first:
+                heapq.heappush(stones, first - second)
+
+        stones.append(0)
+        return abs(stones[0])
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    stones1 = [2,7,4,1,8,1]
+    print("Output:", sol.lastStoneWeight(stones1))
+
+    stones2 = [1]
+    print("Output:", sol.lastStoneWeight(stones2))
+```
+
+#### Du Solution4
+```python
+from typing import List
+
+class Solution:
+    """
+    Bucket Sort Solution
+    Runtime complexity: O(n + w)        # n is length of stones array
+    Space complexity: O(w)              # w is max value in stones array
+    """
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        maxStone = max(stones)
+        bucket = [0] * (maxStone + 1)
+        for stone in stones:
+            bucket[stone] += 1
+
+        first = second = maxStone
+        while first > 0:
+            if bucket[first] % 2 == 0:
+                first -= 1
+                continue
+
+            j = min(first - 1, second)
+            while j > 0 and bucket[j] == 0:
+                j -= 1
+
+            if j == 0:
+                return first
+            second = j
+            bucket[first] -= 1
+            bucket[second] -= 1
+            bucket[first - second] += 1
+            first = max(first - second, second)
+        return first
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    stones1 = [2,7,4,1,8,1]
+    print("Output:", sol.lastStoneWeight(stones1))
+
+    stones2 = [1]
+    print("Output:", sol.lastStoneWeight(stones2))
+```
+
+#### Python3
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
@@ -87,20 +238,6 @@ AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py
 real    0m0.023s
 user    0m0.019s
 sys     0m0.004s
-```
-
-#### Python3
-
-```python
-class Solution:
-    def lastStoneWeight(self, stones: List[int]) -> int:
-        h = [-x for x in stones]
-        heapify(h)
-        while len(h) > 1:
-            y, x = -heappop(h), -heappop(h)
-            if x != y:
-                heappush(h, x - y)
-        return 0 if not h else -h[0]
 ```
 
 #### Java

@@ -1,27 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/2100-2199/2101.Detonate%20the%20Maximum%20Bombs/README_EN.md
-rating: 1880
-source: Biweekly Contest 67 Q3
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Graph
-    - Geometry
-    - Array
-    - Math
----
-
-<!-- problem:start -->
-
-# [2101. Detonate the Maximum Bombs](https://leetcode.com/problems/detonate-the-maximum-bombs)
-
-[中文文档](/solution/2100-2199/2101.Detonate%20the%20Maximum%20Bombs/README.md)
+# [2101. Detonate the Maximum Bombs](https://leetcode.com/problems/detonate-the-maximum-bombs) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>You are given a list of bombs. The <strong>range</strong> of a bomb is defined as the area where its effect can be felt. This area is in the shape of a <strong>circle</strong> with the center as the location of the bomb.</p>
 
@@ -75,11 +54,7 @@ Thus all 5 bombs are detonated.
 	<li><code>1 &lt;= x<sub>i</sub>, y<sub>i</sub>, r<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: BFS
 
@@ -90,8 +65,6 @@ Next, we iterate over all bombs. For two bombs $(x_1, y_1, r_1)$ and $(x_2, y_2,
 Next, we iterate over all bombs. For each bomb $k$, we use breadth-first search to calculate the indices of all bombs that can be triggered by bomb $k$ within its explosion range and record them. If the number of these bombs equals $n$, then we can trigger all bombs and directly return $n$. Otherwise, we record the number of these bombs and return the maximum value.
 
 The time complexity is $O(n^3)$ and the space complexity is $O(n^2)$, where $n$ is the number of bombs.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -304,9 +277,3 @@ function maximumDetonation(bombs: number[][]): number {
     return ans;
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

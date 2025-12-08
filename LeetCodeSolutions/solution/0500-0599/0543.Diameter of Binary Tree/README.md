@@ -1,4 +1,4 @@
-# [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree)
+# [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -39,6 +39,244 @@
 We can enumerate each node of the binary tree, and for each node, calculate the maximum depth of its left and right subtrees, $\textit{l}$ and $\textit{r}$, respectively. The diameter of the node is $\textit{l} + \textit{r}$. The maximum diameter among all nodes is the diameter of the binary tree.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes in the binary tree.
+
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    """
+    Definition for a binary tree node
+    """
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(values: List[Optional[int]]) -> Optional[TreeNode]:
+    """
+    Helper Fx: Convert array to tree (level-order)
+    """
+    if not values:
+        return None
+
+    root = TreeNode(values[0])
+    queue = deque([root])
+    i = 1
+
+    while i < len(values):
+        node = queue.popleft()
+
+        # left child
+        if values[i] is not None:
+            node.left = TreeNode(values[i])
+            queue.append(node.left)
+        i += 1
+
+        # right child
+        if i < len(values) and values[i] is not None:
+            node.right = TreeNode(values[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Brute Force
+        longest path is height of left subtree + height of right subtree
+    Runtime Complexity O(n²)
+    Space Complexity O(n)
+    """
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+
+        leftHeight = self.maxHeight(root.left)
+        rightHeight = self.maxHeight(root.right)
+        diameter = leftHeight + rightHeight
+
+        sub = max(
+            self.diameterOfBinaryTree(root.left),
+            self.diameterOfBinaryTree(root.right)
+        )
+
+        return max(diameter, sub)
+
+    def maxHeight(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        return 1 + max(self.maxHeight(root.left), self.maxHeight(root.right))
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    examples = [
+        [1, 2, 3, 4, 5],
+        [1, 2]
+    ]
+
+    for testcase in examples:
+        tree = buildTree(testcase)
+        print(sol.diameterOfBinaryTree(tree))
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(values: List[Optional[int]]) -> Optional[TreeNode]:
+    if not values:
+        return None
+
+    root = TreeNode(values[0])
+    queue = deque([root])
+    i = 1
+
+    while i < len(values):
+        node = queue.popleft()
+
+        # left child
+        if values[i] is not None:
+            node.left = TreeNode(values[i])
+            queue.append(node.left)
+        i += 1
+
+        # right child
+        if i < len(values) and values[i] is not None:
+            node.right = TreeNode(values[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Recursion with Depth First Search
+    Runtime Complexity: O(n)
+    Space Complexity: O(h)
+    """
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        res = 0
+
+        def dfs(root):
+            nonlocal res                                    # 3 scopes: local, nonlocal, global         
+
+            if not root:
+                return 0
+            leftPtr = dfs(root.left)
+            rightPtr = dfs(root.right)
+            res = max(res, leftPtr + rightPtr)
+
+            return 1 + max(leftPtr, rightPtr)
+
+        dfs(root)
+        return res
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    examples = [
+        [1, 2, 3, 4, 5],
+        [1, 2]
+    ]
+
+    for testcase in examples:
+        tree = buildTree(testcase)
+        print(sol.diameterOfBinaryTree(tree))
+```
+
+#### Du Solution3
+```python
+#!/usr/bin/env python3
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(values: List[Optional[int]]) -> Optional[TreeNode]:
+    if not values:
+        return None
+
+    root = TreeNode(values[0])
+    queue = deque([root])
+    i = 1
+
+    while i < len(values):
+        node = queue.popleft()
+
+        # left child
+        if values[i] is not None:
+            node.left = TreeNode(values[i])
+            queue.append(node.left)
+        i += 1
+
+        # right child
+        if i < len(values) and values[i] is not None:
+            node.right = TreeNode(values[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Iterative Solution with Depth First Search
+        post-order traversal
+        Visit left subtree
+        Visit right subtree
+        Then process the current node
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        stack = [root]
+        mp = {None: (0, 0)}                     # map storing (height, diameter) each visited node
+
+        while stack:
+            nodePtr = stack[-1]
+
+            if nodePtr.left and nodePtr.left not in mp:
+                stack.append(nodePtr.left)
+            elif nodePtr.right and nodePtr.right not in mp:
+                stack.append(nodePtr.right)
+            else:
+                nodePtr = stack.pop()
+
+                leftHeightPtr, leftDiameterPtr = mp[nodePtr.left]
+                rightHeightPtr, rightDiameterPtr = mp[nodePtr.right]
+
+                mp[nodePtr] = (1 + max(leftHeightPtr, rightHeightPtr),
+                           max(leftHeightPtr + rightHeightPtr, leftDiameterPtr, rightDiameterPtr))
+
+        return mp[root][1]
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    examples = [
+        [1, 2, 3, 4, 5],
+        [1, 2]
+    ]
+
+    for testcase in examples:
+        tree = buildTree(testcase)
+        print(sol.diameterOfBinaryTree(tree))
+```
 
 #### Du Solution: Python3
 ```python

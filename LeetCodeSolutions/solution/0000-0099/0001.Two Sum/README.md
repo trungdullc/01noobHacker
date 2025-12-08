@@ -1,4 +1,4 @@
-# [1. Two Sum](https://leetcode.com/problems/two-sum)
+# [1. Two Sum](https://leetcode.com/problems/two-sum) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -57,6 +57,29 @@ Traverse the array $\textit{nums}$, for the current element $\textit{nums}[i]$, 
 
 Time complexity is $O(n)$, and space complexity is $O(n)$, where $n$ is the length of the array $\textit{nums}$.
 
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+class Solution:
+   """
+   Brute Force Solution
+   Runtime Complexity: O(n²)
+   Space Complexity: O(1)
+   """
+   def twoSums(self, nums: list[int], target: int) -> list[int, int]:
+      for i in range(len(nums)):
+         for j in range(i+1, len(nums)):
+            if nums[i] + nums[j] == target:
+               return [i, j]
+      return []
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.twoSums([2,7,11,15], 9))  
+   print(sol.twoSums([3,2,4], 6))
+   print(sol.twoSums([3,3], 6))
+```
+
 #### Du Solution
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
@@ -64,7 +87,7 @@ AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py
 
 class Solution:
    """
-   Solution for the Two Sum problem.
+   Solution for the Two Sum problem
    """
    def twoSum(self, nums: list[int], target: int) -> list[int]:
       """
@@ -109,11 +132,23 @@ AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py
 from typing import List
 
 class Solution:
+   """
+   1 Pass Hash Map Solution w/o walrus operator
+   Runtime Complexity: O(n)
+   Space Complexity: O(n)
+   
+   Args:
+       nums (list[int]): Input array of integers
+       target (int): Target sum
+   
+   Returns:
+       list[int]: Indices of the two numbers adding up to target
+   """
    def twoSum(self, nums: List[int], target: int) -> List[int]:
-      seen: dict[int,int] = {}
+      seen: dict[int,int] = {}                                  # dict{complement: index}
 
       for index, value in enumerate(nums, start = 0):           # help(enumerate)
-         diff = target - value                                  # can use walrus operator
+         diff = target - value                                  # can use walrus operator. different not the index
 
          if diff in seen:
             return [seen[diff], index]
@@ -139,16 +174,31 @@ user    0m0.030s
 sys     0m0.000s
 ```
 
-#### Python3: Solution.py
+#### Du Solution2
 
 ```python
+#!/usr/bin/env python3
+from typing import List
+
 class Solution:
+    """
+    1 pass Solution w/ walrus operator
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)   
+    """
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        d = {}
-        for i, x in enumerate(nums):
-            if (y := target - x) in d:              # ❤️ walrus operator assign y first then check in d
-                return [d[y], i]
-            d[x] = i
+        seen = {}
+
+        for index, value in enumerate(nums):
+            if (diff := target - value) in seen:              # ❤️ walrus operator assign diff first then check in seen
+                return [seen[diff], index]
+            seen[value] = index
+
+if __name__ == "__main__":
+   sol = Solution()
+   print(sol.twoSum([2, 7, 11, 15], 9))
+   print(sol.twoSum([3, 2, 4], 6))
+   print(sol.twoSum([3, 3], 6))
 ```
 
 #### JavaScript

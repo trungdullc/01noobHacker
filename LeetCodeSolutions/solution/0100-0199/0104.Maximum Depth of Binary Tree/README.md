@@ -1,4 +1,4 @@
-# [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree)
+# [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -37,31 +37,247 @@ Recursively traverse the left and right subtrees, calculate the maximum depth of
 
 The time complexity is $O(n)$, where $n$ is the number of nodes in the binary tree. Each node is traversed only once in the recursion.
 
-#### Du Solution: Python3
+#### Du Solution1
+```python
+#!/usr/bin/env python3
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    """
+    Definition for a binary tree node
+    """
+    def __init__(self, val = 0, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(values: List[Optional[int]]) -> Optional[TreeNode]:
+    """
+    Helper Function: create tree from array
+    """
+    if not values:
+        return None
+
+    root = TreeNode(values[0])
+    queue = deque([root])
+    i = 1
+
+    while i < len(values):
+        node = queue.popleft()
+
+        # left child
+        if values[i] is not None:
+            node.left = TreeNode(values[i])
+            queue.append(node.left)
+        i += 1
+
+        # right child
+        if i < len(values) and values[i] is not None:
+            node.right = TreeNode(values[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Recursion Solution using Depth First Search
+        Recursively compute the depth of the left subtree
+        Recursively compute the depth of the right subtree
+        Take the maximum of the two
+        Add 1 for the current node
+    Runtime Complexity: O(n)                                # n: number of nodes
+    Space Complexity: O(h)                                  # h: height of tree
+    """
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    examples = [
+        [3,9,20,None,None,15,7],
+        [1,None,2],             
+        []                      
+    ]
+
+    for testcase in examples:
+        root = buildTree(testcase)
+        print(sol.maxDepth(root))
+```
+
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val = 0, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(values: List[Optional[int]]) -> Optional[TreeNode]:
+    if not values:
+        return None
+
+    root = TreeNode(values[0])
+    queue = deque([root])
+    i = 1
+
+    while i < len(values):
+        node = queue.popleft()
+
+        # left child
+        if values[i] is not None:
+            node.left = TreeNode(values[i])
+            queue.append(node.left)
+        i += 1
+
+        # right child
+        if i < len(values) and values[i] is not None:
+            node.right = TreeNode(values[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Iterative Depth First Search using a stack
+        The stack will store pairs of:
+            the current node
+            the depth of that node in the tree
+        Every time we pop a node from the stack:
+            We update the maximum depth seen so far
+            We push its left and right children onto the stack with depth + 1
+    Runtime Complexity: O(n)
+    Space Complexity: O(n) 
+    """
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        stack = [[root, 1]]
+        ans = 0
+
+        while stack:
+            nodePtr, depthPtr = stack.pop()
+
+            if nodePtr:
+                ans = max(ans, depthPtr)
+                stack.append([nodePtr.left, depthPtr + 1])
+                stack.append([nodePtr.right, depthPtr + 1])
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    examples = [
+        [3,9,20,None,None,15,7],
+        [1,None,2],             
+        []                      
+    ]
+
+    for testcase in examples:
+        root = buildTree(testcase)
+        print(sol.maxDepth(root))
+```
+
+#### Du Solution3
+```python
+#!/usr/bin/env python3
+from typing import Optional, List
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val = 0, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(values: List[Optional[int]]) -> Optional[TreeNode]:
+    if not values:
+        return None
+
+    root = TreeNode(values[0])
+    queue = deque([root])
+    i = 1
+
+    while i < len(values):
+        node = queue.popleft()
+
+        # left child
+        if values[i] is not None:
+            node.left = TreeNode(values[i])
+            queue.append(node.left)
+        i += 1
+
+        # right child
+        if i < len(values) and values[i] is not None:
+            node.right = TreeNode(values[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+class Solution:
+    """
+    Breadth First Search
+        Every iteration of BFS processes one entire level of the tree
+        Start with the root → depth = 1
+        Add its children → depth = 2
+        Add their children → depth = 3
+        Continue until no nodes remain
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        que = deque()
+        if root:
+            que.append(root)
+
+        level = 0
+
+        while que:
+            for i in range(len(que)):
+                nodePtr = que.popleft()
+                if nodePtr.left:
+                    que.append(nodePtr.left)
+                if nodePtr.right:
+                    que.append(nodePtr.right)
+            level += 1
+        return level
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    examples = [
+        [3,9,20,None,None,15,7],
+        [1,None,2],             
+        []                      
+    ]
+
+    for testcase in examples:
+        root = buildTree(testcase)
+        print(sol.maxDepth(root))
+```
+
+#### Python Solution
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class TreeNode:
-   """
-   Definition for a binary tree node.
-   """
    def __init__(self, val=0, left=None, right=None):
       self.val = val
       self.left = left
       self.right = right
 
 class Solution:
-   """
-   Solution class to find the maximum depth of a binary tree.
-   """
-
    def maxDepth(self, root):
-      """
-      Return the maximum depth of the binary tree.
-      :type root: TreeNode
-      :rtype: int
-      """
       if not root:
          return 0
       left_depth = self.maxDepth(root.left)
@@ -89,23 +305,6 @@ AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py
 real    0m0.023s
 user    0m0.019s
 sys     0m0.004s
-```
-
-#### Python3
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def maxDepth(self, root: TreeNode) -> int:
-        if root is None:
-            return 0
-        l, r = self.maxDepth(root.left), self.maxDepth(root.right)
-        return 1 + max(l, r)
 ```
 
 #### Java

@@ -1,4 +1,4 @@
-# [338. Counting Bits](https://leetcode.com/problems/counting-bits)
+# [338. Counting Bits](https://leetcode.com/problems/counting-bits) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -52,45 +52,132 @@
 Python List Comprehension is useful easier than C/C++ ternary conditional operator
 ```
 
-#### Du Solution:
+#### Du Solution1
 ```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
+from typing import List
 
 class Solution:
-   """
-   Solution for the Counting Bits problem.
-   """
-   def countBits(self, n: int) -> list[int]:
-      """
-      Return an array where ans[i] is the number of 1s in binary representation of i.
-      
-      Args:
-         n (int): Non-negative integer.
-      
-      Returns:
-         list[int]: List of counts of 1 bits from 0 to n.
-      """
-      ans = [0] * (n + 1)
-      for i in range(1, n + 1):
-         ans[i] = ans[i >> 1] + (i & 1)
-      return ans
+    """
+    Bit Manipulation
+    Runtime Complexity: O(nlogn)
+    Space Complexity: O(n)
+    """
+    def countBits(self, n: int) -> List[int]:
+        ans = []
+
+        for num in range(n + 1):                        # Note: need +1
+            countBits = 0
+            for i in range(32):                         # check each bit
+                if num & (1 << i):                      # 0191: Number of 1 Bits
+                    countBits += 1
+            ans.append(countBits)
+        return ans
 
 if __name__ == "__main__":
-   sol = Solution()
-   print(sol.countBits(2))
-   print(sol.countBits(5))
-
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-[0, 1, 1]
-[0, 1, 1, 2, 1, 2]
-
-real    0m0.024s
-user    0m0.014s
-sys     0m0.009s
+    sol = Solution()
+    print(sol.countBits(2))
+    print(sol.countBits(5))
 ```
 
-#### Du Solution1: Python3
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Bit Manipulation
+    Runtime Complexity: O(nlogn)
+    Space Complexity: O(n)
+    """
+    def countBits(self, n: int) -> List[int]:
+        ans = [0] * (n + 1)
+
+        for i in range(1, n + 1):       # Skip first since 0
+            num = i
+            while num != 0:
+                ans[i] += 1
+                num &= (num - 1)        # 0191: Number of 1 Bits
+        return ans
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.countBits(2))
+    print(sol.countBits(5))
+```
+
+#### Du Solution3
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Bit Manipulation (Dynamic Programming)
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def countBits(self, n: int) -> List[int]:
+        dp = [0] * (n + 1)
+        offset = 1
+
+        for i in range(1, n + 1):
+            if offset * 2 == i:
+                offset = i
+            dp[i] = 1 + dp[i - offset]
+        return dp
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.countBits(2))
+    print(sol.countBits(5))
+```
+
+#### Du Solution4
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Bit Manipulation (Optimal)
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def countBits(self, n: int) -> List[int]:
+        dp = [0] * (n + 1)
+        for i in range(n + 1):
+            dp[i] = dp[i >> 1] + (i & 1)
+        return dp
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.countBits(2))
+    print(sol.countBits(5))
+```
+
+#### Du Solution5
+```python
+#!/usr/bin/env python3
+from typing import List
+
+class Solution:
+    """
+    Built-In Function
+    Runtime Complexity: O(nlogn)
+    Space Complexity: O(n)
+    """
+    def countBits(self, n: int) -> List[int]:
+        return [bin(i).count('1') for i in range(n + 1)]
+
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.countBits(2))
+    print(sol.countBits(5))
+```
+
+#### Python
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
@@ -124,7 +211,7 @@ AsianHacker-picoctf@webshell:/tmp$ ./pythonScript.py
 [0, 1, 1, 2, 1, 2]
 ```
 
-#### Du Solution2
+#### Python
 ```python
 #!/usr/bin/python3
 from typing import List

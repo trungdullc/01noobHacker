@@ -1,6 +1,6 @@
 # Python3
 
-```
+```python
 Description: Programming Language
 Resources:
     https://pythontutor.com/render.html#mode=display
@@ -114,7 +114,7 @@ class enumerate(object)
 ```
 
 ## Side Quest
-```
+```python
 mapping: dict[int, str] = {}
 
 def reset_mapping() -> None:
@@ -281,6 +281,131 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())                 # Note: not main(), in a callback fx
+```
+
+### Side Quest: Troubleshooting Exception
+```python
+#!/usr/bin/env python3
+
+balance: float = 1000
+
+try:
+    num: float = float(input("Deposit: "))      # input returns str
+except ValueError:
+    print("Please enter a number no letters")
+    exit()
+except Exception as e:
+    print(f"Error: {e}")
+    print(f"Error: {e.__class__}")
+    print(dir(e))
+    exit()
+
+if num.__class__ == float:                      # Prefer: if not isinstance(num, float)
+    balance += num
+    print(f"Total Balance: {balance}")
+    input("Press any key to exit...")
+```
+
+## Side Quest: lambda ❤️❤️❤️❤️❤️
+# Note: Similar to JS arrow functions
+```python
+#!/usr/bin/env python3
+
+def dmg_per_mana(s):                # Note: no need self when not in class
+    return s[1]/s[2]                # Optional: 1 time fx can use lambda instead
+
+# Spells, Damage, Mana
+spells: tuple[str,int,int] = [ 
+    ("Fireball", 50, 40),
+    ("Ice", 30, 25),
+    ("Lightning", 70, 50),
+    ("Wind Slash", 20, 10),
+    ("Dark Nova", 55, 50)
+]
+
+efficient_spells = sorted(
+    spells,
+    key = dmg_per_mana,             # key = key = lambda s: s[1]/s[2],      → parameter: return
+    reverse = True
+)
+
+for spell in efficient_spells:
+    print(f"{spell[0]}: {spell[1]/spell[2]}")
+```
+
+## Side Quest: __init__ ❤️❤️❤️❤️❤️
+# One of most important concepts to know
+```python
+#!/usr/bin/env python3
+
+class Solution:
+    def __init__(self, name):
+        self._name = name                   # store internally (private access modifiers like C++)
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+    def printName(self):
+        print(f"Name is {self.name}")
+
+if __name__ == "__main__":
+    sol = Solution("Hacker")
+    print(sol.name)                         # getter
+    sol.name = "Coder"                      # setter
+    sol.printName()
+```
+
+## Side Quest: decorator (wrapping and extending a function) ❤️❤️❤️❤️❤️
+```python
+#!/usr/bin/env python3
+
+# Note: *args = all positional arguments (as a tuple)
+# Note: **kwargs = all keyword arguments (as a dict)
+def log(func):
+    def wrapper(*args, **kwargs):
+        print(f"Calling {func.__name__} with args={args}, kwargs={kwargs}")
+        return func(*args, **kwargs)        # Important: Can pass tuples and dictionaries arguments
+    return wrapper
+
+@log
+def multiply(a, b):
+    return a * b
+
+@log
+def divide(a, b = 1):
+    return a / b
+
+@log
+def greet(name, times = 1):
+    for _ in range(times):
+        print(f"Hello {name}")
+
+print(multiply(3, 4))                       # Calling multiply with args=(3, 4), kwargs={}
+                                            # 12
+print(divide(10, b = 2))                    # Calling divide with args=(10,), kwargs={'b': 2}
+                                            # 5.0
+greet("Hacker", times = 2)                  # Calling greet with args=('Hacker',), kwargs={'times': 2}
+                                            # Hello Hacker
+                                            # Hello Hacker
+```
+
+## Side Quest: Currying (break arguments into stages)❤️❤️❤️❤️❤️
+```python
+#!/usr/bin/env python3
+
+def multiply(a):
+    def inner(b):
+        return a * b
+    return inner
+
+if __name__ == "__main__":
+    times3 = multiply(3)
+    print(times3(10))
 ```
 
 ## CTF

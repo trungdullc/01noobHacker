@@ -1,20 +1,6 @@
----
-comments: true
-difficulty: Hard
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0552.Student%20Attendance%20Record%20II/README_EN.md
-tags:
-    - Dynamic Programming
----
-
-<!-- problem:start -->
-
-# [552. Student Attendance Record II](https://leetcode.com/problems/student-attendance-record-ii)
-
-[中文文档](/solution/0500-0599/0552.Student%20Attendance%20Record%20II/README.md)
+# [552. Student Attendance Record II](https://leetcode.com/problems/student-attendance-record-ii) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>An attendance record for a student can be represented as a string where each character signifies whether the student was absent, late, or present on that day. The record only contains the following three characters:</p>
 
@@ -65,15 +51,9 @@ Only &quot;AA&quot; is not eligible because there are 2 absences (there need to 
 	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
 
-<!-- solution:start -->
-
 ### Solution 1
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -198,15 +178,7 @@ func checkRecord(n int) int {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -357,9 +329,3 @@ func checkRecord(n int) int {
 	return ans
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

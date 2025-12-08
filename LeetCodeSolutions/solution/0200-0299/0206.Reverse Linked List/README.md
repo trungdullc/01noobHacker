@@ -1,4 +1,4 @@
-# [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list)
+# [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -45,70 +45,160 @@ We create a dummy node $\textit{dummy}$, then traverse the linked list and inser
 
 The time complexity is $O(n)$, where $n$ is the length of the linked list. The space complexity is $O(1)$.
 
-#### Du Solution: Python3
+#### Du Solution1
 ```python
-AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
+from typing import Optional 
+
+class ListNode:
+    """
+    Given but should be easy to make singly-linked list
+    """
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+
+def buildList(arr):
+    """
+    Convert array to list using 2 Pointers: headPtr and currPtr
+    """
+    if not arr:
+        return None
+
+    headPtr = ListNode(arr[0])
+    currPtr = headPtr
+
+    for x in arr[1:]:
+        currPtr.next = ListNode(x)
+        currPtr = currPtr.next
+
+    return headPtr
+
+def printList(node):
+    values = []
+
+    while node:
+        values.append(node.val)
+        node = node.next
+    print(values)
 
 class Solution:
-   """
-   Solution class to reverse a list without using slicing.
-   """
+    """
+    Recursion Solution
+    Runtime Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        """
+        1 → 2 → 3 → None                    head = 1    head.next = 2       call reverseList(2)
+        2 → 3 → None                        head = 2    head.next = 3       call reverseList(3)    
+        3 → None                            head = 3    head.next = None    reverseList(None) → returns None
 
-   def reverseList(self, head):
-      """
-      Reverses a list manually.
-      :type head: list[int]
-      :rtype: list[int]
-      """
-      left, right = 0, len(head) - 1
-      while left < right:
-         head[left], head[right] = head[right], head[left]
-         left += 1
-         right -= 1
-      return head
-      # return head[::-1]
+        3 → 2 → None        1 → None
+        3 → 2 → 1 → None
+        """
+
+        if not head:
+            return None                                                 # C: null, C++: nullptr
+
+        newHead = head
+
+        if head.next:                                                   # if head.next != null, stops at newHead = ListNode(3)
+            newHead = self.reverseList(head.next)                       # Recursion, move newHead to end
+            head.next.next = head                                       # 3.next = 2 and head.next = 3
+        head.next = None
+
+        return newHead
 
 if __name__ == "__main__":
-   sol = Solution()
-   print(sol.reverseList([1,2,3,4,5]))
-   print(sol.reverseList([1,2]))
-   print(sol.reverseList([]))
-
-AsianHacker-picoctf@webshell:/tmp$ time ./pythonScript.py 
-[5, 4, 3, 2, 1]
-[2, 1]
-[]
-
-real    0m0.024s
-user    0m0.014s
-sys     0m0.009s
+    sol = Solution()
+    head1 = buildList([1,2,3,4,5])
+    printList(sol.reverseList(head1))
+    head2 = buildList([1,2])
+    printList(sol.reverseList(head2))
+    head3 = buildList([])
+    printList(sol.reverseList(head3))
 ```
 
-#### Du Solution: Python3
+#### Du Solution2
+```python
+#!/usr/bin/env python3
+from typing import Optional 
+
+class ListNode:
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+
+def buildList(arr):
+    """
+    Convert array to list using 2 Pointers: headPtr and currPtr
+    """
+    if not arr:
+        return None
+
+    headPtr = ListNode(arr[0])
+    currPtr = headPtr
+
+    for x in arr[1:]:
+        currPtr.next = ListNode(x)
+        currPtr = currPtr.next
+
+    return headPtr
+
+def printList(node):
+    values = []
+
+    while node:
+        values.append(node.val)
+        node = node.next
+    print(values)
+
+class Solution:
+    """
+    Iteration Solution with 3 pointers easier to understand than recursive
+    Note: temp pointer acts as prev in doubly linked list and keeps chain from breaking
+    Runtime Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    def reverseList(self, head: ListNode) -> ListNode:
+        prevPtr, currPtr = None, head
+
+        while currPtr:                                      # Continues until currPtr != None
+            tempPtr = currPtr.next                          # tempPtr set to next to keep chain
+            currPtr.next = prevPtr                          # reassign currPtr next to prevPtr
+            prevPtr = currPtr                               # move prevPtr
+            currPtr = tempPtr                               # move currPtr
+        return prevPtr
+
+if __name__ == "__main__":
+    sol = Solution()
+    head1 = buildList([1,2,3,4,5])
+    printList(sol.reverseList(head1))
+    head2 = buildList([1,2])
+    printList(sol.reverseList(head2))
+    head3 = buildList([])
+    printList(sol.reverseList(head3))
+```
+
+#### Du Solution2
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
 
 class ListNode:
-   """
-   Definition for a singly-linked list node.
-   """
-   def __init__(self, val=0, next=None):
+   def __init__(self, val = 0, next = None):
       self.val = val
       self.next = next
 
 class Solution:
    """
-   Solution class to reverse a singly linked list.
+   Iteration Solution with 3 pointers easier to understand than recursive
+   Note: temp pointer acts as prev in doubly linked list and keeps chain from breaking
+   Runtime Complexity: O(n)
+   Space Complexity: O(1)
    """
-
    def reverseList(self, head):
-      """
-      Reverses a singly linked list.
-      :type head: ListNode
-      :rtype: ListNode
-      """
       prev = None
       curr = head
       while curr:
@@ -120,7 +210,7 @@ class Solution:
 
 def print_list(head):
    """
-   Helper function to print linked list as a Python list.
+   Helper function to print linked list as a Python list
    """
    result = []
    while head:
@@ -131,6 +221,7 @@ def print_list(head):
 if __name__ == "__main__":
    sol = Solution()
 
+   # Different way to build ListNode
    head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
    reversed_head1 = sol.reverseList(head1)
    print(print_list(reversed_head1))
@@ -153,24 +244,59 @@ user    0m0.023s
 sys     0m0.000s
 ```
 
-#### Python3
-
+#### Du Solution3
 ```python
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+   def __init__(self, val = 0, next = None):
+      self.val = val
+      self.next = next
+
 class Solution:
+    """
+    Iteration Solution with 3 pointers easier to understand than recursive
+    Note: temp pointer acts as prev in doubly linked list and keeps chain from breaking
+    Runtime Complexity: O(n)
+    Space Complexity: O(1)
+    """
     def reverseList(self, head: ListNode) -> ListNode:
-        dummy = ListNode()
-        curr = head
-        while curr:
-            next = curr.next
-            curr.next = dummy.next
-            dummy.next = curr
-            curr = next
-        return dummy.next
+        """
+        dummyPtr logic
+        """
+        dummyPtr = ListNode()
+        currPtr = head
+        
+        while currPtr:
+            nextPtr = currPtr.next
+            currPtr.next = dummyPtr.next
+            dummyPtr.next = currPtr
+            currPtr = nextPtr
+        return dummyPtr.next
+
+def print_list(head):
+   """
+   Helper function to print linked list as a Python list
+   """
+   result = []
+   while head:
+      result.append(head.val)
+      head = head.next
+   return result
+
+if __name__ == "__main__":
+   sol = Solution()
+
+   # Different way to build ListNode
+   head1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+   reversed_head1 = sol.reverseList(head1)
+   print(print_list(reversed_head1))
+
+   head2 = ListNode(1, ListNode(2))
+   reversed_head2 = sol.reverseList(head2)
+   print(print_list(reversed_head2))
+
+   head3 = None
+   reversed_head3 = sol.reverseList(head3)
+   print(print_list(reversed_head3))
 ```
 
 #### Java

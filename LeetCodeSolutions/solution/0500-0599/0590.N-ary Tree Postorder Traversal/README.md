@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0590.N-ary%20Tree%20Postorder%20Traversal/README_EN.md
-tags:
-    - Stack
-    - Tree
-    - Depth-First Search
----
-
-<!-- problem:start -->
-
-# [590. N-ary Tree Postorder Traversal](https://leetcode.com/problems/n-ary-tree-postorder-traversal)
-
-[中文文档](/solution/0500-0599/0590.N-ary%20Tree%20Postorder%20Traversal/README.md)
+# [590. N-ary Tree Postorder Traversal](https://leetcode.com/problems/n-ary-tree-postorder-traversal) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
-
 <p>Given the <code>root</code> of an n-ary tree, return <em>the postorder traversal of its nodes&#39; values</em>.</p>
 
 <p>Nary-Tree input serialization is represented in their level order traversal. Each group of children is separated by the null value (See examples)</p>
@@ -49,19 +32,12 @@ tags:
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</p>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
-
 ### Solution 1: Recursion
 
 We can recursively traverse the entire tree. For each node, we first recursively call the function for each of the node's children, then add the node's value to the answer.
 
 The time complexity is $O(n)$, and the space complexity is $O(n)$. Here, $n$ is the number of nodes.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -418,9 +394,3 @@ function postorder(root: Node | null): number[] {
     return ans.reverse();
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

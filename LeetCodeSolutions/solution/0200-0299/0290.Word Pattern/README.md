@@ -1,21 +1,6 @@
----
-comments: true
-difficulty: Easy
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0200-0299/0290.Word%20Pattern/README_EN.md
-tags:
-    - Hash Table
-    - String
----
-
-<!-- problem:start -->
-
-# [290. Word Pattern](https://leetcode.com/problems/word-pattern)
-
-[中文文档](/solution/0200-0299/0290.Word%20Pattern/README.md)
+# [290. Word Pattern](https://leetcode.com/problems/word-pattern) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>Given a <code>pattern</code> and a string <code>s</code>, find if <code>s</code>&nbsp;follows the same pattern.</p>
 
@@ -76,9 +61,6 @@ tags:
 <!-- description:end -->
 
 ## Solutions
-
-<!-- solution:start -->
-
 ### Solution 1: Hash Table
 
 First, we split the string $s$ into a word array $ws$ with spaces. If the length of $pattern$ and $ws$ is not equal, return `false` directly. Otherwise, we use two hash tables $d_1$ and $d_2$ to record the correspondence between each character and word in $pattern$ and $ws$.
@@ -88,8 +70,6 @@ Then, we traverse $pattern$ and $ws$. For each character $a$ and word $b$, if th
 After the traversal, return `true`.
 
 The time complexity is $O(m + n)$ and the space complexity is $O(m + n)$. Here $m$ and $n$ are the length of $pattern$ and string $s$.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -307,9 +287,3 @@ function wordPattern(pattern: string, s: string): boolean {
     return true;
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

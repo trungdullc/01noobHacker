@@ -1,23 +1,6 @@
----
-comments: true
-difficulty: Medium
-edit_url: https://github.com/doocs/leetcode/edit/main/solution/0500-0599/0547.Number%20of%20Provinces/README_EN.md
-tags:
-    - Depth-First Search
-    - Breadth-First Search
-    - Union Find
-    - Graph
----
-
-<!-- problem:start -->
-
-# [547. Number of Provinces](https://leetcode.com/problems/number-of-provinces)
-
-[中文文档](/solution/0500-0599/0547.Number%20of%20Provinces/README.md)
+# [547. Number of Provinces](https://leetcode.com/problems/number-of-provinces) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
-
-<!-- description:start -->
 
 <p>There are <code>n</code> cities. Some of them are connected, while some are not. If city <code>a</code> is connected directly with city <code>b</code>, and city <code>b</code> is connected directly with city <code>c</code>, then city <code>a</code> is connected indirectly with city <code>c</code>.</p>
 
@@ -54,11 +37,7 @@ tags:
 	<li><code>isConnected[i][j] == isConnected[j][i]</code></li>
 </ul>
 
-<!-- description:end -->
-
 ## Solutions
-
-<!-- solution:start -->
 
 ### Solution 1: DFS
 
@@ -69,8 +48,6 @@ Next, we traverse each city $i$. If the city has not been visited, we start a de
 Finally, return the answer.
 
 The time complexity is $O(n^2)$, and the space complexity is $O(n)$. Here, $n$ is the number of cities.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -234,12 +211,6 @@ impl Solution {
 }
 ```
 
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- solution:start -->
-
 ### Solution 2: Union-Find
 
 We can also use the union-find data structure to maintain each connected component. Initially, each city belongs to a different connected component, so the number of provinces is $n$.
@@ -249,8 +220,6 @@ Next, we traverse the matrix $\textit{isConnected}$. If there is a connection be
 Finally, return the number of provinces.
 
 The time complexity is $O(n^2 \times \log n)$, and the space complexity is $O(n)$. Here, $n$ is the number of cities, and $\log n$ is the time complexity of path compression in the union-find data structure.
-
-<!-- tabs:start -->
 
 #### Python3
 
@@ -403,9 +372,3 @@ function findCircleNum(isConnected: number[][]): number {
     return ans;
 }
 ```
-
-<!-- tabs:end -->
-
-<!-- solution:end -->
-
-<!-- problem:end -->

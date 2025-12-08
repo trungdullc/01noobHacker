@@ -1,4 +1,4 @@
-# [242. Valid Anagram](https://leetcode.com/problems/valid-anagram)
+# [242. Valid Anagram](https://leetcode.com/problems/valid-anagram) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 
 ## Description
 
@@ -44,54 +44,74 @@ Otherwise, we use a hash table or an array of length $26$ to record the number o
 
 The time complexity is $O(n)$, the space complexity is $O(C)$, where $n$ is the length of the string; and $C$ is the size of the character set, which is $C=26$ in this problem.
 
-#### Python3: cheat
+#### Du Solution 1
 
 ```python
-from collections import Counter
-# automatically counts how many times each element appears in a string or list
-
+#!usr/bin/env python3
 class Solution:
+    """
+    Return sorted results                   sorted(s) → O(n log n); sorted(t) → O(m log m); sorted(s) == sorted(t) → O(n)
+    Runtime Complexity: O(nlogn + mlogm)    sorted()
+    Space Complexity: O(n+m)                n is length of string & m is length of string
+
+    >>> import builtins
+    >>> dir(builtins)
+    ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BaseExceptionGroup', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EncodingWarning', 'EnvironmentError', 'Exception', 'ExceptionGroup', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 
+    'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'aiter', 'all', 'anext', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+
+    >>> help(builtins.sorted)
+    Help on built-in function sorted in module builtins:
+
+    sorted(iterable, /, *, key=None, reverse=False)
+        Return a new list containing all items from the iterable in ascending order.
+
+        A custom key function can be supplied to customize the sort order, and the
+        reverse flag can be set to request the result in descending order.
+    """
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
 
-        cnt = Counter(s)                            # Counter({'a': 3, 'n': 1, 'g': 1, 'r': 1, 'm': 1})
-
-        # Subtracting everything if something is less than 0 means not the same ❤️
-        for c in t:
-            cnt[c] -= 1
-            if cnt[c] < 0:
-                return False
-        return True                                 # Counter(s) == Counter(t)
+        return sorted(s) == sorted(t)
+    
+if __name__ == "__main__":
+    sol = Solution()
+    print(sol.isAnagram("anagram", "nagaram"))
+    print(sol.isAnagram("rat", "car"))
 ```
 
-#### Du Solution:
+#### Du Solution 2
 
 ```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/env python3
-
 class Solution:
    """
-   Solution for the Valid Anagram problem.
+   Hash Map Solution
+   Runtime Complexity: O(n+m)
+   Space Complexity: O(1)           # 26 possibilities
    """
    def isAnagram(self, s: str, t: str) -> bool:
       """
-      Check if t is an anagram of s.
+      Check if t is an anagram of s
       
       Args:
-         s (str): First string.
-         t (str): Second string.
+         s (str): First string
+         t (str): Second string
       
       Returns:
-         bool: True if t is an anagram of s, False otherwise.
+         bool: True if t is an anagram of s, False otherwise
       """
       if len(s) != len(t):
          return False
 
       # Comparing frequency dictionary is same
-      # Note: would have to to "a": 0 to "z": 0 if wanted to use cict1[0] ⭐
+      # Note: would have to to "a": 0 to "z": 0 if wanted to use dict1[0] ⭐
       dict1, dict2 = {}, {}                     # dict1 = dict()
+
+      # for i in range(len(s)):
+      #    dict1[s[i]] = dict1.get(s[i], 0) + 1
+      #    dict2[t[i]] = dict2.get(t[i], 0) + 1
 
       for char in s:
          dict1[char] = dict1.get(char, 0) + 1   # safer, if char not exist default to 0
@@ -113,29 +133,57 @@ user    0m0.014s
 sys     0m0.007s
 ```
 
-#### Du Solution
+#### Python3: cheat
+
 ```python
-# Python with a List instead of a dict or Counter()
+#!/usr/bin/python3
+from collections import Counter                     # automatically counts how many times each element appears in a string or list
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+
+        cnt = Counter(s)                            # Counter({'a': 3, 'n': 1, 'g': 1, 'r': 1, 'm': 1})
+
+        # Subtracting everything if something is less than 0 means not the same ❤️
+        for c in t:
+            cnt[c] -= 1
+            if cnt[c] < 0:
+                return False
+        return True                                 # Counter(s) == Counter(t)
+```
+
+#### Du Solution 3
+```python
 AsianHacker-picoctf@webshell:/tmp$ cat pythonScript.py 
 #!/usr/bin/python3
 from typing import List
 
 class Solution:
+    """
+    List instead of a dict or Counter()
+    Runtime Complexity: O(n+m)
+    Space Complexity: O(1)
+    """
     def validAnagram(self, s: str, t: str) -> bool:
-        # Create frequency lists for 26 letters
-        list1 = [0] * 26
+        if len(s) != len(t):
+            return False
+
+        # Create frequency lists for 26 letters             # Instead of 2 list do 1
+        list1 = [0] * 26                                    # count = [0] * 26                        
         list2 = [0] * 26
 
-        for char in s:
-            list1[ord(char) - ord('a')] += 1
-
+        for char in s:                                      # for i in range(len(s)):
+            list1[ord(char) - ord('a')] += 1                #    count[ord(s[i]) - ord('a')] += 1
+                                                            #    count[ord(t[i]) - ord('a')] -= 1
         for char in t:
             list2[ord(char) - ord('a')] += 1
 
-        print("list1:", list1)
-        print("list2:", list2)
-
-        return list1 == list2 ❤️
+        print("list1:", list1)                              # for value in count:
+        print("list2:", list2)                              #    if value != 0:
+                                                            #       return False
+        return list1 == list2 ❤️                            #    return True
 
 def main() -> None:
     sol = Solution()
