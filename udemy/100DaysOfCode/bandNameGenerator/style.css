@@ -1,0 +1,57 @@
+body {
+    background: #141414;                                /* Sets dark background for the entire page */
+}
+  
+button {
+    font-size: 30px;                                    /* Makes button text large and readable */
+}
+  
+.terminal {
+    font-family: "IBM Plex Mono", monospace;            /* Monospace font for terminal look */
+    color: rgb(187, 187, 187);                      /* Light gray terminal text color */
+    font-size: 30px;                                    /* Large terminal text */
+    font-weight: 100;                                   /* Thin font weight for modern look */
+}
+  
+.terminal-input {
+    background: rgba(0, 0, 0, 0);                   /* Fully transparent background */
+    font-family: monospace;                             /* Monospace font for typing */
+    color: transparent;                                 /* Hides actual text color */
+    font-size: 30px;                                    /* Matches terminal text size */
+    outline: none;                                      /* Removes focus outline */
+    border: none;                                       /* Removes input border */
+    -webkit-text-fill-color: rgb(187, 187, 187);    /* Visible text color in WebKit browsers */
+}
+  
+.terminal-purple {
+    color: #5050f2;                                 /* Purple text (e.g., commands or highlights) */
+}
+  
+.console-line {
+    color: rgb(0, 178, 0);                          /* Green text like a real terminal output */
+}
+  
+.login-line {
+    color: #fff;                                    /* White text for login or prompt lines */
+}
+  
+.console-carrot {
+    vertical-align: middle;                         /* Aligns cursor with text vertically */
+    background: #fff;                           /* White block cursor */
+    height: 32px;                                   /* Cursor height */
+    width: 17px;                                    /* Cursor width */
+    margin-left: -7px;                              /* Overlaps cursor with previous character */
+    display: inline-block;                          /* Allows sizing and animation */
+    animation: blink 1s step-start 0s infinite;     /* Blinking cursor effect */
+}
+  
+::selection {
+    background-color: #fff;                     /* White highlight when selecting text */
+    color: #000;                                /* Black text inside selection */
+}
+  
+@keyframes blink {
+    50% {
+      opacity: 0;                                   /* Makes cursor disappear halfway (blink) */
+    }
+}

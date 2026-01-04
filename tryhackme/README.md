@@ -11,3 +11,10 @@ Youtube Sources:
 Write-ups
 https://0xrick.github.io/categories/
 ```
+
+# Side Quest
+```
+The find command - https://tryhackme.com/room/thefindcommand
+Bash Scripting - https://tryhackme.com/room/bashscripting
+Regular Expressions - https://tryhackme.com/room/catregex
+```
