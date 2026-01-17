@@ -3,79 +3,123 @@
 # FULL SUN PLANTS
 ## (6–8+ hours sunlight, warm temperatures)
 ```
-1. Basil
-Scientific name: Ocimum basilicum
-Vietnamese: Húng quế
-Planting time: Late spring–summer
-Conditions: Warm soil, well-drained, frequent harvest encourages growth
-Harvest: Seed: 6–8 weeks | Cutting: 2–3 weeks
+Sale for $3 each or 4 for $10
+Buy $20 worth get free gift plant
 
-2. Lemongrass
+$3 American Supermarket Basil                   Hacker: Buy ebay seeds
+Scientific name: Ocimum basilicum
+
+# Note: Easier to propagate roots when temperatures 70+
+# Note: Growing from stem cuttings easier than seeds
+# Note: Bring inside when below 50
+
+Planting time: Late spring–summer
+Conditions: Warm soil, well-drained
+Harvest: 2–3 weeks
+
+Food: Italian Pesto, Salad
+Health: Contains essential oils (eugenol and linalool), offer anti-inflammatory and digestive benefits
+
+$3 Sả (Lemongrass)                              Hacker: Buy at Indian Bazaar $0.70-$1.20/lb
 Scientific name: Cymbopogon citratus
-Vietnamese: Sả
+
 Planting: Late spring after frost
 Conditions: Full sun, rich soil, plenty of water
-Harvest: Seed: 4–6 months | Cutting division: 2–3 months
+Harvest: 3-4 months
 
-3. Turmeric
+Food: Tea, Bún bò Huế, Vietnamese Fried Chicken, Thịt nướng
+Health: Helps with digestive issues, fever, and inflammation. Also has antimicrobial and antioxidant properties.
+
+$3 Nghệ (Turmeric)
 Scientific name: Curcuma longa
-Vietnamese: Nghệ
+
+# Note: Not going to grow cheaper to buy at Indian/Asian Market
+
 Planting: Spring
 Conditions: Warm, humid, loose soil
 Harvest: 8–10 months from rhizomes
 
-4. Ginger
+Food: Tea, Indian Curry and Butter Chicken, Chả cá lã vọng (Vietnamese turmeric fish with dill), Cơm Gà Hội An (Chicken Rice)
+Health: Contains curcumin (antioxidant and anti-inflammatory compound) for heart, joint, and brain health. 
+    Calming inflammation and aiding sleep.
+
+$3 Gừng (Ginger)
 Scientific name: Zingiber officinale
-Vietnamese: Gừng
+
+# Note: Not going to grow cheaper to buy at Indian/Asian Market
+
 Planting: Spring
 Conditions: Moist, warm, partial sun—can take full sun if watered
 Harvest: 6–10 months from rhizome
 
-5. Galangal
+Food: Tea, Everything (Pork, Fish, Chicken, Meat, Lamb)
+Health: Contains gingerols and shogaols—bioactive compounds reduce oxidative stress and support immunity. Help with nausea, colds, and inflammation.
+
+5. Galangal (Riềng)
 Scientific name: Alpinia galanga
-Vietnamese: Riềng
+
+# Note: Not going to grow cheaper to buy at Indian/Asian Market
+
 Planting: Spring
 Conditions: Tropical warmth, rich soil
 Harvest: 10–12 months
 
-6. Oregano
+$3 Kinh giới Tâ (Oregano)
 Scientific: Origanum vulgare
-Vietnamese: Kinh giới Tây (informal)
+
+Note: Toxic in large amounts if eaten by cat/dog/horse or other animal friends!
+
 Planting: Spring
 Conditions: Dry soil, sun
 Harvest: Seed: 10–12 weeks | Cutting: 4–5 weeks
 
-7. English Thyme
+Food: Spaghetti Bolognese, Mediterranean Dishes, Greek salads, Pizza, Spanish paella
+Health: Aromatherapy
+
+$3 Cỏ xạ hương (English Thyme)
 Scientific: Thymus vulgaris
-Vietnamese: Cỏ xạ hương
+
 Planting: Spring
 Conditions: Dry soil, sun
-Harvest: Seed: 3–4 months | Cutting: 6 weeks
+Harvest: 6 weeks
 
-8. Rosemary
+Food: Tea, Spaghetti Bolognese, Roasted Potatoes with Thyme, Steak, Creamy Lemon Chicken with Thyme
+Health: Helps with cough and acne
+
+$3 Hương thảo (Rosemary)
 Scientific: Rosmarinus officinalis / Salvia rosmarinus
-Vietnamese: Hương thảo
+
 Planting: Spring
 Conditions: Full sun, dry soil
-Harvest: Seed: 4–6 months | Cutting: 6–8 weeks
+Harvest: 6–8 weeks
 
-9. French Tarragon
+Food: Fries, Steaks, Breads, Chicken, 
+Drinks: Tea, Rosemary and Ginger Mule (Cocktail)
+Health: Improve memory, Aromatherapy
+
+$3 Ngải tây Pháp (French Tarragon)
 Scientific: Artemisia dracunculus
-Vietnamese: Ngải tây Pháp
+
 Planting: Spring, usually grown from cuttings
 Conditions: Sun, light dry soil
 Harvest: Cutting: 6–8 weeks
 
-10. Red Lettuce / Bibb Lettuce
+$3 Xà lách đỏ / Xà lách bơ (Red Lettuce / Bibb Lettuce)
 Scientific: Lactuca sativa
-Vietnamese: Xà lách đỏ / Xà lách bơ
+
+Note: Beware of hungry rabbits or angry squirrels
+Note: Beware of slugs and caterpillars
+
 Planting: Early spring or fall (cool season)
 Conditions: Sun to light shade, cool temps
 Harvest: Seed: 45–60 days
 
-11. Waxy Corn
+$3 Bắp nếp (Waxy Corn)
 Scientific: Zea mays ceratina
-Vietnamese: Bắp nếp
+
+Note: Beware of angry squirrels and hungry birds
+Note: Protect with bottle method
+
 Planting: Late spring
 Conditions: Full sun, rich soil
 Harvest: 70–90 days
@@ -94,93 +138,120 @@ Planting: Spring
 Conditions: Hot sun
 Harvest: 60–75 days
 
-14. Persian Cucumbers
+$3 Dưa leo Ba Tư (Persian Cucumbers)
 Scientific: Cucumis sativus
-Vietnamese: Dưa leo Ba Tư
+
 Planting: Late spring
 Conditions: Full sun, lots of water
 Harvest: 50–60 days
 
-15. Carrot
+$3 Cà rốt (Carrot)
 Scientific: Daucus carota
-Vietnamese: Cà rốt
+
+# Note: Not going to grow cheaper to buy at Indian/Asian Market
+
 Planting: Early spring or fall
 Conditions: Loose soil, sun
 Harvest: 65–80 days
 
-16. Daikon Radish
+$3 Củ cải trắng (Daikon Radish)
 Scientific: Raphanus sativus var. longipinnatus
-Vietnamese: Củ cải trắng / Củ cải Nhật
+
+# Note: Not going to grow cheaper to buy at Indian/Asian Market
+
 Planting: Early spring or fall
 Conditions: Cool weather
 Harvest: 50–70 days
 
-17. Bitter Melon
+$3 Khổ qua / Mướp đắng (Indian Bitter Melon)
 Scientific: Momordica charantia
-Vietnamese: Khổ qua / Mướp đắng
+
+# Note: Don't plant near other gourds, melons, cucumbers makes them bitter as well
+
 Planting: Late spring
 Conditions: Full sun, trellis
 Harvest: 60–70 days
 
-18. Yard Long Bean
+$2 Đậu đũa (Yard Long Bean)
 Scientific: Vigna unguiculata subsp. sesquipedalis
-Vietnamese: Đậu đũa
+
+Note: Cheaper to buy seeds, easy to grow
+
 Planting: Late spring
 Conditions: Hot sun
 Harvest: 60–80 days
 
-37. Egyptian Spinach / Molokhia
+Food: Stir Fry
+
+$3 Rau đay (Egyptian Spinach / Molokhia)
 Scientific: Corchorus olitorius
-Vietnamese: Rau đay
+
+# Note: Grows real tall like 8-9 feet
+
 Conditions: Warm, moist soil
 Harvest: 50–70 days
 
-38. Malabar Spinach
+Food: Canh rau day mong toi w/ muop
+
+$3 Mồng tơi (Malabar Spinach)
 Scientific: Basella alba
-Vietnamese: Mồng tơi
-Conditions: Heat, moist soil
+
+# Note: Red has stronger taste than green variety
+# Note: Green variety grows quicker
+
+Conditions: Heat, moist soil, easy as hell to grow
 Harvest: 60–70 days
+
+Food: Canh rau day mong toi with muop
 ```
 
 # PARTIAL SUN / PARTIAL SHADE PLANTS
 ## (3–6 hrs light, prefer cooler or moist environments)
 ```
-19. Coriander (Cilantro)
+19. Ngò rí (Cilantro)
 Scientific: Coriandrum sativum
-Vietnamese: Ngò rí
+
 Planting: Early spring–fall
 Harvest: 3–4 weeks leaves
 
-20. Dill
+$3 Thì là (Dill)
 Scientific: Anethum graveolens
-Vietnamese: Thì là
+
 Planting: Early spring
 Harvest: 4–6 weeks
 
-21. Parsley
+Food: Ranch, Vietnamese Fish
+
+21. Ngò tây (Parsley)
 Scientific: Petroselinum crispum
-Vietnamese: Ngò tây
+
 Planting: Spring
 
 Harvest: Seed: 70–90 days
 
-22. Bay Leaf
+$10 Lá nguyệt quế (Bay Leaf)
 Scientific: Laurus nobilis
-Vietnamese: Lá nguyệt quế
 Planting: Spring
-Harvest: Cutting: 2–3 months
+Harvest: 2–3 months
 
-23. Sage
+Food: American soups
+
+23. Xô thơm (Sage)
 Scientific: Salvia officinalis
-Vietnamese: Xô thơm
-Planting: Spring
-Harvest: Seed: 3 months | Cutting: 6 weeks
 
-24. Spearmint
+Planting: Spring
+Harvest: 6 weeks
+
+$3 Húng bạc hà (Spearmint)
 Scientific: Mentha spicata
-Vietnamese: Húng bạc hà
-Planting: Anytime spring–fall
-Harvest: Cutting: 3–4 weeks
+
+Note: Invasive
+Note: Cut often to make more roots grow
+
+Planting: spring–fall then cover with leaves or put in greenhouse
+Harvest: 3–4 weeks
+
+Foods: Salads, Spring Roll, Pho Side Dish
 
 25. Lemon Verbena
 Scientific: Aloysia citrodora
@@ -188,64 +259,84 @@ Vietnamese: Cỏ chanh
 Planting: Spring
 Harvest: Cutting: 6–8 weeks
 
-26. Vietnamese Lemon Balm
-Scientific: Melissa officinalis (or local Elsholtzia ciliata)
-Vietnamese: Kinh giới
+26. Kinh giới (Vietnamese Lemon Balm)
+Scientific: Elsholtzia ciliata
+
 Planting: Spring
 Harvest: 6–8 weeks
 
-27. Marjoram
+Food: Bún chả (Grilled pork with noodles), Bún đậu mắm tôm (Tofu and noodles with fermented shrimp paste),
+    Bánh cuốn (Steamed rice rolls), Bún riêu cua (crab and tomato noodle soup), Bún bò Huế (spicy beef noodle soup),
+    Vietnamese Salad (gỏi)
+
+$ 3 Lemon balm
+Scientific: Melissa officinalis
+
+Note: Invasive
+
+Harvest: 4-5 weeks
+
+Food: Tea
+Health: Reduce stress
+
+$3 Kinh giới ngọt (Marjoram)
 Scientific: Origanum majorana
-Vietnamese: Kinh giới ngọt
+
 Planting: Spring
 Harvest: 70–90 days
 
-28. Pineapple Mint
+Pineapple Mint
 Scientific: Mentha suaveolens var. variegata
-Vietnamese: Bạc hà dứa
+
 Planting: Spring–fall
 Harvest: 4–6 weeks
 
-29. Strawberry Mint
+Strawberry Mint
 Scientific: Mentha ‘Strawberry’
-Vietnamese: Bạc hà dâu
+
 Planting: Spring–fall
 Harvest: 4–6 weeks
 
-30. Cuban Oregano
+$3 Húng chanh (Cuban Oregano)
 Scientific: Plectranthus amboinicus
-Vietnamese: Húng chanh
+
 Planting: Spring–summer
 Harvest: Cutting: 4 weeks
 
-31. Chrysanthemum Greens (Tần Ô)
+$3 Chrysanthemum Greens (Tần Ô)
 Scientific: Glebionis coronaria
-Vietnamese: Tần ô
+
 Planting: Spring or fall
 Harvest: 30–50 days
+
+Food: Hot Pot
 
 32. Garland Chrysanthemum
 Same as above (same species)
 
-33. Chinese Celery
+$3 Cần tàu (Chinese Celery)
 Scientific: Apium graveolens var. secalinum
-Vietnamese: Cần tàu
+
 Planting: Spring
 Harvest: 60–90 days
 ```
 
 # MOISTURE-LOVING OR SHADE-LOVING PLANTS
 ``
-34. Vietnamese Coriander
+$3 Rau răm (Vietnamese Coriander)
 Scientific: Persicaria odorata
-Vietnamese: Rau răm
+
 Planting: Spring
 Conditions: Moist soil, partial shade
 Harvest: Cutting: 3 weeks
 
-35. Fish Mint
+Food: Trứng vịt lộn (Balut), Vietnamese Spring Rolls, Gỏi gà (Vietnamese Chicken Salad)
+
+$3 Diếp cá (Fish Mint)
 Scientific: Houttuynia cordata
-Vietnamese: Diếp cá
+
+Note: Invasive
+
 Conditions: Wet soil, shade
 Harvest: Cutting: 3–4 weeks
 
@@ -255,98 +346,156 @@ Vietnamese: Rau muống
 Conditions: Wet soil or water, full sun to partial shade
 Harvest: 30–45 days
 
-39. Grass Jelly Plant
+$5 Sương sáo (xanh)(Grass Jelly Plant)
 Scientific: Cyclea barbata
-Vietnamese: Sương sáo (xanh)
+
 Conditions: Moist, partial shade
 Harvest: 3–4 months
 
-40. Black Grass Jelly
+Food: Green Grass Jelly
+
+$5 Sương đen (Black Grass Jelly)
 Scientific: Mesona chinensis
-Vietnamese: Sương đen
+
 Conditions: Moist, warm
 Harvest: 3–4 months
 
-41. Rice Paddy Herb
+Food: Black Grass Jelly
+
+Rau om (Rice Paddy Herb)
 Scientific: Limnophila aromatica
-Vietnamese: Rau om
+
 Conditions: Wet soil, partial shade
 Harvest: 4–6 weeks
 
-42. Rau Má
+$3 Rau Má (Pennywort)
 Scientific: Centella asiatica
-Vietnamese: Rau má
+
+Note: Every 1-2 week check for runners add soil
+Note: Brahmi https://mylittlethoughtslane.in/2022/10/07/which-is-the-real-brahmi/
+
 Conditions: Moist soil, partial shade
 Harvest: 6–8 weeks
 
-43. Bạc Hà (Taro Stem)
+Food: Drink, Hot Pot
+Health: Improve memory
+
+$5 Bạc Hà (Edible Elephant Ear)
 Scientific: Colocasia esculenta
-Vietnamese: Bạc hà
+
+Note: Not all elephant ear are edible (bought from Walmart/Home Depot)
+Note: Don't eat raw, contains calcium oxalate!
+Note: Peel skin. Rinse 2-3x. Cut into chunks.  Salt 2 hr and squeeze OR soak in salt water (itchy tongue)
+
 Conditions: Moist/wet soil, partial shade
 Harvest: 4–6 months
 
-44. Gai Lang (Sweet Potato Greens)
+Foods: Canh Chua, Muối chua, Hot Pot
+
+$3 Rau lang (Sweet Potato Greens)
 Scientific: Ipomoea batatas
-Vietnamese: Rau lang
+
 Conditions: Warm, moist sun
 Harvest: 30–50 days
+
+Foods: Steamed, Hot Pot, Saute
 ```
 
 # TREES & SPECIAL PLANTS
 ```
-45. Chinese Toon
+Rau sắng / Xuyên tiêu (Chinese Toon)
 Scientific: Toona sinensis
-Vietnamese: Rau sắng / Xuyên tiêu
+
 Growing: Spring
 Harvest: 2–3 years for shoots
 
-46. Moringa
+$5 Cây chùm ngây (Moringa)
 Scientific: Moringa oleifera
-Vietnamese: Cây chùm ngây
-Growing: Spring
-Harvest: Leaves in 2–3 months
 
-47. Betel Leaf
-Scientific: Piper betle
-Vietnamese: Lá trầu không
+Growing: Spring
+Harvest: Leaves in 2–3 months when big (1-2 years)
+
+Health: Vitamin C
+
+$3 Lá trầu không (Piper Lalot) sometimes called Wild Betel
+Scientific: Piper sarmentosum
+
+Note: Piper Lalot looks like Betel Leaf(Piper betle) but used differently
+Note: Betel Leaf is addictive (chewing)
+
 Conditions: Shade, humid
 Harvest: 3–6 months from cutting
+
+Food: Bò lá lốt
 
 48. Egyptian Walking Onion
 Scientific: Allium x proliferum
 Vietnamese: Hành Ai Cập
 Harvest: Greens in 60–80 days
 
-49. Garlic Chives
+$3 Hẹ (Garlic Chives)
 Scientific: Allium tuberosum
-Vietnamese: Hẹ
+
+Note: Divide every 2 years
+
 Harvest: 60–70 days
 
-50. Magenta Plant (Perilla)
+Food: Chinese Chives with egg, Stir Fry Tofu with Garlic Chives, Steamed Garlic Chive Dumplings, Pork and Chive Dumpling
+
+Tía tô (Perilla)
 Scientific: Perilla frutescens
-Vietnamese: Tía tô
+
 Harvest: 40–60 days
 
-51. Vietnamese Balm
+$3 Rau kinh giới (Vietnamese Balm)
 Scientific: Elsholtzia ciliata
-Vietnamese: Rau kinh giới
+
 Harvest: 6–8 weeks
 ```
 
 ```
+$3 Lá Cẩm (Magenta Plant)
+Scientific: Dicliptera tinctoria
+
+Harvest: 3-4 month
+
+Food: Xôi Lá Cẩm (Vietnamese Magenta Sticky Rice)
+
+$3 Thai basil (Rau quế)
+Scientific: Ocimum basilicum
+
+Harvest: 3-4 weeks
+
+Food: Pho Side, Vietnamese Spring Rolls
+
+$3 Red Sugar Cane (Cây mía đỏ)                      Hacker: Buy at El Rancho sale $0.99 each
+Scientific: Saccharum officinarum
+
+# Note: Red sugar cane sweeter than green
+# Note: Grow horizontal better than straight up
+# Note: Bring inside if below 40 degrees
+
+Harvest: 8-12 months
+
+Food: Sugarcane Juice (Nước Mía), Sugarcane shrimp (Chạo Tôm)
+Health: Helps with acne, enhance digestion, support liver health, and strengthen the immune system
+
+$3 Đậu phộng (Peanut)                       Hacker: Buy at Hong Kong Market Place (Garland, $2.99/lb)
+Scientific: Arachis hypogaea
+
+Harvest: 5 months
+
+Food: Boiled Peanuts, Peanut Butter, Che, Roasted Peanuts
+
+$3 Edamame                                  Hacker: Use Asian Supermarket Soybeans
+Scientific: Glycine max
+
+Harvest: 3 months
+
+Food: Steamed Edamame
+
 TODL: Later fix correct scientific and vietnaemse names and reorganize
-Basil
-Coriander
-Lemongrass
-Turmeric
-Ginger
-Galangal
-Oregano
-English Thyme
-Lemon Verbena
-Dill
-Parsley
-BayLeaf
+
 Sage
 Spearmint
 Rosemary
@@ -356,7 +505,7 @@ Red Lettuce
 Bibb Lettuce
 Egyptian Spinach/Molokhia Rau Day
 Malabar Spinach, Mong Toi
-Magenta Plant
+
 Grass Jelly, Suong Sam
 Black Grass Jelly, Suong Den
 Water Spinach, Rau Muong
@@ -388,7 +537,6 @@ Cuban Oregano
 Garland Chrysanthemum/Chrysanthemum Greens, Tần Ô
 Chrysanthemum
 bac ha
-thai basic
 ```
 
 ## Back to README.md
