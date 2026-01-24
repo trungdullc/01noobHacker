@@ -419,3 +419,5 @@ FodyWeavers.xsd
 
 # Hacker Du Custom
 /udemy/100DaysOfCode/venv/
+# Password Folder
+/udemy/100DaysofCode/passwords

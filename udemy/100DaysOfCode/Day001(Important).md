@@ -280,3 +280,12 @@ if __name__ == "__main__":
     print(dir(a))               # ['x', 'y', 'z'], Right click > Go to Definition (function)
     print(a.__dir__())          # ['x', 'y', 'z'], Right click > Go to Definition (method)
 ```
+
+# Side Quest: __name__
+```python
+if __name__ == "__main__":              # Why Important: Since it directly testing can be used to test code directly
+    print(__name__)                     # __main__      if import delete -> delete
+    print("Ran directly")
+else:
+    print("Ran from import")
+```

@@ -451,9 +451,7 @@ $3 Rau kinh giới (Vietnamese Balm)
 Scientific: Elsholtzia ciliata
 
 Harvest: 6–8 weeks
-```
 
-```
 $3 Lá Cẩm (Magenta Plant)
 Scientific: Dicliptera tinctoria
 
@@ -537,6 +535,129 @@ Cuban Oregano
 Garland Chrysanthemum/Chrysanthemum Greens, Tần Ô
 Chrysanthemum
 bac ha
+```
+
+# Side Quest
+```
+Pandan Leaves
+Soy Bean
+Peanuts
+Sugarcane
+
+Lewisville/Flowermound
+    Kroger
+        1101 Flower Mound Rd
+        Flower Mound, TX 75028
+
+    Restaurant Depot
+        601 W Round Grove Rd
+        Lewisville, TX 75067
+
+    India Bazaar Lewisville
+        2151 Edmonds Ln
+        Lewisville, TX 75067
+
+    Market Street
+        700 N Denton Tap Rd, Coppell, TX 75019
+
+    Costco Wholesale
+        851 State Highway 121 Byp
+        Lewisville, TX 75067
+
+    Zion Market
+        2405 S Stemmons Fwy
+        Lewisville, TX 75067
+
+    El Rancho Supermercado
+        701 Stemmons Fwy, Lewisville, TX 75067
+
+    La Michoacana Supermarket
+        1019 Fox Ave, Lewisville, TX 75067
+
+    Fiesta Mart #83
+        724 W Main St, Lewisville, TX 75067
+
+    WinCo Foods
+        1288 W Main St, Lewisville, TX 75067
+
+    ALDI
+        1585 W Main St, Lewisville, TX 75067
+
+Denton
+    Dyno Dirt
+        1100 S Mayhill Rd, Denton, TX 76208
+
+Irving
+    Doan's Nursery Inc
+    622 S Belt Line Rd, Irving, TX 75060
+
+Arlington
+    - Ben Thanh Plaza and Central Market
+        1818 E Pioneer Pkwy, Arlington, TX 76010
+    
+    Ba Le Vietnamese Restaurant
+        2240 Browning Dr, Arlington, TX 76010
+
+    Fiesta Mart #60
+        1300 E Pioneer Pkwy, Arlington, TX 76010
+
+    Tea Garden Nursery
+        1211 E Arkansas Ln, Arlington, TX 76010
+
+    Cho Saigon New Market
+        2206 S Collins St, Arlington, TX 76010
+
+    Xin Xin China Market
+        2206 S Collins St, Arlington, TX 76010
+
+    - Hiệp Thái Food Store Arlington
+        2430 E Pioneer Pkwy, Arlington, TX 76010
+
+    Hong Kong Market Place
+        2615 W Pioneer Pkwy, Grand Prairie, TX 75051
+
+    -- May Hao Oriental Market
+        2525 E Arkansas Ln, Arlington, TX 76010
+
+Carrolton
+    99 Ranch Market
+        2532 Old Denton Rd, Carrollton
+
+    H Mart Carrollton
+        2625 Old Denton Rd, Carrollton
+
+    Carrollton Plaza Supermarket
+        3040 N Josey Ln
+        Carrollton, TX 75007
+
+Plano/Garland
+    Living Earth
+        Dallas, 1901 California Crossing Rd, Dallas, TX 75220
+
+    H Mart Dallas
+        2534 Royal Ln, Dallas
+
+    - Hong Kong Market Place
+        9780 Walnut St, Dallas, TX 75243
+
+    New Truong Nguyen Market
+        E Walnut St, Garland, TX 75040
+
+    Hiep Thai Food Store Garland
+        3347 W Walnut St, Garland, TX 75042
+
+    Sieu Thi Thuan Phat Supermarket
+        3212 N Jupiter Rd, Garland, TX 75044
+
+    - Good Fortune
+        400 N Greenville Ave, Richardson, TX 75081
+
+    99 Ranch Market
+        131 W Spring Creek Pkwy, Plano
+
+    Jusgo Supermarket
+        240 Legacy Dr, 
+        Plano, TX 75023, United States
 ```
 
 ## Back to README.md
