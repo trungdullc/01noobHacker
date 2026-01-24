@@ -88,10 +88,10 @@ file2.txt contains
 
 # Job is to find overlap data and return as list[int] called result
 if __name__ == "__main__":
-    with open("file1.txt") as file1:
+    with open("data/file1.txt") as file1:
         list1 = file1.readlines()
 
-    with open("file2.txt") as file2:
+    with open("data/file2.txt") as file2:
         list2 = file2.readlines()
         
     result = [int(number) for number in list1 if number in list2] 
@@ -102,9 +102,9 @@ if __name__ == "__main__":
 from turtle import Turtle, Screen
 import pandas
 
-IMAGE_PATH = "blank_states_img.gif"
-CSV_PATH = "50_states.csv"
-OUTPUT_FILE = "states_to_learn.csv"
+IMAGE_PATH = "images/blank_states_img.gif"
+CSV_PATH = "data/50_states.csv"
+OUTPUT_FILE = "data/states_to_learn.csv"
 
 guessed_correct_states = []
 
@@ -244,7 +244,7 @@ import pandas
 
 if __name__ == "__main__":
     # TODO 1: Create a dictionary in this format
-    content = pandas.read_csv("nato_phonetic_alphabet.csv")
+    content = pandas.read_csv("data/nato_phonetic_alphabet.csv")
     alphabet_dict = {row["letter"]:row["code"] for (index, row) in content.iterrows()}
     # print(alphabet_dict)
 

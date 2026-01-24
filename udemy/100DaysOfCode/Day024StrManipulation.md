@@ -276,7 +276,7 @@ class Scoreboard(Turtle):
         super().__init__()
         self.score = 0
         # self.high_score = self.score
-        with open("data.txt") as file:                  # New
+        with open("data/data.txt") as file:                  # New
             self.high_score = int(file.read())
         self.hideturtle()
         self.penup()
@@ -295,7 +295,7 @@ class Scoreboard(Turtle):
     def reset(self):
         if self.score > self.high_score:
             self.high_score = self.score                # Note: order matters
-            with open("data.txt", mode="w") as file:    # New
+            with open("data/data.txt", mode="w") as file:    # New
                 file.write(f"{self.high_score}")
         self.score = 0
         self.update_scoreboard()    
@@ -381,12 +381,12 @@ strip(self, chars=None, /)
 PLACEHOLDER = "[name]"
 
 if __name__ == "__main__":
-    with open("invited_names.txt") as file:
+    with open("data/invited_names.txt") as file:
         names: list[str] = file.readlines()
 
     # print(names)                                        # ['Hackerdu\n', 'Bob\n', 'Sam\n', 'Roy']
 
-    with open("starting_letter.txt") as letter_file:
+    with open("data/starting_letter.txt") as letter_file:
         letter_contents = letter_file.read()
     
     # print(letter_contents)

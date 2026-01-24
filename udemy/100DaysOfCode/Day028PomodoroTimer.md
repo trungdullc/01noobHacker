@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
     # Canvas class
     canvas = tk.Canvas(width=200, height=224)
-    tomato_img = tk.PhotoImage(file="tomato.png")                       # Note: Need convert image to PhotoImage class
+    tomato_img = tk.PhotoImage(file="images/tomato.png")                # Note: Need convert image to PhotoImage class
     canvas.create_image(102, 112, image=tomato_img)                     # Based on canvas size
     timer_text = canvas.create_text(102, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
     canvas.grid(row=1, column=1)

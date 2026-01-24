@@ -37,7 +37,7 @@ import tkinter.messagebox               # Go to Definition
 import random
 import pyperclip                        # pip3 install pyperclip
 
-LOGO_SOURCE="logo.png"
+LOGO_SOURCE="images/logo.png"
 FONT_STYLE="Courier"
 
 # ---------------------------- TODO 3: PASSWORD GENERATOR ------------------------------- #
@@ -94,7 +94,7 @@ def save():
 
         if is_ok:
             # print(f"{website_entry.get()} | {email_entry.get()} | {password_entry.get()}")
-            with open("data_password.txt", mode="a") as file:
+            with open("data/data_password.txt", mode="a") as file:
                 file.write(f"{website_entry.get()} | {email_entry.get()} | {password_entry.get()}\n")
             print("DEBUG: Successfully added entry")
 

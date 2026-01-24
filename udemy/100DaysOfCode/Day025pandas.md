@@ -70,11 +70,11 @@ def read_data_panda(file_location):
     print(file_data["temp"])
 
 if __name__ == "__main__":
-    read_data("weather_data.csv")
+    read_data("data/weather_data.csv")
     # Note: painful to work with string like this
     print(data)                         # ['day,temp,condition', 'Monday,12,Sunny', 'Tuesday,14,Rain', 'Wednesday,15,Rain', 'Thursday,14,Cloudy', 'Friday,21,Sunny', 'Saturday,22,Sunny', 'Sunday,24,Sunny']
-    read_data_csv("weather_data.csv")   
-    read_data_panda("weather_data.csv")
+    read_data_csv("data/weather_data.csv")   
+    read_data_panda("data/weather_data.csv")
     """
     [
         ['day', 'temp', 'condition'], 
@@ -165,7 +165,7 @@ if __name__ == "__main__":
 import pandas
 
 if __name__ == "__main__":
-    data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data_20260116.csv")    # Created a DataFrame
+    data = pandas.read_csv("data/2018_Central_Park_Squirrel_Census_-_Squirrel_Data_20260116.csv")   # Created a DataFrame
     # print(data)
     print(set(data["Primary Fur Color"]))                                                       # {'Cinnamon', nan, 'Black', 'Gray'}
     gray_squirrels = data[data["Primary Fur Color"] == "Gray"]
@@ -208,7 +208,7 @@ from turtle import Turtle, Screen
 def get_mouse_click_coor(x, y):
     print(x, y)
 
-IMAGE_PATH = "blank_states_img.gif"
+IMAGE_PATH = "images/blank_states_img.gif"
 
 if __name__ == "__main__":
     screen = Screen()
@@ -231,9 +231,9 @@ import pandas
 # def get_mouse_click_coor(x, y):
 #     print(x, y)
 
-IMAGE_PATH = "blank_states_img.gif"
-CSV_PATH = "50_states.csv"
-OUTPUT_FILE = "states_to_learn.csv"
+IMAGE_PATH = "images/blank_states_img.gif"
+CSV_PATH = "data/50_states.csv"
+OUTPUT_FILE = "data/states_to_learn.csv"
 
 guessed_correct_states = []                     # Using this and len don't need counter and gameover flag
 
