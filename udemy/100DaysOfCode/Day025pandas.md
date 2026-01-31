@@ -100,7 +100,7 @@ if __name__ == "__main__":
     print(data["temp"])
     print(type(data["temp"]))                   # <class 'pandas.core.series.Series'> is a column like a list
 
-    data_dict = data.to_dict()
+    data_dict = data.to_dict()                  # ❤️❤️❤️❤️❤️
     print(data_dict)                            # Serialize
     """
     {
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     """
     print(data_dict["temp"])                    # {0: 12, 1: 14, 2: 15, 3: 14, 4: 21, 5: 22, 6: 24}
 
-    temp_list = data["temp"].to_list()
+    temp_list = data["temp"].to_list()          # ❤️❤️❤️❤️❤️
     print(temp_list)                            # [12, 14, 15, 14, 21, 22, 24]
 
     # Challenge: Find average temp of list
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     print(data.temp.max())                      # Note: pandas automatically converted column as a attribute
 
     # Challenge: Get row data
-    print(data[data.day == "Monday"])           # print(data[data["day"]  == "Monday"])
+    print(data[data.day == "Monday"])           # print(data[data["day"]  == "Monday"]) ❤️❤️❤️❤️❤️
     #       day  temp condition
     # 0  Monday    12     Sunny
     
@@ -218,7 +218,7 @@ if __name__ == "__main__":
     turtle = Turtle()
     turtle.shape(IMAGE_PATH)
 
-    screen.onscreenclick(get_mouse_click_coor)
+    screen.onscreenclick(get_mouse_click_coor)  # ❤️❤️❤️❤️❤️
     screen.mainloop()
     # screen.exitonclick()
 ```

@@ -1,4 +1,5 @@
 # Day 005
+# Lesson: Review
 ```python
 fruits: list[str] = ["Apple", "Pear", "Peach"]
 
@@ -10,7 +11,7 @@ for fruit in fruits:
     print(fruit, end=" ")
 print()
 
-for index, value in enumerate(fruits):
+for index, value in enumerate(fruits):                  # ❤️❤️❤️❤️❤️
     print(f"{index}: {value}")
 ```
 
@@ -154,18 +155,18 @@ if __name__ == "__main__":
 Replit (Sandbox): https://replit.com/@appbrewery/password-generator-end#main.py
 
 import random
-import string                                   # Right click > Go to Definition
+import string                                   # Right click > Go to Definition ❤️❤️❤️❤️❤️
 
 # string.py
 """A collection of string constants.
 
 Public module variables:
 
-whitespace -- a string containing all ASCII whitespace
-ascii_lowercase -- a string containing all ASCII lowercase letters
+whitespace -- a string containing all ASCII whitespace ❤️❤️❤️❤️❤️
+ascii_lowercase -- a string containing all ASCII lowercase letters ❤️❤️❤️❤️❤️
 ascii_uppercase -- a string containing all ASCII uppercase letters
-ascii_letters -- a string containing all ASCII letters
-digits -- a string containing all ASCII decimal digits
+ascii_letters -- a string containing all ASCII letters ❤️❤️❤️❤️❤️
+digits -- a string containing all ASCII decimal digits ❤️❤️❤️❤️❤️
 hexdigits -- a string containing all ASCII hexadecimal digits
 octdigits -- a string containing all ASCII octal digits
 punctuation -- a string containing all ASCII punctuation characters
@@ -202,8 +203,8 @@ def str_password_generator() -> None:
 
     password_list = list(password)                      # Fix: convert str to mutable type then back to str
     random.shuffle(password_list)                       # random.shuffle() only works on MutableSequence[Any] but string is immutable
-    password = "".join(password_list)                   # convert list back to str
-    print(f"Your password is: {password}")
+    password = "".join(password_list)                   # convert list back to str ❤️❤️❤️❤️❤️ vs str.split() vs for char in password
+    print(f"Your password is: {password}")              # formatted string w/ {} ❤️❤️❤️❤️❤️
 
 def list_password_generator() -> None:
     """

@@ -44,7 +44,7 @@ if __name__ == "__main__":
 numbers: list[int] = [1,2,3]
 
 if __name__ == "__main__":
-    print([number * 2 for number in numbers if number >= 2])
+    print([number * 2 for number in numbers if number >= 2])    # ❤️❤️❤️❤️❤️
 ```
 
 # Side Quest: Challenge
@@ -164,7 +164,7 @@ Output:
 sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
 
 if __name__ == "__main__":
-    result = {word:len(word) for word in sentence.split(" ")}       # Note: Default split() works also
+    result = {word:len(word) for word in sentence.split(" ")}       # Note: Default split() works also ❤️❤️❤️❤️❤️
     print(result)
 
 """
@@ -232,7 +232,7 @@ if __name__ == "__main__":
     # print(pandas_DF)
 
     # Loop thru DataFrame ❤️
-    for (index, row) in pandas_DF.iterrows():
+    for (index, row) in pandas_DF.iterrows():           # ❤️❤️❤️❤️❤️
         print(row["student"], row["score"])
 ```
 

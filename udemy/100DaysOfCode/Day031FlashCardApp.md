@@ -34,7 +34,7 @@ current_card = {}
 
 def manipulate_csv():
     try:
-        words_DF = pandas.read_csv("data/words_to_learn.csv")
+        words_DF = pandas.read_csv("data/words_to_learn.csv")           # ❤️❤️❤️❤️❤️
     except FileNotFoundError:
         words_DF = pandas.read_csv("data/french_words.csv")
     finally:
@@ -52,7 +52,7 @@ def manipulate_csv():
         # print(words_dict.keys())          # dict_keys(['French', 'English'])
 
         # Override words_dict since we want a list of dict to work with
-        words_list = words_DF.to_dict(orient="records")
+        words_list = words_DF.to_dict(orient="records")     # ❤️❤️❤️❤️❤️
         # print(words_list)
         """
         [
@@ -129,7 +129,7 @@ if __name__ == "__main__":
     card_word = canvas.create_text(400, 263, text="PLACEHOLDER", font=("Ariel", 60, "bold"))
 
     # Buttons    
-    correct_image = tk.PhotoImage(file="images/right.png")
+    correct_image = tk.PhotoImage(file="images/right.png")                  # ❤️❤️❤️❤️❤️
     correct_button = tk.Button(image=correct_image, highlightthickness=0, command=is_known)
     correct_button.grid(row=1, column=1)
 

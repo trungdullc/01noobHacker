@@ -29,7 +29,8 @@ Profile Picture (Top Right) > Manage your Google Account > Security > 2-Step Ver
     # smtplib.SMTP("smtp.gmail.com", port=587)
 
 smtplib Documentation: https://docs.python.org/3/library/smtplib.html
-Note: Have to use this link to see App passwords: https://myaccount.google.com/u/1/apppasswords
+Note: Have to use this link to see App passwords: https://myaccount.google.com/u/1/apppasswords ❤️
+Important: To delete use same link above and click trash can ❤️❤️❤️❤️❤️
 Note: Many things not in Documentation have to brute force code
 """
 
@@ -193,7 +194,7 @@ if __name__ == "__main__":
     print("Message Sent")
 ```
 
-# Tool to run python code on cloud ⭐⭐⭐
+# Tool to run python code on cloud ⭐⭐⭐❤️❤️❤️❤️❤️
 ```python
 """ 3 Methods to run python code
 Linux:

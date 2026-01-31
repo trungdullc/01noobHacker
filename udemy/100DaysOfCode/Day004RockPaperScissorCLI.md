@@ -1,4 +1,5 @@
 # Day 004
+# Lesson: Review
 ```python
 # Q: What is a module, if your team was tasked with created a robot?
 # A: Different functionalities each team member responsible for (Machine Learning, Movement, Vision, Safety, Math)
@@ -9,22 +10,25 @@ import random                               # Note: Quick Fix if not know librar
 if __name__ == "__main__":
     # random                                # Ctrl + . (Quick Fix w/ import random)
     
-    for _ in range(10):
+    for _ in range(10):                     # Note: No C/C++ like for (i=0, i <= 10 < i++) ❤️❤️❤️❤️❤️
         random_dice: int = random.randint(a=1, b=6)
         print(random_dice)
 ```
 
-# Side Quest: Creating custom module ⭐⭐⭐⭐⭐
+# Side Quest: Creating custom module ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
 ```python
 # my_module.py
-my_fav_number: float = 3.1415
+my_fav_number: float = 3.1415                       # variable
 
-def double(x: float) -> float:
+def double(x: float) -> float:                      # function
     return x * 2
 
-class MathHelper:
+class MathHelper:                                   # class
     def __init__(self, value: float) -> None:
         self.value = value
+
+    def __str__(self):
+        return f"MathHelper current value is {self.value}"
 
     def double(self) -> float:
         return self.value * 2
@@ -37,12 +41,13 @@ if __name__ == "__main__":
     print(my_module.double(3.1415))
 
     helper = my_module.MathHelper(3.1415)               # from my_module import MathHelper ❤️
+    print(helper)                                       # MathHelper current value is 3.1415 (from __str__)
     print(helper.double())
 ```
 
 # Side Quest: random floats with random.random()
 ```python
-import random                                           # Quick Fix to find library
+import random                                           # Quick Fix to find library ❤️❤️❤️❤️❤️
 # random                                                Ctrl + f: 0.0
 
 class SystemRandom(Random):
@@ -59,7 +64,7 @@ if __name__ == "__main__":
     random_float_1to10: float = (random.random() * 10) + 1
     print(random_float_1to10)                           # 1.0 to 10.0
 
-    num: float = random.randint(0, 1000) / 100          # 0.0 to 10.0
+    num: float = random.randint(0, 1000) / 100          # 0.0 to 10.0 ❤️❤️❤️❤️❤️
     print(num)
 ```
 
@@ -123,7 +128,7 @@ import random
 friends: list[str] = ["HackerDu", "Bob", "Alice", "Charlie", "David"]
 
 def random_friend(my_list: list[str] = friends) -> None:
-    print(random.choice(my_list))                               # (variable) def choice(seq: SupportsLenAndGetItem[_T@choice]) -> _T@choice
+    print(random.choice(my_list))                               # (variable) def choice(seq: SupportsLenAndGetItem[_T@choice]) -> _T@choice ❤️❤️❤️❤️❤️
 
 if __name__ == "__main__":
     random_friend()
@@ -134,7 +139,7 @@ if __name__ == "__main__":
 fruits: list[str]= ["Strawberries", "Apples", "Grapes", "Peaches", "Cherries", "Pears", "Nectarines"]
 vegetables: list[str] = ["Kale", "Collard Greens", "Mustard Greens", "Spinach", "Bell Peppers"]
 
-dirty_dozen: list[list["str"]] = [fruits, vegetables]               # Note: Order matters, fruits and vegetables must be defined first
+dirty_dozen: list[list["str"]] = [fruits, vegetables]               # Note: Order matters, fruits and vegetables must be defined first ❤️❤️❤️❤️❤️
 
 if __name__ == "__main__":
     print(dirty_dozen)

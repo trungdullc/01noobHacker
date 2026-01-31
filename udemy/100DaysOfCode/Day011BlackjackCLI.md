@@ -1,4 +1,5 @@
 # Day 011
+# Lesson: Review
 ```python
 # Rule: Dealer keeps dealing if cards less than 17
 # Rule: Over 21 = lost
@@ -31,6 +32,7 @@ logo = """
       '------'                           |__/    
 """
 
+# ❤️❤️❤️❤️❤️
 cards: dict[str, int] = {
     "A": 11,
     "2": 2,
@@ -60,9 +62,9 @@ def calculate_score(cards) -> int:
     """
     if sum(cards) == 21 and len(cards) == 2:
         return 0                                        # Special for Black Jack
-    elif 11 in cards and sum(cards) > 21:
-        cards.remove(11)
-        cards.append(1)
+    elif 11 in cards and sum(cards) > 21:               # ❤️❤️❤️❤️❤️
+        cards.remove(11)                                # ❤️❤️❤️❤️❤️
+        cards.append(1)                                 # ❤️❤️❤️❤️❤️
     return sum(cards)
 
 if __name__ == "__main__":

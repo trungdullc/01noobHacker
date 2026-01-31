@@ -1,9 +1,7 @@
 # Day 019
-```python
+# Lesson: turtle EventListeners
 
-```
-
-# Side Quest: Event Listners in turtle called screen events
+# Side Quest: Event Listeners in turtle called screen events
 ```python
 # listen()
 # onkey() | onkeyrelease()

@@ -1,4 +1,5 @@
 # Day 014
+# Lesson: Use random.choice() to access object in a list[dict]
 ```python
 logo = """
     __  ___       __             
@@ -355,7 +356,7 @@ if __name__ == "__main__":
     print(LOGO)
 
     while not game_over:
-        person_1 = random.choice(data)
+        person_1 = random.choice(data)                # Note: type is object ❤️❤️❤️❤️❤️
         person_2 = random.choice(data)
 
         if person_2 == person_1:

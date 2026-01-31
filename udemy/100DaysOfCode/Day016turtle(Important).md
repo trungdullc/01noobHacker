@@ -1,4 +1,7 @@
 # Day 016
+# turtle for drawing and moving objects
+# prettytable for making tables pretty but prob use pandas more
+# turn the functions into seperate classes
 ```python
 # Procedural Programming
 # Going from one function to another: Fortran and Cobal and C
@@ -34,7 +37,7 @@ Screen()
     else return the existing one.
 ```
 
-# Side Quest: turtle.Turtle() and turtle.Screen()
+# Side Quest: turtle.Turtle() and turtle.Screen() ❤️❤️❤️❤️❤️
 ```python
 from turtle import Turtle, Screen   # orange box: class ⭐ in Visual Studio Code vs PyCharm
 
@@ -53,7 +56,7 @@ if __name__ == "__main__":
     my_screen.exitonclick()
 ```
 
-# Side Quest: Add python packages using PyPi (Python Package Index) ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
+# Side Quest: Add python packages using PyPi (Python Package Index) ⭐⭐⭐⭐⭐❤️❤️❤️❤️❤️
 ```python
 # When looking for other people packages because you lazy: https://pypi.org/ ⭐
 # https://pypi.org/search/?q=prettytable&o=

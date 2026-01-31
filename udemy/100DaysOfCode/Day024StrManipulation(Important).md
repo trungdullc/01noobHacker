@@ -1,4 +1,5 @@
 # Day 024
+# Lesson: Opening, Appending, Reading files
 ```python
 # Note: On flaw on snake program is when exit game high score is gone
 ```
@@ -177,8 +178,8 @@ def read_file(text: str):           # Preferred,not need close()
 # Note: mode="w" will write new file if not exist
 # Note: mode="a" will get error if file not exist and trying to append
 def write_file(text: str):
-    with open(text, mode="a") as file:
-        file.write("New text has appeared!")
+    with open(text, mode="a") as file:                      # ❤️❤️❤️❤️❤️
+        file.write("New text has appeared!")                # .readlines() ❤️❤️❤️❤️❤️
 
 if __name__ == "__main__":
     read_file("my_file.txt")
@@ -393,7 +394,7 @@ if __name__ == "__main__":
 
     for name in names:
         stripped_name = name.strip()
-        new_letter = letter_contents.replace(PLACEHOLDER, stripped_name)
+        new_letter = letter_contents.replace(PLACEHOLDER, stripped_name)    # ❤️❤️❤️❤️❤️
         # print(new_letter)
 
         # Note: Need Output\ReadyToSend folder already created or get FileNotFoundError

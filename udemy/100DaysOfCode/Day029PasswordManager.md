@@ -24,7 +24,7 @@ if __name__ == "__main__":
     g.grid(row=1, column=1)
 
     b = tk.Label(bg="blue", width=40, height=5)         # Note: Had to increase width as well
-    b.grid(row=2, column=0, columnspan=2)               # columnspan attribute
+    b.grid(row=2, column=0, columnspan=2)               # columnspan attribute ❤️❤️❤️❤️❤️
     b.config(highlightthickness=0)
 
     window.mainloop()
@@ -33,9 +33,9 @@ if __name__ == "__main__":
 # Side Quest: Password Manager
 ```python
 import tkinter as tk
-import tkinter.messagebox               # Go to Definition
+import tkinter.messagebox               # Go to Definition ❤️❤️❤️❤️❤️
 import random
-import pyperclip                        # pip3 install pyperclip
+import pyperclip                        # pip3 install pyperclip ❤️❤️❤️❤️❤️
 
 LOGO_SOURCE="images/logo.png"
 FONT_STYLE="Courier"

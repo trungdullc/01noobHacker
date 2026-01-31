@@ -1,4 +1,5 @@
 # Day 017
+# Lesson: Review
 ```python
 # API: Trivia Question Generator
 # Source: https://opentdb.com/api_config.php
@@ -21,7 +22,7 @@ class User:
 if __name__ == "__main__":
     user_1 = User()
 
-    # add attributes to class (dangerous)
+    # add attributes to class (dangerous)       # ❤️
     user_1.id = "911"
     user_1.username = "hackerdu"
     print(user_1)                               # <__main__.User object at 0x0000025BEBBB0D10>
@@ -171,7 +172,7 @@ class Question:
 # quiz_brain.py
 class QuizBrain:
 
-    def __init__(self, q_list):
+    def __init__(self, q_list):                         # Initial 1 time so best to put initial score ❤️❤️❤️❤️❤️
         self.question_number = 0
         self.score = 0
         self.question_list = q_list

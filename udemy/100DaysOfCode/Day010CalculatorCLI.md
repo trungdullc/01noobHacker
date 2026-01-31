@@ -1,4 +1,5 @@
 # Day 010
+# Lesson: Review
 ```python
 logo = """
  _____________________
@@ -63,10 +64,10 @@ if __name__ == "__main__":
 # Side Quest: Multiple return
 ```python
 def name_title(f_name, l_name) -> tuple[str, str]:
-    return f_name.title(), l_name.title()
+    return f_name.title(), l_name.title()                           # ❤️❤️❤️❤️❤️
 
 if __name__ == "__main__":
-    first_name, last_name = name_title("hacker", "DU")
+    first_name, last_name = name_title("hacker", "DU")              # ❤️❤️❤️❤️❤️
     print(f"Hi {first_name} {last_name}")
 ```
 

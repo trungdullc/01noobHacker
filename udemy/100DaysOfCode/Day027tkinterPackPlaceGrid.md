@@ -72,7 +72,7 @@ if __name__ == "__main__":
 # Side Quest: **kwargs used in class
 ```python
 class Car:
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs):                               # ❤️❤️❤️❤️❤️
         self.make = kwargs["make"]                              # Important: If make attribute not exist would crash
         self.model = kwargs["model"]                            # kwargs.get("model")       Always use get() returns None
     
@@ -90,7 +90,7 @@ def print_me(num: int, *arg, **kwargs):
     print(num, arg, kwargs)
 
 if __name__ == "__main__":
-    print_me(1337, 69, 42, 777, 666, x=0, y=67)     # 1337 (69, 42, 777, 666) {'x': 0, 'y': 67}
+    print_me(1337, 69, 42, 777, 666, x=0, y=67)     # 1337 (69, 42, 777, 666) {'x': 0, 'y': 67} ❤️❤️❤️❤️❤️
 ```
 
 # Side Quest: Buttons in tkinter
@@ -152,7 +152,7 @@ window.mainloop()
 import tkinter as tk
 
 def button_clicked():
-    user_input = input.get()                    # get()
+    user_input = input.get()                    # get() ❤️❤️❤️❤️❤️
     my_label["text"] = user_input
     print(user_input)
 
@@ -167,7 +167,7 @@ my_label.pack()
 my_button = tk.Button(text="Press", command=button_clicked)
 my_button.pack()
 
-input = tk.Entry(width=10)
+input = tk.Entry(width=10)                  # Assign Entry as input ❤️❤️❤️❤️❤️
 input.pack()
 
 # window.bind("<Button-1>", lambda event: window.destroy())

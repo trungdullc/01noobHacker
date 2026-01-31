@@ -1,6 +1,7 @@
 # Day 003
+# Lesson: Review
 ```python
-# Note: Python has no switch/case statement (C/C++, Java, or JavaScript)
+# Note: Python has no switch/case statement (C/C++, Java, or JavaScript) ❤️❤️❤️❤️❤️
 # Control Flow w/           if/else/elif
 # Comparison operators      >, >=, <, <=, ==, !=
 # Logical operators         and, or, not
@@ -10,13 +11,13 @@ age: int = 20
 # teens get discount
 if age <18:
     print("You can't drink")
-elif age >= 18 and age < 21:                # elif 18 <= age < 21:
+elif age >= 18 and age < 21:                # elif 18 <= age < 21: ❤️❤️❤️❤️❤️
     print("You can drink in USA")
 else:
     print("You to old to drink")
 
 # Note: if forget method right click on str > Go to Definition or dir(str)
-is_extra: str = input("Do you want supersize it for $2 more. [Y]es or [N]o : ")[0].upper()
+is_extra: str = input("Do you want supersize it for $2 more. [Y]es or [N]o : ")[0].upper()  # ❤️❤️❤️❤️❤️
 
 if is_extra == "Y":
     print("That will be $2 extra")
@@ -50,5 +51,5 @@ if __name__ == "__main__":
 
 # Side Quest: ASCII Art
 ```
-Optional Site: https://ascii.co.uk/art
+Optional Site: https://ascii.co.uk/art      # ❤️❤️❤️❤️❤️
 ```

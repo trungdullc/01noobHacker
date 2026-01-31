@@ -17,7 +17,7 @@
 ```python
 # Purpose: Show importance of global variables and how Canvas has different config in tkinter
 import tkinter as tk
-import time
+import time                                 # ❤️❤️❤️❤️❤️
 
 # ---------------------------- CONSTANTS ------------------------------- #
 # Color Source: https://colorhunt.co/
@@ -100,7 +100,7 @@ def count_down(count):
 if __name__ == "__main__":
     window = tk.Tk()
     window.title("Pomodoro")
-    window.config(padx=100, pady=50, bg=YELLOW, highlightthickness=0)
+    window.config(padx=100, pady=50, bg=YELLOW, highlightthickness=0)   # ❤️❤️❤️❤️❤️
 
     # Label class
     title_label = tk.Label(text="Timer", font=(FONT_NAME, 24, "bold"), fg=GREEN, bg=YELLOW)

@@ -1,4 +1,5 @@
 # Day 021
+# Lesson: Understanding snake game will help understand basics of collision detection
 ```python
 # Inheritance
 class Animal:

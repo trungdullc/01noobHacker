@@ -2,24 +2,24 @@
 # Important concepts I've learned
 ```python
 Documentation: https://docs.python.org/3/
-# Important: Before doing interview make sure you have Python Extension by Microsoft on VSC ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
+# Important: Before doing interview make sure you have Python Extension by Microsoft on VSC ⭐⭐⭐⭐⭐
 
-python -m http.server 8000              # Module execution mode
-python -m venv venv
+python -m http.server 8000              # Module execution mode, http.server ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
+python -m venv venv                     # Module execution mode, virtual environment ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
 venv\Scripts\activate (for Windows)     source venv/bin/activate (for Linux/macOS)
 (myenv) $ pip install requests
 (myenv) $ deactivate
-python -c "print(help())"               # Command-line execution mode
-python -c "print(dir(print))"
+python -c "print(help())"               # Command-line execution mode ❤️❤️❤️❤️❤️
+python -c "print(dir(print))"           # Command-line execution mode ❤️❤️❤️❤️❤️
 python -q                               # Interactive mode (quiet)
 >>>                                     # Python Interactive Interpreter aka REPL (Read–Eval–Print Loop)
 
-# import builtins                       # builtins.print("Hi Hackers")
+# import builtins                       # builtins.print("Hi Hackers") ❤️❤️❤️❤️❤️
 from builtins import print, len         # print("Hi Hackers"))
 # import typing                         # python -q -> dir(typing) or
                                         # python -c "import typing; print(dir(typing))"     Note: # comments
                                         # python -c "import typing; help(typing)"
-from typing import List
+from typing import List                 # Note: Used alot in Leetcode ❤️❤️❤️❤️❤️
 
 def static_triple(number: float) -> float:                      # Optional: type annotation
     """Note: Defined functions outside class not use self"""    # __doc__: Function docstring
@@ -28,10 +28,10 @@ def static_triple(number: float) -> float:                      # Optional: type
 
 class Calculator:
     """ calculator program """                                  # __doc__: class docstring
-    def __init__ (self, number: float):                         # python dunder method
+    def __init__ (self, number: float):                         # python dunder method ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
         self.number = number
 
-    def __str__ (self) -> str:
+    def __str__ (self) -> str:                                  # python dunder method ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
         """__str__      used by print()"""
         return f"Calculator(number={self.number})"
     
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     print(repr(calc))                       # uses __repr__, Calculator(5)
     
     print(static_triple(5))                 # 15
-    print(static_triple.__doc__)            # Note: Defined functions outside class not use self
+    print(static_triple.__doc__)            # Note: Defined functions outside class not use self ❤️❤️❤️❤️❤️
     help(static_triple)
 ```
 
@@ -71,9 +71,9 @@ class Animal:
     def breathe(self) -> None:
         print("breathing")
 
-class Fish(Animal):                         # Inheritance w/ () instead of : like C++
+class Fish(Animal):                         # Inheritance w/ () instead of : like C++ ❤️❤️❤️❤️❤️
     def breathe(self) -> None:
-        super().breathe()                   # super() from parent
+        super().breathe()                   # super() from parent ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
         print("underwater")
 
 if __name__ == "__main__":                  # Note: if create __init__ for Fish it will override parent
@@ -123,7 +123,7 @@ New: Paste into ChatGPT or another AI
 
 # builtins.input()
 ```python
-PS C:\Users\hackerdu> python -c "print(dir(input))"
+PS C:\Users\hackerdu> python -c "print(dir(input))"         # ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
 ['__call__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__self__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__text_signature__']
 
 PS C:\Users\hackerdu> python -c "help(input)"
@@ -142,7 +142,7 @@ input(prompt='', /)
 print("Hi " + input("What is your name?"))
 ```
 
-# Side Quest: Thonny (See how compiler steps into fx)
+# Side Quest: Thonny (See how compiler steps into fx) ❤️❤️❤️❤️❤️
 ```python
 Site: thonny.org
 # Note: Good for noobs
@@ -151,7 +151,7 @@ Step into (F7)
 # Note: How it changes "Hi" into return string 'Hi'
 ```
 
-# Side Quest: Commenting in Editors ❤️❤️❤️❤️❤️
+# Side Quest: Commenting in Editors ❤️❤️❤️❤️❤️⭐⭐⭐⭐⭐
 ```
 Highlight Code
     Ctrl + /            Windows
@@ -284,7 +284,7 @@ if __name__ == "__main__":
 # Side Quest: __name__
 ```python
 if __name__ == "__main__":              # Why Important: Since it directly testing can be used to test code directly
-    print(__name__)                     # __main__      if import delete -> delete
+    print(__name__)                     # __main__      if import delete -> delete ❤️❤️❤️❤️❤️
     print("Ran directly")
 else:
     print("Ran from import")
