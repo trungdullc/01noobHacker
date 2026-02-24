@@ -1,0 +1,103 @@
+"""
+Ant Simulation
+A cellular automata animation. Press Ctrl-C to stop
+
+Level: Advanced
+What I learned:
+    TODO later
+"""
+
+from ant import Ant, ANT_COLOR, WHITE_TILE, WIDTH, HEIGHT, NUMBER_OF_ANTS, NORTH, SOUTH, WEST, EAST
+
+import random, sys, copy
+
+try:
+    import bext
+except ImportError:
+    print('This program requires the bext module, which you')
+    print('can install by following the instructions at')
+    print('https://pypi.org/project/Bext/')
+    sys.exit()
+
+def main():
+    ant_object = Ant()
+
+    bext.fg(ANT_COLOR)                  # The ants' color is the foreground color
+    bext.bg(WHITE_TILE)                 # Set the background to white to start
+    bext.clear()
+
+    # Create a new board data structure
+    board = {'width': WIDTH, 'height': HEIGHT}
+
+    # Create ant data structures
+    ants = []
+
+    for i in range(NUMBER_OF_ANTS):
+        ant = {
+            'x': random.randint(0, WIDTH - 1),
+            'y': random.randint(0, HEIGHT - 1),
+            'direction': random.choice([NORTH, SOUTH, EAST, WEST]),
+        }
+        ants.append(ant)
+
+    # Keep track of which tiles have changed and need to be redrawn on the screen
+    changedTiles = []
+
+    while True:                                     # Main program loop
+        ant_object.displayBoard(board, ants, changedTiles)
+        changedTiles = []
+
+        # nextBoard is what the board will look like on the next step in
+        # the simulation. Start with a copy of the current step's board
+        nextBoard = copy.copy(board)
+
+        # Run a single simulation step for each ant
+        for ant in ants:
+            if board.get((ant['x'], ant['y']), False) == True:
+                nextBoard[(ant['x'], ant['y'])] = False
+                # Turn clockwise
+                if ant['direction'] == NORTH:
+                    ant['direction'] = EAST
+                elif ant['direction'] == EAST:
+                    ant['direction'] = SOUTH
+                elif ant['direction'] == SOUTH:
+                    ant['direction'] = WEST
+                elif ant['direction'] == WEST:
+                    ant['direction'] = NORTH
+            else:
+                nextBoard[(ant['x'], ant['y'])] = True
+                # Turn counter clockwise
+                if ant['direction'] == NORTH:
+                    ant['direction'] = WEST
+                elif ant['direction'] == WEST:
+                    ant['direction'] = SOUTH
+                elif ant['direction'] == SOUTH:
+                    ant['direction'] = EAST
+                elif ant['direction'] == EAST:
+                    ant['direction'] = NORTH
+            changedTiles.append((ant['x'], ant['y']))
+
+            # Move the ant forward in whatever direction it's facing
+            if ant['direction'] == NORTH:
+                ant['y'] -= 1
+            if ant['direction'] == SOUTH:
+                ant['y'] += 1
+            if ant['direction'] == WEST:
+                ant['x'] -= 1
+            if ant['direction'] == EAST:
+                ant['x'] += 1
+
+            # If the ant goes past the edge of the screen, it should wrap around to other side
+            ant['x'] = ant['x'] % WIDTH
+            ant['y'] = ant['y'] % HEIGHT
+
+            changedTiles.append((ant['x'], ant['y']))
+
+        board = nextBoard
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("Ant Simulation")
+        sys.exit()

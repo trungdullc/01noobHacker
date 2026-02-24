@@ -1,8 +1,6 @@
 # Day 041
 ```python
-Client -> Router -> Internet Service Provider -> Domain Name System 
-
-nslookup.io
+Client -> Router -> Internet Service Provider -> Domain Name System (Website: nslookup.io)
 
 Visual Studio Code Extensions
     Live Preview: https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server

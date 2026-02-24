@@ -45,6 +45,11 @@ python -c "print(help())"               # Command-line execution mode ❤️❤�
 python -c "print(dir(print))"           # Command-line execution mode ❤️❤️❤️❤️❤️
 python -q
 
+import os
+
+os.system("whoami")
+os.system("pip3 install --user turtle")
+
 # string
 # letters = list(string.ascii_letters)                  # 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 # numbers = list(string.digits)                         # '0123456789'
@@ -52,6 +57,8 @@ python -q
 
 # builtins.str.strip()                                  # Used to remove \n when using .readlines()
 # builtins.str.replace()                                # Used alot in templates
+# "123".isdecimal()                                     # .isalpha(), .isalnum()
+
 PLACEHOLDER = "[NAME]"
 letter_contents = "Hey [NAME], your cool"
 new_letter = letter_contents.replace(PLACEHOLDER, "Hacker")
@@ -102,7 +109,7 @@ for fruit in fruits:
 print()
 
 for index, value in enumerate(fruits):
-    print(f"{index}: {value}")
+    print(f"{index}: {value}")                                      # print("{}: {}".format(index,value)) like C ❤️❤️❤️❤️❤️
 
 # Multiple return
 def name_title(f_name, l_name) -> tuple[str, str]:
@@ -474,7 +481,7 @@ headers = {
     "X-USER-TOKEN":TOKEN
 }
 
-response = requests.get(url="http://api.open-notify.org/iss-now.json", parems=parameters, headers=headeres)      # Endpoint URL
+response = requests.get(url="http://api.open-notify.org/iss-now.json", parems=parameters, headers=headers)      # Endpoint URL
 # print(response)                                                           # <Response [200]>
 response.raise_for_status()                                                 # Raise custom error if not 200
 
