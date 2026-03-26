@@ -8,6 +8,7 @@ except ImportError:
     print('https://pypi.org/project/Bext/')
     sys.exit()
 
+# Note: This would be better if program using self instead of global variables
 WIDTH, HEIGHT = bext.size()
 # We can't print to the last column on Windows without it adding a newline automatically, so reduce the width by one
 WIDTH -= 1

@@ -1,0 +1,68 @@
+"""
+Main Purpose:
+    tkinter.Entry()
+
+Idea stolen from:
+    https://riptutorial.com/Download/tkinter.pdf
+
+Level: Beginner
+What I learned:
+    tkinter.StringVar()
+    tkinter.IntVar()
+    tkinter.DoubleVar()
+    tkinter.BooleanVar()
+        var.get() ❤️
+        var.set() ❤️
+
+Created by HackerDu
+"""
+
+import sys
+import tkinter
+
+class MyApp(tkinter.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Entry Example")
+        
+        self.create_widgets()
+        self.mainloop()
+
+    def create_widgets(self):
+        # --- Entry with default value ---
+        self.entry1 = tkinter.Entry(self, width=20)
+        self.entry1.insert(0, "Hello, World")               # Default Value
+        self.entry1.pack(pady=5)                            # Note: When do this style, remember pack() returns 0
+
+        # Button to get value using .get()
+        tkinter.Button(self, text="Get Entry1 Value", command=self.get_entry1).pack(pady=5)
+
+        # --- Entry using StringVar ---
+        # Popular Method: Uses textvariable instead of text
+        self.name_var = tkinter.StringVar(value="Hello")    # Note: This must be assign after tkinter.Tk() initialized
+        self.entry2 = tkinter.Entry(self, textvariable=self.name_var, width=20).pack(pady=5)
+
+        # Button to get value from StringVar
+        tkinter.Button(self, text="Get Entry2 Value", command=self.get_entry2).pack(pady=5)
+
+        # Label to display output
+        # Note: Basically an empty spot to output to be displayed
+        self.output = tkinter.Label(self, text="")
+        self.output.pack(pady=10)
+
+    def get_entry1(self):
+        value = self.entry1.get()
+        self.output.config(text=f"Entry1: {value}")
+
+    def get_entry2(self):
+        value = self.name_var.get()
+        self.output.config(text=f"Entry2: {value}")
+
+def main():
+    MyApp().mainloop()
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit()
